@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Activity, RecordAndComparePayload } from '../../types';
 import { AudioButton } from '../AudioButton';
-import { Mic, MicOff, Play, Check, Star, AlertCircle, Volume2 } from 'lucide-react';
+import { Mic, MicOff, Check, Star, AlertCircle } from 'lucide-react';
 import { isSupported, listen, score } from '../../lib/speech';
 import { useProgress } from '../../context/ProgressContext';
 
@@ -9,6 +9,9 @@ interface Props {
   activity: Activity;
   onResult: (correct: boolean, error?: { correctAnswer: string; rule: string }) => void;
 }
+
+// Safety net so a hung recognition session can never trap the learner
+const MAX_RECORD_MS = 12000;
 
 export function RecordAndCompare({ activity, onResult }: Props) {
   const payload = activity.payload as RecordAndComparePayload;
@@ -21,33 +24,46 @@ export function RecordAndCompare({ activity, onResult }: Props) {
   const [showPrivacyNotice, setShowPrivacyNotice] = useState(false);
   const [selfCheck, setSelfCheck] = useState({ saidAll: false, clear: false, smooth: false });
   const [mode, setMode] = useState<'speech' | 'selfcheck' | 'teacher'>('speech');
+  const [fallbackReason, setFallbackReason] = useState<string | null>(null);
+  const controllerRef = useRef<{ stop: () => void } | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const supported = isSupported();
 
   useEffect(() => {
-    // Determine mode based on settings and support
-    if (settings.noMicMode || !supported) {
+    // Determine mode based on settings and support — every state keeps full XP earnable
+    if (settings.noMicMode) {
       setMode('selfcheck');
+      setFallbackReason('No-mic mode is on in Settings, so this task uses self-check. You can still earn full XP.');
+    } else if (!supported) {
+      setMode('selfcheck');
+      setFallbackReason('Speech recognition is not available in this browser, so this task uses self-check. You can still earn full XP.');
     }
+    return () => {
+      controllerRef.current?.stop();
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, [settings.noMicMode, supported]);
 
-  const handleRecord = () => {
-    if (!showPrivacyNotice) {
-      setShowPrivacyNotice(true);
-      return;
-    }
+  const stopRecording = () => {
+    controllerRef.current?.stop();
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setRecording(false);
+  };
 
+  const startListening = () => {
     setRecording(true);
     setError(null);
     setTranscript('');
     setResult(null);
 
-    const controller = listen(
+    controllerRef.current = listen(
       'en-US',
       (text) => {
         setTranscript(text);
         const r = score(text, payload.keywords);
         setResult(r);
         setRecording(false);
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
         const correct = r.stars >= 2;
         onResult(correct, {
@@ -58,27 +74,41 @@ export function RecordAndCompare({ activity, onResult }: Props) {
       },
       (err) => {
         setRecording(false);
-        if (err === 'not-allowed' || err === 'permission-denied') {
-          setError('Microphone access was denied. You can use the self-check instead.');
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        if (err === 'not-allowed' || err === 'permission-denied' || err === 'service-not-allowed') {
+          setFallbackReason('Microphone access was denied, so this task uses self-check instead. You can still earn full XP.');
           setMode('selfcheck');
+        } else if (err === 'no-speech') {
+          setError("I didn't hear anything. Speak a little louder and try again, or use the self-check below.");
         } else if (err === 'unsupported') {
-          setError('Speech recognition is not supported in this browser. Use the self-check below.');
+          setFallbackReason('Speech recognition is not supported here, so this task uses self-check. You can still earn full XP.');
           setMode('selfcheck');
         } else {
-          setError('Something went wrong with the recording. Try again or use the self-check.');
+          setError('Something went wrong with the recording. Try again, or use the self-check below.');
         }
       },
       () => {
         setRecording(false);
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
       },
     );
 
-    // Store controller for potential cleanup
-    return () => controller.stop();
+    timeoutRef.current = setTimeout(stopRecording, MAX_RECORD_MS);
+  };
+
+  const handleRecord = () => {
+    if (recording) {
+      stopRecording();
+      return;
+    }
+    if (!showPrivacyNotice) {
+      setShowPrivacyNotice(true);
+      return;
+    }
+    startListening();
   };
 
   const handleSelfCheckComplete = () => {
-    const allChecked = selfCheck.saidAll && selfCheck.clear && selfCheck.smooth;
     setCompleted(true);
     onResult(true, {
       correctAnswer: payload.modelLine,
@@ -96,17 +126,26 @@ export function RecordAndCompare({ activity, onResult }: Props) {
 
   return (
     <div>
-      {/* Model line */}
-      <div className="mb-4 p-4 rounded-card bg-coral/10">
-        <div className="flex items-center gap-3 mb-2">
-          <AudioButton
-            audioKey={`speak-model-${activity.id}`}
-            fallbackText={payload.modelLine}
-            rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
-            label="Listen to model"
-          />
+      {/* Target + recognised transcript side by side */}
+      <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="p-4 rounded-card bg-coral/10">
+          <div className="flex items-center gap-3 mb-2">
+            <AudioButton
+              audioKey={`speak-model-${activity.id}`}
+              fallbackText={payload.modelLine}
+              rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
+              label="Listen to model"
+            />
+          </div>
+          <p className="text-xs font-medium text-muted mb-1">Target:</p>
+          <p className="text-sm text-ink italic">"{payload.modelLine}"</p>
         </div>
-        <p className="text-sm text-ink italic">"{payload.modelLine}"</p>
+        <div className="p-4 rounded-card bg-cream border border-gray-100" aria-live="polite">
+          <p className="text-xs font-medium text-muted mb-1">What you said:</p>
+          <p className="text-sm text-ink min-h-[1.25rem]">
+            {transcript || <span className="text-muted">Press "Record yourself" and say the sentence.</span>}
+          </p>
+        </div>
       </div>
 
       {/* Privacy notice */}
@@ -124,17 +163,17 @@ export function RecordAndCompare({ activity, onResult }: Props) {
           <div className="flex items-center gap-3 mb-4">
             <button
               onClick={handleRecord}
-              disabled={recording || completed}
+              disabled={completed}
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-pill font-heading font-700 transition-colors ${
                 recording
                   ? 'bg-coral text-white animate-pulse'
                   : 'bg-coral text-white hover:bg-coral/90'
-              }`}
+              } disabled:opacity-40`}
               style={{ minHeight: 44 }}
               aria-label={recording ? 'Recording... tap to stop' : 'Record yourself'}
             >
               {recording ? <MicOff size={20} /> : <Mic size={20} />}
-              {recording ? 'Listening...' : 'Record yourself'}
+              {recording ? 'Listening... tap to stop' : 'Record yourself'}
             </button>
           </div>
 
@@ -158,18 +197,6 @@ export function RecordAndCompare({ activity, onResult }: Props) {
                   />
                 ))}
                 <span className="text-sm font-medium text-ink ml-2">{result.band}</span>
-              </div>
-
-              {/* Transcript vs target */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="p-3 rounded-card bg-cream border border-gray-100">
-                  <p className="text-xs font-medium text-muted mb-1">What you said:</p>
-                  <p className="text-sm text-ink">{result.transcript || '(nothing detected)'}</p>
-                </div>
-                <div className="p-3 rounded-card bg-coral/10">
-                  <p className="text-xs font-medium text-muted mb-1">Target:</p>
-                  <p className="text-sm text-ink">{payload.modelLine}</p>
-                </div>
               </div>
 
               {/* Matched keywords */}
@@ -214,6 +241,12 @@ export function RecordAndCompare({ activity, onResult }: Props) {
       {/* Self-check mode */}
       {mode === 'selfcheck' && (
         <div className="space-y-4">
+          {fallbackReason && (
+            <div className="p-3 rounded-card bg-sun/10 flex items-start gap-2">
+              <AlertCircle size={18} className="text-sun shrink-0 mt-0.5" />
+              <p className="text-sm text-ink">{fallbackReason}</p>
+            </div>
+          )}
           <div className="p-4 rounded-card bg-cream border border-gray-100">
             <p className="text-sm font-medium text-ink mb-3">Record yourself, then check each box:</p>
             <div className="space-y-2.5">

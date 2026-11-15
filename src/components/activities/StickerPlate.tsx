@@ -30,7 +30,7 @@ export function StickerPlate({ activity, onResult }: Props) {
     setCompleted(true);
     onResult(true, {
       correctAnswer: payload.speakingPrompt,
-      rule: 'Great plate! Now say your sentence out loud.',
+      rule: 'Great! Now say your sentence out loud.',
     });
   };
 
@@ -46,7 +46,7 @@ export function StickerPlate({ activity, onResult }: Props) {
           if (sticker) handleAdd(sticker);
         }}
         className="min-h-[200px] p-6 rounded-card bg-cream border-2 border-dashed border-coral/30 mb-4 flex flex-wrap gap-3 items-center justify-center relative"
-        aria-label="Your snack plate. Drag food stickers here."
+        aria-label={payload.prompt}
         role="region"
       >
         {/* Plate SVG */}
@@ -55,7 +55,7 @@ export function StickerPlate({ activity, onResult }: Props) {
         </svg>
 
         {placed.length === 0 && (
-          <p className="text-sm text-muted relative z-10">Drag food stickers onto your plate...</p>
+          <p className="text-sm text-muted relative z-10">{payload.prompt}</p>
         )}
 
         {placed.map(item => (
@@ -66,7 +66,7 @@ export function StickerPlate({ activity, onResult }: Props) {
             <button
               onClick={() => handleRemove(item.id)}
               className="relative"
-              aria-label={`${item.label} on plate. Click to remove.`}
+              aria-label={`${item.label} placed. Click to remove.`}
             >
               <VocabIllustration imgHint={item.imgHint} size={56} />
               <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-coral text-white flex items-center justify-center">
@@ -81,7 +81,7 @@ export function StickerPlate({ activity, onResult }: Props) {
       {/* Available stickers */}
       {available.length > 0 && (
         <div className="mb-4">
-          <p className="text-xs font-medium text-muted mb-2">Food stickers:</p>
+          <p className="text-xs font-medium text-muted mb-2">Stickers:</p>
           <div className="flex flex-wrap gap-2">
             {available.map(sticker => (
               <button
@@ -94,7 +94,7 @@ export function StickerPlate({ activity, onResult }: Props) {
                 onClick={() => handleAdd(sticker)}
                 className="draggable-item flex flex-col items-center gap-1 p-2 rounded-card bg-white shadow-card hover:shadow-cardhover transition-all cursor-grab"
                 style={{ minHeight: 44 }}
-                aria-label={`${sticker.label} sticker. Drag or click to add to plate.`}
+                aria-label={`${sticker.label} sticker. Drag or click to add.`}
               >
                 <VocabIllustration imgHint={sticker.imgHint} size={40} />
                 <span className="text-xs font-medium text-ink">{sticker.label}</span>
@@ -133,7 +133,7 @@ export function StickerPlate({ activity, onResult }: Props) {
         <div className="p-3 rounded-card bg-mint/10">
           <p className="text-sm text-ink flex items-center gap-2">
             <Check size={18} className="text-mint" />
-            Great plate! You described your snack like a pro.
+            Great! You said your sentence like a pro.
           </p>
         </div>
       )}

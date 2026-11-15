@@ -1,25 +1,43 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { lazy, Suspense, useState, useEffect, useRef } from 'react';
 import { ProgressProvider, useProgress } from './context/ProgressContext';
 import { MenuDrawer } from './components/MenuDrawer';
 import { ProfileModal } from './components/ProfileModal';
-import { Dashboard } from './pages/Dashboard';
-import { UnitOverview } from './pages/UnitOverview';
-import { QuestMap } from './pages/QuestMap';
-import { ActivityPage } from './pages/ActivityPage';
-import { Results } from './pages/Results';
-import { VocabularyBank } from './pages/VocabularyBank';
-import { MyProgress } from './pages/MyProgress';
-import { TeacherMode } from './pages/TeacherMode';
-import { SettingsPage } from './pages/SettingsPage';
+import { DebugPanel } from './components/DebugPanel';
+
+// Route-level code splitting — every page is a separate chunk
+const Dashboard = lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })));
+const UnitOverview = lazy(() => import('./pages/UnitOverview').then(m => ({ default: m.UnitOverview })));
+const QuestMap = lazy(() => import('./pages/QuestMap').then(m => ({ default: m.QuestMap })));
+const ActivityPage = lazy(() => import('./pages/ActivityPage').then(m => ({ default: m.ActivityPage })));
+const Results = lazy(() => import('./pages/Results').then(m => ({ default: m.Results })));
+const VocabularyBank = lazy(() => import('./pages/VocabularyBank').then(m => ({ default: m.VocabularyBank })));
+const MyProgress = lazy(() => import('./pages/MyProgress').then(m => ({ default: m.MyProgress })));
+const TeacherMode = lazy(() => import('./pages/TeacherMode').then(m => ({ default: m.TeacherMode })));
+const PresentMode = lazy(() => import('./pages/PresentMode').then(m => ({ default: m.PresentMode })));
+const SettingsPage = lazy(() => import('./pages/SettingsPage').then(m => ({ default: m.SettingsPage })));
+
+function PageLoader() {
+  return (
+    <div className="min-h-[50vh] flex items-center justify-center" role="status" aria-label="Loading page">
+      <div className="w-8 h-8 rounded-full border-4 border-brand/20 border-t-brand animate-spin" />
+    </div>
+  );
+}
 
 function AppContent() {
   const { profile } = useProgress();
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const autoOpenedRef = useRef(false);
 
   useEffect(() => {
     if (!profile) {
       setShowProfileModal(true);
+      autoOpenedRef.current = true;
+    } else if (autoOpenedRef.current) {
+      // The initial save completed — close the modal we auto-opened
+      autoOpenedRef.current = false;
+      setShowProfileModal(false);
     }
   }, [profile]);
 
@@ -39,19 +57,23 @@ function AppContent() {
       )}
 
       <main className="pt-16 pb-20 lg:pl-0">
-        <Routes>
-          <Route path="/" element={<Dashboard onEditProfile={() => setShowProfileModal(true)} />} />
-          <Route path="/unit/:unitId" element={<UnitOverview />} />
-          <Route path="/unit/:unitId/:level" element={<QuestMap />} />
-          <Route path="/unit/:unitId/:level/:stationId" element={<ActivityPage />} />
-          <Route path="/results" element={<Results />} />
-          <Route path="/vocabulary" element={<VocabularyBank />} />
-          <Route path="/progress" element={<MyProgress />} />
-          <Route path="/teacher" element={<TeacherMode />} />
-          <Route path="/settings" element={<SettingsPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Dashboard onEditProfile={() => setShowProfileModal(true)} />} />
+            <Route path="/unit/:unitId" element={<UnitOverview />} />
+            <Route path="/unit/:unitId/:level" element={<QuestMap />} />
+            <Route path="/unit/:unitId/:level/:stationId" element={<ActivityPage />} />
+            <Route path="/results" element={<Results />} />
+            <Route path="/vocabulary" element={<VocabularyBank />} />
+            <Route path="/progress" element={<MyProgress />} />
+            <Route path="/teacher" element={<TeacherMode />} />
+            <Route path="/teacher/present" element={<PresentMode />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
       </main>
+      <DebugPanel />
     </div>
   );
 }

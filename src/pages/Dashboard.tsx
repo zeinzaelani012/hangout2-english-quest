@@ -87,12 +87,12 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
 
       {/* Hero */}
       <div className="relative overflow-hidden rounded-card bg-gradient-to-br from-brand to-brand/80 shadow-card mb-6">
-        <div className="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+        <div className="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
           <div className="flex-1">
             <h2 className="font-heading font-800 text-3xl sm:text-4xl text-white mb-2">
               Your English Quest
             </h2>
-            <p className="text-white/80 text-base mb-4 max-w-md">
+            <p className="text-white/80 text-base mb-6 max-w-md">
               Learn new words, play games, and become an English star — one unit at a time.
             </p>
             <button
@@ -132,21 +132,20 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
       {/* Choose a Unit */}
       <div className="mb-6">
         <h3 className="font-heading font-700 text-lg text-ink mb-4">Choose a Unit</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
           {units.map(unit => {
             if (unit.status === 'placeholder') {
               return (
                 <div
                   key={unit.id}
-                  className="rounded-card bg-white/70 border border-gray-100 p-5 flex flex-col items-center justify-center text-center cursor-not-allowed"
-                  style={{ opacity: 0.7, minHeight: 200 }}
+                  className="rounded-card bg-gray-50/80 border border-dashed border-gray-200 p-5 flex flex-col items-center justify-center text-center cursor-not-allowed select-none"
                   aria-label={`Unit ${unit.id}, locked, coming soon`}
                   tabIndex={0}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-3">
-                    <Lock size={20} className="text-muted" />
+                  <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mb-3">
+                    <Lock size={18} className="text-gray-400" />
                   </div>
-                  <p className="font-heading font-700 text-ink">Unit {unit.id}</p>
+                  <p className="font-heading font-700 text-ink/60">Unit {unit.id}</p>
                   <p className="text-sm text-muted mt-1">Coming soon</p>
                 </div>
               );
@@ -161,7 +160,7 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
               <button
                 key={unit.id}
                 onClick={() => navigate(`/unit/${unit.id}`)}
-                className="text-left rounded-card bg-white shadow-card hover:shadow-cardhover transition-all p-5 group"
+                className="text-left rounded-card bg-white shadow-card hover:shadow-cardhover transition-all p-5 group flex flex-col"
                 aria-label={`Unit ${unit.id}: ${unit.title}. ${unit.bigQuestion}`}
               >
                 <div className="flex items-start justify-between mb-3">
@@ -174,7 +173,7 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
                   </div>
                 </div>
                 <p className="text-sm text-muted mb-4 italic">"{unit.bigQuestion}"</p>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 mt-auto">
                   {(['easy', 'core', 'challenging'] as const).map(level => {
                     const pct = level === 'easy' ? easyPct : level === 'core' ? corePct : chalPct;
                     return (

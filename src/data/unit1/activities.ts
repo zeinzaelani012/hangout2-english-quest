@@ -217,7 +217,8 @@ function buildWritingActivities(level: Level): Activity[] {
   const w = contentPack.writing[level];
 
   if (w.type === 'sentenceBuilder') {
-    for (const item of w.items) {
+    // Weighting contract: exactly 2 writing activities per level (ACTIVITY_COUNTS.writing)
+    for (const item of w.items.slice(0, 2)) {
       acts.push(makeActivity(
         'writing',
         'sentenceBuilder',

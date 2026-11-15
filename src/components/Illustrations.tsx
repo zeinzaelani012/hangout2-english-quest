@@ -1,5 +1,7 @@
 // Inline SVG illustrations — no external images, no emoji as artwork
 
+import { extraIllustrations } from '../data/illustrations';
+
 interface SVGProps {
   className?: string;
   size?: number;
@@ -185,6 +187,12 @@ export function StationBadge({ skill, size = 56, className = '' }: { skill: stri
 export function VocabIllustration({ imgHint, className = '', size = 80 }: { imgHint: string; className?: string; size?: number }) {
   const hint = imgHint.toLowerCase();
   const s = size;
+
+  // Unit packs can register their own artwork in src/data/illustrations.tsx;
+  // that registry is checked first so units stay pure data.
+  for (const [keyword, Art] of Object.entries(extraIllustrations)) {
+    if (hint.includes(keyword)) return <Art size={s} className={className} />;
+  }
 
   // Determine illustration type from hint
   if (hint.includes('popcorn')) return <PopcornSVG size={s} className={className} />;

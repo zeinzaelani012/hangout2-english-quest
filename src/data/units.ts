@@ -1,9 +1,13 @@
 import type { Unit, Station, Skill, Level } from '../types';
 import { SKILL_WEIGHTS } from '../types';
 import { contentPack } from './unit1/contentPack';
+import type { ReadingJSON, DialogueJSON } from './unit1/contentPack';
 import { vocabulary } from './unit1/vocabulary';
 import { buildLevelActivities, buildBossLevelActivities } from './unit1/activities';
 import { resetIdCounter } from './unit1/factory';
+import { readingTexts as unit1ReadingTexts, dialogue as unit1Dialogue } from './unit1/reading';
+import { buildUnit2 } from './unit2/activities';
+import { readingTexts as unit2ReadingTexts, dialogue as unit2Dialogue } from './unit2/reading';
 
 const unit1Stations: Station[] = contentPack.stations.map(s => ({
   id: s.id,
@@ -60,7 +64,7 @@ function buildPlaceholderUnit(id: number): Unit {
 
 export const units: Unit[] = [
   buildUnit1(),
-  buildPlaceholderUnit(2),
+  buildUnit2(),
   buildPlaceholderUnit(3),
   buildPlaceholderUnit(4),
   buildPlaceholderUnit(5),
@@ -72,6 +76,20 @@ export const units: Unit[] = [
 
 export function getUnit(id: number): Unit | undefined {
   return units.find(u => u.id === id);
+}
+
+export interface UnitReadingContext {
+  readingTexts: ReadingJSON[];
+  dialogue: DialogueJSON;
+}
+
+// Reading and dialogue content is per-unit, so pages resolve it through here
+// instead of importing a specific unit's data folder.
+export function getUnitReading(unitId: number): UnitReadingContext {
+  if (unitId === 2) {
+    return { readingTexts: unit2ReadingTexts, dialogue: unit2Dialogue };
+  }
+  return { readingTexts: unit1ReadingTexts, dialogue: unit1Dialogue };
 }
 
 export { vocabulary } from './unit1/vocabulary';

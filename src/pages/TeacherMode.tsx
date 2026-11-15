@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useProgress } from '../context/ProgressContext';
 import { units } from '../data/units';
-import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3 } from 'lucide-react';
+import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation } from 'lucide-react';
 import { SKILL_LABELS, LEVEL_LABELS, type Level, type Skill } from '../types';
 
 export function TeacherMode() {
   const { progress, settings, updateSettings, resetProgress } = useProgress();
+  const navigate = useNavigate();
   const [pinEntered, setPinEntered] = useState(false);
   const [pinInput, setPinInput] = useState('');
   const [pinError, setPinError] = useState('');
@@ -178,6 +180,22 @@ export function TeacherMode() {
             icon={Lock}
           />
         </div>
+      </div>
+
+      {/* Present mode */}
+      <div className="bg-white rounded-card shadow-card p-6 mb-4">
+        <h3 className="font-heading font-700 text-lg text-ink mb-2">Present mode</h3>
+        <p className="text-sm text-muted mb-4">
+          Show one activity per screen for the whole class — large text, answer options revealed
+          with the number keys 1–4, and a big Next button. No XP, nothing is saved.
+        </p>
+        <button
+          onClick={() => navigate('/teacher/present')}
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors"
+          style={{ minHeight: 44 }}
+        >
+          <Presentation size={18} /> Start presenting
+        </button>
       </div>
 
       {/* Reset progress */}

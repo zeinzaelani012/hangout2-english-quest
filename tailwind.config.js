@@ -16,8 +16,8 @@ export default {
         muted: '#6B7280',
       },
       fontFamily: {
-        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans Variable"', '"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['"Inter Variable"', 'Inter', 'sans-serif'],
       },
       borderRadius: {
         card: '24px',

@@ -2,11 +2,11 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import { ChevronRight, ArrowLeft, Lightbulb, Check, X, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
-import { getUnit } from '../data/units';
+import { getUnit, getUnitReading } from '../data/units';
 import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Level, type Activity, type StationProgress } from '../types';
 import { CookieMascot, StationBadge } from '../components/Illustrations';
 import { AudioButton } from '../components/AudioButton';
-import { readingTexts, dialogue } from '../data/unit1/reading';
+import type { ReadingJSON, DialogueJSON } from '../data/unit1/contentPack';
 import { PictureMatch } from '../components/activities/PictureMatch';
 import { DragSort } from '../components/activities/DragSort';
 import { GapFill } from '../components/activities/GapFill';
@@ -24,6 +24,7 @@ export function ActivityPage() {
   const unit = getUnit(parseInt(unitId || '0'));
   const levelKey = (level || 'easy') as Level;
   const station = unit?.stations.find(s => s.id === stationId);
+  const readings = getUnitReading(unit?.id || 1);
 
   // Get activities for this station from the level data
   const activities = useMemo(() => {
@@ -198,16 +199,16 @@ export function ActivityPage() {
 
       {/* Pre-activity content: reading text or listening dialogue */}
       {currentActivity.skill === 'reading' && currentActivity.type === 'gapFill' && (
-        <ReadingTextDisplay level={levelKey} activity={currentActivity} />
+        <ReadingTextDisplay level={levelKey} activity={currentActivity} texts={readings.readingTexts} />
       )}
       {currentActivity.skill === 'listening' && currentActivity.type === 'gapFill' && (
-        <ListeningAudioDisplay activity={currentActivity} level={levelKey} />
+        <ListeningAudioDisplay activity={currentActivity} level={levelKey} dialogue={readings.dialogue} />
       )}
       {currentActivity.skill === 'listening' && currentActivity.type === 'pictureMatch' && (
-        <ListeningAudioDisplay activity={currentActivity} level={levelKey} />
+        <ListeningAudioDisplay activity={currentActivity} level={levelKey} dialogue={readings.dialogue} />
       )}
       {station.id === 'boss' && currentActivity.skill === 'reading' && (
-        <ListeningAudioDisplay activity={currentActivity} level={levelKey} />
+        <ListeningAudioDisplay activity={currentActivity} level={levelKey} dialogue={readings.dialogue} />
       )}
 
       {/* Activity body */}
@@ -321,10 +322,10 @@ function getHint(activity: Activity): string {
   return 'Take your time and try your best!';
 }
 
-function ReadingTextDisplay({ level, activity }: { level: Level; activity: Activity }) {
+function ReadingTextDisplay({ level, activity, texts }: { level: Level; activity: Activity; texts: ReadingJSON[] }) {
   // Determine which reading text based on the activity prompt
-  const text1 = readingTexts[0];
-  const text2 = readingTexts[1];
+  const text1 = texts[0];
+  const text2 = texts[1];
   const isText1 = activity.prompt.includes(text1.title);
   const text = isText1 ? text1 : text2;
   const levelText = text[level];
@@ -337,13 +338,13 @@ function ReadingTextDisplay({ level, activity }: { level: Level; activity: Activ
   );
 }
 
-function ListeningAudioDisplay({ activity, level }: { activity: Activity; level: Level }) {
+function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activity; level: Level; dialogue: DialogueJSON }) {
   const [showTranscript, setShowTranscript] = useState(false);
   const payload = activity.payload as any;
   const script: string = payload.audioScript || '';
 
   // For boss dialogue activities, show the dialogue lines as transcript
-  const isDialogue = activity.skill === 'reading' && activity.prompt.includes('"The Cookie Box"');
+  const isDialogue = activity.skill === 'reading' && activity.prompt.includes(`"${dialogue.title}"`);
 
   return (
     <div className="bg-white rounded-card shadow-card p-6 mb-4">
