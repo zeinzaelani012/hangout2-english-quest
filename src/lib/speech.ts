@@ -81,28 +81,46 @@ export function listen(
   };
 }
 
-// Normalize text: lowercase, strip punctuation, expand contractions
+// Contractions are expanded BEFORE punctuation is stripped, so "i'm" spoken
+// as "i am" (or either form in the keywords) matches after normalisation.
+const CONTRACTIONS: Record<string, string> = {
+  "i'm": 'i am',
+  "you're": 'you are',
+  "he's": 'he is',
+  "she's": 'she is',
+  "it's": 'it is',
+  "we're": 'we are',
+  "they're": 'they are',
+  "that's": 'that is',
+  "what's": 'what is',
+  "let's": 'let us',
+  "i've": 'i have',
+  "i'll": 'i will',
+  "can't": 'cannot',
+  "won't": 'will not',
+  "don't": 'do not',
+  "doesn't": 'does not',
+  "didn't": 'did not',
+  "isn't": 'is not',
+  "aren't": 'are not',
+  "wasn't": 'was not',
+  "weren't": 'were not',
+};
+
+const CONTRACTION_RE = new RegExp(`\\b(${Object.keys(CONTRACTIONS).map(k => k.replace("'", "'")).join('|')})\\b`, 'g');
+
+// Normalise text: lowercase, expand contractions, accept keyword synonyms,
+// then strip punctuation.
 function normalize(text: string): string {
   return text
     .toLowerCase()
+    .replace(CONTRACTION_RE, m => CONTRACTIONS[m])
+    .replace(/\btee shirt\b/g, 't-shirt')
+    .replace(/\bt shirt\b/g, 't-shirt')
+    .replace(/\btrousers\b/g, 'pants')
     .replace(/[.,!?;:'"()]/g, '')
     .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\bdon't\b/g, 'do not')
-    .replace(/\bdoesn't\b/g, 'does not')
-    .replace(/\bit's\b/g, 'it is')
-    .replace(/\bI'm\b/g, 'i am')
-    .replace(/\bcan't\b/g, 'cannot')
-    .replace(/\bwon't\b/g, 'will not')
-    .replace(/\bI'll\b/g, 'i will')
-    .replace(/\bwe're\b/g, 'we are')
-    .replace(/\bthey're\b/g, 'they are')
-    .replace(/\bI've\b/g, 'i have')
-    .replace(/\bhe's\b/g, 'he is')
-    .replace(/\bshe's\b/g, 'she is')
-    .replace(/\bthat's\b/g, 'that is')
-    .replace(/\blet's\b/g, 'let us')
-    .replace(/\bwhat's\b/g, 'what is');
+    .trim();
 }
 
 // Levenshtein distance

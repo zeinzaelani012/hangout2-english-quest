@@ -368,11 +368,34 @@ function ReadingPanel({ texts, level, activity }: { texts: ReturnType<typeof get
   const text1 = texts[0];
   const text2 = texts[1];
   const text = activity.prompt.includes(text1.title) ? text1 : text2;
+  const raw = text[level].text;
+  const spoken = Array.isArray(raw)
+    ? raw.map(line => `${line.speaker}: ${line.text}`).join(' ')
+    : raw;
 
   return (
     <div className="mb-6 p-6 rounded-card bg-cream border border-gray-100">
-      <h2 className="font-heading font-700 text-xl text-ink mb-3">{text.title}</h2>
-      <p className="text-lg text-ink leading-relaxed whitespace-pre-line">{text[level].text}</p>
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <h2 className="font-heading font-700 text-xl text-ink">{text.title}</h2>
+        <AudioButton audioKey={`present-reading-${activity.id}`} fallbackText={spoken} label="Read aloud" />
+      </div>
+      {Array.isArray(raw) ? (
+        <div className="space-y-2">
+          {raw.map((line, i) => (
+            <div
+              key={i}
+              className={`p-3 rounded-card ${line.speaker === raw[0]?.speaker ? 'bg-violet/10' : 'bg-white border border-gray-100'}`}
+            >
+              <p className="text-lg text-ink">
+                <span className="font-medium text-violet">{line.speaker}: </span>
+                {line.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-lg text-ink leading-relaxed whitespace-pre-line">{raw}</p>
+      )}
     </div>
   );
 }

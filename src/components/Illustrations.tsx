@@ -1,6 +1,7 @@
 // Inline SVG illustrations — no external images, no emoji as artwork
 
 import { extraIllustrations } from '../data/illustrations';
+import { renderAvatar } from '../data/avatars';
 
 interface SVGProps {
   className?: string;
@@ -545,78 +546,9 @@ function WatermelonSVG({ size, className }: SVGProps) {
   );
 }
 
-// Avatar SVGs — 6 illustrated avatars
+// Avatar rendering — art lives in the data registry (src/data/avatars.tsx)
 export function AvatarSVG({ avatarId, size = 64, className = '' }: { avatarId: string; size?: number; className?: string }) {
-  const avatars: Record<string, JSX.Element> = {
-    'av1': (
-      <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Avatar 1">
-        <circle cx="40" cy="40" r="36" fill="#FFC145" opacity="0.2" />
-        <circle cx="40" cy="32" r="16" fill="#FF6B4A" />
-        <path d="M24 28 Q24 20 40 18 Q56 20 56 28" fill="#3D2817" />
-        <circle cx="34" cy="32" r="2.5" fill="#FFFBF5" />
-        <circle cx="46" cy="32" r="2.5" fill="#FFFBF5" />
-        <path d="M34 40 Q40 44 46 40" stroke="#3D2817" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <path d="M20 70 Q20 52 40 52 Q60 52 60 70 Z" fill="#2B3A8F" />
-      </svg>
-    ),
-    'av2': (
-      <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Avatar 2">
-        <circle cx="40" cy="40" r="36" fill="#2FB59A" opacity="0.2" />
-        <circle cx="40" cy="32" r="16" fill="#FFD93D" />
-        <path d="M28 24 Q28 18 40 16 Q52 18 52 24 L50 30 Q46 26 40 26 Q34 26 30 30 Z" fill="#5D3A1A" />
-        <circle cx="34" cy="32" r="2.5" fill="#3D2817" />
-        <circle cx="46" cy="32" r="2.5" fill="#3D2817" />
-        <path d="M34 40 Q40 44 46 40" stroke="#3D2817" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <path d="M20 70 Q20 52 40 52 Q60 52 60 70 Z" fill="#2FB59A" />
-      </svg>
-    ),
-    'av3': (
-      <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Avatar 3">
-        <circle cx="40" cy="40" r="36" fill="#7C5CFF" opacity="0.2" />
-        <circle cx="40" cy="32" r="16" fill="#FF8B6A" />
-        <circle cx="40" cy="20" r="12" fill="#3D2817" />
-        <circle cx="34" cy="32" r="2.5" fill="#3D2817" />
-        <circle cx="46" cy="32" r="2.5" fill="#3D2817" />
-        <path d="M36 40 Q40 42 44 40" stroke="#3D2817" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <path d="M20 70 Q20 52 40 52 Q60 52 60 70 Z" fill="#7C5CFF" />
-      </svg>
-    ),
-    'av4': (
-      <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Avatar 4">
-        <circle cx="40" cy="40" r="36" fill="#C77DFF" opacity="0.2" />
-        <circle cx="40" cy="32" r="16" fill="#F4C2A1" />
-        <path d="M26 26 Q26 16 40 14 Q54 16 54 26 L52 22 Q46 18 40 18 Q34 18 28 22 Z" fill="#FF6B4A" />
-        <circle cx="34" cy="32" r="2.5" fill="#3D2817" />
-        <circle cx="46" cy="32" r="2.5" fill="#3D2817" />
-        <path d="M34 40 Q40 44 46 40" stroke="#3D2817" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <path d="M20 70 Q20 52 40 52 Q60 52 60 70 Z" fill="#C77DFF" />
-      </svg>
-    ),
-    'av5': (
-      <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Avatar 5">
-        <circle cx="40" cy="40" r="36" fill="#FF6B4A" opacity="0.2" />
-        <circle cx="40" cy="32" r="16" fill="#C4A86F" />
-        <path d="M28 22 Q28 14 40 14 Q52 14 52 22 L50 28 Q46 24 40 24 Q34 24 30 28 Z" fill="#3D2817" />
-        <circle cx="34" cy="32" r="2.5" fill="#FFFBF5" />
-        <circle cx="46" cy="32" r="2.5" fill="#FFFBF5" />
-        <path d="M34 40 Q40 44 46 40" stroke="#3D2817" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <path d="M20 70 Q20 52 40 52 Q60 52 60 70 Z" fill="#5B7C99" />
-      </svg>
-    ),
-    'av6': (
-      <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Avatar 6">
-        <circle cx="40" cy="40" r="36" fill="#2B3A8F" opacity="0.2" />
-        <circle cx="40" cy="32" r="16" fill="#FFD93D" />
-        <path d="M26 30 Q26 18 40 16 Q54 18 54 30 L52 24 Q46 20 40 20 Q34 20 28 24 Z" fill="#2B3A8F" />
-        <circle cx="34" cy="32" r="2.5" fill="#3D2817" />
-        <circle cx="46" cy="32" r="2.5" fill="#3D2817" />
-        <path d="M34 40 Q40 44 46 40" stroke="#3D2817" strokeWidth="2" fill="none" strokeLinecap="round" />
-        <path d="M20 70 Q20 52 40 52 Q60 52 60 70 Z" fill="#FF6B4A" />
-      </svg>
-    ),
-  };
-
-  return avatars[avatarId] || avatars['av1'];
+  return renderAvatar(avatarId, size, className) || null;
 }
 
-export const AVATAR_IDS = ['av1', 'av2', 'av3', 'av4', 'av5', 'av6'];
+export { AVATAR_IDS } from '../data/avatars';

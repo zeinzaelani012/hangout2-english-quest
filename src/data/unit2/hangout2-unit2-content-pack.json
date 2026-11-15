@@ -1,11 +1,16 @@
 {
   "meta": {
     "app": "Hangout 2 - English Quest",
+    "pack": "unit2",
     "version": "1.0",
     "language": "en",
-    "audienceAges": "7-16",
-    "contentPolicy": "Original adapted material. Same unit topic and language aims as the coursebook; no coursebook text, audio or artwork is reproduced.",
-    "unitCovered": 2,
+    "unit": 2,
+    "title": "My Clothes",
+    "islandName": "Wardrobe Island",
+    "bigQuestion": "What are you wearing now?",
+    "objectives": ["Clothing and jewelry", "Describing what someone is wearing"],
+    "sourcePages": "20-29 (adapted, not reproduced)",
+    "contentPolicy": "Original adapted material. Same unit topic and language aims as the source unit; no coursebook text, audio or artwork is reproduced.",
     "totalUnitsPlanned": 9,
     "answerKeyIncluded": true
   },
@@ -38,238 +43,274 @@
     "lockedCta": { "label": "Go to Core", "route": "/unit/2/core" }
   },
 
-  "skillColours": {
-    "speaking": "#FF6B4A",
-    "vocabulary": "#FFC145",
-    "listening": "#7C5CFF",
-    "reading": "#2FB59A",
-    "writing": "#C77DFF",
-    "grammar": "#5B7C99"
+  "stations": [
+    { "id": "vocabulary", "order": 1, "skill": "vocabulary", "name": "The Wardrobe", "subtitle": "Name it", "xp": 25, "mechanic": "PictureMatch + DragSort" },
+    { "id": "grammar", "order": 2, "skill": "grammar", "name": "The Dressing Machine", "subtitle": "am / is / are", "xp": 15, "mechanic": "GapFill" },
+    { "id": "listening", "order": 3, "skill": "listening", "name": "The Fitting Room", "subtitle": "Listen and choose", "xp": 10, "mechanic": "AudioToPicture + AudioGap" },
+    { "id": "reading", "order": 4, "skill": "reading", "name": "Sun Mi's Message", "subtitle": "Find the person", "xp": 15, "mechanic": "ReadingPassage" },
+    { "id": "writing", "order": 5, "skill": "writing", "name": "Style Journal", "subtitle": "Write it down", "xp": 10, "mechanic": "SentenceBuilder + DiaryPrompt" },
+    { "id": "speaking", "order": 6, "skill": "speaking", "name": "The Mirror", "subtitle": "Say it out loud", "xp": 25, "mechanic": "RecordAndCompare" },
+    { "id": "boss", "order": 7, "skill": "mixed", "name": "The Fashion Show", "subtitle": "All six skills", "xp": 0, "unlockAfter": ["vocabulary", "grammar", "listening", "reading", "writing", "speaking"] }
+  ],
+
+  "unitRegistryEntry": {
+    "id": 2,
+    "title": "My Clothes",
+    "islandName": "Wardrobe Island",
+    "bigQuestion": "What are you wearing now?",
+    "objectives": ["Clothing and jewelry", "Describing what someone is wearing"],
+    "unlocked": false,
+    "status": "playable",
+    "note": "Set unlocked to true when you want Unit 2 reachable from the dashboard. Keep Units 3-9 as placeholders."
   },
 
-  "units": [
-    { "id": 1, "title": "Snack Time", "islandName": "Snack Island", "unlocked": false, "status": "playable" },
-    {
-      "id": 2,
-      "title": "What Are You Wearing?",
-      "islandName": "Wardrobe World",
-      "bigQuestion": "What are you wearing?",
-      "objectives": ["Clothing words", "Saying what people are wearing with am / is / are"],
-      "unlocked": true,
-      "status": "playable"
-    },
-    { "id": 3, "title": "TITLE_TODO", "islandName": "Island 3", "unlocked": false, "status": "placeholder" },
-    { "id": 4, "title": "TITLE_TODO", "islandName": "Island 4", "unlocked": false, "status": "placeholder" },
-    { "id": 5, "title": "TITLE_TODO", "islandName": "Island 5", "unlocked": false, "status": "placeholder" },
-    { "id": 6, "title": "TITLE_TODO", "islandName": "Island 6", "unlocked": false, "status": "placeholder" },
-    { "id": 7, "title": "TITLE_TODO", "islandName": "Island 7", "unlocked": false, "status": "placeholder" },
-    { "id": 8, "title": "TITLE_TODO", "islandName": "Island 8", "unlocked": false, "status": "placeholder" },
-    { "id": 9, "title": "TITLE_TODO", "islandName": "Island 9", "unlocked": false, "status": "placeholder" }
-  ],
-
-  "stations": [
-    { "id": "vocabulary", "order": 1, "name": "Clothes Closet", "skill": "vocabulary", "xp": 25 },
-    { "id": "grammar", "order": 2, "name": "The Am-Is-Are Meter", "skill": "grammar", "xp": 15 },
-    { "id": "listening", "order": 3, "name": "Wardrobe Ears", "skill": "listening", "xp": 10 },
-    { "id": "reading", "order": 4, "name": "The Outfit Diary", "skill": "reading", "xp": 15 },
-    { "id": "writing", "order": 5, "name": "Outfit Journal", "skill": "writing", "xp": 10 },
-    { "id": "speaking", "order": 6, "name": "The Dressing Room", "skill": "speaking", "xp": 25 },
-    { "id": "boss", "order": 7, "name": "The Costume Party", "skill": "mixed", "xp": 0, "note": "Mixed 6-skill checkpoint, unlocked after all six stations" }
-  ],
-
   "vocabulary": [
-    { "id": "u2-v01", "word": "t-shirt", "set": "A", "category": "tops", "example": "I am wearing a blue t-shirt.", "imgHint": "blue t-shirt with short sleeves" },
-    { "id": "u2-v02", "word": "shirt", "set": "A", "category": "tops", "example": "He is wearing a white shirt.", "imgHint": "white buttoned shirt with a collar" },
-    { "id": "u2-v03", "word": "pants", "set": "A", "category": "bottoms", "example": "My pants are new.", "imgHint": "long blue pants" },
-    { "id": "u2-v04", "word": "skirt", "set": "A", "category": "bottoms", "example": "She is wearing a red skirt.", "imgHint": "red pleated skirt" },
-    { "id": "u2-v05", "word": "dress", "set": "A", "category": "outfits", "example": "Mia likes her purple dress.", "imgHint": "purple dress with thin straps" },
-    { "id": "u2-v06", "word": "shorts", "set": "A", "category": "bottoms", "example": "I am wearing shorts because it is hot.", "imgHint": "yellow shorts with a waistband" },
-    { "id": "u2-v07", "word": "socks", "set": "A", "category": "feet", "example": "I am wearing warm socks.", "imgHint": "red sock with a folded cuff" },
-    { "id": "u2-v08", "word": "shoes", "set": "A", "category": "feet", "example": "Are you wearing your new shoes?", "imgHint": "blue shoe with laces tied" },
-    { "id": "u2-v09", "word": "sweater", "set": "B", "category": "tops", "example": "I am wearing a sweater because it is cold.", "imgHint": "yellow knitted sweater with long sleeves" },
-    { "id": "u2-v10", "word": "jacket", "set": "B", "category": "tops", "example": "He is wearing a jacket with pockets.", "imgHint": "grey jacket with pockets and a zipper" },
-    { "id": "u2-v11", "word": "coat", "set": "B", "category": "tops", "example": "My coat is very warm.", "imgHint": "long navy coat with round buttons" },
-    { "id": "u2-v12", "word": "boots", "set": "B", "category": "feet", "example": "She is wearing brown boots.", "imgHint": "brown boot with a folded cuff" },
-    { "id": "u2-v13", "word": "sneakers", "set": "B", "category": "feet", "example": "I like my green sneakers.", "imgHint": "green sneaker with a white sole" },
-    { "id": "u2-v14", "word": "hat", "set": "B", "category": "extras", "example": "Ben is wearing a red hat.", "imgHint": "red cap with a peak" },
-    { "id": "u2-v15", "word": "scarf", "set": "B", "category": "extras", "example": "I am wearing a scarf and gloves.", "imgHint": "purple striped scarf with hanging ends" },
-    { "id": "u2-v16", "word": "gloves", "set": "B", "category": "extras", "example": "My gloves are green.", "imgHint": "green glove with a cuff" },
-    { "id": "u2-v17", "word": "uniform", "set": "C", "category": "outfits", "example": "We are wearing our school uniform today.", "imgHint": "navy school uniform shirt with a red tie" },
-    { "id": "u2-v18", "word": "pajamas", "set": "C", "category": "outfits", "example": "I am wearing pajamas with moons and stars.", "imgHint": "violet pajama top with a moon and stars" },
-    { "id": "u2-v19", "word": "swimsuit", "set": "C", "category": "outfits", "example": "She is wearing an orange swimsuit at the beach.", "imgHint": "orange one-piece swimsuit" },
-    { "id": "u2-v20", "word": "belt", "set": "C", "category": "extras", "example": "His belt is brown and gold.", "imgHint": "brown belt with a golden buckle" },
-    { "id": "u2-v21", "word": "glasses", "set": "C", "category": "extras", "example": "Grandma is wearing round glasses.", "imgHint": "round black glasses" }
+    { "id": "v01", "word": "jacket", "set": "A", "category": "top", "example": "I wear a jacket when it is cold.", "imgHint": "short zip-up coat with a collar, navy" },
+    { "id": "v02", "word": "skirt", "set": "A", "category": "bottom", "example": "She is wearing a green skirt.", "imgHint": "knee-length pleated skirt, green" },
+    { "id": "v03", "word": "ring", "set": "A", "category": "jewelry", "example": "He is wearing a silver ring.", "imgHint": "thin band with a small blue stone" },
+    { "id": "v04", "word": "shirt", "set": "A", "category": "top", "example": "My shirt is blue and white.", "imgHint": "buttoned shirt with a collar, light blue" },
+    { "id": "v05", "word": "pants", "set": "A", "category": "bottom", "example": "He's wearing brown pants.", "imgHint": "long trousers with side pockets" },
+    { "id": "v06", "word": "shoes", "set": "A", "category": "footwear", "example": "These shoes are black.", "imgHint": "pair of lace-up black shoes" },
+    { "id": "v07", "word": "watch", "set": "A", "category": "jewelry", "example": "My watch is blue.", "imgHint": "wristwatch with a round face and strap" },
+    { "id": "v08", "word": "boots", "set": "A", "category": "footwear", "example": "She is wearing big brown boots.", "imgHint": "tall lace-up boots, brown" },
+    { "id": "v09", "word": "T-shirt", "set": "B", "category": "top", "example": "I'm wearing my new T-shirt.", "imgHint": "short-sleeve top with a round neck" },
+    { "id": "v10", "word": "hat", "set": "B", "category": "top", "example": "People wear hats to look good.", "imgHint": "cap with a small brim" },
+    { "id": "v11", "word": "jeans", "set": "B", "category": "bottom", "example": "Jeans are blue and very strong.", "imgHint": "blue denim trousers with a pocket" },
+    { "id": "v12", "word": "coat", "set": "B", "category": "top", "example": "Wear a coat. It is cold outside.", "imgHint": "long buttoned coat with a hood" },
+    { "id": "v13", "word": "glasses", "set": "B", "category": "jewelry", "example": "Is he wearing glasses?", "imgHint": "pair of round glasses on a face" },
+    { "id": "v14", "word": "pajamas", "set": "B", "category": "full", "example": "I wear pajamas at night.", "imgHint": "soft two-piece sleep set with stars" },
+    { "id": "v15", "word": "sweatshirt", "set": "B", "category": "top", "example": "That is my new sweatshirt.", "imgHint": "thick pullover with long sleeves and a pocket" },
+    { "id": "v16", "word": "dress", "set": "B", "category": "full", "example": "Her dress is pink and long.", "imgHint": "long pink dress with a belt" },
+    { "id": "v17", "word": "fur", "set": "C", "category": "material", "example": "Fur hats are very warm.", "imgHint": "soft thick fur texture, light brown" },
+    { "id": "v18", "word": "Panama hat", "set": "C", "category": "world", "example": "The Panama hat keeps people cool.", "imgHint": "light straw hat with a black band" },
+    { "id": "v19", "word": "non la hat", "set": "C", "category": "world", "example": "A non la hat keeps people dry.", "imgHint": "wide conical leaf hat" },
+    { "id": "v20", "word": "warm", "set": "C", "category": "weather", "example": "Wear this hat. It is warm.", "imgHint": "sun with soft heat lines" },
+    { "id": "v21", "word": "cool", "set": "C", "category": "weather", "example": "The Panama hat keeps people cool.", "imgHint": "breeze lines beside a hat" }
   ],
+
+  "wordSorts": {
+    "easy": [
+      { "id": "s-e1", "bins": ["Clothes", "Jewelry"], "items": [
+        { "word": "jacket", "bin": "Clothes" }, { "word": "ring", "bin": "Jewelry" },
+        { "word": "skirt", "bin": "Clothes" }, { "word": "watch", "bin": "Jewelry" }
+      ] },
+      { "id": "s-e2", "bins": ["Clothes", "Jewelry"], "items": [
+        { "word": "shoes", "bin": "Clothes" }, { "word": "glasses", "bin": "Jewelry" },
+        { "word": "pants", "bin": "Clothes" }, { "word": "boots", "bin": "Clothes" }
+      ] }
+    ],
+    "core": [
+      { "id": "s-c1", "bins": ["Clothes", "Jewelry"], "items": [
+        { "word": "sweatshirt", "bin": "Clothes" }, { "word": "ring", "bin": "Jewelry" },
+        { "word": "jeans", "bin": "Clothes" }, { "word": "watch", "bin": "Jewelry" },
+        { "word": "glasses", "bin": "Jewelry" }, { "word": "coat", "bin": "Clothes" }
+      ] },
+      { "id": "s-c2", "bins": ["Warm weather", "Cold weather"], "items": [
+        { "word": "Panama hat", "bin": "Warm weather" }, { "word": "fur hat", "bin": "Cold weather" },
+        { "word": "T-shirt", "bin": "Warm weather" }, { "word": "coat", "bin": "Cold weather" }
+      ] }
+    ],
+    "challenging": [
+      { "id": "s-h1", "bins": ["Top", "Bottom", "Footwear", "Jewelry"], "items": [
+        { "word": "sweatshirt", "bin": "Top" }, { "word": "jeans", "bin": "Bottom" },
+        { "word": "boots", "bin": "Footwear" }, { "word": "ring", "bin": "Jewelry" },
+        { "word": "coat", "bin": "Top" }, { "word": "watch", "bin": "Jewelry" },
+        { "word": "skirt", "bin": "Bottom" }, { "word": "shoes", "bin": "Footwear" }
+      ] },
+      { "id": "s-h2", "bins": ["Warm weather", "Cold weather"], "items": [
+        { "word": "non la hat", "bin": "Warm weather" }, { "word": "fur hat", "bin": "Cold weather" },
+        { "word": "Panama hat", "bin": "Warm weather" }, { "word": "sweatshirt", "bin": "Cold weather" },
+        { "word": "pajamas", "bin": "Cold weather" }, { "word": "T-shirt", "bin": "Warm weather" }
+      ] }
+    ]
+  },
 
   "grammar": {
     "patterns": [
-      { "id": "G1", "label": "am / is / are + wearing", "examples": ["I am wearing a hat.", "She is wearing a skirt.", "They are wearing uniforms.", "I am not wearing a coat."], "rule": "I takes am; he, she and it take is; you, we and they take are." },
-      { "id": "G2", "label": "Are you wearing...? / Is he wearing...?", "examples": ["Are you wearing gloves? Yes, I am. No, I am not.", "Is he wearing a coat? Yes, he is. No, he isn't.", "Is she wearing boots? Yes, she is."], "rule": "Questions swap the subject and the be-verb." },
-      { "id": "G3", "label": "So am I / Neither am I", "examples": ["I am wearing a hat. - So am I.", "I am not wearing socks. - Neither am I.", "She is wearing a scarf. - So is he."], "rule": "Agree with a positive statement using So am I; agree with a negative statement using Neither am I." }
+      { "id": "G1", "label": "be + wearing", "examples": ["I'm wearing black shoes.", "He's wearing brown pants.", "She's wearing a green skirt.", "You're wearing a new T-shirt.", "They're wearing jeans."], "note": "he's = he is / she's = she is / I'm = I am" },
+      { "id": "G2", "label": "Is he / Is she wearing...?", "examples": ["Is he wearing glasses? Yes, he is.", "Is she wearing a hat? No, she isn't.", "Are you wearing a coat? Yes, I am. No, I'm not."] },
+      { "id": "G3", "label": "colour + clothing", "examples": ["a green skirt", "brown pants", "black shoes", "a blue watch"], "note": "The colour comes BEFORE the clothing word." }
     ],
     "gapFillBank": {
       "easy": [
-        { "id": "g-e1", "sentence": "I ___ wearing a red hat.", "options": ["am", "is", "are"], "answer": "am", "why": "I always takes am." },
-        { "id": "g-e2", "sentence": "She ___ wearing a skirt.", "options": ["am", "is", "are"], "answer": "is", "why": "She takes is." },
-        { "id": "g-e3", "sentence": "They ___ wearing uniforms.", "options": ["am", "is", "are"], "answer": "are", "why": "They takes are." },
-        { "id": "g-e4", "sentence": "He ___ wearing a coat.", "options": ["is", "am", "are"], "answer": "is", "why": "He takes is." },
-        { "id": "g-e5", "sentence": "We ___ wearing socks and shoes.", "options": ["are", "is", "am"], "answer": "are", "why": "We takes are." },
-        { "id": "g-e6", "sentence": "___ you wearing gloves?", "options": ["Are", "Is", "Am"], "answer": "Are", "why": "You always pairs with are." }
+        { "id": "g-e1", "sentence": "I ___ wearing a red shirt.", "options": ["am", "is"], "answer": "am", "why": "I always takes am." },
+        { "id": "g-e2", "sentence": "She ___ wearing black pants.", "options": ["am", "is"], "answer": "is", "why": "He, she and it take is." },
+        { "id": "g-e3", "sentence": "He ___ wearing a blue watch.", "options": ["is", "are"], "answer": "is", "why": "He takes is." },
+        { "id": "g-e4", "sentence": "You ___ wearing brown shoes.", "options": ["is", "are"], "answer": "are", "why": "You always takes are." },
+        { "id": "g-e5", "sentence": "They ___ wearing jeans.", "options": ["is", "are"], "answer": "are", "why": "They always takes are." },
+        { "id": "g-e6", "sentence": "She is wearing a ___ skirt.", "options": ["green", "greens"], "answer": "green", "why": "The colour does not take -s." }
       ],
       "core": [
-        { "id": "g-c1", "sentence": "Emma ___ wearing a blue dress.", "options": ["is", "am", "are", "be"], "answer": "is", "why": "Emma = she, so use is." },
-        { "id": "g-c2", "sentence": "You ___ wearing my hat!", "options": ["are", "is", "am", "be"], "answer": "are", "why": "You takes are, even for one person." },
-        { "id": "g-c3", "sentence": "The boys ___ wearing shorts.", "options": ["are", "is", "am", "be"], "answer": "are", "why": "The boys = they, so use are." },
-        { "id": "g-c4", "sentence": "___ she wearing a scarf?", "options": ["Is", "Are", "Am", "Do"], "answer": "Is", "why": "Questions about she start with Is." },
-        { "id": "g-c5", "sentence": "What ___ you wearing today?", "options": ["are", "is", "am", "do"], "answer": "are", "why": "You pairs with are, even in questions." },
-        { "id": "g-c6", "sentence": "I am wearing a t-shirt. She ___ wearing a sweater.", "options": ["is", "am", "are", "be"], "answer": "is", "why": "She takes is, even in a contrast sentence." }
+        { "id": "g-c1", "sentence": "I ___ wearing a white jacket.", "options": ["am", "is", "are", "be"], "answer": "am", "why": "I takes am, never is or are." },
+        { "id": "g-c2", "sentence": "She ___ wearing a red dress.", "options": ["am", "is", "are", "be"], "answer": "is", "why": "She takes is." },
+        { "id": "g-c3", "sentence": "___ he wearing glasses?", "options": ["Is", "Are", "Am", "Do"], "answer": "Is", "why": "Questions about he start with Is when we use wearing." },
+        { "id": "g-c4", "sentence": "Is she wearing a hat? Yes, she ___.", "options": ["is", "does", "are", "am"], "answer": "is", "why": "The short answer repeats is: Yes, she is." },
+        { "id": "g-c5", "sentence": "He's wearing ___ pants.", "options": ["brown", "browns", "a brown"], "answer": "brown", "why": "Pants is plural, so we do not use a, and the colour has no -s." },
+        { "id": "g-c6", "sentence": "Are you wearing a coat? No, I ___ not.", "options": ["am", "is", "are", "do"], "answer": "am", "why": "The answer to Are you...? is I am or I'm not." }
       ],
       "challenging": [
-        { "id": "g-h1", "sentence": "Ben and Leo ___ wearing jackets, and Mia ___ wearing a hat.", "options": ["are / is", "is / are", "are / are", "is / is"], "answer": "are / is", "why": "Two people take are; one person takes is." },
-        { "id": "g-h2", "sentence": "I am not wearing socks. - ___ am I.", "options": ["Neither", "So", "Either", "Also"], "answer": "Neither", "why": "A negative statement is agreed with Neither am I." },
-        { "id": "g-h3", "sentence": "I am wearing a scarf. - So ___ I.", "options": ["am", "is", "are", "do"], "answer": "am", "why": "So echoes the be-verb, which is am here." },
-        { "id": "g-h4", "sentence": "___ your brother wearing boots?", "options": ["Is", "Are", "Am", "Does"], "answer": "Is", "why": "Your brother = he, so use Is." },
-        { "id": "g-h5", "sentence": "She is wearing a hat, but she ___ wearing gloves.", "options": ["isn't", "aren't", "amn't", "not"], "answer": "isn't", "why": "She takes isn't; amn't and aren't are not correct with she." },
-        { "id": "g-h6", "sentence": "What ___ your friends wearing today?", "options": ["are", "is", "am", "do"], "answer": "are", "why": "Your friends = they, so use are." }
+        { "id": "g-h1", "sentence": "Clare and Sun Mi ___ wearing hats.", "options": ["is", "are", "am", "be"], "answer": "are", "why": "Two people make a plural subject, so use are." },
+        { "id": "g-h2", "sentence": "He isn't wearing ___ shoes.", "options": ["a", "any", "some", "much"], "answer": "any", "why": "In a negative sentence with a plural noun we use any, not a or some." },
+        { "id": "g-h3", "sentence": "___ you wearing your new T-shirt? Yes, I am.", "options": ["Are", "Is", "Do", "Does"], "answer": "Are", "why": "You takes are, and the answer Yes, I am confirms it." },
+        { "id": "g-h4", "sentence": "She's wearing a ___.", "options": ["green skirt", "skirt green", "greens skirt", "skirt of greens"], "answer": "green skirt", "why": "In English the colour comes before the clothing word." },
+        { "id": "g-h5", "sentence": "Is that your new sweatshirt? No, it ___. It's Alex's.", "options": ["isn't", "not", "doesn't", "aren't"], "answer": "isn't", "why": "It takes is, so the negative is isn't." },
+        { "id": "g-h6", "sentence": "Neither of them ___ wearing boots.", "options": ["is", "are", "am", "be"], "answer": "is", "why": "Neither of them is singular in careful English, so use is." }
       ]
     }
   },
 
   "readings": {
-    "outfitDiary": {
-      "title": "My Outfit Diary",
+    "messageThread": {
+      "title": "Where Are You?",
+      "cast": ["Clare", "Sun Mi"],
       "easy": {
-        "text": "Dear diary, today is picture day at school. I am wearing a blue shirt and grey pants. My sister is wearing a red dress. She likes her dress very much. My friend Ben is wearing his favourite hat. It is green. We are all happy.",
+        "text": [
+          { "speaker": "Clare", "text": "Hi! I'm at the restaurant. Where are you?" },
+          { "speaker": "Sun Mi", "text": "I'm here. I'm wearing a red shirt and a white skirt." },
+          { "speaker": "Sun Mi", "text": "I'm wearing big brown boots, too." },
+          { "speaker": "Clare", "text": "I see you! I'm coming." }
+        ],
         "questions": [
-          { "q": "What is the writer wearing?", "options": ["A blue shirt and grey pants", "A red dress", "A green hat"], "answer": "A blue shirt and grey pants" },
-          { "q": "What is Ben wearing?", "options": ["A green hat", "A red dress", "Blue shoes"], "answer": "A green hat" }
+          { "q": "What colour is Sun Mi's shirt?", "options": ["Red", "White"], "answer": "Red" },
+          { "q": "What is Sun Mi wearing on her feet?", "options": ["Brown boots", "Black shoes"], "answer": "Brown boots" }
         ]
       },
       "core": {
-        "text": "Dear diary, today is picture day at school, so everyone is wearing their best clothes. I am wearing a blue shirt and grey pants, and my shoes are new. My sister is wearing a red dress because red is her favourite colour. My friend Ben is wearing his favourite hat. It is green and very big. Ben says hats make you smart. My teacher is wearing a purple scarf and brown boots. She says we are all looking great, and I think she is right.",
+        "text": [
+          { "speaker": "Clare", "text": "Hi! I'm at the restaurant. Where are you? I don't see you." },
+          { "speaker": "Sun Mi", "text": "I'm sitting in the corner at the back. I'm wearing a red shirt and a white skirt. I'm also wearing big brown boots and a blue watch. What are you wearing?" },
+          { "speaker": "Clare", "text": "Wait, I see you. I'm coming over now." },
+          { "speaker": "Sun Mi", "text": "I see you, too." }
+        ],
         "questions": [
-          { "q": "Why is everyone wearing their best clothes?", "options": ["It is picture day", "It is raining", "It is a party"], "answer": "It is picture day" },
-          { "q": "Why is the writer's sister wearing a red dress?", "options": ["Red is her favourite colour", "It is her school uniform", "The dress is new"], "answer": "Red is her favourite colour" },
-          { "q": "What is the teacher wearing?", "options": ["A purple scarf and brown boots", "A green hat", "A blue shirt"], "answer": "A purple scarf and brown boots" }
+          { "q": "Which picture is Sun Mi at the restaurant?", "options": ["A red shirt and a white skirt", "A red dress", "A white shirt and a red skirt"], "answer": "A red shirt and a white skirt" },
+          { "q": "Where is Sun Mi sitting?", "options": ["In the corner at the back", "Near the door", "At the front"], "answer": "In the corner at the back" },
+          { "q": "What is Sun Mi wearing on her arm?", "options": ["A blue watch", "A ring", "Glasses"], "answer": "A blue watch" }
         ]
       },
       "challenging": {
-        "text": "Dear diary, today is picture day at school, so everyone is wearing their best clothes. I am wearing a blue shirt, grey pants and my new shoes, which are still a little tight. My sister is wearing a red dress because red is her favourite colour; she says a red dress makes a picture perfect. My friend Ben is wearing his favourite hat. It is green and far too big, but Ben says hats make you smart, and nobody can change his mind. Our teacher is wearing a purple scarf and brown boots, and she is not wearing her usual jacket. She says we are all looking great. I look at my sister and I look at Ben, and I think our picture is going to be very funny.",
+        "text": [
+          { "speaker": "Clare", "text": "Hi! I'm at the restaurant. Where are you? I don't see you. There are a lot of people here today." },
+          { "speaker": "Sun Mi", "text": "I'm sitting in the corner at the back, near the window. I'm wearing a red shirt and a white skirt. I'm also wearing big brown boots and a blue watch. My friend is here too. She's wearing a long gray coat. What are you wearing?" },
+          { "speaker": "Clare", "text": "I'm wearing a green jacket and black boots. I have a white bag. Wait, I see you. I'm coming over now." },
+          { "speaker": "Sun Mi", "text": "I see you, too. Look for the blue watch." }
+        ],
         "questions": [
-          { "q": "How do the writer's new shoes feel?", "options": ["A little tight", "Very comfortable", "Too big"], "answer": "A little tight" },
-          { "q": "What does Ben believe about hats?", "options": ["Hats make you smart", "Hats are too big", "Hats are not cool"], "answer": "Hats make you smart" },
-          { "q": "What is the teacher NOT wearing?", "options": ["Her usual jacket", "A purple scarf", "Brown boots"], "answer": "Her usual jacket" },
-          { "q": "Why does the writer think the picture will be funny?", "options": ["Ben's hat is far too big", "The teacher is wearing boots", "Red is a funny colour"], "answer": "Ben's hat is far too big" }
+          { "q": "Which picture is Sun Mi at the restaurant?", "options": ["A red shirt and a white skirt", "A red dress", "A white shirt and a red skirt"], "answer": "A red shirt and a white skirt" },
+          { "q": "Why does Sun Mi describe her clothes?", "options": ["So Clare can find her", "So Clare can buy them", "Because she is cold"], "answer": "So Clare can find her" },
+          { "q": "Which detail helps Clare the most?", "options": ["The blue watch", "The red shirt", "The window"], "answer": "The blue watch" },
+          { "q": "What is Clare wearing?", "options": ["A green jacket and black boots", "A white bag and a hat", "A red shirt and a skirt"], "answer": "A green jacket and black boots" }
         ]
       }
     },
 
-    "uniformsAroundTheWorld": {
-      "title": "School Uniforms Around the World",
+    "hatsAroundTheWorld": {
+      "title": "Hats Around the World",
       "easy": {
-        "text": "In many countries, students wear a uniform. A uniform is the same clothes for all students. In Japan, many students wear a dark jacket and a hat. In England, many students wear a tie. In some schools, students wear any clothes they like. They are wearing t-shirts and shorts.",
+        "text": "People wear hats to look good. They wear hats for other reasons, too. In Siberia it is very cold. People wear fur hats. Fur hats are very warm. In Cuba it is hot and sunny. People wear Panama hats. A Panama hat is light. It keeps people cool.",
         "questions": [
-          { "q": "What is a uniform?", "options": ["The same clothes for all students", "Very expensive shoes", "A kind of hat"], "answer": "The same clothes for all students" },
-          { "q": "What do many students in England wear?", "options": ["A tie", "A red dress", "An orange swimsuit"], "answer": "A tie" }
+          { "q": "Why do people wear fur hats in Siberia?", "options": ["It is very cold", "It is very hot"], "answer": "It is very cold" },
+          { "q": "What does a Panama hat do?", "options": ["It keeps people cool", "It keeps people warm"], "answer": "It keeps people cool" }
         ]
       },
       "core": {
-        "text": "In many countries, students wear a uniform. A uniform is the same clothes for all students in one school. In Japan, many students are wearing dark jackets and hats. In England, many students are wearing ties with white shirts. In Australia, some students are wearing shorts because it is very hot there. But not every school has a uniform. In some schools, students are wearing any clothes they like, and every day is different.",
+        "text": "People wear hats to look good, and they wear hats for other reasons too. Siberia is in Russia. It is very cold there, so people wear fur hats. Fur hats are very warm. Cuba is hot and sunny. People there wear special hats called Panama hats. The Panama hat is light. It protects the head from the sun, and it keeps people cool. In Vietnam many people wear a non la hat. It is wide and it keeps people dry in the rain.",
         "questions": [
-          { "q": "Why are students in Australia wearing shorts?", "options": ["Because it is very hot", "Because shorts are new", "Because they like sports"], "answer": "Because it is very hot" },
-          { "q": "What are students in Japan wearing?", "options": ["Dark jackets and hats", "Ties and white shirts", "Any clothes they like"], "answer": "Dark jackets and hats" },
-          { "q": "What are students wearing in schools without a uniform?", "options": ["Any clothes they like", "The same jacket", "Always a dress"], "answer": "Any clothes they like" }
+          { "q": "Where do people wear Panama hats?", "options": ["Cuba", "Russia", "Vietnam"], "answer": "Cuba" },
+          { "q": "Why do people in Vietnam wear non la hats?", "options": ["To stay dry", "To keep warm", "To look tall"], "answer": "To stay dry" },
+          { "q": "Which hat is light?", "options": ["The Panama hat", "The fur hat", "The non la hat"], "answer": "The Panama hat" }
         ]
       },
       "challenging": {
-        "text": "In many countries, students wear a uniform, which is the same clothes for every student in one school. In Japan, many students are wearing dark jackets and hats, even in summer. In England, many students are wearing ties with white shirts, and some of them say the tie is uncomfortable. In Australia, some students are wearing shorts and a light shirt because the sun is very strong there. Uniforms are not the same everywhere, and that is what makes them interesting. But not every school has a uniform. In some schools, students are wearing any clothes they like. Some students say uniforms are a good idea because mornings are easy: you do not think, you just get dressed. Others say clothes show who you are, so a uniform hides your style. What do you think?",
+        "text": "People wear hats to look good, and they wear hats for other reasons too. Siberia is in the north of Russia, where winter is long and very cold. People there wear fur hats, because fur is very warm and it stops the cold wind. Cuba is hot and sunny all year, so people wear Panama hats. The Panama hat is light and it has a wide brim. It protects the head from the sun and it keeps people cool, which is important when the temperature is high. In Vietnam many people wear a non la hat. It is wide and light, and it keeps people dry in the heavy rain. So the same idea, a hat, does three different jobs: it keeps you warm, it keeps you cool, and it keeps you dry.",
         "questions": [
-          { "q": "What are some students in England saying about the tie?", "options": ["It is uncomfortable", "It is beautiful", "It is too long"], "answer": "It is uncomfortable" },
-          { "q": "Why are students in Australia wearing a light shirt?", "options": ["The sun is very strong", "The school is cold", "Shirts are new this year"], "answer": "The sun is very strong" },
-          { "q": "Find a word in the text that means 'hard to wear'.", "options": ["uncomfortable", "interesting", "everywhere"], "answer": "uncomfortable" },
-          { "q": "Why do some students say uniforms are a good idea?", "options": ["Mornings are easy", "They are beautiful", "They hide your style"], "answer": "Mornings are easy" },
-          { "q": "What does the last question ask the reader to do?", "options": ["Give their own opinion", "Buy a uniform", "Visit Australia"], "answer": "Give their own opinion" }
+          { "q": "Where do people wear Panama hats?", "options": ["Cuba", "Russia", "Vietnam"], "answer": "Cuba" },
+          { "q": "Why do people in Vietnam wear non la hats?", "options": ["To stay dry", "To keep warm", "To look tall"], "answer": "To stay dry" },
+          { "q": "Find a word in the text that means 'not heavy'.", "options": ["light", "wide", "high"], "answer": "light" },
+          { "q": "What does the last sentence tell us?", "options": ["One kind of object can have different jobs", "Hats are always the same", "Fur is better than straw"], "answer": "One kind of object can have different jobs" },
+          { "q": "Why is keeping cool important in Cuba?", "options": ["The temperature is high", "It rains a lot", "The wind is cold"], "answer": "The temperature is high" }
         ]
       }
     }
   },
 
   "dialogue": {
-    "title": "The Costume Box",
-    "cast": ["Mia", "Leo"],
+    "title": "The Sweatshirt",
+    "cast": ["Alex", "Dad"],
     "lines": [
-      { "speaker": "Mia", "text": "What are you wearing, Leo?" },
-      { "speaker": "Leo", "text": "I am wearing a lion costume!" },
-      { "speaker": "Mia", "text": "Wow! Is it warm?" },
-      { "speaker": "Leo", "text": "Yes, it is. Are you wearing your witch costume?" },
-      { "speaker": "Mia", "text": "No, I am not. I am wearing a pirate hat and a blue shirt." },
-      { "speaker": "Leo", "text": "Is that a new belt?" },
-      { "speaker": "Mia", "text": "Yes, it is. And look — Coco is wearing a tiny sweater!" },
-      { "speaker": "Leo", "text": "Ha! The dog looks great." }
+      { "speaker": "Alex", "text": "I'm ready for soccer." },
+      { "speaker": "Dad", "text": "Are you wearing your new T-shirt?" },
+      { "speaker": "Alex", "text": "Yes, I am. I love it." },
+      { "speaker": "Dad", "text": "It's cold today. Wear something else." },
+      { "speaker": "Alex", "text": "OK. I'm wearing this." },
+      { "speaker": "Dad", "text": "Hey, is that my new sweatshirt?" },
+      { "speaker": "Alex", "text": "No, it isn't. It's mine!" },
+      { "speaker": "Dad", "text": "It looks good on you. But it's still mine." }
     ],
     "comprehension": {
       "easy": [
-        { "q": "What is Leo wearing?", "options": ["A lion costume", "A pirate hat"], "answer": "A lion costume" },
-        { "q": "Who is wearing a tiny sweater?", "options": ["Coco", "Mia"], "answer": "Coco" }
+        { "q": "What does Alex want to do?", "options": ["Play soccer", "Go to school"], "answer": "Play soccer" },
+        { "q": "What is Alex wearing at the end?", "options": ["A sweatshirt", "A T-shirt"], "answer": "A sweatshirt" }
       ],
       "core": [
-        { "q": "What is Mia wearing?", "options": ["A pirate hat and a blue shirt", "A lion costume", "A witch costume"], "answer": "A pirate hat and a blue shirt" },
-        { "q": "Who is wearing a tiny sweater?", "options": ["Coco", "Mia", "Leo"], "answer": "Coco" }
+        { "q": "What does Alex want to do?", "options": ["Play soccer", "Go to school", "Go to bed"], "answer": "Play soccer" },
+        { "q": "What is Alex wearing at the end?", "options": ["A sweatshirt", "A shirt", "A jacket"], "answer": "A sweatshirt" },
+        { "q": "Why does Dad say 'Wear something else'?", "options": ["It is cold", "It is raining", "The T-shirt is old"], "answer": "It is cold" }
       ],
       "challenging": [
-        { "q": "Is Mia wearing her witch costume?", "options": ["No, she is not", "Yes, she is", "She does not say"], "answer": "No, she is not" },
-        { "q": "Which two phrases show that Mia agrees?", "options": ["Yes, it is / No, I am not", "Wow / Ha", "What are you wearing / Look"], "answer": "Yes, it is / No, I am not" },
-        { "q": "Why does Leo laugh at the end?", "options": ["Coco looks great in the sweater", "Mia's costume is broken", "The belt is new"], "answer": "Coco looks great in the sweater" }
+        { "q": "Why does Dad say 'Wear something else'?", "options": ["Because it is cold", "Because he does not like the T-shirt", "Because soccer is finished"], "answer": "Because it is cold" },
+        { "q": "Whose sweatshirt is it?", "options": ["Dad's", "Alex's", "It is new for both"], "answer": "Dad's" },
+        { "q": "Which sentence shows Alex is joking?", "options": ["No, it isn't. It's mine!", "I'm ready for soccer.", "Yes, I am. I love it."], "answer": "No, it isn't. It's mine!" }
       ]
     }
   },
 
   "listening": {
     "easy": [
-      { "id": "l-e1", "type": "audioToPicture", "script": "A red hat.", "target": "hat", "options": ["hat", "scarf", "socks"] },
-      { "id": "l-e2", "type": "audioToPicture", "script": "I am wearing boots.", "target": "boots", "options": ["boots", "shoes", "gloves"] }
+      { "id": "l-e1", "type": "audioToPicture", "script": "She's wearing a green skirt.", "target": "skirt", "options": ["skirt", "shirt", "boots"] },
+      { "id": "l-e2", "type": "audioToPicture", "script": "He's wearing a blue watch.", "target": "watch", "options": ["watch", "ring", "glasses"] }
     ],
     "core": [
-      { "id": "l-c1", "type": "audioGap", "script": "She is wearing a green dress.", "target": "is", "options": ["is", "am", "are"] },
-      { "id": "l-c2", "type": "audioQuestion", "script": "Hi, I'm Mia. Today I am wearing my school uniform. It is a white shirt and a blue skirt. I don't like the skirt, but I am wearing it because it is Monday.", "question": "What is Mia wearing today?", "options": ["A white shirt and a blue skirt", "A red dress", "A green hat"], "answer": "A white shirt and a blue skirt" }
+      { "id": "l-c1", "type": "audioGap", "script": "He isn't wearing his glasses today.", "target": "isn't", "options": ["isn't", "aren't", "doesn't"] },
+      { "id": "l-c2", "type": "audioQuestion", "script": "Hi, I'm Mia. Today I'm wearing a yellow T-shirt, blue jeans and white shoes. I'm not wearing a jacket because it is warm.", "question": "What colour are Mia's jeans?", "options": ["Blue", "Yellow", "White"], "answer": "Blue" }
     ],
     "challenging": [
-      { "id": "l-h1", "type": "audioGap", "script": "Ben is wearing a warm coat because it is cold outside.", "target": "coat", "options": ["coat", "hat", "sweater"] },
-      { "id": "l-h2", "type": "audioQuestion", "script": "In Japan, many students are wearing jackets and hats. In England, many students are wearing ties. In my school in Brazil, we are wearing white t-shirts and shorts because it is hot. My cousin in Canada says she is wearing a big coat for six months!", "question": "What are students in England wearing?", "options": ["Ties", "Hats", "Big coats"], "answer": "Ties" }
+      { "id": "l-h1", "type": "audioGap", "script": "In Vietnam people wear a wide hat called a non la hat. It keeps them dry in the rain.", "target": "non la", "options": ["non la", "Panama", "fur"] },
+      { "id": "l-h2", "type": "audioQuestion", "script": "My sister is wearing a long gray coat and black boots. She says it is cold today. But my brother is wearing only a T-shirt. He doesn't like coats. He says he is never cold.", "question": "Who is wearing a coat?", "options": ["The sister", "The brother", "Both of them"], "answer": "The sister" }
     ]
   },
 
   "speaking": {
-    "station": "The Dressing Room",
+    "station": "The Mirror",
     "rubric": ["I said every word", "I was clear", "I was smooth"],
     "easy": {
-      "model": "I am wearing a blue t-shirt and black pants.",
+      "model": "I'm wearing a blue T-shirt and black shoes.",
       "tasks": [
-        { "id": "s-e1", "type": "repeat", "prompt": "Listen and repeat: I am wearing a hat.", "keywords": ["am", "wearing", "hat"] },
-        { "id": "s-e2", "type": "repeat", "prompt": "Listen and repeat: I am not wearing a coat.", "keywords": ["not", "wearing", "coat"] },
-        { "id": "s-e3", "type": "ownSentence", "prompt": "Say one true sentence about your clothes. Use: I am wearing ___.", "keywords": ["am", "wearing"] },
-        { "id": "s-e4", "type": "yesNo", "prompt": "Are you wearing socks? Answer with a full sentence.", "keywords": ["yes", "no", "am", "not", "socks"] },
-        { "id": "s-e5", "type": "chant", "prompt": "Say the clothes chant: Hat and scarf, coat and boots. I am warm from head to boots!", "keywords": ["hat", "scarf", "coat", "boots", "warm"] }
+        { "id": "s-e1", "type": "repeat", "prompt": "Listen and repeat: I'm wearing black shoes.", "keywords": ["i'm", "wearing", "black", "shoes"] },
+        { "id": "s-e2", "type": "repeat", "prompt": "Listen and repeat: She's wearing a green skirt.", "keywords": ["she's", "wearing", "green", "skirt"] },
+        { "id": "s-e3", "type": "ownSentence", "prompt": "Say two true sentences about your clothes today. Use I'm wearing ___ and a colour.", "keywords": ["i'm", "wearing"] },
+        { "id": "s-e4", "type": "yesNo", "prompt": "Are you wearing a watch? Answer with a full sentence.", "keywords": ["yes", "no", "i", "am", "not"] },
+        { "id": "s-e5", "type": "chant", "prompt": "Say the clothes chant: A red shirt, a green skirt, black shoes, brown boots. What are you wearing today?", "keywords": ["shirt", "skirt", "shoes", "boots"] }
       ]
     },
     "core": {
-      "model": "What are you wearing? I am wearing a green dress. Is your brother wearing a hat? Yes, he is.",
+      "model": "What is he wearing? He's wearing brown pants and a white shirt. Is she wearing glasses? No, she isn't.",
       "tasks": [
-        { "id": "s-c1", "type": "askAnswer", "prompt": "Ask and answer: What are you wearing? Answer in a full sentence.", "keywords": ["am", "wearing"] },
-        { "id": "s-c2", "type": "askAnswer", "prompt": "Ask and answer: Is your friend wearing a jacket today?", "keywords": ["is", "friend", "wearing", "jacket"] },
-        { "id": "s-c3", "type": "describe", "prompt": "Look at your clothes. Say what you are wearing. Use at least three clothing words.", "keywords": ["wearing", "am", "is"] },
-        { "id": "s-c4", "type": "agree", "prompt": "Your friend says: I am wearing a scarf today. Agree with So am I. Then your friend says: I am not wearing gloves. Agree with Neither am I.", "keywords": ["so", "am", "i", "neither"] },
-        { "id": "s-c5", "type": "roleplay", "prompt": "Read the Costume Box dialogue with two voices: you are Mia, then you are Leo.", "keywords": ["wearing", "costume", "hat", "belt", "sweater"] }
+        { "id": "s-c1", "type": "askAnswer", "prompt": "Ask and answer: What is he wearing? Use a colour and a clothing word in your answer.", "keywords": ["what", "is", "he", "wearing"] },
+        { "id": "s-c2", "type": "askAnswer", "prompt": "Ask and answer: Is she wearing glasses? Answer Yes, she is. or No, she isn't.", "keywords": ["is", "she", "wearing", "yes", "no"] },
+        { "id": "s-c3", "type": "describe", "prompt": "Describe one person in your classroom. Say three things they are wearing, with colours.", "keywords": ["wearing", "is"] },
+        { "id": "s-c4", "type": "roleplay", "prompt": "Read the message conversation with two voices: you are Clare, then you are Sun Mi.", "keywords": ["wearing", "where", "see", "you"] },
+        { "id": "s-c5", "type": "describe", "prompt": "Say what you are wearing today: top, bottom, shoes, and one extra thing.", "keywords": ["i'm", "wearing", "and"] }
       ]
     },
     "challenging": {
-      "model": "Today I am wearing my favourite sweater and grey pants. My sister is wearing a dress, and so am I. My brother isn't wearing a coat, and neither am I, because it is warm.",
+      "model": "Today I'm wearing a gray sweatshirt, blue jeans and black boots, because it is cold. My friend is wearing a red dress, and she isn't wearing a coat.",
       "tasks": [
-        { "id": "s-h1", "type": "monologue", "prompt": "Speak for 60 seconds: My Outfit. Say what you are wearing, why you are wearing it, and one thing you agree about with So am I or Neither am I.", "minimumSeconds": 45, "keywords": ["wearing", "because", "so", "neither"] },
-        { "id": "s-h2", "type": "compare", "prompt": "Compare two seasons. Say what you are wearing in summer and what you are wearing in winter.", "keywords": ["summer", "winter", "wearing"] },
-        { "id": "s-h3", "type": "explain", "prompt": "Explain what people wear for rain, snow and sun. Use coat, boots, hat and umbrella.", "keywords": ["rain", "snow", "sun", "coat", "boots"] },
-        { "id": "s-h4", "type": "followUp", "prompt": "Answer three follow-up questions in full sentences: What is your favourite piece of clothing? What is your friend wearing today? What do you wear when it is cold?", "keywords": ["favourite", "wearing", "cold", "coat"] },
-        { "id": "s-h5", "type": "roleplay", "prompt": "You are in the Dressing Room. Describe your costume, ask about the weather, and agree twice with So am I or Neither am I.", "keywords": ["wearing", "so", "neither", "costume"] }
+        { "id": "s-h1", "type": "monologue", "prompt": "Speak for 60 seconds: What I'm wearing today. Say what you are wearing, why you chose it, and what you are not wearing.", "minimumSeconds": 45, "keywords": ["wearing", "because", "not"] },
+        { "id": "s-h2", "type": "compare", "prompt": "Compare two people in a picture: what each one is wearing, and one thing that is different.", "keywords": ["is", "wearing", "but", "isn't"] },
+        { "id": "s-h3", "type": "describe", "prompt": "Describe a person so your partner can draw them. Give five details: clothes, colours, shoes, jewelry and one extra.", "keywords": ["wearing", "colours", "shoes"] },
+        { "id": "s-h4", "type": "followUp", "prompt": "Answer three follow-up questions in full sentences: What do you wear when it is hot? What do you wear at a party? Why do people wear hats?", "keywords": ["wear", "because", "hats"] },
+        { "id": "s-h5", "type": "roleplay", "prompt": "You are in a shop. Ask for a piece of clothing, ask about the colour, and say whether it fits. Use Are you wearing...? or Is it...?", "keywords": ["have", "colour", "is", "wearing"] }
       ]
     }
   },
@@ -278,24 +319,44 @@
     "easy": {
       "type": "sentenceBuilder",
       "items": [
-        { "id": "w-e1", "tiles": ["I", "am", "wearing", "a", "hat"], "answer": "I am wearing a hat." },
-        { "id": "w-e2", "tiles": ["She", "is", "wearing", "a", "dress"], "answer": "She is wearing a dress." },
-        { "id": "w-e3", "tiles": ["They", "are", "wearing", "uniforms"], "answer": "They are wearing uniforms." }
+        { "id": "w-e1", "tiles": ["I'm", "wearing", "black", "shoes"], "answer": "I'm wearing black shoes." },
+        { "id": "w-e2", "tiles": ["She's", "wearing", "a", "green", "skirt"], "answer": "She's wearing a green skirt." },
+        { "id": "w-e3", "tiles": ["He", "isn't", "wearing", "glasses"], "answer": "He isn't wearing glasses." }
       ]
     },
     "core": {
       "type": "gapFillDiary",
-      "template": "Dear diary, today I ___ wearing a blue shirt and grey pants. My friend Ben is wearing a green hat. We are happy!",
-      "options": ["am", "is", "are"],
-      "answer": "am",
+      "template": "Today I'm wearing a ___ ___ . I'm also wearing ___ . My friend is wearing ___ . I'm not wearing ___ today.",
       "ownSentencesRequired": 2
     },
     "challenging": {
       "type": "diaryPrompt",
-      "prompt": "Write a 5-sentence outfit diary about today. Include: what you are wearing now, one sentence about a friend with is or are, one sentence about the weather with it is, one So am I or Neither am I sentence, and one question with Are you wearing...?",
-      "checklist": ["Capital letters and full stops", "Correct am / is / are", "One negative sentence", "One So am I or Neither am I", "At least 40 words"],
+      "prompt": "Write 5 sentences describing what you and two other people are wearing today. Include: one sentence with I'm wearing, one with He's or She's wearing, one negative sentence with isn't wearing, one sentence with a colour before the clothing word, and one sentence saying why you chose your clothes.",
+      "checklist": ["Capital letters and full stops", "Correct am / is / are", "One negative sentence", "Colour before the clothing word", "At least 40 words"],
       "minimumWords": 40
     }
+  },
+
+  "boss": {
+    "title": "The Fashion Show",
+    "description": "Mixed 6-skill checkpoint. Six items drawn from every station at the chosen level, plus one spoken description of a picture.",
+    "itemPlan": {
+      "vocabulary": 1,
+      "grammar": 1,
+      "listening": 1,
+      "reading": 1,
+      "writing": 1,
+      "speaking": 1
+    }
+  },
+
+  "speechScoring": {
+    "reuse": "Same engine as Unit 1 — browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "settings": { "lang": "en-US", "continuous": false, "interimResults": false, "maxAlternatives": 3 },
+    "notes": [
+      "Contractions matter here: accept i'm / i am, she's / she is, isn't / is not after normalisation.",
+      "Accept 'pants' or 'trousers' as a keyword match, and 'T-shirt' / 'tee shirt'."
+    ]
   },
 
   "differentiationRules": {
@@ -304,3 +365,5 @@
     "challenging": { "options": "4-5", "distractors": "near-miss and grammar traps", "picture": "none", "audioReplays": 1, "wordBank": false, "attempts": 1, "hint": "after two wrong" }
   }
 }
+
+

@@ -9,6 +9,21 @@ import {
   makeActivity, getDistractors, optionCount, shuffle, showPictures, resetIdCounter,
 } from './factory';
 
+// Look up the illustration hint for a word-sort item: exact vocabulary match
+// first, then a vocabulary word contained in the item (e.g. "fur hat" -> "fur").
+function lookupVocabHint(word: string): string {
+  const exact = vocabulary.find(v => v.word.toLowerCase() === word.toLowerCase());
+  if (exact) return exact.imgHint;
+  const partial = vocabulary
+    .filter(v => word.toLowerCase().includes(v.word.toLowerCase()))
+    .sort((a, b) => b.word.length - a.word.length)[0];
+  return partial?.imgHint || '';
+}
+
+function slug(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 function buildVocabularyActivities(level: Level): Activity[] {
   const acts: Activity[] = [];
   const setA = vocabulary.filter(v => v.set === 'A');
@@ -58,6 +73,35 @@ function buildVocabularyActivities(level: Level): Activity[] {
   }
 
   return acts;
+}
+
+// wordSorts -> the existing DragSort mechanic (bins are data, any count)
+function buildWordSortActivities(level: Level): Activity[] {
+  const sorts = contentPack.wordSorts[level];
+  const hints: Record<Level, string> = {
+    easy: 'Clothes are things you wear. Jewelry is what you wear on your body to look good.',
+    core: 'Think about each word: is it a piece of clothing, jewelry, or for warm or cold weather?',
+    challenging: 'Sort by where you wear it or what it is for. Read each word carefully.',
+  };
+
+  return sorts.map(sort => makeActivity(
+    'vocabulary',
+    'dragSort',
+    `Sort the words into the right bins.`,
+    {
+      prompt: 'Drag each word into the right bin.',
+      bins: sort.bins.map(label => ({ id: slug(label), label, imgHint: '' })),
+      items: sort.items.map(item => ({
+        id: `${sort.id}-${slug(item.word)}`,
+        label: item.word,
+        binId: slug(item.bin),
+        imgHint: lookupVocabHint(item.word),
+      })),
+      hint: hints[level],
+      why: `Each word belongs to one group: ${sort.bins.join(', ')}.`,
+    },
+    level,
+  ));
 }
 
 function buildGrammarActivities(level: Level): Activity[] {
@@ -119,7 +163,7 @@ function buildListeningActivities(level: Level): Activity[] {
         level,
       ));
     } else {
-      // audioToPicture — use PictureMatch with audio prompt
+      // audioToPicture — PictureMatch with an audio prompt
       const target = item.target || '';
       const correctVocab = vocabulary.find(v => v.word === target);
       const optsCount = optionCount(level);
@@ -154,8 +198,8 @@ function buildListeningActivities(level: Level): Activity[] {
 function buildReadingActivities(level: Level): Activity[] {
   const acts: Activity[] = [];
 
-  const text1 = readingTexts[0];
-  const text2 = readingTexts[1];
+  const text1 = readingTexts[0]; // messageThread
+  const text2 = readingTexts[1]; // hatsAroundTheWorld
   const t1 = text1[level];
   const t2 = text2[level];
 
@@ -168,8 +212,8 @@ function buildReadingActivities(level: Level): Activity[] {
       sentence: `${t1.questions[0].q} ___`,
       options: shuffle([...t1.questions[0].options]),
       answer: t1.questions[0].answer,
-      hint: level === 'easy' ? `It starts with "${t1.questions[0].answer[0]}".` : 'Look in the text.',
-      why: `The text says: "${getTextSnippet(t1.text, t1.questions[0].answer)}"`,
+      hint: level === 'easy' ? `It starts with "${t1.questions[0].answer[0]}".` : 'Look in the messages.',
+      why: `The message says: "${getThreadSnippet(t1.questions[0].answer, t1.text as { speaker: string; text: string }[])}"`,
     },
     level,
   ));
@@ -182,8 +226,8 @@ function buildReadingActivities(level: Level): Activity[] {
       sentence: `${t1.questions[1].q} ___`,
       options: shuffle([...t1.questions[1].options]),
       answer: t1.questions[1].answer,
-      hint: level === 'easy' ? `It starts with "${t1.questions[1].answer[0]}".` : 'Think about what the text tells you.',
-      why: `The text says: "${getTextSnippet(t1.text, t1.questions[1].answer)}"`,
+      hint: level === 'easy' ? `It starts with "${t1.questions[1].answer[0]}".` : 'Think about what the messages tell you.',
+      why: `The message says: "${getThreadSnippet(t1.questions[1].answer, t1.text as { speaker: string; text: string }[])}"`,
     },
     level,
   ));
@@ -197,12 +241,24 @@ function buildReadingActivities(level: Level): Activity[] {
       options: shuffle([...t2.questions[0].options]),
       answer: t2.questions[0].answer,
       hint: level === 'easy' ? `It starts with "${t2.questions[0].answer[0]}".` : 'Find the key fact in the text.',
-      why: `The text says: "${getTextSnippet(t2.text, t2.questions[0].answer)}"`,
+      why: `The text says: "${getTextSnippet(t2.text as string, t2.questions[0].answer)}"`,
     },
     level,
   ));
 
   return acts;
+}
+
+function getThreadSnippet(answer: string, thread: { speaker: string; text: string }[]): string {
+  for (const line of thread) {
+    const idx = line.text.toLowerCase().indexOf(answer.toLowerCase());
+    if (idx !== -1) {
+      const start = Math.max(0, idx - 20);
+      const end = Math.min(line.text.length, idx + answer.length + 30);
+      return `${line.speaker}: ${line.text.slice(start, end).trim()}`;
+    }
+  }
+  return thread[0]?.text.slice(0, 80) + '...';
 }
 
 function getTextSnippet(text: string, answer: string): string {
@@ -240,10 +296,10 @@ function buildWritingActivities(level: Level): Activity[] {
       'Fill in the blank in this diary entry.',
       {
         sentence: w.template,
-        options: shuffle(w.options || ['am', 'is', 'are']),
-        answer: w.answer || 'am',
-        hint: 'The sentence starts with "I".',
-        why: 'The correct diary entry is: "' + w.template.replace('___', w.answer || 'am') + '"',
+        options: shuffle(w.options || ['red', 'green', 'blue']),
+        answer: w.answer || 'red',
+        hint: 'Say the colour before the clothing word.',
+        why: 'The colour comes BEFORE the clothing word.',
       },
       level,
     ));
@@ -255,10 +311,10 @@ function buildWritingActivities(level: Level): Activity[] {
         prompt: w.template,
         checklist: [
           'I filled in all the blanks',
-          'I used am, is or are correctly',
+          "I used I'm wearing / is wearing correctly",
           'I checked my spelling',
         ],
-        wordBank: showWordBank(level) ? ['am', 'is', 'are', "isn't", "aren't", 'wearing', 'because', 'but'] : [],
+        wordBank: showWordBank(level) ? ["I'm wearing", "is wearing", "isn't wearing", 'red', 'blue', 'green', 'because', 'but'] : [],
         minLength: 2,
         hint: 'Use the template to write your own diary entry.',
       },
@@ -272,10 +328,10 @@ function buildWritingActivities(level: Level): Activity[] {
       {
         prompt: w.prompt,
         checklist: w.checklist,
-        wordBank: showWordBank(level) ? ['am', 'is', 'are', "isn't", "aren't", 'So am I', 'Neither am I', 'because', 'but'] : [],
+        wordBank: showWordBank(level) ? ["I'm wearing", "He's wearing", "She's wearing", "isn't wearing", 'because', 'but'] : [],
         minLength: 5,
         minimumWords: w.minimumWords,
-        hint: 'Start with "Today I am wearing..."',
+        hint: 'Start with "Today I\'m wearing..."',
       },
       level,
     ));
@@ -284,13 +340,13 @@ function buildWritingActivities(level: Level): Activity[] {
       'diaryPrompt',
       'Write about what your family is wearing today.',
       {
-        prompt: 'Write 3 sentences about what your family members are wearing. Use am, is and are.',
+        prompt: 'Write 3 sentences about what your family members are wearing. Use He\'s wearing or She\'s wearing and a colour.',
         checklist: [
           'I wrote at least 3 sentences',
           'I mentioned at least 3 people',
-          'I used am, is and are correctly',
+          "I used He's / She's / They're wearing correctly",
         ],
-        wordBank: showWordBank(level) ? ['is wearing', 'are wearing', 'am wearing', 'because', 'but', 'and'] : [],
+        wordBank: showWordBank(level) ? ["He's wearing", "She's wearing", "They're wearing", "isn't wearing", 'because', 'but', 'and'] : [],
         minLength: 3,
         hint: 'Start with "My mother is wearing..."',
       },
@@ -324,167 +380,61 @@ function buildSpeakingActivities(level: Level): Activity[] {
   return acts;
 }
 
+// boss.itemPlan -> the mixed checkpoint: one item from every skill, with the
+// reading slot using the dialogue (story card) and the speaking slot using the
+// dialogue as the roleplay source.
 function buildBossActivities(level: Level): Activity[] {
+  const pools: Record<string, Activity[]> = {
+    vocabulary: buildVocabularyActivities(level),
+    grammar: buildGrammarActivities(level),
+    listening: buildListeningActivities(level),
+    reading: buildReadingActivities(level),
+    writing: buildWritingActivities(level),
+    speaking: buildSpeakingActivities(level),
+  };
+
   const acts: Activity[] = [];
-  const comprehension = dialogueComprehension(level);
-
-  // Boss: dialogue comprehension questions + a speaking roleplay
-  for (const q of comprehension) {
-    acts.push(makeActivity(
-      'reading',
-      'gapFill',
-      `Listen to "${dialogue.title}" and answer: ${q.q}`,
-      {
-        sentence: `${q.q} ___`,
-        options: shuffle([...q.options]),
-        answer: q.answer,
-        hint: level === 'easy' ? `It starts with "${q.answer[0]}".` : 'Listen to the dialogue carefully.',
-        why: `From the dialogue "${dialogue.title}".`,
-      },
-      level,
-    ));
-  }
-
-  // Add a speaking roleplay from the last speaking task
-  const speakingActs = buildSpeakingActivities(level);
-  if (speakingActs.length > 0) {
-    const roleplay = speakingActs[speakingActs.length - 1];
-    acts.push(roleplay);
+  for (const [skill, count] of Object.entries(contentPack.boss.itemPlan)) {
+    if (skill === 'reading') {
+      // Dialogue comprehension — the story card shows the dialogue lines
+      const q = dialogueComprehension(level)[0];
+      if (q) {
+        acts.push(makeActivity(
+          'reading',
+          'gapFill',
+          `Listen to "${dialogue.title}" and answer: ${q.q}`,
+          {
+            sentence: `${q.q} ___`,
+            options: shuffle([...q.options]),
+            answer: q.answer,
+            hint: level === 'easy' ? `It starts with "${q.answer[0]}".` : 'Listen to the dialogue carefully.',
+            why: `From the dialogue "${dialogue.title}".`,
+          },
+          level,
+        ));
+      }
+      continue;
+    }
+    if (skill === 'speaking') {
+      // The dialogue is the roleplay source
+      acts.push(makeActivity(
+        'speaking',
+        'recordAndCompare',
+        `Read "${dialogue.title}" aloud with two voices: you are ${dialogue.cast[0]}, then you are ${dialogue.cast[1]}.`,
+        {
+          modelLine: dialogue.lines.map(l => `${l.speaker}: ${l.text}`).join(' '),
+          keywords: ['wearing', 'soccer', 'sweatshirt', 'cold'],
+          taskType: 'roleplay',
+          hint: 'Say each line slowly and clearly.',
+        },
+        level,
+      ));
+      continue;
+    }
+    acts.push(...pools[skill].slice(0, count));
   }
 
   return acts;
-}
-
-function buildDragSortActivity(level: Level): Activity {
-  const items: Record<Level, { id: string; label: string; binId: string; imgHint: string }[]> = {
-    easy: [
-      { id: 'd1', label: 't-shirt', binId: 'hot', imgHint: 'blue t-shirt with short sleeves' },
-      { id: 'd2', label: 'coat', binId: 'cold', imgHint: 'long navy coat with round buttons' },
-      { id: 'd3', label: 'shorts', binId: 'hot', imgHint: 'yellow shorts with a waistband' },
-      { id: 'd4', label: 'scarf', binId: 'cold', imgHint: 'purple striped scarf with hanging ends' },
-    ],
-    core: [
-      { id: 'd1', label: 'swimsuit', binId: 'hot', imgHint: 'orange one-piece swimsuit' },
-      { id: 'd2', label: 'sweater', binId: 'cold', imgHint: 'yellow knitted sweater with long sleeves' },
-      { id: 'd3', label: 'skirt', binId: 'hot', imgHint: 'red pleated skirt' },
-      { id: 'd4', label: 'gloves', binId: 'cold', imgHint: 'green glove with a cuff' },
-      { id: 'd5', label: 'sunglasses', binId: 'hot', imgHint: 'round black glasses' },
-      { id: 'd6', label: 'boots', binId: 'cold', imgHint: 'brown boot with a folded cuff' },
-    ],
-    challenging: [
-      { id: 'd1', label: 'shorts', binId: 'hot', imgHint: 'yellow shorts with a waistband' },
-      { id: 'd2', label: 'jacket', binId: 'cold', imgHint: 'grey jacket with pockets and a zipper' },
-      { id: 'd3', label: 'hat', binId: 'hot', imgHint: 'red cap with a peak' },
-      { id: 'd4', label: 'pajamas', binId: 'cold', imgHint: 'violet pajama top with a moon and stars' },
-      { id: 'd5', label: 'socks', binId: 'hot', imgHint: 'red sock with a folded cuff' },
-      { id: 'd6', label: 'belt', binId: 'cold', imgHint: 'brown belt with a golden buckle' },
-    ],
-  };
-
-  return makeActivity(
-    'vocabulary',
-    'dragSort',
-    'Sort the clothes into Hot Weather or Cold Weather.',
-    {
-      prompt: 'Drag each item of clothing into the right bin.',
-      bins: [
-        { id: 'hot', label: 'Hot weather', imgHint: 'bright sun' },
-        { id: 'cold', label: 'Cold weather', imgHint: 'snowflake' },
-      ],
-      items: items[level],
-      hint: level === 'easy'
-        ? 'T-shirts and shorts are for hot weather. Coats and scarves are for cold weather.'
-        : 'Think about which clothes keep you cool and which keep you warm.',
-      why: 'In hot weather we wear light clothes like t-shirts and shorts. In cold weather we wear warm clothes like coats, sweaters and scarves.',
-    },
-    level,
-  );
-}
-
-function buildReadingDragSortActivity(level: Level): Activity {
-  const items: Record<Level, { id: string; label: string; binId: string; imgHint: string }[]> = {
-    easy: [
-      { id: 'r1', label: 'hat', binId: 'head', imgHint: 'red cap with a peak' },
-      { id: 'r2', label: 'gloves', binId: 'hands', imgHint: 'green glove with a cuff' },
-      { id: 'r3', label: 'socks', binId: 'feet', imgHint: 'red sock with a folded cuff' },
-    ],
-    core: [
-      { id: 'r1', label: 'hat', binId: 'head', imgHint: 'red cap with a peak' },
-      { id: 'r2', label: 'gloves', binId: 'hands', imgHint: 'green glove with a cuff' },
-      { id: 'r3', label: 'socks', binId: 'feet', imgHint: 'red sock with a folded cuff' },
-      { id: 'r4', label: 'boots', binId: 'feet', imgHint: 'brown boot with a folded cuff' },
-    ],
-    challenging: [
-      { id: 'r1', label: 'hat', binId: 'head', imgHint: 'red cap with a peak' },
-      { id: 'r2', label: 'gloves', binId: 'hands', imgHint: 'green glove with a cuff' },
-      { id: 'r3', label: 'socks', binId: 'feet', imgHint: 'red sock with a folded cuff' },
-      { id: 'r4', label: 'boots', binId: 'feet', imgHint: 'brown boot with a folded cuff' },
-      { id: 'r5', label: 'glasses', binId: 'head', imgHint: 'round black glasses' },
-    ],
-  };
-
-  return makeActivity(
-    'reading',
-    'dragSort',
-    'Sort the clothes by where you wear them.',
-    {
-      prompt: 'Drag each item to the part of the body.',
-      bins: [
-        { id: 'head', label: 'On your head', imgHint: 'head with a hat' },
-        { id: 'hands', label: 'On your hands', imgHint: 'open hand' },
-        { id: 'feet', label: 'On your feet', imgHint: 'a foot in a sock' },
-      ],
-      items: items[level],
-      hint: 'Hats go on your head. Gloves go on your hands. Socks and boots go on your feet.',
-      why: 'Every item of clothing has its place: hats on the head, gloves on the hands, socks and boots on the feet.',
-    },
-    level,
-  );
-}
-
-function buildStickerPlateActivity(level: Level): Activity {
-  const stickers: Record<Level, { id: string; label: string; imgHint: string }[]> = {
-    easy: [
-      { id: 's1', label: 't-shirt', imgHint: 'blue t-shirt with short sleeves' },
-      { id: 's2', label: 'shorts', imgHint: 'yellow shorts with a waistband' },
-      { id: 's3', label: 'hat', imgHint: 'red cap with a peak' },
-      { id: 's4', label: 'socks', imgHint: 'red sock with a folded cuff' },
-    ],
-    core: [
-      { id: 's1', label: 't-shirt', imgHint: 'blue t-shirt with short sleeves' },
-      { id: 's2', label: 'pants', imgHint: 'long blue pants' },
-      { id: 's3', label: 'sweater', imgHint: 'yellow knitted sweater with long sleeves' },
-      { id: 's4', label: 'boots', imgHint: 'brown boot with a folded cuff' },
-      { id: 's5', label: 'skirt', imgHint: 'red pleated skirt' },
-    ],
-    challenging: [
-      { id: 's1', label: 'dress', imgHint: 'purple dress with thin straps' },
-      { id: 's2', label: 'jacket', imgHint: 'grey jacket with pockets and a zipper' },
-      { id: 's3', label: 'scarf', imgHint: 'purple striped scarf with hanging ends' },
-      { id: 's4', label: 'boots', imgHint: 'brown boot with a folded cuff' },
-      { id: 's5', label: 'belt', imgHint: 'brown belt with a golden buckle' },
-      { id: 's6', label: 'hat', imgHint: 'red cap with a peak' },
-    ],
-  };
-
-  const speakingPrompts: Record<Level, string> = {
-    easy: 'Look at your outfit. Say: "I am wearing ___ and ___."',
-    core: 'Describe your outfit: "I am wearing ___. I am not wearing ___."',
-    challenging: 'Talk about your outfit for 20 seconds: "I am wearing... because... I am not wearing... because..."',
-  };
-
-  return makeActivity(
-    'speaking',
-    'stickerPlate',
-    'Build your outfit, then describe it.',
-    {
-      prompt: 'Drag clothing stickers onto your outfit.',
-      stickers: stickers[level],
-      speakingPrompt: speakingPrompts[level],
-      hint: 'Drag at least 3 items onto your outfit, then say your sentence.',
-    },
-    level,
-  );
 }
 
 function showWordBank(level: Level): boolean {
@@ -499,20 +449,13 @@ export function buildLevelActivities(level: Level): Activity[] {
   const writing = buildWritingActivities(level);
   const speaking = buildSpeakingActivities(level);
 
-  // Replace one vocabulary activity with a DragSort for variety
-  if (vocab.length >= 2) {
-    vocab[1] = buildDragSortActivity(level);
-  }
-
-  // Replace one speaking activity with a StickerPlate
-  if (speaking.length >= 4) {
-    speaking[3] = buildStickerPlateActivity(level);
-  }
-
-  // Replace one reading with a DragSort for the "Uniforms Around the World" text
-  if (reading.length >= 3) {
-    reading[2] = buildReadingDragSortActivity(level);
-  }
+  // wordSorts -> the DragSort activities of the Vocabulary station
+  // (station mechanic: PictureMatch + DragSort)
+  const sorts = buildWordSortActivities(level);
+  sorts.forEach((sort, i) => {
+    const idx = vocab.length - sorts.length + i;
+    if (idx >= 0) vocab[idx] = sort;
+  });
 
   return [...vocab, ...grammar, ...listening, ...reading, ...writing, ...speaking];
 }
@@ -530,20 +473,24 @@ export function buildUnit2(): Unit {
     challenging: buildLevelActivities('challenging'),
   };
 
+  // Station keys and order are identical to Unit 1 — only the display
+  // names (and subtitles as descriptions) come from this pack.
   const unit2Stations = contentPack.stations.map(s => ({
     id: s.id,
     name: s.name,
     skill: (s.skill === 'mixed' ? 'speaking' : s.skill) as Skill,
     order: s.order,
-    description: s.note || '',
+    description: s.subtitle || '',
   }));
 
+  const entry = contentPack.unitRegistryEntry;
+
   return {
-    id: 2,
-    title: 'What Are You Wearing?',
-    islandName: 'Wardrobe World',
-    bigQuestion: 'What are you wearing?',
-    objectives: ['Clothing words', 'Saying what people are wearing with am / is / are'],
+    id: entry.id,
+    title: entry.title,
+    islandName: entry.islandName,
+    bigQuestion: entry.bigQuestion,
+    objectives: entry.objectives,
     skills: SKILL_WEIGHTS,
     vocabulary,
     stations: unit2Stations,
@@ -553,6 +500,7 @@ export function buildUnit2(): Unit {
       core: buildBossLevelActivities('core'),
       challenging: buildBossLevelActivities('challenging'),
     },
+    // The pack ships unlocked: false; the registry wants Unit 2 reachable now.
     unlocked: true,
     status: 'playable',
   };

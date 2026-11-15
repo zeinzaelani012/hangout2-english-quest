@@ -23,8 +23,8 @@ function TShirtSVG({ size = 80, className }: RegistrySVGProps) {
 function ShirtSVG({ size = 80, className }: RegistrySVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="shirt">
-      <path d="M28 16 L36 12 Q40 18 44 12 L52 16 L62 26 L55 33 L54 64 L26 64 L25 33 L18 26 Z" fill="#7C5CFF" />
-      <line x1="40" y1="20" x2="40" y2="64" stroke="#5B3FC4" strokeWidth="1.5" />
+      <path d="M28 16 L36 12 Q40 18 44 12 L52 16 L62 26 L55 33 L54 64 L26 64 L25 33 L18 26 Z" fill="#9DC3E6" />
+      <line x1="40" y1="20" x2="40" y2="64" stroke="#6E9CC4" strokeWidth="1.5" />
       <circle cx="40" cy="30" r="1.8" fill="#FFFBF5" />
       <circle cx="40" cy="40" r="1.8" fill="#FFFBF5" />
       <circle cx="40" cy="50" r="1.8" fill="#FFFBF5" />
@@ -44,8 +44,11 @@ function PantsSVG({ size = 80, className }: RegistrySVGProps) {
 function SkirtSVG({ size = 80, className }: RegistrySVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="skirt">
-      <rect x="29" y="18" width="22" height="8" rx="3" fill="#1D2968" />
-      <path d="M29 26 L20 60 H60 L51 26 Z" fill="#FF6B4A" />
+      <rect x="29" y="18" width="22" height="8" rx="3" fill="#1D8A73" />
+      <path d="M29 26 L20 60 H60 L51 26 Z" fill="#2FB59A" />
+      <line x1="31" y1="30" x2="26" y2="58" stroke="#268F79" strokeWidth="1.5" />
+      <line x1="40" y1="30" x2="40" y2="60" stroke="#268F79" strokeWidth="1.5" />
+      <line x1="49" y1="30" x2="54" y2="58" stroke="#268F79" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -53,10 +56,10 @@ function SkirtSVG({ size = 80, className }: RegistrySVGProps) {
 function DressSVG({ size = 80, className }: RegistrySVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="dress">
-      <path d="M32 14 L30 34 L22 64 H58 L50 34 L48 14 Z" fill="#C77DFF" />
-      <line x1="32" y1="14" x2="35" y2="8" stroke="#A852E8" strokeWidth="2" />
-      <line x1="48" y1="14" x2="45" y2="8" stroke="#A852E8" strokeWidth="2" />
-      <line x1="26" y1="52" x2="54" y2="52" stroke="#A852E8" strokeWidth="1.5" />
+      <path d="M32 14 L30 34 L22 64 H58 L50 34 L48 14 Z" fill="#F27DA5" />
+      <line x1="32" y1="14" x2="35" y2="8" stroke="#D95E8C" strokeWidth="2" />
+      <line x1="48" y1="14" x2="45" y2="8" stroke="#D95E8C" strokeWidth="2" />
+      <line x1="26" y1="52" x2="54" y2="52" stroke="#D95E8C" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -113,10 +116,11 @@ function SweaterSVG({ size = 80, className }: RegistrySVGProps) {
 function JacketSVG({ size = 80, className }: RegistrySVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="jacket">
-      <path d="M28 16 L36 12 Q40 18 44 12 L52 16 L62 26 L55 33 L54 64 L26 64 L25 33 L18 26 Z" fill="#5B7C99" />
-      <line x1="40" y1="18" x2="40" y2="64" stroke="#48657E" strokeWidth="2" />
-      <rect x="28" y="46" width="8" height="10" rx="2" fill="#48657E" />
-      <rect x="44" y="46" width="8" height="10" rx="2" fill="#48657E" />
+      <path d="M28 16 L36 12 Q40 18 44 12 L52 16 L62 26 L55 33 L54 64 L26 64 L25 33 L18 26 Z" fill="#2B3A8F" />
+      <line x1="40" y1="18" x2="40" y2="64" stroke="#1D2968" strokeWidth="2" />
+      <line x1="40" y1="18" x2="40" y2="64" stroke="#FFFBF5" strokeWidth="1" opacity="0.5" />
+      <rect x="28" y="46" width="8" height="10" rx="2" fill="#1D2968" />
+      <rect x="44" y="46" width="8" height="10" rx="2" fill="#1D2968" />
     </svg>
   );
 }
@@ -226,18 +230,123 @@ function GlassesSVG({ size = 80, className }: RegistrySVGProps) {
   );
 }
 
+function RingSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="ring">
+      <circle cx="40" cy="46" r="16" fill="none" stroke="#B8C0CC" strokeWidth="5" />
+      <path d="M33 28 L40 18 L47 28 L40 36 Z" fill="#7C5CFF" />
+      <circle cx="40" cy="27" r="3" fill="#A88FF5" />
+    </svg>
+  );
+}
+
+function WatchSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="watch">
+      <rect x="34" y="8" width="12" height="18" rx="4" fill="#2B3A8F" />
+      <rect x="34" y="54" width="12" height="18" rx="4" fill="#2B3A8F" />
+      <circle cx="40" cy="40" r="16" fill="#FFFBF5" stroke="#2B3A8F" strokeWidth="4" />
+      <line x1="40" y1="40" x2="40" y2="31" stroke="#12172B" strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="40" y1="40" x2="47" y2="44" stroke="#12172B" strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="40" cy="40" r="2" fill="#FF6B4A" />
+    </svg>
+  );
+}
+
+function SweatshirtSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="sweatshirt">
+      <path d="M28 16 L36 12 Q40 18 44 12 L52 16 L60 22 L64 48 L56 51 L54 64 L26 64 L24 51 L16 48 L20 22 Z" fill="#5B7C99" />
+      <path d="M36 12 Q40 18 44 12" fill="none" stroke="#48657E" strokeWidth="2" />
+      <rect x="32" y="52" width="16" height="10" rx="3" fill="#48657E" />
+    </svg>
+  );
+}
+
+function FurSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="fur">
+      <rect x="14" y="30" width="52" height="26" rx="10" fill="#C49A6C" />
+      <path d="M14 40 Q20 26 26 40 Q30 28 36 40 Q40 26 46 40 Q50 28 56 40 Q60 26 66 40" fill="none" stroke="#A87E52" strokeWidth="3" strokeLinecap="round" />
+      <path d="M16 50 Q22 42 28 50 Q34 42 40 50 Q46 42 52 50 Q58 42 64 50" fill="none" stroke="#A87E52" strokeWidth="3" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  );
+}
+
+function WarmSunSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="warm">
+      <circle cx="40" cy="40" r="16" fill="#FFC145" />
+      <path d="M40 16 V8 M40 64 V72 M16 40 H8 M64 40 H72 M23 23 L17 17 M57 57 L63 63 M57 23 L63 17 M23 57 L17 63" stroke="#FF9A3D" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CoolBreezeSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="cool">
+      <path d="M12 26 Q28 20 40 26 Q54 32 66 26" fill="none" stroke="#5B7C99" strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M12 40 Q28 34 40 40 Q54 46 66 40" fill="none" stroke="#5B7C99" strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M12 54 Q28 48 40 54 Q54 60 66 54" fill="none" stroke="#5B7C99" strokeWidth="3.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function PanamaSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="Panama hat">
+      <ellipse cx="40" cy="48" rx="30" ry="10" fill="#E8D5A3" />
+      <path d="M26 46 Q26 24 40 24 Q54 24 54 46 Z" fill="#F2E4BC" />
+      <rect x="26" y="42" width="28" height="5" rx="2.5" fill="#12172B" />
+    </svg>
+  );
+}
+
+function NonLaSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="non la hat">
+      <path d="M40 14 L68 54 Q40 64 12 54 Z" fill="#D9C48A" />
+      <path d="M40 14 L68 54 Q40 58 40 58 Z" fill="#C4AE72" opacity="0.6" />
+      <circle cx="40" cy="16" r="3" fill="#8A7444" />
+    </svg>
+  );
+}
+
+function JeansSVG({ size = 80, className }: RegistrySVGProps) {
+  return (
+    <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="jeans">
+      <path d="M25 14 H55 V30 L51 66 H42 L40 40 L38 66 H29 L25 30 Z" fill="#4A6FA5" />
+      <rect x="25" y="14" width="30" height="5" rx="2" fill="#375781" />
+      <path d="M30 24 H38 V32 H30 Z" fill="#375781" />
+    </svg>
+  );
+}
+
 /**
  * Keyword → artwork. Checked with hint.includes(key) in insertion order,
- * so put longer/more specific keys before shorter ones.
+ * so put longer/more specific keys before shorter ones (e.g. 'zip-up'
+ * before 'coat', 'breeze' before 'hat').
  */
 export const extraIllustrations: Record<string, (props: RegistrySVGProps) => JSX.Element> = {
+  'zip-up': JacketSVG,
+  'pullover': SweatshirtSVG,
+  'blue stone': RingSVG,
+  'wristwatch': WatchSVG,
+  'sleep set': PajamasSVG,
+  'fur': FurSVG,
+  'short-sleeve': TShirtSVG,
+  'heat lines': WarmSunSVG,
+  'breeze': CoolBreezeSVG,
+  'straw': PanamaSVG,
+  'conical': NonLaSVG,
+  'denim': JeansSVG,
   't-shirt': TShirtSVG,
   'tshirt': TShirtSVG,
   'short sleeve': TShirtSVG,
   'shirt': ShirtSVG,
   'pants': PantsSVG,
   'trousers': PantsSVG,
-  'jeans': PantsSVG,
+  'jeans': JeansSVG,
   'skirt': SkirtSVG,
   'dress': DressSVG,
   'shorts': ShortsSVG,
@@ -250,6 +359,7 @@ export const extraIllustrations: Record<string, (props: RegistrySVGProps) => JSX
   'shoe': ShoeSVG,
   'sweater': SweaterSVG,
   'jumper': SweaterSVG,
+  'sweatshirt': SweatshirtSVG,
   'jacket': JacketSVG,
   'coat': CoatSVG,
   'boots': BootSVG,

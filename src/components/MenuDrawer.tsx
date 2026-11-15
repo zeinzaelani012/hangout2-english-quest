@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Menu, X, Home, BookOpen, BarChart3, BookMarked, GraduationCap,
@@ -60,6 +60,9 @@ export function MenuDrawer() {
       >
         <Menu size={22} />
       </button>
+
+      {/* Quick bottom nav on mobile — full menu stays in the drawer */}
+      <BottomNav onMore={() => setOpen(true)} />
 
       <AnimatePresence>
         {open && (
@@ -155,5 +158,54 @@ export function MenuDrawer() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+// Bottom quick-nav for small screens (hidden on desktop, where the drawer
+// hamburger is always reachable)
+function BottomNav({ onMore }: { onMore: () => void }) {
+  const location = useLocation();
+
+  const items = [
+    { to: '/', label: 'Home', icon: Home, match: (path: string) => path === '/' },
+    { to: '/vocabulary', label: 'Words', icon: BookMarked, match: (path: string) => path.startsWith('/vocabulary') },
+    { to: '/progress', label: 'Progress', icon: BarChart3, match: (path: string) => path.startsWith('/progress') },
+  ];
+
+  return (
+    <nav
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-t border-gray-100"
+      aria-label="Quick navigation"
+    >
+      <div className="grid grid-cols-4 max-w-lg mx-auto">
+        {items.map(item => {
+          const Icon = item.icon;
+          const active = item.match(location.pathname);
+          return (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={`flex flex-col items-center justify-center gap-0.5 py-2 transition-colors ${
+                active ? 'text-brand' : 'text-muted hover:text-ink'
+              }`}
+              style={{ minHeight: 56 }}
+              aria-current={active ? 'page' : undefined}
+            >
+              <Icon size={20} />
+              <span className="text-[10px] font-medium">{item.label}</span>
+            </NavLink>
+          );
+        })}
+        <button
+          onClick={onMore}
+          className="flex flex-col items-center justify-center gap-0.5 py-2 text-muted hover:text-ink transition-colors"
+          style={{ minHeight: 56 }}
+          aria-label="More options"
+        >
+          <Menu size={20} />
+          <span className="text-[10px] font-medium">More</span>
+        </button>
+      </div>
+    </nav>
   );
 }

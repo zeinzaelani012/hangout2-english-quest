@@ -96,7 +96,7 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
               {/* Avatar picker */}
               <div className="mb-6">
                 <label className="block text-sm font-medium text-ink mb-2">Choose your avatar</label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-4 gap-3">
                   {AVATAR_IDS.map(id => (
                     <button
                       key={id}

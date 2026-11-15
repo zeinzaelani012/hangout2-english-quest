@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Search, CheckCircle2 } from 'lucide-react';
-import { vocabulary } from '../data/units';
+import { vocabularyBank } from '../data/units';
 import { VocabIllustration as VocabIllus, CookieMascot } from '../components/Illustrations';
 import { AudioButton as AudioBtn } from '../components/AudioButton';
 import { useProgress } from '../context/ProgressContext';
@@ -11,7 +11,7 @@ export function VocabularyBank() {
   const [search, setSearch] = useState('');
 
   const filtered = useMemo(() => {
-    return vocabulary.filter(v => {
+    return vocabularyBank.filter(v => {
       if (filter !== 'all' && v.set !== filter) return false;
       if (search && !v.word.toLowerCase().includes(search.toLowerCase()) &&
           !v.example.toLowerCase().includes(search.toLowerCase())) return false;
@@ -19,13 +19,13 @@ export function VocabularyBank() {
     });
   }, [filter, search]);
 
-  const masteredCount = vocabulary.filter(v => getVocabMastery(v.id) >= 2).length;
+  const masteredCount = vocabularyBank.filter(v => getVocabMastery(v.id) >= 2).length;
 
   return (
     <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-4">
       <h1 className="font-heading font-800 text-2xl text-ink mb-2">Vocabulary Bank</h1>
       <p className="text-muted mb-4">
-        {vocabulary.length} words · {masteredCount} mastered
+        {vocabularyBank.length} words · {masteredCount} mastered
       </p>
 
       {/* Filters */}
@@ -78,7 +78,7 @@ export function VocabularyBank() {
                     <VocabIllus imgHint={word.imgHint} size={56} />
                     <div>
                       <p className="font-heading font-700 text-ink">{word.word}</p>
-                      <p className="text-xs text-muted capitalize">{word.category} · Set {word.set}</p>
+                      <p className="text-xs text-muted capitalize">Unit {word.unitId} · {word.category} · Set {word.set}</p>
                     </div>
                   </div>
                   {mastered && (

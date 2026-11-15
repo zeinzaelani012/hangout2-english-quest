@@ -2,11 +2,13 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import { ChevronRight, ArrowLeft, Lightbulb, Check, X, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
-import { getUnit, getUnitReading } from '../data/units';
+import {
+  getUnit, getUnitReading, getUnitGrammarPatterns,
+  type UnitReading, type UnitGrammarPattern, type UnitReadingContext,
+} from '../data/units';
 import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Level, type Activity, type StationProgress } from '../types';
 import { CookieMascot, StationBadge } from '../components/Illustrations';
 import { AudioButton } from '../components/AudioButton';
-import type { ReadingJSON, DialogueJSON } from '../data/unit1/contentPack';
 import { PictureMatch } from '../components/activities/PictureMatch';
 import { DragSort } from '../components/activities/DragSort';
 import { GapFill } from '../components/activities/GapFill';
@@ -25,6 +27,7 @@ export function ActivityPage() {
   const levelKey = (level || 'easy') as Level;
   const station = unit?.stations.find(s => s.id === stationId);
   const readings = getUnitReading(unit?.id || 1);
+  const grammarPatterns = getUnitGrammarPatterns(unit?.id || 1);
 
   // Get activities for this station from the level data
   const activities = useMemo(() => {
@@ -197,6 +200,11 @@ export function ActivityPage() {
 
       <h1 className="sr-only">{station.name} — Activity {currentIndex + 1}</h1>
 
+      {/* Teaching card at the top of the Grammar station */}
+      {station.skill === 'grammar' && (
+        <GrammarTeachingCard patterns={grammarPatterns} audioKey={`grammar-card-${currentActivity.id}`} />
+      )}
+
       {/* Pre-activity content: reading text or listening dialogue */}
       {currentActivity.skill === 'reading' && currentActivity.type === 'gapFill' && (
         <ReadingTextDisplay level={levelKey} activity={currentActivity} texts={readings.readingTexts} />
@@ -208,11 +216,16 @@ export function ActivityPage() {
         <ListeningAudioDisplay activity={currentActivity} level={levelKey} dialogue={readings.dialogue} />
       )}
       {station.id === 'boss' && currentActivity.skill === 'reading' && (
-        <ListeningAudioDisplay activity={currentActivity} level={levelKey} dialogue={readings.dialogue} />
+        currentActivity.prompt.includes(`"${readings.dialogue.title}"`) ? (
+          <ListeningAudioDisplay activity={currentActivity} level={levelKey} dialogue={readings.dialogue} />
+        ) : (
+          <ReadingTextDisplay level={levelKey} activity={currentActivity} texts={readings.readingTexts} />
+        )
       )}
 
-      {/* Activity body */}
-      <div className="bg-white rounded-card shadow-card p-6 sm:p-8 mb-4">
+      {/* Activity body — keyed by activity id so consecutive same-type
+          activities (e.g. gapFill → gapFill) start with fresh state */}
+      <div key={currentActivity.id} className="bg-white rounded-card shadow-card p-6 sm:p-8 mb-4">
         <p className="text-base text-ink mb-6 font-medium">{currentActivity.prompt}</p>
         {renderActivity()}
       </div>
@@ -322,23 +335,90 @@ function getHint(activity: Activity): string {
   return 'Take your time and try your best!';
 }
 
-function ReadingTextDisplay({ level, activity, texts }: { level: Level; activity: Activity; texts: ReadingJSON[] }) {
+function GrammarTeachingCard({ patterns, audioKey }: { patterns: UnitGrammarPattern[]; audioKey: string }) {
+  const spoken = patterns
+    .map(p => `${p.label}. ${p.examples.join('. ')}. ${p.note || p.rule || ''}`)
+    .join(' ');
+
+  return (
+    <div className="bg-white rounded-card shadow-card p-6 mb-4">
+      <div className="flex items-center justify-between gap-3 mb-4">
+        <h3 className="font-heading font-700 text-lg text-ink">Teaching card</h3>
+        <AudioButton audioKey={audioKey} fallbackText={spoken} label="Read aloud" />
+      </div>
+      <div className="space-y-4">
+        {patterns.map(pattern => (
+          <div key={pattern.id}>
+            <p className="font-heading font-700 text-sm text-ink">{pattern.label}</p>
+            <div className="flex flex-wrap gap-1.5 mt-1.5">
+              {pattern.examples.map((example, i) => (
+                <span
+                  key={i}
+                  className="text-xs px-2.5 py-1 rounded-pill bg-cream border border-gray-100 text-ink"
+                >
+                  {example}
+                </span>
+              ))}
+            </div>
+            {(pattern.note || pattern.rule) && (
+              <p className="text-xs text-muted mt-1.5">{pattern.note || pattern.rule}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ReadingTextDisplay({ level, activity, texts }: { level: Level; activity: Activity; texts: UnitReading[] }) {
   // Determine which reading text based on the activity prompt
   const text1 = texts[0];
   const text2 = texts[1];
   const isText1 = activity.prompt.includes(text1.title);
   const text = isText1 ? text1 : text2;
   const levelText = text[level];
+  const raw = levelText.text;
+  const spoken = Array.isArray(raw)
+    ? raw.map(line => `${line.speaker}: ${line.text}`).join(' ')
+    : raw;
 
   return (
     <div className="bg-white rounded-card shadow-card p-6 mb-4">
-      <h3 className="font-heading font-700 text-lg text-ink mb-3">{text.title}</h3>
-      <p className="text-sm text-ink leading-relaxed whitespace-pre-line">{levelText.text}</p>
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <h3 className="font-heading font-700 text-lg text-ink">{text.title}</h3>
+        <AudioButton
+          audioKey={`reading-${activity.id}`}
+          fallbackText={spoken}
+          label="Read aloud"
+        />
+      </div>
+      {Array.isArray(raw) ? (
+        // ReadingPassage: a message thread rendered as speaker lines
+        <div className="space-y-2">
+          {raw.map((line, i) => (
+            <div
+              key={i}
+              className={`p-3 rounded-card ${
+                line.speaker === raw[0]?.speaker
+                  ? 'bg-violet/10'
+                  : 'bg-cream border border-gray-100'
+              }`}
+            >
+              <p className="text-sm text-ink">
+                <span className="font-medium text-violet">{line.speaker}: </span>
+                {line.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-sm text-ink leading-relaxed whitespace-pre-line">{raw}</p>
+      )}
     </div>
   );
 }
 
-function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activity; level: Level; dialogue: DialogueJSON }) {
+function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activity; level: Level; dialogue: UnitReadingContext['dialogue'] }) {
   const [showTranscript, setShowTranscript] = useState(false);
   const payload = activity.payload as any;
   const script: string = payload.audioScript || '';

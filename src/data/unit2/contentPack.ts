@@ -10,6 +10,12 @@ export interface VocabItemJSON {
   imgHint: string;
 }
 
+export interface WordSortJSON {
+  id: string;
+  bins: string[];
+  items: { word: string; bin: string }[];
+}
+
 export interface GrammarGapFillItem {
   id: string;
   sentence: string;
@@ -18,10 +24,22 @@ export interface GrammarGapFillItem {
   why: string;
 }
 
+export interface GrammarPatternJSON {
+  id: string;
+  label: string;
+  examples: string[];
+  note?: string;
+}
+
 export interface ReadingQuestionJSON {
   q: string;
   options: string[];
   answer: string;
+}
+
+export interface MessageLineJSON {
+  speaker: string;
+  text: string;
 }
 
 export interface ReadingLevelJSON {
@@ -34,6 +52,20 @@ export interface ReadingJSON {
   easy: ReadingLevelJSON;
   core: ReadingLevelJSON;
   challenging: ReadingLevelJSON;
+}
+
+// ReadingPassage: a message thread rendered as speaker lines
+export interface ThreadReadingLevelJSON {
+  text: MessageLineJSON[];
+  questions: ReadingQuestionJSON[];
+}
+
+export interface ThreadReadingJSON {
+  title: string;
+  cast: string[];
+  easy: ThreadReadingLevelJSON;
+  core: ThreadReadingLevelJSON;
+  challenging: ThreadReadingLevelJSON;
 }
 
 export interface DialogueLineJSON {
@@ -101,42 +133,51 @@ export interface DifferentiationRule {
   hint: string;
 }
 
-export interface UnitMetaJSON {
-  id: number;
-  title: string;
-  islandName: string;
-  bigQuestion?: string;
-  objectives?: string[];
-  unlocked: boolean;
-  status: string;
-}
-
 export interface StationMetaJSON {
   id: string;
   order: number;
-  name: string;
   skill: string;
+  name: string;
+  subtitle: string;
   xp: number;
+  mechanic?: string;
+  unlockAfter?: string[];
+}
+
+export interface UnitRegistryEntryJSON {
+  id: number;
+  title: string;
+  islandName: string;
+  bigQuestion: string;
+  objectives: string[];
+  unlocked: boolean;
+  status: string;
   note?: string;
 }
 
 export interface ContentPack {
   meta: {
     app: string;
+    pack: string;
     version: string;
     language: string;
-    audienceAges: string;
+    unit: number;
+    title: string;
+    islandName: string;
+    bigQuestion: string;
+    objectives: string[];
+    sourcePages: string;
     contentPolicy: string;
-    unitCovered: number;
     totalUnitsPlanned: number;
     answerKeyIncluded: boolean;
   };
   vocabulary: VocabItemJSON[];
+  wordSorts: Record<Level, WordSortJSON[]>;
   grammar: {
-    patterns: { id: string; label: string; examples: string[]; rule?: string }[];
+    patterns: GrammarPatternJSON[];
     gapFillBank: Record<Level, GrammarGapFillItem[]>;
   };
-  readings: { outfitDiary: ReadingJSON; uniformsAroundTheWorld: ReadingJSON };
+  readings: { messageThread: ThreadReadingJSON; hatsAroundTheWorld: ReadingJSON };
   dialogue: DialogueJSON;
   listening: Record<Level, ListeningItemJSON[]>;
   speaking: {
@@ -151,9 +192,14 @@ export interface ContentPack {
     core: WritingCoreJSON;
     challenging: WritingChallengingJSON;
   };
-  differentiationRules: Record<Level, DifferentiationRule>;
-  units: UnitMetaJSON[];
+  boss: {
+    title: string;
+    description: string;
+    itemPlan: Record<string, number>;
+  };
   stations: StationMetaJSON[];
+  unitRegistryEntry: UnitRegistryEntryJSON;
+  differentiationRules: Record<Level, DifferentiationRule>;
 }
 
 export const contentPack = contentPackJson as ContentPack;

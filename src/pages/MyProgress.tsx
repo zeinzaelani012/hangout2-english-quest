@@ -1,6 +1,6 @@
 import { useProgress } from '../context/ProgressContext';
 import { SkillRadar } from '../components/SkillRadar';
-import { vocabulary } from '../data/units';
+import { vocabularyBank } from '../data/units';
 import { SKILL_WEIGHTS, SKILL_LABELS, LEVEL_LABELS, type Skill, type Level } from '../types';
 import { Star, BookOpen, CheckCircle2, Award } from 'lucide-react';
 
@@ -55,7 +55,7 @@ export function MyProgress() {
   }
 
   // Stats
-  const wordsMastered = vocabulary.filter(v => getVocabMastery(v.id) >= 2).length;
+  const wordsMastered = vocabularyBank.filter(v => getVocabMastery(v.id) >= 2).length;
   const activitiesCompleted = Object.values(progress.units).reduce((sum, unit) => {
     return sum + Object.values(unit).reduce((s, level) => {
       return s + Object.values(level.stations).reduce((ss, station) => {
