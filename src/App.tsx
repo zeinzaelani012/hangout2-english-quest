@@ -56,7 +56,7 @@ function AppContent() {
         />
       )}
 
-      <main className="pt-16 pb-20 lg:pl-0">
+      <main className="pt-16 pb-20 lg:pb-8">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Dashboard onEditProfile={() => setShowProfileModal(true)} />} />

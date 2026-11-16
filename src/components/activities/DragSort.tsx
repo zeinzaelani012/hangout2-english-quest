@@ -71,7 +71,13 @@ export function DragSort({ activity, onResult }: Props) {
   return (
     <div>
       {/* Bins */}
-      <div className={`grid gap-4 mb-6 ${payload.bins.length === 2 ? 'grid-cols-2' : 'grid-cols-3'}`}>
+      <div className={`mb-6 grid gap-4 ${
+        payload.bins.length === 2
+          ? 'grid-cols-2'
+          : payload.bins.length === 4
+            ? 'grid-cols-2 lg:grid-cols-4'
+            : 'grid-cols-3'
+      }`}>
         {payload.bins.map(bin => {
           const binItems = items.filter(i => i.placedBin === bin.id);
           return (
@@ -80,27 +86,27 @@ export function DragSort({ activity, onResult }: Props) {
               onDragOver={handleDragOver}
               onDrop={e => handleDrop(e, bin.id)}
               onClick={() => selectedId && handleBinKeySelect(bin.id)}
-              className={`rounded-card p-4 min-h-[160px] border-2 border-dashed transition-colors ${
+              className={`min-h-[160px] rounded-xl border-2 border-dashed p-4 transition-colors ${
                 selectedId
-                  ? 'border-brand cursor-pointer hover:bg-brand/5'
-                  : 'border-gray-200 bg-cream'
+                  ? 'cursor-pointer border-brand bg-teal-50/40 hover:bg-teal-50'
+                  : 'border-slate-200 bg-slate-50'
               }`}
               role="button"
               tabIndex={0}
               aria-label={`${bin.label} bin. ${binItems.length} items placed.`}
               onKeyDown={e => e.key === 'Enter' && selectedId && handleBinKeySelect(bin.id)}
             >
-              <p className="font-heading font-700 text-sm text-ink mb-3 text-center">{bin.label}</p>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <p className="mb-3 text-center font-heading text-sm font-bold text-ink">{bin.label}</p>
+              <div className="flex flex-wrap justify-center gap-2">
                 {binItems.map(item => (
                   <div
                     key={item.id}
-                    className={`relative rounded-pill px-3 py-1.5 flex items-center gap-1.5 text-sm font-medium ${
+                    className={`relative flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-semibold ${
                       checked
                         ? item.placedBin === item.binId
-                          ? 'bg-mint/15 text-mint'
-                          : 'bg-coral/15 text-coral'
-                        : 'bg-white shadow-card text-ink'
+                          ? 'border-emerald-200 bg-emerald-50 text-mint'
+                          : 'border-red-200 bg-red-50 text-coral'
+                        : 'border-slate-200 bg-white text-ink'
                     }`}
                   >
                     {activity.difficulty !== 'challenging' && item.imgHint && (
@@ -134,7 +140,7 @@ export function DragSort({ activity, onResult }: Props) {
       {/* Unplaced items */}
       {unplacedItems.length > 0 && (
         <div>
-          <p className="text-sm text-muted mb-3">Drag these items to the right bin, or select an item then tap a bin:</p>
+          <p className="mb-3 text-sm text-muted">Drag these items to a bin, or select an item and then choose a bin:</p>
           <div className="flex flex-wrap gap-2">
             {unplacedItems.map(item => (
               <div
@@ -142,10 +148,10 @@ export function DragSort({ activity, onResult }: Props) {
                 draggable
                 onDragStart={e => handleDragStart(e, item.id)}
                 onClick={() => handleItemKeySelect(item.id)}
-                className={`draggable-item rounded-pill px-4 py-2 flex items-center gap-2 text-sm font-medium cursor-grab transition-all ${
+                className={`draggable-item flex cursor-grab items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-semibold transition-all ${
                   selectedId === item.id
-                    ? 'bg-brand/10 ring-2 ring-brand text-brand'
-                    : 'bg-white shadow-card text-ink hover:shadow-cardhover'
+                    ? 'border-brand bg-teal-50 text-brand ring-2 ring-brand/20'
+                    : 'border-slate-200 bg-white text-ink hover:border-brand/40'
                 }`}
                 role="button"
                 tabIndex={0}
@@ -166,7 +172,7 @@ export function DragSort({ activity, onResult }: Props) {
       {unplacedItems.length === 0 && !checked && (
         <button
           onClick={handleCheck}
-          className="w-full py-3 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors"
+          className="action-primary w-full"
           style={{ minHeight: 44 }}
         >
           Check answers
@@ -174,7 +180,7 @@ export function DragSort({ activity, onResult }: Props) {
       )}
 
       {checked && (
-        <div className="mt-4 p-3 rounded-card bg-mint/10" aria-live="polite">
+        <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 p-4" aria-live="polite">
           <p className="text-sm text-ink">
             {items.every(i => i.placedBin === i.binId)
               ? 'All correct! Great job!'

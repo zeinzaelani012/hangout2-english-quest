@@ -128,8 +128,8 @@ export function RecordAndCompare({ activity, onResult }: Props) {
     <div>
       {/* Target + recognised transcript side by side */}
       <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <div className="p-4 rounded-card bg-coral/10">
-          <div className="flex items-center gap-3 mb-2">
+        <div className="rounded-xl border border-orange-200 bg-orange-50 p-4">
+          <div className="mb-2 flex items-center gap-3">
             <AudioButton
               audioKey={`speak-model-${activity.id}`}
               fallbackText={payload.modelLine}
@@ -137,12 +137,12 @@ export function RecordAndCompare({ activity, onResult }: Props) {
               label="Listen to model"
             />
           </div>
-          <p className="text-xs font-medium text-muted mb-1">Target:</p>
-          <p className="text-sm text-ink italic">"{payload.modelLine}"</p>
+          <p className="eyebrow mb-1">Target</p>
+          <p className="text-sm font-semibold italic leading-6 text-ink">"{payload.modelLine}"</p>
         </div>
-        <div className="p-4 rounded-card bg-cream border border-gray-100" aria-live="polite">
-          <p className="text-xs font-medium text-muted mb-1">What you said:</p>
-          <p className="text-sm text-ink min-h-[1.25rem]">
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4" aria-live="polite">
+          <p className="eyebrow mb-1">What you said</p>
+          <p className="min-h-[1.25rem] text-sm leading-6 text-ink">
             {transcript || <span className="text-muted">Press "Record yourself" and say the sentence.</span>}
           </p>
         </div>
@@ -150,8 +150,8 @@ export function RecordAndCompare({ activity, onResult }: Props) {
 
       {/* Privacy notice */}
       {showPrivacyNotice && mode === 'speech' && (
-        <div className="mb-4 p-3 rounded-card bg-sun/10">
-          <p className="text-sm text-ink">
+        <div className="mb-4 rounded-xl border border-amber-200 bg-amber-50 p-4">
+          <p className="text-sm leading-6 text-ink">
             Your browser may send your voice to its own speech service. Nothing is stored by this app.
           </p>
         </div>
@@ -164,10 +164,10 @@ export function RecordAndCompare({ activity, onResult }: Props) {
             <button
               onClick={handleRecord}
               disabled={completed}
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-pill font-heading font-700 transition-colors ${
+              className={`inline-flex min-h-11 items-center gap-2 rounded-xl px-6 py-3 font-heading font-bold text-white transition-colors ${
                 recording
-                  ? 'bg-coral text-white animate-pulse'
-                  : 'bg-coral text-white hover:bg-coral/90'
+                  ? 'animate-pulse bg-coral'
+                  : 'bg-coral hover:bg-red-600'
               } disabled:opacity-40`}
               style={{ minHeight: 44 }}
               aria-label={recording ? 'Recording... tap to stop' : 'Record yourself'}
@@ -178,7 +178,7 @@ export function RecordAndCompare({ activity, onResult }: Props) {
           </div>
 
           {error && (
-            <div className="mb-4 p-3 rounded-card bg-coral/10 flex items-start gap-2">
+            <div className="mb-4 flex items-start gap-2 rounded-xl border border-red-200 bg-red-50 p-4">
               <AlertCircle size={18} className="text-coral shrink-0 mt-0.5" />
               <p className="text-sm text-ink">{error}</p>
             </div>
@@ -193,22 +193,22 @@ export function RecordAndCompare({ activity, onResult }: Props) {
                   <Star
                     key={s}
                     size={24}
-                    className={s <= result.stars ? 'text-sun fill-sun' : 'text-gray-200'}
+                    className={s <= result.stars ? 'fill-sun text-sun' : 'text-slate-200'}
                   />
                 ))}
-                <span className="text-sm font-medium text-ink ml-2">{result.band}</span>
+                <span className="ml-2 text-sm font-semibold text-ink">{result.band}</span>
               </div>
 
               {/* Matched keywords */}
               {result.unmatchedKeywords.length > 0 && (
-                <div className="p-3 rounded-card bg-sun/10">
-                  <p className="text-xs font-medium text-muted mb-1">Words I heard:</p>
+                <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+                  <p className="eyebrow mb-2">Words I heard</p>
                   <div className="flex flex-wrap gap-1.5">
                     {result.matchedKeywords.map(k => (
-                      <span key={k} className="text-xs px-2 py-1 rounded-pill bg-mint/20 text-mint font-medium">{k}</span>
+                      <span key={k} className="rounded-md bg-emerald-100 px-2 py-1 text-xs font-semibold text-mint">{k}</span>
                     ))}
                     {result.unmatchedKeywords.map(k => (
-                      <span key={k} className="text-xs px-2 py-1 rounded-pill bg-gray-100 text-muted line-through">{k}</span>
+                      <span key={k} className="rounded-md bg-white px-2 py-1 text-xs font-medium text-muted line-through">{k}</span>
                     ))}
                   </div>
                 </div>
@@ -221,14 +221,14 @@ export function RecordAndCompare({ activity, onResult }: Props) {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => { setResult(null); setTranscript(''); setError(null); }}
-                className="px-4 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink hover:bg-gray-50"
+                className="action-secondary text-sm"
                 style={{ minHeight: 44 }}
               >
                 Try again
               </button>
               <button
                 onClick={() => setMode('selfcheck')}
-                className="px-4 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink hover:bg-gray-50"
+                className="action-secondary text-sm"
                 style={{ minHeight: 44 }}
               >
                 Use self-check instead
@@ -242,13 +242,13 @@ export function RecordAndCompare({ activity, onResult }: Props) {
       {mode === 'selfcheck' && (
         <div className="space-y-4">
           {fallbackReason && (
-            <div className="p-3 rounded-card bg-sun/10 flex items-start gap-2">
-              <AlertCircle size={18} className="text-sun shrink-0 mt-0.5" />
-              <p className="text-sm text-ink">{fallbackReason}</p>
+            <div className="flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4">
+              <AlertCircle size={18} className="mt-0.5 shrink-0 text-sun" />
+              <p className="text-sm leading-6 text-ink">{fallbackReason}</p>
             </div>
           )}
-          <div className="p-4 rounded-card bg-cream border border-gray-100">
-            <p className="text-sm font-medium text-ink mb-3">Record yourself, then check each box:</p>
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p className="mb-3 text-sm font-bold text-ink">Record yourself, then check each box:</p>
             <div className="space-y-2.5">
               <label className="flex items-center gap-3 cursor-pointer" style={{ minHeight: 44 }}>
                 <input
@@ -283,7 +283,7 @@ export function RecordAndCompare({ activity, onResult }: Props) {
           <button
             onClick={handleSelfCheckComplete}
             disabled={completed}
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-pill bg-mint text-white font-heading font-700 hover:bg-mint/90 disabled:opacity-40"
+            className="action-primary bg-mint hover:bg-emerald-700"
             style={{ minHeight: 44 }}
           >
             <Check size={18} /> Complete
@@ -302,8 +302,8 @@ export function RecordAndCompare({ activity, onResult }: Props) {
       )}
 
       {completed && (
-        <div className="mt-4 p-3 rounded-card bg-mint/10">
-          <p className="text-sm text-ink">Speaking task completed! Full XP earned.</p>
+        <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+          <p className="text-sm font-semibold text-ink">Speaking task completed. Full XP earned.</p>
         </div>
       )}
     </div>

@@ -29,16 +29,16 @@ export function GapFill({ activity, onResult }: Props) {
   return (
     <div>
       {/* Sentence with blank */}
-      <div className="mb-6 p-4 rounded-card bg-cream border border-gray-100">
-        <p className="text-lg text-ink leading-relaxed">
+      <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
+        <p className="text-lg leading-8 text-ink sm:text-xl">
           {parts[0]}
           <span
-            className={`inline-block min-w-[80px] mx-1 px-3 py-1 rounded-pill font-medium text-center ${
+            className={`mx-1 inline-block min-w-[80px] rounded-lg border px-3 py-1.5 text-center font-bold ${
               answered
                 ? selected === payload.answer
-                  ? 'bg-mint/20 text-mint'
-                  : 'bg-coral/20 text-coral'
-                : 'bg-white border-2 border-dashed border-brand/30 text-brand'
+                  ? 'border-emerald-200 bg-emerald-100 text-mint'
+                  : 'border-red-200 bg-red-100 text-coral'
+                : 'border-dashed border-brand/40 bg-white text-brand'
             }`}
           >
             {selected || '___'}
@@ -47,7 +47,7 @@ export function GapFill({ activity, onResult }: Props) {
         </p>
       </div>
 
-      {/* Options as pill buttons */}
+      <p className="eyebrow mb-3">Choose the word</p>
       <div className="flex flex-wrap gap-2.5">
         {payload.options.map((option, idx) => {
           const isSelected = selected === option;
@@ -59,19 +59,19 @@ export function GapFill({ activity, onResult }: Props) {
               key={idx}
               onClick={() => handleSelect(option)}
               disabled={answered}
-              className={`px-5 py-2.5 rounded-pill font-medium text-sm transition-all ${
+              className={`min-h-11 rounded-xl border px-5 py-2.5 text-sm font-bold transition-all ${
                 showResult && isCorrect
-                  ? 'bg-mint/15 text-mint ring-2 ring-mint'
+                  ? 'border-emerald-300 bg-emerald-50 text-mint ring-2 ring-emerald-200'
                   : showResult && isSelected && !isCorrect
-                    ? 'bg-coral/15 text-coral ring-2 ring-coral'
-                    : 'bg-white shadow-card text-ink hover:shadow-cardhover'
+                    ? 'border-red-300 bg-red-50 text-coral ring-2 ring-red-200'
+                    : 'border-slate-200 bg-white text-ink hover:border-brand/40 hover:bg-teal-50/50'
               }`}
               style={{ minHeight: 44 }}
               aria-label={`Option: ${option}`}
             >
               {option}
-              {showResult && isCorrect && <Check size={16} className="inline ml-1.5" />}
-              {showResult && isSelected && !isCorrect && <X size={16} className="inline ml-1.5" />}
+              {showResult && isCorrect && <Check size={16} className="ml-1.5 inline" />}
+              {showResult && isSelected && !isCorrect && <X size={16} className="ml-1.5 inline" />}
             </button>
           );
         })}

@@ -66,12 +66,12 @@ export function PictureMatch({ activity, onResult }: Props) {
               ref={el => { optionRefs.current[idx] = el; }}
               onClick={() => handleSelect(option.id)}
               onKeyDown={e => handleKeyDown(e, idx)}
-              className={`relative rounded-card p-4 flex flex-col items-center justify-center gap-2 transition-all min-h-[120px] ${
+              className={`relative flex min-h-[120px] flex-col items-center justify-center gap-2 rounded-xl border p-4 transition-all ${
                 showResult && isCorrect
-                  ? 'bg-mint/10 ring-2 ring-mint'
+                  ? 'border-emerald-300 bg-emerald-50 ring-2 ring-emerald-200'
                   : showResult && isSelected && !isCorrect
-                    ? 'bg-coral/10 ring-2 ring-coral'
-                    : 'bg-cream hover:bg-white border border-gray-100 shadow-card'
+                    ? 'border-red-300 bg-red-50 ring-2 ring-red-200'
+                    : 'border-slate-200 bg-white hover:border-brand/40 hover:bg-teal-50/50'
               }`}
               style={{ minHeight: 120 }}
               aria-label={option.label}
@@ -80,11 +80,11 @@ export function PictureMatch({ activity, onResult }: Props) {
               {showPictures && option.imgHint && (
                 <VocabIllustration imgHint={option.imgHint} size={60} />
               )}
-              <span className="font-heading font-700 text-ink text-sm sm:text-base">
+              <span className="font-heading text-sm font-bold text-ink sm:text-base">
                 {option.label}
               </span>
-              {showResult && isCorrect && <Check size={20} className="text-mint absolute top-2 right-2" />}
-              {showResult && isSelected && !isCorrect && <X size={20} className="text-coral absolute top-2 right-2" />}
+              {showResult && isCorrect && <Check size={20} className="absolute right-2 top-2 text-mint" />}
+              {showResult && isSelected && !isCorrect && <X size={20} className="absolute right-2 top-2 text-coral" />}
             </button>
           );
         })}

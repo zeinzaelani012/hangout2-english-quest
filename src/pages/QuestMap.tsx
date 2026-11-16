@@ -1,244 +1,115 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ChevronRight, Lock, CheckCircle2, Play, Circle } from 'lucide-react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { CheckCircle2, ChevronRight, Circle, Lock, Play } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import { getUnit } from '../data/units';
 import { StationBadge } from '../components/Illustrations';
-import { SKILL_COLORS, SKILL_LABELS, LEVEL_LABELS, type Level } from '../types';
-import { useReducedMotion } from '../hooks/useReducedMotion';
+import { LEVEL_LABELS, SKILL_LABELS, type Level } from '../types';
 
 export function QuestMap() {
   const { unitId, level } = useParams();
   const navigate = useNavigate();
   const { isStationCompleted, getLevelProgressPercent } = useProgress();
-  const reduceMotion = useReducedMotion();
-
   const unit = getUnit(parseInt(unitId || '0'));
   const levelKey = (level || 'easy') as Level;
 
   if (!unit || unit.status === 'placeholder') {
     return (
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-8">
-        <h1 className="font-heading font-800 text-2xl text-ink">Unit not available</h1>
-        <Link to="/" className="text-brand hover:underline">Back to Dashboard</Link>
+      <div className="mx-auto max-w-[1180px] px-4 py-10 sm:px-6">
+        <h1 className="font-heading text-2xl font-extrabold text-ink">Unit not available</h1>
+        <Link to="/" className="mt-4 inline-block font-bold text-brand">Back to dashboard</Link>
       </div>
     );
   }
 
-  const stations = unit.stations;
-  const pct = getLevelProgressPercent(unit.id, levelKey);
-
-  // Determine station states
-  const stationStates = stations.map((station, i) => {
+  const percent = getLevelProgressPercent(unit.id, levelKey);
+  const stationStates = unit.stations.map((station, index) => {
     const completed = isStationCompleted(unit.id, levelKey, station.id);
-    const prevCompleted = i === 0 || isStationCompleted(unit.id, levelKey, stations[i - 1].id);
-    const isCurrent = !completed && prevCompleted && i === stations.findIndex(s => !isStationCompleted(unit.id, levelKey, s.id));
-    const isLocked = !completed && !prevCompleted && !isCurrent;
-
-    return { station, completed, isCurrent, isLocked, index: i };
+    const previousCompleted = index === 0 || isStationCompleted(unit.id, levelKey, unit.stations[index - 1].id);
+    const firstIncomplete = unit.stations.findIndex(item => !isStationCompleted(unit.id, levelKey, item.id));
+    const current = !completed && previousCompleted && index === firstIncomplete;
+    const locked = !completed && !previousCompleted && !current;
+    return { station, completed, current, locked, index };
   });
 
-  // SVG path — winding path through 7 nodes
-  // Nodes positioned in a winding pattern
-  const nodePositions = [
-    { x: 100, y: 100 },
-    { x: 300, y: 160 },
-    { x: 150, y: 260 },
-    { x: 350, y: 340 },
-    { x: 120, y: 420 },
-    { x: 320, y: 490 },
-    { x: 200, y: 570 },
-  ];
-
-  const pathD = nodePositions.map((pos, i) => {
-    if (i === 0) return `M ${pos.x} ${pos.y}`;
-    const prev = nodePositions[i - 1];
-    const midX = (prev.x + pos.x) / 2;
-    const midY = (prev.y + pos.y) / 2;
-    const offsetY = i % 2 === 0 ? -30 : 30;
-    return `Q ${midX} ${midY + offsetY} ${pos.x} ${pos.y}`;
-  }).join(' ');
-
   return (
-    <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-4">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-1 text-sm text-muted mb-4" aria-label="Breadcrumb">
-        <Link to="/" className="hover:text-brand">Dashboard</Link>
+    <div className="mx-auto max-w-[900px] px-4 py-6 sm:px-6 sm:py-8">
+      <nav className="mb-5 flex items-center gap-1.5 text-sm text-muted" aria-label="Breadcrumb">
+        <Link to="/" className="font-semibold hover:text-brand">Dashboard</Link>
         <ChevronRight size={14} />
-        <Link to={`/unit/${unit.id}`} className="hover:text-brand">Unit {unit.id}</Link>
+        <Link to={`/unit/${unit.id}`} className="font-semibold hover:text-brand">Unit {unit.id}</Link>
         <ChevronRight size={14} />
-        <span className="text-ink font-medium">{LEVEL_LABELS[levelKey]}</span>
+        <span className="font-semibold text-ink">{LEVEL_LABELS[levelKey]}</span>
       </nav>
 
-      <h1 className="font-heading font-800 text-2xl text-ink mb-2">
-        {unit.islandName} — {LEVEL_LABELS[levelKey]}
-      </h1>
-
-      {/* Progress bar */}
-      <div className="flex items-center gap-3 mb-8">
-        <div className="flex-1 h-2 rounded-pill bg-gray-100 overflow-hidden">
-          <div
-            className="h-full rounded-pill bg-brand transition-all duration-700"
-            style={{ width: `${pct}%` }}
-          />
+      <section className="surface-card mb-6 p-5 sm:p-6">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow mb-1">Unit {unit.id} learning path</p>
+            <h1 className="font-heading text-2xl font-extrabold text-ink sm:text-3xl">{unit.islandName}</h1>
+            <p className="mt-1 text-sm font-semibold text-muted">{LEVEL_LABELS[levelKey]} · 7 stations · 100 XP</p>
+          </div>
+          <div className="min-w-52 sm:text-right">
+            <p className="mb-2 text-sm font-bold text-ink"><span className="tnum">{percent}%</span> complete</p>
+            <div className="h-2.5 overflow-hidden rounded-full bg-slate-100">
+              <div className="h-full rounded-full bg-brand transition-all duration-700" style={{ width: `${percent}%` }} />
+            </div>
+          </div>
         </div>
-        <span className="text-sm font-medium tnum text-muted">{pct}%</span>
-      </div>
+      </section>
 
-      {/* Quest map SVG */}
-      <div className="relative bg-white rounded-card shadow-card p-4 sm:p-8 mb-6 overflow-hidden">
-        <svg
-          viewBox="0 0 420 620"
-          className="w-full h-auto"
-          style={{ maxHeight: '80vh' }}
-          role="img"
-          aria-label="Quest map showing 7 stations"
-        >
-          {/* Background blobs */}
-          <ellipse cx="100" cy="300" rx="80" ry="200" fill="#FFC145" opacity="0.06" />
-          <ellipse cx="350" cy="350" rx="60" ry="180" fill="#2FB59A" opacity="0.05" />
+      <section aria-labelledby="stations-heading">
+        <div className="mb-4 flex items-end justify-between">
+          <div>
+            <p className="eyebrow mb-1">Your route</p>
+            <h2 id="stations-heading" className="font-heading text-xl font-extrabold text-ink">Complete stations in order</h2>
+          </div>
+          <span className="text-sm font-semibold text-muted">{stationStates.filter(item => item.completed).length} of 7 done</span>
+        </div>
 
-          {/* Dashed path */}
-          <path
-            d={pathD}
-            fill="none"
-            stroke="#E5E7EB"
-            strokeWidth="4"
-            strokeDasharray="8 8"
-            strokeLinecap="round"
-          />
-
-          {/* Animated path draw (skip under reduced motion) */}
-          {!reduceMotion && (
-            <motion.path
-              d={pathD}
-              fill="none"
-              stroke="#2B3A8F"
-              strokeWidth="4"
-              strokeDasharray="8 8"
-              strokeLinecap="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1.5, ease: 'easeInOut' }}
-            />
-          )}
-
-          {/* Nodes */}
-          {stationStates.map(({ station, completed, isCurrent, isLocked, index }) => {
-            const pos = nodePositions[index];
-            const color = station.id === 'boss' ? '#2B3A8F' : SKILL_COLORS[station.skill];
-            const radius = 28;
-
-            return (
-              <g key={station.id}>
-                {/* Node circle */}
-                <circle
-                  cx={pos.x}
-                  cy={pos.y}
-                  r={radius}
-                  fill={completed ? color : isCurrent ? '#FFFBF5' : '#F3F4F6'}
-                  stroke={isCurrent ? color : 'none'}
-                  strokeWidth={isCurrent ? 3 : 0}
-                  className={isCurrent && !reduceMotion ? 'animate-pulse' : ''}
-                  style={{ opacity: isLocked ? 0.5 : 1 }}
-                />
-
-                {/* Badge icon inside node */}
-                <g transform={`translate(${pos.x - 16}, ${pos.y - 16})`}>
-                  <foreignObject width="32" height="32" x="0" y="0">
-                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {completed ? (
-                        <CheckCircle2 size={24} className="text-white" />
-                      ) : isLocked ? (
-                        <Lock size={20} className="text-muted" />
-                      ) : isCurrent ? (
-                        <Play size={20} style={{ color }} />
-                      ) : (
-                        <Circle size={20} className="text-gray-300" />
-                      )}
-                    </div>
-                  </foreignObject>
-                </g>
-
-                {/* Station label */}
-                <text
-                  x={pos.x}
-                  y={pos.y + radius + 18}
-                  textAnchor="middle"
-                  fontSize="12"
-                  fontWeight="700"
-                  fill="#12172B"
-                  fontFamily="Plus Jakarta Sans, sans-serif"
-                >
-                  {station.name}
-                </text>
-
-                {/* Skill + XP */}
-                <text
-                  x={pos.x}
-                  y={pos.y + radius + 34}
-                  textAnchor="middle"
-                  fontSize="10"
-                  fill="#6B7280"
-                  fontFamily="Inter, sans-serif"
-                >
-                  {station.id === 'boss' ? 'Mixed skills' : `${SKILL_LABELS[station.skill]} · ${station.id === 'boss' ? '100' : getStationXP(station.skill)} XP`}
-                </text>
-              </g>
-            );
-          })}
-        </svg>
-      </div>
-
-      {/* Station list (accessible alternative to SVG map) */}
-      <div className="space-y-2 mb-6">
-        <h2 className="sr-only">Station list</h2>
-        {stationStates.map(({ station, completed, isCurrent, isLocked }) => {
-          const color = station.id === 'boss' ? '#2B3A8F' : SKILL_COLORS[station.skill];
-          return (
+        <div className="relative space-y-3 before:absolute before:bottom-8 before:left-[31px] before:top-8 before:w-px before:bg-slate-200 sm:before:left-[35px]">
+          {stationStates.map(({ station, completed, current, locked, index }) => (
             <button
               key={station.id}
-              onClick={() => {
-                if (isLocked) return;
-                navigate(`/unit/${unit.id}/${levelKey}/${station.id}`);
-              }}
-              disabled={isLocked}
-              className={`w-full flex items-center gap-4 p-4 rounded-card transition-all text-left ${
-                isLocked
-                  ? 'bg-gray-50 opacity-60 cursor-not-allowed'
-                  : completed
-                    ? 'bg-white shadow-card hover:shadow-cardhover'
-                    : isCurrent
-                      ? 'bg-white shadow-card ring-2 ring-brand'
-                      : 'bg-white shadow-card hover:shadow-cardhover'
+              onClick={() => !locked && navigate(`/unit/${unit.id}/${levelKey}/${station.id}`)}
+              disabled={locked}
+              className={`relative flex w-full items-center gap-4 rounded-card border p-4 text-left transition-all sm:p-5 ${
+                locked
+                  ? 'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400'
+                  : current
+                    ? 'border-brand/40 bg-white shadow-card ring-2 ring-brand/10 hover:shadow-cardhover'
+                    : completed
+                      ? 'border-emerald-200 bg-white shadow-card hover:border-emerald-300 hover:shadow-cardhover'
+                      : 'border-slate-200 bg-white shadow-card hover:shadow-cardhover'
               }`}
-              style={{ minHeight: 44 }}
-              aria-label={`${station.name}. ${station.description}. ${completed ? 'Completed.' : isCurrent ? 'Current station.' : isLocked ? 'Locked.' : 'Available.'}`}
+              aria-label={`${station.name}. ${station.description}. ${completed ? 'Completed.' : current ? 'Current station.' : locked ? 'Locked.' : 'Available.'}`}
             >
-              <StationBadge skill={station.id === 'boss' ? 'boss' : station.skill} size={44} />
-              <div className="flex-1 min-w-0">
-                <p className="font-heading font-700 text-ink text-sm sm:text-base">
-                  {station.order}. {station.name}
-                </p>
-                <p className="text-xs text-muted truncate">{station.description}</p>
+              <div className="relative z-10 shrink-0 rounded-xl bg-white">
+                <StationBadge skill={station.id === 'boss' ? 'boss' : station.skill} size={52} />
+                <span className={`absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white ${completed ? 'bg-mint text-white' : current ? 'bg-brand text-white' : locked ? 'bg-slate-300 text-white' : 'bg-white text-slate-300'}`}>
+                  {completed ? <CheckCircle2 size={13} /> : current ? <Play size={11} /> : locked ? <Lock size={11} /> : <Circle size={11} />}
+                </span>
               </div>
-              <div className="flex items-center gap-3 shrink-0">
-                {station.id !== 'boss' && (
-                  <span
-                    className="text-xs px-2 py-1 rounded-pill font-medium"
-                    style={{ backgroundColor: `${color}15`, color }}
-                  >
-                    {SKILL_LABELS[station.skill]}
-                  </span>
-                )}
-                {completed && <CheckCircle2 size={20} className="text-mint" />}
-                {isCurrent && <Play size={20} className="text-brand" />}
-                {isLocked && <Lock size={18} className="text-muted" />}
+
+              <div className="min-w-0 flex-1">
+                <div className="mb-1 flex flex-wrap items-center gap-2">
+                  <span className="text-xs font-extrabold uppercase text-muted">Station {index + 1}</span>
+                  {current && <span className="rounded-md bg-teal-50 px-2 py-0.5 text-[11px] font-extrabold text-brand">NEXT</span>}
+                  {completed && <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-extrabold text-mint">DONE</span>}
+                </div>
+                <h3 className={`font-heading text-base font-extrabold sm:text-lg ${locked ? 'text-slate-500' : 'text-ink'}`}>{station.name}</h3>
+                <p className="mt-1 text-sm text-muted">{station.description}</p>
               </div>
+
+              <div className="hidden shrink-0 text-right sm:block">
+                <p className="text-xs font-bold text-muted">{station.id === 'boss' ? 'Mixed skills' : SKILL_LABELS[station.skill]}</p>
+                <p className="mt-1 text-sm font-extrabold text-ink">{station.id === 'boss' ? 'Checkpoint' : `${getStationXP(station.skill)} XP`}</p>
+              </div>
+
+              {!locked && <ChevronRight size={20} className={current ? 'text-brand' : 'text-slate-400'} />}
             </button>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

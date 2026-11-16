@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import type { Activity, ListenAndDrawPayload } from '../../types';
 import { AudioButton } from '../AudioButton';
-import { Eraser, Pencil, Paintbrush, Eye, Check } from 'lucide-react';
+import { Eraser, Eye, Check } from 'lucide-react';
 
 interface Props {
   activity: Activity;
@@ -26,7 +26,7 @@ export function ListenAndDraw({ activity, onResult }: Props) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    ctx.fillStyle = '#FFFBF5';
+    ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }, []);
 
@@ -69,7 +69,7 @@ export function ListenAndDraw({ activity, onResult }: Props) {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    ctx.strokeStyle = colors[activeTool] || '#12172B';
+    ctx.strokeStyle = colors[activeTool] || '#172033';
     ctx.lineWidth = activeTool === 'pencil' ? 2 : 5;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -92,7 +92,7 @@ export function ListenAndDraw({ activity, onResult }: Props) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    ctx.fillStyle = '#FFFBF5';
+    ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   };
 
@@ -116,7 +116,7 @@ export function ListenAndDraw({ activity, onResult }: Props) {
         />
         <button
           onClick={() => setShowTranscript(!showTranscript)}
-          className="px-4 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink hover:bg-gray-50"
+          className="action-secondary text-sm"
           style={{ minHeight: 44 }}
           aria-expanded={showTranscript}
         >
@@ -125,36 +125,35 @@ export function ListenAndDraw({ activity, onResult }: Props) {
       </div>
 
       {showTranscript && (
-        <div className="mb-4 p-3 rounded-card bg-violet/10">
-          <p className="text-sm text-ink italic">{payload.transcript}</p>
+        <div className="mb-4 rounded-xl border border-violet/20 bg-violet/5 p-4">
+          <p className="text-sm italic leading-6 text-ink">{payload.transcript}</p>
         </div>
       )}
 
       {/* Tools */}
-      <div className="flex items-center gap-2 mb-3">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
         {payload.tools.map(tool => {
-          const Icon = tool.id === 'pencil' ? Pencil : tool.id === 'red' ? Paintbrush : Paintbrush;
           return (
             <button
               key={tool.id}
               onClick={() => setActiveTool(tool.id)}
-              className={`inline-flex items-center gap-2 px-3 py-2 rounded-pill text-sm font-medium transition-all ${
+              className={`inline-flex min-h-11 items-center gap-2 rounded-xl border px-3 py-2 text-sm font-semibold transition-all ${
                 activeTool === tool.id
-                  ? 'bg-brand/10 ring-2 ring-brand text-brand'
-                  : 'bg-white shadow-card text-ink hover:bg-gray-50'
+                  ? 'border-brand bg-teal-50 text-brand ring-2 ring-brand/15'
+                  : 'border-slate-200 bg-white text-ink hover:bg-slate-50'
               }`}
               style={{ minHeight: 44 }}
               aria-label={`${tool.label} tool`}
               aria-pressed={activeTool === tool.id}
             >
-              <span className="w-4 h-4 rounded-full" style={{ backgroundColor: tool.color }} />
+              <span className="h-4 w-4 rounded-full border border-black/10" style={{ backgroundColor: tool.color }} />
               {tool.label}
             </button>
           );
         })}
         <button
           onClick={clearCanvas}
-          className="inline-flex items-center gap-1.5 px-3 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink hover:bg-gray-50"
+          className="action-secondary text-sm"
           style={{ minHeight: 44 }}
           aria-label="Clear canvas"
         >
@@ -174,17 +173,17 @@ export function ListenAndDraw({ activity, onResult }: Props) {
         onTouchStart={startDraw}
         onTouchMove={draw}
         onTouchEnd={stopDraw}
-        className="w-full rounded-card border-2 border-gray-100 touch-none"
-        style={{ aspectRatio: '4/3', background: '#FFFBF5' }}
+        className="w-full touch-none rounded-xl border-2 border-slate-200"
+        style={{ aspectRatio: '4/3', background: '#FFFFFF' }}
         aria-label="Drawing canvas"
         role="img"
       />
 
       {/* Reveal and complete */}
-      <div className="flex items-center gap-3 mt-4">
+      <div className="mt-4 flex flex-wrap items-center gap-3">
         <button
           onClick={() => setShowReveal(!showReveal)}
-          className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-pill bg-violet/10 text-violet font-medium text-sm hover:bg-violet/20"
+          className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-violet/20 bg-violet/5 px-4 py-2.5 text-sm font-bold text-violet transition-colors hover:bg-violet/10"
           style={{ minHeight: 44 }}
         >
           <Eye size={16} /> Show me
@@ -192,24 +191,24 @@ export function ListenAndDraw({ activity, onResult }: Props) {
         {!completed && (
           <button
             onClick={handleComplete}
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-pill bg-mint text-white font-heading font-700 text-sm hover:bg-mint/90"
+            className="action-primary bg-mint text-sm hover:bg-emerald-700"
             style={{ minHeight: 44 }}
           >
-            <Check size={16} /> I'm done!
+            <Check size={16} /> I'm done
           </button>
         )}
       </div>
 
       {showReveal && (
-        <div className="mt-4 p-4 rounded-card bg-violet/10">
-          <p className="text-sm font-medium text-ink mb-1">Model sentence:</p>
-          <p className="text-sm text-violet">{payload.modelSentence}</p>
+        <div className="mt-4 rounded-xl border border-violet/20 bg-violet/5 p-4">
+          <p className="eyebrow mb-1">Model sentence</p>
+          <p className="text-sm font-semibold text-violet">{payload.modelSentence}</p>
         </div>
       )}
 
       {completed && (
-        <div className="mt-4 p-3 rounded-card bg-mint/10">
-          <p className="text-sm text-ink">Great work! You completed the drawing task.</p>
+        <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+          <p className="text-sm font-semibold text-ink">Great work. You completed the drawing task.</p>
         </div>
       )}
     </div>

@@ -149,12 +149,12 @@ export const ACTIVITY_COUNTS: Record<Skill, number> = {
 };
 
 export const SKILL_COLORS: Record<Skill, string> = {
-  speaking: '#FF6B4A',
-  vocabulary: '#FFC145',
-  listening: '#7C5CFF',
-  reading: '#2FB59A',
-  writing: '#C77DFF',
-  grammar: '#5B7C99',
+  speaking: '#F05A47',
+  vocabulary: '#D89B24',
+  listening: '#6657C8',
+  reading: '#168A72',
+  writing: '#9B5CC4',
+  grammar: '#53708A',
 };
 
 export const SKILL_LABELS: Record<Skill, string> = {

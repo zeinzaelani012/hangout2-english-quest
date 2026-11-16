@@ -88,14 +88,14 @@ export function PresentMode() {
     );
   }
 
-  const skillColor = current ? SKILL_COLORS[current.skill] : '#2B3A8F';
+  const skillColor = current ? SKILL_COLORS[current.skill] : '#0F766E';
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-20 bg-cream/95 backdrop-blur-sm border-b border-gray-100">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur-lg">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-3 flex items-center gap-3 flex-wrap">
-          <span className="font-heading font-800 text-lg text-brand">Present mode</span>
+          <span className="font-heading text-lg font-extrabold text-brand">Present mode</span>
           <span className="text-xs text-muted">No XP · nothing is saved</span>
           <span className="flex-1" />
           <label className="flex items-center gap-1.5 text-sm">
@@ -103,7 +103,7 @@ export function PresentMode() {
             <select
               value={unitId}
               onChange={e => { setUnitId(parseInt(e.target.value, 10)); reset(); }}
-              className="px-3 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink"
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-ink"
             >
               {playable.map(u => (
                 <option key={u.id} value={u.id}>Unit {u.id}: {u.title}</option>
@@ -115,7 +115,7 @@ export function PresentMode() {
             <select
               value={levelKey}
               onChange={e => { setLevelKey(e.target.value as LevelKey); reset(); }}
-              className="px-3 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink"
+              className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-ink"
             >
               {PRESENT_LEVELS.map(l => (
                 <option key={l} value={l}>{LEVEL_LABELS[l]}</option>
@@ -124,7 +124,7 @@ export function PresentMode() {
           </label>
           <button
             onClick={() => navigate('/teacher')}
-            className="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-ink"
+            className="flex h-11 w-11 items-center justify-center rounded-xl text-ink hover:bg-slate-100"
             aria-label="Exit Present mode"
             style={{ minWidth: 44, minHeight: 44 }}
           >
@@ -137,11 +137,11 @@ export function PresentMode() {
       <main className="flex-1 max-w-[1180px] w-full mx-auto px-4 sm:px-6 py-6">
         {current && (
           <div style={{ zoom: PRESENT_ZOOM }}>
-            <div className="bg-white rounded-card shadow-card p-8 sm:p-10 mb-4">
+            <div className="surface-card mb-4 p-6 sm:p-10">
               {/* Station + counter */}
               <div className="flex items-center gap-2 mb-4">
                 <span
-                  className="text-xs px-2.5 py-1 rounded-pill font-medium"
+                  className="rounded-lg px-3 py-1.5 text-xs font-bold"
                   style={{ backgroundColor: `${skillColor}15`, color: skillColor }}
                 >
                   {station?.name || SKILL_LABELS[current.skill]}
@@ -149,7 +149,7 @@ export function PresentMode() {
                 <span className="text-xs text-muted tnum">{index + 1} of {activities.length}</span>
               </div>
 
-              <h1 className="font-heading font-800 text-2xl text-ink mb-6">{current.prompt}</h1>
+              <h1 className="mb-6 font-heading text-2xl font-extrabold text-ink">{current.prompt}</h1>
 
               {/* Reading text for reading activities */}
               {current.skill === 'reading' && current.type === 'gapFill' && (
@@ -173,12 +173,12 @@ export function PresentMode() {
       </main>
 
       {/* Footer with large Next */}
-      <footer className="sticky bottom-0 z-20 bg-cream/95 backdrop-blur-sm border-t border-gray-100">
+      <footer className="sticky bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur-lg">
         <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-4 flex items-center gap-4">
           <button
             onClick={goPrev}
             disabled={index === 0}
-            className="inline-flex items-center gap-2 px-6 py-4 rounded-pill bg-white shadow-card font-heading font-700 text-ink hover:bg-gray-50 disabled:opacity-40"
+            className="inline-flex min-h-14 items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-4 font-heading font-bold text-ink hover:bg-slate-50 disabled:opacity-40"
             style={{ minHeight: 56, fontSize: '1.05rem' }}
             aria-label="Previous activity"
           >
@@ -191,7 +191,7 @@ export function PresentMode() {
           <button
             onClick={goNext}
             disabled={index >= activities.length - 1}
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-pill bg-brand text-white font-heading font-800 hover:bg-brand/90 disabled:opacity-40"
+            className="inline-flex min-h-14 items-center gap-3 rounded-xl bg-brand px-10 py-4 font-heading font-extrabold text-white hover:bg-teal-800 disabled:opacity-40"
             style={{ minHeight: 56, fontSize: '1.25rem' }}
             aria-label="Next activity"
           >
@@ -226,17 +226,17 @@ function PresentationBody({
           return (
             <div
               key={option.id}
-              className={`rounded-card p-5 flex items-center gap-4 transition-all ${
+              className={`rounded-xl border p-5 flex items-center gap-4 transition-all ${
                 isRevealed
                   ? isAnswer
                     ? 'bg-mint/10 ring-2 ring-mint'
-                    : 'bg-cream ring-1 ring-gray-200'
-                  : 'bg-cream border-2 border-dashed border-gray-200'
+                    : 'bg-slate-50 ring-1 ring-slate-200'
+                  : 'bg-slate-50 border-2 border-dashed border-slate-200'
               }`}
               style={{ minHeight: 72 }}
             >
               <span className={`w-10 h-10 rounded-full flex items-center justify-center font-heading font-800 text-lg shrink-0 ${
-                isRevealed ? 'bg-brand text-white' : 'bg-gray-100 text-muted'
+                isRevealed ? 'bg-brand text-white' : 'bg-slate-200/70 text-muted'
               }`}>
                 {idx + 1}
               </span>
@@ -247,7 +247,7 @@ function PresentationBody({
                   )}
                   <span className="font-heading font-700 text-xl text-ink flex-1">{option.label}</span>
                   {isAnswer && (
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-mint text-white text-sm font-heading font-700">
+                    <span className="inline-flex items-center gap-1.5 rounded-lg bg-mint px-3 py-1.5 text-sm font-heading font-bold text-white">
                       <Check size={16} /> Answer
                     </span>
                   )}
@@ -268,14 +268,14 @@ function PresentationBody({
         <div className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {payload.bins.map((bin: any) => (
-              <div key={bin.id} className="rounded-card p-5 bg-cream border-2 border-dashed border-brand/30">
+              <div key={bin.id} className="rounded-xl border-2 border-dashed border-brand/30 bg-slate-50 p-5">
                 <p className="font-heading font-700 text-lg text-ink">{bin.label}</p>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap gap-2.5">
             {payload.items.map((item: any) => (
-              <span key={item.id} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-pill bg-white shadow-card text-ink font-medium">
+              <span key={item.id} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-semibold text-ink">
                 {item.label}
               </span>
             ))}
@@ -286,7 +286,7 @@ function PresentationBody({
       return (
         <div className="flex flex-wrap gap-3">
           {payload.scrambled.map((tile: string, i: number) => (
-            <span key={i} className="px-5 py-3 rounded-card bg-cream shadow-card text-xl font-heading font-700 text-ink">
+            <span key={i} className="rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 font-heading text-xl font-bold text-ink">
               {tile}
             </span>
           ))}
@@ -298,13 +298,13 @@ function PresentationBody({
           <p className="text-lg text-ink">{payload.prompt}</p>
           <div className="flex flex-wrap gap-3">
             {payload.stickers.map((s: any) => (
-              <span key={s.id} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-pill bg-white shadow-card text-ink font-medium">
+              <span key={s.id} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-semibold text-ink">
                 <VocabIllustration imgHint={s.imgHint} size={36} />
                 {s.label}
               </span>
             ))}
           </div>
-          <div className="p-4 rounded-card bg-coral/10">
+          <div className="rounded-xl border border-orange-200 bg-orange-50 p-4">
             <p className="text-lg text-ink">{payload.speakingPrompt}</p>
           </div>
         </div>
@@ -312,13 +312,13 @@ function PresentationBody({
     case 'recordAndCompare':
       return (
         <div className="space-y-4">
-          <div className="p-5 rounded-card bg-coral/10">
+          <div className="rounded-xl border border-orange-200 bg-orange-50 p-5">
             <p className="text-xs font-medium text-muted mb-1">Model line</p>
             <p className="text-xl text-ink italic">"{payload.modelLine}"</p>
           </div>
           <div className="flex flex-wrap gap-2.5">
             {payload.keywords.map((k: string) => (
-              <span key={k} className="px-4 py-2 rounded-pill bg-sun/15 text-ink font-medium">{k}</span>
+              <span key={k} className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 font-semibold text-ink">{k}</span>
             ))}
           </div>
         </div>
@@ -331,7 +331,7 @@ function PresentationBody({
               <p className="text-xs font-medium text-muted mb-2">Word bank</p>
               <div className="flex flex-wrap gap-2.5">
                 {payload.wordBank.map((w: string) => (
-                  <span key={w} className="px-4 py-2 rounded-pill bg-white shadow-card text-ink font-medium">{w}</span>
+                  <span key={w} className="rounded-lg border border-slate-200 bg-white px-4 py-2 font-semibold text-ink">{w}</span>
                 ))}
               </div>
             </div>
@@ -351,7 +351,7 @@ function PresentationBody({
         <div className="space-y-4">
           <div className="flex flex-wrap gap-3">
             {payload.tools?.map((t: any) => (
-              <span key={t.id} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-pill bg-white shadow-card font-medium" style={{ color: t.color }}>
+              <span key={t.id} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-semibold" style={{ color: t.color }}>
                 <span className="w-3 h-3 rounded-full" style={{ backgroundColor: t.color }} />
                 {t.label}
               </span>
@@ -374,7 +374,7 @@ function ReadingPanel({ texts, level, activity }: { texts: ReturnType<typeof get
     : raw;
 
   return (
-    <div className="mb-6 p-6 rounded-card bg-cream border border-gray-100">
+    <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-6">
       <div className="flex items-center justify-between gap-3 mb-3">
         <h2 className="font-heading font-700 text-xl text-ink">{text.title}</h2>
         <AudioButton audioKey={`present-reading-${activity.id}`} fallbackText={spoken} label="Read aloud" />
@@ -384,7 +384,7 @@ function ReadingPanel({ texts, level, activity }: { texts: ReturnType<typeof get
           {raw.map((line, i) => (
             <div
               key={i}
-              className={`p-3 rounded-card ${line.speaker === raw[0]?.speaker ? 'bg-violet/10' : 'bg-white border border-gray-100'}`}
+              className={`rounded-lg border p-3 ${line.speaker === raw[0]?.speaker ? 'border-violet/20 bg-violet/5' : 'border-slate-200 bg-white'}`}
             >
               <p className="text-lg text-ink">
                 <span className="font-medium text-violet">{line.speaker}: </span>
@@ -403,7 +403,7 @@ function ReadingPanel({ texts, level, activity }: { texts: ReturnType<typeof get
 function ListeningPanel({ script }: { script: string }) {
   if (!script) return null;
   return (
-    <div className="mb-6 p-6 rounded-card bg-violet/10">
+    <div className="mb-6 rounded-xl border border-violet/20 bg-violet/5 p-6">
       <div className="flex items-center gap-3 mb-3">
         <AudioButton audioKey={`present-listen-${script.slice(0, 12)}`} fallbackText={script} label="Play audio" />
       </div>

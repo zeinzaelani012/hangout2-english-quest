@@ -3,16 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --brand: #2B3A8F;
-  --coral: #FF6B4A;
-  --mint: #2FB59A;
-  --sun: #FFC145;
-  --violet: #7C5CFF;
-  --writing: #C77DFF;
-  --grammar: #5B7C99;
-  --cream: #FFFBF5;
-  --ink: #12172B;
-  --muted: #6B7280;
+  --brand: #0F766E;
+  --brand-dark: #115E59;
+  --coral: #F05A47;
+  --mint: #168A72;
+  --sun: #D89B24;
+  --violet: #6657C8;
+  --writing: #9B5CC4;
+  --grammar: #53708A;
+  --cream: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-soft: #EEF2F6;
+  --line: #DCE2EA;
+  --ink: #172033;
+  --muted: #657083;
+  --success-soft: #E8F5F1;
+  --danger-soft: #FCEDEA;
 }
 
 * {
@@ -27,22 +33,63 @@ body {
   margin: 0;
   font-family: 'Inter Variable', 'Inter', sans-serif;
   background-color: var(--cream);
+  background-image: linear-gradient(180deg, #FFFFFF 0, #F5F7FA 240px);
+  background-repeat: no-repeat;
   color: var(--ink);
   font-feature-settings: 'tnum' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+button, input, textarea, select {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.18);
 }
 
 /* Focus rings */
 *:focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 3px solid rgba(15, 118, 110, 0.38);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-card border border-slate-200/80 bg-white shadow-card;
+  }
+
+  .surface-muted {
+    @apply rounded-card border border-slate-200/80 bg-slate-50;
+  }
+
+  .action-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-brand px-5 py-2.5 font-heading font-bold text-white transition-colors hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .action-accent {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-coral px-5 py-2.5 font-heading font-bold text-white transition-colors hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .action-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 font-semibold text-ink transition-colors hover:bg-slate-50;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase text-muted;
+    letter-spacing: 0.08em;
+  }
 }
 
 /* Tabular numerals for stats */

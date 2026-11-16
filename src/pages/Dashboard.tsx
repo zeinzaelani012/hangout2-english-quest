@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { Flame, Star, Lock, ArrowRight, BookOpen } from 'lucide-react';
+import { ArrowRight, BookOpen, Flame, Lock, Play, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import { units } from '../data/units';
-import { SKILL_WEIGHTS, SKILL_LABELS, type Skill } from '../types';
-import { SnackTableHero, AvatarSVG } from '../components/Illustrations';
+import { LEVEL_LABELS, SKILL_LABELS, SKILL_WEIGHTS, type Skill } from '../types';
+import { AvatarSVG, SnackTableHero } from '../components/Illustrations';
 import { ProgressRing } from '../components/ProgressRing';
 import { SkillBar } from '../components/SkillBar';
-import { LEVEL_LABELS } from '../types';
 
 interface DashboardProps {
   onEditProfile: () => void;
@@ -18,16 +17,12 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
 
   if (!profile) return null;
 
-  const unit1 = units[0];
-  const unit1Progress = getUnitProgress(1);
-  const hasProgress = unit1Progress.completed > 0;
-
+  const firstUnit = units[0];
+  const firstUnitProgress = getUnitProgress(1);
+  const hasProgress = firstUnitProgress.completed > 0;
   const skills: Skill[] = ['speaking', 'vocabulary', 'listening', 'reading', 'writing', 'grammar'];
+  const overallPercent = Math.round((firstUnitProgress.completed / firstUnitProgress.total) * 100);
 
-  // Calculate overall progress
-  const overallPercent = Math.round((unit1Progress.completed / unit1Progress.total) * 100);
-
-  // Per-skill earned vs available across all levels
   const skillEarned: Record<Skill, number> = {
     speaking: 0, vocabulary: 0, listening: 0, reading: 0, writing: 0, grammar: 0,
   };
@@ -35,166 +30,173 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
     speaking: 0, vocabulary: 0, listening: 0, reading: 0, writing: 0, grammar: 0,
   };
 
-  // Each level has 100 XP, split by skill weights
-  // 3 levels total for unit 1
-  for (const skill of skills) {
-    skillAvailable[skill] = SKILL_WEIGHTS[skill] * 3; // 3 levels
-  }
+  for (const skill of skills) skillAvailable[skill] = SKILL_WEIGHTS[skill] * 3;
 
-  // Calculate earned from progress
   if (progress.units[1]) {
     for (const level of ['easy', 'core', 'challenging'] as const) {
-      const lp = progress.units[1][level];
-      if (lp) {
-        for (const stationId of Object.keys(lp.stations)) {
-          const station = lp.stations[stationId];
-          const stationObj = unit1.stations.find(s => s.id === stationId);
-          if (stationObj) {
-            const skill = stationObj.skill as Skill;
-            skillEarned[skill] += station.xpEarned;
-          }
-        }
+      const levelProgress = progress.units[1][level];
+      if (!levelProgress) continue;
+      for (const stationId of Object.keys(levelProgress.stations)) {
+        const stationProgress = levelProgress.stations[stationId];
+        const station = firstUnit.stations.find(item => item.id === stationId);
+        if (station) skillEarned[station.skill as Skill] += stationProgress.xpEarned;
       }
     }
   }
 
   return (
-    <div className="max-w-[1180px] mx-auto px-4 sm:px-6">
+    <div className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 sm:py-8">
       <h1 className="sr-only">Dashboard</h1>
 
-      {/* Greeting */}
-      <div className="flex items-center justify-between mb-6 mt-2">
-        <div className="flex items-center gap-3">
-          <button onClick={onEditProfile} className="hover:opacity-80 transition-opacity" aria-label="Edit profile">
-            <AvatarSVG avatarId={profile.avatarId} size={48} />
+      <section className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex items-center gap-3.5">
+          <button onClick={onEditProfile} className="rounded-xl transition-opacity hover:opacity-80" aria-label="Edit profile">
+            <AvatarSVG avatarId={profile.avatarId} size={52} />
           </button>
           <div>
-            <p className="text-sm text-muted">Welcome back</p>
-            <p className="font-heading font-800 text-2xl text-ink">Hi, {profile.name}!</p>
+            <p className="eyebrow mb-1">Your learning space</p>
+            <p className="font-heading text-2xl font-extrabold text-ink sm:text-3xl">Welcome back, {profile.name}</p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-sun/15">
-            <Flame size={16} className="text-sun" />
-            <span className="text-sm font-medium tnum text-ink">{progress.streak} day streak</span>
+        <div className="flex gap-2 sm:hidden">
+          <div className="flex items-center gap-1.5 rounded-xl bg-amber-50 px-3 py-2 text-sm font-semibold text-ink">
+            <Flame size={16} className="text-sun" /> <span className="tnum">{progress.streak} days</span>
           </div>
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-pill bg-brand/10">
-            <Star size={16} className="text-brand" />
-            <span className="text-sm font-medium tnum text-brand">{progress.totalXP} XP</span>
+          <div className="flex items-center gap-1.5 rounded-xl bg-teal-50 px-3 py-2 text-sm font-semibold text-brand">
+            <Star size={16} /> <span className="tnum">{progress.totalXP} XP</span>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Hero */}
-      <div className="relative overflow-hidden rounded-card bg-gradient-to-br from-brand to-brand/80 shadow-card mb-6">
-        <div className="relative z-10 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
-          <div className="flex-1">
-            <h2 className="font-heading font-800 text-3xl sm:text-4xl text-white mb-2">
-              Your English Quest
+      <section className="surface-card mb-6 overflow-hidden">
+        <div className="grid lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,.55fr)]">
+          <div className="p-6 sm:p-8 lg:p-10">
+            <div className="mb-5 flex items-center gap-2">
+              <span className="rounded-lg bg-teal-50 px-2.5 py-1 text-xs font-bold text-brand">UNIT 1</span>
+              <span className="text-sm font-semibold text-muted">{firstUnit.islandName}</span>
+            </div>
+            <h2 className="max-w-2xl font-heading text-3xl font-extrabold text-ink sm:text-4xl">
+              {hasProgress ? 'Continue where you left off' : 'Start your first English unit'}
             </h2>
-            <p className="text-white/80 text-base mb-6 max-w-md">
-              Learn new words, play games, and become an English star — one unit at a time.
+            <p className="mt-3 max-w-xl text-base leading-7 text-muted">
+              {firstUnit.bigQuestion} Build speaking confidence through short, focused activities and immediate feedback.
             </p>
-            <button
-              onClick={() => navigate('/unit/1')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-pill bg-coral text-white font-heading font-700 hover:bg-coral/90 transition-colors shadow-lg"
-              style={{ minHeight: 44 }}
-            >
-              {hasProgress ? 'Continue Unit 1' : 'Start Unit 1'}
-              <ArrowRight size={18} />
-            </button>
+
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <button onClick={() => navigate('/unit/1')} className="action-accent sm:w-auto">
+                {hasProgress ? <Play size={18} /> : <BookOpen size={18} />}
+                {hasProgress ? 'Continue learning' : 'Open Unit 1'}
+                <ArrowRight size={18} />
+              </button>
+              <div className="flex min-w-[180px] items-center gap-3">
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
+                  <div className="h-full rounded-full bg-brand transition-all duration-700" style={{ width: `${overallPercent}%` }} />
+                </div>
+                <span className="tnum text-sm font-bold text-ink">{overallPercent}%</span>
+              </div>
+            </div>
           </div>
-          <div className="w-full sm:w-1/2 max-w-sm">
-            <SnackTableHero className="w-full h-auto" />
+
+          <div className="relative flex min-h-52 items-center justify-center overflow-hidden border-t border-slate-200 bg-slate-50 px-8 lg:border-l lg:border-t-0">
+            <SnackTableHero className="h-auto w-full max-w-xs" />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Skill panel */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-6">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Your Skills</h3>
-        <div className="flex flex-col sm:flex-row items-center gap-6">
-          <ProgressRing progress={overallPercent} size={120} label="Complete" />
-          <div className="flex-1 w-full space-y-3">
+      <div className="mb-8 grid gap-6 lg:grid-cols-[minmax(0,.72fr)_minmax(0,1.28fr)]">
+        <section className="surface-card p-6">
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <div>
+              <p className="eyebrow mb-1">Unit 1 snapshot</p>
+              <h2 className="font-heading text-xl font-extrabold text-ink">Overall progress</h2>
+            </div>
+            <button onClick={() => navigate('/progress')} className="text-sm font-bold text-brand hover:text-teal-800">View details</button>
+          </div>
+          <div className="flex items-center gap-6">
+            <ProgressRing progress={overallPercent} size={112} label="Complete" />
+            <div className="space-y-3 text-sm">
+              <div>
+                <p className="font-bold text-ink">{firstUnitProgress.completed} stations complete</p>
+                <p className="text-muted">out of {firstUnitProgress.total}</p>
+              </div>
+              <div>
+                <p className="font-bold text-ink">{progress.totalXP} XP earned</p>
+                <p className="text-muted">across your learning journey</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="surface-card p-6">
+          <div className="mb-5">
+            <p className="eyebrow mb-1">Skill balance</p>
+            <h2 className="font-heading text-xl font-extrabold text-ink">Your six English skills</h2>
+          </div>
+          <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
             {skills.map(skill => (
-              <SkillBar
-                key={skill}
-                skill={skill}
-                earned={skillEarned[skill]}
-                available={skillAvailable[skill]}
-                showWeight
-              />
+              <SkillBar key={skill} skill={skill} earned={skillEarned[skill]} available={skillAvailable[skill]} showWeight />
             ))}
           </div>
-        </div>
+        </section>
       </div>
 
-      {/* Choose a Unit */}
-      <div className="mb-6">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Choose a Unit</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+      <section>
+        <div className="mb-4 flex items-end justify-between gap-4">
+          <div>
+            <p className="eyebrow mb-1">Course library</p>
+            <h2 className="font-heading text-2xl font-extrabold text-ink">Choose a unit</h2>
+          </div>
+          <p className="hidden text-sm text-muted sm:block">Two units available now</p>
+        </div>
+
+        <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {units.map(unit => {
             if (unit.status === 'placeholder') {
               return (
-                <div
-                  key={unit.id}
-                  className="rounded-card bg-gray-50/80 border border-dashed border-gray-200 p-5 flex flex-col items-center justify-center text-center cursor-not-allowed select-none"
-                  aria-label={`Unit ${unit.id}, locked, coming soon`}
-                  tabIndex={0}
-                >
-                  <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mb-3">
-                    <Lock size={18} className="text-gray-400" />
+                <div key={unit.id} className="surface-muted flex min-h-44 flex-col justify-between p-5 text-left" aria-label={`Unit ${unit.id}, locked, coming soon`}>
+                  <div className="flex items-start justify-between">
+                    <span className="eyebrow">Unit {unit.id}</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-200/70 text-slate-400"><Lock size={17} /></span>
                   </div>
-                  <p className="font-heading font-700 text-ink/60">Unit {unit.id}</p>
-                  <p className="text-sm text-muted mt-1">Coming soon</p>
+                  <div>
+                    <p className="font-heading text-lg font-bold text-slate-500">Coming soon</p>
+                    <p className="mt-1 text-sm text-muted">More English topics are being prepared.</p>
+                  </div>
                 </div>
               );
             }
 
-            const uProgress = getUnitProgress(unit.id);
             const easyPct = getLevelProgressPercent(unit.id, 'easy');
             const corePct = getLevelProgressPercent(unit.id, 'core');
-            const chalPct = getLevelProgressPercent(unit.id, 'challenging');
+            const challengingPct = getLevelProgressPercent(unit.id, 'challenging');
+            const progressValues = { easy: easyPct, core: corePct, challenging: challengingPct };
 
             return (
-              <button
-                key={unit.id}
-                onClick={() => navigate(`/unit/${unit.id}`)}
-                className="text-left rounded-card bg-white shadow-card hover:shadow-cardhover transition-all p-5 group flex flex-col"
-                aria-label={`Unit ${unit.id}: ${unit.title}. ${unit.bigQuestion}`}
-              >
-                <div className="flex items-start justify-between mb-3">
+              <button key={unit.id} onClick={() => navigate(`/unit/${unit.id}`)} className="surface-card group flex min-h-56 flex-col p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-cardhover" aria-label={`Unit ${unit.id}: ${unit.title}. ${unit.bigQuestion}`}>
+                <div className="mb-5 flex items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs text-muted font-medium">Unit {unit.id}</p>
-                    <p className="font-heading font-800 text-lg text-ink">{unit.title}</p>
+                    <p className="eyebrow mb-1">Unit {unit.id}</p>
+                    <p className="font-heading text-xl font-extrabold text-ink">{unit.title}</p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors">
-                    <BookOpen size={18} />
-                  </div>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50 text-brand transition-colors group-hover:bg-brand group-hover:text-white"><BookOpen size={19} /></span>
                 </div>
-                <p className="text-sm text-muted mb-4 italic">"{unit.bigQuestion}"</p>
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {(['easy', 'core', 'challenging'] as const).map(level => {
-                    const pct = level === 'easy' ? easyPct : level === 'core' ? corePct : chalPct;
-                    return (
-                      <span
-                        key={level}
-                        className="text-xs px-2.5 py-1 rounded-pill font-medium"
-                        style={{
-                          backgroundColor: pct > 0 ? '#2FB59A15' : '#F3F4F6',
-                          color: pct > 0 ? '#2FB59A' : '#6B7280',
-                        }}
-                      >
-                        {LEVEL_LABELS[level]} {pct}%
-                      </span>
-                    );
-                  })}
+                <p className="mb-5 text-sm leading-6 text-muted">{unit.bigQuestion}</p>
+                <div className="mt-auto space-y-2.5">
+                  {(['easy', 'core', 'challenging'] as const).map(level => (
+                    <div key={level} className="flex items-center gap-3">
+                      <span className="w-20 text-xs font-semibold text-muted">{LEVEL_LABELS[level]}</span>
+                      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-100">
+                        <div className="h-full rounded-full bg-brand" style={{ width: `${progressValues[level]}%` }} />
+                      </div>
+                      <span className="tnum w-8 text-right text-xs font-bold text-ink">{progressValues[level]}%</span>
+                    </div>
+                  ))}
                 </div>
               </button>
             );
           })}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

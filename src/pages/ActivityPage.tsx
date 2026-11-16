@@ -152,25 +152,25 @@ export function ActivityPage() {
   };
 
   const currentResult = results[currentActivity?.id];
-  const skillColor = station.id === 'boss' ? '#2B3A8F' : SKILL_COLORS[station.skill];
+  const skillColor = station.id === 'boss' ? '#0F766E' : SKILL_COLORS[station.skill];
 
   return (
-    <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-4">
+    <div className="mx-auto max-w-[900px] px-4 py-4 sm:px-6 sm:py-6">
       {/* Sticky header */}
-      <div className="sticky top-0 z-20 bg-cream/90 backdrop-blur-sm pt-2 pb-3 mb-4 border-b border-gray-100">
+      <div className="sticky top-16 z-20 -mx-4 mb-5 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-lg sm:mx-0 sm:rounded-card sm:border sm:px-4 sm:shadow-card">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 min-w-0">
             <button
               onClick={() => navigate(`/unit/${unit.id}/${levelKey}`)}
-              className="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-ink shrink-0"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-ink transition-colors hover:bg-slate-100"
               aria-label="Back to quest map"
               style={{ minWidth: 44, minHeight: 44 }}
             >
               <ArrowLeft size={18} />
             </button>
             <div className="min-w-0">
-              <p className="font-heading font-700 text-sm text-ink truncate">{station.name}</p>
-              <p className="text-xs text-muted">
+              <p className="truncate font-heading text-sm font-extrabold text-ink">{station.name}</p>
+              <p className="text-xs font-semibold text-muted">
                 {currentIndex + 1} of {activities.length}
                 {station.id !== 'boss' && ` · ${SKILL_LABELS[station.skill]}`}
               </p>
@@ -178,7 +178,7 @@ export function ActivityPage() {
           </div>
           <div className="flex items-center gap-2 shrink-0">
             <span
-              className="text-xs px-2.5 py-1 rounded-pill font-medium tnum"
+              className="tnum rounded-lg px-2.5 py-1.5 text-xs font-bold"
               style={{ backgroundColor: `${skillColor}15`, color: skillColor }}
             >
               {currentActivity?.xp || 0} XP
@@ -187,7 +187,7 @@ export function ActivityPage() {
         </div>
 
         {/* Progress bar */}
-        <div className="h-1 rounded-pill bg-gray-100 overflow-hidden mt-2">
+        <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-100">
           <div
             className="h-full rounded-pill transition-all duration-300"
             style={{
@@ -225,19 +225,22 @@ export function ActivityPage() {
 
       {/* Activity body — keyed by activity id so consecutive same-type
           activities (e.g. gapFill → gapFill) start with fresh state */}
-      <div key={currentActivity.id} className="bg-white rounded-card shadow-card p-6 sm:p-8 mb-4">
-        <p className="text-base text-ink mb-6 font-medium">{currentActivity.prompt}</p>
+      <div key={currentActivity.id} className="surface-card mb-4 p-5 sm:p-8">
+        <div className="mb-6 border-b border-slate-100 pb-5">
+          <p className="eyebrow mb-2">Activity {currentIndex + 1}</p>
+          <p className="text-base font-bold leading-7 text-ink sm:text-lg">{currentActivity.prompt}</p>
+        </div>
         {renderActivity()}
       </div>
 
       {/* Feedback panel */}
       {currentResult && (
         <div
-          className="rounded-card p-4 mb-4"
-          style={{
-            backgroundColor: currentResult.correct ? '#2FB59A15' : '#FF6B4A15',
-            border: `1px solid ${currentResult.correct ? '#2FB59A30' : '#FF6B4A30'}`,
-          }}
+          className={`mb-4 rounded-card border p-4 ${
+            currentResult.correct
+              ? 'border-emerald-200 bg-emerald-50'
+              : 'border-red-200 bg-red-50'
+          }`}
           aria-live="polite"
           role="status"
         >
@@ -248,8 +251,8 @@ export function ActivityPage() {
               <X size={20} className="text-coral shrink-0 mt-0.5" />
             )}
             <div>
-              <p className="font-medium text-sm text-ink">
-                {currentResult.correct ? 'Correct!' : 'Not quite right.'}
+              <p className="font-heading text-sm font-extrabold text-ink">
+                {currentResult.correct ? 'Correct' : 'Review this answer'}
               </p>
               {currentResult.error && (
                 <p className="text-sm text-muted mt-1">
@@ -266,11 +269,11 @@ export function ActivityPage() {
       )}
 
       {/* Footer: hint + action */}
-      <div className="flex items-center justify-between gap-4 sticky bottom-0 bg-cream/90 backdrop-blur-sm py-3 -mx-4 px-4 sm:mx-0 sm:px-0 border-t border-gray-100">
+      <div className="sticky bottom-16 z-20 -mx-4 flex items-center justify-between gap-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-lg sm:bottom-4 sm:mx-0 sm:rounded-card sm:border sm:shadow-card">
         {/* Hint button */}
         <button
           onClick={() => setShowHint(!showHint)}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-pill bg-white shadow-card text-sm font-medium text-ink hover:bg-gray-50 transition-colors"
+          className="action-secondary text-sm"
           style={{ minHeight: 44 }}
           aria-expanded={showHint}
           aria-label="Show hint"
@@ -283,7 +286,7 @@ export function ActivityPage() {
         <button
           onClick={handleNext}
           disabled={!currentResult}
-          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          className="action-primary min-w-28 px-6"
           style={{ minHeight: 44 }}
         >
           {isLastActivity ? (
@@ -296,12 +299,12 @@ export function ActivityPage() {
 
       {/* Hint bubble */}
       {showHint && (
-        <div className="fixed bottom-20 left-4 right-4 sm:left-auto sm:right-8 sm:max-w-sm z-30">
-          <div className="bg-white rounded-card shadow-2xl p-4 flex items-start gap-3">
+        <div className="fixed bottom-36 left-4 right-4 z-30 sm:bottom-24 sm:left-auto sm:right-8 sm:max-w-sm">
+          <div className="surface-card flex items-start gap-3 p-4 shadow-cardhover">
             <CookieMascot size={40} className="shrink-0" />
             <div>
-              <p className="text-xs font-medium text-muted mb-1">Cookie says:</p>
-              <p className="text-sm text-ink">{getHint(currentActivity)}</p>
+              <p className="eyebrow mb-1">Cookie's hint</p>
+              <p className="text-sm leading-6 text-ink">{getHint(currentActivity)}</p>
             </div>
           </div>
         </div>
@@ -309,10 +312,13 @@ export function ActivityPage() {
 
       {/* Station complete overlay */}
       {stationComplete && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 backdrop-blur-sm">
-          <div className="bg-cream rounded-card shadow-2xl p-8 text-center">
-            <Check size={48} className="text-mint mx-auto mb-3" />
-            <p className="font-heading font-800 text-xl text-ink">Station Complete!</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm">
+          <div className="surface-card p-8 text-center shadow-2xl">
+            <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50">
+              <Check size={34} className="text-mint" />
+            </span>
+            <p className="font-heading text-xl font-extrabold text-ink">Station complete</p>
+            <p className="mt-1 text-sm text-muted">Saving your progress...</p>
           </div>
         </div>
       )}
@@ -341,27 +347,30 @@ function GrammarTeachingCard({ patterns, audioKey }: { patterns: UnitGrammarPatt
     .join(' ');
 
   return (
-    <div className="bg-white rounded-card shadow-card p-6 mb-4">
-      <div className="flex items-center justify-between gap-3 mb-4">
-        <h3 className="font-heading font-700 text-lg text-ink">Teaching card</h3>
+    <div className="surface-card mb-4 p-5 sm:p-6">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <div>
+          <p className="eyebrow mb-1">Grammar focus</p>
+          <h3 className="font-heading text-lg font-extrabold text-ink">Teaching card</h3>
+        </div>
         <AudioButton audioKey={audioKey} fallbackText={spoken} label="Read aloud" />
       </div>
-      <div className="space-y-4">
+      <div className="grid gap-4 sm:grid-cols-2">
         {patterns.map(pattern => (
-          <div key={pattern.id}>
-            <p className="font-heading font-700 text-sm text-ink">{pattern.label}</p>
-            <div className="flex flex-wrap gap-1.5 mt-1.5">
+          <div key={pattern.id} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p className="font-heading text-sm font-extrabold text-ink">{pattern.label}</p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
               {pattern.examples.map((example, i) => (
                 <span
                   key={i}
-                  className="text-xs px-2.5 py-1 rounded-pill bg-cream border border-gray-100 text-ink"
+                  className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-ink"
                 >
                   {example}
                 </span>
               ))}
             </div>
             {(pattern.note || pattern.rule) && (
-              <p className="text-xs text-muted mt-1.5">{pattern.note || pattern.rule}</p>
+              <p className="mt-2.5 text-xs leading-5 text-muted">{pattern.note || pattern.rule}</p>
             )}
           </div>
         ))}
@@ -383,9 +392,12 @@ function ReadingTextDisplay({ level, activity, texts }: { level: Level; activity
     : raw;
 
   return (
-    <div className="bg-white rounded-card shadow-card p-6 mb-4">
-      <div className="flex items-center justify-between gap-3 mb-3">
-        <h3 className="font-heading font-700 text-lg text-ink">{text.title}</h3>
+    <div className="surface-card mb-4 p-5 sm:p-6">
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <div>
+          <p className="eyebrow mb-1">Read</p>
+          <h3 className="font-heading text-lg font-extrabold text-ink">{text.title}</h3>
+        </div>
         <AudioButton
           audioKey={`reading-${activity.id}`}
           fallbackText={spoken}
@@ -398,21 +410,21 @@ function ReadingTextDisplay({ level, activity, texts }: { level: Level; activity
           {raw.map((line, i) => (
             <div
               key={i}
-              className={`p-3 rounded-card ${
+              className={`rounded-xl border p-3 ${
                 line.speaker === raw[0]?.speaker
-                  ? 'bg-violet/10'
-                  : 'bg-cream border border-gray-100'
+                  ? 'border-violet/20 bg-violet/5'
+                  : 'border-slate-200 bg-slate-50'
               }`}
             >
-              <p className="text-sm text-ink">
-                <span className="font-medium text-violet">{line.speaker}: </span>
+              <p className="text-sm leading-6 text-ink">
+                <span className="font-bold text-violet">{line.speaker}: </span>
                 {line.text}
               </p>
             </div>
           ))}
         </div>
       ) : (
-        <p className="text-sm text-ink leading-relaxed whitespace-pre-line">{raw}</p>
+        <p className="whitespace-pre-line text-sm leading-7 text-ink">{raw}</p>
       )}
     </div>
   );
@@ -427,8 +439,8 @@ function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activi
   const isDialogue = activity.skill === 'reading' && activity.prompt.includes(`"${dialogue.title}"`);
 
   return (
-    <div className="bg-white rounded-card shadow-card p-6 mb-4">
-      <div className="flex items-center gap-3 mb-3">
+    <div className="surface-card mb-4 p-5 sm:p-6">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
         <AudioButton
           audioKey={`listen-${activity.id}`}
           fallbackText={script}
@@ -437,7 +449,7 @@ function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activi
         />
         <button
           onClick={() => setShowTranscript(!showTranscript)}
-          className="px-4 py-2 rounded-pill bg-white shadow-card text-sm font-medium text-ink hover:bg-gray-50"
+          className="action-secondary text-sm"
           style={{ minHeight: 44 }}
           aria-expanded={showTranscript}
         >
@@ -445,17 +457,17 @@ function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activi
         </button>
       </div>
       {showTranscript && (
-        <div className="p-3 rounded-card bg-violet/10">
+        <div className="rounded-xl border border-violet/20 bg-violet/5 p-4">
           {isDialogue ? (
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               {dialogue.lines.map((line, i) => (
-                <p key={i} className="text-sm text-ink">
-                  <span className="font-medium text-violet">{line.speaker}:</span> {line.text}
+                <p key={i} className="text-sm leading-6 text-ink">
+                  <span className="font-bold text-violet">{line.speaker}:</span> {line.text}
                 </p>
               ))}
             </div>
           ) : (
-            <p className="text-sm text-ink italic">{script}</p>
+            <p className="text-sm italic leading-6 text-ink">{script}</p>
           )}
         </div>
       )}

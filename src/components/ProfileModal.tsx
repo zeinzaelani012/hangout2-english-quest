@@ -45,7 +45,7 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-ink/40 backdrop-blur-sm"
+        className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/40 p-4 backdrop-blur-sm"
         role="dialog"
         aria-modal="true"
         aria-label="Create your profile"
@@ -54,23 +54,23 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-cream rounded-card shadow-2xl p-6 sm:p-8 w-full max-w-md"
+          className="surface-card max-h-[90vh] w-full max-w-lg overflow-y-auto p-6 shadow-2xl sm:p-8"
         >
           {!saved ? (
             <>
               <div className="flex justify-center mb-4">
                 <CookieMascot size={56} />
               </div>
-              <h2 className="font-heading font-800 text-2xl text-ink text-center mb-1">
+              <h2 className="mb-2 text-center font-heading text-2xl font-extrabold text-ink">
                 {isInitial ? 'Welcome to English Quest!' : 'What should we call you?'}
               </h2>
-              <p className="text-center text-muted text-sm mb-6">
+              <p className="mb-6 text-center text-sm leading-6 text-muted">
                 Pick a name and an avatar to get started.
               </p>
 
               {/* Name input */}
               <div className="mb-4">
-                <label htmlFor="profile-name" className="block text-sm font-medium text-ink mb-1.5">
+                <label htmlFor="profile-name" className="mb-1.5 block text-sm font-bold text-ink">
                   Your name
                 </label>
                 <input
@@ -82,7 +82,7 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
                   placeholder="Enter your name (2–20 characters)"
                   maxLength={20}
                   autoFocus
-                  className="w-full px-4 py-3 rounded-card border border-gray-200 bg-white text-ink focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-ink placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
                   aria-invalid={!!error}
                   aria-describedby={error ? 'name-error' : undefined}
                 />
@@ -95,16 +95,16 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
 
               {/* Avatar picker */}
               <div className="mb-6">
-                <label className="block text-sm font-medium text-ink mb-2">Choose your avatar</label>
-                <div className="grid grid-cols-4 gap-3">
+                <label className="mb-2 block text-sm font-bold text-ink">Choose your avatar</label>
+                <div className="grid grid-cols-4 gap-2.5 sm:grid-cols-6">
                   {AVATAR_IDS.map(id => (
                     <button
                       key={id}
                       onClick={() => setAvatarId(id)}
-                      className={`p-2 rounded-card transition-all ${
+                      className={`rounded-xl border p-2 transition-all ${
                         avatarId === id
-                          ? 'bg-brand/10 ring-2 ring-brand'
-                          : 'bg-white hover:bg-gray-50 border border-gray-100'
+                          ? 'border-brand bg-teal-50 ring-2 ring-brand/20'
+                          : 'border-slate-200 bg-white hover:bg-slate-50'
                       }`}
                       style={{ minHeight: 44 }}
                       aria-label={`Avatar option ${id}`}
@@ -118,7 +118,7 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
 
               <button
                 onClick={handleSave}
-                className="w-full py-3 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors"
+                className="action-primary w-full"
                 style={{ minHeight: 44 }}
               >
                 Save and start
@@ -133,10 +133,10 @@ export function ProfileModal({ onClose, isInitial = false }: ProfileModalProps) 
               <div className="flex justify-center mb-4">
                 <AvatarSVG avatarId={avatarId} size={80} />
               </div>
-              <h2 className="font-heading font-800 text-2xl text-ink mb-2">
+              <h2 className="mb-2 font-heading text-2xl font-extrabold text-ink">
                 Hi, {name.trim()}!
               </h2>
-              <p className="text-muted text-lg">Ready for your English Quest?</p>
+              <p className="text-sm font-semibold text-muted">Your learning space is ready.</p>
             </motion.div>
           )}
         </motion.div>

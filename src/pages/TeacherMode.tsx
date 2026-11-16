@@ -28,15 +28,16 @@ export function TeacherMode() {
 
   if (!pinEntered) {
     return (
-      <div className="max-w-[400px] mx-auto px-4 sm:px-6 py-16">
-        <h1 className="font-heading font-800 text-2xl text-ink mb-6 text-center">Teacher Mode</h1>
-        <div className="bg-white rounded-card shadow-card p-6">
+      <div className="mx-auto max-w-[440px] px-4 py-12 sm:px-6 sm:py-16">
+        <p className="eyebrow mb-2 text-center">Restricted area</p>
+        <h1 className="mb-6 text-center font-heading text-3xl font-extrabold text-ink">Teacher mode</h1>
+        <div className="surface-card p-6 sm:p-8">
           <div className="flex justify-center mb-4">
-            <div className="w-14 h-14 rounded-full bg-brand/10 flex items-center justify-center">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-50">
               <KeyRound size={28} className="text-brand" />
             </div>
           </div>
-          <label htmlFor="teacher-pin" className="block text-sm font-medium text-ink mb-2 text-center">
+          <label htmlFor="teacher-pin" className="mb-2 block text-center text-sm font-bold text-ink">
             Enter PIN to continue
           </label>
           <input
@@ -47,7 +48,7 @@ export function TeacherMode() {
             onKeyDown={e => e.key === 'Enter' && handlePinSubmit()}
             placeholder="PIN"
             autoFocus
-            className="w-full px-4 py-3 rounded-pill border border-gray-200 bg-white text-ink text-center focus:outline-none focus:border-brand"
+            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-ink placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
             style={{ minHeight: 44 }}
             aria-describedby={pinError ? 'pin-error' : undefined}
           />
@@ -58,7 +59,7 @@ export function TeacherMode() {
           )}
           <button
             onClick={handlePinSubmit}
-            className="w-full mt-4 py-3 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors"
+            className="action-primary mt-4 w-full"
             style={{ minHeight: 44 }}
           >
             Enter
@@ -107,24 +108,27 @@ export function TeacherMode() {
   }
 
   return (
-    <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-4">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center">
+    <div className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 sm:py-8">
+      <div className="mb-6 flex items-center gap-3">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50">
           <BarChart3 size={20} className="text-brand" />
         </div>
-        <h1 className="font-heading font-800 text-2xl text-ink">Teacher Mode</h1>
+        <div>
+          <p className="eyebrow mb-0.5">Classroom tools</p>
+          <h1 className="font-heading text-2xl font-extrabold text-ink">Teacher mode</h1>
+        </div>
       </div>
 
       {/* Per-level accuracy */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Level Performance</h3>
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Level performance</h3>
         {levelStats.length > 0 ? (
           <div className="space-y-3">
             {levelStats.map(stat => (
-              <div key={stat.level} className="p-4 rounded-card bg-cream">
+              <div key={stat.level} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <p className="font-heading font-700 text-ink">{LEVEL_LABELS[stat.level]}</p>
-                  <span className="text-lg font-heading font-800 tnum text-brand">{stat.accuracy}%</span>
+                  <p className="font-heading font-extrabold text-ink">{LEVEL_LABELS[stat.level]}</p>
+                  <span className="tnum font-heading text-lg font-extrabold text-brand">{stat.accuracy}%</span>
                 </div>
                 {stat.weakestSkill && (
                   <p className="text-sm text-muted">
@@ -138,8 +142,8 @@ export function TeacherMode() {
                     </summary>
                     <div className="mt-2 space-y-2">
                       {stat.errors.map((err, i) => (
-                        <div key={i} className="p-2 rounded-card bg-white border border-gray-100">
-                          <p className="text-sm font-medium text-ink">Correct: {err.correctAnswer}</p>
+                        <div key={i} className="rounded-lg border border-slate-200 bg-white p-3">
+                          <p className="text-sm font-bold text-ink">Correct: {err.correctAnswer}</p>
                           <p className="text-xs text-muted">{err.rule}</p>
                         </div>
                       ))}
@@ -155,8 +159,8 @@ export function TeacherMode() {
       </div>
 
       {/* Controls */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Controls</h3>
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Classroom controls</h3>
         <div className="space-y-3">
           <ToggleRow
             label="Unlock all units"
@@ -183,15 +187,15 @@ export function TeacherMode() {
       </div>
 
       {/* Present mode */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4">
-        <h3 className="font-heading font-700 text-lg text-ink mb-2">Present mode</h3>
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-2 font-heading text-lg font-extrabold text-ink">Present mode</h3>
         <p className="text-sm text-muted mb-4">
           Show one activity per screen for the whole class — large text, answer options revealed
           with the number keys 1–4, and a big Next button. No XP, nothing is saved.
         </p>
         <button
           onClick={() => navigate('/teacher/present')}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors"
+          className="action-primary"
           style={{ minHeight: 44 }}
         >
           <Presentation size={18} /> Start presenting
@@ -199,8 +203,8 @@ export function TeacherMode() {
       </div>
 
       {/* Reset progress */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4 border-2 border-coral/20">
-        <h3 className="font-heading font-700 text-lg text-ink mb-2">Danger Zone</h3>
+      <div className="surface-card mb-4 border-red-200 p-5 sm:p-6">
+        <h3 className="mb-2 font-heading text-lg font-extrabold text-ink">Danger zone</h3>
         <p className="text-sm text-muted mb-4">
           This will permanently delete all progress for the current student.
         </p>
@@ -210,7 +214,7 @@ export function TeacherMode() {
               resetProgress();
             }
           }}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-coral text-white font-heading font-700 hover:bg-coral/90 transition-colors"
+          className="action-accent"
           style={{ minHeight: 44 }}
         >
           <AlertTriangle size={18} /> Reset this student's progress
@@ -230,19 +234,19 @@ interface ToggleRowProps {
 
 function ToggleRow({ label, description, checked, onChange, icon: Icon }: ToggleRowProps) {
   return (
-    <div className="flex items-center justify-between p-3 rounded-card bg-cream">
+    <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
       <div className="flex items-center gap-3">
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${checked ? 'bg-mint/15' : 'bg-gray-100'}`}>
+        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${checked ? 'bg-emerald-50' : 'bg-slate-200/60'}`}>
           <Icon size={18} className={checked ? 'text-mint' : 'text-muted'} />
         </div>
         <div>
-          <p className="text-sm font-medium text-ink">{label}</p>
-          <p className="text-xs text-muted">{description}</p>
+          <p className="text-sm font-bold text-ink">{label}</p>
+          <p className="mt-0.5 text-xs leading-5 text-muted">{description}</p>
         </div>
       </div>
       <button
         onClick={() => onChange(!checked)}
-        className={`relative w-12 h-6 rounded-pill transition-colors ${checked ? 'bg-mint' : 'bg-gray-200'}`}
+        className={`relative h-6 w-12 shrink-0 rounded-full transition-colors ${checked ? 'bg-mint' : 'bg-slate-300'}`}
         role="switch"
         aria-checked={checked}
         aria-label={label}

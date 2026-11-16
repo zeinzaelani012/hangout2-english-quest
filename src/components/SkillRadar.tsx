@@ -59,7 +59,7 @@ export function SkillRadar({ series, size = 320 }: SkillRadarProps) {
               key={level}
               points={points}
               fill="none"
-              stroke="#E5E7EB"
+              stroke="#E2E8F0"
               strokeWidth="1"
             />
           );
@@ -73,7 +73,7 @@ export function SkillRadar({ series, size = 320 }: SkillRadarProps) {
             y1={cy}
             x2={pt.x}
             y2={pt.y}
-            stroke="#E5E7EB"
+            stroke="#E2E8F0"
             strokeWidth="1"
           />
         ))}

@@ -39,7 +39,7 @@ export function Results() {
 
   const accuracy = state.totalCount > 0 ? Math.round((state.correctCount / state.totalCount) * 100) : 0;
   const stars = accuracy >= 90 ? 3 : accuracy >= 70 ? 2 : 1;
-  const skillColor = SKILL_COLORS[state.skill as Skill] || '#2B3A8F';
+  const skillColor = SKILL_COLORS[state.skill as Skill] || '#0F766E';
 
   // Check if challenging was just unlocked
   const justUnlockedChallenging = state.level === 'core' && isCoreCompleted(state.unitId);
@@ -68,10 +68,10 @@ export function Results() {
           )}
           {reduceMotion && <Sparkles size={40} className="text-sun mx-auto" />}
         </div>
-        <h2 className="font-heading font-800 text-3xl text-ink mb-2">
+        <h2 className="mb-2 font-heading text-3xl font-extrabold text-ink">
           {state.isBoss ? 'Boss Complete!' : 'Station Complete!'}
         </h2>
-        <p className="text-muted">{state.stationName}</p>
+        <p className="mt-1 text-sm font-semibold text-muted">{state.stationName}</p>
       </motion.div>
 
       {/* Stars */}
@@ -85,14 +85,14 @@ export function Results() {
           >
             <Star
               size={48}
-              className={s <= stars ? 'text-sun fill-sun' : 'text-gray-200'}
+              className={s <= stars ? 'fill-sun text-sun' : 'text-slate-200'}
             />
           </motion.div>
         ))}
       </div>
 
       {/* XP earned */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4 text-center">
+      <div className="surface-card mb-4 p-6 text-center">
         <p className="text-sm text-muted mb-1">XP Earned</p>
         <p className="font-heading font-800 text-4xl text-brand tnum">
           +{state.xpEarned}
@@ -104,18 +104,18 @@ export function Results() {
       </div>
 
       {/* Per-skill breakdown */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Skill Breakdown</h3>
+      <div className="surface-card mb-4 p-6">
+        <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Skill breakdown</h3>
         <div className="flex items-center gap-3 mb-3">
-          <span className="w-3 h-3 rounded-full" style={{ backgroundColor: skillColor }} />
-          <span className="text-sm font-medium text-ink flex-1">{skillLabel}</span>
+          <span className="h-3 w-3 rounded-full" style={{ backgroundColor: skillColor }} />
+          <span className="flex-1 text-sm font-semibold text-ink">{skillLabel}</span>
           <span className="text-sm tnum text-muted">
             {state.xpEarned} / {state.xpTotal} XP
           </span>
         </div>
-        <div className="h-3 rounded-pill bg-gray-100 overflow-hidden">
+        <div className="h-2.5 overflow-hidden rounded-full bg-slate-100">
           <div
-            className="h-full rounded-pill transition-all duration-700"
+            className="h-full rounded-full transition-all duration-700"
             style={{
               width: `${(state.xpEarned / state.xpTotal) * 100}%`,
               backgroundColor: skillColor,
@@ -126,7 +126,7 @@ export function Results() {
 
       {/* Challenging unlocked notice */}
       {justUnlockedChallenging && (
-        <div className="rounded-card p-4 mb-4 bg-sun/15 border border-sun/30">
+        <div className="mb-4 rounded-card border border-amber-200 bg-amber-50 p-4">
           <p className="text-sm text-ink flex items-center gap-2">
             <Sparkles size={18} className="text-sun" />
             <span className="font-medium">Challenging level unlocked!</span>
@@ -136,30 +136,30 @@ export function Results() {
       )}
 
       {/* Badge */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-4 flex items-center gap-4">
+      <div className="surface-card mb-4 flex items-center gap-4 p-6">
         <div
-          className="w-16 h-16 rounded-full flex items-center justify-center text-white"
+          className="flex h-16 w-16 items-center justify-center rounded-xl text-white"
           style={{ backgroundColor: skillColor }}
         >
           <CheckCircle2 size={32} />
         </div>
         <div>
-          <p className="font-heading font-700 text-ink">{state.stationName} Badge</p>
+          <p className="font-heading font-extrabold text-ink">{state.stationName} badge</p>
           <p className="text-sm text-muted">You completed all activities in this station.</p>
         </div>
       </div>
 
       {/* Look again — error list */}
       {state.errors.length > 0 && (
-        <div className="bg-white rounded-card shadow-card p-6 mb-6">
-          <h3 className="font-heading font-700 text-lg text-ink mb-4">Look Again</h3>
+        <div className="surface-card mb-6 p-6">
+          <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Review and improve</h3>
           <div className="space-y-3">
             {state.errors.map((err, i) => (
               <div
                 key={i}
-                className="p-3 rounded-card bg-coral/5 border border-coral/20"
+                className="rounded-xl border border-red-200 bg-red-50 p-4"
               >
-                <p className="text-sm font-medium text-ink mb-1">
+                <p className="mb-1 text-sm font-bold text-ink">
                   Correct: {err.correctAnswer}
                 </p>
                 <p className="text-sm text-muted">{err.rule}</p>
@@ -170,7 +170,7 @@ export function Results() {
       )}
 
       {state.errors.length === 0 && (
-        <div className="bg-white rounded-card shadow-card p-6 mb-6 text-center">
+        <div className="surface-card mb-6 p-6 text-center">
           <CheckCircle2 size={32} className="text-mint mx-auto mb-2" />
           <p className="text-sm font-medium text-ink">No mistakes — perfect run!</p>
         </div>
@@ -180,7 +180,7 @@ export function Results() {
       <div className="flex flex-col sm:flex-row gap-3">
         <button
           onClick={() => navigate(`/unit/${state.unitId}/${state.level}/${state.stationId}`)}
-          className="flex-1 py-3 rounded-pill bg-white shadow-card text-ink font-heading font-700 hover:bg-gray-50 transition-colors inline-flex items-center justify-center gap-2"
+          className="action-secondary flex-1"
           style={{ minHeight: 44 }}
         >
           <RotateCcw size={18} /> Replay
@@ -189,7 +189,7 @@ export function Results() {
         {state.level !== 'challenging' && (
           <button
             onClick={() => navigate(`/unit/${state.unitId}/challenging`)}
-            className="flex-1 py-3 rounded-pill bg-coral text-white font-heading font-700 hover:bg-coral/90 transition-colors inline-flex items-center justify-center gap-2"
+            className="action-accent flex-1"
             style={{ minHeight: 44 }}
           >
             <ArrowUp size={18} /> Try harder level
@@ -198,7 +198,7 @@ export function Results() {
 
         <button
           onClick={() => navigate(`/unit/${state.unitId}`)}
-          className="flex-1 py-3 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors inline-flex items-center justify-center gap-2"
+          className="action-primary flex-1"
           style={{ minHeight: 44 }}
         >
           <Home size={18} /> Back to unit

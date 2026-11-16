@@ -42,9 +42,9 @@ export function MyProgress() {
     const hasData = Object.values(values).some(v => v > 0);
     if (hasData) {
       const colors: Record<Level, string> = {
-        easy: '#2FB59A',
-        core: '#2B3A8F',
-        challenging: '#FF6B4A',
+        easy: '#168A72',
+        core: '#0F766E',
+        challenging: '#F05A47',
       };
       radarSeries.push({
         label: LEVEL_LABELS[level],
@@ -69,59 +69,60 @@ export function MyProgress() {
   const history = progress.levelHistory;
 
   return (
-    <div className="max-w-[1180px] mx-auto px-4 sm:px-6 py-4">
-      <h1 className="font-heading font-800 text-2xl text-ink mb-6">My Progress</h1>
+    <div className="mx-auto max-w-[1180px] px-4 py-6 sm:px-6 sm:py-8">
+      <p className="eyebrow mb-2">Learning record</p>
+      <h1 className="mb-6 font-heading text-3xl font-extrabold text-ink">My progress</h1>
 
       {/* Stats cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div className="bg-white rounded-card shadow-card p-5 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-sun/15 flex items-center justify-center">
+      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="surface-card flex items-center gap-4 p-5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50">
             <BookOpen size={22} className="text-sun" />
           </div>
           <div>
-            <p className="font-heading font-800 text-2xl text-ink tnum">{wordsMastered}</p>
-            <p className="text-sm text-muted">Words mastered</p>
+            <p className="tnum font-heading text-2xl font-extrabold text-ink">{wordsMastered}</p>
+            <p className="text-sm font-semibold text-muted">Words mastered</p>
           </div>
         </div>
-        <div className="bg-white rounded-card shadow-card p-5 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-mint/15 flex items-center justify-center">
+        <div className="surface-card flex items-center gap-4 p-5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50">
             <CheckCircle2 size={22} className="text-mint" />
           </div>
           <div>
             <p className="font-heading font-800 text-2xl text-ink tnum">{activitiesCompleted}</p>
-            <p className="text-sm text-muted">Activities completed</p>
+            <p className="text-sm font-semibold text-muted">Activities completed</p>
           </div>
         </div>
-        <div className="bg-white rounded-card shadow-card p-5 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-coral/15 flex items-center justify-center">
+        <div className="surface-card flex items-center gap-4 p-5">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50">
             <Star size={22} className="text-coral" />
           </div>
           <div>
             <p className="font-heading font-800 text-2xl text-ink tnum">{starsEarned}</p>
-            <p className="text-sm text-muted">Stars earned</p>
+            <p className="text-sm font-semibold text-muted">Stars earned</p>
           </div>
         </div>
       </div>
 
       {/* Skill radar */}
-      <div className="bg-white rounded-card shadow-card p-6 mb-6">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Skill Profile</h3>
+      <div className="surface-card mb-6 p-6">
+        <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Skill profile</h3>
         <SkillRadar series={radarSeries} size={320} />
       </div>
 
       {/* Level history */}
-      <div className="bg-white rounded-card shadow-card p-6">
-        <h3 className="font-heading font-700 text-lg text-ink mb-4">Level History</h3>
+      <div className="surface-card p-6">
+        <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Level history</h3>
         {history.length > 0 ? (
           <div className="space-y-2">
             {history.slice().reverse().map((h, i) => (
-              <div key={i} className="flex items-center justify-between p-3 rounded-card bg-cream">
+              <div key={i} className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 p-3.5">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-teal-50">
                     <Award size={18} className="text-brand" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-ink">
+                    <p className="text-sm font-bold text-ink">
                       Unit {h.unitId} · {LEVEL_LABELS[h.level]}
                     </p>
                     <p className="text-xs text-muted">{h.date}</p>
@@ -133,11 +134,11 @@ export function MyProgress() {
                       <Star
                         key={s}
                         size={16}
-                        className={s <= h.stars ? 'text-sun fill-sun' : 'text-gray-200'}
+                        className={s <= h.stars ? 'fill-sun text-sun' : 'text-slate-200'}
                       />
                     ))}
                   </div>
-                  <span className="text-sm tnum text-muted">{h.accuracy}%</span>
+                  <span className="tnum text-xs font-semibold text-muted">{h.accuracy}%</span>
                 </div>
               </div>
             ))}

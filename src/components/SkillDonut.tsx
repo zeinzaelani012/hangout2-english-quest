@@ -29,9 +29,9 @@ export function SkillDonut({ size = 200 }: SkillDonutProps) {
   });
 
   return (
-    <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:gap-6">
+    <div className="flex flex-col items-center gap-5">
       <svg width={size} height={size} className="shrink-0">
-        <circle cx={cx} cy={cy} r={radius} fill="none" stroke="#F3F4F6" strokeWidth={strokeWidth} />
+        <circle cx={cx} cy={cy} r={radius} fill="none" stroke="#E8EDF2" strokeWidth={strokeWidth} />
         {segments.map(seg => (
           <circle
             key={seg.skill}
@@ -52,7 +52,7 @@ export function SkillDonut({ size = 200 }: SkillDonutProps) {
           textAnchor="middle"
           fontSize={size * 0.1}
           fontWeight="800"
-          fill="#12172B"
+          fill="#172033"
           fontFamily="Plus Jakarta Sans, sans-serif"
         >
           100
@@ -62,18 +62,18 @@ export function SkillDonut({ size = 200 }: SkillDonutProps) {
           y={cy + size * 0.08}
           textAnchor="middle"
           fontSize={size * 0.06}
-          fill="#6B7280"
+          fill="#657083"
           fontFamily="Inter, sans-serif"
         >
           XP total
         </text>
       </svg>
-      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+      <div className="grid w-full grid-cols-1 gap-x-5 gap-y-1.5 sm:grid-cols-2">
         {segments.map(seg => (
-          <div key={seg.skill} className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: seg.color }} />
-            <span className="text-sm font-medium text-ink">{SKILL_LABELS[seg.skill]}</span>
-            <span className="text-sm text-muted tnum">{seg.percentage}%</span>
+          <div key={seg.skill} className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2">
+            <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: seg.color }} />
+            <span className="truncate text-sm font-semibold text-ink">{SKILL_LABELS[seg.skill]}</span>
+            <span className="tnum text-xs font-semibold text-muted">{seg.percentage}%</span>
           </div>
         ))}
       </div>

@@ -45,13 +45,13 @@ export function StickerPlate({ activity, onResult }: Props) {
           const sticker = payload.stickers.find(s => s.id === id);
           if (sticker) handleAdd(sticker);
         }}
-        className="min-h-[200px] p-6 rounded-card bg-cream border-2 border-dashed border-coral/30 mb-4 flex flex-wrap gap-3 items-center justify-center relative"
+        className="relative mb-4 flex min-h-[200px] flex-wrap items-center justify-center gap-3 rounded-xl border-2 border-dashed border-coral/25 bg-orange-50/40 p-6"
         aria-label={payload.prompt}
         role="region"
       >
         {/* Plate SVG */}
         <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full opacity-5" aria-hidden="true">
-          <ellipse cx="100" cy="100" rx="90" ry="70" fill="#FF6B4A" />
+          <ellipse cx="100" cy="100" rx="90" ry="70" fill="#F05A47" />
         </svg>
 
         {placed.length === 0 && (
@@ -81,7 +81,7 @@ export function StickerPlate({ activity, onResult }: Props) {
       {/* Available stickers */}
       {available.length > 0 && (
         <div className="mb-4">
-          <p className="text-xs font-medium text-muted mb-2">Stickers:</p>
+          <p className="eyebrow mb-2">Sticker options</p>
           <div className="flex flex-wrap gap-2">
             {available.map(sticker => (
               <button
@@ -92,7 +92,7 @@ export function StickerPlate({ activity, onResult }: Props) {
                   e.dataTransfer.setData('text/plain', sticker.id);
                 }}
                 onClick={() => handleAdd(sticker)}
-                className="draggable-item flex flex-col items-center gap-1 p-2 rounded-card bg-white shadow-card hover:shadow-cardhover transition-all cursor-grab"
+                className="draggable-item flex min-h-11 cursor-grab flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white p-2.5 transition-all hover:border-brand/40 hover:bg-teal-50/40"
                 style={{ minHeight: 44 }}
                 aria-label={`${sticker.label} sticker. Drag or click to add.`}
               >
@@ -106,7 +106,7 @@ export function StickerPlate({ activity, onResult }: Props) {
 
       {/* Speaking prompt */}
       {placed.length >= 3 && !completed && (
-        <div className="p-4 rounded-card bg-coral/10 mb-3">
+        <div className="mb-3 rounded-xl border border-orange-200 bg-orange-50 p-4">
           <div className="flex items-center gap-3 mb-2">
             <AudioButton
               audioKey={`sticker-prompt-${activity.id}`}
@@ -122,7 +122,7 @@ export function StickerPlate({ activity, onResult }: Props) {
       {placed.length >= 3 && !completed && (
         <button
           onClick={handleComplete}
-          className="w-full py-3 rounded-pill bg-mint text-white font-heading font-700 hover:bg-mint/90 transition-colors"
+          className="action-primary w-full bg-mint hover:bg-emerald-700"
           style={{ minHeight: 44 }}
         >
           I said my sentence!
@@ -130,8 +130,8 @@ export function StickerPlate({ activity, onResult }: Props) {
       )}
 
       {completed && (
-        <div className="p-3 rounded-card bg-mint/10">
-          <p className="text-sm text-ink flex items-center gap-2">
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+          <p className="flex items-center gap-2 text-sm font-semibold text-ink">
             <Check size={18} className="text-mint" />
             Great! You said your sentence like a pro.
           </p>

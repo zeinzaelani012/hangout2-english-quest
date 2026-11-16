@@ -75,7 +75,7 @@ export function SentenceBuilder({ activity, onResult }: Props) {
             handleAddWord(data.id, data.word);
           }
         }}
-        className="min-h-[80px] p-4 rounded-card bg-cream border-2 border-dashed border-brand/20 mb-4 flex flex-wrap gap-2 items-center"
+        className="mb-4 flex min-h-[80px] flex-wrap items-center gap-2 rounded-xl border-2 border-dashed border-brand/25 bg-slate-50 p-4"
         aria-label="Sentence area. Drop or click words here to build your sentence."
       >
         {arranged.length === 0 && (
@@ -89,16 +89,16 @@ export function SentenceBuilder({ activity, onResult }: Props) {
             onDragStart={e => handleDragStart(e, word.id, word.word, false)}
             onDragOver={e => e.preventDefault()}
             onDrop={e => handleDropOnArranged(e, idx)}
-            className={`px-3 py-2 rounded-pill font-medium text-sm transition-all ${
+            className={`rounded-lg border px-3 py-2 text-sm font-semibold transition-all ${
               checked
-                ? 'bg-brand/10 text-brand'
-                : 'bg-white shadow-card text-ink hover:bg-coral/10 hover:text-coral'
+                ? 'border-brand/20 bg-teal-50 text-brand'
+                : 'border-slate-200 bg-white text-ink hover:border-red-200 hover:bg-red-50 hover:text-coral'
             }`}
             style={{ minHeight: 36 }}
             aria-label={`${word.word}. Click to remove.`}
           >
             {word.word}
-            {!checked && <X size={12} className="inline ml-1 opacity-50" />}
+            {!checked && <X size={12} className="ml-1 inline opacity-50" />}
           </button>
         ))}
       </div>
@@ -107,9 +107,9 @@ export function SentenceBuilder({ activity, onResult }: Props) {
       <div
         onDragOver={e => e.preventDefault()}
         onDrop={handleDropOnBank}
-        className="p-4 rounded-card bg-white border border-gray-100"
+        className="rounded-xl border border-slate-200 bg-white p-4"
       >
-        <p className="text-xs font-medium text-muted mb-2">Word bank:</p>
+        <p className="eyebrow mb-2">Word bank</p>
         <div className="flex flex-wrap gap-2">
           {bank.map(word => (
             !word.used && (
@@ -118,7 +118,7 @@ export function SentenceBuilder({ activity, onResult }: Props) {
                 onClick={() => handleAddWord(word.id, word.word)}
                 draggable
                 onDragStart={e => handleDragStart(e, word.id, word.word, true)}
-                className="draggable-item px-3 py-2 rounded-pill bg-brand/10 text-brand font-medium text-sm hover:bg-brand/20 transition-colors cursor-grab"
+                className="draggable-item min-h-9 cursor-grab rounded-lg border border-brand/20 bg-teal-50 px-3 py-2 text-sm font-semibold text-brand transition-colors hover:bg-teal-100"
                 style={{ minHeight: 36 }}
                 aria-label={`${word.word}. Click or drag to add to sentence.`}
               >
@@ -136,7 +136,7 @@ export function SentenceBuilder({ activity, onResult }: Props) {
       {arranged.length > 0 && !checked && (
         <button
           onClick={handleCheck}
-          className="mt-4 w-full py-3 rounded-pill bg-brand text-white font-heading font-700 hover:bg-brand/90 transition-colors"
+          className="action-primary mt-4 w-full"
           style={{ minHeight: 44 }}
         >
           Check sentence
@@ -144,7 +144,11 @@ export function SentenceBuilder({ activity, onResult }: Props) {
       )}
 
       {checked && (
-        <div className="mt-4 p-3 rounded-card" style={{ backgroundColor: userSentence.toLowerCase() === payload.answer.toLowerCase() ? '#2FB59A15' : '#FF6B4A15' }}>
+        <div className={`mt-4 rounded-xl border p-4 ${
+          userSentence.toLowerCase() === payload.answer.toLowerCase()
+            ? 'border-emerald-200 bg-emerald-50'
+            : 'border-red-200 bg-red-50'
+        }`}>
           <div className="flex items-start gap-2">
             {userSentence.toLowerCase() === payload.answer.toLowerCase() ? (
               <Check size={20} className="text-mint shrink-0 mt-0.5" />

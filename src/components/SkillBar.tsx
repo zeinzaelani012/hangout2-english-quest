@@ -15,22 +15,22 @@ export function SkillBar({ skill, earned, available, showWeight = false }: Skill
 
   return (
     <div
-      className="grid grid-cols-[7.5rem_1fr_3rem] items-center gap-3 h-8"
+      className="grid h-8 grid-cols-[7.5rem_1fr_3rem] items-center gap-3"
       title={`${label}: ${earned} of ${available} XP earned (${weight}% of level weight)`}
     >
-      <div className="flex items-center gap-2 min-w-0">
-        <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
-        <span className="text-sm font-medium text-ink truncate">{label}</span>
+      <div className="flex min-w-0 items-center gap-2">
+        <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />
+        <span className="truncate text-sm font-semibold text-ink">{label}</span>
       </div>
-      <div className="h-3 rounded-pill bg-gray-100 overflow-hidden">
+      <div className="h-2.5 overflow-hidden rounded-full bg-slate-100">
         <div
-          className="h-full rounded-pill transition-all duration-700"
+          className="h-full rounded-full transition-all duration-700"
           style={{ width: `${percent}%`, backgroundColor: color }}
         />
       </div>
-      <div className="text-right text-sm tnum text-muted">
+      <div className="tnum text-right text-xs font-semibold text-muted">
         {showWeight ? (
-          <span className="font-medium text-ink">{weight}%</span>
+          <span className="text-ink">{weight}%</span>
         ) : (
           <span>{earned}/{available}</span>
         )}

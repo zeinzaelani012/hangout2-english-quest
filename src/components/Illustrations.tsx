@@ -13,9 +13,9 @@ export function SnackTableHero({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 600 400" className={className} role="img" aria-label="A snack table with food">
       {/* Soft background blobs */}
-      <ellipse cx="120" cy="350" rx="100" ry="30" fill="#FFC145" opacity="0.15" />
-      <ellipse cx="480" cy="360" rx="120" ry="35" fill="#2FB59A" opacity="0.12" />
-      <ellipse cx="300" cy="380" rx="200" ry="40" fill="#2B3A8F" opacity="0.06" />
+      <ellipse cx="120" cy="350" rx="100" ry="30" fill="#D89B24" opacity="0.15" />
+      <ellipse cx="480" cy="360" rx="120" ry="35" fill="#168A72" opacity="0.12" />
+      <ellipse cx="300" cy="380" rx="200" ry="40" fill="#0F766E" opacity="0.06" />
 
       {/* Table surface */}
       <rect x="80" y="250" width="440" height="12" rx="6" fill="#C4A86F" />
@@ -25,13 +25,13 @@ export function SnackTableHero({ className = '' }: { className?: string }) {
       <rect x="490" y="266" width="10" height="90" rx="3" fill="#A88B50" />
 
       {/* Bowl of fruit */}
-      <ellipse cx="180" cy="240" rx="50" ry="14" fill="#2B3A8F" opacity="0.1" />
-      <path d="M140 235 Q140 265 180 270 Q220 265 220 235 Z" fill="#FF6B4A" opacity="0.85" />
+      <ellipse cx="180" cy="240" rx="50" ry="14" fill="#0F766E" opacity="0.1" />
+      <path d="M140 235 Q140 265 180 270 Q220 265 220 235 Z" fill="#F05A47" opacity="0.85" />
       <ellipse cx="180" cy="235" rx="40" ry="8" fill="#FF8B6A" />
       {/* Apples in bowl */}
       <circle cx="160" cy="225" r="14" fill="#FF4D4D" />
       <circle cx="160" cy="225" r="14" fill="none" stroke="#E83838" strokeWidth="0.5" />
-      <path d="M160 211 Q160 207 164 207" stroke="#2FB59A" strokeWidth="3" fill="none" />
+      <path d="M160 211 Q160 207 164 207" stroke="#168A72" strokeWidth="3" fill="none" />
       {/* Bananas in bowl */}
       <path d="M180 215 Q200 205 210 220 Q195 225 180 215 Z" fill="#FFD93D" />
       <path d="M182 217 Q198 210 207 220" stroke="#E8C32D" strokeWidth="1" fill="none" />
@@ -41,18 +41,18 @@ export function SnackTableHero({ className = '' }: { className?: string }) {
       <circle cx="190" cy="232" r="5" fill="#8E44AD" />
 
       {/* Cup */}
-      <path d="M260 210 L265 255 L295 255 L300 210 Z" fill="#7C5CFF" opacity="0.7" />
-      <ellipse cx="280" cy="210" rx="20" ry="5" fill="#7C5CFF" opacity="0.5" />
-      <path d="M300 215 Q315 220 315 235 Q315 245 300 245" stroke="#7C5CFF" strokeWidth="3" fill="none" />
+      <path d="M260 210 L265 255 L295 255 L300 210 Z" fill="#6657C8" opacity="0.7" />
+      <ellipse cx="280" cy="210" rx="20" ry="5" fill="#6657C8" opacity="0.5" />
+      <path d="M300 215 Q315 220 315 235 Q315 245 300 245" stroke="#6657C8" strokeWidth="3" fill="none" />
       {/* Liquid in cup */}
-      <ellipse cx="280" cy="212" rx="17" ry="3" fill="#FFC145" opacity="0.6" />
+      <ellipse cx="280" cy="212" rx="17" ry="3" fill="#D89B24" opacity="0.6" />
 
       {/* Popcorn box */}
-      <path d="M350 220 L355 260 L395 260 L400 220 Z" fill="#FF6B4A" />
+      <path d="M350 220 L355 260 L395 260 L400 220 Z" fill="#F05A47" />
       <path d="M350 220 L355 260 L395 260 L400 220 Z" fill="none" stroke="#E8553A" strokeWidth="1" />
       {/* Stripes */}
-      <rect x="362" y="220" width="4" height="40" fill="#FFFBF5" opacity="0.5" />
-      <rect x="378" y="220" width="4" height="40" fill="#FFFBF5" opacity="0.5" />
+      <rect x="362" y="220" width="4" height="40" fill="#FFFFFF" opacity="0.5" />
+      <rect x="378" y="220" width="4" height="40" fill="#FFFFFF" opacity="0.5" />
       {/* Popcorn kernels */}
       <circle cx="360" cy="215" r="8" fill="#FFFBF0" />
       <circle cx="375" cy="212" r="9" fill="#FFF5E8" />
@@ -75,16 +75,16 @@ export function SnackTableHero({ className = '' }: { className?: string }) {
       <ellipse cx="520" cy="242" rx="40" ry="8" fill="#FFFFFF" />
       {/* Tomato */}
       <circle cx="510" cy="232" r="12" fill="#FF4D4D" />
-      <path d="M510 220 L510 225 M506 222 L514 222" stroke="#2FB59A" strokeWidth="2" />
+      <path d="M510 220 L510 225 M506 222 L514 222" stroke="#168A72" strokeWidth="2" />
       {/* Apple */}
       <circle cx="530" cy="232" r="12" fill="#FFD93D" />
-      <path d="M530 220 Q530 216 534 216" stroke="#2FB59A" strokeWidth="2" fill="none" />
+      <path d="M530 220 Q530 216 534 216" stroke="#168A72" strokeWidth="2" fill="none" />
 
       {/* Floating decorative dots */}
-      <circle cx="100" cy="120" r="4" fill="#FFC145" opacity="0.4" />
-      <circle cx="540" cy="100" r="5" fill="#2FB59A" opacity="0.3" />
-      <circle cx="80" cy="80" r="3" fill="#FF6B4A" opacity="0.3" />
-      <circle cx="520" cy="70" r="4" fill="#7C5CFF" opacity="0.3" />
+      <circle cx="100" cy="120" r="4" fill="#D89B24" opacity="0.4" />
+      <circle cx="540" cy="100" r="5" fill="#168A72" opacity="0.3" />
+      <circle cx="80" cy="80" r="3" fill="#F05A47" opacity="0.3" />
+      <circle cx="520" cy="70" r="4" fill="#6657C8" opacity="0.3" />
     </svg>
   );
 }
@@ -111,16 +111,16 @@ export function CookieMascot({ className = '', size = 48 }: SVGProps) {
 // Station badge SVGs — one per skill + boss
 export function StationBadge({ skill, size = 56, className = '' }: { skill: string; size?: number; className?: string }) {
   const colorMap: Record<string, string> = {
-    speaking: '#FF6B4A',
-    vocabulary: '#FFC145',
-    listening: '#7C5CFF',
-    reading: '#2FB59A',
-    writing: '#C77DFF',
-    grammar: '#5B7C99',
-    boss: '#2B3A8F',
-    mixed: '#2B3A8F',
+    speaking: '#F05A47',
+    vocabulary: '#D89B24',
+    listening: '#6657C8',
+    reading: '#168A72',
+    writing: '#9B5CC4',
+    grammar: '#53708A',
+    boss: '#0F766E',
+    mixed: '#0F766E',
   };
-  const color = colorMap[skill] || '#2B3A8F';
+  const color = colorMap[skill] || '#0F766E';
 
   const icons: Record<string, JSX.Element> = {
     vocabulary: (
@@ -224,8 +224,8 @@ export function VocabIllustration({ imgHint, className = '', size = 80 }: { imgH
   // Default: a simple geometric shape
   return (
     <svg viewBox="0 0 80 80" width={s} height={s} className={className} role="img" aria-label={imgHint}>
-      <circle cx="40" cy="40" r="30" fill="#FFC145" opacity="0.3" />
-      <circle cx="40" cy="40" r="20" fill="#FF6B4A" opacity="0.4" />
+      <circle cx="40" cy="40" r="30" fill="#D89B24" opacity="0.3" />
+      <circle cx="40" cy="40" r="20" fill="#F05A47" opacity="0.4" />
     </svg>
   );
 }
@@ -234,9 +234,9 @@ export function VocabIllustration({ imgHint, className = '', size = 80 }: { imgH
 function PopcornSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="popcorn">
-      <path d="M20 35 L24 70 L56 70 L60 35 Z" fill="#FF6B4A" />
-      <rect x="30" y="35" width="3" height="35" fill="#FFFBF5" opacity="0.4" />
-      <rect x="42" y="35" width="3" height="35" fill="#FFFBF5" opacity="0.4" />
+      <path d="M20 35 L24 70 L56 70 L60 35 Z" fill="#F05A47" />
+      <rect x="30" y="35" width="3" height="35" fill="#FFFFFF" opacity="0.4" />
+      <rect x="42" y="35" width="3" height="35" fill="#FFFFFF" opacity="0.4" />
       <circle cx="28" cy="30" r="8" fill="#FFFBF0" />
       <circle cx="40" cy="25" r="10" fill="#FFF8EC" />
       <circle cx="52" cy="30" r="8" fill="#FFFBF0" />
@@ -264,11 +264,11 @@ function CookieSVG({ size, className }: SVGProps) {
 function CandySVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="candy">
-      <ellipse cx="40" cy="40" rx="18" ry="12" fill="#FF6B4A" />
-      <path d="M22 40 L12 30 L12 50 Z" fill="#FF6B4A" />
-      <path d="M58 40 L68 30 L68 50 Z" fill="#FF6B4A" />
-      <line x1="30" y1="36" x2="50" y2="44" stroke="#FFFBF5" strokeWidth="2" opacity="0.5" />
-      <line x1="30" y1="44" x2="50" y2="36" stroke="#FFFBF5" strokeWidth="2" opacity="0.5" />
+      <ellipse cx="40" cy="40" rx="18" ry="12" fill="#F05A47" />
+      <path d="M22 40 L12 30 L12 50 Z" fill="#F05A47" />
+      <path d="M58 40 L68 30 L68 50 Z" fill="#F05A47" />
+      <line x1="30" y1="36" x2="50" y2="44" stroke="#FFFFFF" strokeWidth="2" opacity="0.5" />
+      <line x1="30" y1="44" x2="50" y2="36" stroke="#FFFFFF" strokeWidth="2" opacity="0.5" />
     </svg>
   );
 }
@@ -276,12 +276,12 @@ function CandySVG({ size, className }: SVGProps) {
 function SodaSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="soda">
-      <path d="M28 15 L52 15 L50 70 L30 70 Z" fill="#7C5CFF" opacity="0.7" />
-      <ellipse cx="40" cy="15" rx="12" ry="3" fill="#7C5CFF" opacity="0.5" />
-      <circle cx="38" cy="30" r="3" fill="#FFFBF5" opacity="0.6" />
-      <circle cx="44" cy="40" r="2" fill="#FFFBF5" opacity="0.6" />
-      <circle cx="35" cy="50" r="2.5" fill="#FFFBF5" opacity="0.6" />
-      <line x1="40" y1="15" x2="40" y2="5" stroke="#FF6B4A" strokeWidth="2" />
+      <path d="M28 15 L52 15 L50 70 L30 70 Z" fill="#6657C8" opacity="0.7" />
+      <ellipse cx="40" cy="15" rx="12" ry="3" fill="#6657C8" opacity="0.5" />
+      <circle cx="38" cy="30" r="3" fill="#FFFFFF" opacity="0.6" />
+      <circle cx="44" cy="40" r="2" fill="#FFFFFF" opacity="0.6" />
+      <circle cx="35" cy="50" r="2.5" fill="#FFFFFF" opacity="0.6" />
+      <line x1="40" y1="15" x2="40" y2="5" stroke="#F05A47" strokeWidth="2" />
     </svg>
   );
 }
@@ -289,7 +289,7 @@ function SodaSVG({ size, className }: SVGProps) {
 function FriesSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="fries">
-      <path d="M20 40 L25 70 L55 70 L60 40 Z" fill="#FF6B4A" />
+      <path d="M20 40 L25 70 L55 70 L60 40 Z" fill="#F05A47" />
       <rect x="28" y="15" width="4" height="35" rx="1" fill="#FFD93D" />
       <rect x="35" y="10" width="4" height="40" rx="1" fill="#FFD93D" />
       <rect x="42" y="12" width="4" height="38" rx="1" fill="#FFD93D" />
@@ -314,8 +314,8 @@ function AppleSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="apple">
       <circle cx="40" cy="45" r="24" fill="#FF4D4D" />
-      <path d="M40 22 Q40 16 46 14" stroke="#2FB59A" strokeWidth="3" fill="none" strokeLinecap="round" />
-      <ellipse cx="48" cy="20" rx="6" ry="3" fill="#2FB59A" />
+      <path d="M40 22 Q40 16 46 14" stroke="#168A72" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <ellipse cx="48" cy="20" rx="6" ry="3" fill="#168A72" />
     </svg>
   );
 }
@@ -333,8 +333,8 @@ function TomatoSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="tomato">
       <circle cx="40" cy="45" r="24" fill="#FF4D4D" />
-      <path d="M30 25 L40 20 L50 25 L48 30 L32 30 Z" fill="#2FB59A" />
-      <circle cx="40" cy="25" r="3" fill="#2FB59A" />
+      <path d="M30 25 L40 20 L50 25 L48 30 L32 30 Z" fill="#168A72" />
+      <circle cx="40" cy="25" r="3" fill="#168A72" />
     </svg>
   );
 }
@@ -342,9 +342,9 @@ function TomatoSVG({ size, className }: SVGProps) {
 function MilkSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="milk">
-      <path d="M28 18 L52 18 L50 70 L30 70 Z" fill="#FFFBF5" stroke="#E5E0D5" strokeWidth="1" />
-      <rect x="30" y="35" width="20" height="15" fill="#7C5CFF" opacity="0.15" />
-      <text x="40" y="46" fontSize="8" fill="#2B3A8F" textAnchor="middle" fontWeight="bold">MILK</text>
+      <path d="M28 18 L52 18 L50 70 L30 70 Z" fill="#FFFFFF" stroke="#DCE2EA" strokeWidth="1" />
+      <rect x="30" y="35" width="20" height="15" fill="#6657C8" opacity="0.15" />
+      <text x="40" y="46" fontSize="8" fill="#0F766E" textAnchor="middle" fontWeight="bold">MILK</text>
     </svg>
   );
 }
@@ -352,9 +352,9 @@ function MilkSVG({ size, className }: SVGProps) {
 function YogurtSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="yogurt">
-      <path d="M25 30 L55 30 L52 68 L28 68 Z" fill="#FF6B4A" opacity="0.8" />
-      <ellipse cx="40" cy="30" rx="15" ry="4" fill="#FFFBF5" />
-      <circle cx="40" cy="28" r="2" fill="#FF6B4A" />
+      <path d="M25 30 L55 30 L52 68 L28 68 Z" fill="#F05A47" opacity="0.8" />
+      <ellipse cx="40" cy="30" rx="15" ry="4" fill="#FFFFFF" />
+      <circle cx="40" cy="28" r="2" fill="#F05A47" />
       <line x1="40" y1="30" x2="40" y2="10" stroke="#D4A574" strokeWidth="2" />
     </svg>
   );
@@ -363,16 +363,16 @@ function YogurtSVG({ size, className }: SVGProps) {
 function CerealSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="cereal">
-      <ellipse cx="40" cy="40" rx="30" ry="25" fill="#FF6B4A" opacity="0.2" />
-      <ellipse cx="40" cy="35" rx="28" ry="22" fill="#FFFBF5" />
-      <ellipse cx="40" cy="35" rx="28" ry="22" fill="none" stroke="#E5E0D5" strokeWidth="1" />
+      <ellipse cx="40" cy="40" rx="30" ry="25" fill="#F05A47" opacity="0.2" />
+      <ellipse cx="40" cy="35" rx="28" ry="22" fill="#FFFFFF" />
+      <ellipse cx="40" cy="35" rx="28" ry="22" fill="none" stroke="#DCE2EA" strokeWidth="1" />
       {/* Flakes */}
       <ellipse cx="30" cy="30" rx="5" ry="3" fill="#D4A574" />
       <ellipse cx="45" cy="28" rx="5" ry="3" fill="#D4A574" />
       <ellipse cx="38" cy="38" rx="5" ry="3" fill="#D4A574" />
       <ellipse cx="50" cy="38" rx="5" ry="3" fill="#D4A574" />
       {/* Milk */}
-      <ellipse cx="40" cy="42" rx="25" ry="5" fill="#FFFBF5" opacity="0.6" />
+      <ellipse cx="40" cy="42" rx="25" ry="5" fill="#FFFFFF" opacity="0.6" />
     </svg>
   );
 }
@@ -380,13 +380,13 @@ function CerealSVG({ size, className }: SVGProps) {
 function RiceSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="rice">
-      <ellipse cx="40" cy="50" rx="28" ry="18" fill="#2B3A8F" opacity="0.1" />
-      <path d="M18 35 Q18 60 40 65 Q62 60 62 35 Z" fill="#FFFBF5" stroke="#E5E0D5" strokeWidth="1" />
+      <ellipse cx="40" cy="50" rx="28" ry="18" fill="#0F766E" opacity="0.1" />
+      <path d="M18 35 Q18 60 40 65 Q62 60 62 35 Z" fill="#FFFFFF" stroke="#DCE2EA" strokeWidth="1" />
       <ellipse cx="40" cy="35" rx="22" ry="6" fill="#FFFFFF" />
       {/* Rice grains */}
-      <ellipse cx="32" cy="33" rx="2" ry="1" fill="#E5E0D5" />
-      <ellipse cx="40" cy="32" rx="2" ry="1" fill="#E5E0D5" />
-      <ellipse cx="48" cy="33" rx="2" ry="1" fill="#E5E0D5" />
+      <ellipse cx="32" cy="33" rx="2" ry="1" fill="#DCE2EA" />
+      <ellipse cx="40" cy="32" rx="2" ry="1" fill="#DCE2EA" />
+      <ellipse cx="48" cy="33" rx="2" ry="1" fill="#DCE2EA" />
     </svg>
   );
 }
@@ -394,15 +394,15 @@ function RiceSVG({ size, className }: SVGProps) {
 function SoupSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="soup">
-      <ellipse cx="40" cy="50" rx="30" ry="20" fill="#2B3A8F" opacity="0.1" />
-      <path d="M15 35 Q15 60 40 65 Q65 60 65 35 Z" fill="#FF6B4A" opacity="0.7" />
+      <ellipse cx="40" cy="50" rx="30" ry="20" fill="#0F766E" opacity="0.1" />
+      <path d="M15 35 Q15 60 40 65 Q65 60 65 35 Z" fill="#F05A47" opacity="0.7" />
       <ellipse cx="40" cy="35" rx="25" ry="7" fill="#FF8B6A" />
       <circle cx="35" cy="33" r="3" fill="#FFD93D" />
-      <circle cx="45" cy="35" r="3" fill="#2FB59A" />
+      <circle cx="45" cy="35" r="3" fill="#168A72" />
       {/* Steam */}
-      <path d="M30 20 Q28 15 32 10" stroke="#FFFBF5" strokeWidth="2" fill="none" opacity="0.5" />
-      <path d="M40 18 Q38 13 42 8" stroke="#FFFBF5" strokeWidth="2" fill="none" opacity="0.5" />
-      <path d="M50 20 Q48 15 52 10" stroke="#FFFBF5" strokeWidth="2" fill="none" opacity="0.5" />
+      <path d="M30 20 Q28 15 32 10" stroke="#FFFFFF" strokeWidth="2" fill="none" opacity="0.5" />
+      <path d="M40 18 Q38 13 42 8" stroke="#FFFFFF" strokeWidth="2" fill="none" opacity="0.5" />
+      <path d="M50 20 Q48 15 52 10" stroke="#FFFFFF" strokeWidth="2" fill="none" opacity="0.5" />
     </svg>
   );
 }
@@ -410,11 +410,11 @@ function SoupSVG({ size, className }: SVGProps) {
 function FruitBowlSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="fruit bowl">
-      <path d="M15 40 Q15 65 40 68 Q65 65 65 40 Z" fill="#2B3A8F" opacity="0.15" />
-      <path d="M15 40 Q15 60 40 65 Q65 60 65 40 Z" fill="#FF6B4A" opacity="0.5" />
+      <path d="M15 40 Q15 65 40 68 Q65 65 65 40 Z" fill="#0F766E" opacity="0.15" />
+      <path d="M15 40 Q15 60 40 65 Q65 60 65 40 Z" fill="#F05A47" opacity="0.5" />
       <ellipse cx="40" cy="40" rx="25" ry="5" fill="#FF8B6A" />
       <circle cx="30" cy="35" r="8" fill="#FF4D4D" />
-      <path d="M30 28 Q30 25 34 24" stroke="#2FB59A" strokeWidth="2" fill="none" />
+      <path d="M30 28 Q30 25 34 24" stroke="#168A72" strokeWidth="2" fill="none" />
       <circle cx="48" cy="33" r="7" fill="#FFD93D" />
       <circle cx="40" cy="30" r="6" fill="#9B59B6" />
       <circle cx="44" cy="32" r="5" fill="#8E44AD" />
@@ -426,13 +426,13 @@ function VegSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="vegetables">
       {/* Carrot */}
-      <path d="M20 25 L30 55 L15 55 Z" fill="#FF6B4A" />
-      <path d="M18 20 L22 15 M22 20 L26 15 M25 22 L29 17" stroke="#2FB59A" strokeWidth="2" />
+      <path d="M20 25 L30 55 L15 55 Z" fill="#F05A47" />
+      <path d="M18 20 L22 15 M22 20 L26 15 M25 22 L29 17" stroke="#168A72" strokeWidth="2" />
       {/* Broccoli */}
-      <circle cx="55" cy="30" r="10" fill="#2FB59A" />
-      <circle cx="50" cy="35" r="7" fill="#2FB59A" />
-      <circle cx="60" cy="35" r="7" fill="#2FB59A" />
-      <rect x="52" y="38" width="6" height="20" fill="#2FB59A" opacity="0.7" />
+      <circle cx="55" cy="30" r="10" fill="#168A72" />
+      <circle cx="50" cy="35" r="7" fill="#168A72" />
+      <circle cx="60" cy="35" r="7" fill="#168A72" />
+      <rect x="52" y="38" width="6" height="20" fill="#168A72" opacity="0.7" />
     </svg>
   );
 }
@@ -440,12 +440,12 @@ function VegSVG({ size, className }: SVGProps) {
 function PlantSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="plant">
-      <path d="M25 50 L55 50 L52 70 L28 70 Z" fill="#C77DFF" opacity="0.3" />
-      <rect x="22" y="45" width="36" height="8" rx="2" fill="#C77DFF" opacity="0.4" />
-      <path d="M40 45 L40 25" stroke="#2FB59A" strokeWidth="3" />
-      <ellipse cx="32" cy="30" rx="10" ry="6" fill="#2FB59A" transform="rotate(-30 32 30)" />
-      <ellipse cx="48" cy="28" rx="10" ry="6" fill="#2FB59A" transform="rotate(30 48 28)" />
-      <ellipse cx="40" cy="20" rx="8" ry="5" fill="#2FB59A" />
+      <path d="M25 50 L55 50 L52 70 L28 70 Z" fill="#9B5CC4" opacity="0.3" />
+      <rect x="22" y="45" width="36" height="8" rx="2" fill="#9B5CC4" opacity="0.4" />
+      <path d="M40 45 L40 25" stroke="#168A72" strokeWidth="3" />
+      <ellipse cx="32" cy="30" rx="10" ry="6" fill="#168A72" transform="rotate(-30 32 30)" />
+      <ellipse cx="48" cy="28" rx="10" ry="6" fill="#168A72" transform="rotate(30 48 28)" />
+      <ellipse cx="40" cy="20" rx="8" ry="5" fill="#168A72" />
     </svg>
   );
 }
@@ -453,12 +453,12 @@ function PlantSVG({ size, className }: SVGProps) {
 function VineSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="vine">
-      <path d="M15 60 Q30 40 40 50 Q50 60 65 30" stroke="#2FB59A" strokeWidth="3" fill="none" />
-      <circle cx="30" cy="48" r="5" fill="#2FB59A" />
-      <circle cx="50" cy="50" r="5" fill="#2FB59A" />
-      <circle cx="60" cy="35" r="5" fill="#2FB59A" />
-      <ellipse cx="25" cy="52" rx="6" ry="3" fill="#2FB59A" opacity="0.6" transform="rotate(-20 25 52)" />
-      <ellipse cx="45" cy="54" rx="6" ry="3" fill="#2FB59A" opacity="0.6" transform="rotate(15 45 54)" />
+      <path d="M15 60 Q30 40 40 50 Q50 60 65 30" stroke="#168A72" strokeWidth="3" fill="none" />
+      <circle cx="30" cy="48" r="5" fill="#168A72" />
+      <circle cx="50" cy="50" r="5" fill="#168A72" />
+      <circle cx="60" cy="35" r="5" fill="#168A72" />
+      <ellipse cx="25" cy="52" rx="6" ry="3" fill="#168A72" opacity="0.6" transform="rotate(-20 25 52)" />
+      <ellipse cx="45" cy="54" rx="6" ry="3" fill="#168A72" opacity="0.6" transform="rotate(15 45 54)" />
     </svg>
   );
 }
@@ -472,9 +472,9 @@ function GroundSVG({ size, className }: SVGProps) {
       <circle cx="35" cy="55" r="2" fill="#6B5A3F" />
       <circle cx="55" cy="52" r="2" fill="#6B5A3F" />
       <circle cx="60" cy="60" r="2" fill="#6B5A3F" />
-      <ellipse cx="15" cy="38" rx="8" ry="4" fill="#2FB59A" opacity="0.6" />
-      <ellipse cx="50" cy="38" rx="10" ry="4" fill="#2FB59A" opacity="0.6" />
-      <ellipse cx="70" cy="40" rx="6" ry="3" fill="#2FB59A" opacity="0.6" />
+      <ellipse cx="15" cy="38" rx="8" ry="4" fill="#168A72" opacity="0.6" />
+      <ellipse cx="50" cy="38" rx="10" ry="4" fill="#168A72" opacity="0.6" />
+      <ellipse cx="70" cy="40" rx="6" ry="3" fill="#168A72" opacity="0.6" />
     </svg>
   );
 }
@@ -482,10 +482,10 @@ function GroundSVG({ size, className }: SVGProps) {
 function FarmSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="farm">
-      <rect x="10" y="50" width="60" height="20" fill="#2FB59A" opacity="0.3" />
+      <rect x="10" y="50" width="60" height="20" fill="#168A72" opacity="0.3" />
       {/* Barn */}
-      <rect x="25" y="25" width="25" height="25" fill="#FF6B4A" />
-      <path d="M22 25 L37 12 L52 25 Z" fill="#FF6B4A" />
+      <rect x="25" y="25" width="25" height="25" fill="#F05A47" />
+      <path d="M22 25 L37 12 L52 25 Z" fill="#F05A47" />
       <rect x="33" y="35" width="9" height="15" fill="#5D3A1A" />
       {/* Fence */}
       <line x1="10" y1="45" x2="55" y2="45" stroke="#8B6F47" strokeWidth="1.5" />
@@ -500,10 +500,10 @@ function GardenSVG({ size, className }: SVGProps) {
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="garden">
       <rect x="10" y="45" width="60" height="25" rx="4" fill="#8B6F47" opacity="0.6" />
       <circle cx="25" cy="40" r="8" fill="#FF4D4D" />
-      <path d="M25 33 Q25 30 28 29" stroke="#2FB59A" strokeWidth="2" />
+      <path d="M25 33 Q25 30 28 29" stroke="#168A72" strokeWidth="2" />
       <circle cx="45" cy="38" r="7" fill="#FFD93D" />
       <circle cx="55" cy="42" r="6" fill="#9B59B6" />
-      <path d="M20 50 L20 55 M30 50 L30 55 M40 50 L40 55 M50 50 L50 55 M60 50 L60 55" stroke="#2FB59A" strokeWidth="2" opacity="0.5" />
+      <path d="M20 50 L20 55 M30 50 L30 55 M40 50 L40 55 M50 50 L50 55 M60 50 L60 55" stroke="#168A72" strokeWidth="2" opacity="0.5" />
     </svg>
   );
 }
@@ -511,9 +511,9 @@ function GardenSVG({ size, className }: SVGProps) {
 function JuiceSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="juice">
-      <path d="M28 18 L52 18 L50 65 L30 65 Z" fill="#FFC145" opacity="0.7" />
-      <ellipse cx="40" cy="18" rx="12" ry="3" fill="#FFC145" opacity="0.5" />
-      <line x1="40" y1="18" x2="40" y2="8" stroke="#FF6B4A" strokeWidth="2" />
+      <path d="M28 18 L52 18 L50 65 L30 65 Z" fill="#D89B24" opacity="0.7" />
+      <ellipse cx="40" cy="18" rx="12" ry="3" fill="#D89B24" opacity="0.5" />
+      <line x1="40" y1="18" x2="40" y2="8" stroke="#F05A47" strokeWidth="2" />
     </svg>
   );
 }
@@ -522,7 +522,7 @@ function StrawberrySVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="strawberry">
       <path d="M40 20 Q25 25 25 45 Q25 60 40 65 Q55 60 55 45 Q55 25 40 20 Z" fill="#FF4D4D" />
-      <path d="M30 18 L40 12 L50 18 L46 24 L34 24 Z" fill="#2FB59A" />
+      <path d="M30 18 L40 12 L50 18 L46 24 L34 24 Z" fill="#168A72" />
       <circle cx="35" cy="35" r="1.5" fill="#FFD93D" />
       <circle cx="45" cy="35" r="1.5" fill="#FFD93D" />
       <circle cx="40" cy="42" r="1.5" fill="#FFD93D" />
@@ -535,8 +535,8 @@ function StrawberrySVG({ size, className }: SVGProps) {
 function WatermelonSVG({ size, className }: SVGProps) {
   return (
     <svg viewBox="0 0 80 80" width={size} height={size} className={className} role="img" aria-label="watermelon">
-      <ellipse cx="40" cy="45" rx="28" ry="22" fill="#2FB59A" />
-      <ellipse cx="40" cy="45" rx="24" ry="18" fill="#FFFBF5" />
+      <ellipse cx="40" cy="45" rx="28" ry="22" fill="#168A72" />
+      <ellipse cx="40" cy="45" rx="24" ry="18" fill="#FFFFFF" />
       <ellipse cx="40" cy="45" rx="20" ry="14" fill="#FF4D4D" />
       <ellipse cx="32" cy="40" rx="2" ry="3" fill="#3D2817" />
       <ellipse cx="45" cy="42" rx="2" ry="3" fill="#3D2817" />
