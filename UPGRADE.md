@@ -57,15 +57,25 @@ Type→mechanic mapping lives in `renderV2Activity` in
 
 - **Pack** (`src/data/unit1/v2/hangout2-unit1-expanded-pack.json`):
   `pacing.levelTimeMultiplier` (easy .85 / core 1 / challenging 1.05),
-  `pacing.checkpointSeconds` (CP1 300 + BOSS 420), per-slot `estSeconds`,
-  and `auditorRules` (30 content / 2 checkpoints / 60–78 minutes /
-  skill-share tolerance ±2 / fast-completion threshold 25 s per activity).
-- **Code**: `src/lib/pacing.ts` reads the pack multipliers and fixed 720 s of
-  checkpoint time; `src/lib/pacingAudit.ts` re-states the audit rules
-  (30/2/60–78/±2) as the single source mirrored from the pack.
+  `pacing.checkpointSeconds` (CP1 300 + BOSS 420), per-slot `estSeconds`
+  (authoring units — never edit them to change displayed time),
+  `pacing.calibration` (value 0.72, fitted 0.711, basis: the Unit 1 pilot),
+  and `auditorRules` (30 content / 2 checkpoints / app minutes 42–56 /
+  lesson minutes 58–75 / skill-share tolerance ±2 / fast-completion
+  threshold 25 s per activity).
+- **Code**: `src/lib/pacing.ts` is the single calibrated engine —
+  `PACING_CALIBRATION = 0.72` multiplies the raw authoring estimate at
+  display time (checkpoints unscaled; split by the slots' `skill: 'mixed'`),
+  `TEACHER_FRAME_MINUTES = 15` is added for lesson labels. Legacy packs
+  without `estSeconds` fail `isCalibratable` and render **no** duration.
+  `src/lib/pacingAudit.ts` mirrors the audit rules (app minutes 42–56,
+  lesson 58–75 as an amber advisory, ±2 skill shares) and prints
+  raw → calibrated → label per level.
 
-Projected minutes: Easy 62 / Core 71 / Challenging 74. Skill shares:
-25.0 / 24.9 / 15.0 / 15.0 / 10.0 / 10.0.
+Calibrated labels: app **45 / 51 / 53** minutes; lesson **60 / 66 / 68**
+minutes with warm-up and wrap-up. Skill shares unchanged:
+25.0 / 24.9 / 15.0 / 15.0 / 10.0 / 10.0. Re-fit `PACING_CALIBRATION` after
+each new pilot (`k = Σ(projected × measured) / Σ(projected²)`) — one line.
 
 ## What a future unit must do
 

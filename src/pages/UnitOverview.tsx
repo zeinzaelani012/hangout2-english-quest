@@ -3,16 +3,40 @@ import { ArrowLeft, CheckCircle2, ChevronRight, Lock, Play, RotateCcw, Star } fr
 import { useProgress } from '../context/ProgressContext';
 import { getUnit } from '../data/units';
 import { SkillDonut } from '../components/SkillDonut';
-import { projectedMinutes } from '../lib/pacing';
+import { durationLabel, lessonLabel, lessonMinutes } from '../lib/pacing';
 import { LEVEL_DESCRIPTIONS, LEVEL_LABELS, type Level } from '../types';
 
 export function UnitOverview() {
   const { unitId } = useParams();
   const navigate = useNavigate();
-  const { getLevelProgressPercent, isLevelCompleted, isCoreCompleted, progress } = useProgress();
+  const { getLevelProgressPercent, isLevelCompleted, isCoreCompleted, progress, settings } = useProgress();
   const unit = getUnit(parseInt(unitId || '0'));
 
-  if (!unit || unit.status === 'placeholder') {
+  if (!unit) {
+    return (
+      <div className="mx-auto max-w-[1180px] px-4 py-10 sm:px-6">
+        <h1 className="font-heading text-2xl font-extrabold text-ink">Unit not available</h1>
+        <p className="mt-2 text-muted">This unit does not exist.</p>
+        <Link to="/" className="mt-5 inline-flex items-center gap-2 font-bold text-brand"><ArrowLeft size={17} /> Back to dashboard</Link>
+      </div>
+    );
+  }
+
+  if (unit.status === 'placeholder') {
+    // Teacher Mode "Unlock all units" makes placeholder units openable for
+    // preview; there is still nothing to play inside them.
+    if (settings.teacherUnlockAllUnits) {
+      return (
+        <div className="mx-auto max-w-[1180px] px-4 py-10 sm:px-6">
+          <p className="eyebrow mb-2">Preview unlocked by Teacher Mode</p>
+          <h1 className="font-heading text-3xl font-extrabold text-ink">Unit {unit.id} — Coming soon</h1>
+          <p className="mt-3 max-w-xl text-muted">
+            This unit is being prepared. There are no activities to play yet — check back once its content pack is installed.
+          </p>
+          <Link to="/" className="mt-6 inline-flex items-center gap-2 font-bold text-brand"><ArrowLeft size={17} /> Back to dashboard</Link>
+        </div>
+      );
+    }
     return (
       <div className="mx-auto max-w-[1180px] px-4 py-10 sm:px-6">
         <h1 className="font-heading text-2xl font-extrabold text-ink">Unit not available</h1>
@@ -23,8 +47,11 @@ export function UnitOverview() {
   }
 
   const levels: Level[] = ['easy', 'core', 'challenging'];
-  const teacherUnlockChallenging = progress.settings.teacherPin && progress.units[unit.id]?.challenging;
-  const challengingUnlocked = isCoreCompleted(unit.id) || !!teacherUnlockChallenging;
+  const challengingUnlocked = isCoreCompleted(unit.id) || !!settings.teacherUnlockChallenging;
+  // Teacher Mode "Lock students to one level": learners stay on their current
+  // Easy/Core level and cannot switch to the other one.
+  const lockToOne = !!settings.teacherLockToOneLevel;
+  const assignedLevel: Level = isLevelCompleted(unit.id, 'easy') ? 'core' : 'easy';
 
   // Per-level totals. Checkpoint/boss slots (expanded pack) count toward the
   // level's activity and XP totals; legacy boss items stay with their station.
@@ -33,10 +60,13 @@ export function UnitOverview() {
     const checkpoints = (unit.bossActivities?.[level] ?? []).filter(
       a => a.type === 'checkpoint' || a.type === 'boss',
     );
+    const timingSet = [...acts, ...checkpoints];
     return {
       count: acts.length + checkpoints.length,
       xp: [...acts, ...checkpoints].reduce((sum, a) => sum + a.xp, 0),
-      minutes: projectedMinutes(acts, level),
+      duration: durationLabel(timingSet, level),
+      lesson: lessonLabel(timingSet, level),
+      lessonMin: lessonMinutes(timingSet, level),
     };
   };
   const coreMeta = levelMeta('core');
@@ -44,9 +74,17 @@ export function UnitOverview() {
   const levelAction = (level: Level) => {
     const percent = getLevelProgressPercent(unit.id, level);
     const complete = isLevelCompleted(unit.id, level);
-    const locked = level === 'challenging' && !challengingUnlocked;
+    const gated = level === 'challenging' && !challengingUnlocked;
+    const teacherLocked = lockToOne && (level === 'easy' || level === 'core') && level !== assignedLevel;
 
-    if (locked) {
+    if (teacherLocked) {
+      return (
+        <button disabled className="action-secondary w-full opacity-60" style={{ minHeight: 44 }}>
+          <Lock size={17} /> Locked — stay on {LEVEL_LABELS[assignedLevel]}
+        </button>
+      );
+    }
+    if (gated) {
       return <button onClick={() => navigate(`/unit/${unit.id}/core`)} className="action-secondary w-full">Finish Core first</button>;
     }
     if (complete) {
@@ -99,7 +137,9 @@ export function UnitOverview() {
           {levels.map((level, index) => {
             const percent = getLevelProgressPercent(unit.id, level);
             const complete = isLevelCompleted(unit.id, level);
-            const locked = level === 'challenging' && !challengingUnlocked;
+            const locked =
+              (level === 'challenging' && !challengingUnlocked) ||
+              (lockToOne && (level === 'easy' || level === 'core') && level !== assignedLevel);
             const stars = progress.units[unit.id]?.[level]?.stars || 0;
             const meta = levelMeta(level);
 
@@ -134,21 +174,26 @@ export function UnitOverview() {
                   </div>
                 </div>
 
-                <div className="mb-5 flex items-center justify-between border-t border-slate-100 pt-4 text-sm">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="font-semibold text-ink">About {meta.minutes} minutes</span>
-                    <span className="text-muted">·</span>
-                    <span className="tnum font-semibold text-ink">{meta.xp} XP</span>
-                    {/* Dev-only pacing flag: projected duration outside 60–78 min */}
-                    {import.meta.env.DEV && (meta.minutes < 60 || meta.minutes > 78) && (
-                      <span className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-bold text-amber-700">
-                        check pacing
-                      </span>
-                    )}
+                <div className="mb-5 border-t border-slate-100 pt-4 text-sm">
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-wrap items-center gap-2">
+                      {meta.duration && <span className="font-semibold text-ink">{meta.duration}</span>}
+                      <span className="text-muted">·</span>
+                      <span className="tnum font-semibold text-ink">{meta.xp} XP</span>
+                      {/* Dev-only pacing flag: lesson total outside the 58–75 min target */}
+                      {import.meta.env.DEV && (meta.lessonMin < 58 || meta.lessonMin > 75) && (
+                        <span className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-bold text-amber-700">
+                          check pacing
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex gap-1" aria-label={`${stars} of 3 stars`}>
+                      {[1, 2, 3].map(star => <Star key={star} size={16} className={star <= stars ? 'fill-sun text-sun' : 'text-slate-200'} />)}
+                    </div>
                   </div>
-                  <div className="flex gap-1" aria-label={`${stars} of 3 stars`}>
-                    {[1, 2, 3].map(star => <Star key={star} size={16} className={star <= stars ? 'fill-sun text-sun' : 'text-slate-200'} />)}
-                  </div>
+                  {meta.lesson && (
+                    <p className="mt-1 text-xs text-muted">{meta.lesson}</p>
+                  )}
                 </div>
                 <div className="mt-auto">{levelAction(level)}</div>
               </article>

@@ -88,7 +88,9 @@ export function PresentMode() {
     );
   }
 
-  const skillColor = current ? SKILL_COLORS[current.skill] : '#0F766E';
+  // Checkpoint slots carry skill 'mixed' — fall back to the brand colour/label.
+  const skillColor = current ? (SKILL_COLORS as Record<string, string>)[current.skill] ?? '#0F766E' : '#0F766E';
+  const skillLabel = current ? (SKILL_LABELS as Record<string, string>)[current.skill] ?? 'Mixed skills' : 'Mixed skills';
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -144,7 +146,7 @@ export function PresentMode() {
                   className="rounded-lg px-3 py-1.5 text-xs font-bold"
                   style={{ backgroundColor: `${skillColor}15`, color: skillColor }}
                 >
-                  {station?.name || SKILL_LABELS[current.skill]}
+                  {station?.name || skillLabel}
                 </span>
                 <span className="text-xs text-muted tnum">{index + 1} of {activities.length}</span>
               </div>

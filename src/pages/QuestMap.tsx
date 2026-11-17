@@ -5,7 +5,7 @@ import { useProgress } from '../context/ProgressContext';
 import { getUnit, getUnitRitual } from '../data/units';
 import { StationBadge } from '../components/Illustrations';
 import { MissionBrief } from '../components/ritual/MissionBrief';
-import { projectedMinutes } from '../lib/pacing';
+import { durationLabel } from '../lib/pacing';
 import { LEVEL_LABELS, SKILL_LABELS, type Level, type Station } from '../types';
 
 type MapNode =
@@ -60,6 +60,12 @@ export function QuestMap() {
   const completedCount = nodeStates.filter(n => n.completed).length;
   const percent = Math.round((completedCount / nodes.length) * 100);
 
+  // Calibrated duration — empty string for legacy packs, so no label renders.
+  const duration = durationLabel(
+    [...unit.levels[levelKey], ...(unit.bossActivities?.[levelKey] ?? [])],
+    levelKey,
+  );
+
   return (
     <div className="mx-auto max-w-[900px] px-4 py-6 sm:px-6 sm:py-8">
       <nav className="mb-5 flex items-center gap-1.5 text-sm text-muted" aria-label="Breadcrumb">
@@ -76,7 +82,7 @@ export function QuestMap() {
             <p className="eyebrow mb-1">Unit {unit.id} learning path</p>
             <h1 className="font-heading text-2xl font-extrabold text-ink sm:text-3xl">{unit.islandName}</h1>
             <p className="mt-1 text-sm font-semibold text-muted">
-              {LEVEL_LABELS[levelKey]} · {unit.stations.length} stations · About {projectedMinutes(unit.levels[levelKey], levelKey)} minutes
+              {LEVEL_LABELS[levelKey]} · {unit.stations.length} stations{duration ? ` · ${duration}` : ''}
             </p>
           </div>
           <div className="min-w-52 sm:text-right">

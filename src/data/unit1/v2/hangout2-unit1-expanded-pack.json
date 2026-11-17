@@ -17,16 +17,23 @@
   "pacing": {
     "levelTimeMultiplier": { "easy": 0.85, "core": 1.0, "challenging": 1.05 },
     "checkpointSeconds": { "mid": 300, "boss": 420 },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
     "projection": {
-      "easy": { "contentSeconds": 3000, "contentMinutes": 50.0, "withCheckpointsMinutes": 62 },
-      "core": { "contentSeconds": 3529, "contentMinutes": 58.8, "withCheckpointsMinutes": 71 },
-      "challenging": { "contentSeconds": 3705, "contentMinutes": 61.7, "withCheckpointsMinutes": 74 }
+      "easy": { "appMinutes": 45, "lessonMinutes": 60 },
+      "core": { "appMinutes": 51, "lessonMinutes": 66 },
+      "challenging": { "appMinutes": 53, "lessonMinutes": 68 }
     },
     "auditorRules": {
       "contentActivityCount": 30,
       "checkpointCount": 2,
-      "projectedMinutesMin": 60,
-      "projectedMinutesMax": 78,
+      "appMinutesMin": 42,
+      "appMinutesMax": 56,
+      "lessonMinutesRange": [58, 75],
       "skillShareTolerancePoints": 2,
       "fastCompletionThresholdSeconds": 25,
       "requiredDepthMovesEachAtLeastTwice": ["D1", "D2", "D3", "D4", "D5"]
@@ -995,7 +1002,7 @@
     "expectedCheckpoints": 2,
     "expectedXpContent": 100,
     "expectedXpTotal": 140,
-    "projectedMinutes": { "easy": 62, "core": 71, "challenging": 74 }
+    "projectedMinutes": { "easy": 45, "core": 51, "challenging": 53 }
   }
 }
 

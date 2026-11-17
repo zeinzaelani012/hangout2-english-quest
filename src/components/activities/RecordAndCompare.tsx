@@ -383,7 +383,9 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
       keywords: i.keywords ?? [],
     }));
   } else if (mode === 'rolePlay') {
-    const dialogue = getUnitReading(1).dialogue;
+    // Role-play source is per-unit; the shared builder stamps unitId on every
+    // activity so Unit 2's S5 reads The Sweatshirt, not Unit 1's dialogue.
+    const dialogue = getUnitReading(activity.unitId ?? 1).dialogue;
     const lineCount: number = payload.lines ?? dialogue.lines.length;
     targets = dialogue.lines.slice(0, lineCount).map(l => ({
       label: l.text,

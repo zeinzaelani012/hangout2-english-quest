@@ -3,7 +3,7 @@ import { useState, useMemo, useRef, useEffect, type ReactNode } from 'react';
 import { ChevronRight, ArrowLeft, Lightbulb, Check, X, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import {
-  getUnit, getUnitReading, getUnitGrammarPatterns, getUnitRitual,
+  getUnit, getUnitReading, getUnitGrammarPatterns, getUnitRitual, getUnitPhonics,
   type UnitReading, type UnitGrammarPattern, type UnitReadingContext,
 } from '../data/units';
 import { resolvePassage, resolveReadingTitle, findPassageContaining } from '../data/unit1/v2';
@@ -38,6 +38,7 @@ export function ActivityPage() {
     : unit?.stations.find(s => s.id === stationId);
   const readings = getUnitReading(unit?.id || 1);
   const grammarPatterns = getUnitGrammarPatterns(unit?.id || 1);
+  const phonics = getUnitPhonics(unit?.id || 0);
 
   // Get activities for this station from the level data
   const activities = useMemo(() => {
@@ -206,7 +207,11 @@ export function ActivityPage() {
       case 'findSentence':
       case 'gist':
       case 'detail': {
+        // Expanded packs may carry the passage inline (Unit 2's R2/R3/R4);
+        // Unit 1 references the base pack via textRef; checkpoint items fall
+        // back to a text search.
         const passage =
+          (payload.passage as string | undefined) ??
           resolvePassage(payload.textRef) ??
           findPassageContaining(
             activity.difficulty,
@@ -341,9 +346,39 @@ export function ActivityPage() {
         <TeachCard card={teachCard} onContinue={() => setTeachCardSeen(true)} />
       )}
 
-      {/* Teaching card at the top of the Grammar station */}
-      {station.skill === 'grammar' && (
+      {/* Teaching card at the top of the Grammar station (patterns are a
+          Unit 1 feature; expanded packs use the G1 slot's teachCard) */}
+      {station.skill === 'grammar' && grammarPatterns.length > 0 && (
         <GrammarTeachingCard patterns={grammarPatterns} audioKey={`grammar-card-${currentActivity.id}`} />
+      )}
+
+      {/* Optional pronunciation card from the pack's phonics block */}
+      {phonics && station.id === 'speaking' && (
+        <details className="mb-4 rounded-card border border-slate-200 bg-white shadow-card">
+          <summary className="cursor-pointer select-none px-4 py-3 text-sm font-bold text-ink">
+            Pronunciation: {phonics.contrast.join(' vs ')}
+          </summary>
+          <div className="border-t border-slate-100 px-4 py-4">
+            <div className="mb-3 flex flex-wrap gap-2">
+              {phonics.anchorWords.map((a: any) => (
+                <AudioButton key={a.word} audioKey={`phonics-${unit.id}-${a.word}`} fallbackText={a.word} label={`${a.word} (${a.sound})`} />
+              ))}
+            </div>
+            <p className="eyebrow mb-2">Sort by sound</p>
+            <div className="flex flex-wrap gap-1.5">
+              {phonics.sortItems.map((s: any) => (
+                <span
+                  key={s.word}
+                  title={s.note}
+                  className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-semibold text-ink"
+                >
+                  {s.word} <span className="text-muted">· {s.sound}</span>
+                </span>
+              ))}
+            </div>
+            {phonics.note && <p className="mt-2 text-xs text-muted">{phonics.note}</p>}
+          </div>
+        </details>
       )}
 
       {/* Pre-activity content: reading text or listening dialogue */}

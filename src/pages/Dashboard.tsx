@@ -152,6 +152,29 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
         <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {units.map(unit => {
             if (unit.status === 'placeholder') {
+              // Teacher Mode "Unlock all units": placeholders become openable
+              // for preview (they still contain no activities).
+              if (progress.settings.teacherUnlockAllUnits) {
+                return (
+                  <button
+                    key={unit.id}
+                    onClick={() => navigate(`/unit/${unit.id}`)}
+                    className="surface-muted group flex min-h-44 flex-col justify-between p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-cardhover"
+                    aria-label={`Unit ${unit.id}, preview unlocked, coming soon`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <span className="eyebrow">Unit {unit.id}</span>
+                      <span className="flex items-center gap-1.5 rounded-md bg-teal-50 px-2 py-1 text-[11px] font-extrabold text-brand">
+                        <Play size={11} /> PREVIEW
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-heading text-lg font-bold text-ink">Coming soon</p>
+                      <p className="mt-1 text-sm text-muted">Preview unlocked by Teacher Mode — no activities yet.</p>
+                    </div>
+                  </button>
+                );
+              }
               return (
                 <div
                   key={unit.id}

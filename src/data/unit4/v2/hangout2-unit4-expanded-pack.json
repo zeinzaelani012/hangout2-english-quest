@@ -1,0 +1,5012 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit4",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "unit": 4,
+    "title": "My Classes",
+    "islandName": "Timetable Island",
+    "bigQuestion": "What classes do you have at school?",
+    "objectives": [
+      "Talking about what classes one has",
+      "Asking if someone has things for school"
+    ],
+    "sourcePages": "42-53 (adapted, not reproduced)",
+    "contentPolicy": "Original adapted material. Same unit topic and language aims as the source unit; no coursebook text, audio or artwork is reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. For every slot in `slots`, look up levels[level].content[slotId] for prompt + items. Result: { id: slotId + '-' + level, skill, type, prompt, payload: items ?? entry, xp, estSeconds, depthMoves }. A slot missing from a level inherits the Core entry.",
+    "targetDurationMinutes": "60-75 per level, all three levels",
+    "totalUnitsPlanned": 9,
+    "answerKeyIncluded": true
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1.0,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25.0
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15.0
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15.0
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the class"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Class or thing?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Flip it"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "My backpack"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the timetable"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Two voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "My school day"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The School Day"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/4/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Timetable",
+      "subtitle": "Name it",
+      "xp": 25,
+      "mechanic": "pictureToWord + wordToPicture + dragSort"
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Bell",
+      "subtitle": "have / has",
+      "xp": 15,
+      "mechanic": "gapFill"
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Corridor",
+      "subtitle": "Listen and choose",
+      "xp": 10,
+      "mechanic": "audioToPicture + twoPass"
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "Inside the Backpack",
+      "subtitle": "Read and find",
+      "xp": 15,
+      "mechanic": "tapSentence"
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Backpack Check",
+      "subtitle": "Write it down",
+      "xp": 10,
+      "mechanic": "classChart"
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Classroom",
+      "subtitle": "Say it out loud",
+      "xp": 25,
+      "mechanic": "recordAndCompare"
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The School Day",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 4,
+    "title": "My Classes",
+    "islandName": "Timetable Island",
+    "bigQuestion": "What classes do you have at school?",
+    "objectives": [
+      "Talking about what classes one has",
+      "Asking if someone has things for school"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "Unit 4 ships at the v2.0 pacing schema (30 slots + 2 checkpoints). Units 5-9 stay placeholders."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "gym",
+      "set": "A",
+      "category": "class",
+      "example": "I have gym on Friday. I need my shorts.",
+      "imgHint": "a school gymnasium with a basketball hoop and benches"
+    },
+    {
+      "id": "v02",
+      "word": "computers",
+      "set": "A",
+      "category": "class",
+      "example": "We have computers on Monday morning.",
+      "imgHint": "a row of computer screens on desks"
+    },
+    {
+      "id": "v03",
+      "word": "music",
+      "set": "A",
+      "category": "class",
+      "example": "She has music after English.",
+      "imgHint": "a recorder and a music note on a stand"
+    },
+    {
+      "id": "v04",
+      "word": "science",
+      "set": "A",
+      "category": "class",
+      "example": "Science is my favourite class.",
+      "imgHint": "a microscope and a beaker with a leaf"
+    },
+    {
+      "id": "v05",
+      "word": "geography",
+      "set": "A",
+      "category": "class",
+      "example": "In geography we use a big map.",
+      "imgHint": "a globe with a pointer showing continents"
+    },
+    {
+      "id": "v06",
+      "word": "math",
+      "set": "A",
+      "category": "class",
+      "example": "We have math on Tuesday.",
+      "imgHint": "numbers and a plus sign on a green board"
+    },
+    {
+      "id": "v07",
+      "word": "English",
+      "set": "A",
+      "category": "class",
+      "example": "English is hard sometimes.",
+      "imgHint": "the letters A B C on a stack of books"
+    },
+    {
+      "id": "v08",
+      "word": "art",
+      "set": "A",
+      "category": "class",
+      "example": "On Thursday we have art. I love it.",
+      "imgHint": "a paint palette with brushes"
+    },
+    {
+      "id": "v09",
+      "word": "shorts",
+      "set": "B",
+      "category": "object",
+      "example": "I have my gym shorts in my bag.",
+      "imgHint": "a pair of dark blue sports shorts"
+    },
+    {
+      "id": "v10",
+      "word": "paper",
+      "set": "B",
+      "category": "object",
+      "example": "I have some paper for art.",
+      "imgHint": "a stack of plain white sheets"
+    },
+    {
+      "id": "v11",
+      "word": "scissors",
+      "set": "B",
+      "category": "object",
+      "example": "Do you have scissors? I need them.",
+      "imgHint": "a pair of green-handled scissors cut into paper"
+    },
+    {
+      "id": "v12",
+      "word": "recorder",
+      "set": "B",
+      "category": "object",
+      "example": "I have my recorder for music class.",
+      "imgHint": "a wooden recorder flute"
+    },
+    {
+      "id": "v13",
+      "word": "map",
+      "set": "B",
+      "category": "object",
+      "example": "She has a map in her backpack.",
+      "imgHint": "a folded world map with a pin"
+    },
+    {
+      "id": "v14",
+      "word": "dictionary",
+      "set": "B",
+      "category": "object",
+      "example": "I use a dictionary in English class.",
+      "imgHint": "a thick dark book with the word DICTIONARY on the cover"
+    },
+    {
+      "id": "v15",
+      "word": "calculator",
+      "set": "B",
+      "category": "object",
+      "example": "Where is my calculator? I need it for math.",
+      "imgHint": "an orange pocket calculator with number keys"
+    },
+    {
+      "id": "v16",
+      "word": "folder",
+      "set": "B",
+      "category": "object",
+      "example": "My science folder is green.",
+      "imgHint": "a stack of bright folders in several colours"
+    },
+    {
+      "id": "v17",
+      "word": "backpack",
+      "set": "C",
+      "category": "place",
+      "example": "My backpack is heavy today.",
+      "imgHint": "an open school backpack with books inside"
+    },
+    {
+      "id": "v18",
+      "word": "lunchbox",
+      "set": "C",
+      "category": "place",
+      "example": "My lunch is in my lunchbox, not my backpack.",
+      "imgHint": "a small box with a handle and a sandwich"
+    },
+    {
+      "id": "v19",
+      "word": "desk",
+      "set": "C",
+      "category": "place",
+      "example": "My computer stays on my desk.",
+      "imgHint": "a classroom desk with a chair and a laptop"
+    },
+    {
+      "id": "v20",
+      "word": "hard",
+      "set": "C",
+      "category": "adjective",
+      "example": "English is hard sometimes, but I like it.",
+      "imgHint": "a face thinking hard beside a puzzle piece"
+    },
+    {
+      "id": "v21",
+      "word": "schedule",
+      "set": "C",
+      "category": "concept",
+      "example": "Please write down the schedule.",
+      "imgHint": "a weekly grid with days across the top"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the class it shows.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "gym",
+              "options": [
+                "gym",
+                "art",
+                "music"
+              ],
+              "answer": "gym",
+              "why": "In gym class we run and play sports."
+            },
+            {
+              "id": "v1-2",
+              "img": "computers",
+              "options": [
+                "computers",
+                "math",
+                "science"
+              ],
+              "answer": "computers",
+              "why": "We use a screen and a keyboard in computer class."
+            },
+            {
+              "id": "v1-3",
+              "img": "geography",
+              "options": [
+                "geography",
+                "English",
+                "art"
+              ],
+              "answer": "geography",
+              "why": "A globe is for geography. We learn about countries."
+            },
+            {
+              "id": "v1-4",
+              "img": "math",
+              "options": [
+                "math",
+                "music",
+                "gym"
+              ],
+              "answer": "math",
+              "why": "Numbers and a plus sign mean math."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows that subject",
+            "The word is short",
+            "I like that class"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the class. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "music",
+              "options": [
+                "music",
+                "art",
+                "science"
+              ],
+              "answer": "music",
+              "why": "A recorder and a music note mean music."
+            },
+            {
+              "id": "v2-2",
+              "word": "science",
+              "options": [
+                "science",
+                "geography",
+                "math"
+              ],
+              "answer": "science",
+              "why": "A microscope is for science."
+            },
+            {
+              "id": "v2-3",
+              "word": "art",
+              "options": [
+                "art",
+                "computers",
+                "English"
+              ],
+              "answer": "art",
+              "why": "A paint palette and brushes mean art."
+            },
+            {
+              "id": "v2-4",
+              "word": "English",
+              "options": [
+                "English",
+                "gym",
+                "music"
+              ],
+              "answer": "English",
+              "why": "The letters A B C are for English."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the word",
+            "The word is long",
+            "It is my favourite class"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Gym.",
+              "options": [
+                "gym",
+                "art",
+                "math"
+              ],
+              "answer": "gym"
+            },
+            {
+              "id": "v3-2",
+              "audio": "I have science today.",
+              "options": [
+                "science",
+                "music",
+                "English"
+              ],
+              "answer": "science"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Geography.",
+              "options": [
+                "geography",
+                "gym",
+                "art"
+              ],
+              "answer": "geography"
+            }
+          ],
+          "whyChoices": [
+            "I heard that word clearly",
+            "It sounded like another word",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each word in the right box.",
+          "bins": [
+            "A class",
+            "A thing"
+          ],
+          "items": [
+            {
+              "word": "gym",
+              "bin": "A class",
+              "why": "Gym is a class you go to."
+            },
+            {
+              "word": "scissors",
+              "bin": "A thing",
+              "why": "Scissors are a thing in your bag."
+            },
+            {
+              "word": "music",
+              "bin": "A class",
+              "why": "Music is a class."
+            },
+            {
+              "word": "calculator",
+              "bin": "A thing",
+              "why": "A calculator is a thing you use in math."
+            },
+            {
+              "word": "art",
+              "bin": "A class",
+              "why": "Art is a class."
+            },
+            {
+              "word": "dictionary",
+              "bin": "A thing",
+              "why": "A dictionary is a book."
+            },
+            {
+              "word": "English",
+              "bin": "A class",
+              "why": "English is a class."
+            },
+            {
+              "word": "folder",
+              "bin": "A thing",
+              "why": "A folder holds paper."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "I have ___ on Friday. I run and play.",
+              "options": [
+                "gym",
+                "art",
+                "English"
+              ],
+              "answer": "gym",
+              "why": "We run and play in gym."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "I use a ___ to cut paper.",
+              "options": [
+                "scissors",
+                "map",
+                "desk"
+              ],
+              "answer": "scissors",
+              "why": "Scissors cut paper."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "I look at a ___ to find countries.",
+              "options": [
+                "map",
+                "folder",
+                "recorder"
+              ],
+              "answer": "map",
+              "why": "A map shows countries."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "A ___ is a book with words.",
+              "options": [
+                "dictionary",
+                "calculator",
+                "backpack"
+              ],
+              "answer": "dictionary",
+              "why": "A dictionary gives meanings of words."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "gym",
+                "music",
+                "art",
+                "scissors"
+              ],
+              "answer": "scissors",
+              "why": "The others are classes. Scissors are a thing."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "scissors",
+                "calculator",
+                "dictionary",
+                "science"
+              ],
+              "answer": "science",
+              "why": "The others are things in your bag."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "map",
+                "globe",
+                "folder",
+                "geography"
+              ],
+              "answer": "geography",
+              "why": "The others are things you can hold."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is the longest word",
+            "I do not have it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "c",
+                "h",
+                "o",
+                "o",
+                "l"
+              ],
+              "answer": "school",
+              "audio": "school",
+              "note": "support word, appears in the Big Question"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "m",
+                "a",
+                "p"
+              ],
+              "answer": "map",
+              "audio": "map"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "g",
+                "y",
+                "m"
+              ],
+              "answer": "gym",
+              "audio": "gym"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the school words. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Scissors.",
+              "options": [
+                "scissors",
+                "calculator",
+                "folder"
+              ],
+              "answer": "scissors"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "We have ___ on Monday. We use computers.",
+              "options": [
+                "computers",
+                "gym",
+                "art"
+              ],
+              "answer": "computers"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the class: a globe and countries.",
+              "img": "geography",
+              "answer": "geography",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "paper",
+                "scissors",
+                "calculator",
+                "music"
+              ],
+              "answer": "music",
+              "why": "Music is a class. The others are things."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "English",
+              "options": [
+                "English",
+                "math",
+                "science"
+              ],
+              "answer": "English"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this word",
+            "This word was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these four sentences. What is different about the last two?",
+          "teachCard": {
+            "title": "have and has",
+            "lines": [
+              "I have science on Wednesday.",
+              "We have art on Thursday.",
+              "He has gym on Friday.",
+              "She has music on Monday."
+            ],
+            "rule": "I, you, we and they use have. He, she and it use has."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "I have science.",
+              "q": "Who is talking?",
+              "options": [
+                "I",
+                "he",
+                "she"
+              ],
+              "answer": "I"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "He has gym.",
+              "q": "What is different about this sentence?",
+              "options": [
+                "It uses has",
+                "It uses have",
+                "It has no verb"
+              ],
+              "answer": "It uses has"
+            },
+            {
+              "id": "g1-3",
+              "sentence": "We have art.",
+              "q": "Does this sentence use have or has?",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "have"
+            },
+            {
+              "id": "g1-4",
+              "sentence": "She has music.",
+              "q": "Tap the word that tells you to use has.",
+              "options": [
+                "She",
+                "has",
+                "music"
+              ],
+              "answer": "She"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "He, she and it use has",
+            "I, you, we and they use have",
+            "It is a question"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "I ___ science on Wednesday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "have",
+              "why": "I uses have."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "She ___ music on Monday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "has",
+              "why": "She uses has."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "We ___ art on Thursday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "have",
+              "why": "We uses have."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "He ___ gym on Friday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "has",
+              "why": "He uses has."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "They ___ English on Tuesday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "have",
+              "why": "They uses have."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "___ you have a map?",
+              "options": [
+                "Do",
+                "Does"
+              ],
+              "answer": "Do",
+              "why": "You uses Do."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "She have music today.",
+              "wrong": "have",
+              "correct": "has",
+              "why": "She needs has."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "He have gym on Friday.",
+              "wrong": "have",
+              "correct": "has",
+              "why": "He needs has."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "I has science today.",
+              "wrong": "has",
+              "correct": "have",
+              "why": "I needs have."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "They has art on Thursday.",
+              "wrong": "has",
+              "correct": "have",
+              "why": "They needs have."
+            }
+          ],
+          "whyChoices": [
+            "The subject needs a different verb",
+            "The word is spelled wrong",
+            "The sentence needs a question mark"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, I do.",
+              "options": [
+                "Do you have a map?",
+                "Does you have a map?"
+              ],
+              "answer": "Do you have a map?",
+              "why": "You uses Do."
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, he does.",
+              "options": [
+                "Do he have paper?",
+                "Does he have paper?"
+              ],
+              "answer": "Does he have paper?",
+              "why": "He uses Does."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, she doesn't.",
+              "options": [
+                "Does she have scissors?",
+                "Do she have scissors?"
+              ],
+              "answer": "Does she have scissors?",
+              "why": "She uses Does."
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, I don't.",
+              "options": [
+                "Do you have a calculator?",
+                "Does you have a calculator?"
+              ],
+              "answer": "Do you have a calculator?",
+              "why": "You uses Do."
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. Make it negative.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "I have a calculator.",
+              "options": [
+                "I don't have a calculator.",
+                "I doesn't have a calculator."
+              ],
+              "answer": "I don't have a calculator.",
+              "why": "I uses don't."
+            },
+            {
+              "id": "g5-2",
+              "from": "He has a folder.",
+              "options": [
+                "He doesn't have a folder.",
+                "He don't have a folder."
+              ],
+              "answer": "He doesn't have a folder.",
+              "why": "He uses doesn't."
+            },
+            {
+              "id": "g5-3",
+              "from": "They have scissors.",
+              "options": [
+                "They don't have scissors.",
+                "They doesn't have scissors."
+              ],
+              "answer": "They don't have scissors.",
+              "why": "They uses don't."
+            },
+            {
+              "id": "g5-4",
+              "from": "She has a map.",
+              "options": [
+                "She doesn't have a map.",
+                "She don't have a map."
+              ],
+              "answer": "She doesn't have a map.",
+              "why": "She uses doesn't."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the class. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "Gym.",
+              "options": [
+                "gym",
+                "art",
+                "music"
+              ],
+              "answer": "gym"
+            },
+            {
+              "id": "l1-2",
+              "audio": "I have music today.",
+              "options": [
+                "music",
+                "science",
+                "math"
+              ],
+              "answer": "music"
+            },
+            {
+              "id": "l1-3",
+              "audio": "She has art on Thursday.",
+              "options": [
+                "art",
+                "English",
+                "geography"
+              ],
+              "answer": "art"
+            }
+          ],
+          "whyChoices": [
+            "I heard the class word",
+            "I heard the first sound only",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "Her school week",
+                "Her lunch"
+              ],
+              "answer": "Her school week"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What does Mia have on Monday?",
+              "options": [
+                "Math and gym",
+                "Art and music"
+              ],
+              "answer": "Math and gym"
+            }
+          ],
+          "audio": "Hi, I'm Mia. On Monday I have math and gym. On Tuesday I have English. My favourite class is art, on Thursday.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "She has music on Monday. He has gym on Friday. They have art on Thursday.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "She ___(1)___ music on Monday.",
+              "options": [
+                "has",
+                "have"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "He has ___(2)___ on Friday.",
+              "options": [
+                "gym",
+                "art"
+              ],
+              "answer": "gym"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "They have art on ___(3)___.",
+              "options": [
+                "Thursday",
+                "Monday"
+              ],
+              "answer": "Thursday"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "break",
+              "options": [
+                "a time when there are no classes",
+                "a kind of chair"
+              ],
+              "answer": "a time when there are no classes"
+            },
+            {
+              "id": "r1-2",
+              "word": "schedule",
+              "options": [
+                "a plan of classes for the week",
+                "a school bag"
+              ],
+              "answer": "a plan of classes for the week"
+            },
+            {
+              "id": "r1-3",
+              "word": "every day",
+              "options": [
+                "Monday, Tuesday, Wednesday, Thursday and Friday",
+                "only Monday"
+              ],
+              "answer": "Monday, Tuesday, Wednesday, Thursday and Friday"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "We have spring break next week. This is the last week of school. This week we only have classes in the morning. We have one class every day. On Monday we have computers. On Tuesday we have science. On Wednesday we have geography. On Thursday we have art. And on Friday we have no classes. Please write down the schedule.",
+          "prompt": "Read the text. Then tap the sentence that tells you what the text is mostly about.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "What is the text mostly about?",
+              "answerType": "tapSentence",
+              "answer": "We have one class every day.",
+              "why": "The whole text lists one class for each day."
+            },
+            {
+              "id": "r2-2",
+              "q": "How many classes do they have each day this week?",
+              "options": [
+                "One",
+                "Three",
+                "Five"
+              ],
+              "answer": "One"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "We have spring break next week. This is the last week of school. This week we only have classes in the morning. We have one class every day. On Monday we have computers. On Tuesday we have science. On Wednesday we have geography. On Thursday we have art. And on Friday we have no classes. Please write down the schedule.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What class is on Monday?",
+              "options": [
+                "Computers",
+                "Science",
+                "Art"
+              ],
+              "answer": "Computers"
+            },
+            {
+              "id": "r3-2",
+              "q": "What class is on Wednesday?",
+              "options": [
+                "Geography",
+                "Science",
+                "Art"
+              ],
+              "answer": "Geography"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you about Friday.",
+              "answerType": "tapSentence",
+              "answer": "And on Friday we have no classes.",
+              "why": "No classes on Friday."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "I'm Marie. I'm a student. Every morning I take my backpack to school. I have my scissors, my calculator and some paper in my backpack. Today I have English. English is hard sometimes, so I have a dictionary in my backpack, too. After English I have music, so I have my recorder. My lucky shorts are in there as well.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you what Marie has for English.",
+              "answer": "English is hard sometimes, so I have a dictionary in my backpack, too."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you what Marie has for music.",
+              "answer": "After English I have music, so I have my recorder."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you where Marie takes all these things.",
+              "answer": "Every morning I take my backpack to school."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "I",
+                "have",
+                "science",
+                "on",
+                "Wednesday"
+              ],
+              "answer": "I have science on Wednesday."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "She",
+                "has",
+                "music",
+                "on",
+                "Monday"
+              ],
+              "answer": "She has music on Monday."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "We",
+                "have",
+                "art",
+                "on",
+                "Thursday"
+              ],
+              "answer": "We have art on Thursday."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Do",
+                "you",
+                "have",
+                "a",
+                "map"
+              ],
+              "answer": "Do you have a map?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "She have gym on Friday.",
+              "answer": "She has gym on Friday."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "I has English today.",
+              "answer": "I have English today."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "He have a calculator.",
+              "answer": "He has a calculator."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Which four classes do you have today? Write one sentence for each class: what you have in your backpack.",
+          "starters": [
+            "Today I have ___ .",
+            "For ___ I have ___ .",
+            "I have ___ in my backpack.",
+            "My friend has ___ ."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "have and has are correct"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "I have science on Wednesday.",
+              "keywords": [
+                "have",
+                "science",
+                "wednesday"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "She has music on Monday.",
+              "keywords": [
+                "has",
+                "music",
+                "monday"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "I have my gym shorts.",
+              "keywords": [
+                "have",
+                "gym",
+                "shorts"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Do you have a calculator?",
+              "keywords": [
+                "do",
+                "you",
+                "have",
+                "calculator"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "math, gym and computers",
+              "keywords": [
+                "math",
+                "gym",
+                "computers"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "a map and a dictionary",
+              "keywords": [
+                "map",
+                "dictionary"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "I have scissors",
+              "keywords": [
+                "have",
+                "scissors"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What do you have on Monday?",
+              "keywords": [
+                "have",
+                "monday"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Do you have a calculator?",
+              "keywords": [
+                "yes",
+                "no",
+                "do",
+                "don't",
+                "have"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Does your friend have scissors?",
+              "keywords": [
+                "does",
+                "doesn't",
+                "friend",
+                "scissors"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What is your favourite class?",
+              "keywords": [
+                "favourite",
+                "class"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the timetable. Say what this student has each day. Use at least three class words.",
+          "image": "timetable-easy",
+          "prompts": [
+            "Two classes on Monday",
+            "One class on Wednesday",
+            "One class you like"
+          ],
+          "keywords": [
+            "have",
+            "has",
+            "on"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with two voices. First you are Alex, then his friend.",
+          "dialogueId": "whereIsMyCalculator",
+          "lines": 6,
+          "keywords": [
+            "have",
+            "gym",
+            "calculator",
+            "don't"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What classes do you have on Monday?",
+              "keywords": [
+                "have",
+                "monday"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What is in your backpack today?",
+              "keywords": [
+                "have",
+                "backpack"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which class do you like and which class is hard?",
+              "keywords": [
+                "like",
+                "hard"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about your school day. Say four sentences.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "Today I have ___ .",
+            "I have ___ in my backpack.",
+            "My favourite class is ___ .",
+            "I don't have ___ ."
+          ],
+          "keywords": [
+            "have",
+            "class",
+            "backpack"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "geography",
+              "options": [
+                "geography",
+                "science",
+                "art"
+              ],
+              "answer": "geography"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "She ___ music on Monday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "He have gym on Friday.",
+              "wrong": "have",
+              "correct": "has"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Scissors.",
+              "options": [
+                "scissors",
+                "calculator",
+                "folder"
+              ],
+              "answer": "scissors"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "gym",
+                "map"
+              ],
+              "bins": [
+                "A class",
+                "A thing"
+              ],
+              "answers": {
+                "gym": "A class",
+                "map": "A thing"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about a class you have this week.",
+              "keywords": [
+                "have",
+                "class"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The School Day. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "art",
+              "options": [
+                "art",
+                "music",
+                "math"
+              ],
+              "answer": "art"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "He ___ gym on Friday.",
+              "options": [
+                "have",
+                "has"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "I has English today.",
+              "wrong": "has",
+              "correct": "have"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "I'm Ben. On Monday I have math and gym. I don't have English on Monday.",
+              "q": "What does Ben NOT have on Monday?",
+              "options": [
+                "English",
+                "Math",
+                "Gym"
+              ],
+              "answer": "English"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text, tap the sentence that tells you what Marie has for English.",
+              "answer": "English is hard sometimes, so I have a dictionary in my backpack, too."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Does",
+                "she",
+                "have",
+                "a",
+                "map"
+              ],
+              "answer": "Does she have a map?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the thing you use to cut paper.",
+              "answer": "scissors",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: one class you have and one thing in your backpack.",
+              "keywords": [
+                "have",
+                "backpack"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the class that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "gym",
+              "options": [
+                "gym",
+                "art",
+                "music",
+                "science"
+              ],
+              "answer": "gym",
+              "why": "A gymnasium with a basketball hoop means gym class."
+            },
+            {
+              "id": "v1-2",
+              "img": "science",
+              "options": [
+                "science",
+                "geography",
+                "math",
+                "English"
+              ],
+              "answer": "science",
+              "why": "A microscope and a leaf are for science."
+            },
+            {
+              "id": "v1-3",
+              "img": "art",
+              "options": [
+                "art",
+                "music",
+                "computers",
+                "gym"
+              ],
+              "answer": "art",
+              "why": "A palette and brushes are for art."
+            },
+            {
+              "id": "v1-4",
+              "img": "computers",
+              "options": [
+                "computers",
+                "math",
+                "science",
+                "geography"
+              ],
+              "answer": "computers",
+              "why": "Screens and keyboards mean computers."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact subject",
+            "It belongs to the same subject group",
+            "It starts with the same letter",
+            "It is a thing, not a class"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "geography",
+              "options": [
+                "geography",
+                "science",
+                "art",
+                "math"
+              ],
+              "answer": "geography",
+              "why": "A globe is for geography."
+            },
+            {
+              "id": "v2-2",
+              "word": "dictionary",
+              "options": [
+                "dictionary",
+                "folder",
+                "calculator",
+                "map"
+              ],
+              "answer": "dictionary",
+              "why": "A dictionary is a thick book of words."
+            },
+            {
+              "id": "v2-3",
+              "word": "recorder",
+              "options": [
+                "recorder",
+                "scissors",
+                "paper",
+                "desk"
+              ],
+              "answer": "recorder",
+              "why": "A recorder is a long wooden instrument."
+            },
+            {
+              "id": "v2-4",
+              "word": "folder",
+              "options": [
+                "folder",
+                "paper",
+                "map",
+                "dictionary"
+              ],
+              "answer": "folder",
+              "why": "A folder is a coloured cover that holds paper."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It is a school object",
+            "The word is uncountable",
+            "It is a class"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "She has geography on Wednesday.",
+              "options": [
+                "geography",
+                "science",
+                "math"
+              ],
+              "answer": "geography"
+            },
+            {
+              "id": "v3-2",
+              "audio": "I need my calculator for math.",
+              "options": [
+                "calculator",
+                "dictionary",
+                "folder"
+              ],
+              "answer": "calculator"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Do you have your gym shorts?",
+              "options": [
+                "shorts",
+                "scissors",
+                "paper"
+              ],
+              "answer": "shorts"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole word",
+            "I heard a word that sounds similar",
+            "I used the topic to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort each word into the right box.",
+          "bins": [
+            "A class",
+            "A thing"
+          ],
+          "items": [
+            {
+              "word": "geography",
+              "bin": "A class"
+            },
+            {
+              "word": "dictionary",
+              "bin": "A thing"
+            },
+            {
+              "word": "music",
+              "bin": "A class"
+            },
+            {
+              "word": "calculator",
+              "bin": "A thing"
+            },
+            {
+              "word": "computers",
+              "bin": "A class"
+            },
+            {
+              "word": "folder",
+              "bin": "A thing"
+            },
+            {
+              "word": "science",
+              "bin": "A class"
+            },
+            {
+              "word": "scissors",
+              "bin": "A thing"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "English is ___ sometimes, so I use a dictionary.",
+              "options": [
+                "hard",
+                "heavy",
+                "happy",
+                "empty"
+              ],
+              "answer": "hard",
+              "why": "Hard means difficult here."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "My computer stays on my ___, not in my bag.",
+              "options": [
+                "desk",
+                "lunchbox",
+                "folder",
+                "map"
+              ],
+              "answer": "desk",
+              "why": "A computer stays on a desk."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Please write down the ___ for next week.",
+              "options": [
+                "schedule",
+                "scissors",
+                "lunchbox",
+                "recorder"
+              ],
+              "answer": "schedule",
+              "why": "A schedule is a plan of classes."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "My lunch is in my ___, not my backpack.",
+              "options": [
+                "lunchbox",
+                "desk",
+                "map",
+                "folder"
+              ],
+              "answer": "lunchbox",
+              "why": "Lunch goes in a lunchbox."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It sounds like another word",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "map",
+                "globe",
+                "dictionary",
+                "geography"
+              ],
+              "answer": "geography",
+              "why": "The others are things you can hold. Geography is a class."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "scissors",
+                "paper",
+                "calculator",
+                "music"
+              ],
+              "answer": "music",
+              "why": "The others are things in a bag. Music is a class."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "gym",
+                "art",
+                "science",
+                "recorder"
+              ],
+              "answer": "recorder",
+              "why": "The others are classes. A recorder is an object."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is uncountable",
+            "It is a longer word",
+            "It is a class"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "c",
+                "i",
+                "s",
+                "s",
+                "o",
+                "r",
+                "s"
+              ],
+              "answer": "scissors",
+              "audio": "scissors"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "c",
+                "a",
+                "l",
+                "c",
+                "u",
+                "l",
+                "a",
+                "t",
+                "o",
+                "r"
+              ],
+              "answer": "calculator",
+              "audio": "calculator"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "b",
+                "a",
+                "c",
+                "k",
+                "p",
+                "a",
+                "c",
+                "k"
+              ],
+              "answer": "backpack",
+              "audio": "backpack"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Recorder.",
+              "options": [
+                "recorder",
+                "scissors",
+                "calculator",
+                "folder"
+              ],
+              "answer": "recorder"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "In ___ we look at a map and learn about countries.",
+              "options": [
+                "geography",
+                "gym",
+                "art",
+                "music"
+              ],
+              "answer": "geography"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the class where you run and play sports.",
+              "img": "gym",
+              "answer": "gym"
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "folder",
+                "paper",
+                "scissors",
+                "English"
+              ],
+              "answer": "English",
+              "why": "English is a class. The others are objects."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "geography",
+              "options": [
+                "geography",
+                "math",
+                "art",
+                "computers"
+              ],
+              "answer": "geography"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the word",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the four sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "have / has and don't / doesn't have",
+            "lines": [
+              "I have science on Wednesday.",
+              "We have art on Thursday.",
+              "He has gym on Friday.",
+              "She doesn't have a calculator."
+            ],
+            "rule": "I, you, we, they use have. He, she, it use has. In negatives the verb goes back to have: doesn't have."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which subjects use has?",
+              "options": [
+                "he, she, it",
+                "I, you, we",
+                "they, we, I",
+                "all subjects"
+              ],
+              "answer": "he, she, it"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which form goes with we?",
+              "options": [
+                "have",
+                "has",
+                "having",
+                "is have"
+              ],
+              "answer": "have"
+            },
+            {
+              "id": "g1-3",
+              "q": "What is the negative of 'He has a folder'?",
+              "options": [
+                "He doesn't have a folder.",
+                "He doesn't has a folder.",
+                "He not have a folder.",
+                "He isn't have a folder."
+              ],
+              "answer": "He doesn't have a folder."
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the helper word in 'She doesn't have a map.'",
+              "options": [
+                "doesn't",
+                "have",
+                "map",
+                "She"
+              ],
+              "answer": "doesn't"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "Emma is she, so the verb is has",
+            "They is plural, so the verb is have",
+            "After doesn't the verb goes back to have",
+            "Questions about he start with Does"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "Emma ___ geography on Wednesday.",
+              "options": [
+                "have",
+                "has",
+                "having",
+                "is have"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "They ___ computers on Monday.",
+              "options": [
+                "has",
+                "have",
+                "having",
+                "is have"
+              ],
+              "answer": "have"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "Ben ___ art on Thursday.",
+              "options": [
+                "have",
+                "has",
+                "having",
+                "haves"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "___ he have a dictionary?",
+              "options": [
+                "Do",
+                "Does",
+                "Is",
+                "Are"
+              ],
+              "answer": "Does"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Does she have a folder? Yes, she ___.",
+              "options": [
+                "does",
+                "do",
+                "is",
+                "have"
+              ],
+              "answer": "does"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "We ___ music after English.",
+              "options": [
+                "have",
+                "has",
+                "having",
+                "haves"
+              ],
+              "answer": "have"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Emma have science today.",
+              "wrong": "have",
+              "correct": "has",
+              "why": "Emma is she, so the verb is has."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "He doesn't has a calculator.",
+              "wrong": "has",
+              "correct": "have",
+              "why": "After doesn't the verb goes back to have."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Do she have a map?",
+              "wrong": "Do",
+              "correct": "Does",
+              "why": "She needs Does in the question."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "I don't has paper.",
+              "wrong": "has",
+              "correct": "have",
+              "why": "After don't the verb is have."
+            }
+          ],
+          "whyChoices": [
+            "The subject is he, she or it",
+            "The verb follows doesn't or don't",
+            "The subject is she in a question",
+            "The subject is plural"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, she does.",
+              "options": [
+                "Does she have scissors?",
+                "Do she have scissors?",
+                "Does she has scissors?",
+                "Is she have scissors?"
+              ],
+              "answer": "Does she have scissors?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, they don't.",
+              "options": [
+                "Do they have folders?",
+                "Does they have folders?",
+                "Do they has folders?",
+                "Are they have folders?"
+              ],
+              "answer": "Do they have folders?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, I do.",
+              "options": [
+                "Do you have a dictionary?",
+                "Does you have a dictionary?",
+                "Do you has a dictionary?",
+                "Are you have a dictionary?"
+              ],
+              "answer": "Do you have a dictionary?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, he doesn't.",
+              "options": [
+                "Does he have a calculator?",
+                "Do he have a calculator?",
+                "Does he has a calculator?",
+                "Is he have a calculator?"
+              ],
+              "answer": "Does he have a calculator?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make it negative.",
+              "from": "I have a calculator.",
+              "options": [
+                "I don't have a calculator.",
+                "I doesn't have a calculator.",
+                "I not have a calculator.",
+                "I haven't got not a calculator."
+              ],
+              "answer": "I don't have a calculator."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Make it negative.",
+              "from": "Emma has a map.",
+              "options": [
+                "Emma doesn't have a map.",
+                "Emma don't have a map.",
+                "Emma doesn't has a map.",
+                "Emma not has a map."
+              ],
+              "answer": "Emma doesn't have a map."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Change the subject to he.",
+              "from": "I have art on Monday.",
+              "options": [
+                "He has art on Monday.",
+                "He have art on Monday.",
+                "He haves art on Monday.",
+                "He is have art on Monday."
+              ],
+              "answer": "He has art on Monday."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Change the subject to they.",
+              "from": "She has gym on Friday.",
+              "options": [
+                "They have gym on Friday.",
+                "They has gym on Friday.",
+                "They haves gym on Friday.",
+                "They is have gym on Friday."
+              ],
+              "answer": "They have gym on Friday."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the class. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "She has geography on Wednesday.",
+              "options": [
+                "geography",
+                "science",
+                "math",
+                "art"
+              ],
+              "answer": "geography"
+            },
+            {
+              "id": "l1-2",
+              "audio": "On Monday we have computers and math.",
+              "options": [
+                "computers",
+                "music",
+                "gym",
+                "English"
+              ],
+              "answer": "computers"
+            },
+            {
+              "id": "l1-3",
+              "audio": "My favourite class is art.",
+              "options": [
+                "art",
+                "music",
+                "science",
+                "geography"
+              ],
+              "answer": "art"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a similar word",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person talking about?",
+              "options": [
+                "Their school subjects",
+                "Their family",
+                "Their holiday"
+              ],
+              "answer": "Their school subjects"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Which class does the speaker find hard?",
+              "options": [
+                "Math",
+                "Art",
+                "Gym"
+              ],
+              "answer": "Math"
+            }
+          ],
+          "audio": "I have math on Monday, and math is hard for me. On Tuesday I have English, and I like it. On Thursday I have art, which is easy and fun. My favourite class is geography because I like maps.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "Emma has geography on Wednesday. Ben has gym on Friday. They have music on Monday.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "Emma ___(1)___ geography on Wednesday.",
+              "options": [
+                "has",
+                "have",
+                "having"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "Ben has ___(2)___ on Friday.",
+              "options": [
+                "gym",
+                "art",
+                "music"
+              ],
+              "answer": "gym"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "They have ___(3)___ on Monday.",
+              "options": [
+                "music",
+                "science",
+                "math"
+              ],
+              "answer": "music"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "only",
+              "options": [
+                "and nothing else",
+                "a lot of things",
+                "never"
+              ],
+              "answer": "and nothing else"
+            },
+            {
+              "id": "r1-2",
+              "word": "last",
+              "options": [
+                "the final one",
+                "the first one",
+                "the longest one"
+              ],
+              "answer": "the final one"
+            },
+            {
+              "id": "r1-3",
+              "word": "at all",
+              "options": [
+                "not even one",
+                "always",
+                "a little"
+              ],
+              "answer": "not even one"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "This is Brian's schedule. We have spring break next week, so this is the last week of school. This week the students only have classes in the morning. There is one class every day. On Monday Brian has computers. On Tuesday he has science. On Wednesday he has geography. On Thursday he has art. On Friday he has no classes at all. Brian is happy about Friday, but he is not happy about Thursday, because he does not like art.",
+          "prompt": "Read the whole text. Then tap the sentence that gives the main idea.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that tells you the week is different from normal.",
+              "answerType": "tapSentence",
+              "answer": "This week the students only have classes in the morning.",
+              "why": "It explains why there is just one class a day."
+            },
+            {
+              "id": "r2-2",
+              "q": "What does the text describe?",
+              "options": [
+                "One student's timetable for one week",
+                "A school holiday in summer",
+                "A science lesson"
+              ],
+              "answer": "One student's timetable for one week"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "This is Brian's schedule. We have spring break next week, so this is the last week of school. This week the students only have classes in the morning. There is one class every day. On Monday Brian has computers. On Tuesday he has science. On Wednesday he has geography. On Thursday he has art. On Friday he has no classes at all. Brian is happy about Friday, but he is not happy about Thursday, because he does not like art.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What class does Brian have on Tuesday?",
+              "options": [
+                "Science",
+                "Computers",
+                "Art"
+              ],
+              "answer": "Science"
+            },
+            {
+              "id": "r3-2",
+              "q": "Why is Brian not happy about Thursday?",
+              "options": [
+                "He does not like art",
+                "He has no classes",
+                "The class is in the afternoon"
+              ],
+              "answer": "He does not like art"
+            },
+            {
+              "id": "r3-3",
+              "q": "How many classes does Brian have on Friday?",
+              "options": [
+                "None",
+                "One",
+                "Two"
+              ],
+              "answer": "None"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Hello, I'm Marie and I am a student. When I go to school, I take a backpack. I have my scissors, my calculator and some paper in it. Today I have English, and English is hard sometimes, so there is a dictionary in my backpack too. After English class I have music, so I have my recorder. My favourite class is geography, on Thursday, and I have a map in my backpack for that. I have a computer as well, but it is not in my backpack. It stays on my desk.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you why Marie has a dictionary.",
+              "answer": "Today I have English, and English is hard sometimes, so there is a dictionary in my backpack too."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you where her computer is.",
+              "answer": "I have a computer as well, but it is not in my backpack."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you her favourite class and the day.",
+              "answer": "My favourite class is geography, on Thursday, and I have a map in my backpack for that."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Emma",
+                "has",
+                "geography",
+                "on",
+                "Wednesday"
+              ],
+              "answer": "Emma has geography on Wednesday."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Do",
+                "you",
+                "have",
+                "a",
+                "dictionary"
+              ],
+              "answer": "Do you have a dictionary?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "I",
+                "don't",
+                "have",
+                "my",
+                "calculator"
+              ],
+              "answer": "I don't have my calculator."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Does",
+                "he",
+                "have",
+                "gym",
+                "shorts"
+              ],
+              "answer": "Does he have gym shorts?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "She have music on Monday.",
+              "answer": "She has music on Monday."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "He doesn't has a map.",
+              "answer": "He doesn't have a map."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Do she have scissors?",
+              "answer": "Does she have scissors?"
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Choose four classes you have this week. For each class, write what you have in your backpack. Use the chart.",
+          "chart": {
+            "rows": 4,
+            "columnA": "Class",
+            "columnB": "Things in my backpack",
+            "columnBStem": "I have"
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct have / has",
+            "One negative sentence with don't have",
+            "At least 30 words"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Emma has geography on Wednesday.",
+              "keywords": [
+                "emma",
+                "has",
+                "geography",
+                "wednesday"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "I don't have my calculator.",
+              "keywords": [
+                "don't",
+                "have",
+                "calculator"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Do you have your gym shorts?",
+              "keywords": [
+                "do",
+                "have",
+                "gym",
+                "shorts"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "My computer stays on my desk.",
+              "keywords": [
+                "computer",
+                "desk"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "has geography on Wednesday",
+              "keywords": [
+                "has",
+                "geography",
+                "wednesday"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "scissors and a calculator",
+              "keywords": [
+                "scissors",
+                "calculator"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "I have my recorder",
+              "keywords": [
+                "have",
+                "recorder"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What classes do you have on Monday?",
+              "keywords": [
+                "have",
+                "monday"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Does your friend have a calculator?",
+              "keywords": [
+                "does",
+                "doesn't",
+                "friend",
+                "calculator"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What is in your backpack today?",
+              "keywords": [
+                "have",
+                "backpack"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Which class is hard for you, and why?",
+              "keywords": [
+                "hard",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the timetable. Say what each student has and which class is hard for them.",
+          "image": "timetable-core",
+          "prompts": [
+            "Two classes on Monday",
+            "One person's favourite class",
+            "One thing in their backpack",
+            "One class that is hard"
+          ],
+          "keywords": [
+            "has",
+            "have",
+            "on",
+            "hard"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with two voices: you are Alex, then his friend.",
+          "dialogueId": "whereIsMyCalculator",
+          "lines": 8,
+          "keywords": [
+            "have",
+            "gym",
+            "calculator",
+            "where",
+            "don't"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What classes do you have this week?",
+              "keywords": [
+                "have",
+                "classes"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What do you have in your backpack for English?",
+              "keywords": [
+                "have",
+                "backpack",
+                "english"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "What is in your backpack that you don't need today?",
+              "keywords": [
+                "don't",
+                "need",
+                "backpack"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about your school day. Say what you have, what is in your bag, and which class is hard.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "On Monday I have ___ and ___ .",
+            "For ___ I have ___ in my backpack.",
+            "My favourite class is ___ because ___ .",
+            "___ is hard for me."
+          ],
+          "keywords": [
+            "have",
+            "backpack",
+            "hard",
+            "because"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "science",
+              "options": [
+                "science",
+                "geography",
+                "math",
+                "art"
+              ],
+              "answer": "science"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "Emma ___ geography on Wednesday.",
+              "options": [
+                "have",
+                "has",
+                "having",
+                "is have"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "He doesn't has a calculator.",
+              "wrong": "has",
+              "correct": "have"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Please write down the schedule.",
+              "options": [
+                "schedule",
+                "scissors",
+                "lunchbox",
+                "folder"
+              ],
+              "answer": "schedule"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "scissors",
+                "paper",
+                "calculator",
+                "music"
+              ],
+              "answer": "music"
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with Does he have... or Does she have...?",
+              "keywords": [
+                "does",
+                "have"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The School Day. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "geography",
+              "options": [
+                "geography",
+                "science",
+                "art",
+                "math"
+              ],
+              "answer": "geography"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "They ___ computers on Monday.",
+              "options": [
+                "has",
+                "have",
+                "having",
+                "is have"
+              ],
+              "answer": "have"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "Emma have science today.",
+              "wrong": "have",
+              "correct": "has"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "On Tuesday I have English and music. English is hard, so I take a dictionary. Music is easy because I play the recorder.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker talking about?",
+                  "options": [
+                    "Tuesday classes",
+                    "A holiday",
+                    "A friend"
+                  ],
+                  "answer": "Tuesday classes"
+                },
+                {
+                  "pass": 2,
+                  "q": "Why does the speaker take a dictionary?",
+                  "options": [
+                    "English is hard",
+                    "Music is easy",
+                    "The bag is heavy"
+                  ],
+                  "answer": "English is hard"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text, tap the sentence that tells you where Marie's computer is.",
+              "answer": "I have a computer as well, but it is not in my backpack."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Does",
+                "he",
+                "have",
+                "a",
+                "map"
+              ],
+              "answer": "Does he have a map?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the object you use in math to add numbers.",
+              "answer": "calculator",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: one class you have, one thing in your bag, and one class that is hard.",
+              "keywords": [
+                "have",
+                "bag",
+                "hard"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact class. Two of the four options are close, and one is a thing, not a class.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "science",
+              "options": [
+                "science",
+                "geography",
+                "math",
+                "art"
+              ],
+              "answer": "science",
+              "why": "A microscope is for science. Geography uses a globe, art uses a palette."
+            },
+            {
+              "id": "v1-2",
+              "img": "geography",
+              "options": [
+                "geography",
+                "science",
+                "English",
+                "computers"
+              ],
+              "answer": "geography",
+              "why": "A globe with countries is geography."
+            },
+            {
+              "id": "v1-3",
+              "img": "music",
+              "options": [
+                "music",
+                "art",
+                "English",
+                "computers"
+              ],
+              "answer": "music",
+              "why": "A recorder and a music stand mean music, not art."
+            },
+            {
+              "id": "v1-4",
+              "img": "gym",
+              "options": [
+                "gym",
+                "science",
+                "math",
+                "music"
+              ],
+              "answer": "gym",
+              "why": "A basketball hoop and benches mean gym."
+            }
+          ],
+          "whyChoices": [
+            "The object in the picture belongs to that subject",
+            "It is a thing, not a class",
+            "It belongs to the same subject group",
+            "The word is longer"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "scissors",
+              "options": [
+                "scissors",
+                "paper",
+                "folder",
+                "recorder"
+              ],
+              "answer": "scissors",
+              "why": "Scissors cut. A folder only holds."
+            },
+            {
+              "id": "v2-2",
+              "word": "calculator",
+              "options": [
+                "calculator",
+                "dictionary",
+                "folder",
+                "lunchbox"
+              ],
+              "answer": "calculator",
+              "why": "A calculator has number keys and a screen."
+            },
+            {
+              "id": "v2-3",
+              "word": "dictionary",
+              "options": [
+                "dictionary",
+                "calculator",
+                "map",
+                "lunchbox"
+              ],
+              "answer": "dictionary",
+              "why": "A dictionary is a thick book. A calculator is a small machine."
+            },
+            {
+              "id": "v2-4",
+              "word": "lunchbox",
+              "options": [
+                "lunchbox",
+                "backpack",
+                "folder",
+                "map"
+              ],
+              "answer": "lunchbox",
+              "why": "A lunchbox holds food. A backpack holds books."
+            }
+          ],
+          "whyChoices": [
+            "The meaning matches exactly",
+            "It is the same category of object",
+            "The word sounds similar",
+            "It is uncountable"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Normally the students have five classes a day.",
+              "options": [
+                "five",
+                "four",
+                "one",
+                "three"
+              ],
+              "answer": "five"
+            },
+            {
+              "id": "v3-2",
+              "audio": "It stays on my desk because it is heavy.",
+              "options": [
+                "heavy",
+                "empty",
+                "hard",
+                "light"
+              ],
+              "answer": "heavy"
+            },
+            {
+              "id": "v3-3",
+              "audio": "I use the dictionary when I do not understand a word.",
+              "options": [
+                "understand",
+                "remember",
+                "spell",
+                "finish"
+              ],
+              "answer": "understand"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact word",
+            "I heard a word with a similar sound",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into three boxes. Some items are deliberately tricky.",
+          "bins": [
+            "A class",
+            "A thing you carry",
+            "A place or an idea"
+          ],
+          "items": [
+            {
+              "word": "geography",
+              "bin": "A class"
+            },
+            {
+              "word": "gym",
+              "bin": "A class"
+            },
+            {
+              "word": "art",
+              "bin": "A class"
+            },
+            {
+              "word": "English",
+              "bin": "A class"
+            },
+            {
+              "word": "dictionary",
+              "bin": "A thing you carry"
+            },
+            {
+              "word": "scissors",
+              "bin": "A thing you carry"
+            },
+            {
+              "word": "folder",
+              "bin": "A thing you carry"
+            },
+            {
+              "word": "recorder",
+              "bin": "A thing you carry"
+            },
+            {
+              "word": "backpack",
+              "bin": "A place or an idea"
+            },
+            {
+              "word": "desk",
+              "bin": "A place or an idea"
+            },
+            {
+              "word": "schedule",
+              "bin": "A place or an idea"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "I have some ___, so I can cut the paper.",
+              "options": [
+                "scissors",
+                "a scissors",
+                "scissorses",
+                "the scissors is"
+              ],
+              "answer": "scissors",
+              "why": "Scissors is always plural, so we do not use a."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "English is hard, so I use a ___ when I do not understand a word.",
+              "options": [
+                "dictionary",
+                "folder",
+                "lunchbox",
+                "schedule"
+              ],
+              "answer": "dictionary",
+              "why": "Only a dictionary explains words."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "My computer is not in my backpack because it is too ___.",
+              "options": [
+                "heavy",
+                "hard",
+                "empty",
+                "happy"
+              ],
+              "answer": "heavy",
+              "why": "Heavy explains why you cannot carry it."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "Normally we have five classes, but this week we have ___ one.",
+              "options": [
+                "only",
+                "also",
+                "too",
+                "very"
+              ],
+              "answer": "only",
+              "why": "Only means and nothing else, which contrasts with normally."
+            }
+          ],
+          "whyChoices": [
+            "It is the only one that fits the meaning",
+            "It is the only one that is uncountable",
+            "It is the only one that is an adjective",
+            "It is the only plural noun"
+          ]
+        },
+        "V6": {
+          "prompt": "One word does not belong. The reason is grammatical in two of these, not just thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "scissors",
+                "paper",
+                "calculator",
+                "folder"
+              ],
+              "answer": "paper",
+              "why": "Paper is uncountable. The others are countable objects."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "backpack",
+                "lunchbox",
+                "desk",
+                "recorder"
+              ],
+              "answer": "recorder",
+              "why": "The others are places where you put things. A recorder is an object you use."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "hard",
+                "heavy",
+                "empty",
+                "geography"
+              ],
+              "answer": "geography",
+              "why": "The others are adjectives. Geography is a noun."
+            }
+          ],
+          "whyChoices": [
+            "It behaves differently in grammar",
+            "It belongs to another topic",
+            "It is a longer word",
+            "It is a noun"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "g",
+                "e",
+                "o",
+                "g",
+                "r",
+                "a",
+                "p",
+                "h",
+                "y"
+              ],
+              "answer": "geography",
+              "audio": "geography"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "d",
+                "i",
+                "c",
+                "t",
+                "i",
+                "o",
+                "n",
+                "a",
+                "r",
+                "y"
+              ],
+              "answer": "dictionary",
+              "audio": "dictionary"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "c",
+                "a",
+                "l",
+                "c",
+                "u",
+                "l",
+                "a",
+                "t",
+                "o",
+                "r"
+              ],
+              "answer": "calculator",
+              "audio": "calculator"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Recorder.",
+              "options": [
+                "recorder",
+                "scissors",
+                "calculator",
+                "folder"
+              ],
+              "answer": "recorder"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "My computer stays on my desk, but my ___ goes to school with me.",
+              "options": [
+                "backpack",
+                "desk",
+                "lunchbox",
+                "folder"
+              ],
+              "answer": "backpack",
+              "why": "You carry a backpack to school."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for a book that explains what words mean.",
+              "answer": "dictionary",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "scissors",
+                "paper",
+                "calculator",
+                "folder"
+              ],
+              "answer": "paper",
+              "why": "Paper is uncountable. The others are countable."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "music",
+              "options": [
+                "music",
+                "art",
+                "science",
+                "geography"
+              ],
+              "answer": "music"
+            }
+          ],
+          "whyChoices": [
+            "I knew the word without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "have / has, and what happens in negatives",
+            "lines": [
+              "I have science on Wednesday. / We have art on Thursday.",
+              "He has gym on Friday. / She has music on Monday.",
+              "He doesn't have a calculator. / Does she have a map?",
+              "Everyone has a folder."
+            ],
+            "rule": "has belongs to he, she, it and to singular nouns like everyone. In negatives and questions the verb always goes back to have."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is it 'He doesn't have' and not 'He doesn't has'?",
+              "options": [
+                "Because doesn't already carries the -s",
+                "Because has is only for two people",
+                "Because the sentence is a question",
+                "Because a calculator is plural"
+              ],
+              "answer": "Because doesn't already carries the -s"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which subject needs has?",
+              "options": [
+                "everyone",
+                "they",
+                "you",
+                "we"
+              ],
+              "answer": "everyone"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which sentence is correct?",
+              "options": [
+                "My two brothers have art today.",
+                "My two brothers has art today.",
+                "My two brothers haves art today.",
+                "My two brothers is have art today."
+              ],
+              "answer": "My two brothers have art today."
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the sentence that is WRONG.",
+              "options": [
+                "Everyone have a map.",
+                "Everyone has a map.",
+                "She has a map.",
+                "They have a map."
+              ],
+              "answer": "Everyone have a map."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "A plural subject takes have",
+            "doesn't carries the -s so the verb is have",
+            "After Does the verb is have",
+            "Everyone is singular, so it takes has"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "Emma and Leo ___ art on Thursday, and Coco ___ gym on Friday.",
+              "options": [
+                "have / has",
+                "has / have",
+                "have / have",
+                "has / has"
+              ],
+              "answer": "have / has"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "Neither Ben ___ Emma has a calculator.",
+              "options": [
+                "or",
+                "nor",
+                "and",
+                "but"
+              ],
+              "answer": "nor"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "Does she ___ a dictionary?",
+              "options": [
+                "has",
+                "have",
+                "having",
+                "to have"
+              ],
+              "answer": "have"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Ben doesn't have a map. - Neither ___ I.",
+              "options": [
+                "do",
+                "does",
+                "am",
+                "have"
+              ],
+              "answer": "do"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Everyone in my class ___ a folder.",
+              "options": [
+                "have",
+                "has",
+                "having",
+                "are have"
+              ],
+              "answer": "has"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "She has art today, but she ___ have her scissors.",
+              "options": [
+                "don't",
+                "doesn't",
+                "not",
+                "no"
+              ],
+              "answer": "doesn't"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Everyone in my class have a folder.",
+              "wrong": "have",
+              "correct": "has",
+              "why": "Everyone is singular, so it takes has."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Does he has a dictionary?",
+              "wrong": "has",
+              "correct": "have",
+              "why": "After Does the verb is have."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "They doesn't have computers on Friday.",
+              "wrong": "doesn't",
+              "correct": "don't",
+              "why": "They takes don't."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "I don't have a map. - So do I.",
+              "wrong": "So",
+              "correct": "Neither",
+              "why": "A negative statement is agreed with Neither."
+            }
+          ],
+          "whyChoices": [
+            "A singular subject hides in a plural-looking word",
+            "The verb follows Does or doesn't",
+            "The subject is plural",
+            "So and Neither must match polarity"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "No, she doesn't. She has a dictionary instead.",
+              "options": [
+                "Does Emma have a calculator?",
+                "Do Emma have a calculator?",
+                "Does Emma has a calculator?",
+                "Is Emma have a calculator?"
+              ],
+              "answer": "Does Emma have a calculator?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, they do, but only on Monday.",
+              "options": [
+                "Do they have computers?",
+                "Does they have computers?",
+                "Do they has computers?",
+                "Are they have computers?"
+              ],
+              "answer": "Do they have computers?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, I don't, but my brother does.",
+              "options": [
+                "Do you have a recorder?",
+                "Does you have a recorder?",
+                "Do you has a recorder?",
+                "Are you have a recorder?"
+              ],
+              "answer": "Do you have a recorder?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "Yes, he does. He has it in his backpack.",
+              "options": [
+                "Does Ben have scissors?",
+                "Do Ben have scissors?",
+                "Does Ben has scissors?",
+                "Is Ben have scissors?"
+              ],
+              "answer": "Does Ben have scissors?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make it negative without changing the meaning.",
+              "from": "Ben has a calculator.",
+              "options": [
+                "Ben doesn't have a calculator.",
+                "Ben don't have a calculator.",
+                "Ben doesn't has a calculator.",
+                "Ben not has a calculator."
+              ],
+              "answer": "Ben doesn't have a calculator."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change the subject to everyone.",
+              "from": "The students have a map.",
+              "options": [
+                "Everyone has a map.",
+                "Everyone have a map.",
+                "Everyone haves a map.",
+                "Everyone is have a map."
+              ],
+              "answer": "Everyone has a map."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it a question.",
+              "from": "Emma has geography on Thursday.",
+              "options": [
+                "Does Emma have geography on Thursday?",
+                "Do Emma have geography on Thursday?",
+                "Does Emma has geography on Thursday?",
+                "Is Emma have geography on Thursday?"
+              ],
+              "answer": "Does Emma have geography on Thursday?"
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "Ben doesn't have a map. Emma doesn't have a map.",
+              "options": [
+                "Neither Ben nor Emma has a map.",
+                "Neither Ben nor Emma have a map.",
+                "Neither Ben or Emma has a map.",
+                "Neither Ben nor Emma doesn't have a map."
+              ],
+              "answer": "Neither Ben nor Emma has a map."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "Normally we have five classes, but this week we have only one.",
+              "options": [
+                "five",
+                "one",
+                "two",
+                "three"
+              ],
+              "answer": "five"
+            },
+            {
+              "id": "l1-2",
+              "audio": "I take a dictionary because I do not understand every word.",
+              "options": [
+                "dictionary",
+                "calculator",
+                "folder",
+                "map"
+              ],
+              "answer": "dictionary"
+            },
+            {
+              "id": "l1-3",
+              "audio": "My computer is heavy, so it stays on my desk.",
+              "options": [
+                "heavy",
+                "empty",
+                "easy",
+                "light"
+              ],
+              "answer": "heavy"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a related word",
+            "I used the topic to guess"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain why this week is different",
+                "To sell a school bag",
+                "To describe a holiday"
+              ],
+              "answer": "To explain why this week is different"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Why does the speaker still find the week hard?",
+              "options": [
+                "Art needs a lot of work",
+                "The classes start early",
+                "The bag is heavy"
+              ],
+              "answer": "Art needs a lot of work"
+            }
+          ],
+          "audio": "This week is strange. Normally we have five classes a day, but before spring break we have only one class each morning. On Monday I have computers, on Tuesday science. That is easy. But on Thursday I have art, and art needs a lot of work, so one class of art is not easy at all.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "Emma has geography on Wednesday, and she takes a map. Ben has art on Thursday and he takes a folder. Neither of them has a calculator today.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "Emma has geography on Wednesday, and she takes a ___(1)___.",
+              "options": [
+                "map",
+                "folder",
+                "recorder"
+              ],
+              "answer": "map"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "Ben has art on Thursday and he takes a ___(2)___.",
+              "options": [
+                "folder",
+                "map",
+                "calculator"
+              ],
+              "answer": "folder"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "Neither of them has a ___(3)___ today.",
+              "options": [
+                "calculator",
+                "map",
+                "folder"
+              ],
+              "answer": "calculator"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "normally",
+              "options": [
+                "usually, in other weeks",
+                "never",
+                "only on Friday"
+              ],
+              "answer": "usually, in other weeks"
+            },
+            {
+              "id": "r1-2",
+              "word": "instead",
+              "options": [
+                "in place of something else",
+                "at the same time",
+                "much later"
+              ],
+              "answer": "in place of something else"
+            },
+            {
+              "id": "r1-3",
+              "word": "understand",
+              "options": [
+                "know what something means",
+                "carry something",
+                "write something down"
+              ],
+              "answer": "know what something means"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "This is Brian's schedule for the last week before spring break. Normally the students have five classes a day, but this week they only have classes in the morning. There is one class every day: computers on Monday, science on Tuesday, geography on Wednesday and art on Thursday. On Friday there are no classes at all. Brian is happy about Friday, but he is not happy about Thursday, because he does not like art and the teacher gives them a lot of work. He says, one class a day is easy, but one class of art is not.",
+          "prompt": "Read the whole text, then tap the sentence that shows how this week differs from a normal week.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows how this week is different.",
+              "answerType": "tapSentence",
+              "answer": "Normally the students have five classes a day, but this week they only have classes in the morning.",
+              "why": "The contrast between normally and this week is the point."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is Brian's opinion of the week?",
+              "options": [
+                "The week is easy except for art",
+                "The week is the hardest of the year",
+                "He wants more classes"
+              ],
+              "answer": "The week is easy except for art"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "This is Brian's schedule for the last week before spring break. Normally the students have five classes a day, but this week they only have classes in the morning. There is one class every day: computers on Monday, science on Tuesday, geography on Wednesday and art on Thursday. On Friday there are no classes at all. Brian is happy about Friday, but he is not happy about Thursday, because he does not like art and the teacher gives them a lot of work. He says, one class a day is easy, but one class of art is not.",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "How many classes do the students normally have in a day?",
+              "options": [
+                "Five",
+                "One",
+                "Three"
+              ],
+              "answer": "Five"
+            },
+            {
+              "id": "r3-2",
+              "q": "Why is Brian not happy about Thursday?",
+              "options": [
+                "He does not like art and there is a lot of work",
+                "He has no classes",
+                "The class is in the afternoon"
+              ],
+              "answer": "He does not like art and there is a lot of work"
+            },
+            {
+              "id": "r3-3",
+              "q": "What does 'one class of art is not' mean?",
+              "options": [
+                "Art is still hard even though there is only one class",
+                "There is no art class",
+                "Art is shorter than other classes"
+              ],
+              "answer": "Art is still hard even though there is only one class"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Hello, I'm Marie and I am a student. Every morning I put my things in my backpack and walk to school. I have my scissors, my calculator and some paper in it, and today I also have my favourite shorts, because I have gym. Today I have English first. English is hard sometimes, so there is a dictionary in my backpack as well; I use it when I do not understand a word. After English I have music, and I take my recorder. My favourite class is geography, on Thursday, because I like using the map, and I have a map in my backpack for that too. I have a computer as well, but it is not in my backpack. It stays on my desk, because it is heavy and I only need it in the computer room.",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that explains why Marie carries a dictionary.",
+              "answer": "English is hard sometimes, so there is a dictionary in my backpack as well; I use it when I do not understand a word."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that gives the reasons her computer stays at home.",
+              "answer": "It stays on my desk, because it is heavy and I only need it in the computer room."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that explains why geography is her favourite class.",
+              "answer": "My favourite class is geography, on Thursday, because I like using the map, and I have a map in my backpack for that too."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Neither",
+                "Ben",
+                "nor",
+                "Emma",
+                "has",
+                "a",
+                "map"
+              ],
+              "answer": "Neither Ben nor Emma has a map."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Normally",
+                "we",
+                "have",
+                "five",
+                "classes",
+                "a",
+                "day"
+              ],
+              "answer": "Normally we have five classes a day."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Does",
+                "your",
+                "friend",
+                "have",
+                "a",
+                "calculator"
+              ],
+              "answer": "Does your friend have a calculator?"
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Everyone",
+                "in",
+                "my",
+                "class",
+                "has",
+                "a",
+                "folder"
+              ],
+              "answer": "Everyone in my class has a folder."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "Everyone in my class have a folder.",
+              "answer": "Everyone in my class has a folder."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Does he has a dictionary?",
+              "answer": "Does he have a dictionary?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "They doesn't have computers, and neither does she.",
+              "answer": "They don't have computers, and neither does she."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence description of your school week and your backpack. Every requirement on the checklist must appear.",
+          "requirements": [
+            "one class you have on a named day",
+            "one thing in your backpack and why",
+            "one sentence with has about another person",
+            "one negative sentence with doesn't have",
+            "one sentence saying which class is hard and why"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct have / has throughout",
+            "One negative sentence",
+            "Days of the week spelled correctly",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the word endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Everyone in my class has a folder.",
+              "keywords": [
+                "everyone",
+                "class",
+                "has",
+                "folder"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Neither Ben nor Emma has a map.",
+              "keywords": [
+                "neither",
+                "ben",
+                "nor",
+                "emma",
+                "has",
+                "map"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Does she have geography on Thursday?",
+              "keywords": [
+                "does",
+                "she",
+                "have",
+                "geography",
+                "thursday"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "My computer stays on my desk because it is heavy.",
+              "keywords": [
+                "computer",
+                "desk",
+                "heavy"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "neither of them has",
+              "keywords": [
+                "neither",
+                "them",
+                "has"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "doesn't have a calculator",
+              "keywords": [
+                "doesn't",
+                "have",
+                "calculator"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "five classes a day",
+              "keywords": [
+                "five",
+                "classes",
+                "day"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What classes do you have this week, and which is hardest?",
+              "keywords": [
+                "have",
+                "hardest",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Does anyone in your class have a map or a dictionary?",
+              "keywords": [
+                "does",
+                "class",
+                "map"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What do you have in your backpack that you never use?",
+              "keywords": [
+                "have",
+                "backpack",
+                "never"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Why do some students carry a heavy backpack?",
+              "keywords": [
+                "because",
+                "carry",
+                "heavy"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the timetable for 45 seconds. Compare two students and explain one difference.",
+          "image": "timetable-challenging",
+          "prompts": [
+            "What two students have in common",
+            "One difference between them",
+            "One thing each one carries",
+            "Which day is hardest and why"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "has",
+            "have",
+            "but",
+            "because"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the dialogue as both characters, with a different voice for each.",
+          "dialogueId": "whereIsMyCalculator",
+          "lines": 8,
+          "keywords": [
+            "have",
+            "gym",
+            "calculator",
+            "where",
+            "don't"
+          ],
+          "extra": "Then answer: who has the calculator, and how do you know?"
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Is your school week balanced, or is one day much harder? Why?",
+              "keywords": [
+                "school",
+                "day",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Some students carry too much. What should they leave at home, and why?",
+              "keywords": [
+                "should",
+                "home",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which is more useful for school: a dictionary or a calculator? Explain.",
+              "keywords": [
+                "useful",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: My School Week. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "On ___ I have ___ and ___ .",
+            "I have ___ in my backpack because ___ .",
+            "My friend ___ has ___ .",
+            "___ is hard for me, but I like it because ___ ."
+          ],
+          "keywords": [
+            "have",
+            "has",
+            "because",
+            "backpack"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I used has about another person"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "science",
+              "options": [
+                "science",
+                "geography",
+                "math",
+                "art"
+              ],
+              "answer": "science"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "Emma and Leo ___ art on Thursday, and Coco ___ gym on Friday.",
+              "options": [
+                "have / has",
+                "has / have",
+                "have / have",
+                "has / has"
+              ],
+              "answer": "have / has"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Everyone in my class have a folder.",
+              "wrong": "have",
+              "correct": "has"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "It stays on my desk because it is heavy.",
+              "options": [
+                "heavy",
+                "empty",
+                "hard",
+                "light"
+              ],
+              "answer": "heavy"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "scissors",
+                "paper",
+                "calculator",
+                "folder"
+              ],
+              "answer": "paper",
+              "why": "Paper is uncountable."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask a question with Does...have...? and answer it.",
+              "keywords": [
+                "does",
+                "have"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The School Day. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "geography",
+              "options": [
+                "geography",
+                "science",
+                "art",
+                "math"
+              ],
+              "answer": "geography"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "Neither Ben ___ Emma has a calculator.",
+              "options": [
+                "nor",
+                "or",
+                "and",
+                "but"
+              ],
+              "answer": "nor"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "She doesn't has a map, and neither do her friends.",
+              "wrong": "has",
+              "correct": "have"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "Normally we have five classes a day, but this week we have one each morning. On Thursday I have art, and art needs a lot of work. So one class of art is not easy.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker explaining?",
+                  "options": [
+                    "Why this week is unusual",
+                    "Why art is cancelled",
+                    "Why the bag is heavy"
+                  ],
+                  "answer": "Why this week is unusual"
+                },
+                {
+                  "pass": 2,
+                  "q": "Why is the week still hard for the speaker?",
+                  "options": [
+                    "Art needs a lot of work",
+                    "The classes start early",
+                    "There are five classes"
+                  ],
+                  "answer": "Art needs a lot of work"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that explains why Marie's computer stays at home.",
+              "answer": "It stays on my desk, because it is heavy and I only need it in the computer room."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Neither",
+                "Ben",
+                "nor",
+                "Emma",
+                "has",
+                "a",
+                "map"
+              ],
+              "answer": "Neither Ben nor Emma has a map."
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for a book that explains what words mean.",
+              "answer": "dictionary",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: your school week, one thing in your bag and why, and one class that is hard for you.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "have",
+                "backpack",
+                "hard",
+                "because"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "whereIsMyCalculator",
+    "title": "Where Is My Calculator?",
+    "cast": [
+      "Alex",
+      "Mia",
+      "Emma"
+    ],
+    "lines": [
+      {
+        "speaker": "Alex",
+        "text": "I have my recorder, my scissors and my dictionary."
+      },
+      {
+        "speaker": "Mia",
+        "text": "What do you have today?"
+      },
+      {
+        "speaker": "Alex",
+        "text": "I have gym, science and math."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Do you have everything?"
+      },
+      {
+        "speaker": "Alex",
+        "text": "I have my gym shorts and my science folder."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Do you have your calculator?"
+      },
+      {
+        "speaker": "Alex",
+        "text": "Uh ... no, I don't. Where is it?"
+      },
+      {
+        "speaker": "Emma",
+        "text": "Looking for this? Here you go."
+      },
+      {
+        "speaker": "Alex",
+        "text": "Emma! Give it back!"
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "What does Alex have for gym?",
+          "options": [
+            "Shorts",
+            "A recorder"
+          ],
+          "answer": "Shorts"
+        },
+        {
+          "q": "What does Alex NOT have?",
+          "options": [
+            "A calculator",
+            "A folder"
+          ],
+          "answer": "A calculator"
+        }
+      ],
+      "core": [
+        {
+          "q": "What does Alex have for gym?",
+          "options": [
+            "Shorts",
+            "A recorder",
+            "A map"
+          ],
+          "answer": "Shorts"
+        },
+        {
+          "q": "What doesn't Alex have?",
+          "options": [
+            "A calculator",
+            "A folder",
+            "A dictionary"
+          ],
+          "answer": "A calculator"
+        },
+        {
+          "q": "Who has the calculator?",
+          "options": [
+            "Emma",
+            "Mia",
+            "Alex"
+          ],
+          "answer": "Emma"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "Why does Alex list his things at the start?",
+          "options": [
+            "To check he has everything",
+            "To sell them",
+            "To pack for a holiday"
+          ],
+          "answer": "To check he has everything"
+        },
+        {
+          "q": "Which question shows that Mia is checking?",
+          "options": [
+            "Do you have everything?",
+            "What do you have today?",
+            "Where is it?"
+          ],
+          "answer": "Do you have everything?"
+        },
+        {
+          "q": "How does Alex feel at the end?",
+          "options": [
+            "Annoyed but not angry",
+            "Frightened",
+            "Bored"
+          ],
+          "answer": "Annoyed but not angry"
+        }
+      ]
+    }
+  },
+  "ritual": {
+    "missionBrief": {
+      "seconds": 45,
+      "slot": "levelStart",
+      "content": "Big Question: What classes do you have at school? By the end you will be able to say what classes you and other people have, name the things you need for each class, and ask whether someone has them."
+    },
+    "stationTeachCards": {
+      "seconds": 25,
+      "applies": [
+        "vocabulary",
+        "grammar",
+        "reading",
+        "speaking"
+      ]
+    },
+    "reflection": {
+      "seconds": 60,
+      "slot": "levelEnd",
+      "prompts": [
+        "The easiest new word today was ___.",
+        "One thing I want to practise again is ___."
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station. Unit 4's contrast is s versus sh, which the coursebook treats separately from the unit's grammar.",
+    "contrast": [
+      "s",
+      "sh"
+    ],
+    "anchorWords": [
+      {
+        "word": "soccer",
+        "sound": "s"
+      },
+      {
+        "word": "English",
+        "sound": "sh"
+      },
+      {
+        "word": "scissors",
+        "sound": "s"
+      },
+      {
+        "word": "shorts",
+        "sound": "sh"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "sisters",
+        "sound": "s"
+      },
+      {
+        "word": "fish",
+        "sound": "sh"
+      },
+      {
+        "word": "shoes",
+        "sound": "sh"
+      },
+      {
+        "word": "science",
+        "sound": "s"
+      },
+      {
+        "word": "schedule",
+        "sound": "s"
+      },
+      {
+        "word": "shirt",
+        "sound": "sh"
+      }
+    ],
+    "note2": "Careful: 'science' and 'schedule' are the trap items, because the letters s-c look like they might take a sh sound. That is the teaching point."
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1-3: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "Contractions to normalise: I'm / I am, don't / do not, doesn't / does not.",
+      "Accept 'math' and 'maths'; accept 'gym' for 'PE' and vice versa is NOT allowed (gym is the target word here).",
+      "At Challenging, treat a dropped final -s on 'has' as a soft miss: show it, do not fail the item."
+    ]
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  }
+}

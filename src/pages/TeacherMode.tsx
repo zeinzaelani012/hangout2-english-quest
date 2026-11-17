@@ -12,11 +12,22 @@ export function TeacherMode() {
   const [pinInput, setPinInput] = useState('');
   const [pinError, setPinError] = useState('');
   const [toggles, setToggles] = useState({
-    unlockAllUnits: false,
-    unlockChallenging: false,
-    lockToOneLevel: false,
+    unlockAllUnits: settings.teacherUnlockAllUnits ?? false,
+    unlockChallenging: settings.teacherUnlockChallenging ?? false,
+    lockToOneLevel: settings.teacherLockToOneLevel ?? false,
   });
   const [tab, setTab] = useState<'overview' | 'pacing'>('overview');
+
+  // Toggles are real settings: they persist and every page reads them.
+  const SETTING_KEYS = {
+    unlockAllUnits: 'teacherUnlockAllUnits',
+    unlockChallenging: 'teacherUnlockChallenging',
+    lockToOneLevel: 'teacherLockToOneLevel',
+  } as const;
+  const handleToggle = (key: keyof typeof SETTING_KEYS, value: boolean) => {
+    setToggles(prev => ({ ...prev, [key]: value }));
+    updateSettings({ [SETTING_KEYS[key]]: value });
+  };
 
   const handlePinSubmit = () => {
     if (pinInput === settings.teacherPin) {
@@ -186,23 +197,23 @@ export function TeacherMode() {
         <div className="space-y-3">
           <ToggleRow
             label="Unlock all units"
-            description="Make Units 2–9 available (placeholder content)"
+            description="Make Units 3–9 openable for preview (they are coming-soon placeholders)"
             checked={toggles.unlockAllUnits}
-            onChange={v => setToggles(prev => ({ ...prev, unlockAllUnits: v }))}
+            onChange={v => handleToggle('unlockAllUnits', v)}
             icon={Unlock}
           />
           <ToggleRow
             label="Unlock Challenging level"
             description="Remove the Core completion requirement"
             checked={toggles.unlockChallenging}
-            onChange={v => setToggles(prev => ({ ...prev, unlockChallenging: v }))}
+            onChange={v => handleToggle('unlockChallenging', v)}
             icon={Unlock}
           />
           <ToggleRow
             label="Lock students to one level"
             description="Prevent switching between Easy and Core"
             checked={toggles.lockToOneLevel}
-            onChange={v => setToggles(prev => ({ ...prev, lockToOneLevel: v }))}
+            onChange={v => handleToggle('lockToOneLevel', v)}
             icon={Lock}
           />
         </div>

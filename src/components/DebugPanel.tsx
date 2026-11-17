@@ -34,7 +34,7 @@ export function DebugPanel() {
 
   const report = useMemo(() => {
     return units
-      .filter(u => u.status === 'playable')
+      .filter(u => u.status === 'playable' && !isInstrumentedUnit(u))
       .map(unit => ({
         unit,
         levels: (['easy', 'core', 'challenging'] as Level[]).map((level): LevelReport => {
@@ -182,8 +182,15 @@ export function DebugPanel() {
                       </div>
                       <div className="mt-1 space-y-0.5">
                         {rows.map(row => (
-                          <p key={row.label} className={row.pass ? 'text-white/50' : 'font-bold text-coral'}>
-                            {row.pass ? '·' : '✗'} {row.label}: <span className="tnum">{row.detail}</span>
+                          <p
+                            key={row.label}
+                            className={
+                              !row.pass ? 'font-bold text-coral'
+                                : row.warn ? 'font-semibold text-sun'
+                                  : 'text-white/50'
+                            }
+                          >
+                            {!row.pass ? '✗' : row.warn ? '!' : '·'} {row.label}: <span className="tnum">{row.detail}</span>
                             {row.offending?.length ? <span className="block pl-3 text-coral/80">[{row.offending.join(', ')}]</span> : null}
                           </p>
                         ))}

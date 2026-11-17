@@ -18,8 +18,15 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
   const checklist: string[] = payload.checklist ?? [];
   const minimumWords: number = payload.minimumWords ?? 20;
   const ownSentencesRequired: number | undefined = payload.ownSentencesRequired;
+  // Two-column order chart (Unit 3's W3, Unit 4's W3): rows × headers, with
+  // an optional stem for the second column ("I have").
+  const chart: { rows: number; columnA: string; columnB: string; columnBStem?: string } | undefined = payload.chart;
+  const menu: string[] = payload.menu ?? [];
 
   const [text, setText] = useState('');
+  const [chartCells, setChartCells] = useState<string[][]>(() =>
+    chart ? Array.from({ length: chart.rows ?? 0 }, () => ['', '']) : [],
+  );
   const [completed, setCompleted] = useState(false);
 
   const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
@@ -53,6 +60,57 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
             <p className="mt-2 text-xs font-semibold text-muted">
               Then add {ownSentencesRequired} sentence{ownSentencesRequired > 1 ? 's' : ''} of your own.
             </p>
+          )}
+        </div>
+      )}
+
+      {/* Two-column order chart: plan each row before writing */}
+      {chart && (
+        <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <p className="eyebrow mb-3">Order chart</p>
+          <div className="space-y-2">
+            <div className="grid grid-cols-2 gap-2">
+              <p className="text-xs font-extrabold text-ink">{chart.columnA}</p>
+              <p className="text-xs font-extrabold text-ink">{chart.columnB}</p>
+            </div>
+            {chartCells.map((row, r) => (
+              <div key={r} className="grid grid-cols-2 gap-2">
+                <input
+                  value={row[0]}
+                  disabled={completed}
+                  onChange={e => setChartCells(prev => prev.map((rw, idx) => (idx === r ? [e.target.value, rw[1]] : rw)))}
+                  className="min-h-9 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-ink focus:border-brand focus:outline-none"
+                  aria-label={`Row ${r + 1}, ${chart.columnA}`}
+                  placeholder="e.g. Mia wants pizza"
+                />
+                <input
+                  value={row[1]}
+                  disabled={completed}
+                  onChange={e => setChartCells(prev => prev.map((rw, idx) => (idx === r ? [rw[0], e.target.value] : rw)))}
+                  className="min-h-9 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-ink focus:border-brand focus:outline-none"
+                  aria-label={`Row ${r + 1}, ${chart.columnB}`}
+                  placeholder={chart.columnBStem ?? 'e.g. It looks good'}
+                />
+              </div>
+            ))}
+          </div>
+          {menu.length > 0 && (
+            <>
+              <p className="eyebrow mb-2 mt-3">Menu — tap to add to your writing</p>
+              <div className="flex flex-wrap gap-1.5">
+                {menu.map(word => (
+                  <button
+                    key={word}
+                    onClick={() => !completed && setText(prev => prev + (prev && !prev.endsWith(' ') ? ' ' : '') + word)}
+                    className="rounded-lg border border-violet/20 bg-violet/5 px-2.5 py-1.5 text-xs font-semibold text-writing transition-colors hover:bg-violet/10"
+                    style={{ minHeight: 32 }}
+                    aria-label={`Add "${word}" to your writing`}
+                  >
+                    {word}
+                  </button>
+                ))}
+              </div>
+            </>
           )}
         </div>
       )}
@@ -247,8 +305,9 @@ function LegacyDiaryPrompt({ activity, onResult }: Props) {
 
 export function DiaryPrompt(props: Props) {
   const raw = props.activity.payload as Record<string, any>;
-  // v2 guidedParagraph payloads carry starters, a template or requirements.
-  if (raw?.starters || raw?.template || raw?.requirements) {
+  // v2 guidedParagraph payloads carry starters, a template, requirements or
+  // the two-column order chart (Unit 3's W3).
+  if (raw?.starters || raw?.template || raw?.requirements || raw?.chart || raw?.menu) {
     return <GuidedParagraphBody {...props} />;
   }
   return <LegacyDiaryPrompt {...props} />;

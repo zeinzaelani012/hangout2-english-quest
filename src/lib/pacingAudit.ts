@@ -1,4 +1,4 @@
-import { projectedMinutes } from './pacing';
+import { appMinutes, lessonMinutes, PACING_CALIBRATION, rawAppSeconds } from './pacing';
 import { SKILL_LABELS, type Level, type Skill, type Unit } from '../types';
 
 /** Per-skill share of the level's content seconds, with tolerance (points). */
@@ -15,7 +15,10 @@ const SKILL_ORDER: Skill[] = ['speaking', 'vocabulary', 'grammar', 'reading', 'l
 const DEPTH_MOVES = ['D1', 'D2', 'D3', 'D4', 'D5'] as const;
 const CONTENT_COUNT = 30;
 const CHECKPOINT_COUNT = 2;
-const MINUTES_RANGE: [number, number] = [60, 78];
+/** Calibrated app minutes: fails when a slot was dropped or duplicated in the merge. */
+const APP_MINUTES_RANGE: [number, number] = [42, 56];
+/** Lesson minutes (app + 15-min teacher frame): amber "check pacing", never a failure. */
+const LESSON_MINUTES_RANGE: [number, number] = [58, 75];
 const XP_CONTENT = 100;
 const XP_CP1 = 15;
 const XP_BOSS = 25;
@@ -26,6 +29,8 @@ export interface PacingCheckRow {
   detail: string;
   /** Activity ids implicated in a failure, when applicable. */
   offending?: string[];
+  /** Amber advisory (rendered amber, never counted as a failure). */
+  warn?: boolean;
 }
 
 /** True when a unit's activities carry the expanded-pack schema stamp. */
@@ -59,14 +64,28 @@ export function auditLevelPacing(unit: Unit, level: Level): PacingCheckRow[] {
     offending: checkpoints.length !== CHECKPOINT_COUNT ? checkpoints.map(a => a.id) : undefined,
   });
 
-  // 2. Projected minutes
-  const minutes = projectedMinutes(content, level);
-  const minutesOk = minutes >= MINUTES_RANGE[0] && minutes <= MINUTES_RANGE[1];
+  // 2. Calibrated duration: raw → calibrated → label, so the arithmetic is visible.
+  const timingSet = [...content, ...checkpoints];
+  const rawSec = rawAppSeconds(timingSet, level);
+  const appMin = appMinutes(timingSet, level);
+  const lessonMin = lessonMinutes(timingSet, level);
+  const appOk = appMin >= APP_MINUTES_RANGE[0] && appMin <= APP_MINUTES_RANGE[1];
   rows.push({
-    label: 'projected minutes',
-    pass: minutesOk,
-    detail: `${minutes} (need ${MINUTES_RANGE[0]}–${MINUTES_RANGE[1]})`,
-    offending: minutesOk ? undefined : content.map(a => a.id),
+    label: 'app minutes (calibrated)',
+    pass: appOk,
+    detail: `${appMin} (need ${APP_MINUTES_RANGE[0]}–${APP_MINUTES_RANGE[1]})`,
+    offending: appOk ? undefined : timingSet.map(a => a.id),
+  });
+  rows.push({
+    label: 'lesson minutes (app + teacher frame)',
+    pass: true,
+    warn: lessonMin < LESSON_MINUTES_RANGE[0] || lessonMin > LESSON_MINUTES_RANGE[1],
+    detail: `${lessonMin} (target ${LESSON_MINUTES_RANGE[0]}–${LESSON_MINUTES_RANGE[1]})`,
+  });
+  rows.push({
+    label: 'time math',
+    pass: true,
+    detail: `raw ${Math.round(rawSec)}s → calibrated ${(rawSec * PACING_CALIBRATION).toFixed(0)}s → "About ${appMin} minutes"`,
   });
 
   // 3. Per-skill share of estSeconds (content activities only)

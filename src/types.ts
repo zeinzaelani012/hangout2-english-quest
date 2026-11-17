@@ -134,21 +134,27 @@ export type ActivityPayload =
 
 export interface Activity {
   id: string;
-  skill: Skill;
+  /**
+   * Skill the activity trains. Checkpoint slots (CP1, BOSS) keep the pack's
+   * 'mixed' so the pacing engine can exclude them from the level multiplier.
+   */
+  skill: Skill | 'mixed';
   type: ActivityType;
   prompt: string;
   payload: ActivityPayload;
   xp: number;
   /**
-   * Base seconds at Core pace. Optional for backward compatibility: legacy
-   * packs (Units 2/3) predate the field, so every read must fall back to 60 —
-   * use `estSecondsOf` from lib/pacing instead of reading it directly.
+   * Base seconds at Core pace, in authoring units. The pacing engine
+   * (lib/pacing.ts) scales and calibrates them for display; legacy packs
+   * (Units 2/3) predate the field and show no duration label at all.
    */
   estSeconds?: number;
   /** Depth-of-knowledge moves, e.g. ['D1', 'D5']. */
   depthMoves?: DepthMove[];
   /** Pack schema version. 2 = expanded pack mechanics; absent = legacy. */
   schema?: 2;
+  /** Unit the activity belongs to (stamped by the shared pack builder). */
+  unitId?: number;
   difficulty: Level;
 }
 
@@ -296,6 +302,12 @@ export interface ProgressData {
     noMicMode: boolean;
     teacherPin: string;
     reducedMotion: boolean;
+    /** Teacher Mode: make placeholder Units 3–9 openable for preview. */
+    teacherUnlockAllUnits?: boolean;
+    /** Teacher Mode: remove the Core-completion gate on Challenging. */
+    teacherUnlockChallenging?: boolean;
+    /** Teacher Mode: learners cannot switch between Easy and Core. */
+    teacherLockToOneLevel?: boolean;
   };
   levelHistory: { unitId: number; level: Level; stars: number; date: string; accuracy: number }[];
   reflections?: ReflectionEntry[];

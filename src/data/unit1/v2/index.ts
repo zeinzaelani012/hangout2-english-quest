@@ -1,5 +1,8 @@
 import packJson from './hangout2-unit1-expanded-pack.json';
 import { readingTexts } from '../reading';
+import { findUnit2PassageContaining } from '../../unit2/v2/passages';
+import { findUnit3PassageContaining } from '../../unit3/v2/passages';
+import { findUnit4PassageContaining } from '../../unit4/v2/passages';
 import type { Activity, ActivityPayload, ActivityType, DepthMove, Level, Skill } from '../../../types';
 
 /**
@@ -16,7 +19,7 @@ import type { Activity, ActivityPayload, ActivityType, DepthMove, Level, Skill }
  * activities.
  */
 
-interface PackSlot {
+export interface PackSlot {
   slot: string;
   skill: Skill | 'mixed';
   type: string;
@@ -28,9 +31,9 @@ interface PackSlot {
 }
 
 /** A level's content entry: prompt plus mechanic-specific keys (items, bins, …). */
-type PackEntry = Record<string, any>;
+export type PackEntry = Record<string, any>;
 
-interface PackLevel {
+export interface PackLevel {
   content: Record<string, PackEntry>;
 }
 
@@ -41,7 +44,8 @@ export interface PackRitual {
   reflection?: { seconds?: number; prompts?: string[] };
 }
 
-interface ExpandedPack {
+export interface ExpandedPack {
+  meta: { unit: number; [key: string]: unknown };
   slots: PackSlot[];
   levels: {
     easy: PackLevel;
@@ -56,32 +60,44 @@ const pack = packJson as unknown as ExpandedPack;
 /** Ritual layer content for Unit 1 (mission brief, teach cards, reflection). */
 export const unit1Ritual: PackRitual = pack.ritual ?? {};
 
-export function buildLevel(level: Level): Activity[] {
-  const levelContent = pack.levels[level].content;
-  const coreContent = pack.levels.core.content;
+/**
+ * The shared v2 merge engine. Every expanded pack (Units 1, 2, 4, …) builds
+ * its levels through this one function: slots joined to
+ * `levels[level].content[slot]` with the Core fallback, then the D2
+ * production transform. No pack ever hand-writes activities.
+ */
+export function buildLevelFromPack(sourcePack: ExpandedPack, level: Level): Activity[] {
+  const levelContent = sourcePack.levels[level].content;
+  const coreContent = sourcePack.levels.core.content;
 
-  const activities = pack.slots.map(slot => {
+  const activities = sourcePack.slots.map(slot => {
     // Slots missing from this level inherit the Core entry (merge contract).
     const entry = levelContent[slot.slot] ?? coreContent[slot.slot];
 
     return {
       id: `${slot.slot}-${level}`,
-      // 'mixed' (CP1/BOSS) maps to speaking, matching the station registry.
-      skill: (slot.skill === 'mixed' ? 'speaking' : slot.skill) as Skill,
+      // Keep the pack's own skill: checkpoint slots stay 'mixed' so the
+      // pacing engine splits them out of the level multiplier.
+      skill: slot.skill as Skill | 'mixed',
       type: slot.type as ActivityType,
       prompt: (entry.prompt as string) ?? '',
       // The payload carries the FULL slot entry so mechanics receive their
-      // spec'd props (items, bins, passes, teachCard, textRef, …).
-      payload: entry as ActivityPayload,
+      // spec'd props (items, bins, passes, teachCard, textRef, passage, …).
+      payload: { ...entry, unitId: sourcePack.meta.unit } as unknown as ActivityPayload,
       xp: slot.xp,
       estSeconds: slot.estSeconds,
       depthMoves: slot.depthMoves,
       schema: 2 as const,
       difficulty: level,
+      unitId: sourcePack.meta.unit,
     } satisfies Activity;
   });
 
-  return applyD2(activities);
+  return applyD2(sourcePack, activities);
+}
+
+export function buildLevel(level: Level): Activity[] {
+  return buildLevelFromPack(pack, level);
 }
 
 /**
@@ -94,9 +110,9 @@ export function buildLevel(level: Level): Activity[] {
  *     a production prompt: typed for word answers, speaking for sentences —
  *     same stimulus (image/audio), same answer.
  */
-function applyD2(acts: Activity[]): Activity[] {
+function applyD2(sourcePack: ExpandedPack, acts: Activity[]): Activity[] {
   const out = acts.map((activity, i) => {
-    const slot = pack.slots[i];
+    const slot = sourcePack.slots[i];
     if (!slot.depthMoves?.includes('D2')) return activity;
     const items = (activity.payload as any)?.items;
     if (activity.type === 'spelling' && Array.isArray(items)) {
@@ -131,10 +147,10 @@ function applyD2(acts: Activity[]): Activity[] {
 
   // (b) The last item of every station that declares D2.
   const d2Stations = new Set(
-    pack.slots.filter(s => s.depthMoves?.includes('D2')).map(s => s.station),
+    sourcePack.slots.filter(s => s.depthMoves?.includes('D2')).map(s => s.station),
   );
   const lastIndexOfStation = new Map<string, number>();
-  pack.slots.forEach((s, i) => lastIndexOfStation.set(s.station, i));
+  sourcePack.slots.forEach((s, i) => lastIndexOfStation.set(s.station, i));
 
   for (const stationName of d2Stations) {
     const idx = lastIndexOfStation.get(stationName);
@@ -214,7 +230,10 @@ export function resolveReadingTitle(textRef: string | undefined): string | undef
   return m ? READING_BY_REF[m[1]] : undefined;
 }
 
-/** Find which of the unit's level texts contains the given answer sentence. */
+/** Find which of the level's texts contains the given answer sentence.
+ * Searches Unit 1's base-pack readings, then any other expanded pack's inline
+ * passages (Unit 2 carries its R2/R3/R4 passages inline), so checkpoint
+ * tap-sentence items resolve without the component knowing the unit. */
 export function findPassageContaining(level: Level, answer: string): string | undefined {
   const needle = answer.toLowerCase().replace(/[.,!?;:'"]/g, '').trim();
   for (const reading of readingTexts as any[]) {
@@ -224,5 +243,5 @@ export function findPassageContaining(level: Level, answer: string): string | un
       if (flat.includes(needle)) return text;
     }
   }
-  return undefined;
+  return findUnit2PassageContaining(level, answer) ?? findUnit3PassageContaining(level, answer) ?? findUnit4PassageContaining(level, answer);
 }

@@ -1,0 +1,5008 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit3-expanded",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "supersedes": "hangout2-unit3-content-pack.json v1.0",
+    "unit": 3,
+    "title": "My Favorite Food",
+    "islandName": "Cafe Island",
+    "bigQuestion": "What do you want to eat?",
+    "objectives": [
+      "Offering and asking for something to eat or drink",
+      "Asking how something looks, smells, or tastes"
+    ],
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. Result: { id: slotId + '-' + level, skill, type, prompt, payload, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "expansionNote": "v1.0 had 20 activities per level. This pack expands to the standard 30 slots + 2 checkpoints. The 12 added slots are V8, G3, G4, G5, L2, R1, R4, W2, S2, S4, S6, S7 (plus CP1). All v1.0 content is retained inside those slots.",
+    "reviewConnection": "Unit 3 completes the language of Review 1 (Units 1-3). The Boss pool deliberately mixes Do/Does, So do I / Neither do I, wears vs is wearing, want vs wants and Does...taste good, because those are the contrasts a learner confuses across the first three units."
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1.0,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25.0
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15.0
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15.0
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the food"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Food or drink?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Flip it"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "My order pad"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the table"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Two voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "My perfect meal"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The Pizza Party"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/3/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Food Truck",
+      "subtitle": "Name it",
+      "xp": 25
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Order Counter",
+      "subtitle": "want / wants",
+      "xp": 15
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Drive-Thru",
+      "subtitle": "Listen and choose",
+      "xp": 10
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "The Menu",
+      "subtitle": "Read and find",
+      "xp": 15
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Order Pad",
+      "subtitle": "Write it down",
+      "xp": 10
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Cafe Table",
+      "subtitle": "Say it out loud",
+      "xp": 25
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The Pizza Party",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 3,
+    "title": "My Favorite Food",
+    "islandName": "Cafe Island",
+    "bigQuestion": "What do you want to eat?",
+    "objectives": [
+      "Offering and asking for something to eat or drink",
+      "Asking how something looks, smells, or tastes"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "Replaces the v1.0 Unit 3 pack. Now 30 slots + 2 checkpoints, so it earns a duration label."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "bread",
+      "set": "A",
+      "category": "food",
+      "example": "People make pizza with flat bread.",
+      "imgHint": "a sliced loaf of brown bread"
+    },
+    {
+      "id": "v02",
+      "word": "cheese",
+      "set": "A",
+      "category": "food",
+      "example": "Pizza Margherita has white cheese on it.",
+      "imgHint": "a wedge of yellow cheese with holes"
+    },
+    {
+      "id": "v03",
+      "word": "chips",
+      "set": "A",
+      "category": "food",
+      "example": "I want chips, please.",
+      "imgHint": "thin golden potato chips in a paper bag"
+    },
+    {
+      "id": "v04",
+      "word": "fish",
+      "set": "A",
+      "category": "food",
+      "example": "Brian wants fish. It looks good.",
+      "imgHint": "a fish fillet on a plate with lemon"
+    },
+    {
+      "id": "v05",
+      "word": "ice cream",
+      "set": "A",
+      "category": "food",
+      "example": "She wants ice cream for dessert.",
+      "imgHint": "three scoops in a bowl with a spoon"
+    },
+    {
+      "id": "v06",
+      "word": "meat",
+      "set": "A",
+      "category": "food",
+      "example": "Would you like some meat?",
+      "imgHint": "sliced grilled meat on a plate"
+    },
+    {
+      "id": "v07",
+      "word": "salad",
+      "set": "A",
+      "category": "food",
+      "example": "I want a salad. It is good for you.",
+      "imgHint": "a bowl of green leaves with tomato"
+    },
+    {
+      "id": "v08",
+      "word": "juice",
+      "set": "A",
+      "category": "drink",
+      "example": "Can I have some juice, please?",
+      "imgHint": "a glass of orange juice with a straw"
+    },
+    {
+      "id": "v09",
+      "word": "cake",
+      "set": "B",
+      "category": "food",
+      "example": "The cake tastes sweet.",
+      "imgHint": "a chocolate cake with a slice cut out"
+    },
+    {
+      "id": "v10",
+      "word": "lemonade",
+      "set": "B",
+      "category": "drink",
+      "example": "Lemonade tastes sour.",
+      "imgHint": "a tall glass jug of lemonade with lemon slices"
+    },
+    {
+      "id": "v11",
+      "word": "pasta",
+      "set": "B",
+      "category": "food",
+      "example": "Does the pasta look good? Yes, it does.",
+      "imgHint": "a plate of pasta with tomato sauce and basil"
+    },
+    {
+      "id": "v12",
+      "word": "pizza",
+      "set": "B",
+      "category": "food",
+      "example": "Lots of people like pizza.",
+      "imgHint": "a round pizza cut into slices"
+    },
+    {
+      "id": "v13",
+      "word": "bad",
+      "set": "B",
+      "category": "taste",
+      "example": "It looks bad. It tastes bad, too.",
+      "imgHint": "a face with a frown beside a plate, grey smoke"
+    },
+    {
+      "id": "v14",
+      "word": "good",
+      "set": "B",
+      "category": "taste",
+      "example": "The food always looks good.",
+      "imgHint": "a smiling face beside a full plate"
+    },
+    {
+      "id": "v15",
+      "word": "sour",
+      "set": "B",
+      "category": "taste",
+      "example": "A lemon tastes sour.",
+      "imgHint": "a lemon with a face pulling a sour expression"
+    },
+    {
+      "id": "v16",
+      "word": "sweet",
+      "set": "B",
+      "category": "taste",
+      "example": "Cake tastes sweet. I love it.",
+      "imgHint": "a honey pot and sugar cubes"
+    },
+    {
+      "id": "v17",
+      "word": "Italy",
+      "set": "C",
+      "category": "place",
+      "example": "The word pizza comes from Italy.",
+      "imgHint": "a map outline of Italy in green, white and red"
+    },
+    {
+      "id": "v18",
+      "word": "basil",
+      "set": "C",
+      "category": "plant",
+      "example": "Pizza Margherita has green basil on it.",
+      "imgHint": "green basil leaves on a wooden board"
+    },
+    {
+      "id": "v19",
+      "word": "flag",
+      "set": "C",
+      "category": "place",
+      "example": "White, red and green are the colors of the Italian flag.",
+      "imgHint": "a small green-white-red flag on a stick"
+    },
+    {
+      "id": "v20",
+      "word": "oven",
+      "set": "C",
+      "category": "place",
+      "example": "Many people cook pizza in a special pizza oven.",
+      "imgHint": "a stone oven with flames inside"
+    },
+    {
+      "id": "v21",
+      "word": "delicious",
+      "set": "C",
+      "category": "taste",
+      "example": "It tastes delicious!",
+      "imgHint": "a plate with sparkle lines around it"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the food word.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "bread",
+              "options": [
+                "bread",
+                "cake",
+                "cheese"
+              ],
+              "answer": "bread",
+              "why": "Bread is a flat loaf. Cake is sweet."
+            },
+            {
+              "id": "v1-2",
+              "img": "cheese",
+              "options": [
+                "cheese",
+                "meat",
+                "fish"
+              ],
+              "answer": "cheese",
+              "why": "Cheese is yellow and comes in a wedge."
+            },
+            {
+              "id": "v1-3",
+              "img": "salad",
+              "options": [
+                "salad",
+                "pasta",
+                "chips"
+              ],
+              "answer": "salad",
+              "why": "A salad is green leaves in a bowl."
+            },
+            {
+              "id": "v1-4",
+              "img": "juice",
+              "options": [
+                "juice",
+                "lemonade",
+                "milk"
+              ],
+              "answer": "juice",
+              "why": "Juice is a drink in a glass with a straw."
+            }
+          ],
+          "whyChoices": [
+            "This word matches the picture",
+            "The word is short",
+            "I like this food"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "fish",
+              "options": [
+                "fish",
+                "meat",
+                "cheese"
+              ],
+              "answer": "fish",
+              "why": "Fish comes from the sea and has a lemon on the plate."
+            },
+            {
+              "id": "v2-2",
+              "word": "chips",
+              "options": [
+                "chips",
+                "bread",
+                "rice"
+              ],
+              "answer": "chips",
+              "why": "Chips are thin and golden in a paper bag."
+            },
+            {
+              "id": "v2-3",
+              "word": "ice cream",
+              "options": [
+                "ice cream",
+                "cake",
+                "juice"
+              ],
+              "answer": "ice cream",
+              "why": "Ice cream comes in scoops in a bowl."
+            },
+            {
+              "id": "v2-4",
+              "word": "meat",
+              "options": [
+                "meat",
+                "pasta",
+                "salad"
+              ],
+              "answer": "meat",
+              "why": "Meat is sliced on a plate."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this word",
+            "The word is long",
+            "I eat this at home"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Chips.",
+              "options": [
+                "chips",
+                "cheese",
+                "cake"
+              ],
+              "answer": "chips"
+            },
+            {
+              "id": "v3-2",
+              "audio": "I want juice, please.",
+              "options": [
+                "juice",
+                "lemonade",
+                "meat"
+              ],
+              "answer": "juice"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Salad.",
+              "options": [
+                "salad",
+                "pasta",
+                "fish"
+              ],
+              "answer": "salad"
+            }
+          ],
+          "whyChoices": [
+            "I heard that word clearly",
+            "It sounded like another word",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each word in the right box.",
+          "bins": [
+            "Food",
+            "Drink"
+          ],
+          "items": [
+            {
+              "word": "bread",
+              "bin": "Food",
+              "why": "You eat bread."
+            },
+            {
+              "word": "juice",
+              "bin": "Drink",
+              "why": "You drink juice."
+            },
+            {
+              "word": "cheese",
+              "bin": "Food",
+              "why": "You eat cheese."
+            },
+            {
+              "word": "lemonade",
+              "bin": "Drink",
+              "why": "You drink lemonade."
+            },
+            {
+              "word": "pizza",
+              "bin": "Food",
+              "why": "You eat pizza."
+            },
+            {
+              "word": "fish",
+              "bin": "Food",
+              "why": "You eat fish."
+            },
+            {
+              "word": "cake",
+              "bin": "Food",
+              "why": "You eat cake."
+            },
+            {
+              "word": "juice",
+              "bin": "Drink",
+              "why": "Juice is a drink."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "I want ___, please. It is a drink.",
+              "options": [
+                "juice",
+                "bread",
+                "salad"
+              ],
+              "answer": "juice",
+              "why": "Juice is a drink."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "A lemon tastes ___.",
+              "options": [
+                "sour",
+                "sweet",
+                "good"
+              ],
+              "answer": "sour",
+              "why": "A lemon is sour, not sweet."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Cake tastes ___. I love it.",
+              "options": [
+                "sweet",
+                "sour",
+                "bad"
+              ],
+              "answer": "sweet",
+              "why": "Cake has sugar, so it is sweet."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "She wants ice cream for ___",
+              "options": [
+                "dessert",
+                "breakfast",
+                "school"
+              ],
+              "answer": "dessert",
+              "why": "Ice cream comes after the meal."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "bread",
+                "cheese",
+                "chips",
+                "juice"
+              ],
+              "answer": "juice",
+              "why": "The others are food. Juice is a drink."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "cake",
+                "pizza",
+                "pasta",
+                "lemonade"
+              ],
+              "answer": "lemonade",
+              "why": "The others are food. Lemonade is a drink."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "sweet",
+                "sour",
+                "good",
+                "pizza"
+              ],
+              "answer": "pizza",
+              "why": "The others describe how food tastes."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is the longest word",
+            "I do not like it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "p",
+                "i",
+                "z",
+                "z",
+                "a"
+              ],
+              "answer": "pizza",
+              "audio": "pizza"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "c",
+                "a",
+                "k",
+                "e"
+              ],
+              "answer": "cake",
+              "audio": "cake"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "f",
+                "i",
+                "s",
+                "h"
+              ],
+              "answer": "fish",
+              "audio": "fish"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the food words. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Lemonade.",
+              "options": [
+                "lemonade",
+                "juice",
+                "milk"
+              ],
+              "answer": "lemonade"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "It looks bad and it ___ bad, too.",
+              "options": [
+                "tastes",
+                "looks",
+                "wants"
+              ],
+              "answer": "tastes"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the word: a round food with cheese on it.",
+              "img": "pizza",
+              "answer": "pizza",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sweet",
+                "sour",
+                "good",
+                "bread"
+              ],
+              "answer": "bread",
+              "why": "The others are how food tastes."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "cheese",
+              "options": [
+                "cheese",
+                "bread",
+                "meat"
+              ],
+              "answer": "cheese"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this word",
+            "This word was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these four sentences. What is different about the last two?",
+          "teachCard": {
+            "title": "want and wants",
+            "lines": [
+              "I want fish, please.",
+              "They want chips.",
+              "He wants salad.",
+              "She wants ice cream."
+            ],
+            "rule": "I, you, we and they use want. He, she and it use wants."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "I want fish.",
+              "q": "Who is talking?",
+              "options": [
+                "I",
+                "he",
+                "she"
+              ],
+              "answer": "I"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "She wants salad.",
+              "q": "What is different about this sentence?",
+              "options": [
+                "It has -s on want",
+                "It has no verb",
+                "It is a question"
+              ],
+              "answer": "It has -s on want"
+            },
+            {
+              "id": "g1-3",
+              "sentence": "They want chips.",
+              "q": "Is there -s on want?",
+              "options": [
+                "No",
+                "Yes"
+              ],
+              "answer": "No"
+            },
+            {
+              "id": "g1-4",
+              "sentence": "He wants meat.",
+              "q": "Tap the word that tells you to add -s.",
+              "options": [
+                "He",
+                "wants",
+                "meat"
+              ],
+              "answer": "He"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "He, she and it take -s",
+            "I and they do not take -s",
+            "It is a question"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "I ___ fish, please.",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "want",
+              "why": "I takes want."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "She ___ salad.",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "wants",
+              "why": "She takes wants."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "They ___ ice cream.",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "want",
+              "why": "They takes want."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "He ___ chips.",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "wants",
+              "why": "He takes wants."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "It ___ bad.",
+              "options": [
+                "look",
+                "looks"
+              ],
+              "answer": "looks",
+              "why": "It takes looks."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "What do you ___?",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "want",
+              "why": "After do, the verb has no -s."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "She want salad.",
+              "wrong": "want",
+              "correct": "wants",
+              "why": "She needs wants."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "He want fish.",
+              "wrong": "want",
+              "correct": "wants",
+              "why": "He needs wants."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "I wants ice cream.",
+              "wrong": "wants",
+              "correct": "want",
+              "why": "I never takes -s."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "They wants chips.",
+              "wrong": "wants",
+              "correct": "want",
+              "why": "They never takes -s."
+            }
+          ],
+          "whyChoices": [
+            "The subject needs a different verb form",
+            "The word is spelled wrong",
+            "The sentence needs a question mark"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, I do.",
+              "options": [
+                "Do you want juice?",
+                "Does you want juice?"
+              ],
+              "answer": "Do you want juice?",
+              "why": "You takes Do."
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, she does.",
+              "options": [
+                "Do she want salad?",
+                "Does she want salad?"
+              ],
+              "answer": "Does she want salad?",
+              "why": "She takes Does."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, he doesn't.",
+              "options": [
+                "Does he want fish?",
+                "Do he want fish?"
+              ],
+              "answer": "Does he want fish?",
+              "why": "He takes Does."
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, I don't.",
+              "options": [
+                "Do you want cake?",
+                "Does you want cake?"
+              ],
+              "answer": "Do you want cake?",
+              "why": "You takes Do."
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. Make it negative.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "I want pizza.",
+              "options": [
+                "I don't want pizza.",
+                "I doesn't want pizza."
+              ],
+              "answer": "I don't want pizza.",
+              "why": "I takes don't."
+            },
+            {
+              "id": "g5-2",
+              "from": "She wants meat.",
+              "options": [
+                "She doesn't want meat.",
+                "She don't want meat."
+              ],
+              "answer": "She doesn't want meat.",
+              "why": "She takes doesn't."
+            },
+            {
+              "id": "g5-3",
+              "from": "They want chips.",
+              "options": [
+                "They don't want chips.",
+                "They doesn't want chips."
+              ],
+              "answer": "They don't want chips.",
+              "why": "They takes don't."
+            },
+            {
+              "id": "g5-4",
+              "from": "He wants juice.",
+              "options": [
+                "He doesn't want juice.",
+                "He don't want juice."
+              ],
+              "answer": "He doesn't want juice.",
+              "why": "He takes doesn't."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "I want ice cream, please.",
+              "options": [
+                "ice cream",
+                "salad",
+                "bread"
+              ],
+              "answer": "ice cream"
+            },
+            {
+              "id": "l1-2",
+              "audio": "The lemonade tastes sour.",
+              "options": [
+                "lemonade",
+                "juice",
+                "milk"
+              ],
+              "answer": "lemonade"
+            },
+            {
+              "id": "l1-3",
+              "audio": "She wants pizza.",
+              "options": [
+                "pizza",
+                "pasta",
+                "chips"
+              ],
+              "answer": "pizza"
+            }
+          ],
+          "whyChoices": [
+            "I heard the food word",
+            "I heard the first sound only",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "Her lunch",
+                "Her school bag"
+              ],
+              "answer": "Her lunch"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What does Mia want to drink?",
+              "options": [
+                "Lemonade",
+                "Juice"
+              ],
+              "answer": "Lemonade"
+            }
+          ],
+          "audio": "Hi, I'm Mia. Today I want pizza and a salad. I want lemonade, too. My friend wants fish.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "She wants salad. He wants fish. They want cake.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "She ___(1)___ salad.",
+              "options": [
+                "wants",
+                "want"
+              ],
+              "answer": "wants"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "He wants ___(2)___.",
+              "options": [
+                "fish",
+                "cake"
+              ],
+              "answer": "fish"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "They want ___(3)___.",
+              "options": [
+                "cake",
+                "salad"
+              ],
+              "answer": "cake"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "lunch",
+              "options": [
+                "a meal in the middle of the day",
+                "a meal at night"
+              ],
+              "answer": "a meal in the middle of the day"
+            },
+            {
+              "id": "r1-2",
+              "word": "happy",
+              "options": [
+                "feeling good",
+                "feeling angry"
+              ],
+              "answer": "feeling good"
+            },
+            {
+              "id": "r1-3",
+              "word": "always",
+              "options": [
+                "every time",
+                "only once"
+              ],
+              "answer": "every time"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "I like eating lunch at school. The food always looks good. Today Emma wants chips and juice. Brian wants meat. I want salad and bread. We are happy. The food tastes good!",
+          "prompt": "Read the text. Then tap the sentence that tells you what the text is mostly about.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that tells you the writer likes the food.",
+              "answerType": "tapSentence",
+              "answer": "The food tastes good!",
+              "why": "That is the writer's opinion of the food."
+            },
+            {
+              "id": "r2-2",
+              "q": "Where do they eat?",
+              "options": [
+                "At school",
+                "At home",
+                "At a restaurant"
+              ],
+              "answer": "At school"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "I like eating lunch at school. The food always looks good. Today Emma wants chips and juice. Brian wants meat. I want salad and bread. We are happy. The food tastes good!",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What does Emma want?",
+              "options": [
+                "Chips and juice",
+                "Meat and bread"
+              ],
+              "answer": "Chips and juice"
+            },
+            {
+              "id": "r3-2",
+              "q": "What does the writer want?",
+              "options": [
+                "Salad and bread",
+                "Fish and chips"
+              ],
+              "answer": "Salad and bread"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you how they feel.",
+              "answerType": "tapSentence",
+              "answer": "We are happy.",
+              "why": "Happy is how they feel."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Lots of people like pizza. Where does pizza come from? People make pizza with flat bread. Then they put other food on it. The word pizza comes from Italy. One of the first pizzas is Pizza Margherita. It has white cheese, red tomatoes and green basil. These are the colors of the Italian flag. It looks good and it tastes good, too!",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you where the word pizza comes from.",
+              "answer": "The word pizza comes from Italy."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you what is on a Pizza Margherita.",
+              "answer": "It has white cheese, red tomatoes and green basil."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you the pizza has the flag colours.",
+              "answer": "These are the colors of the Italian flag."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "I",
+                "want",
+                "fish",
+                "please"
+              ],
+              "answer": "I want fish, please."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "She",
+                "wants",
+                "salad"
+              ],
+              "answer": "She wants salad."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "It",
+                "tastes",
+                "good"
+              ],
+              "answer": "It tastes good."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Do",
+                "you",
+                "want",
+                "juice"
+              ],
+              "answer": "Do you want juice?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "She want pizza.",
+              "answer": "She wants pizza."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "I wants juice.",
+              "answer": "I want juice."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "It taste bad.",
+              "answer": "It tastes bad."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write four sentences about what you want to eat today. Use the sentence starters.",
+          "starters": [
+            "Today I want ___.",
+            "I want ___ to drink.",
+            "I don't want ___.",
+            "My friend wants ___."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "want and wants are correct"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "I want fish, please.",
+              "keywords": [
+                "want",
+                "fish",
+                "please"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "She wants salad.",
+              "keywords": [
+                "she",
+                "wants",
+                "salad"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "It looks good.",
+              "keywords": [
+                "looks",
+                "good"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "It tastes bad.",
+              "keywords": [
+                "tastes",
+                "bad"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "pizza and salad",
+              "keywords": [
+                "pizza",
+                "salad"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "bread and cheese",
+              "keywords": [
+                "bread",
+                "cheese"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "I want juice",
+              "keywords": [
+                "want",
+                "juice"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Do you want ice cream?",
+              "keywords": [
+                "yes",
+                "no",
+                "do",
+                "don't",
+                "want"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "What do you want to eat?",
+              "keywords": [
+                "want",
+                "eat"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Does your friend want pizza?",
+              "keywords": [
+                "does",
+                "doesn't",
+                "friend",
+                "pizza"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Does the lemonade taste sour?",
+              "keywords": [
+                "does",
+                "doesn't",
+                "taste",
+                "sour"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the cafe table. Say what food you can see. Use at least three food words.",
+          "image": "cafe-table-easy",
+          "prompts": [
+            "Two foods you see",
+            "One drink you see",
+            "One food you want"
+          ],
+          "keywords": [
+            "want",
+            "see"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with two voices. First you are Alex, then Grandpa.",
+          "dialogueId": "theBarbecue",
+          "lines": 4,
+          "keywords": [
+            "want",
+            "fish",
+            "looks"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What do you want for breakfast?",
+              "keywords": [
+                "want",
+                "breakfast"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What food tastes good to you?",
+              "keywords": [
+                "tastes",
+                "good"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "What food tastes bad to you?",
+              "keywords": [
+                "tastes",
+                "bad"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about your perfect meal. Say four sentences.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "I want ___.",
+            "It looks ___.",
+            "It tastes ___.",
+            "I want ___ to drink."
+          ],
+          "keywords": [
+            "want",
+            "looks",
+            "tastes"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "cheese",
+              "options": [
+                "cheese",
+                "bread",
+                "meat"
+              ],
+              "answer": "cheese"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "She ___ salad.",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "wants"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "They wants pizza.",
+              "wrong": "wants",
+              "correct": "want"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Lemonade.",
+              "options": [
+                "lemonade",
+                "juice",
+                "milk"
+              ],
+              "answer": "lemonade"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "pizza",
+                "juice"
+              ],
+              "bins": [
+                "Food",
+                "Drink"
+              ],
+              "answers": {
+                "pizza": "Food",
+                "juice": "Drink"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about food you want.",
+              "keywords": [
+                "want"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Pizza Party. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "pizza",
+              "options": [
+                "pizza",
+                "bread",
+                "cake"
+              ],
+              "answer": "pizza"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "He ___ fish.",
+              "options": [
+                "want",
+                "wants"
+              ],
+              "answer": "wants"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "I wants ice cream.",
+              "wrong": "wants",
+              "correct": "want"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "I'm Ben. I want pizza and juice. I don't want salad.",
+              "q": "What does Ben NOT want?",
+              "options": [
+                "Salad",
+                "Pizza",
+                "Juice"
+              ],
+              "answer": "Salad"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text, tap the sentence that tells you where the word pizza comes from.",
+              "answer": "The word pizza comes from Italy."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Does",
+                "she",
+                "want",
+                "cake"
+              ],
+              "answer": "Does she want cake?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for a drink made from lemons.",
+              "answer": "lemonade",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: one food you want and one food you don't want.",
+              "keywords": [
+                "want",
+                "don't"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the food that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "bread",
+              "options": [
+                "bread",
+                "cake",
+                "cheese",
+                "chips"
+              ],
+              "answer": "bread",
+              "why": "Bread is baked dough. Cake is sweet and has sugar."
+            },
+            {
+              "id": "v1-2",
+              "img": "salad",
+              "options": [
+                "salad",
+                "pasta",
+                "fish",
+                "meat"
+              ],
+              "answer": "salad",
+              "why": "A salad is raw leaves and vegetables, not cooked food."
+            },
+            {
+              "id": "v1-3",
+              "img": "chips",
+              "options": [
+                "chips",
+                "bread",
+                "pizza",
+                "cheese"
+              ],
+              "answer": "chips",
+              "why": "Chips are thin slices of potato, fried."
+            },
+            {
+              "id": "v1-4",
+              "img": "ice cream",
+              "options": [
+                "ice cream",
+                "lemonade",
+                "juice",
+                "cake"
+              ],
+              "answer": "ice cream",
+              "why": "Ice cream is cold and comes in scoops."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact food",
+            "It belongs to the same food group",
+            "It starts with the same letter",
+            "It is a drink, not food"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "lemonade",
+              "options": [
+                "lemonade",
+                "juice",
+                "milk",
+                "water"
+              ],
+              "answer": "lemonade",
+              "why": "Lemonade is made from lemons, and often has lemon slices in the jug."
+            },
+            {
+              "id": "v2-2",
+              "word": "pasta",
+              "options": [
+                "pasta",
+                "pizza",
+                "bread",
+                "chips"
+              ],
+              "answer": "pasta",
+              "why": "Pasta is long shapes with sauce, eaten with a fork."
+            },
+            {
+              "id": "v2-3",
+              "word": "meat",
+              "options": [
+                "meat",
+                "fish",
+                "cheese",
+                "bread"
+              ],
+              "answer": "meat",
+              "why": "Meat is grilled slices on a plate."
+            },
+            {
+              "id": "v2-4",
+              "word": "cake",
+              "options": [
+                "cake",
+                "bread",
+                "pizza",
+                "ice cream"
+              ],
+              "answer": "cake",
+              "why": "A cake is sweet and has a slice cut out."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It is the same food group",
+            "It is uncountable",
+            "It is a drink"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "I want a salad, please.",
+              "options": [
+                "salad",
+                "pasta",
+                "chips",
+                "bread"
+              ],
+              "answer": "salad"
+            },
+            {
+              "id": "v3-2",
+              "audio": "The cake tastes sweet.",
+              "options": [
+                "sweet",
+                "sour",
+                "bad",
+                "good"
+              ],
+              "answer": "sweet"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Does the pasta look good?",
+              "options": [
+                "pasta",
+                "pizza",
+                "meat",
+                "fish"
+              ],
+              "answer": "pasta"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole word",
+            "I heard a word that sounds similar",
+            "I used the topic to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort the words into the right boxes.",
+          "bins": [
+            "Food",
+            "Drink"
+          ],
+          "items": [
+            {
+              "word": "chips",
+              "bin": "Food"
+            },
+            {
+              "word": "lemonade",
+              "bin": "Drink"
+            },
+            {
+              "word": "fish",
+              "bin": "Food"
+            },
+            {
+              "word": "juice",
+              "bin": "Drink"
+            },
+            {
+              "word": "pasta",
+              "bin": "Food"
+            },
+            {
+              "word": "cake",
+              "bin": "Food"
+            },
+            {
+              "word": "pizza",
+              "bin": "Food"
+            },
+            {
+              "word": "bread",
+              "bin": "Food"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "Pizza Margherita has white ___, red tomatoes and green basil.",
+              "options": [
+                "cheese",
+                "meat",
+                "fish",
+                "cake"
+              ],
+              "answer": "cheese",
+              "why": "The white ingredient in the pizza reading is cheese."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "Lemonade tastes ___.",
+              "options": [
+                "sour",
+                "sweet",
+                "bad",
+                "delicious"
+              ],
+              "answer": "sour",
+              "why": "Lemons are sour."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Many people cook pizza in a special pizza ___.",
+              "options": [
+                "oven",
+                "flag",
+                "basil",
+                "bread"
+              ],
+              "answer": "oven",
+              "why": "An oven is where food is cooked."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "The food is very good. It tastes ___.",
+              "options": [
+                "delicious",
+                "sour",
+                "bad",
+                "cold"
+              ],
+              "answer": "delicious",
+              "why": "Delicious means very good to eat."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It sounds like another word",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "bread",
+                "cheese",
+                "chips",
+                "pizza"
+              ],
+              "answer": "pizza",
+              "why": "The others are simple foods. Pizza is already a whole dish."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "sweet",
+                "sour",
+                "good",
+                "lemonade"
+              ],
+              "answer": "lemonade",
+              "why": "The others are how food tastes."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "Italy",
+                "flag",
+                "oven",
+                "basil"
+              ],
+              "answer": "basil",
+              "why": "The others are about places and cooking. Basil is a plant you eat."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is uncountable",
+            "It is a longer word",
+            "It is a taste word"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "b",
+                "r",
+                "e",
+                "a",
+                "d"
+              ],
+              "answer": "bread",
+              "audio": "bread"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "l",
+                "e",
+                "m",
+                "o",
+                "n",
+                "a",
+                "d",
+                "e"
+              ],
+              "answer": "lemonade",
+              "audio": "lemonade"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "p",
+                "a",
+                "s",
+                "t",
+                "a"
+              ],
+              "answer": "pasta",
+              "audio": "pasta"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Pasta.",
+              "options": [
+                "pasta",
+                "pizza",
+                "chips",
+                "bread"
+              ],
+              "answer": "pasta"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "Would you like some ___? It is grilled on the plate.",
+              "options": [
+                "meat",
+                "juice",
+                "cake",
+                "basil"
+              ],
+              "answer": "meat",
+              "why": "Meat is grilled and served on a plate."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the drink that is made from lemons.",
+              "img": "lemonade",
+              "answer": "lemonade",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sweet",
+                "sour",
+                "delicious",
+                "fish"
+              ],
+              "answer": "fish",
+              "why": "The others are taste words."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "salad",
+              "options": [
+                "salad",
+                "pasta",
+                "chips",
+                "fish"
+              ],
+              "answer": "salad"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the word",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the four sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "want / wants, and look / smell / taste + adjective",
+            "lines": [
+              "I want fish. / They want chips. / She wants salad.",
+              "It looks good. / It smells bad. / It tastes bad, too.",
+              "Does the pasta look good? Yes, it does.",
+              "What do you want? I want fish, please."
+            ],
+            "rule": "He, she and it take wants. After look, smell and taste we use an adjective: good, bad, sweet, sour, delicious. Questions use does."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which subjects take wants?",
+              "options": [
+                "he, she, it",
+                "I, you, we",
+                "they, we, I",
+                "all subjects"
+              ],
+              "answer": "he, she, it"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which word goes in 'It ___ bad'?",
+              "options": [
+                "smells",
+                "smell",
+                "smelling",
+                "is smell"
+              ],
+              "answer": "smells"
+            },
+            {
+              "id": "g1-3",
+              "q": "What kind of word comes after look, smell and taste?",
+              "options": [
+                "an adjective",
+                "a noun",
+                "a verb",
+                "a number"
+              ],
+              "answer": "an adjective"
+            },
+            {
+              "id": "g1-4",
+              "q": "What is the question form of 'She wants salad'?",
+              "options": [
+                "Does she want salad?",
+                "Do she want salad?",
+                "Does she wants salad?",
+                "Is she want salad?"
+              ],
+              "answer": "Does she want salad?"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "He takes wants",
+            "After does the verb has no -s",
+            "It takes the -s form with look, smell and taste",
+            "did not = didn't"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "He ___ a salad.",
+              "options": [
+                "want",
+                "wants",
+                "wanting",
+                "is want"
+              ],
+              "answer": "wants"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "___ she want ice cream?",
+              "options": [
+                "Do",
+                "Does",
+                "Is",
+                "Are"
+              ],
+              "answer": "Does"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "Does the pasta taste good? Yes, it ___.",
+              "options": [
+                "does",
+                "do",
+                "is",
+                "tastes"
+              ],
+              "answer": "does"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "The fish ___ bad. Don't eat it.",
+              "options": [
+                "smell",
+                "smells",
+                "smelling",
+                "is smell"
+              ],
+              "answer": "smells"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Do you want some juice? No, I ___.",
+              "options": [
+                "don't",
+                "doesn't",
+                "not",
+                "am not"
+              ],
+              "answer": "don't"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "What ___ they want?",
+              "options": [
+                "do",
+                "does",
+                "is",
+                "are"
+              ],
+              "answer": "do"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Brian want fish.",
+              "wrong": "want",
+              "correct": "wants",
+              "why": "Brian is he, so the verb takes -s."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Does she wants salad?",
+              "wrong": "wants",
+              "correct": "want",
+              "why": "After Does the verb has no -s."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "The pasta look good.",
+              "wrong": "look",
+              "correct": "looks",
+              "why": "The pasta is it, so look takes -s."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "They doesn't want pizza.",
+              "wrong": "doesn't",
+              "correct": "don't",
+              "why": "They takes don't."
+            }
+          ],
+          "whyChoices": [
+            "The subject is he, she or it",
+            "The verb follows Does",
+            "The subject is plural",
+            "The subject is they"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, it does.",
+              "options": [
+                "Does the pizza look good?",
+                "Do the pizza look good?",
+                "Does the pizza looks good?",
+                "Is the pizza look good?"
+              ],
+              "answer": "Does the pizza look good?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, they don't.",
+              "options": [
+                "Do they want chips?",
+                "Does they want chips?",
+                "Do they wants chips?",
+                "Are they want chips?"
+              ],
+              "answer": "Do they want chips?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, I do.",
+              "options": [
+                "Do you want juice?",
+                "Does you want juice?",
+                "Do you wants juice?",
+                "Are you want juice?"
+              ],
+              "answer": "Do you want juice?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, he doesn't.",
+              "options": [
+                "Does he want meat?",
+                "Do he want meat?",
+                "Does he wants meat?",
+                "Is he want meat?"
+              ],
+              "answer": "Does he want meat?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make it negative.",
+              "from": "Brian wants fish.",
+              "options": [
+                "Brian doesn't want fish.",
+                "Brian don't want fish.",
+                "Brian not want fish.",
+                "Brian isn't want fish."
+              ],
+              "answer": "Brian doesn't want fish."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Make it negative.",
+              "from": "They want chips.",
+              "options": [
+                "They don't want chips.",
+                "They doesn't want chips.",
+                "They not want chips.",
+                "They aren't want chips."
+              ],
+              "answer": "They don't want chips."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Change the subject to he.",
+              "from": "I want salad.",
+              "options": [
+                "He wants salad.",
+                "He want salad.",
+                "He wants a salad.",
+                "He is want salad."
+              ],
+              "answer": "He wants salad."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Make it a question.",
+              "from": "The pizza tastes good.",
+              "options": [
+                "Does the pizza taste good?",
+                "Do the pizza taste good?",
+                "Does the pizza tastes good?",
+                "Is the pizza taste good?"
+              ],
+              "answer": "Does the pizza taste good?"
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "I want pasta, please. It looks delicious.",
+              "options": [
+                "pasta",
+                "pizza",
+                "chips",
+                "salad"
+              ],
+              "answer": "pasta"
+            },
+            {
+              "id": "l1-2",
+              "audio": "The cake tastes very sweet.",
+              "options": [
+                "cake",
+                "bread",
+                "ice cream",
+                "cheese"
+              ],
+              "answer": "cake"
+            },
+            {
+              "id": "l1-3",
+              "audio": "Do you want some meat?",
+              "options": [
+                "meat",
+                "fish",
+                "salad",
+                "cheese"
+              ],
+              "answer": "meat"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a similar word",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person talking about?",
+              "options": [
+                "A meal at a cafe",
+                "A football match",
+                "A school lesson"
+              ],
+              "answer": "A meal at a cafe"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What does the speaker think of the food?",
+              "options": [
+                "It smells good but tastes bad",
+                "It tastes delicious",
+                "It looks bad"
+              ],
+              "answer": "It smells good but tastes bad"
+            }
+          ],
+          "audio": "We are at the cafe. Emma wants chips and juice, and Brian wants meat. I want a salad and some lemonade. The salad looks good and it smells good. But the lemonade tastes very sour, and the meat tastes bad.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "Emma wants chips and juice. Brian wants meat, but he doesn't want fish. I want a salad and some lemonade.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "Emma wants chips and ___(1)___.",
+              "options": [
+                "juice",
+                "lemonade",
+                "milk"
+              ],
+              "answer": "juice"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "Brian wants ___(2)___, but he doesn't want fish.",
+              "options": [
+                "meat",
+                "salad",
+                "pasta"
+              ],
+              "answer": "meat"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "I want a salad and some ___(3)___.",
+              "options": [
+                "lemonade",
+                "juice",
+                "water"
+              ],
+              "answer": "lemonade"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "delicious",
+              "options": [
+                "very good to eat",
+                "very bad to eat",
+                "very cheap",
+                "very cold"
+              ],
+              "answer": "very good to eat"
+            },
+            {
+              "id": "r1-2",
+              "word": "popular",
+              "options": [
+                "liked by many people",
+                "hard to find",
+                "expensive",
+                "new"
+              ],
+              "answer": "liked by many people"
+            },
+            {
+              "id": "r1-3",
+              "word": "special",
+              "options": [
+                "not ordinary",
+                "very cheap",
+                "very old",
+                "very small"
+              ],
+              "answer": "not ordinary"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "I like eating lunch at school. The food always looks good. Today there is a lot of food on the table. What do we want for lunch today? Emma wants chips and juice. Brian wants meat, not fish, because he doesn't like fish. I want salad and bread. My friend Mia wants pasta and lemonade. Everything smells good. We are very happy. The food tastes good, too!",
+          "prompt": "Read the whole text. Then tap the sentence that shows everyone is enjoying the food.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows the food makes them happy.",
+              "answerType": "tapSentence",
+              "answer": "Everything smells good.",
+              "why": "Smelling good is why they are happy before they even eat."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the text about?",
+              "options": [
+                "What four friends want for lunch",
+                "A cooking lesson",
+                "A trip to Italy"
+              ],
+              "answer": "What four friends want for lunch"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "I like eating lunch at school. The food always looks good. Today there is a lot of food on the table. What do we want for lunch today? Emma wants chips and juice. Brian wants meat, not fish, because he doesn't like fish. I want salad and bread. My friend Mia wants pasta and lemonade. Everything smells good. We are very happy. The food tastes good, too!",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Why doesn't Brian want fish?",
+              "options": [
+                "He doesn't like fish",
+                "There is no fish",
+                "It is cold"
+              ],
+              "answer": "He doesn't like fish"
+            },
+            {
+              "id": "r3-2",
+              "q": "Who wants pasta and lemonade?",
+              "options": [
+                "Mia",
+                "Emma",
+                "The writer"
+              ],
+              "answer": "Mia"
+            },
+            {
+              "id": "r3-3",
+              "q": "How many people's orders are described?",
+              "options": [
+                "Four",
+                "Two",
+                "Six"
+              ],
+              "answer": "Four"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Lots of people like pizza. Where does pizza come from? Pizza is popular in many places. People make pizza with a flat bread. Then they put other kinds of food on it. The word pizza comes from Italy. The name of one of the first pizzas in the world is Pizza Margherita. It comes from Italy. It has white cheese, red tomatoes and green basil. White, red and green are the colors of the Italian flag. Pizza Margherita looks good and it tastes good, too! Now people all over the world eat pizza. Many people cook pizza in a special pizza oven. It tastes delicious.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you why basil matters on a Margherita.",
+              "answer": "White, red and green are the colors of the Italian flag."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you how pizza is made.",
+              "answer": "People make pizza with a flat bread."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you where people cook pizza now.",
+              "answer": "Many people cook pizza in a special pizza oven."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Brian",
+                "wants",
+                "meat",
+                "not",
+                "fish"
+              ],
+              "answer": "Brian wants meat, not fish."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Does",
+                "the",
+                "pasta",
+                "taste",
+                "good"
+              ],
+              "answer": "Does the pasta taste good?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "The",
+                "lemonade",
+                "tastes",
+                "very",
+                "sour"
+              ],
+              "answer": "The lemonade tastes very sour."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "I",
+                "don't",
+                "want",
+                "any",
+                "cake"
+              ],
+              "answer": "I don't want any cake."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "Brian want fish.",
+              "answer": "Brian wants fish."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Does she wants salad?",
+              "answer": "Does she want salad?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "The pasta look good.",
+              "answer": "The pasta looks good."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write five sentences about a meal at a cafe. Use the order chart: what each person wants, and how it looks or tastes.",
+          "menu": [
+            "pizza",
+            "pasta",
+            "salad",
+            "fish",
+            "meat",
+            "cake",
+            "ice cream",
+            "lemonade",
+            "juice"
+          ],
+          "chart": {
+            "rows": 4,
+            "columnA": "What do they want?",
+            "columnB": "How does it look or taste?"
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct want / wants",
+            "One sentence with looks, smells or tastes",
+            "One negative sentence"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Brian wants meat, not fish.",
+              "keywords": [
+                "brian",
+                "wants",
+                "meat",
+                "fish"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "The lemonade tastes very sour.",
+              "keywords": [
+                "lemonade",
+                "tastes",
+                "very",
+                "sour"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Does the pasta look good?",
+              "keywords": [
+                "does",
+                "pasta",
+                "look",
+                "good"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Everything smells good.",
+              "keywords": [
+                "everything",
+                "smells",
+                "good"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "meat, not fish",
+              "keywords": [
+                "meat",
+                "not",
+                "fish"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "pasta and lemonade",
+              "keywords": [
+                "pasta",
+                "lemonade"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "it tastes delicious",
+              "keywords": [
+                "tastes",
+                "delicious"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What do you want to eat?",
+              "keywords": [
+                "want",
+                "eat"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Does the pasta look good? Answer Yes, it does. or No, it doesn't.",
+              "keywords": [
+                "does",
+                "it",
+                "yes",
+                "doesn't"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What does your friend want to drink?",
+              "keywords": [
+                "does",
+                "friend",
+                "want"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Which food tastes bad to you, and why?",
+              "keywords": [
+                "tastes",
+                "bad",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the cafe table. Say what each person wants and how the food looks.",
+          "image": "cafe-table-core",
+          "prompts": [
+            "What the first person wants",
+            "What the second person wants",
+            "One food that looks good",
+            "One drink and how it tastes"
+          ],
+          "keywords": [
+            "wants",
+            "looks",
+            "tastes"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with three voices: you are Grandpa, then Alex, then Brian.",
+          "dialogueId": "theBarbecue",
+          "lines": 7,
+          "keywords": [
+            "want",
+            "looks",
+            "smells",
+            "tastes"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What do you want for dinner tonight?",
+              "keywords": [
+                "want",
+                "dinner"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Does your family like pizza? Why or why not?",
+              "keywords": [
+                "does",
+                "family",
+                "pizza",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which food smells good but tastes bad to you?",
+              "keywords": [
+                "smells",
+                "tastes"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about a meal you remember. Say what you wanted, how it looked, and how it tasted.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "At ___ I wanted ___.",
+            "It looked ___ and it smelled ___.",
+            "It tasted ___ because ___.",
+            "Next time I want ___."
+          ],
+          "keywords": [
+            "wanted",
+            "looked",
+            "tasted",
+            "because"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "pasta",
+              "options": [
+                "pasta",
+                "pizza",
+                "chips",
+                "bread"
+              ],
+              "answer": "pasta"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "Brian ___ a salad.",
+              "options": [
+                "want",
+                "wants",
+                "wanting",
+                "is want"
+              ],
+              "answer": "wants"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Does she wants salad?",
+              "wrong": "wants",
+              "correct": "want"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "The cake tastes very sweet.",
+              "options": [
+                "sweet",
+                "sour",
+                "bad",
+                "good"
+              ],
+              "answer": "sweet"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "sweet",
+                "sour",
+                "good",
+                "lemonade"
+              ],
+              "answer": "lemonade"
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with Do you want...?",
+              "keywords": [
+                "do",
+                "you",
+                "want"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Pizza Party. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "lemonade",
+              "options": [
+                "lemonade",
+                "juice",
+                "milk",
+                "water"
+              ],
+              "answer": "lemonade"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "Everything ___ good.",
+              "options": [
+                "smells",
+                "smell",
+                "smelling",
+                "is smell"
+              ],
+              "answer": "smells"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "The pizza taste good.",
+              "wrong": "taste",
+              "correct": "tastes"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "At the cafe, Emma wants chips and juice. Brian wants meat but not fish. I want a salad and lemonade. The salad smells good, but the lemonade tastes sour.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker describing?",
+                  "options": [
+                    "What three people want",
+                    "A shop",
+                    "A holiday"
+                  ],
+                  "answer": "What three people want"
+                },
+                {
+                  "pass": 2,
+                  "q": "What does the speaker think of the lemonade?",
+                  "options": [
+                    "It tastes sour",
+                    "It tastes sweet",
+                    "It smells bad"
+                  ],
+                  "answer": "It tastes sour"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text, tap the sentence that tells you which three colours a Pizza Margherita has.",
+              "answer": "It has white cheese, red tomatoes and green basil."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Does",
+                "the",
+                "pasta",
+                "look",
+                "good"
+              ],
+              "answer": "Does the pasta look good?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for the place where you cook pizza.",
+              "answer": "oven",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: what you want, how it looks or smells, and how it tastes.",
+              "keywords": [
+                "want",
+                "looks",
+                "tastes"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact food. Two of the four options belong to the same group, so read carefully.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "bread",
+              "options": [
+                "bread",
+                "cake",
+                "pizza",
+                "cheese"
+              ],
+              "answer": "bread",
+              "why": "Bread is plain baked dough. Cake has sugar; pizza is already a dish."
+            },
+            {
+              "id": "v1-2",
+              "img": "salad",
+              "options": [
+                "salad",
+                "pasta",
+                "fish",
+                "meat"
+              ],
+              "answer": "salad",
+              "why": "A salad is raw vegetables. Everything else on the list is cooked."
+            },
+            {
+              "id": "v1-3",
+              "img": "lemonade",
+              "options": [
+                "lemonade",
+                "juice",
+                "water",
+                "milk"
+              ],
+              "answer": "lemonade",
+              "why": "Lemonade is made from lemons and has lemon slices in the jug."
+            },
+            {
+              "id": "v1-4",
+              "img": "ice cream",
+              "options": [
+                "ice cream",
+                "cake",
+                "cheese",
+                "bread"
+              ],
+              "answer": "ice cream",
+              "why": "Ice cream is frozen and served in scoops."
+            }
+          ],
+          "whyChoices": [
+            "The preparation is different from the distractors",
+            "It is a drink, not a food",
+            "It belongs to the same food group as a distractor",
+            "It is uncountable"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "pasta",
+              "options": [
+                "pasta",
+                "pizza",
+                "bread",
+                "chips"
+              ],
+              "answer": "pasta",
+              "why": "Pasta is long shapes with sauce. Pizza is round and flat."
+            },
+            {
+              "id": "v2-2",
+              "word": "meat",
+              "options": [
+                "meat",
+                "fish",
+                "cheese",
+                "bread"
+              ],
+              "answer": "meat",
+              "why": "Meat is grilled slices. Fish is served whole or in a fillet with lemon."
+            },
+            {
+              "id": "v2-3",
+              "word": "juice",
+              "options": [
+                "juice",
+                "lemonade",
+                "milk",
+                "water"
+              ],
+              "answer": "juice",
+              "why": "Juice is a drink without the lemon slices lemonade has."
+            },
+            {
+              "id": "v2-4",
+              "word": "cake",
+              "options": [
+                "cake",
+                "bread",
+                "pizza",
+                "ice cream"
+              ],
+              "answer": "cake",
+              "why": "A cake is sweet, with a slice cut out."
+            }
+          ],
+          "whyChoices": [
+            "The meaning matches exactly",
+            "It is the same category of food",
+            "The word sounds similar",
+            "It is a drink"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Pizza Margherita looks good and it tastes good, too.",
+              "options": [
+                "good",
+                "bad",
+                "sour",
+                "sweet"
+              ],
+              "answer": "good"
+            },
+            {
+              "id": "v3-2",
+              "audio": "Many people cook pizza in a special pizza oven.",
+              "options": [
+                "oven",
+                "flag",
+                "basil",
+                "Italy"
+              ],
+              "answer": "oven"
+            },
+            {
+              "id": "v3-3",
+              "audio": "The pizza is not only food; it is also a picture of a country.",
+              "options": [
+                "country",
+                "kitchen",
+                "menu",
+                "family"
+              ],
+              "answer": "country"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact word",
+            "I heard a word with a similar sound",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into four boxes. Some items are deliberately tricky.",
+          "bins": [
+            "Food",
+            "Drink",
+            "Taste word",
+            "Place or plant"
+          ],
+          "items": [
+            {
+              "word": "cheese",
+              "bin": "Food"
+            },
+            {
+              "word": "juice",
+              "bin": "Drink"
+            },
+            {
+              "word": "sour",
+              "bin": "Taste word"
+            },
+            {
+              "word": "Italy",
+              "bin": "Place or plant"
+            },
+            {
+              "word": "pizza",
+              "bin": "Food"
+            },
+            {
+              "word": "lemonade",
+              "bin": "Drink"
+            },
+            {
+              "word": "delicious",
+              "bin": "Taste word"
+            },
+            {
+              "word": "basil",
+              "bin": "Place or plant"
+            },
+            {
+              "word": "bread",
+              "bin": "Food"
+            },
+            {
+              "word": "oven",
+              "bin": "Place or plant"
+            }
+          ],
+          "note": "If four bins is too many for the mechanic, use three: Food / Drink / Taste word, and drop Place or plant."
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "Mia wants ___ with her pasta, because it tastes very sour.",
+              "options": [
+                "lemonade",
+                "cake",
+                "bread",
+                "cheese"
+              ],
+              "answer": "lemonade",
+              "why": "Lemonade tastes sour; the other options do not."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "The lemonade tastes ___ because there is no sugar in it.",
+              "options": [
+                "sour",
+                "sweet",
+                "delicious",
+                "good"
+              ],
+              "answer": "sour",
+              "why": "No sugar means sour."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Pizza is ___ in many places, and people all over the world eat it.",
+              "options": [
+                "popular",
+                "sour",
+                "special",
+                "delicious"
+              ],
+              "answer": "popular",
+              "why": "Popular means liked by many people, which the rest of the sentence supports."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "The food is very good. It tastes ___.",
+              "options": [
+                "delicious",
+                "sour",
+                "bad",
+                "popular"
+              ],
+              "answer": "delicious",
+              "why": "Delicious means very good to eat; popular describes people, not taste."
+            }
+          ],
+          "whyChoices": [
+            "It is the only one that fits the meaning",
+            "It is the only uncountable option",
+            "It is the only adjective",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "One word does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "bread",
+                "cheese",
+                "juice",
+                "meat"
+              ],
+              "answer": "juice",
+              "why": "All four are uncountable, but juice is a drink and the others are food. Grammar matches, meaning does not."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "sour",
+                "sweet",
+                "basil",
+                "delicious"
+              ],
+              "answer": "basil",
+              "why": "The others are taste adjectives. Basil is a noun."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "Italy",
+                "oven",
+                "flag",
+                "fish"
+              ],
+              "answer": "fish",
+              "why": "The others are part of the pizza story. Fish is food."
+            }
+          ],
+          "whyChoices": [
+            "It breaks the pattern only in meaning",
+            "It breaks the pattern only in grammar",
+            "It is a longer word",
+            "It is a drink"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "d",
+                "e",
+                "l",
+                "i",
+                "c",
+                "i",
+                "o",
+                "u",
+                "s"
+              ],
+              "answer": "delicious",
+              "audio": "delicious"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "l",
+                "e",
+                "m",
+                "o",
+                "n",
+                "a",
+                "d",
+                "e"
+              ],
+              "answer": "lemonade",
+              "audio": "lemonade"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "p",
+                "o",
+                "p",
+                "u",
+                "l",
+                "a",
+                "r"
+              ],
+              "answer": "popular",
+              "audio": "popular"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Pasta.",
+              "options": [
+                "pasta",
+                "pizza",
+                "chips",
+                "bread"
+              ],
+              "answer": "pasta"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "The pizza is not only food; it is also a picture of a ___.",
+              "options": [
+                "country",
+                "kitchen",
+                "menu",
+                "family"
+              ],
+              "answer": "country",
+              "why": "The flag colours make it a picture of Italy."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word that means 'very good to eat'.",
+              "answer": "delicious",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sour",
+                "sweet",
+                "basil",
+                "delicious"
+              ],
+              "answer": "basil",
+              "why": "The others are taste adjectives."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "lemonade",
+              "options": [
+                "lemonade",
+                "juice",
+                "milk",
+                "water"
+              ],
+              "answer": "lemonade"
+            }
+          ],
+          "whyChoices": [
+            "I knew the word without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "three grammar systems, one station",
+            "lines": [
+              "Emma wants chips. / Brian wants meat, not fish.",
+              "Does the pasta taste good? Yes, it does. / No, it doesn't.",
+              "It looks good. / It smells bad. / It tastes bad, too.",
+              "I don't want pizza. - Neither do I."
+            ],
+            "rule": "wants belongs to he, she and it. do/does builds questions and negatives. After look, smell and taste we use an adjective. So and Neither echo the auxiliary."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is it 'Does she want' and not 'Does she wants'?",
+              "options": [
+                "Because does already carries the -s",
+                "Because she is plural",
+                "Because it is a negative",
+                "Because want is uncountable"
+              ],
+              "answer": "Because does already carries the -s"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which sentence uses the verb correctly?",
+              "options": [
+                "The fish smells bad.",
+                "The fish smell bad.",
+                "The fish is smell bad.",
+                "The fish smelling bad."
+              ],
+              "answer": "The fish smells bad."
+            },
+            {
+              "id": "g1-3",
+              "q": "What does 'Neither do I' agree with?",
+              "options": [
+                "A negative statement",
+                "A positive statement",
+                "A question",
+                "A command"
+              ],
+              "answer": "A negative statement"
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the sentence that is WRONG.",
+              "options": [
+                "Emma and Ben wants pizza.",
+                "Emma and Ben want pizza.",
+                "Emma wants pizza.",
+                "They want pizza."
+              ],
+              "answer": "Emma and Ben wants pizza."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "A plural subject takes the base verb",
+            "does carries the -s so want loses it",
+            "After does the verb has no -s",
+            "A negative statement is agreed with Neither"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "Emma ___ chips and Brian ___ fish.",
+              "options": [
+                "wants / wants",
+                "want / want",
+                "wants / want",
+                "want / wants"
+              ],
+              "answer": "wants / wants"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "Does the lemonade taste sour? No, it ___.",
+              "options": [
+                "doesn't",
+                "don't",
+                "isn't",
+                "not"
+              ],
+              "answer": "doesn't"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "The chips ___ good but the fish ___ bad.",
+              "options": [
+                "look / smells",
+                "looks / smell",
+                "look / smell",
+                "looks / smells"
+              ],
+              "answer": "look / smells"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "I don't want pizza. - Neither ___ I.",
+              "options": [
+                "do",
+                "does",
+                "am",
+                "want"
+              ],
+              "answer": "do"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "She wants ___ ice cream.",
+              "options": [
+                "a",
+                "some",
+                "an",
+                "many"
+              ],
+              "answer": "some",
+              "why": "Ice cream is uncountable, so we use some."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "What ___ he want to drink?",
+              "options": [
+                "does",
+                "do",
+                "is",
+                "are"
+              ],
+              "answer": "does"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Neither of them like fish.",
+              "wrong": "like",
+              "correct": "likes",
+              "why": "Neither of them is singular in careful English."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Does he wants salad?",
+              "wrong": "wants",
+              "correct": "want",
+              "why": "After Does the verb has no -s."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "They don't wants chips.",
+              "wrong": "wants",
+              "correct": "want",
+              "why": "After don't the verb has no -s."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "I don't want pizza. - So do I.",
+              "wrong": "So",
+              "correct": "Neither",
+              "why": "A negative statement is agreed with Neither."
+            }
+          ],
+          "whyChoices": [
+            "A singular subject hides in a plural-looking phrase",
+            "The verb follows Does or don't",
+            "So and Neither must match polarity",
+            "The subject is plural"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "No, she doesn't. She only wants chips.",
+              "options": [
+                "Does Emma want salad?",
+                "Do Emma want salad?",
+                "Does Emma wants salad?",
+                "Is Emma want salad?"
+              ],
+              "answer": "Does Emma want salad?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, they do, but only on Friday.",
+              "options": [
+                "Do they want pizza?",
+                "Does they want pizza?",
+                "Do they wants pizza?",
+                "Are they want pizza?"
+              ],
+              "answer": "Do they want pizza?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, I don't. It tastes too sour.",
+              "options": [
+                "Do you want lemonade?",
+                "Does you want lemonade?",
+                "Do you wants lemonade?",
+                "Are you want lemonade?"
+              ],
+              "answer": "Do you want lemonade?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "Yes, it does. It looks delicious.",
+              "options": [
+                "Does the pasta look good?",
+                "Do the pasta look good?",
+                "Does the pasta looks good?",
+                "Is the pasta look good?"
+              ],
+              "answer": "Does the pasta look good?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make it negative without changing the meaning.",
+              "from": "Brian wants fish.",
+              "options": [
+                "Brian doesn't want fish.",
+                "Brian don't want fish.",
+                "Brian not wants fish.",
+                "Brian isn't want fish."
+              ],
+              "answer": "Brian doesn't want fish."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Agree with it correctly.",
+              "from": "I don't want any cake.",
+              "options": [
+                "Neither do I.",
+                "So do I.",
+                "Neither am I.",
+                "Nor I do."
+              ],
+              "answer": "Neither do I."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Change the subject to the chips.",
+              "from": "The pizza tastes good.",
+              "options": [
+                "The chips taste good.",
+                "The chips tastes good.",
+                "The chips is taste good.",
+                "The chips tasting good."
+              ],
+              "answer": "The chips taste good."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "Brian doesn't like fish. Emma doesn't like fish.",
+              "options": [
+                "Neither Brian nor Emma likes fish.",
+                "Neither Brian nor Emma like fish.",
+                "Neither Brian or Emma likes fish.",
+                "Neither Brian nor Emma doesn't like fish."
+              ],
+              "answer": "Neither Brian nor Emma likes fish."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "Pizza is popular in many places, and people all over the world eat it.",
+              "options": [
+                "popular",
+                "sour",
+                "special",
+                "delicious"
+              ],
+              "answer": "popular"
+            },
+            {
+              "id": "l1-2",
+              "audio": "The non la hat keeps people dry in the rain.",
+              "options": [
+                "dry",
+                "cool",
+                "warm",
+                "sour"
+              ],
+              "answer": "dry",
+              "note": "Cross-unit distractor from Unit 2 vocabulary."
+            },
+            {
+              "id": "l1-3",
+              "audio": "The lemonade tastes sour, so I don't want it.",
+              "options": [
+                "sour",
+                "sweet",
+                "delicious",
+                "good"
+              ],
+              "answer": "sour"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a related word",
+            "I used the topic to guess"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain why one dish is a problem",
+                "To sell a menu",
+                "To describe a holiday"
+              ],
+              "answer": "To explain why one dish is a problem"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Why does the speaker refuse the fish?",
+              "options": [
+                "It smells bad and tastes bad too",
+                "It is too expensive",
+                "It is cold"
+              ],
+              "answer": "It smells bad and tastes bad too"
+            }
+          ],
+          "audio": "At the cafe, everyone is happy except me. Emma has chips and juice, and the chips look good. Brian has meat, and the meat smells delicious. I wanted the fish, but when it came it smelled bad. I tasted it, and it tasted bad too. So I am eating bread, and I am not happy about it.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "Emma wants chips and juice, and the chips look good. Brian wants meat, and the meat smells delicious. I wanted the fish, but it smelled bad, so I am eating bread.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "Emma wants chips and juice, and the chips ___(1)___ good.",
+              "options": [
+                "look",
+                "looks",
+                "looking"
+              ],
+              "answer": "look"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "Brian wants meat, and the meat ___(2)___ delicious.",
+              "options": [
+                "smells",
+                "smell",
+                "smelling"
+              ],
+              "answer": "smells"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "I wanted the fish, but it smelled bad, so I am eating ___(3)___.",
+              "options": [
+                "bread",
+                "salad",
+                "cake"
+              ],
+              "answer": "bread"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "popular",
+              "options": [
+                "liked by many people",
+                "expensive and rare",
+                "hard to find",
+                "very healthy"
+              ],
+              "answer": "liked by many people"
+            },
+            {
+              "id": "r1-2",
+              "word": "crisp",
+              "options": [
+                "hard and dry in a pleasant way",
+                "soft and wet",
+                "sweet and cold",
+                "heavy and round"
+              ],
+              "answer": "hard and dry in a pleasant way"
+            },
+            {
+              "id": "r1-3",
+              "word": "inference",
+              "options": [
+                "something you understand without being told",
+                "a word in a dictionary",
+                "a kind of pizza",
+                "a cooking method"
+              ],
+              "answer": "something you understand without being told"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "I like eating lunch at school, and the food always looks good. Today the long table is full, so we have a problem: what do we want? Emma wants chips and juice, and she always wants the same thing. Brian wants meat, not fish, because he says fish smells bad. I want salad and bread, but the salad is finished, so I take bread and cheese. My friend Mia wants pasta and lemonade. She says the pasta looks delicious. Everything smells good, and for ten minutes nobody talks. Then the food is gone. The food tastes good, too. Lunch at school is the best part of the day.",
+          "prompt": "Read the whole text, then tap the sentence that shows the meal was enjoyed without words.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows everyone was too busy eating to talk.",
+              "answerType": "tapSentence",
+              "answer": "Everything smells good, and for ten minutes nobody talks.",
+              "why": "Silence at a table full of people means they are eating, not that they are unhappy."
+            },
+            {
+              "id": "r2-2",
+              "q": "Why does the writer change the order?",
+              "options": [
+                "The salad is finished",
+                "The bread is cheaper",
+                "Cheese tastes better than salad"
+              ],
+              "answer": "The salad is finished"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "I like eating lunch at school, and the food always looks good. Today the long table is full, so we have a problem: what do we want? Emma wants chips and juice, and she always wants the same thing. Brian wants meat, not fish, because he says fish smells bad. I want salad and bread, but the salad is finished, so I take bread and cheese. My friend Mia wants pasta and lemonade. She says the pasta looks delicious. Everything smells good, and for ten minutes nobody talks. Then the food is gone. The food tastes good, too. Lunch at school is the best part of the day.",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Why does Brian refuse fish?",
+              "options": [
+                "He says fish smells bad",
+                "He is not hungry",
+                "He wants meat tomorrow"
+              ],
+              "answer": "He says fish smells bad"
+            },
+            {
+              "id": "r3-2",
+              "q": "What does 'for ten minutes nobody talks' tell us?",
+              "options": [
+                "Everyone is eating happily",
+                "Everyone is angry",
+                "The food is bad"
+              ],
+              "answer": "Everyone is eating happily"
+            },
+            {
+              "id": "r3-3",
+              "q": "Find a word in the text that means 'very good to eat'.",
+              "options": [
+                "delicious",
+                "finished",
+                "full"
+              ],
+              "answer": "delicious"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Lots of people like pizza, but where does it come from? Pizza is popular in many places now, and people make it with a flat bread, then put other kinds of food on top. The word pizza comes from Italy. The name of one of the first pizzas in the world is Pizza Margherita, and it was made for a queen. It has white cheese, red tomatoes and green basil, which are the colors of the Italian flag. So the pizza is not only food; it is also a picture of a country. Pizza Margherita looks good and it tastes good, too. Now people all over the world eat pizza, and many people cook it in a special pizza oven because a very hot oven makes the bread crisp. It tastes delicious.",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that explains why a very hot oven matters.",
+              "answer": "Now people all over the world eat pizza, and many people cook it in a special pizza oven because a very hot oven makes the bread crisp."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that turns the pizza into more than food.",
+              "answer": "So the pizza is not only food; it is also a picture of a country."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you who one of the first pizzas was made for.",
+              "answer": "The name of one of the first pizzas in the world is Pizza Margherita, and it was made for a queen."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Neither",
+                "Brian",
+                "nor",
+                "Emma",
+                "likes",
+                "fish"
+              ],
+              "answer": "Neither Brian nor Emma likes fish."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Does",
+                "the",
+                "lemonade",
+                "taste",
+                "sour"
+              ],
+              "answer": "Does the lemonade taste sour?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "The",
+                "chips",
+                "look",
+                "good",
+                "but",
+                "the",
+                "fish",
+                "smells",
+                "bad"
+              ],
+              "answer": "The chips look good, but the fish smells bad."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "She",
+                "wants",
+                "some",
+                "ice",
+                "cream",
+                "after",
+                "lunch"
+              ],
+              "answer": "She wants some ice cream after lunch."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "Neither of them like fish.",
+              "answer": "Neither of them likes fish."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Does he wants salad?",
+              "answer": "Does he want salad?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "The chips looks good, and neither does the fish.",
+              "answer": "The chips look good, and neither does the fish."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence review of a meal. Every requirement on the checklist must appear.",
+          "requirements": [
+            "what you wanted and what you got",
+            "one sentence with looks, smells or tastes",
+            "one sentence about another person's order",
+            "one negative sentence with doesn't or don't",
+            "one sentence saying whether you would go back"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct want / wants throughout",
+            "One sentence with looks, smells or tastes",
+            "One negative sentence",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Neither of them likes fish.",
+              "keywords": [
+                "neither",
+                "them",
+                "likes",
+                "fish"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "The chips look good, but the fish smells bad.",
+              "keywords": [
+                "chips",
+                "look",
+                "good",
+                "fish",
+                "smells",
+                "bad"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Does the lemonade taste sour?",
+              "keywords": [
+                "does",
+                "lemonade",
+                "taste",
+                "sour"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "She wants some ice cream after lunch.",
+              "keywords": [
+                "wants",
+                "ice",
+                "cream",
+                "lunch"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "neither of them likes",
+              "keywords": [
+                "neither",
+                "them",
+                "likes"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "it smells delicious",
+              "keywords": [
+                "smells",
+                "delicious"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "some bread and cheese",
+              "keywords": [
+                "some",
+                "bread",
+                "cheese"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What do you want to eat, and why?",
+              "keywords": [
+                "want",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Does anyone in your family dislike a food because of how it smells?",
+              "keywords": [
+                "does",
+                "family",
+                "smells"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Compare two foods on a menu. Which looks better?",
+              "keywords": [
+                "looks",
+                "better"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What would you refuse to eat, and how would you say it politely?",
+              "keywords": [
+                "would",
+                "refuse",
+                "don't"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the table for 45 seconds. Compare two dishes and use one negative sentence.",
+          "image": "cafe-table-challenging",
+          "prompts": [
+            "What two dishes look like",
+            "Which one smells better",
+            "One dish you would refuse and why",
+            "What you would order"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "looks",
+            "smells",
+            "tastes",
+            "because"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the dialogue as all three characters, with a different voice for each.",
+          "dialogueId": "theBarbecue",
+          "lines": 7,
+          "keywords": [
+            "want",
+            "looks",
+            "smells",
+            "tastes",
+            "bad"
+          ],
+          "extra": "Then answer: why is the joke funny? Use all three senses in your answer."
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Is food in your country mostly healthy? Explain.",
+              "keywords": [
+                "food",
+                "healthy",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Why do people say food tastes better when it looks good?",
+              "keywords": [
+                "looks",
+                "tastes",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which is more important in a restaurant: the food or the service? Explain.",
+              "keywords": [
+                "important",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: My Perfect Meal. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "For my perfect meal I want ___, ___ and ___.",
+            "It looks ___ and it smells ___.",
+            "My ___ wants ___, and so do I.",
+            "I don't want ___ because ___."
+          ],
+          "keywords": [
+            "want",
+            "looks",
+            "smells",
+            "because"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I used two of the three senses"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "lemonade",
+              "options": [
+                "lemonade",
+                "juice",
+                "water",
+                "milk"
+              ],
+              "answer": "lemonade"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "Emma ___ chips and Brian ___ fish.",
+              "options": [
+                "wants / wants",
+                "want / want",
+                "wants / want",
+                "want / wants"
+              ],
+              "answer": "wants / wants"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Neither of them like fish.",
+              "wrong": "like",
+              "correct": "likes"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "It tastes delicious.",
+              "options": [
+                "delicious",
+                "sour",
+                "popular",
+                "crisp"
+              ],
+              "answer": "delicious"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "sour",
+                "sweet",
+                "basil",
+                "delicious"
+              ],
+              "answer": "basil",
+              "why": "The others are taste adjectives."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask a question with Does...taste...? and answer it.",
+              "keywords": [
+                "does",
+                "taste"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Pizza Party. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "pasta",
+              "options": [
+                "pasta",
+                "pizza",
+                "bread",
+                "chips"
+              ],
+              "answer": "pasta"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "The chips ___ good but the fish ___ bad.",
+              "options": [
+                "look / smells",
+                "looks / smell",
+                "look / smell",
+                "looks / smells"
+              ],
+              "answer": "look / smells"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "Does he wants salad, and neither do she?",
+              "wrong": "wants",
+              "correct": "want"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "Everyone is happy except me. Emma has chips and they look good. Brian has meat and it smells delicious. I wanted the fish, but it smelled bad and it tasted bad too. So I am eating bread.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker doing?",
+                  "options": [
+                    "Describing a disappointing meal",
+                    "Ordering for the table",
+                    "Complaining about the price"
+                  ],
+                  "answer": "Describing a disappointing meal"
+                },
+                {
+                  "pass": 2,
+                  "q": "What is the speaker eating instead?",
+                  "options": [
+                    "Bread",
+                    "Salad",
+                    "Fish"
+                  ],
+                  "answer": "Bread"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that explains why a very hot oven matters for pizza.",
+              "answer": "Now people all over the world eat pizza, and many people cook it in a special pizza oven because a very hot oven makes the bread crisp."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Neither",
+                "Brian",
+                "nor",
+                "Emma",
+                "likes",
+                "fish"
+              ],
+              "answer": "Neither Brian nor Emma likes fish."
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word that means 'very good to eat'.",
+              "answer": "delicious",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: a meal you remember, how it looked, smelled and tasted, and whether you would order it again.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "looked",
+                "smelled",
+                "tasted",
+                "because"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "theBarbecue",
+    "title": "The Barbecue",
+    "cast": [
+      "Grandpa",
+      "Alex",
+      "Brian"
+    ],
+    "lines": [
+      {
+        "speaker": "Grandpa",
+        "text": "I'm tired! I need a break."
+      },
+      {
+        "speaker": "Alex",
+        "text": "I can help!"
+      },
+      {
+        "speaker": "Alex",
+        "text": "Brian, what do you want?"
+      },
+      {
+        "speaker": "Brian",
+        "text": "I want fish, please. It looks good."
+      },
+      {
+        "speaker": "Grandpa",
+        "text": "OK, it's ready."
+      },
+      {
+        "speaker": "Brian",
+        "text": "It looks bad. It smells bad."
+      },
+      {
+        "speaker": "Alex",
+        "text": "It tastes bad, too!"
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "What does Brian want?",
+          "options": [
+            "Fish",
+            "Meat"
+          ],
+          "answer": "Fish"
+        },
+        {
+          "q": "Does the food taste good?",
+          "options": [
+            "No, it doesn't",
+            "Yes, it does"
+          ],
+          "answer": "No, it doesn't"
+        }
+      ],
+      "core": [
+        {
+          "q": "What does Brian want?",
+          "options": [
+            "Fish",
+            "Meat",
+            "Salad"
+          ],
+          "answer": "Fish"
+        },
+        {
+          "q": "Does the food taste good?",
+          "options": [
+            "No, it doesn't",
+            "Yes, it does",
+            "We don't know"
+          ],
+          "answer": "No, it doesn't"
+        },
+        {
+          "q": "Why does Brian choose fish at first?",
+          "options": [
+            "It looks good",
+            "It smells good",
+            "It is cheap"
+          ],
+          "answer": "It looks good"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "What changes between Brian's first sentence and his last?",
+          "options": [
+            "The food looks good, then looks bad",
+            "Brian changes his mind about fish",
+            "Grandpa stops cooking"
+          ],
+          "answer": "The food looks good, then looks bad"
+        },
+        {
+          "q": "Which three senses does the story use?",
+          "options": [
+            "Look, smell, taste",
+            "Hear, touch, taste",
+            "Look, hear, smell"
+          ],
+          "answer": "Look, smell, taste"
+        },
+        {
+          "q": "Who says 'It looks bad'?",
+          "options": [
+            "Brian",
+            "Alex",
+            "Grandpa"
+          ],
+          "answer": "Brian"
+        }
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station.",
+    "contrast": [
+      "ch",
+      "sh",
+      "th"
+    ],
+    "anchorWords": [
+      {
+        "word": "cheese",
+        "sound": "ch"
+      },
+      {
+        "word": "sheep",
+        "sound": "sh"
+      },
+      {
+        "word": "thin",
+        "sound": "th"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "chips",
+        "sound": "ch"
+      },
+      {
+        "word": "thumb",
+        "sound": "th"
+      },
+      {
+        "word": "dishes",
+        "sound": "sh"
+      },
+      {
+        "word": "lunch box",
+        "sound": "ch"
+      },
+      {
+        "word": "three",
+        "sound": "th"
+      },
+      {
+        "word": "shirt",
+        "sound": "sh"
+      }
+    ],
+    "note2": "The trap is that ch, sh and th all appear in the unit's own vocabulary: chips (ch), shirt (sh), three (th). Say them in one breath group so the contrast is audible."
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1, 2 and 4: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "This unit introduces three new spoken forms to normalise: 'wants' (apply the same soft treatment as Unit 2's -s: accept 'want' at Easy, require it at Challenging), 'looks / smells / tastes' (the -s is the teaching point), and 'doesn't' (accept 'does not').",
+      "Accept 'ice cream' and 'icecream'; accept 'cafe' and 'café'.",
+      "The three-sense verbs are easily confused in speech: if the learner says 'smell' where 'tastes' was expected, show the word rather than failing the item."
+    ]
+  },
+  "review1Connection": {
+    "note": "This unit completes Review 1 (Units 1-3). These contrasts are the natural Boss pool for Unit 3 and are worth wiring into the mixed checkpoint.",
+    "distractorContrasts": [
+      {
+        "a": "Do they like chocolate?",
+        "b": "Does they like chocolate?",
+        "answer": "Do",
+        "unit": "1"
+      },
+      {
+        "a": "So do I",
+        "b": "Neither do I",
+        "context": "I like cheese.",
+        "answer": "So do I",
+        "unit": "1"
+      },
+      {
+        "a": "So do I",
+        "b": "Neither do I",
+        "context": "She doesn't want rice.",
+        "answer": "Neither do I",
+        "unit": "1"
+      },
+      {
+        "a": "He wears a hat today.",
+        "b": "He is wearing a hat today.",
+        "answer": "is wearing",
+        "unit": "2"
+      },
+      {
+        "a": "She want salad.",
+        "b": "She wants salad.",
+        "answer": "wants",
+        "unit": "3"
+      },
+      {
+        "a": "Does the pasta taste good?",
+        "b": "Is the pasta taste good?",
+        "answer": "Does",
+        "unit": "3"
+      }
+    ],
+    "bonusIdea": "These six items would make an excellent standalone Review Island covering Units 1-3."
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  }
+}
