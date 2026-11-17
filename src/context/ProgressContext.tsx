@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
-import type { Profile, ProgressData, Level, StationProgress, LevelProgress } from '../types';
+import type { Profile, ProgressData, Level, StationProgress, LevelProgress, ReflectionEntry, ActiveLevelTiming, LevelTiming } from '../types';
 import {
   getProfile, saveProfile, getProgress, saveProgress, clearAll,
   updateStreak, getDefaultProgress,
@@ -18,6 +18,14 @@ interface ProgressContextValue {
   getUnitProgress: (unitId: number) => { completed: number; total: number; xp: number };
   getLevelProgressPercent: (unitId: number, level: Level) => number;
   addLevelHistory: (entry: ProgressData['levelHistory'][0]) => void;
+  /** Ritual layer: persist that the level-start mission brief was shown. */
+  markMissionBriefSeen: (unitId: number, level: Level) => void;
+  /** Ritual layer: save end-of-station reflection answers. */
+  addReflection: (entry: ReflectionEntry) => void;
+  /** Timing telemetry: begin a level attempt if one is not under way. */
+  startLevelTiming: (unitId: number, level: Level) => void;
+  /** Timing telemetry: record one finished station's duration and activity count. */
+  recordStationTiming: (unitId: number, level: Level, stationId: string, seconds: number, activities: number) => void;
   resetProgress: () => void;
   switchStudent: () => void;
   settings: ProgressData['settings'];
@@ -58,11 +66,20 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
           return prev;
         }
 
+        const wasCompleted = levelData.completed;
         levelData.stations[stationId] = stationProgress;
 
-        // Recalculate level completion
+        // The CP1 milestone is its own Quest Map node; record it as a badge
+        // on the level rather than counting it as one of the 7 stations.
+        if (stationId === 'checkpoint') {
+          levelData.checkpointCompleted = true;
+        }
+
+        // Recalculate level completion (checkpoint node excluded)
         const stationCount = 7; // 6 stations + boss
-        const completedCount = Object.values(levelData.stations).filter(s => s.completed).length;
+        const completedCount = Object.entries(levelData.stations)
+          .filter(([sid, s]) => sid !== 'checkpoint' && s.completed)
+          .length;
         levelData.completed = completedCount >= stationCount;
 
         unitData[level] = levelData;
@@ -77,7 +94,35 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
           }
         }
 
-        const newProgress = { ...prev, units: { ...prev.units, [unitId]: unitData }, totalXP };
+        // Timing telemetry: when the level just completed, finalize the
+        // in-flight attempt. localStorage only — never sent anywhere.
+        let levelTimings = prev.levelTimings;
+        let activeTimings = prev.activeTimings;
+        const timingKey = `${unitId}-${level}`;
+        if (levelData.completed && !wasCompleted && activeTimings?.[timingKey]) {
+          const active: ActiveLevelTiming = activeTimings[timingKey];
+          const stations = Object.values(active.perStation);
+          const totalSeconds = stations.reduce((sum, s) => sum + s.seconds, 0);
+          const totalActivities = stations.reduce((sum, s) => sum + s.activities, 0);
+          const timing: LevelTiming = {
+            level,
+            startedAt: active.startedAt,
+            endedAt: Date.now(),
+            perStation: active.perStation,
+            fastCompletion: totalActivities > 0 && totalSeconds / totalActivities < 25,
+          };
+          levelTimings = { ...prev.levelTimings, [unitId]: [...(prev.levelTimings?.[unitId] ?? []), timing] };
+          const { [timingKey]: _finished, ...rest } = activeTimings;
+          activeTimings = rest;
+        }
+
+        const newProgress = {
+          ...prev,
+          units: { ...prev.units, [unitId]: unitData },
+          totalXP,
+          levelTimings,
+          activeTimings,
+        };
         saveProgress(newProgress);
         return newProgress;
       });
@@ -141,7 +186,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       for (const level of levels) {
         const lp = unitData[level];
         if (lp) {
-          completed += Object.values(lp.stations).filter(s => s.completed).length;
+          completed += Object.entries(lp.stations).filter(([sid, s]) => sid !== 'checkpoint' && s.completed).length;
           xp += Object.values(lp.stations).reduce((sum, s) => sum + s.xpEarned, 0);
         }
         total += 7; // 7 stations per level
@@ -155,7 +200,9 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     (unitId: number, level: Level): number => {
       const lp = getLevelProgress(unitId, level);
       if (!lp) return 0;
-      const completed = Object.values(lp.stations).filter(s => s.completed).length;
+      const completed = Object.entries(lp.stations)
+        .filter(([sid, s]) => sid !== 'checkpoint' && s.completed)
+        .length;
       return Math.round((completed / 7) * 100);
     },
     [getLevelProgress],
@@ -167,6 +214,68 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
         const newProgress = {
           ...prev,
           levelHistory: [...prev.levelHistory, entry],
+        };
+        saveProgress(newProgress);
+        return newProgress;
+      });
+    },
+    [],
+  );
+
+  const markMissionBriefSeen = useCallback((unitId: number, level: Level) => {
+    setProgress(prev => {
+      const unitData = prev.units[unitId] || {};
+      const levelData = unitData[level] || { stations: {}, completed: false, stars: 0, bossCompleted: false };
+      if (levelData.missionBriefSeen) return prev;
+      unitData[level] = { ...levelData, missionBriefSeen: true };
+      const newProgress = { ...prev, units: { ...prev.units, [unitId]: unitData } };
+      saveProgress(newProgress);
+      return newProgress;
+    });
+  }, []);
+
+  const addReflection = useCallback((entry: ReflectionEntry) => {
+    setProgress(prev => {
+      const newProgress = {
+        ...prev,
+        reflections: [...(prev.reflections ?? []), entry],
+      };
+      saveProgress(newProgress);
+      return newProgress;
+    });
+  }, []);
+
+  const startLevelTiming = useCallback((unitId: number, level: Level) => {
+    setProgress(prev => {
+      const key = `${unitId}-${level}`;
+      if (prev.activeTimings?.[key]) return prev;
+      const newProgress = {
+        ...prev,
+        activeTimings: {
+          ...prev.activeTimings,
+          [key]: { unitId, level, startedAt: Date.now(), perStation: {} },
+        },
+      };
+      saveProgress(newProgress);
+      return newProgress;
+    });
+  }, []);
+
+  const recordStationTiming = useCallback(
+    (unitId: number, level: Level, stationId: string, seconds: number, activities: number) => {
+      setProgress(prev => {
+        const key = `${unitId}-${level}`;
+        const active = prev.activeTimings?.[key];
+        if (!active) return prev;
+        const newProgress = {
+          ...prev,
+          activeTimings: {
+            ...prev.activeTimings,
+            [key]: {
+              ...active,
+              perStation: { ...active.perStation, [stationId]: { seconds, activities } },
+            },
+          },
         };
         saveProgress(newProgress);
         return newProgress;
@@ -233,6 +342,10 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     getUnitProgress,
     getLevelProgressPercent,
     addLevelHistory,
+    markMissionBriefSeen,
+    addReflection,
+    startLevelTiming,
+    recordStationTiming,
     resetProgress,
     switchStudent,
     settings: progress.settings,

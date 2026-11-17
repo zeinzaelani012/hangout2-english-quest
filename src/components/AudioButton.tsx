@@ -8,9 +8,13 @@ interface AudioButtonProps {
   rate?: number;
   label?: string;
   className?: string;
+  /** Notified on every playback start (used to count replays). */
+  onPlay?: () => void;
+  /** Blocks playback (e.g. when a replay allowance is spent). */
+  disabled?: boolean;
 }
 
-export function AudioButton({ audioKey, fallbackText, rate = 0.9, label, className = '' }: AudioButtonProps) {
+export function AudioButton({ audioKey, fallbackText, rate = 0.9, label, className = '', onPlay, disabled = false }: AudioButtonProps) {
   const [playing, setPlaying] = useState(false);
   const mountedRef = useRef(true);
 
@@ -27,12 +31,14 @@ export function AudioButton({ audioKey, fallbackText, rate = 0.9, label, classNa
   }
 
   const handleClick = () => {
+    if (disabled) return;
     if (playing) {
       stopAudio();
       setPlaying(false);
       return;
     }
     setPlaying(true);
+    onPlay?.();
     play(audioKey, fallbackText, rate);
 
     // Estimate duration based on text length
@@ -45,7 +51,8 @@ export function AudioButton({ audioKey, fallbackText, rate = 0.9, label, classNa
   return (
     <button
       onClick={handleClick}
-      className={`inline-flex items-center justify-center rounded-pill bg-brand/10 text-brand hover:bg-brand/20 transition-colors ${className}`}
+      disabled={disabled}
+      className={`inline-flex items-center justify-center rounded-pill bg-brand/10 text-brand hover:bg-brand/20 transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${className}`}
       style={{ minWidth: 44, minHeight: 44, padding: '0 12px' }}
       aria-label={label || `Play audio: ${fallbackText}`}
       title={label || `Play audio: ${fallbackText}`}

@@ -46,6 +46,9 @@ export function getDefaultProgress(): ProgressData {
       reducedMotion: false,
     },
     levelHistory: [],
+    reflections: [],
+    levelTimings: {},
+    activeTimings: {},
   };
 }
 
@@ -63,6 +66,9 @@ export function getProgress(): ProgressData {
       units: parsed.units || {},
       vocabMastery: parsed.vocabMastery || {},
       levelHistory: parsed.levelHistory || [],
+      reflections: parsed.reflections || [],
+      levelTimings: parsed.levelTimings || {},
+      activeTimings: parsed.activeTimings || {},
     };
   } catch {
     return getDefaultProgress();

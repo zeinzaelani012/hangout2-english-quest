@@ -1,0 +1,1001 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit1-expanded",
+    "version": "2.0",
+    "supersedes": "hangout2-unit1-content-pack.json v1.0",
+    "unit": 1,
+    "title": "Snack Time",
+    "islandName": "Snack Island",
+    "bigQuestion": "What do you like to eat?",
+    "objectives": ["Food items", "Saying what you like and don't like"],
+    "mergeContract": "Join `slots` to each level's `content` by slot id. For every slot in `slots`, look up levels[level].content[slotId] for prompt + items. The resulting activity is { id: slotId + '-' + level, skill, type, prompt, payload: items, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "targetDurationMinutes": "60-75 per level, all three levels",
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced."
+  },
+
+  "pacing": {
+    "levelTimeMultiplier": { "easy": 0.85, "core": 1.0, "challenging": 1.05 },
+    "checkpointSeconds": { "mid": 300, "boss": 420 },
+    "projection": {
+      "easy": { "contentSeconds": 3000, "contentMinutes": 50.0, "withCheckpointsMinutes": 62 },
+      "core": { "contentSeconds": 3529, "contentMinutes": 58.8, "withCheckpointsMinutes": 71 },
+      "challenging": { "contentSeconds": 3705, "contentMinutes": 61.7, "withCheckpointsMinutes": 74 }
+    },
+    "auditorRules": {
+      "contentActivityCount": 30,
+      "checkpointCount": 2,
+      "projectedMinutesMin": 60,
+      "projectedMinutesMax": 78,
+      "skillShareTolerancePoints": 2,
+      "fastCompletionThresholdSeconds": 25,
+      "requiredDepthMovesEachAtLeastTwice": ["D1", "D2", "D3", "D4", "D5"]
+    }
+  },
+
+  "skillTimeWeights": {
+    "speaking": { "weight": 25, "baseSeconds": 883, "activities": 7, "share": 25.0 },
+    "vocabulary": { "weight": 25, "baseSeconds": 880, "activities": 8, "share": 24.9 },
+    "grammar": { "weight": 15, "baseSeconds": 530, "activities": 5, "share": 15.0 },
+    "reading": { "weight": 15, "baseSeconds": 530, "activities": 4, "share": 15.0 },
+    "listening": { "weight": 10, "baseSeconds": 353, "activities": 3, "share": 10.0 },
+    "writing": { "weight": 10, "baseSeconds": 353, "activities": 3, "share": 10.0 }
+  },
+
+  "slots": [
+    { "slot": "V1", "skill": "vocabulary", "type": "pictureToWord", "estSeconds": 90, "xp": 3, "depthMoves": ["D1"], "station": "vocabulary", "label": "Meet the snacks" },
+    { "slot": "V2", "skill": "vocabulary", "type": "wordToPicture", "estSeconds": 90, "xp": 3, "depthMoves": ["D1"], "station": "vocabulary", "label": "Which picture?" },
+    { "slot": "V3", "skill": "vocabulary", "type": "audioToWord", "estSeconds": 100, "xp": 3, "depthMoves": ["D5"], "station": "vocabulary", "label": "Listen and find" },
+    { "slot": "V4", "skill": "vocabulary", "type": "dragSort", "estSeconds": 125, "xp": 3, "depthMoves": ["D1"], "station": "vocabulary", "label": "Healthy or not?" },
+    { "slot": "V5", "skill": "vocabulary", "type": "gapFill", "estSeconds": 125, "xp": 3, "depthMoves": ["D1"], "station": "vocabulary", "label": "In a sentence" },
+    { "slot": "V6", "skill": "vocabulary", "type": "oddOneOut", "estSeconds": 115, "xp": 3, "depthMoves": ["D1"], "station": "vocabulary", "label": "Odd one out" },
+    { "slot": "V7", "skill": "vocabulary", "type": "spelling", "estSeconds": 115, "xp": 3, "depthMoves": ["D2"], "station": "vocabulary", "label": "Build the word" },
+    { "slot": "V8", "skill": "vocabulary", "type": "mixedRecall", "estSeconds": 120, "xp": 4, "depthMoves": ["D2", "D5"], "station": "vocabulary", "label": "Remember them all" },
+    { "slot": "G1", "skill": "grammar", "type": "notice", "estSeconds": 90, "xp": 3, "depthMoves": ["D1"], "station": "grammar", "label": "Spot the pattern" },
+    { "slot": "G2", "skill": "grammar", "type": "gapFill", "estSeconds": 130, "xp": 3, "depthMoves": ["D1"], "station": "grammar", "label": "Complete it" },
+    { "slot": "G3", "skill": "grammar", "type": "errorCorrection", "estSeconds": 105, "xp": 3, "depthMoves": ["D1"], "station": "grammar", "label": "Fix the mistake" },
+    { "slot": "G4", "skill": "grammar", "type": "questionForms", "estSeconds": 105, "xp": 3, "depthMoves": ["D1"], "station": "grammar", "label": "Ask the question" },
+    { "slot": "G5", "skill": "grammar", "type": "transform", "estSeconds": 100, "xp": 3, "depthMoves": ["D1"], "station": "grammar", "label": "Flip it" },
+    { "slot": "L1", "skill": "listening", "type": "audioToPicture", "estSeconds": 95, "xp": 3, "depthMoves": ["D1"], "station": "listening", "label": "First listen" },
+    { "slot": "L2", "skill": "listening", "type": "twoPass", "estSeconds": 140, "xp": 4, "depthMoves": ["D5"], "station": "listening", "label": "Listen twice" },
+    { "slot": "L3", "skill": "listening", "type": "audioGapFill", "estSeconds": 118, "xp": 3, "depthMoves": ["D5"], "station": "listening", "label": "Fill the gaps" },
+    { "slot": "R1", "skill": "reading", "type": "preReadVocab", "estSeconds": 80, "xp": 3, "depthMoves": ["D1"], "station": "reading", "label": "Words before the text" },
+    { "slot": "R2", "skill": "reading", "type": "gist", "estSeconds": 130, "xp": 4, "depthMoves": ["D4"], "station": "reading", "label": "What is it about?" },
+    { "slot": "R3", "skill": "reading", "type": "detail", "estSeconds": 150, "xp": 4, "depthMoves": ["D4"], "station": "reading", "label": "Find the facts" },
+    { "slot": "R4", "skill": "reading", "type": "findSentence", "estSeconds": 170, "xp": 4, "depthMoves": ["D4"], "station": "reading", "label": "Tap the sentence" },
+    { "slot": "W1", "skill": "writing", "type": "sentenceBuilder", "estSeconds": 85, "xp": 3, "depthMoves": ["D2"], "station": "writing", "label": "Build a sentence" },
+    { "slot": "W2", "skill": "writing", "type": "sentenceRepair", "estSeconds": 85, "xp": 3, "depthMoves": ["D2"], "station": "writing", "label": "Fix the sentence" },
+    { "slot": "W3", "skill": "writing", "type": "guidedParagraph", "estSeconds": 183, "xp": 4, "depthMoves": ["D2"], "station": "writing", "label": "My snack diary" },
+    { "slot": "S1", "skill": "speaking", "type": "warmUpRepeat", "estSeconds": 85, "xp": 3, "depthMoves": ["D3"], "station": "speaking", "label": "Say it with me" },
+    { "slot": "S2", "skill": "speaking", "type": "chunkDrill", "estSeconds": 75, "xp": 3, "depthMoves": ["D3"], "station": "speaking", "label": "Say it fast" },
+    { "slot": "S3", "skill": "speaking", "type": "askAnswer", "estSeconds": 130, "xp": 4, "depthMoves": ["D3"], "station": "speaking", "label": "Ask and answer" },
+    { "slot": "S4", "skill": "speaking", "type": "pictureDescription", "estSeconds": 140, "xp": 4, "depthMoves": ["D3"], "station": "speaking", "label": "Describe the plate" },
+    { "slot": "S5", "skill": "speaking", "type": "rolePlay", "estSeconds": 140, "xp": 4, "depthMoves": ["D3"], "station": "speaking", "label": "Two voices" },
+    { "slot": "S6", "skill": "speaking", "type": "personalResponse", "estSeconds": 128, "xp": 3, "depthMoves": ["D3"], "station": "speaking", "label": "About you" },
+    { "slot": "S7", "skill": "speaking", "type": "monologue", "estSeconds": 185, "xp": 4, "depthMoves": ["D3"], "station": "speaking", "label": "My snack plate" },
+    { "slot": "CP1", "skill": "mixed", "type": "checkpoint", "estSeconds": 300, "xp": 15, "depthMoves": ["D1"], "station": "checkpoint", "label": "Halfway checkpoint" },
+    { "slot": "BOSS", "skill": "mixed", "type": "boss", "estSeconds": 420, "xp": 25, "depthMoves": ["D1", "D4"], "station": "boss", "label": "The Big Snack Table" }
+  ],
+
+  "vocabulary": {
+    "A": ["popcorn", "cookies", "candy", "soda", "fries", "chocolate", "fruit", "vegetables"],
+    "B": ["cereal", "milk", "yogurt", "bananas", "apples", "tomatoes", "rice", "soup"],
+    "C": ["plants", "vines", "ground", "farm", "garden"]
+  },
+
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the food you hear and see. Then say why you chose it.",
+          "items": [
+            { "id": "v1-1", "img": "popcorn", "options": ["popcorn", "soup", "rice"], "answer": "popcorn", "why": "Popcorn is white and fluffy. We eat it at the cinema." },
+            { "id": "v1-2", "img": "cookies", "options": ["cookies", "candy", "bread"], "answer": "cookies", "why": "Cookies are round and hard. Candy is small and sweet." },
+            { "id": "v1-3", "img": "fruit", "options": ["fruit", "fries", "meat"], "answer": "fruit", "why": "Fruit is good for you. Fries are not." },
+            { "id": "v1-4", "img": "soda", "options": ["soda", "milk", "juice"], "answer": "soda", "why": "Soda is fizzy. Milk is white and not fizzy." }
+          ],
+          "whyChoices": ["This word matches the picture", "This word sounds nice", "This word is long"]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            { "id": "v2-1", "word": "vegetables", "options": ["vegetables", "chocolate", "fries"], "answer": "vegetables", "why": "Carrots and peas are vegetables." },
+            { "id": "v2-2", "word": "candy", "options": ["candy", "fruit", "cereal"], "answer": "candy", "why": "Candy is small and sweet, in a wrapper." },
+            { "id": "v2-3", "word": "fries", "options": ["fries", "rice", "soup"], "answer": "fries", "why": "Fries are long and golden. They are made from potatoes." },
+            { "id": "v2-4", "word": "chocolate", "options": ["chocolate", "milk", "bread"], "answer": "chocolate", "why": "Chocolate is brown and sweet." }
+          ],
+          "whyChoices": ["The picture shows this word", "The word is short", "I like this word"]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            { "id": "v3-1", "audio": "Cookies.", "options": ["cookies", "candy", "popcorn"], "answer": "cookies" },
+            { "id": "v3-2", "audio": "I like fruit.", "options": ["fruit", "vegetables", "fries"], "answer": "fruit" },
+            { "id": "v3-3", "audio": "Vegetables.", "options": ["vegetables", "tomatoes", "rice"], "answer": "vegetables" }
+          ],
+          "whyChoices": ["I heard that word clearly", "It sounded like the others", "I guessed"]
+        },
+        "V4": {
+          "prompt": "Put each food in the right box.",
+          "bins": ["Healthy", "Not healthy"],
+          "items": [
+            { "word": "fruit", "bin": "Healthy", "why": "Fruit comes from plants." },
+            { "word": "vegetables", "bin": "Healthy", "why": "Vegetables help your body grow." },
+            { "word": "popcorn", "bin": "Not healthy", "why": "Popcorn is a snack, not a meal." },
+            { "word": "cookies", "bin": "Not healthy", "why": "Cookies have a lot of sugar." },
+            { "word": "candy", "bin": "Not healthy", "why": "Candy is mostly sugar." },
+            { "word": "soda", "bin": "Not healthy", "why": "Soda has a lot of sugar." },
+            { "word": "fries", "bin": "Not healthy", "why": "Fries have a lot of oil." },
+            { "word": "chocolate", "bin": "Not healthy", "why": "Chocolate is sweet, not healthy." }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            { "id": "v5-1", "sentence": "I eat ___ at the cinema.", "options": ["popcorn", "cereal", "soup"], "answer": "popcorn", "why": "Popcorn is the cinema snack." },
+            { "id": "v5-2", "sentence": "She likes ___ with milk.", "options": ["cookies", "vegetables", "fish"], "answer": "cookies", "why": "Cookies and milk go together." },
+            { "id": "v5-3", "sentence": "We drink ___ at the party.", "options": ["soda", "rice", "bread"], "answer": "soda", "why": "We drink soda. We do not eat it." },
+            { "id": "v5-4", "sentence": "___ are good for you.", "options": ["Vegetables", "Cookies", "Soda"], "answer": "Vegetables", "why": "Vegetables are healthy food." }
+          ],
+          "whyChoices": ["The meaning fits the sentence", "The word is longer", "It starts with the same letter"]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            { "id": "v6-1", "words": ["fruit", "vegetables", "cookies", "apples"], "answer": "cookies", "why": "The others are healthy food. Cookies are not." },
+            { "id": "v6-2", "words": ["popcorn", "cookies", "candy", "soda"], "answer": "soda", "why": "You drink soda. The others are food you eat." },
+            { "id": "v6-3", "words": ["bananas", "apples", "tomatoes", "milk"], "answer": "milk", "why": "The others are fruit. Milk is a drink." }
+          ],
+          "whyChoices": ["It belongs to a different group", "It is the longest word", "I do not like it"]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            { "id": "v7-1", "letters": ["o", "i", "c", "k", "o", "e", "s"], "answer": "cookies", "audio": "cookies" },
+            { "id": "v7-2", "letters": ["o", "r", "p", "c", "p", "o", "n"], "answer": "popcorn", "audio": "popcorn" },
+            { "id": "v7-3", "letters": ["u", "r", "i", "f", "t"], "answer": "fruit", "audio": "fruit" }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember all the snack words. Five quick questions.",
+          "items": [
+            { "id": "v8-1", "type": "audioToPicture", "audio": "Candy.", "options": ["candy", "cookies", "fries"], "answer": "candy" },
+            { "id": "v8-2", "type": "gapFill", "sentence": "I don't like ___. It is too sweet.", "options": ["candy", "fruit", "rice"], "answer": "candy" },
+            { "id": "v8-3", "type": "typeIt", "prompt": "Look at the picture. Type the word.", "img": "soda", "answer": "soda" },
+            { "id": "v8-4", "type": "oddOneOut", "words": ["popcorn", "cookies", "candy", "chocolate"], "answer": "popcorn", "why": "Popcorn is not sweet." },
+            { "id": "v8-5", "type": "pictureToWord", "img": "vegetables", "options": ["vegetables", "cereal", "bananas"], "answer": "vegetables" }
+          ],
+          "whyChoices": ["I remembered this word", "This word was new", "I guessed"]
+        },
+
+        "G1": {
+          "prompt": "Look at these four sentences. What is different about the last two?",
+          "teachCard": { "title": "like and likes", "lines": ["I like cookies.", "They like fries.", "He likes fruit.", "She likes fruit."], "rule": "After he, she and it we add -s: likes." },
+          "items": [
+            { "id": "g1-1", "sentence": "I like cookies.", "q": "Who is talking?", "options": ["I", "he", "she"], "answer": "I" },
+            { "id": "g1-2", "sentence": "He likes fruit.", "q": "What is different about this sentence?", "options": ["It has -s on like", "It has no verb", "It is a question"], "answer": "It has -s on like" },
+            { "id": "g1-3", "sentence": "They like fries.", "q": "Is there -s on like?", "options": ["No", "Yes"], "answer": "No" },
+            { "id": "g1-4", "sentence": "She likes candy.", "q": "Tap the word that tells you to add -s.", "options": ["She", "likes", "candy"], "answer": "She" }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": ["He, she and it take -s", "I and they do not take -s", "It is a question"],
+          "items": [
+            { "id": "g2-1", "sentence": "She ___ cookies.", "options": ["like", "likes"], "answer": "likes", "why": "She takes likes." },
+            { "id": "g2-2", "sentence": "I ___ fruit.", "options": ["like", "likes"], "answer": "like", "why": "I takes like." },
+            { "id": "g2-3", "sentence": "They ___ fries.", "options": ["like", "likes"], "answer": "like", "why": "They takes like." },
+            { "id": "g2-4", "sentence": "He ___ candy.", "options": ["don't like", "doesn't like"], "answer": "doesn't like", "why": "He takes doesn't." },
+            { "id": "g2-5", "sentence": "I ___ soda.", "options": ["don't like", "doesn't like"], "answer": "don't like", "why": "I takes don't." },
+            { "id": "g2-6", "sentence": "___ you like chocolate?", "options": ["Do", "Does"], "answer": "Do", "why": "You takes Do." }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            { "id": "g3-1", "sentence": "She like cookies.", "wrong": "like", "correct": "likes", "why": "She needs likes." },
+            { "id": "g3-2", "sentence": "He don't like candy.", "wrong": "don't", "correct": "doesn't", "why": "He needs doesn't." },
+            { "id": "g3-3", "sentence": "I likes fruit.", "wrong": "likes", "correct": "like", "why": "I never takes -s." },
+            { "id": "g3-4", "sentence": "They likes fries.", "wrong": "likes", "correct": "like", "why": "They never takes -s." }
+          ],
+          "whyChoices": ["The subject needs a different verb form", "The word is spelled wrong", "The sentence needs a question mark"]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            { "id": "g4-1", "answerLine": "Yes, I do.", "options": ["Do you like chocolate?", "Does you like chocolate?"], "answer": "Do you like chocolate?", "why": "You takes Do." },
+            { "id": "g4-2", "answerLine": "Yes, he does.", "options": ["Do he like fruit?", "Does he like fruit?"], "answer": "Does he like fruit?", "why": "He takes Does." },
+            { "id": "g4-3", "answerLine": "No, she doesn't.", "options": ["Does she like soda?", "Do she like soda?"], "answer": "Does she like soda?", "why": "She takes Does." },
+            { "id": "g4-4", "answerLine": "No, I don't.", "options": ["Do you like fries?", "Does you like fries?"], "answer": "Do you like fries?", "why": "You takes Do." }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. Make it negative.",
+          "items": [
+            { "id": "g5-1", "from": "I like cookies.", "options": ["I don't like cookies.", "I doesn't like cookies."], "answer": "I don't like cookies.", "why": "I takes don't." },
+            { "id": "g5-2", "from": "He likes fruit.", "options": ["He doesn't like fruit.", "He don't like fruit."], "answer": "He doesn't like fruit.", "why": "He takes doesn't." },
+            { "id": "g5-3", "from": "They like fries.", "options": ["They don't like fries.", "They doesn't like fries."], "answer": "They don't like fries.", "why": "They takes don't." },
+            { "id": "g5-4", "from": "She likes candy.", "options": ["She doesn't like candy.", "She don't like candy."], "answer": "She doesn't like candy.", "why": "She takes doesn't." }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            { "id": "l1-1", "audio": "Cookies.", "options": ["cookies", "popcorn", "soup"], "answer": "cookies" },
+            { "id": "l1-2", "audio": "I like popcorn.", "options": ["popcorn", "candy", "rice"], "answer": "popcorn" },
+            { "id": "l1-3", "audio": "She likes fruit.", "options": ["fruit", "fries", "vegetables"], "answer": "fruit" }
+          ],
+          "whyChoices": ["I heard the food word", "I heard the first sound only", "I guessed"]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            { "pass": 1, "job": "gist", "q": "What is Mia talking about?", "options": ["Her breakfast", "Her school bag"], "answer": "Her breakfast" },
+            { "pass": 2, "job": "detail", "q": "What does Mia eat every morning?", "options": ["Yogurt with bananas", "Cookies and milk"], "answer": "Yogurt with bananas" }
+          ],
+          "audio": "Hi, I'm Mia. Every morning I eat yogurt with bananas. I love it. I drink milk, too. I don't like cereal.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "She doesn't like vegetables. She likes fruit. They like rice.",
+          "items": [
+            { "id": "l3-1", "sentence": "She ___(1)___ like vegetables.", "options": ["doesn't", "don't"], "answer": "doesn't" },
+            { "id": "l3-2", "sentence": "She ___(2)___ fruit.", "options": ["likes", "like"], "answer": "likes" },
+            { "id": "l3-3", "sentence": "They like ___(3)___.", "options": ["rice", "soda"], "answer": "rice" }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            { "id": "r1-1", "word": "healthy", "options": ["good for your body", "tastes sweet"], "answer": "good for your body" },
+            { "id": "r1-2", "word": "unhealthy", "options": ["not good for your body", "very big"], "answer": "not good for your body" },
+            { "id": "r1-3", "word": "party", "options": ["a happy time with friends", "a school lesson"], "answer": "a happy time with friends" }
+          ]
+        },
+        "R2": {
+          "textRef": "readings.snackDiary.easy (from the Unit 1 base pack)",
+          "prompt": "Read the diary. Then tap the sentence that tells you what the text is mostly about.",
+          "items": [
+            { "id": "r2-1", "q": "What is the diary mostly about?", "answerType": "tapSentence", "answer": "There is a lot of food.", "why": "The whole diary is about the party food." },
+            { "id": "r2-2", "q": "Who is the other person in the diary?", "options": ["Ben", "Mia", "Coco"], "answer": "Ben" }
+          ]
+        },
+        "R3": {
+          "textRef": "readings.snackDiary.easy",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            { "id": "r3-1", "q": "What does the writer like?", "options": ["Apples and popcorn", "Candy and soda", "Fries and rice"], "answer": "Apples and popcorn" },
+            { "id": "r3-2", "q": "What is Ben eating?", "options": ["A banana", "Cookies", "Soup"], "answer": "Cookies" },
+            { "id": "r3-3", "q": "Tap the sentence that tells you when they play a game.", "answerType": "tapSentence", "answer": "Then we play a game.", "why": "The word 'then' shows the order." }
+          ]
+        },
+        "R4": {
+          "textRef": "readings.snackDiary.easy",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            { "id": "r4-1", "q": "Tap the sentence that tells you Ben does not like fruit.", "answer": "My friend Ben does not like fruit." },
+            { "id": "r4-2", "q": "Tap the sentence that tells you what the writer is eating.", "answer": "I am eating a banana." },
+            { "id": "r4-3", "q": "Tap the sentence that tells you how much food there is.", "answer": "There is a lot of food." }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            { "id": "w1-1", "tiles": ["I", "like", "cookies"], "answer": "I like cookies." },
+            { "id": "w1-2", "tiles": ["He", "doesn't", "like", "candy"], "answer": "He doesn't like candy." },
+            { "id": "w1-3", "tiles": ["They", "like", "rice"], "answer": "They like rice." },
+            { "id": "w1-4", "tiles": ["Do", "you", "like", "fruit"], "answer": "Do you like fruit?" }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            { "id": "w2-1", "wrong": "She like popcorn.", "answer": "She likes popcorn." },
+            { "id": "w2-2", "wrong": "He don't like soda.", "answer": "He doesn't like soda." },
+            { "id": "w2-3", "wrong": "I likes vegetables.", "answer": "I like vegetables." }
+          ]
+        },
+        "W3": {
+          "prompt": "Write four sentences about your snacks today. Use the sentence starters.",
+          "starters": ["Today I eat ___.", "I like ___.", "I don't like ___.", "My friend likes ___."],
+          "checklist": ["Capital letter at the start", "Full stop at the end", "like and likes are correct"],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            { "id": "s1-1", "model": "I like cookies.", "keywords": ["like", "cookies"] },
+            { "id": "s1-2", "model": "I don't like soda.", "keywords": ["don't", "like", "soda"] },
+            { "id": "s1-3", "model": "She likes fruit.", "keywords": ["she", "likes", "fruit"] },
+            { "id": "s1-4", "model": "They don't like candy.", "keywords": ["they", "don't", "like", "candy"] }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            { "id": "s2-1", "chunk": "cookies and candy", "keywords": ["cookies", "candy"] },
+            { "id": "s2-2", "chunk": "fruit and vegetables", "keywords": ["fruit", "vegetables"] },
+            { "id": "s2-3", "chunk": "I like fries", "keywords": ["like", "fries"] }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            { "id": "s3-1", "q": "Do you like popcorn?", "keywords": ["yes", "no", "do", "don't", "popcorn"] },
+            { "id": "s3-2", "q": "Do you like vegetables?", "keywords": ["yes", "no", "do", "don't", "vegetables"] },
+            { "id": "s3-3", "q": "Does your friend like candy?", "keywords": ["does", "doesn't", "friend", "candy"] },
+            { "id": "s3-4", "q": "What food do you like?", "keywords": ["like"] }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the snack table. Say what you see. Use at least three food words.",
+          "image": "snack-table-easy",
+          "prompts": ["Two foods you see", "One food you like", "One food you don't like"],
+          "keywords": ["like", "don't", "like"]
+        },
+        "S5": {
+          "prompt": "Read the story with two voices. First you are Mia, then Leo.",
+          "dialogueId": "theCookieBox",
+          "lines": 4,
+          "keywords": ["cookies", "like", "so", "do"]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            { "id": "s6-1", "q": "What do you eat for breakfast?", "keywords": ["eat", "breakfast"] },
+            { "id": "s6-2", "q": "What snack do you like?", "keywords": ["like", "snack"] },
+            { "id": "s6-3", "q": "What snack don't you like?", "keywords": ["don't", "like"] }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about your snack plate. Say four sentences.",
+          "minimumSeconds": 20,
+          "scaffold": ["On my plate I have ___.", "I like ___.", "I don't like ___.", "My friend likes ___."],
+          "keywords": ["plate", "like", "don't"]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            { "id": "cp1-1", "type": "pictureToWord", "img": "cookies", "options": ["cookies", "candy", "soup"], "answer": "cookies" },
+            { "id": "cp1-2", "type": "gapFill", "sentence": "He ___ fruit.", "options": ["like", "likes"], "answer": "likes" },
+            { "id": "cp1-3", "type": "errorCorrection", "sentence": "They likes fries.", "wrong": "likes", "correct": "like" },
+            { "id": "cp1-4", "type": "audioToWord", "audio": "Soda.", "options": ["soda", "milk", "juice"], "answer": "soda" },
+            { "id": "cp1-5", "type": "grouping", "words": ["fruit", "cookies"], "bins": ["Healthy", "Not healthy"], "answers": { "fruit": "Healthy", "cookies": "Not healthy" } },
+            { "id": "cp1-6", "type": "speaking", "q": "Say one sentence about food you like.", "keywords": ["like"] }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Big Snack Table. Eight questions and one speaking task. You can do it!",
+          "items": [
+            { "id": "b-1", "type": "pictureToWord", "img": "vegetables", "options": ["vegetables", "cereal", "bananas"], "answer": "vegetables" },
+            { "id": "b-2", "type": "gapFill", "sentence": "She ___ candy.", "options": ["don't like", "doesn't like"], "answer": "doesn't like" },
+            { "id": "b-3", "type": "errorCorrection", "sentence": "I likes fruit.", "wrong": "likes", "correct": "like" },
+            { "id": "b-4", "type": "audioQuestion", "audio": "I'm Ben. I like cookies and chocolate. I don't like fruit.", "q": "What does Ben not like?", "options": ["Fruit", "Cookies", "Chocolate"], "answer": "Fruit" },
+            { "id": "b-5", "type": "tapSentence", "q": "In the diary, tap the sentence that tells you Ben is eating a lot.", "answer": "He is eating three cookies now." },
+            { "id": "b-6", "type": "sentenceBuilder", "tiles": ["Do", "you", "like", "soda"], "answer": "Do you like soda?" },
+            { "id": "b-7", "type": "typeIt", "prompt": "Type the drink word that is fizzy.", "answer": "soda" },
+            { "id": "b-8", "type": "speaking", "q": "Say two sentences: one food you like and one you don't like.", "keywords": ["like", "don't"] }
+          ]
+        }
+      }
+    },
+
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the food that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            { "id": "v1-1", "img": "popcorn", "options": ["popcorn", "cereal", "soup", "rice"], "answer": "popcorn", "why": "Popcorn is fluffy and white. It is the cinema snack." },
+            { "id": "v1-2", "img": "cookies", "options": ["cookies", "candy", "bread", "cake"], "answer": "cookies", "why": "Cookies are round biscuits. Candy is smaller and wrapped." },
+            { "id": "v1-3", "img": "vegetables", "options": ["vegetables", "fruit", "fries", "rice"], "answer": "vegetables", "why": "Carrots, peas and broccoli are vegetables." },
+            { "id": "v1-4", "img": "yogurt", "options": ["yogurt", "milk", "ice cream", "soup"], "answer": "yogurt", "why": "Yogurt is thick and eaten with a spoon." }
+          ],
+          "whyChoices": ["The picture shows this exact food", "It belongs to the same food group", "It starts with the same letter", "It is a drink, not a food"]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            { "id": "v2-1", "word": "cereal", "options": ["cereal", "rice", "popcorn", "soup"], "answer": "cereal", "why": "Cereal is flakes in a bowl with milk." },
+            { "id": "v2-2", "word": "tomatoes", "options": ["tomatoes", "apples", "bananas", "candy"], "answer": "tomatoes", "why": "Tomatoes are red and round. They grow on vines." },
+            { "id": "v2-3", "word": "soda", "options": ["soda", "milk", "soup", "yogurt"], "answer": "soda", "why": "Soda is fizzy and comes in a glass or a can." },
+            { "id": "v2-4", "word": "soup", "options": ["soup", "cereal", "rice", "yogurt"], "answer": "soup", "why": "Soup is hot and you eat it with a spoon." }
+          ],
+          "whyChoices": ["The picture matches the meaning", "The word is uncountable", "The word is plural", "It is the same food group"]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            { "id": "v3-1", "audio": "She doesn't like vegetables.", "options": ["vegetables", "tomatoes", "bananas"], "answer": "vegetables" },
+            { "id": "v3-2", "audio": "I eat cereal for breakfast.", "options": ["cereal", "yogurt", "rice"], "answer": "cereal" },
+            { "id": "v3-3", "audio": "Tomatoes grow on vines.", "options": ["tomatoes", "apples", "fruit"], "answer": "tomatoes" }
+          ],
+          "whyChoices": ["I heard the whole word", "I heard a word that sounds similar", "I used the topic to guess"]
+        },
+        "V4": {
+          "prompt": "Sort the food into the right boxes.",
+          "bins": ["Healthy", "Not healthy"],
+          "items": [
+            { "word": "fruit", "bin": "Healthy" }, { "word": "vegetables", "bin": "Healthy" },
+            { "word": "yogurt", "bin": "Healthy" }, { "word": "rice", "bin": "Healthy" },
+            { "word": "cookies", "bin": "Not healthy" }, { "word": "candy", "bin": "Not healthy" },
+            { "word": "soda", "bin": "Not healthy" }, { "word": "fries", "bin": "Not healthy" }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            { "id": "v5-1", "sentence": "Rob only likes ___ snacks.", "options": ["unhealthy", "healthy", "boring", "cold"], "answer": "unhealthy", "why": "The diary says Rob does not like healthy food." },
+            { "id": "v5-2", "sentence": "I eat ___ with a spoon in the morning.", "options": ["cereal", "fries", "popcorn", "candy"], "answer": "cereal", "why": "Cereal is eaten with milk and a spoon." },
+            { "id": "v5-3", "sentence": "Watermelons stay on the ___ because they are heavy.", "options": ["ground", "farm", "garden", "vines"], "answer": "ground", "why": "Heavy melons cannot climb." },
+            { "id": "v5-4", "sentence": "Tomatoes grow on ___.", "options": ["vines", "trees", "ground", "farms"], "answer": "vines", "why": "Tomatoes and grapes grow on vines." }
+          ],
+          "whyChoices": ["It matches the meaning in context", "It is the same word class", "It sounds like another word", "It is the longest option"]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            { "id": "v6-1", "words": ["bananas", "apples", "tomatoes", "milk"], "answer": "milk", "why": "The others grow on plants. Milk does not." },
+            { "id": "v6-2", "words": ["cereal", "yogurt", "soup", "cookies"], "answer": "cookies", "why": "The others are healthy. Cookies are not." },
+            { "id": "v6-3", "words": ["vines", "ground", "farm", "chocolate"], "answer": "chocolate", "why": "The others are about where plants grow." }
+          ],
+          "whyChoices": ["It belongs to a different group", "It is uncountable", "It is a longer word", "It is a drink"]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            { "id": "v7-1", "letters": ["v", "e", "g", "e", "t", "a", "b", "l", "e", "s"], "answer": "vegetables", "audio": "vegetables" },
+            { "id": "v7-2", "letters": ["b", "r", "e", "a", "k", "f", "a", "s", "t"], "answer": "breakfast", "audio": "breakfast", "note": "support word from the diary" },
+            { "id": "v7-3", "letters": ["y", "o", "g", "u", "r", "t"], "answer": "yogurt", "audio": "yogurt" }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            { "id": "v8-1", "type": "audioToPicture", "audio": "Yogurt.", "options": ["yogurt", "milk", "soup", "cereal"], "answer": "yogurt" },
+            { "id": "v8-2", "type": "gapFill", "sentence": "Grapes grow on ___.", "options": ["vines", "trees", "ground", "gardens"], "answer": "vines" },
+            { "id": "v8-3", "type": "typeIt", "prompt": "Type the meal word: flakes in a bowl with milk.", "answer": "cereal" },
+            { "id": "v8-4", "type": "oddOneOut", "words": ["cookies", "candy", "soda", "fruit"], "answer": "fruit", "why": "The others are unhealthy snacks." },
+            { "id": "v8-5", "type": "pictureToWord", "img": "tomatoes", "options": ["tomatoes", "apples", "candy", "soup"], "answer": "tomatoes" }
+          ],
+          "whyChoices": ["I remembered the word", "I worked it out from the picture", "I guessed"]
+        },
+        "G1": {
+          "prompt": "Read the four sentences. Then decide what rule they share.",
+          "teachCard": { "title": "like / likes and don't / doesn't", "lines": ["I like cookies.", "I don't like cookies.", "He likes fruit.", "He doesn't like fruit."], "rule": "I, you, we, they use like / don't like. He, she, it use likes / doesn't like." },
+          "items": [
+            { "id": "g1-1", "q": "Which subjects take likes?", "options": ["he, she, it", "I, you, we", "they, we, I", "all subjects"], "answer": "he, she, it" },
+            { "id": "g1-2", "q": "Which form goes with they?", "options": ["like", "likes", "liking", "is like"], "answer": "like" },
+            { "id": "g1-3", "q": "What is the negative of 'He likes fruit'?", "options": ["He doesn't like fruit.", "He don't like fruit.", "He not like fruit.", "He isn't like fruit."], "answer": "He doesn't like fruit." },
+            { "id": "g1-4", "q": "Tap the helper word in 'I don't like cookies.'", "options": ["don't", "like", "cookies", "I"], "answer": "don't" }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": ["Emma is she, so the verb takes -s", "They is plural, so no -s", "After doesn't the verb has no -s", "Questions about he start with Does"],
+          "items": [
+            { "id": "g2-1", "sentence": "Emma ___ chocolate.", "options": ["like", "likes", "liking", "is like"], "answer": "likes" },
+            { "id": "g2-2", "sentence": "They ___ popcorn.", "options": ["likes", "like", "liking", "is like"], "answer": "like" },
+            { "id": "g2-3", "sentence": "Ben ___ vegetables.", "options": ["don't like", "doesn't like", "not like", "no like"], "answer": "doesn't like" },
+            { "id": "g2-4", "sentence": "___ he like soup?", "options": ["Do", "Does", "Is", "Are"], "answer": "Does" },
+            { "id": "g2-5", "sentence": "Do you like fries? - Yes, I ___.", "options": ["do", "does", "don't", "am"], "answer": "do" },
+            { "id": "g2-6", "sentence": "They like rice. - ___ do I.", "options": ["So", "Neither", "Too", "Also"], "answer": "So" }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            { "id": "g3-1", "sentence": "Emma and Ben likes cookies.", "wrong": "likes", "correct": "like", "why": "Two people make a plural subject." },
+            { "id": "g3-2", "sentence": "He doesn't likes fruit.", "wrong": "likes", "correct": "like", "why": "After doesn't the verb has no -s." },
+            { "id": "g3-3", "sentence": "Do she like chocolate?", "wrong": "Do", "correct": "Does", "why": "She needs Does." },
+            { "id": "g3-4", "sentence": "I don't likes soda.", "wrong": "likes", "correct": "like", "why": "After don't the verb has no -s." }
+          ],
+          "whyChoices": ["The subject is plural", "The verb follows doesn't or don't", "The subject is she", "The sentence is a question"]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            { "id": "g4-1", "answerLine": "Yes, she does.", "options": ["Does she like rice?", "Do she like rice?", "Does she likes rice?", "Is she like rice?"], "answer": "Does she like rice?" },
+            { "id": "g4-2", "answerLine": "No, they don't.", "options": ["Do they like candy?", "Does they like candy?", "Do they likes candy?", "Are they like candy?"], "answer": "Do they like candy?" },
+            { "id": "g4-3", "answerLine": "Yes, I do.", "options": ["Do you like soup?", "Does you like soup?", "Do you likes soup?", "Are you like soup?"], "answer": "Do you like soup?" },
+            { "id": "g4-4", "answerLine": "No, he doesn't.", "options": ["Does he like chocolate?", "Do he like chocolate?", "Does he likes chocolate?", "Is he like chocolate?"], "answer": "Does he like chocolate?" }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            { "id": "g5-1", "instruction": "Make it negative.", "from": "Emma likes chocolate.", "options": ["Emma doesn't like chocolate.", "Emma don't like chocolate.", "Emma not likes chocolate.", "Emma isn't like chocolate."], "answer": "Emma doesn't like chocolate." },
+            { "id": "g5-2", "instruction": "Make it negative.", "from": "They like fries.", "options": ["They don't like fries.", "They doesn't like fries.", "They not like fries.", "They aren't like fries."], "answer": "They don't like fries." },
+            { "id": "g5-3", "instruction": "Agree with it.", "from": "I like popcorn.", "options": ["So do I.", "Neither do I.", "So am I.", "Neither am I."], "answer": "So do I." },
+            { "id": "g5-4", "instruction": "Agree with it.", "from": "I don't like soda.", "options": ["Neither do I.", "So do I.", "Neither am I.", "So am I."], "answer": "Neither do I." }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Two replays.",
+          "items": [
+            { "id": "l1-1", "audio": "She doesn't like vegetables.", "options": ["vegetables", "tomatoes", "bananas", "rice"], "answer": "vegetables" },
+            { "id": "l1-2", "audio": "Ben likes cookies and chocolate.", "options": ["cookies", "candy", "soda", "soup"], "answer": "cookies" },
+            { "id": "l1-3", "audio": "We eat cereal with milk.", "options": ["cereal", "yogurt", "rice", "popcorn"], "answer": "cereal" }
+          ],
+          "whyChoices": ["I heard the exact word", "I heard a similar word", "I guessed from the topic"]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            { "pass": 1, "job": "gist", "q": "What is this person talking about?", "options": ["Their family's food", "Their school day", "Their pet"], "answer": "Their family's food" },
+            { "pass": 2, "job": "detail", "q": "Who likes every kind of food?", "options": ["The sister", "The brother", "The speaker"], "answer": "The sister" }
+          ],
+          "audio": "In my family we eat rice with vegetables every day. My brother doesn't like vegetables, so he only eats rice. My sister likes everything. She says fruit is the best snack, especially apples.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "Emma doesn't like chocolate. Ben likes fruit and rice. They don't like soda.",
+          "items": [
+            { "id": "l3-1", "sentence": "Emma ___(1)___ like chocolate.", "options": ["doesn't", "don't", "not"], "answer": "doesn't" },
+            { "id": "l3-2", "sentence": "Ben likes fruit and ___(2)___.", "options": ["rice", "soda", "candy"], "answer": "rice" },
+            { "id": "l3-3", "sentence": "They don't like ___(3)___.", "options": ["soda", "rice", "fruit"], "answer": "soda" }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            { "id": "r1-1", "word": "unhealthy", "options": ["not good for your body", "very sweet", "eaten at parties", "a kind of fruit"], "answer": "not good for your body" },
+            { "id": "r1-2", "word": "boring", "options": ["not interesting", "very loud", "full of sugar", "hard to eat"], "answer": "not interesting" },
+            { "id": "r1-3", "word": "vines", "options": ["long climbing plants", "small gardens", "heavy fruit", "farms with animals"], "answer": "long climbing plants" }
+          ]
+        },
+        "R2": {
+          "textRef": "readings.snackDiary.core (from the Unit 1 base pack)",
+          "prompt": "Read the whole diary. Then tap the sentence that contrasts the writer with Ben.",
+          "items": [
+            { "id": "r2-1", "q": "Tap the sentence that shows the writer and Ben are different.", "answerType": "tapSentence", "answer": "Ben doesn't like fruit at all.", "why": "It contrasts Ben with the writer, who likes fruit." },
+            { "id": "r2-2", "q": "What is the diary about?", "options": ["A class party and the food people like", "A maths lesson", "A trip to the market"], "answer": "A class party and the food people like" }
+          ]
+        },
+        "R3": {
+          "textRef": "readings.snackDiary.core",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            { "id": "r3-1", "q": "What does the writer eat first?", "options": ["An apple and grapes", "Candy and chocolate", "Popcorn"], "answer": "An apple and grapes" },
+            { "id": "r3-2", "q": "Why doesn't Ben eat fruit?", "options": ["He only likes unhealthy snacks", "He is not hungry", "He is allergic to fruit"], "answer": "He only likes unhealthy snacks" },
+            { "id": "r3-3", "q": "Who gives the class popcorn?", "options": ["The teacher", "Ben", "The writer's mother"], "answer": "The teacher" }
+          ]
+        },
+        "R4": {
+          "textRef": "readings.whereFruitGrows.core",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            { "id": "r4-1", "q": "Tap the sentence that tells you why watermelons stay down.", "answer": "Watermelons stay on the ground because they are very heavy." },
+            { "id": "r4-2", "q": "Tap the sentence that tells you where tomatoes can grow.", "answer": "They can grow on big farms, and they can also grow in a small garden at home." },
+            { "id": "r4-3", "q": "Tap the sentence that tells you what plants need.", "answer": "All fruit comes from plants, and plants need water and sun to grow." }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            { "id": "w1-1", "tiles": ["Emma", "doesn't", "like", "chocolate"], "answer": "Emma doesn't like chocolate." },
+            { "id": "w1-2", "tiles": ["Do", "you", "like", "soda"], "answer": "Do you like soda?" },
+            { "id": "w1-3", "tiles": ["They", "like", "rice", "and", "vegetables"], "answer": "They like rice and vegetables." },
+            { "id": "w1-4", "tiles": ["Does", "he", "like", "fruit"], "answer": "Does he like fruit?" }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            { "id": "w2-1", "wrong": "Ben don't like fruit.", "answer": "Ben doesn't like fruit." },
+            { "id": "w2-2", "wrong": "I likes cereal.", "answer": "I like cereal." },
+            { "id": "w2-3", "wrong": "Do she like rice?", "answer": "Does she like rice?" }
+          ]
+        },
+        "W3": {
+          "prompt": "Write five sentences in your snack diary. Use the template, then write two sentences of your own.",
+          "template": "Dear diary, today I eat ___ at ___. I like ___ but I don't like ___. My friend ___ likes ___.",
+          "ownSentencesRequired": 2,
+          "checklist": ["Capital letters and full stops", "Correct like / likes", "One negative sentence", "One So do I or Neither do I"],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            { "id": "s1-1", "model": "Emma doesn't like chocolate.", "keywords": ["emma", "doesn't", "like", "chocolate"] },
+            { "id": "s1-2", "model": "They like rice and vegetables.", "keywords": ["they", "like", "rice", "vegetables"] },
+            { "id": "s1-3", "model": "Tomatoes grow on vines.", "keywords": ["tomatoes", "grow", "vines"] },
+            { "id": "s1-4", "model": "Do you like popcorn?", "keywords": ["do", "you", "like", "popcorn"] }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            { "id": "s2-1", "chunk": "doesn't like chocolate", "keywords": ["doesn't", "like", "chocolate"] },
+            { "id": "s2-2", "chunk": "rice and vegetables", "keywords": ["rice", "vegetables"] },
+            { "id": "s2-3", "chunk": "fruit and popcorn", "keywords": ["fruit", "popcorn"] }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            { "id": "s3-1", "q": "Do you like fruit?", "keywords": ["do", "yes", "no", "like", "fruit"] },
+            { "id": "s3-2", "q": "Does your friend like candy?", "keywords": ["does", "friend", "candy", "doesn't"] },
+            { "id": "s3-3", "q": "What do you eat for breakfast?", "keywords": ["eat", "breakfast"] },
+            { "id": "s3-4", "q": "Do you and your family like rice?", "keywords": ["like", "rice", "family"] }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the snack table. Say what people like and don't like.",
+          "image": "snack-table-core",
+          "prompts": ["One food someone likes", "One food someone doesn't like", "One food that is healthy", "One food that is not healthy"],
+          "keywords": ["like", "doesn't", "healthy"]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with two voices: you are Mia, then Leo.",
+          "dialogueId": "theCookieBox",
+          "lines": 8,
+          "keywords": ["cookies", "candy", "so", "neither", "box"]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            { "id": "s6-1", "q": "What food does your family like?", "keywords": ["family", "like"] },
+            { "id": "s6-2", "q": "What food don't you like, and why?", "keywords": ["don't", "like", "because"] },
+            { "id": "s6-3", "q": "Where does your favourite fruit grow?", "keywords": ["grow", "tree", "vine", "ground"] }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about your snack plate. Say what is on it, who likes it, and one thing you don't like.",
+          "minimumSeconds": 35,
+          "scaffold": ["On my plate I have ___.", "I like ___ because ___.", "My family likes ___.", "I don't like ___."],
+          "keywords": ["plate", "like", "because", "don't"]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            { "id": "cp1-1", "type": "pictureToWord", "img": "yogurt", "options": ["yogurt", "milk", "soup", "cereal"], "answer": "yogurt" },
+            { "id": "cp1-2", "type": "gapFill", "sentence": "Emma ___ chocolate.", "options": ["like", "likes", "liking", "is like"], "answer": "likes" },
+            { "id": "cp1-3", "type": "errorCorrection", "sentence": "He doesn't likes fruit.", "wrong": "likes", "correct": "like" },
+            { "id": "cp1-4", "type": "audioToWord", "audio": "Tomatoes grow on vines.", "options": ["vines", "trees", "ground", "farms"], "answer": "vines" },
+            { "id": "cp1-5", "type": "oddOneOut", "words": ["cereal", "yogurt", "soup", "cookies"], "answer": "cookies" },
+            { "id": "cp1-6", "type": "speaking", "q": "Ask me a question with Do you like...?", "keywords": ["do", "you", "like"] }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Big Snack Table. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            { "id": "b-1", "type": "pictureToWord", "img": "cereal", "options": ["cereal", "rice", "popcorn", "soup"], "answer": "cereal" },
+            { "id": "b-2", "type": "gapFill", "sentence": "Ben ___ vegetables.", "options": ["don't like", "doesn't like", "not like", "no like"], "answer": "doesn't like" },
+            { "id": "b-3", "type": "errorCorrection", "sentence": "Emma and Ben likes cookies.", "wrong": "likes", "correct": "like" },
+            { "id": "b-4", "type": "twoPass", "audio": "My sister is nine. She likes fruit and rice, but she doesn't like soup. My brother likes soup and vegetables.", "passes": [{ "pass": 1, "q": "Who is the speaker talking about?", "options": ["Family", "Friends", "Teachers"], "answer": "Family" }, { "pass": 2, "q": "What does the sister not like?", "options": ["Soup", "Rice", "Fruit"], "answer": "Soup" }] },
+            { "id": "b-5", "type": "tapSentence", "q": "In the text, tap the sentence that explains why watermelons stay on the ground.", "answer": "Watermelons stay on the ground because they are very heavy." },
+            { "id": "b-6", "type": "sentenceBuilder", "tiles": ["Does", "she", "like", "rice"], "answer": "Does she like rice?" },
+            { "id": "b-7", "type": "typeIt", "prompt": "Type the plant word: long climbing plants that grapes grow on.", "answer": "vines" },
+            { "id": "b-8", "type": "speaking", "q": "Say three sentences: what you like, what you don't like, and one So do I or Neither do I agreement.", "keywords": ["like", "don't", "so", "neither"] }
+          ]
+        }
+      }
+    },
+
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact word. Two of the four options belong to the same food group, so read carefully.",
+          "items": [
+            { "id": "v1-1", "img": "popcorn", "options": ["popcorn", "cereal", "rice", "soup"], "answer": "popcorn", "why": "Popcorn is eaten dry and by hand. Cereal and rice are eaten from a bowl." },
+            { "id": "v1-2", "img": "yogurt", "options": ["yogurt", "milk", "ice cream", "soup"], "answer": "yogurt", "why": "Yogurt is thick and eaten with a spoon. Milk is drunk." },
+            { "id": "v1-3", "img": "vegetables", "options": ["vegetables", "fruit", "tomatoes", "rice"], "answer": "vegetables", "why": "Tomatoes are fruit botanically. Vegetables are carrot, pea, broccoli." },
+            { "id": "v1-4", "img": "cereal", "options": ["cereal", "rice", "popcorn", "yogurt"], "answer": "cereal", "why": "Cereal is flakes eaten with cold milk at breakfast." }
+          ],
+          "whyChoices": ["The preparation is different from the distractors", "It belongs to the same food group as a distractor", "It is uncountable", "It is countable"]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four options are near-misses.",
+          "items": [
+            { "id": "v2-1", "word": "tomatoes", "options": ["tomatoes", "apples", "bananas", "candy"], "answer": "tomatoes", "why": "Tomatoes grow on vines, not trees." },
+            { "id": "v2-2", "word": "soup", "options": ["soup", "cereal", "yogurt", "soda"], "answer": "soup", "why": "Soup is hot and savoury. Cereal has milk and is cold." },
+            { "id": "v2-3", "word": "vegetables", "options": ["vegetables", "fruit", "fries", "popcorn"], "answer": "vegetables", "why": "Fries come from a vegetable but are not vegetables." },
+            { "id": "v2-4", "word": "soda", "options": ["soda", "juice", "milk", "yogurt"], "answer": "soda", "why": "Soda is fizzy and sweet. Juice is not fizzy." }
+          ],
+          "whyChoices": ["The meaning matches exactly", "It is the same category word", "The sound is similar", "It is a countable noun"]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word you hear.",
+          "items": [
+            { "id": "v3-1", "audio": "Watermelons stay on the ground because they are very heavy.", "options": ["ground", "fields", "frames", "gardens"], "answer": "ground" },
+            { "id": "v3-2", "audio": "Most banana trees like hot weather.", "options": ["hot", "cold", "wet", "dry"], "answer": "hot" },
+            { "id": "v3-3", "audio": "Ben says fruit is boring and it takes too long to eat.", "options": ["boring", "healthy", "sweet", "cheap"], "answer": "boring" }
+          ],
+          "whyChoices": ["I caught the exact word", "I heard a word with a similar sound", "I inferred it from the topic"]
+        },
+        "V4": {
+          "prompt": "Sort into three boxes. Some items are deliberately tricky.",
+          "bins": ["Healthy food", "Not healthy food", "Where it grows"],
+          "items": [
+            { "word": "yogurt", "bin": "Healthy food" }, { "word": "rice", "bin": "Healthy food" },
+            { "word": "candy", "bin": "Not healthy food" }, { "word": "soda", "bin": "Not healthy food" },
+            { "word": "chocolate", "bin": "Not healthy food" }, { "word": "popcorn", "bin": "Not healthy food" },
+            { "word": "vines", "bin": "Where it grows" }, { "word": "ground", "bin": "Where it grows" },
+            { "word": "farm", "bin": "Where it grows" }, { "word": "fields", "bin": "Where it grows" }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            { "id": "v5-1", "sentence": "By two o'clock Ben has eaten a lot of ___.", "options": ["candy", "candies", "a candy", "the candy"], "answer": "candy", "why": "Candy is uncountable here." },
+            { "id": "v5-2", "sentence": "Watermelons stay on the ground because they are too heavy to ___.", "options": ["climb", "climbing", "climbs", "climbed"], "answer": "climb", "why": "After to we use the base verb." },
+            { "id": "v5-3", "sentence": "Some vines cover whole ___ on big farms.", "options": ["fields", "frames", "fruits", "floors"], "answer": "fields", "why": "Fields are large areas of land." },
+            { "id": "v5-4", "sentence": "Ben asks, is popcorn a vegetable? ___ answers.", "options": ["Nobody", "Anybody", "Somebody", "Everybody"], "answer": "Nobody", "why": "The text says nobody answers." }
+          ],
+          "whyChoices": ["It is the only one that fits the meaning", "It is the only uncountable option", "It is the only correct verb form", "It is the most formal word"]
+        },
+        "V6": {
+          "prompt": "One word does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            { "id": "v6-1", "words": ["cereal", "yogurt", "soup", "cookies"], "answer": "cookies", "why": "Cereal, yogurt and soup are uncountable here. Cookies are countable." },
+            { "id": "v6-2", "words": ["farm", "garden", "fields", "vines"], "answer": "vines", "why": "Farm, garden and fields are places. Vines are plants." },
+            { "id": "v6-3", "words": ["hungry", "thirsty", "hot", "popcorn"], "answer": "popcorn", "why": "The others describe how a person feels." }
+          ],
+          "whyChoices": ["It behaves differently in grammar", "It belongs to another topic", "It is a longer word", "It is a noun"]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            { "id": "v7-1", "letters": ["v", "e", "g", "e", "t", "a", "b", "l", "e", "s"], "answer": "vegetables", "audio": "vegetables" },
+            { "id": "v7-2", "letters": ["b", "r", "e", "a", "k", "f", "a", "s", "t"], "answer": "breakfast", "audio": "breakfast" },
+            { "id": "v7-3", "letters": ["c", "h", "o", "c", "o", "l", "a", "t", "e"], "answer": "chocolate", "audio": "chocolate" }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            { "id": "v8-1", "type": "audioToPicture", "audio": "Yogurt with bananas.", "options": ["yogurt", "milk", "soup", "cereal"], "answer": "yogurt" },
+            { "id": "v8-2", "type": "gapFill", "sentence": "Grapes and watermelons grow on ___, but apples grow on trees.", "options": ["vines", "ground", "fields", "frames"], "answer": "vines" },
+            { "id": "v8-3", "type": "typeIt", "prompt": "Type the word for large areas of land where crops grow in rows.", "answer": "fields" },
+            { "id": "v8-4", "type": "oddOneOut", "words": ["cereal", "yogurt", "soup", "cookies"], "answer": "cookies", "why": "Only cookies are countable here." },
+            { "id": "v8-5", "type": "pictureToWord", "img": "tomatoes", "options": ["tomatoes", "apples", "candy", "soup"], "answer": "tomatoes" }
+          ],
+          "whyChoices": ["I knew the word without help", "I worked it out from context", "I guessed"]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": { "title": "three grammar systems at once", "lines": ["I like cookies. / Emma doesn't like chocolate.", "Does he like fruit? Yes, he does.", "They like rice. - So do I. / They don't. - Neither do I."], "rule": "like/likes follows the subject. do/does builds questions and negatives. So and Neither echo the auxiliary." },
+          "items": [
+            { "id": "g1-1", "q": "Why does 'Emma doesn't like chocolate' have no -s on like?", "options": ["Because doesn't already carries the -s", "Because Emma is plural", "Because it is a question", "Because chocolate is uncountable"], "answer": "Because doesn't already carries the -s" },
+            { "id": "g1-2", "q": "Which sentence uses the verb correctly?", "options": ["The fish smells bad.", "The fish smell bad.", "The fish is smell bad.", "The fish smelling bad."], "answer": "The fish smells bad." },
+            { "id": "g1-3", "q": "What does 'Neither do I' agree with?", "options": ["A negative statement", "A positive statement", "A question", "A command"], "answer": "A negative statement" },
+            { "id": "g1-4", "q": "Tap the sentence that is WRONG.", "options": ["Emma and Ben likes cookies.", "Emma and Ben like cookies.", "Emma likes cookies.", "They like cookies."], "answer": "Emma and Ben likes cookies." }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": ["A plural subject takes the base verb", "doesn't carries the -s so like loses it", "After Does the verb has no -s", "A negative statement is agreed with Neither"],
+          "items": [
+            { "id": "g2-1", "sentence": "Emma and Leo ___ cookies, and Coco ___ them too.", "options": ["like / likes", "likes / like", "like / like", "likes / likes"], "answer": "like / likes" },
+            { "id": "g2-2", "sentence": "Ben doesn't like fruit. - ___ do I.", "options": ["Neither", "So", "Either", "Nor"], "answer": "Neither" },
+            { "id": "g2-3", "sentence": "Does she ___ yogurt?", "options": ["likes", "like", "liking", "to like"], "answer": "like" },
+            { "id": "g2-4", "sentence": "Neither Ben ___ Emma likes candy.", "options": ["or", "nor", "and", "but"], "answer": "nor" },
+            { "id": "g2-5", "sentence": "I like popcorn. - So ___ I.", "options": ["do", "am", "does", "like"], "answer": "do" },
+            { "id": "g2-6", "sentence": "She likes rice, but she ___ like soup.", "options": ["don't", "doesn't", "not", "no"], "answer": "doesn't" }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            { "id": "g3-1", "sentence": "Neither of them like vegetables.", "wrong": "like", "correct": "likes", "why": "Neither of them is singular in careful English." },
+            { "id": "g3-2", "sentence": "Does he likes chocolate?", "wrong": "likes", "correct": "like", "why": "After Does the verb has no -s." },
+            { "id": "g3-3", "sentence": "They don't likes fries.", "wrong": "likes", "correct": "like", "why": "After don't the verb has no -s." },
+            { "id": "g3-4", "sentence": "I don't like soda. - So do I.", "wrong": "So", "correct": "Neither", "why": "A negative statement is agreed with Neither." }
+          ],
+          "whyChoices": ["A singular subject hides in a plural-looking phrase", "The verb follows Does or don't", "So and Neither must match polarity", "The subject is plural"]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            { "id": "g4-1", "answerLine": "No, she doesn't. She only likes unhealthy food.", "options": ["Does Emma like vegetables?", "Do Emma like vegetables?", "Does Emma likes vegetables?", "Is Emma like vegetables?"], "answer": "Does Emma like vegetables?" },
+            { "id": "g4-2", "answerLine": "Yes, they do, but not every day.", "options": ["Do they like rice?", "Does they like rice?", "Do they likes rice?", "Are they like rice?"], "answer": "Do they like rice?" },
+            { "id": "g4-3", "answerLine": "No, I don't, but my sister does.", "options": ["Do you like chocolate?", "Does you like chocolate?", "Do you likes chocolate?", "Are you like chocolate?"], "answer": "Do you like chocolate?" },
+            { "id": "g4-4", "answerLine": "Yes, he does. He eats it every morning.", "options": ["Does Ben like cereal?", "Do Ben like cereal?", "Does Ben likes cereal?", "Is Ben like cereal?"], "answer": "Does Ben like cereal?" }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            { "id": "g5-1", "instruction": "Make it negative without changing the meaning.", "from": "Emma likes chocolate.", "options": ["Emma doesn't like chocolate.", "Emma don't like chocolate.", "Emma not like chocolate.", "Emma dislikes not chocolate."], "answer": "Emma doesn't like chocolate." },
+            { "id": "g5-2", "instruction": "Agree with it correctly.", "from": "They don't like rice.", "options": ["Neither do I.", "So do I.", "Neither am I.", "Nor I do."], "answer": "Neither do I." },
+            { "id": "g5-3", "instruction": "Make it a question.", "from": "The pasta tastes good.", "options": ["Does the pasta taste good?", "Do the pasta taste good?", "Does the pasta tastes good?", "Is the pasta taste good?"], "answer": "Does the pasta taste good?" },
+            { "id": "g5-4", "instruction": "Join the two facts with Neither...nor.", "from": "Ben doesn't like fruit. Emma doesn't like fruit.", "options": ["Neither Ben nor Emma likes fruit.", "Neither Ben nor Emma like fruit.", "Neither Ben or Emma likes fruit.", "Neither Ben nor Emma doesn't like fruit."], "answer": "Neither Ben nor Emma likes fruit." }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            { "id": "l1-1", "audio": "My brother doesn't like vegetables, so he only eats plain rice.", "options": ["vegetables", "rice", "fruit", "soup"], "answer": "vegetables" },
+            { "id": "l1-2", "audio": "She says fruit is the best snack, especially apples.", "options": ["apples", "bananas", "tomatoes", "candy"], "answer": "apples" },
+            { "id": "l1-3", "audio": "I like vegetables but I hate soup.", "options": ["soup", "vegetables", "rice", "fruit"], "answer": "soup" }
+          ],
+          "whyChoices": ["I heard the exact word", "I heard a related word", "I used the topic to guess"]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            { "pass": 1, "job": "gist", "q": "What is the speaker's purpose?", "options": ["To explain why the family eats differently", "To sell a product", "To describe a holiday"], "answer": "To explain why the family eats differently" },
+            { "pass": 2, "job": "detail", "q": "What does the brother do because he dislikes vegetables?", "options": ["He eats only plain rice", "He eats only fruit", "He eats nothing"], "answer": "He eats only plain rice" }
+          ],
+          "audio": "In my family we eat rice with vegetables every day, but we don't all agree. My brother doesn't like vegetables at all, so he only eats plain rice. My sister likes everything, and she says fruit is the best snack, especially apples. I am in the middle: I like vegetables but I hate soup.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "Ben doesn't like fruit, and he doesn't like vegetables either. He only likes cookies and chocolate. His sister likes rice, vegetables and fruit. Neither of them likes soup.",
+          "items": [
+            { "id": "l3-1", "sentence": "Ben doesn't like fruit, and he doesn't like ___(1)___ either.", "options": ["vegetables", "cookies", "rice"], "answer": "vegetables" },
+            { "id": "l3-2", "sentence": "His sister likes rice, vegetables and ___(2)___.", "options": ["fruit", "soup", "candy"], "answer": "fruit" },
+            { "id": "l3-3", "sentence": "Neither of them likes ___(3)___.", "options": ["soup", "rice", "fruit"], "answer": "soup" }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            { "id": "r1-1", "word": "fields", "options": ["large areas of land for growing food", "small frames for climbing plants", "places where animals live", "boxes for carrying fruit"], "answer": "large areas of land for growing food" },
+            { "id": "r1-2", "word": "crisp", "options": ["hard and dry in a pleasant way", "soft and wet", "sweet and cold", "heavy and round"], "answer": "hard and dry in a pleasant way" },
+            { "id": "r1-3", "word": "popular", "options": ["liked by many people", "expensive and rare", "hard to find", "very healthy"], "answer": "liked by many people" }
+          ]
+        },
+        "R2": {
+          "textRef": "readings.snackDiary.challenging (from the Unit 1 base pack)",
+          "prompt": "Read the whole diary, then tap the sentence that shows Ben is not being honest with himself.",
+          "items": [
+            { "id": "r2-1", "q": "Tap the sentence that shows Ben is not being honest with himself.", "answerType": "tapSentence", "answer": "Popcorn is a vegetable, right? he asks.", "why": "He wants popcorn to count as healthy, so he asks a question he hopes is true." },
+            { "id": "r2-2", "q": "What is the writer's attitude to Ben?", "options": ["Friendly but amused", "Angry and serious", "Frightened", "Completely neutral"], "answer": "Friendly but amused" }
+          ]
+        },
+        "R3": {
+          "textRef": "readings.snackDiary.challenging",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            { "id": "r3-1", "q": "Why does Ben say he doesn't like fruit?", "options": ["It is boring and slow to eat", "It is too expensive", "He has never tried it"], "answer": "It is boring and slow to eat" },
+            { "id": "r3-2", "q": "What does Ben's question at the end suggest?", "options": ["He wants to believe popcorn is healthy", "He hates popcorn", "He wants to be a teacher"], "answer": "He wants to believe popcorn is healthy" },
+            { "id": "r3-3", "q": "Which sentence shows that Ben eats a lot?", "options": ["By two o'clock he has eaten a lot of candy", "Ben smiles", "Nobody answers"], "answer": "By two o'clock he has eaten a lot of candy" }
+          ]
+        },
+        "R4": {
+          "textRef": "readings.whereFruitGrows.challenging",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            { "id": "r4-1", "q": "Tap the sentence that explains why watermelons cannot climb.", "answer": "Watermelons stay on the ground: they are too heavy to climb." },
+            { "id": "r4-2", "q": "Tap the sentence that gives two places tomatoes can grow.", "answer": "Some vines cover whole fields on big farms; others climb a small frame in a garden at home." },
+            { "id": "r4-3", "q": "Tap the sentence that tells you where you will NOT find banana trees.", "answer": "They grow on trees, and most banana trees like hot weather, so you will not find them in cold countries." }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            { "id": "w1-1", "tiles": ["Neither", "Ben", "nor", "Emma", "likes", "fruit"], "answer": "Neither Ben nor Emma likes fruit." },
+            { "id": "w1-2", "tiles": ["Watermelons", "stay", "on", "the", "ground", "because", "they", "are", "heavy"], "answer": "Watermelons stay on the ground because they are heavy." },
+            { "id": "w1-3", "tiles": ["Do", "you", "like", "rice", "or", "soup"], "answer": "Do you like rice or soup?" },
+            { "id": "w1-4", "tiles": ["She", "doesn't", "like", "vegetables", "but", "she", "likes", "fruit"], "answer": "She doesn't like vegetables, but she likes fruit." }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            { "id": "w2-1", "wrong": "Neither of them like vegetables.", "answer": "Neither of them likes vegetables." },
+            { "id": "w2-2", "wrong": "Does she likes fruit?", "answer": "Does she like fruit?" },
+            { "id": "w2-3", "wrong": "He doesn't likes candy, and neither do she.", "answer": "He doesn't like candy, and neither does she." }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence snack diary. Every requirement on the checklist must appear.",
+          "requirements": ["one food you like", "one food you don't like", "a sentence about a friend using like or likes", "one So do I or Neither do I sentence", "one sentence about where fruit grows"],
+          "checklist": ["Capital letters and full stops", "Correct like / likes throughout", "One negative sentence", "One So do I or Neither do I", "At least 40 words"],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the word endings.",
+          "items": [
+            { "id": "s1-1", "model": "She doesn't like chocolate, but she likes popcorn.", "keywords": ["doesn't", "like", "likes", "popcorn"] },
+            { "id": "s1-2", "model": "Watermelons are too heavy to climb.", "keywords": ["watermelons", "heavy", "climb"] },
+            { "id": "s1-3", "model": "Neither Ben nor Emma likes fruit.", "keywords": ["neither", "nor", "likes", "fruit"] },
+            { "id": "s1-4", "model": "Some vines cover whole fields.", "keywords": ["vines", "cover", "fields"] }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            { "id": "s2-1", "chunk": "neither of them likes", "keywords": ["neither", "them", "likes"] },
+            { "id": "s2-2", "chunk": "too heavy to climb", "keywords": ["heavy", "climb"] },
+            { "id": "s2-3", "chunk": "doesn't like vegetables", "keywords": ["doesn't", "like", "vegetables"] }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            { "id": "s3-1", "q": "Do you like fruit, and why?", "keywords": ["do", "like", "because"] },
+            { "id": "s3-2", "q": "Does anyone in your family dislike vegetables?", "keywords": ["does", "family", "vegetables"] },
+            { "id": "s3-3", "q": "What would you eat at a party, and what would you refuse?", "keywords": ["eat", "refuse", "would"] },
+            { "id": "s3-4", "q": "Where does your favourite fruit grow?", "keywords": ["grow", "tree", "vine", "ground"] }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the table for 45 seconds. Compare two people and use one agreement phrase.",
+          "image": "snack-table-challenging",
+          "prompts": ["What two people have in common", "One difference between them", "One So do I or Neither do I", "What you would choose and why"],
+          "minimumSeconds": 40,
+          "keywords": ["like", "so", "neither", "because"]
+        },
+        "S5": {
+          "prompt": "Perform the dialogue as both characters, with a different voice for each.",
+          "dialogueId": "theCookieBox",
+          "lines": 8,
+          "keywords": ["cookies", "candy", "so", "neither", "box"],
+          "extra": "Then answer: why is the box empty?"
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            { "id": "s6-1", "q": "Is your family's food healthy? Why or why not?", "keywords": ["family", "healthy", "because"] },
+            { "id": "s6-2", "q": "What food do people in your country love, and what do visitors find strange?", "keywords": ["food", "people", "country"] },
+            { "id": "s6-3", "q": "Which is better for you, fruit or popcorn? Explain.", "keywords": ["better", "because"] }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: My Snack Plate. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": ["On my plate I have ___, ___ and ___.", "I like ___ because ___.", "My ___ likes ___, and so do I.", "I don't like ___, and neither does ___."],
+          "keywords": ["plate", "because", "so", "neither"],
+          "selfCheck": ["I covered all four points", "I used because once", "I used So do I or Neither do I"]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            { "id": "cp1-1", "type": "pictureToWord", "img": "yogurt", "options": ["yogurt", "milk", "ice cream", "soup"], "answer": "yogurt" },
+            { "id": "cp1-2", "type": "gapFill", "sentence": "Emma and Leo ___ cookies, and Coco ___ them too.", "options": ["like / likes", "likes / like", "like / like", "likes / likes"], "answer": "like / likes" },
+            { "id": "cp1-3", "type": "errorCorrection", "sentence": "Neither of them like vegetables.", "wrong": "like", "correct": "likes" },
+            { "id": "cp1-4", "type": "audioToWord", "audio": "Some vines cover whole fields on big farms.", "options": ["fields", "frames", "gardens", "farms"], "answer": "fields" },
+            { "id": "cp1-5", "type": "oddOneOut", "words": ["cereal", "yogurt", "soup", "cookies"], "answer": "cookies", "why": "Only cookies are countable." },
+            { "id": "cp1-6", "type": "speaking", "q": "Ask a question with Does...? and answer it.", "keywords": ["does", "like"] }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Big Snack Table. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            { "id": "b-1", "type": "pictureToWord", "img": "cereal", "options": ["cereal", "rice", "popcorn", "yogurt"], "answer": "cereal" },
+            { "id": "b-2", "type": "gapFill", "sentence": "Neither Ben ___ Emma likes candy.", "options": ["nor", "or", "and", "but"], "answer": "nor" },
+            { "id": "b-3", "type": "errorCorrection", "sentence": "He doesn't likes fruit, and neither do she.", "wrong": "do", "correct": "does" },
+            { "id": "b-4", "type": "twoPass", "audio": "In my family we eat rice every day. My brother doesn't like vegetables, so he eats plain rice. My sister likes everything. I like vegetables but I hate soup.", "passes": [{ "pass": 1, "q": "What is the speaker doing?", "options": ["Describing family food habits", "Ordering food", "Complaining"], "answer": "Describing family food habits" }, { "pass": 2, "q": "Who eats plain rice?", "options": ["The brother", "The sister", "The speaker"], "answer": "The brother" }] },
+            { "id": "b-5", "type": "tapSentence", "q": "Tap the sentence that tells why you will not find banana trees in cold countries.", "answer": "They grow on trees, and most banana trees like hot weather, so you will not find them in cold countries." },
+            { "id": "b-6", "type": "sentenceBuilder", "tiles": ["Neither", "Ben", "nor", "Emma", "likes", "fruit"], "answer": "Neither Ben nor Emma likes fruit." },
+            { "id": "b-7", "type": "typeIt", "prompt": "Type the word for large areas of land where crops grow.", "answer": "fields" },
+            { "id": "b-8", "type": "speaking", "q": "Speak for 45 seconds: what your family eats, who likes what, and one So do I or Neither do I agreement.", "minimumSeconds": 40, "keywords": ["family", "like", "so", "neither", "because"] }
+          ]
+        }
+      }
+    }
+  },
+
+  "ritual": {
+    "missionBrief": { "seconds": 45, "slot": "levelStart", "content": "Big Question: What do you like to eat? By the end you will be able to say what you and other people like, ask questions with Do and Does, and agree with So do I and Neither do I." },
+    "stationTeachCards": { "seconds": 25, "applies": ["vocabulary", "grammar", "reading", "speaking"] },
+    "reflection": {
+      "seconds": 60,
+      "slot": "levelEnd",
+      "prompts": ["The easiest new word today was ___.", "One thing I want to practise again is ___."]
+    }
+  },
+
+  "speechScoring": {
+    "reuse": "Same engine as before: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "D3 means the model is withheld until after the attempt. Never render the model line before recording.",
+      "Accept doesn't / does not, don't / do not, and allow a 1-letter tolerance on 'neither'.",
+      "At Challenging, treat a dropped final -s as a soft miss: show it, do not fail the item."
+    ]
+  },
+
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": { "easy": 62, "core": 71, "challenging": 74 }
+  }
+}
+

@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle2, ChevronRight, Lock, Play, RotateCcw, Star } fr
 import { useProgress } from '../context/ProgressContext';
 import { getUnit } from '../data/units';
 import { SkillDonut } from '../components/SkillDonut';
+import { projectedMinutes } from '../lib/pacing';
 import { LEVEL_DESCRIPTIONS, LEVEL_LABELS, type Level } from '../types';
 
 export function UnitOverview() {
@@ -24,6 +25,21 @@ export function UnitOverview() {
   const levels: Level[] = ['easy', 'core', 'challenging'];
   const teacherUnlockChallenging = progress.settings.teacherPin && progress.units[unit.id]?.challenging;
   const challengingUnlocked = isCoreCompleted(unit.id) || !!teacherUnlockChallenging;
+
+  // Per-level totals. Checkpoint/boss slots (expanded pack) count toward the
+  // level's activity and XP totals; legacy boss items stay with their station.
+  const levelMeta = (level: Level) => {
+    const acts = unit.levels[level];
+    const checkpoints = (unit.bossActivities?.[level] ?? []).filter(
+      a => a.type === 'checkpoint' || a.type === 'boss',
+    );
+    return {
+      count: acts.length + checkpoints.length,
+      xp: [...acts, ...checkpoints].reduce((sum, a) => sum + a.xp, 0),
+      minutes: projectedMinutes(acts, level),
+    };
+  };
+  const coreMeta = levelMeta('core');
 
   const levelAction = (level: Level) => {
     const percent = getLevelProgressPercent(unit.id, level);
@@ -76,7 +92,7 @@ export function UnitOverview() {
         <div className="mb-4">
           <p className="eyebrow mb-1">Learning path</p>
           <h2 className="font-heading text-2xl font-extrabold text-ink">Choose your level</h2>
-          <p className="mt-1 text-sm text-muted">Each level includes 20 activities and 100 XP.</p>
+          <p className="mt-1 text-sm text-muted">Each level includes {coreMeta.count} activities and {coreMeta.xp} XP.</p>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-3">
@@ -85,6 +101,7 @@ export function UnitOverview() {
             const complete = isLevelCompleted(unit.id, level);
             const locked = level === 'challenging' && !challengingUnlocked;
             const stars = progress.units[unit.id]?.[level]?.stars || 0;
+            const meta = levelMeta(level);
 
             return (
               <article key={level} className={`surface-card flex flex-col p-5 ${locked ? 'bg-slate-50/80' : ''}`}>
@@ -118,7 +135,17 @@ export function UnitOverview() {
                 </div>
 
                 <div className="mb-5 flex items-center justify-between border-t border-slate-100 pt-4 text-sm">
-                  <span className="font-semibold text-ink">100 XP</span>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-semibold text-ink">About {meta.minutes} minutes</span>
+                    <span className="text-muted">·</span>
+                    <span className="tnum font-semibold text-ink">{meta.xp} XP</span>
+                    {/* Dev-only pacing flag: projected duration outside 60–78 min */}
+                    {import.meta.env.DEV && (meta.minutes < 60 || meta.minutes > 78) && (
+                      <span className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-bold text-amber-700">
+                        check pacing
+                      </span>
+                    )}
+                  </div>
                   <div className="flex gap-1" aria-label={`${stars} of 3 stars`}>
                     {[1, 2, 3].map(star => <Star key={star} size={16} className={star <= stars ? 'fill-sun text-sun' : 'text-slate-200'} />)}
                   </div>

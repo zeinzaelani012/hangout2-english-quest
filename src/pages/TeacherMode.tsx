@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProgress } from '../context/ProgressContext';
 import { units } from '../data/units';
-import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation } from 'lucide-react';
-import { SKILL_LABELS, LEVEL_LABELS, type Level, type Skill } from '../types';
+import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation, Timer, BarChart3 as ChartIcon } from 'lucide-react';
+import { SKILL_LABELS, LEVEL_LABELS, type Level, type Skill, type LevelTiming } from '../types';
 
 export function TeacherMode() {
   const { progress, settings, updateSettings, resetProgress } = useProgress();
@@ -16,6 +16,7 @@ export function TeacherMode() {
     unlockChallenging: false,
     lockToOneLevel: false,
   });
+  const [tab, setTab] = useState<'overview' | 'pacing'>('overview');
 
   const handlePinSubmit = () => {
     if (pinInput === settings.teacherPin) {
@@ -113,12 +114,33 @@ export function TeacherMode() {
         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-50">
           <BarChart3 size={20} className="text-brand" />
         </div>
-        <div>
+        <div className="flex-1">
           <p className="eyebrow mb-0.5">Classroom tools</p>
           <h1 className="font-heading text-2xl font-extrabold text-ink">Teacher mode</h1>
         </div>
+        {/* Tabs */}
+        <div className="flex items-center gap-1 rounded-pill bg-slate-100 p-1">
+          <button
+            onClick={() => setTab('overview')}
+            className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-sm font-bold transition-colors ${tab === 'overview' ? 'bg-white text-ink shadow-sm' : 'text-muted hover:text-ink'}`}
+            aria-pressed={tab === 'overview'}
+          >
+            <ChartIcon size={14} /> Overview
+          </button>
+          <button
+            onClick={() => setTab('pacing')}
+            className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-sm font-bold transition-colors ${tab === 'pacing' ? 'bg-white text-ink shadow-sm' : 'text-muted hover:text-ink'}`}
+            aria-pressed={tab === 'pacing'}
+          >
+            <Timer size={14} /> Pacing
+          </button>
+        </div>
       </div>
 
+      {tab === 'pacing' ? (
+        <PacingTab levelTimings={progress.levelTimings ?? {}} />
+      ) : (
+        <>
       {/* Per-level accuracy */}
       <div className="surface-card mb-4 p-5 sm:p-6">
         <h3 className="mb-4 font-heading text-lg font-extrabold text-ink">Level performance</h3>
@@ -220,7 +242,150 @@ export function TeacherMode() {
           <AlertTriangle size={18} /> Reset this student's progress
         </button>
       </div>
+        </>
+      )}
     </div>
+  );
+}
+
+/**
+ * PACING TAB — timing telemetry per unit and level (localStorage only).
+ * Median total minutes, median seconds per station, the two fastest stations
+ * (the ones to deepen), and the attempts flagged fast_completion.
+ */
+function PacingTab({ levelTimings }: { levelTimings: Record<number, LevelTiming[]> }) {
+  const median = (values: number[]): number => {
+    if (values.length === 0) return 0;
+    const sorted = [...values].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+  };
+
+  const hasAny = Object.values(levelTimings).some(list => (list?.length ?? 0) > 0);
+  if (!hasAny) {
+    return (
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-2 font-heading text-lg font-extrabold text-ink">Pacing</h3>
+        <p className="text-sm text-muted">
+          No completed level attempts yet. Timing is recorded when a student finishes all stations of a level.
+        </p>
+      </div>
+    );
+  }
+
+  const stationLabels: Record<string, string> = {
+    vocabulary: 'Vocabulary', grammar: 'Grammar', listening: 'Listening',
+    reading: 'Reading', writing: 'Writing', speaking: 'Speaking',
+    boss: 'Boss', checkpoint: 'Checkpoint',
+  };
+
+  return (
+    <>
+      {Object.entries(levelTimings).map(([unitIdRaw, timings]) => {
+        const unitId = Number(unitIdRaw);
+        const unit = units.find(u => u.id === unitId);
+        const levels = (['easy', 'core', 'challenging'] as Level[]).filter(
+          level => (timings ?? []).some(t => t.level === level),
+        );
+        if (levels.length === 0) return null;
+
+        return (
+          <div key={unitIdRaw} className="surface-card mb-4 p-5 sm:p-6">
+            <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Pacing — Unit {unitId}{unit ? `: ${unit.title}` : ''}</h3>
+            <p className="text-sm text-muted mb-4">
+              Timing is recorded when a full level attempt finishes. Fast flag: average under 25 s per activity.
+            </p>
+
+            {levels.map(level => {
+              const attempts = (timings ?? []).filter(t => t.level === level);
+              const totalMinutes = attempts.map(t =>
+                Object.values(t.perStation).reduce((sum, s) => sum + s.seconds, 0) / 60,
+              );
+              const medianMinutes = median(totalMinutes);
+
+              // Union of station keys across attempts
+              const stationKeys = [...new Set(attempts.flatMap(t => Object.keys(t.perStation)))];
+              const stationRows = stationKeys.map(key => {
+                const values = attempts.map(t => t.perStation[key]?.seconds).filter((s): s is number => typeof s === 'number');
+                const activities = attempts.map(t => t.perStation[key]?.activities).filter((a): a is number => typeof a === 'number');
+                const medSeconds = median(values);
+                const medActivities = median(activities);
+                return {
+                  key,
+                  attempts: values.length,
+                  medSeconds,
+                  perActivity: medActivities > 0 ? medSeconds / medActivities : medSeconds,
+                };
+              });
+              const fastestTwo = [...stationRows].sort((a, b) => a.perActivity - b.perActivity).slice(0, 2);
+              const fastestKeys = new Set(fastestTwo.map(s => s.key));
+
+              const flagged = attempts.filter(t => t.fastCompletion);
+
+              return (
+                <div key={level} className="mb-5 rounded-xl border border-slate-200 bg-slate-50 p-4 last:mb-0">
+                  <div className="mb-3 flex items-center justify-between">
+                    <p className="font-heading font-extrabold text-ink">{LEVEL_LABELS[level]}</p>
+                    <p className="tnum text-sm font-bold text-ink">
+                      Median total: {medianMinutes.toFixed(1)} min · {attempts.length} attempt{attempts.length > 1 ? 's' : ''}
+                    </p>
+                  </div>
+
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="text-xs uppercase text-muted">
+                        <th className="pb-2 pr-2 font-bold">Station</th>
+                        <th className="pb-2 pr-2 font-bold tnum">Attempts</th>
+                        <th className="pb-2 pr-2 font-bold tnum">Median seconds</th>
+                        <th className="pb-2 font-bold tnum">Median s / activity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {stationRows.map(row => (
+                        <tr key={row.key} className="border-t border-slate-200">
+                          <td className="py-2 pr-2 font-semibold text-ink">
+                            {stationLabels[row.key] ?? row.key}
+                            {fastestKeys.has(row.key) && (
+                              <span className="ml-2 rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-bold text-amber-700">
+                                deepen this
+                              </span>
+                            )}
+                          </td>
+                          <td className="py-2 pr-2 tnum text-muted">{row.attempts}</td>
+                          <td className="py-2 pr-2 tnum text-ink">{Math.round(row.medSeconds)}s</td>
+                          <td className="py-2 tnum text-ink">{row.perActivity.toFixed(1)}s</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+
+                  <p className="mt-3 text-sm text-muted">
+                    Fastest stations (to deepen):{' '}
+                    <span className="font-semibold text-ink">
+                      {fastestTwo.map(s => stationLabels[s.key] ?? s.key).join(', ') || '—'}
+                    </span>
+                  </p>
+
+                  <p className="mt-2 text-sm text-muted">
+                    Flagged fast_completion: <span className="tnum font-bold text-ink">{flagged.length}</span>
+                    {flagged.length > 0 && (
+                      <span className="block mt-1 text-xs">
+                        {flagged.map((t, i) => (
+                          <span key={i} className="mr-2 inline-block rounded-md bg-white px-2 py-1 ring-1 ring-slate-200">
+                            {LEVEL_LABELS[t.level]} · {new Date(t.endedAt).toLocaleDateString()} ·{' '}
+                            {(Object.values(t.perStation).reduce((sum, s) => sum + s.seconds, 0) / 60).toFixed(1)} min
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
+    </>
   );
 }
 

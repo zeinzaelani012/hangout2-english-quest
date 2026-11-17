@@ -1,14 +1,16 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect, type ReactNode } from 'react';
 import { ChevronRight, ArrowLeft, Lightbulb, Check, X, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import {
-  getUnit, getUnitReading, getUnitGrammarPatterns,
+  getUnit, getUnitReading, getUnitGrammarPatterns, getUnitRitual,
   type UnitReading, type UnitGrammarPattern, type UnitReadingContext,
 } from '../data/units';
-import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Level, type Activity, type StationProgress } from '../types';
+import { resolvePassage, resolveReadingTitle, findPassageContaining } from '../data/unit1/v2';
+import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Level, type Activity, type Station, type StationProgress } from '../types';
 import { CookieMascot, StationBadge } from '../components/Illustrations';
 import { AudioButton } from '../components/AudioButton';
+import { TeachCard, type TeachCardData } from '../components/ritual/TeachCard';
 import { PictureMatch } from '../components/activities/PictureMatch';
 import { DragSort } from '../components/activities/DragSort';
 import { GapFill } from '../components/activities/GapFill';
@@ -17,15 +19,23 @@ import { RecordAndCompare } from '../components/activities/RecordAndCompare';
 import { SentenceBuilder } from '../components/activities/SentenceBuilder';
 import { StickerPlate } from '../components/activities/StickerPlate';
 import { DiaryPrompt } from '../components/activities/DiaryPrompt';
+import { TapToken } from '../components/activities/TapToken';
+import { TapSentence } from '../components/activities/TapSentence';
+import { TypedAnswer } from '../components/activities/TypedAnswer';
+import { TwoPassAudio } from '../components/activities/TwoPassAudio';
+import { CheckpointRunner } from '../components/activities/CheckpointRunner';
 
 export function ActivityPage() {
   const { unitId, level, stationId } = useParams();
   const navigate = useNavigate();
-  const { saveStationProgress, isStationCompleted, recordVocabCorrect, progress } = useProgress();
+  const { saveStationProgress, isStationCompleted, recordVocabCorrect, progress, startLevelTiming, recordStationTiming } = useProgress();
 
   const unit = getUnit(parseInt(unitId || '0'));
   const levelKey = (level || 'easy') as Level;
-  const station = unit?.stations.find(s => s.id === stationId);
+  // The CP1 milestone is its own route, rendered like a mini station.
+  const station: Station | undefined = stationId === 'checkpoint'
+    ? { id: 'checkpoint', name: 'Halfway Checkpoint', skill: 'speaking', order: 3, description: 'Halfway milestone — mixed skills check' }
+    : unit?.stations.find(s => s.id === stationId);
   const readings = getUnitReading(unit?.id || 1);
   const grammarPatterns = getUnitGrammarPatterns(unit?.id || 1);
 
@@ -33,9 +43,14 @@ export function ActivityPage() {
   const activities = useMemo(() => {
     if (!unit || !station) return [];
 
-    // Boss station uses dedicated boss activities from the content pack
+    // Boss station: the BOSS slot only (CP1 has its own milestone route)
     if (station.id === 'boss') {
-      return unit.bossActivities?.[levelKey] ?? [];
+      return (unit.bossActivities?.[levelKey] ?? []).filter(a => a.type !== 'checkpoint');
+    }
+
+    // Checkpoint milestone route: the CP1 slot only
+    if (station.id === 'checkpoint') {
+      return (unit.bossActivities?.[levelKey] ?? []).filter(a => a.type === 'checkpoint');
     }
 
     // Map station skill to activities
@@ -46,6 +61,19 @@ export function ActivityPage() {
   const [results, setResults] = useState<Record<string, { correct: boolean; error?: { correctAnswer: string; rule: string } }>>({});
   const [showHint, setShowHint] = useState(false);
   const [stationComplete, setStationComplete] = useState(false);
+  // Ritual: TEACH_CARD at station start; D1 reason-chip XP bonus pool
+  const [teachCardSeen, setTeachCardSeen] = useState(false);
+  const bonusRef = useRef(0);
+  const handleBonus = () => { bonusRef.current += 1; };
+
+  // Timing telemetry: restart the clock per station and make sure a level
+  // attempt is being tracked (localStorage only, never sent anywhere).
+  const stationStartRef = useRef(Date.now());
+  useEffect(() => {
+    stationStartRef.current = Date.now();
+    if (unit && station) startLevelTiming(unit.id, levelKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [station?.id, levelKey, unit?.id]);
 
   if (!unit || !station || activities.length === 0) {
     return (
@@ -60,6 +88,22 @@ export function ActivityPage() {
 
   const currentActivity = activities[currentIndex];
   const isLastActivity = currentIndex >= activities.length - 1;
+
+  // v2 stations award the pack's own per-slot XP; legacy keeps station weights.
+  const stationIsV2 = activities.every(a => a.schema === 2);
+  const stationXP = stationIsV2
+    ? activities.reduce((sum, a) => sum + (a.xp || 0), 0)
+    : getStationXP(station.skill);
+
+  // Ritual: TEACH_CARD at the start of the ritual stations — from the first
+  // slot that carries one. If a station has no teachCard, skip it silently.
+  const ritual = getUnitRitual(unit.id);
+  const ritualStations = ritual?.stationTeachCards?.applies ?? [];
+  const teachCard: TeachCardData | undefined =
+    stationIsV2 && ritualStations.includes(station.skill)
+      ? (activities.find(a => (a.payload as any)?.teachCard)?.payload as any)?.teachCard
+      : undefined;
+  const showTeachCard = !!teachCard && !teachCardSeen;
 
   const handleResult = (correct: boolean, error?: { correctAnswer: string; rule: string }) => {
     setResults(prev => ({
@@ -83,7 +127,9 @@ export function ActivityPage() {
     if (isLastActivity) {
       // Complete station
       const correctCount = Object.values(results).filter(r => r.correct).length;
-      const xpEarned = Math.round((correctCount / activities.length) * getStationXP(station.skill));
+      const xpEarned = stationIsV2
+        ? activities.reduce((sum, a) => sum + (results[a.id]?.correct ? (a.xp || 0) : 0), 0) + bonusRef.current
+        : Math.round((correctCount / activities.length) * getStationXP(station.skill));
       const errors = Object.entries(results)
         .filter(([_, r]) => !r.correct && r.error)
         .map(([activityId, r]) => ({
@@ -99,6 +145,13 @@ export function ActivityPage() {
         errors,
       };
 
+      // Timing telemetry first: the level-completion finalize inside
+      // saveStationProgress consumes the active attempt, so record this
+      // station's duration before the save.
+      const stationSeconds = Math.round((Date.now() - stationStartRef.current) / 1000);
+      recordStationTiming(unit.id, levelKey, station.id, stationSeconds, activities.length);
+      const stationFast = activities.length > 0 && stationSeconds / activities.length < 25;
+
       saveStationProgress(unit.id, levelKey, station.id, stationProgress);
       setStationComplete(true);
 
@@ -112,11 +165,12 @@ export function ActivityPage() {
             stationName: station.name,
             skill: station.skill,
             xpEarned,
-            xpTotal: getStationXP(station.skill),
+            xpTotal: stationXP,
             correctCount,
             totalCount: activities.length,
             errors,
             isBoss: station.id === 'boss',
+            fastCompletion: stationFast,
           },
         });
       }, 1500);
@@ -126,8 +180,90 @@ export function ActivityPage() {
     }
   };
 
+  // v2 (expanded pack) dispatch — maps the pack's type names onto the eight
+  // mechanics. Legacy activities (Units 2/3, no schema stamp) keep the switch.
+  const renderV2Activity = (activity: Activity): React.ReactNode => {
+    const payload = activity.payload as Record<string, any>;
+    switch (activity.type) {
+      // CHOICE_ITEM
+      case 'pictureToWord':
+      case 'wordToPicture':
+      case 'audioToWord':
+      case 'audioQuestion':
+      case 'gapFill':
+      case 'oddOneOut':
+      case 'questionForms':
+      case 'transform':
+      case 'preReadVocab':
+      case 'notice':
+      case 'audioToPicture':
+      case 'audioGapFill':
+        return <GapFill activity={activity} onResult={handleResult} onBonus={handleBonus} />;
+      // TAP_TOKEN
+      case 'errorCorrection':
+        return <TapToken activity={activity} onResult={handleResult} />;
+      // TAP_SENTENCE — the passage is the answer space
+      case 'findSentence':
+      case 'gist':
+      case 'detail': {
+        const passage =
+          resolvePassage(payload.textRef) ??
+          findPassageContaining(
+            activity.difficulty,
+            (payload.items ?? []).find((i: any) => i.answerType === 'tapSentence')?.answer ?? '',
+          ) ??
+          '';
+        return (
+          <TapSentence
+            activity={activity}
+            onResult={handleResult}
+            passage={passage}
+            passageTitle={resolveReadingTitle(payload.textRef)}
+          />
+        );
+      }
+      // TILE_SEQUENCE
+      case 'sentenceBuilder':
+      case 'spelling':
+        return <SentenceBuilder activity={activity} onResult={handleResult} />;
+      // TYPED_ANSWER
+      case 'typeIt':
+      case 'sentenceRepair':
+        return <TypedAnswer activity={activity} onResult={handleResult} />;
+      // guidedParagraph writing task
+      case 'guidedParagraph':
+        return <DiaryPrompt activity={activity} onResult={handleResult} />;
+      // SORT_BINS
+      case 'dragSort':
+        return <DragSort activity={activity} onResult={handleResult} />;
+      // TWO_PASS_AUDIO
+      case 'twoPass':
+        return <TwoPassAudio activity={activity} onResult={handleResult} />;
+      // SPEAKING — one recorder, seven modes
+      case 'warmUpRepeat':
+      case 'chunkDrill':
+      case 'askAnswer':
+      case 'pictureDescription':
+      case 'rolePlay':
+      case 'personalResponse':
+      case 'monologue':
+        return <RecordAndCompare activity={activity} onResult={handleResult} mode={activity.type} />;
+      // CHECKPOINT_RUNNER
+      case 'checkpoint':
+      case 'boss':
+      case 'mixedRecall':
+        return <CheckpointRunner activity={activity} onResult={handleResult} onBonus={handleBonus} />;
+      default:
+        return <p className="text-sm leading-6 text-muted">This activity type is not yet supported.</p>;
+    }
+  };
+
   const renderActivity = () => {
     if (!currentActivity) return null;
+
+    if (currentActivity.schema === 2) {
+      return renderV2Activity(currentActivity);
+    }
 
     switch (currentActivity.type) {
       case 'pictureMatch':
@@ -152,7 +288,7 @@ export function ActivityPage() {
   };
 
   const currentResult = results[currentActivity?.id];
-  const skillColor = station.id === 'boss' ? '#0F766E' : SKILL_COLORS[station.skill];
+  const skillColor = station.id === 'boss' || station.id === 'checkpoint' ? '#0F766E' : SKILL_COLORS[station.skill];
 
   return (
     <div className="mx-auto max-w-[900px] px-4 py-4 sm:px-6 sm:py-6">
@@ -172,7 +308,7 @@ export function ActivityPage() {
               <p className="truncate font-heading text-sm font-extrabold text-ink">{station.name}</p>
               <p className="text-xs font-semibold text-muted">
                 {currentIndex + 1} of {activities.length}
-                {station.id !== 'boss' && ` · ${SKILL_LABELS[station.skill]}`}
+                {!['boss', 'checkpoint'].includes(station.id) && ` · ${SKILL_LABELS[station.skill]}`}
               </p>
             </div>
           </div>
@@ -199,6 +335,11 @@ export function ActivityPage() {
       </div>
 
       <h1 className="sr-only">{station.name} — Activity {currentIndex + 1}</h1>
+
+      {/* Ritual: TEACH_CARD — one screen at station start, tap to continue */}
+      {showTeachCard && teachCard && (
+        <TeachCard card={teachCard} onContinue={() => setTeachCardSeen(true)} />
+      )}
 
       {/* Teaching card at the top of the Grammar station */}
       {station.skill === 'grammar' && (

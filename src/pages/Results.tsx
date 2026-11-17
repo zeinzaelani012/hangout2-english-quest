@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Star, RotateCcw, ArrowUp, Home, CheckCircle2, Sparkles } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
-import { SKILL_COLORS, SKILL_LABELS, LEVEL_LABELS, type Skill } from '../types';
+import { getUnitRitual } from '../data/units';
+import { SKILL_COLORS, SKILL_LABELS, LEVEL_LABELS, type Skill, type Level } from '../types';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 interface ResultsState {
@@ -17,15 +19,35 @@ interface ResultsState {
   totalCount: number;
   errors: { activityId: string; correctAnswer: string; rule: string }[];
   isBoss?: boolean;
+  /** Station average under 25 s per activity — triggers the gentle nudge. */
+  fastCompletion?: boolean;
 }
 
 export function Results() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { isCoreCompleted, progress } = useProgress();
+  const { isCoreCompleted, progress, addReflection } = useProgress();
   const reduceMotion = useReducedMotion();
 
   const state = location.state as ResultsState | null;
+
+  // Ritual: REFLECTION — two prompts from the pack, saved to the progress
+  // record. Hooks stay above the early return below.
+  const reflectionPrompts = getUnitRitual(state?.unitId || 0)?.reflection?.prompts ?? [];
+  const [reflectionAnswers, setReflectionAnswers] = useState<string[]>(() => reflectionPrompts.map(() => ''));
+  const [reflectionSaved, setReflectionSaved] = useState(false);
+
+  const saveReflection = () => {
+    if (!state) return;
+    addReflection({
+      unitId: state.unitId,
+      level: state.level as Level,
+      stationId: state.stationId,
+      date: new Date().toISOString(),
+      answers: reflectionAnswers,
+    });
+    setReflectionSaved(true);
+  };
 
   if (!state) {
     return (
@@ -101,6 +123,12 @@ export function Results() {
         <p className="text-sm text-muted mt-2 tnum">
           {state.correctCount} of {state.totalCount} correct ({accuracy}%)
         </p>
+        {/* Fast-completion nudge — gentle, never reduces XP */}
+        {state.fastCompletion && (
+          <p className="mt-3 text-sm text-muted">
+            That was quick! Try reading the feedback next time - it helps the words stay.
+          </p>
+        )}
       </div>
 
       {/* Per-skill breakdown */}
@@ -173,6 +201,43 @@ export function Results() {
         <div className="surface-card mb-6 p-6 text-center">
           <CheckCircle2 size={32} className="text-mint mx-auto mb-2" />
           <p className="text-sm font-medium text-ink">No mistakes — perfect run!</p>
+        </div>
+      )}
+
+      {/* Ritual: REFLECTION — after the corrections list */}
+      {reflectionPrompts.length > 0 && (
+        <div className="surface-card mb-6 p-6">
+          <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Reflect</h3>
+          <p className="mb-4 text-sm text-muted">Two quick questions about today's session.</p>
+          <div className="space-y-4">
+            {reflectionPrompts.map((prompt, i) => (
+              <div key={i}>
+                <label htmlFor={`reflection-${i}`} className="mb-1.5 block text-sm font-semibold text-ink">
+                  {prompt}
+                </label>
+                <textarea
+                  id={`reflection-${i}`}
+                  rows={2}
+                  value={reflectionAnswers[i] ?? ''}
+                  disabled={reflectionSaved}
+                  onChange={e =>
+                    setReflectionAnswers(prev => prev.map((a, idx) => (idx === i ? e.target.value : a)))
+                  }
+                  className="w-full resize-none rounded-xl border border-slate-200 bg-white p-3 text-sm text-ink placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 disabled:opacity-60"
+                  aria-label={prompt}
+                />
+              </div>
+            ))}
+          </div>
+          {!reflectionSaved ? (
+            <button onClick={saveReflection} className="action-secondary mt-4" style={{ minHeight: 44 }}>
+              Save reflection
+            </button>
+          ) : (
+            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-mint">
+              <CheckCircle2 size={16} /> Reflection saved.
+            </p>
+          )}
         </div>
       )}
 

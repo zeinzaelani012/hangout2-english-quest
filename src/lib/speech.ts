@@ -38,6 +38,8 @@ export function listen(
   onResult: (transcript: string) => void,
   onError: (error: string) => void,
   onEnd: () => void,
+  /** Long-form speech (monologue, picture description) keeps listening across pauses. */
+  continuous = false,
 ): { stop: () => void } {
   const SRCtor = getRecognitionConstructor();
   if (!SRCtor) {
@@ -47,13 +49,15 @@ export function listen(
 
   const recognition = new SRCtor();
   recognition.lang = lang;
-  recognition.continuous = false;
+  recognition.continuous = continuous;
   recognition.interimResults = false;
   recognition.maxAlternatives = 3;
 
   recognition.onresult = (event: any) => {
-    const transcript = event.results[0][0].transcript;
-    onResult(transcript);
+    // In continuous mode each final segment arrives as its own result.
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      if (event.results[i].isFinal) onResult(event.results[i][0].transcript);
+    }
   };
 
   recognition.onerror = (event: any) => {
@@ -123,8 +127,8 @@ function normalize(text: string): string {
     .trim();
 }
 
-// Levenshtein distance
-function levenshtein(a: string, b: string): number {
+// Levenshtein distance (also used by typed-answer activities)
+export function levenshtein(a: string, b: string): number {
   const m = a.length;
   const n = b.length;
   const dp: number[][] = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));

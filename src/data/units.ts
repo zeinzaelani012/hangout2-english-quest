@@ -1,11 +1,10 @@
-import type { Unit, Station, Skill, Level, VocabItem } from '../types';
+import type { Unit, Station, Skill, Level, VocabItem, Activity } from '../types';
 import { SKILL_WEIGHTS } from '../types';
 import { contentPack } from './unit1/contentPack';
 import type { DialogueJSON } from './unit1/contentPack';
 import { vocabulary as unit1Vocabulary } from './unit1/vocabulary';
 import { vocabulary as unit2Vocabulary } from './unit2/vocabulary';
-import { buildLevelActivities, buildBossLevelActivities } from './unit1/activities';
-import { resetIdCounter } from './unit1/factory';
+import { buildLevel as buildUnit1V2Level, unit1Ritual, type PackRitual } from './unit1/v2';
 import { readingTexts as unit1ReadingTexts, dialogue as unit1Dialogue } from './unit1/reading';
 import { grammarPatterns as unit1Patterns } from './unit1/grammar';
 import { buildUnit2 } from './unit2/activities';
@@ -20,13 +19,22 @@ const unit1Stations: Station[] = contentPack.stations.map(s => ({
   description: s.note || '',
 }));
 
-function buildUnit1(): Unit {
-  resetIdCounter();
+// CP1/BOSS are checkpoint slots on the level's timeline; the app routes them
+// through the boss station like the old boss activities.
+function isCheckpointActivity(a: Activity): boolean {
+  return a.type === 'checkpoint' || a.type === 'boss';
+}
 
-  const levels: Record<Level, ReturnType<typeof buildLevelActivities>> = {
-    easy: buildLevelActivities('easy'),
-    core: buildLevelActivities('core'),
-    challenging: buildLevelActivities('challenging'),
+/** Ritual layer content for a unit (mission brief, teach cards, reflection). */
+export function getUnitRitual(unitId: number): PackRitual | undefined {
+  return unitId === 1 ? unit1Ritual : undefined;
+}
+
+function buildUnit1(): Unit {
+  const all: Record<Level, Activity[]> = {
+    easy: buildUnit1V2Level('easy'),
+    core: buildUnit1V2Level('core'),
+    challenging: buildUnit1V2Level('challenging'),
   };
 
   return {
@@ -38,11 +46,15 @@ function buildUnit1(): Unit {
     skills: SKILL_WEIGHTS,
     vocabulary: unit1Vocabulary,
     stations: unit1Stations,
-    levels,
+    levels: {
+      easy: all.easy.filter(a => !isCheckpointActivity(a)),
+      core: all.core.filter(a => !isCheckpointActivity(a)),
+      challenging: all.challenging.filter(a => !isCheckpointActivity(a)),
+    },
     bossActivities: {
-      easy: buildBossLevelActivities('easy'),
-      core: buildBossLevelActivities('core'),
-      challenging: buildBossLevelActivities('challenging'),
+      easy: all.easy.filter(isCheckpointActivity),
+      core: all.core.filter(isCheckpointActivity),
+      challenging: all.challenging.filter(isCheckpointActivity),
     },
     unlocked: true,
     status: 'playable',

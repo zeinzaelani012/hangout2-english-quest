@@ -1,14 +1,354 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { Activity, GapFillPayload } from '../../types';
 import { Check, X } from 'lucide-react';
+import { AudioButton } from '../AudioButton';
+import { VocabIllustration } from '../Illustrations';
+import { majorityCorrect, renderStemParts, v2Items, type ItemResult } from './v2-types';
 
 interface Props {
   activity: Activity;
-  onResult: (correct: boolean, error?: { correctAnswer: string; rule: string }) => void;
+  onResult: ItemResult;
+  /** D1 reason chip: notified when the learner picks the correct reason (+1 XP). */
+  onBonus?: () => void;
 }
 
-export function GapFill({ activity, onResult }: Props) {
+// ---- v2 CHOICE_ITEM -----------------------------------------------------------
+// types: pictureToWord, wordToPicture, audioToWord, audioQuestion, gapFill,
+// oddOneOut, questionForms, transform, preReadVocab, notice, audioToPicture,
+// audioGapFill.
+
+interface ChoiceItemSpec {
+  id?: string;
+  stem?: string;
+  img?: string;
+  audio?: string;
+  options: string[];
+  answer: string;
+  why?: string;
+  instruction?: string;
+}
+
+function instructionFor(type: string, raw: Record<string, any>): string | undefined {
+  switch (type) {
+    case 'questionForms':
+      return `Answer: “${raw.answerLine}”`;
+    case 'transform':
+      return raw.instruction ? `${raw.instruction}: “${raw.from}”` : `“${raw.from}”`;
+    case 'notice':
+    case 'audioQuestion':
+      return raw.q;
+    default:
+      return raw.q ?? raw.instruction;
+  }
+}
+
+function toSpec(type: string, raw: Record<string, any>): ChoiceItemSpec {
+  return {
+    id: raw.id,
+    stem: raw.sentence ?? raw.word,
+    img: raw.img,
+    audio: raw.audio,
+    options: raw.options ?? raw.words ?? [],
+    answer: raw.answer,
+    why: raw.why,
+    instruction: instructionFor(type, raw),
+  };
+}
+
+function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
+  const payload = activity.payload as Record<string, any>;
+  const items: ChoiceItemSpec[] = v2Items(payload).map(raw => toSpec(activity.type, raw));
+  const whyChoices: string[] = payload.whyChoices ?? [];
+  const teachCard = payload.teachCard as
+    | { title: string; lines: string[]; rule: string }
+    | undefined;
+  // wordToPicture / audioToPicture: the options are words that render as
+  // pictures — the learner taps the image, not the word.
+  const pictureOptions = activity.type === 'wordToPicture' || activity.type === 'audioToPicture';
+  // audioGapFill carries one clip for the whole slot (L3); show it once.
+  const slotAudio: string | undefined = activity.type === 'audioGapFill' ? payload.audio : undefined;
+
+  const [index, setIndex] = useState(0);
+  const [selected, setSelected] = useState<string | null>(null);
+  const [results, setResults] = useState<boolean[]>([]);
+  // D1 reason chip: the learner must pick a reason before the explanation
+  // appears. The pack's whyChoices are ordered best-first, so the first chip
+  // is the correct reason.
+  const [reason, setReason] = useState<string | null>(null);
+  const reasonCorrect = reason !== null && reason === whyChoices[0];
+
+  const item = items[index];
+  const answered = selected !== null;
+  const isCorrect = answered && selected === item?.answer;
+  const isLast = index >= items.length - 1;
+
+  const finish = (finalResults: boolean[]) => {
+    const correct = majorityCorrect(finalResults);
+    const firstWrong = finalResults.findIndex(r => !r);
+    onResult(correct, firstWrong >= 0 ? {
+      correctAnswer: items[firstWrong].answer,
+      rule: items[firstWrong].why ?? '',
+    } : undefined);
+  };
+
+  const handleSelect = (option: string) => {
+    if (answered || !item) return;
+    setSelected(option);
+    const nextResults = [...results, option === item.answer];
+    setResults(nextResults);
+    if (isLast) finish(nextResults);
+  };
+
+  // Keyboard 1–9 shortcuts (ignored while typing in an input)
+  useEffect(() => {
+    if (answered || !item) return;
+    const handler = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) return;
+      const n = parseInt(e.key, 10);
+      if (n >= 1 && n <= Math.min(9, item.options.length)) {
+        handleSelect(item.options[n - 1]);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  });
+
+  const handleReason = (chip: string) => {
+    if (reason) return;
+    setReason(chip);
+    if (chip === whyChoices[0]) onBonus?.();
+  };
+
+  const handleNext = () => {
+    setIndex(i => i + 1);
+    setSelected(null);
+    setReason(null);
+  };
+
+  if (!item) return null;
+
+  return (
+    <div>
+      {teachCard && (
+        <div className="mb-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <p className="font-heading text-sm font-extrabold text-ink">{teachCard.title}</p>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {teachCard.lines.map((line, i) => (
+              <span key={i} className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-ink">
+                {line}
+              </span>
+            ))}
+          </div>
+          <p className="mt-2.5 text-xs leading-5 text-muted">{teachCard.rule}</p>
+        </div>
+      )}
+
+      <div className="mb-5">
+        {items.length > 1 && (
+          <p className="eyebrow mb-2 tnum">Item {index + 1} of {items.length}</p>
+        )}
+        {slotAudio && (
+          <div className="mb-3">
+            <AudioButton
+              audioKey={`choice-slot-${activity.id}`}
+              fallbackText={slotAudio}
+              rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
+              label="Listen to the clip"
+            />
+          </div>
+        )}
+        {item.instruction && (
+          <p className="mb-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold leading-6 text-ink">
+            {item.instruction}
+          </p>
+        )}
+        {item.audio && (
+          <div className="mb-3">
+            <AudioButton
+              audioKey={`choice-${activity.id}-${item.id ?? index}`}
+              fallbackText={item.audio}
+              rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
+              label="Listen"
+            />
+          </div>
+        )}
+        {item.img && (
+          <div className="mb-3 flex justify-center">
+            <VocabIllustration imgHint={item.img} size={96} />
+          </div>
+        )}
+        {item.stem && (
+          <p className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-lg leading-8 text-ink sm:text-xl">
+            {renderStemParts(item.stem).map((part, i) =>
+              part === 'blank' ? (
+                <span
+                  key={i}
+                  className={`mx-1 inline-block min-w-20 rounded-lg border px-3 py-1.5 text-center font-bold ${
+                    answered
+                      ? isCorrect
+                        ? 'border-emerald-200 bg-emerald-100 text-mint'
+                        : 'border-red-200 bg-red-100 text-coral'
+                      : 'border-dashed border-brand/40 bg-white text-brand'
+                  }`}
+                >
+                  {answered ? selected : '___'}
+                </span>
+              ) : (
+                <span key={i}>{part}</span>
+              ),
+            )}
+          </p>
+        )}
+      </div>
+
+      {pictureOptions ? (
+        /* Picture choice: options render as illustrations, no words */
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {item.options.map((option, i) => {
+            const isSelected = selected === option;
+            const isOptionCorrect = option === item.answer;
+            const showResult = answered && (isSelected || isOptionCorrect);
+            return (
+              <button
+                key={i}
+                onClick={() => handleSelect(option)}
+                disabled={answered}
+                className={`flex flex-col items-center gap-1.5 rounded-xl border p-3 transition-all ${
+                  showResult && isOptionCorrect
+                    ? 'border-emerald-300 bg-emerald-50 ring-2 ring-emerald-200'
+                    : showResult && isSelected && !isOptionCorrect
+                      ? 'border-red-300 bg-red-50 ring-2 ring-red-200'
+                      : 'border-slate-200 bg-white hover:border-brand/40 hover:bg-teal-50/50'
+                }`}
+                style={{ minHeight: 44 }}
+                aria-label={`Option ${i + 1}: ${option}`}
+              >
+                <VocabIllustration imgHint={option} size={72} />
+                <span className="tnum inline-flex h-5 w-5 items-center justify-center rounded bg-slate-100 text-xs font-bold text-muted">
+                  {i + 1}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+      <div className="flex flex-wrap gap-2.5">
+        {item.options.map((option, i) => {
+          const isSelected = selected === option;
+          const isOptionCorrect = option === item.answer;
+          const showResult = answered && (isSelected || isOptionCorrect);
+          return (
+            <button
+              key={i}
+              onClick={() => handleSelect(option)}
+              disabled={answered}
+              className={`min-h-11 rounded-xl border px-5 py-2.5 text-left text-sm font-bold transition-all ${
+                showResult && isOptionCorrect
+                  ? 'border-emerald-300 bg-emerald-50 text-mint ring-2 ring-emerald-200'
+                  : showResult && isSelected && !isOptionCorrect
+                    ? 'border-red-300 bg-red-50 text-coral ring-2 ring-red-200'
+                    : 'border-slate-200 bg-white text-ink hover:border-brand/40 hover:bg-teal-50/50'
+              }`}
+              style={{ minHeight: 44 }}
+              aria-label={`Option ${i + 1}: ${option}`}
+            >
+              <span className="tnum mr-2 inline-flex h-5 w-5 items-center justify-center rounded bg-slate-100 text-xs font-bold text-muted">
+                {i + 1}
+              </span>
+              {option}
+              {showResult && isOptionCorrect && <Check size={16} className="ml-1.5 inline" />}
+              {showResult && isSelected && !isOptionCorrect && <X size={16} className="ml-1.5 inline" />}
+            </button>
+          );
+        })}
+      </div>
+      )}
+
+      {/* D1 reason chip — after the choice, before the explanation */}
+      {answered && whyChoices.length > 0 && !reason && (
+        <div className="mt-4 rounded-xl border border-brand/30 bg-teal-50/50 p-4">
+          <p className="mb-3 text-sm font-bold text-ink">Why is that the right answer?</p>
+          <div className="flex flex-wrap gap-2">
+            {whyChoices.map(chip => (
+              <button
+                key={chip}
+                onClick={() => handleReason(chip)}
+                className="min-h-9 rounded-full border border-brand/30 bg-white px-3.5 py-1.5 text-xs font-bold text-brand transition-colors hover:bg-teal-50"
+                style={{ minHeight: 36 }}
+                aria-label={`Reason: ${chip}`}
+              >
+                {chip}
+              </button>
+            ))}
+          </div>
+          <p className="mt-2 text-xs text-muted">Pick a reason to see the rule — it cannot be skipped, and any choice keeps you going.</p>
+        </div>
+      )}
+
+      {answered && (whyChoices.length === 0 || reason !== null) && (
+        <div
+          className={`mt-4 rounded-xl border p-4 ${
+            isCorrect ? 'border-emerald-200 bg-emerald-50' : 'border-red-200 bg-red-50'
+          }`}
+          aria-live="polite"
+          role="status"
+        >
+          <div className="flex items-start gap-3">
+            {isCorrect ? (
+              <Check size={20} className="mt-0.5 shrink-0 text-mint" />
+            ) : (
+              <X size={20} className="mt-0.5 shrink-0 text-coral" />
+            )}
+            <div>
+              <p className="font-heading text-sm font-extrabold text-ink">
+                {isCorrect ? 'Correct' : 'Review this answer'}
+                {reason && reasonCorrect && (
+                  <span className="ml-2 inline-flex items-center rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-extrabold text-mint">
+                    +1 XP
+                  </span>
+                )}
+              </p>
+              {!isCorrect && (
+                <p className="mt-1 text-sm leading-6 text-ink">
+                  <span className="font-bold">Answer: </span>{item.answer}
+                </p>
+              )}
+              {(item.why ?? (reasonCorrect ? whyChoices[0] : undefined)) && (
+                <p className="mt-1 text-sm leading-6 text-muted">{item.why ?? whyChoices[0]}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* D1 wrong reason: the rule card appears */}
+      {answered && reason && !reasonCorrect && (
+        <div className="mt-3 rounded-xl border border-brand/30 bg-teal-50 p-4">
+          <p className="eyebrow mb-1">Rule</p>
+          <p className="text-sm leading-6 text-ink">{item.why ?? whyChoices[0]}</p>
+        </div>
+      )}
+
+      {answered && (whyChoices.length === 0 || reason !== null) && !isLast && (
+        <button onClick={handleNext} className="action-primary mt-4">
+          Next item
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ---- Legacy single-item GapFill (Units 2/3) ----------------------------------
+
+function LegacyGapFill({ activity, onResult }: Props) {
   const payload = activity.payload as GapFillPayload;
+
+  // v2 (expanded pack) payloads are slot entries with an items array.
+  if (Array.isArray((payload as Record<string, any>)?.items)) {
+    return <ChoiceItemBody activity={activity} onResult={onResult} />;
+  }
+
   const [selected, setSelected] = useState<string | null>(null);
   const [answered, setAnswered] = useState(false);
 
@@ -28,7 +368,6 @@ export function GapFill({ activity, onResult }: Props) {
 
   return (
     <div>
-      {/* Sentence with blank */}
       <div className="mb-6 rounded-xl border border-slate-200 bg-slate-50 p-5">
         <p className="text-lg leading-8 text-ink sm:text-xl">
           {parts[0]}
@@ -78,4 +417,12 @@ export function GapFill({ activity, onResult }: Props) {
       </div>
     </div>
   );
+}
+
+export function GapFill(props: Props) {
+  // v2 (expanded pack) payloads are slot entries with an items array.
+  if (Array.isArray((props.activity.payload as Record<string, any>)?.items)) {
+    return <ChoiceItemBody {...props} />;
+  }
+  return <LegacyGapFill {...props} />;
 }

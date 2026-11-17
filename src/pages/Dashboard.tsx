@@ -153,7 +153,13 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
           {units.map(unit => {
             if (unit.status === 'placeholder') {
               return (
-                <div key={unit.id} className="surface-muted flex min-h-44 flex-col justify-between p-5 text-left" aria-label={`Unit ${unit.id}, locked, coming soon`}>
+                <div
+                  key={unit.id}
+                  tabIndex={0}
+                  role="status"
+                  className="surface-muted flex min-h-44 flex-col justify-between p-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand"
+                  aria-label={`Unit ${unit.id}, locked, coming soon`}
+                >
                   <div className="flex items-start justify-between">
                     <span className="eyebrow">Unit {unit.id}</span>
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-200/70 text-slate-400"><Lock size={17} /></span>
