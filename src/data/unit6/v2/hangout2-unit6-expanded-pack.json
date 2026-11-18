@@ -1,0 +1,5044 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit6",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "unit": 6,
+    "title": "It's Hot!",
+    "islandName": "Weather Island",
+    "bigQuestion": "How's the weather today?",
+    "objectives": [
+      "Weather conditions and things to wear outside",
+      "Telling someone what to do or not do"
+    ],
+    "sourcePages": "64-73 (adapted, not reproduced)",
+    "sourceNote": "Book pages 74-77 are Review 2 (Units 4-6) and are NOT part of this pack. They are noted in reviewConnection.",
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. Result: { id: slotId + '-' + level, skill, type, prompt, payload, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "totalUnitsPlanned": 9,
+    "answerKeyIncluded": true
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1.0,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25.0
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15.0
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15.0
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the weather"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Hot or cold gear?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Do it, don't do it"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Clothes for this weather"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the weather"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Three voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Weather report"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The Weather Station"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/6/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Weather Board",
+      "subtitle": "Name it",
+      "xp": 25
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Weather Report",
+      "subtitle": "How's the weather?",
+      "xp": 15
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Window",
+      "subtitle": "Listen and choose",
+      "xp": 10
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "Hot and Cold Places",
+      "subtitle": "Read and find",
+      "xp": 15
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Weather Diary",
+      "subtitle": "Write it down",
+      "xp": 10
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Front Door",
+      "subtitle": "Say it out loud",
+      "xp": 25
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The Weather Station",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 6,
+    "title": "It's Hot!",
+    "islandName": "Weather Island",
+    "bigQuestion": "How's the weather today?",
+    "objectives": [
+      "Weather conditions and things to wear outside",
+      "Telling someone what to do or not do"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "Written at v2.0 first time. 30 slots + 2 checkpoints."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "sunny",
+      "set": "A",
+      "category": "weather",
+      "example": "It's sunny. Put on your sunglasses.",
+      "imgHint": "a bright yellow sun with soft rays on a blue sky"
+    },
+    {
+      "id": "v02",
+      "word": "cloudy",
+      "set": "A",
+      "category": "weather",
+      "example": "It's cloudy, but it isn't raining.",
+      "imgHint": "three grey clouds covering the sky"
+    },
+    {
+      "id": "v03",
+      "word": "windy",
+      "set": "A",
+      "category": "weather",
+      "example": "It's windy. Wear a scarf.",
+      "imgHint": "curved wind lines moving a tree and a hat"
+    },
+    {
+      "id": "v04",
+      "word": "foggy",
+      "set": "A",
+      "category": "weather",
+      "example": "It's foggy. We can't see the road.",
+      "imgHint": "a street lamp half hidden by thick white fog"
+    },
+    {
+      "id": "v05",
+      "word": "hot",
+      "set": "A",
+      "category": "weather",
+      "example": "It's hot today. Wear a T-shirt.",
+      "imgHint": "a thermometer with red at the top and a heat haze"
+    },
+    {
+      "id": "v06",
+      "word": "cold",
+      "set": "A",
+      "category": "weather",
+      "example": "It's cold. Don't forget your gloves.",
+      "imgHint": "a thermometer with blue at the bottom and a snowflake"
+    },
+    {
+      "id": "v07",
+      "word": "dry",
+      "set": "A",
+      "category": "weather",
+      "example": "The desert is very dry.",
+      "imgHint": "cracked dry ground with no water"
+    },
+    {
+      "id": "v08",
+      "word": "wet",
+      "set": "A",
+      "category": "weather",
+      "example": "You're all wet! Wear a raincoat.",
+      "imgHint": "raindrops falling on a puddle"
+    },
+    {
+      "id": "v09",
+      "word": "sunscreen",
+      "set": "B",
+      "category": "clothing",
+      "example": "Put on sunscreen. It's very sunny.",
+      "imgHint": "a yellow bottle of sun cream with a sun on the label"
+    },
+    {
+      "id": "v10",
+      "word": "sunglasses",
+      "set": "B",
+      "category": "clothing",
+      "example": "Put on your sunglasses.",
+      "imgHint": "dark sunglasses with a blue reflection"
+    },
+    {
+      "id": "v11",
+      "word": "baseball cap",
+      "set": "B",
+      "category": "clothing",
+      "example": "Wear a baseball cap. It's sunny.",
+      "imgHint": "a blue cap with a long front brim"
+    },
+    {
+      "id": "v12",
+      "word": "scarf",
+      "set": "B",
+      "category": "clothing",
+      "example": "It's cold. Put on your scarf.",
+      "imgHint": "a thick green knitted scarf"
+    },
+    {
+      "id": "v13",
+      "word": "pants",
+      "set": "B",
+      "category": "clothing",
+      "example": "Wear long pants. It's cold.",
+      "imgHint": "long trousers on a hanger"
+    },
+    {
+      "id": "v14",
+      "word": "sweater",
+      "set": "B",
+      "category": "clothing",
+      "example": "Put on your sweater.",
+      "imgHint": "a thick red knitted jumper"
+    },
+    {
+      "id": "v15",
+      "word": "raincoat",
+      "set": "B",
+      "category": "clothing",
+      "example": "Brian! Wear a raincoat.",
+      "imgHint": "a yellow waterproof coat with a hood"
+    },
+    {
+      "id": "v16",
+      "word": "snowsuit",
+      "set": "B",
+      "category": "clothing",
+      "example": "Wear a snowsuit in the snow.",
+      "imgHint": "a padded one-piece winter suit, navy with orange"
+    },
+    {
+      "id": "v17",
+      "word": "desert",
+      "set": "C",
+      "category": "place",
+      "example": "Antarctica is a desert, too.",
+      "imgHint": "a wide dry landscape with a single bare tree"
+    },
+    {
+      "id": "v18",
+      "word": "ice",
+      "set": "C",
+      "category": "nature",
+      "example": "There is a lot of ice in Antarctica.",
+      "imgHint": "blocky white-blue ice sheets with cracks"
+    },
+    {
+      "id": "v19",
+      "word": "mountains",
+      "set": "C",
+      "category": "place",
+      "example": "The desert lies between mountains.",
+      "imgHint": "a range of pointed grey and white peaks"
+    },
+    {
+      "id": "v20",
+      "word": "rain",
+      "set": "C",
+      "category": "weather",
+      "example": "It only rains a few times a year.",
+      "imgHint": "slanted rain lines over a grey cloud"
+    },
+    {
+      "id": "v21",
+      "word": "Antarctica",
+      "set": "C",
+      "category": "place",
+      "example": "Antarctica is very cold.",
+      "imgHint": "a white continent shaped like a rounded map, on blue sea"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the weather word.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "sunny",
+              "options": [
+                "sunny",
+                "cloudy",
+                "foggy"
+              ],
+              "answer": "sunny",
+              "why": "The sun is in the sky, so it is sunny."
+            },
+            {
+              "id": "v1-2",
+              "img": "cloudy",
+              "options": [
+                "cloudy",
+                "sunny",
+                "windy"
+              ],
+              "answer": "cloudy",
+              "why": "There are grey clouds, so it is cloudy."
+            },
+            {
+              "id": "v1-3",
+              "img": "hot",
+              "options": [
+                "hot",
+                "cold",
+                "wet"
+              ],
+              "answer": "hot",
+              "why": "The thermometer is red. It is hot."
+            },
+            {
+              "id": "v1-4",
+              "img": "raincoat",
+              "options": [
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "raincoat",
+              "why": "A raincoat is yellow and keeps the rain off."
+            }
+          ],
+          "whyChoices": [
+            "This word matches the picture",
+            "The word is short",
+            "I like this weather"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "cold",
+              "options": [
+                "cold",
+                "hot",
+                "dry"
+              ],
+              "answer": "cold",
+              "why": "The thermometer is blue. It is cold."
+            },
+            {
+              "id": "v2-2",
+              "word": "sunglasses",
+              "options": [
+                "sunglasses",
+                "baseball cap",
+                "scarf"
+              ],
+              "answer": "sunglasses",
+              "why": "You put sunglasses on your eyes."
+            },
+            {
+              "id": "v2-3",
+              "word": "scarf",
+              "options": [
+                "scarf",
+                "sweater",
+                "sunscreen"
+              ],
+              "answer": "scarf",
+              "why": "A scarf goes around your neck."
+            },
+            {
+              "id": "v2-4",
+              "word": "windy",
+              "options": [
+                "windy",
+                "foggy",
+                "wet"
+              ],
+              "answer": "windy",
+              "why": "The lines show the wind moving."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this word",
+            "The word is long",
+            "I wear this at home"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Sunny.",
+              "options": [
+                "sunny",
+                "foggy",
+                "windy"
+              ],
+              "answer": "sunny"
+            },
+            {
+              "id": "v3-2",
+              "audio": "It's cold today.",
+              "options": [
+                "cold",
+                "hot",
+                "dry"
+              ],
+              "answer": "cold"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Raincoat.",
+              "options": [
+                "raincoat",
+                "sweater",
+                "sunscreen"
+              ],
+              "answer": "raincoat"
+            }
+          ],
+          "whyChoices": [
+            "I heard that word clearly",
+            "It sounded like another word",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each thing in the right box.",
+          "bins": [
+            "Hot weather",
+            "Cold weather"
+          ],
+          "items": [
+            {
+              "word": "sunglasses",
+              "bin": "Hot weather",
+              "why": "You wear sunglasses when it is sunny."
+            },
+            {
+              "word": "scarf",
+              "bin": "Cold weather",
+              "why": "A scarf keeps your neck warm."
+            },
+            {
+              "word": "baseball cap",
+              "bin": "Hot weather",
+              "why": "A cap keeps the sun off your face."
+            },
+            {
+              "word": "sweater",
+              "bin": "Cold weather",
+              "why": "A sweater is thick and warm."
+            },
+            {
+              "word": "sunscreen",
+              "bin": "Hot weather",
+              "why": "Sunscreen protects your skin from the sun."
+            },
+            {
+              "word": "snowsuit",
+              "bin": "Cold weather",
+              "why": "A snowsuit is for snow."
+            },
+            {
+              "word": "pants",
+              "bin": "Cold weather",
+              "why": "Long pants keep your legs warm."
+            },
+            {
+              "word": "raincoat",
+              "bin": "Cold weather",
+              "why": "You wear a raincoat when it rains."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "It's sunny. Put on your ___.",
+              "options": [
+                "sunglasses",
+                "scarf",
+                "snowsuit"
+              ],
+              "answer": "sunglasses",
+              "why": "Sunglasses protect your eyes from the sun."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "It's cold. Put on your ___.",
+              "options": [
+                "sweater",
+                "sunscreen",
+                "baseball cap"
+              ],
+              "answer": "sweater",
+              "why": "A sweater keeps you warm."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "It's raining. Wear a ___.",
+              "options": [
+                "raincoat",
+                "sweater",
+                "sunscreen"
+              ],
+              "answer": "raincoat",
+              "why": "A raincoat keeps you dry."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "It's windy. Wear a ___.",
+              "options": [
+                "scarf",
+                "sunscreen",
+                "baseball cap"
+              ],
+              "answer": "scarf",
+              "why": "A scarf stays on in the wind."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "sunny",
+                "cloudy",
+                "windy",
+                "sweater"
+              ],
+              "answer": "sweater",
+              "why": "The others are weather. A sweater is a thing you wear."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "hot",
+                "cold",
+                "dry",
+                "scarf"
+              ],
+              "answer": "scarf",
+              "why": "The others describe the weather."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "sunscreen",
+                "sunglasses",
+                "baseball cap",
+                "foggy"
+              ],
+              "answer": "foggy",
+              "why": "The others are things you wear or put on."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is the longest word",
+            "I do not like it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "u",
+                "n",
+                "n",
+                "y"
+              ],
+              "answer": "sunny",
+              "audio": "sunny"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "h",
+                "o",
+                "t"
+              ],
+              "answer": "hot",
+              "audio": "hot"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "r",
+                "a",
+                "i",
+                "n"
+              ],
+              "answer": "rain",
+              "audio": "rain"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the weather words. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Foggy.",
+              "options": [
+                "foggy",
+                "cloudy",
+                "wet"
+              ],
+              "answer": "foggy"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "It's ___. Put on sunscreen.",
+              "options": [
+                "sunny",
+                "cloudy",
+                "cold"
+              ],
+              "answer": "sunny"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the weather word.",
+              "img": "wet",
+              "answer": "wet",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sunny",
+                "cloudy",
+                "foggy",
+                "raincoat"
+              ],
+              "answer": "raincoat",
+              "why": "The others are weather. A raincoat is clothing."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "sweater",
+              "options": [
+                "sweater",
+                "sunscreen",
+                "scarf"
+              ],
+              "answer": "sweater"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this word",
+            "This word was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these four sentences. What is the same in the question each time?",
+          "teachCard": {
+            "title": "It's + weather word",
+            "lines": [
+              "How's the weather? It's sunny.",
+              "How's the weather? It's cold.",
+              "It's cloudy today.",
+              "It's windy."
+            ],
+            "rule": "We say It's + weather word: It's sunny, It's cold, It's windy. It's = it is. Never say It are."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "It's sunny.",
+              "q": "What does It's mean?",
+              "options": [
+                "it is",
+                "it are",
+                "it has"
+              ],
+              "answer": "it is"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "It's cold today.",
+              "q": "Which word tells you the weather?",
+              "options": [
+                "cold",
+                "today",
+                "the"
+              ],
+              "answer": "cold"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which sentence is correct?",
+              "options": [
+                "How's the weather?",
+                "How are the weather?",
+                "What's the weather is?",
+                "How the weather?"
+              ],
+              "answer": "How's the weather?"
+            },
+            {
+              "id": "g1-4",
+              "sentence": "It's windy.",
+              "q": "How many words follow It's?",
+              "options": [
+                "one",
+                "two",
+                "three"
+              ],
+              "answer": "one"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "It takes is",
+            "The answer is Yes, it is or No, it isn't",
+            "Put on goes with a thing you wear",
+            "Don't makes it negative"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "___ sunny today.",
+              "options": [
+                "It's",
+                "They're"
+              ],
+              "answer": "It's",
+              "why": "Weather takes It's."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "It ___ cold.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "is",
+              "why": "It takes is."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "It's cloudy. ___ on your raincoat.",
+              "options": [
+                "Put",
+                "Puts"
+              ],
+              "answer": "Put",
+              "why": "Put on your raincoat."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "It's hot. ___ put on your sweater.",
+              "options": [
+                "Don't",
+                "Not"
+              ],
+              "answer": "Don't",
+              "why": "Don't put on your sweater."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Is it sunny? Yes, it ___.",
+              "options": [
+                "is",
+                "does"
+              ],
+              "answer": "is",
+              "why": "The answer to Is it...? is Yes, it is."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "Is it wet? No, it ___.",
+              "options": [
+                "isn't",
+                "doesn't"
+              ],
+              "answer": "isn't",
+              "why": "The answer to Is it...? is No, it isn't."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "It are cold today.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "Weather takes is, never are."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "It's hot. Put on your sweater.",
+              "wrong": "Put",
+              "correct": "Don't put",
+              "why": "It is hot, so do not put on a sweater."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Put on you sunglasses.",
+              "wrong": "you",
+              "correct": "your",
+              "why": "We say your sunglasses."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "Is it sunny? Yes, it does.",
+              "wrong": "does",
+              "correct": "is",
+              "why": "The answer is Yes, it is."
+            }
+          ],
+          "whyChoices": [
+            "Weather takes is",
+            "Hot weather needs Don't",
+            "The possessive is your",
+            "The short answer repeats is"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "It's sunny.",
+              "options": [
+                "How's the weather?",
+                "How's the weather is?",
+                "How are the weather?"
+              ],
+              "answer": "How's the weather?",
+              "why": "We ask How's the weather?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, it is.",
+              "options": [
+                "Is it windy?",
+                "Are it windy?"
+              ],
+              "answer": "Is it windy?",
+              "why": "It takes Is in a question."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, it isn't.",
+              "options": [
+                "Is it wet?",
+                "Does it wet?"
+              ],
+              "answer": "Is it wet?",
+              "why": "We ask Is it wet?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "It's cold.",
+              "options": [
+                "How's the weather today?",
+                "How's the weather are?"
+              ],
+              "answer": "How's the weather today?",
+              "why": "We ask How's the weather today?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. Make it negative.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "Put on your scarf.",
+              "options": [
+                "Don't put on your scarf.",
+                "Not put on your scarf."
+              ],
+              "answer": "Don't put on your scarf.",
+              "why": "Add Don't to make it negative."
+            },
+            {
+              "id": "g5-2",
+              "from": "Put on your sunglasses.",
+              "options": [
+                "Don't put on your sunglasses.",
+                "Not put on your sunglasses."
+              ],
+              "answer": "Don't put on your sunglasses.",
+              "why": "Add Don't at the start."
+            },
+            {
+              "id": "g5-3",
+              "from": "Wear your raincoat.",
+              "options": [
+                "Don't wear your raincoat.",
+                "Not wear your raincoat."
+              ],
+              "answer": "Don't wear your raincoat.",
+              "why": "Add Don't at the start."
+            },
+            {
+              "id": "g5-4",
+              "from": "Wear your sweater.",
+              "options": [
+                "Don't wear your sweater.",
+                "Not wear your sweater."
+              ],
+              "answer": "Don't wear your sweater.",
+              "why": "Add Don't at the start."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "It's sunny.",
+              "options": [
+                "sunny",
+                "cloudy",
+                "foggy"
+              ],
+              "answer": "sunny"
+            },
+            {
+              "id": "l1-2",
+              "audio": "It's cold and windy.",
+              "options": [
+                "windy",
+                "hot",
+                "dry"
+              ],
+              "answer": "windy"
+            },
+            {
+              "id": "l1-3",
+              "audio": "It's rainy. Wear your raincoat.",
+              "options": [
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "raincoat"
+            }
+          ],
+          "whyChoices": [
+            "I heard the weather word",
+            "I heard only the first sound",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "The weather today",
+                "Her school bag"
+              ],
+              "answer": "The weather today"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What is Mia putting on?",
+              "options": [
+                "A baseball cap",
+                "A scarf"
+              ],
+              "answer": "A baseball cap"
+            }
+          ],
+          "audio": "Hi, I'm Mia. Today it's sunny and hot. I'm putting on my sunglasses and my baseball cap. It's not cold, so I don't have a sweater.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "It's cold today. It's windy, too. Don't put on sunglasses. Put on your scarf.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "It's ___(1)___ today.",
+              "options": [
+                "cold",
+                "hot"
+              ],
+              "answer": "cold"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "It's windy, ___(2)___.",
+              "options": [
+                "too",
+                "not"
+              ],
+              "answer": "too"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "Put on your ___(3)___.",
+              "options": [
+                "scarf",
+                "sunglasses"
+              ],
+              "answer": "scarf"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "dry",
+              "options": [
+                "no water",
+                "a lot of water"
+              ],
+              "answer": "no water"
+            },
+            {
+              "id": "r1-2",
+              "word": "desert",
+              "options": [
+                "a place with very little rain",
+                "a place with a lot of snow"
+              ],
+              "answer": "a place with very little rain"
+            },
+            {
+              "id": "r1-3",
+              "word": "ice",
+              "options": [
+                "frozen water",
+                "hot rock"
+              ],
+              "answer": "frozen water"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "The Atacama Desert is in Chile. Chile is in South America. The desert is very hot and dry. It only rains a few times a year. The desert lies between mountains. It is sometimes rainy on the mountains, but the desert stays dry. It is hard for people, animals and plants to live there.",
+          "prompt": "Read the text. Then tap the sentence that tells you what the text is mostly about.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that tells you where the desert is.",
+              "answerType": "tapSentence",
+              "answer": "The Atacama Desert is in Chile.",
+              "why": "That sentence names the place."
+            },
+            {
+              "id": "r2-2",
+              "q": "Is the desert wet or dry?",
+              "options": [
+                "Dry",
+                "Wet"
+              ],
+              "answer": "Dry"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "The Atacama Desert is in Chile. Chile is in South America. The desert is very hot and dry. It only rains a few times a year. The desert lies between mountains. It is sometimes rainy on the mountains, but the desert stays dry. It is hard for people, animals and plants to live there.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "How is the weather in the desert?",
+              "options": [
+                "Very hot and dry",
+                "Cold and wet",
+                "Foggy and cold"
+              ],
+              "answer": "Very hot and dry"
+            },
+            {
+              "id": "r3-2",
+              "q": "How often does it rain?",
+              "options": [
+                "A few times a year",
+                "Every day"
+              ],
+              "answer": "A few times a year"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you it is hard to live there.",
+              "answerType": "tapSentence",
+              "answer": "It is hard for people, animals and plants to live there.",
+              "why": "That sentence says who finds it hard."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Antarctica is very cold. There is a lot of ice, but it doesn't rain a lot. So, Antarctica is a desert, too. It is hard for people, animals and plants to live in Antarctica too, because it is so cold there.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you Antarctica is a desert.",
+              "answer": "So, Antarctica is a desert, too."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you why it is hard to live there.",
+              "answer": "It is hard for people, animals and plants to live in Antarctica too, because it is so cold there."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you there is a lot of ice.",
+              "answer": "There is a lot of ice, but it doesn't rain a lot."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "It's",
+                "sunny",
+                "today"
+              ],
+              "answer": "It's sunny today."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "It's",
+                "cold",
+                "and",
+                "windy"
+              ],
+              "answer": "It's cold and windy."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Put",
+                "on",
+                "your",
+                "sweater"
+              ],
+              "answer": "Put on your sweater."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Don't",
+                "put",
+                "on",
+                "your",
+                "scarf"
+              ],
+              "answer": "Don't put on your scarf."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "It are cold.",
+              "answer": "It is cold."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Put on you sunglasses.",
+              "answer": "Put on your sunglasses."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Not put on your sweater.",
+              "answer": "Don't put on your sweater."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "What is the weather today? Write what you wear in this weather. Use the chart.",
+          "chart": {
+            "rows": 4,
+            "columnA": "Weather",
+            "columnB": "Clothes for this weather"
+          },
+          "starters": [
+            "Today it's ___.",
+            "I'm wearing ___.",
+            "I'm not wearing ___."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "It's is written correctly"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "It's sunny.",
+              "keywords": [
+                "sunny"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "It's cold today.",
+              "keywords": [
+                "cold",
+                "today"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Put on your sunglasses.",
+              "keywords": [
+                "put",
+                "on",
+                "sunglasses"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Don't put on your scarf.",
+              "keywords": [
+                "don't",
+                "put",
+                "on",
+                "scarf"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "it's hot today",
+              "keywords": [
+                "hot",
+                "today"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "put on your cap",
+              "keywords": [
+                "put",
+                "on",
+                "cap"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "it's cold and windy",
+              "keywords": [
+                "cold",
+                "and",
+                "windy"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "How's the weather today?",
+              "keywords": [
+                "it's",
+                "sunny",
+                "hot",
+                "cold",
+                "cloudy"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Is it sunny?",
+              "keywords": [
+                "yes",
+                "no",
+                "it",
+                "is",
+                "isn't"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What do you wear when it's hot?",
+              "keywords": [
+                "wear",
+                "hot"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What do you wear when it's cold?",
+              "keywords": [
+                "wear",
+                "cold"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the picture. Say what the weather is and what the children are wearing.",
+          "image": "weather-easy",
+          "prompts": [
+            "What the weather is",
+            "One thing a child is wearing",
+            "One thing you would wear"
+          ],
+          "keywords": [
+            "it's",
+            "wearing"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with three voices: Mom, Brian and Emma.",
+          "dialogueId": "briansRaincoat",
+          "lines": 4,
+          "keywords": [
+            "raincoat",
+            "cloudy",
+            "rain"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What is your favourite weather?",
+              "keywords": [
+                "favourite",
+                "weather"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What do you wear in the rain?",
+              "keywords": [
+                "wear",
+                "rain"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Is it hot or cold in your town today?",
+              "keywords": [
+                "it's",
+                "hot",
+                "cold"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about today's weather. Say four sentences.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "Today it's ___.",
+            "It's ___ and ___.",
+            "I'm wearing ___.",
+            "I'm not wearing ___."
+          ],
+          "keywords": [
+            "it's",
+            "wearing"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "cloudy",
+              "options": [
+                "cloudy",
+                "sunny",
+                "windy"
+              ],
+              "answer": "cloudy"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "It ___ cold today.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "is"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "It are hot.",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Foggy.",
+              "options": [
+                "foggy",
+                "cloudy",
+                "wet"
+              ],
+              "answer": "foggy"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "scarf",
+                "sunglasses"
+              ],
+              "bins": [
+                "Cold weather",
+                "Hot weather"
+              ],
+              "answers": {
+                "scarf": "Cold weather",
+                "sunglasses": "Hot weather"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about the weather today.",
+              "keywords": [
+                "it's"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Weather Station. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "windy",
+              "options": [
+                "windy",
+                "foggy",
+                "sunny"
+              ],
+              "answer": "windy"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "It's hot. ___ put on your sweater.",
+              "options": [
+                "Don't",
+                "Not"
+              ],
+              "answer": "Don't"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "It are windy today.",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "Today it's cold and windy. I'm wearing a sweater and a scarf. I'm not wearing sunglasses.",
+              "q": "What is the person NOT wearing?",
+              "options": [
+                "Sunglasses",
+                "A sweater",
+                "A scarf"
+              ],
+              "answer": "Sunglasses"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text about Antarctica, tap the sentence that says Antarctica is a desert.",
+              "answer": "So, Antarctica is a desert, too."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Is",
+                "it",
+                "sunny",
+                "today"
+              ],
+              "answer": "Is it sunny today?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the weather word: water falls from the clouds.",
+              "answer": "rain",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: the weather today, and what you put on.",
+              "keywords": [
+                "it's",
+                "put"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the weather word that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "foggy",
+              "options": [
+                "foggy",
+                "cloudy",
+                "windy",
+                "wet"
+              ],
+              "answer": "foggy",
+              "why": "Fog is thick and white and hides things. Clouds are higher up."
+            },
+            {
+              "id": "v1-2",
+              "img": "dry",
+              "options": [
+                "dry",
+                "wet",
+                "rainy",
+                "cold"
+              ],
+              "answer": "dry",
+              "why": "Cracked ground means there is no water."
+            },
+            {
+              "id": "v1-3",
+              "img": "scarf",
+              "options": [
+                "scarf",
+                "sweater",
+                "raincoat",
+                "sunscreen"
+              ],
+              "answer": "scarf",
+              "why": "A scarf goes around your neck, not over your body."
+            },
+            {
+              "id": "v1-4",
+              "img": "baseball cap",
+              "options": [
+                "baseball cap",
+                "sunglasses",
+                "sunscreen",
+                "scarf"
+              ],
+              "answer": "baseball cap",
+              "why": "A cap has a brim at the front and sits on your head."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact thing",
+            "It is the same kind of weather",
+            "It starts with the same letter",
+            "It is something you put on your body"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "snowsuit",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "snowsuit",
+              "why": "A snowsuit is one piece and covers your legs too."
+            },
+            {
+              "id": "v2-2",
+              "word": "sunscreen",
+              "options": [
+                "sunscreen",
+                "sunglasses",
+                "sweater",
+                "raincoat"
+              ],
+              "answer": "sunscreen",
+              "why": "Sunscreen is a cream in a bottle."
+            },
+            {
+              "id": "v2-3",
+              "word": "wet",
+              "options": [
+                "wet",
+                "dry",
+                "hot",
+                "sunny"
+              ],
+              "answer": "wet",
+              "why": "Raindrops and a puddle mean wet."
+            },
+            {
+              "id": "v2-4",
+              "word": "mountains",
+              "options": [
+                "mountains",
+                "desert",
+                "ice",
+                "rain"
+              ],
+              "answer": "mountains",
+              "why": "Mountains are tall pointed peaks."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It is clothing you wear",
+            "It is a kind of weather",
+            "It is a place"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "It's foggy this morning.",
+              "options": [
+                "foggy",
+                "cloudy",
+                "windy",
+                "wet"
+              ],
+              "answer": "foggy"
+            },
+            {
+              "id": "v3-2",
+              "audio": "Put on sunscreen. It's very sunny.",
+              "options": [
+                "sunscreen",
+                "sunglasses",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "sunscreen"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Wear a snowsuit in the snow.",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "pants"
+              ],
+              "answer": "snowsuit"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole word",
+            "I heard a word that sounds similar",
+            "I used the topic to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort the clothes into the right boxes.",
+          "bins": [
+            "Hot weather",
+            "Cold weather"
+          ],
+          "items": [
+            {
+              "word": "sunglasses",
+              "bin": "Hot weather"
+            },
+            {
+              "word": "scarf",
+              "bin": "Cold weather"
+            },
+            {
+              "word": "sunscreen",
+              "bin": "Hot weather"
+            },
+            {
+              "word": "sweater",
+              "bin": "Cold weather"
+            },
+            {
+              "word": "baseball cap",
+              "bin": "Hot weather"
+            },
+            {
+              "word": "snowsuit",
+              "bin": "Cold weather"
+            },
+            {
+              "word": "pants",
+              "bin": "Cold weather"
+            },
+            {
+              "word": "raincoat",
+              "bin": "Cold weather"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "It only ___ a few times a year in the desert.",
+              "options": [
+                "rains",
+                "snows",
+                "shines",
+                "blows"
+              ],
+              "answer": "rains",
+              "why": "Deserts have very little rain."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "The desert is very hot and ___.",
+              "options": [
+                "dry",
+                "wet",
+                "foggy",
+                "windy"
+              ],
+              "answer": "dry",
+              "why": "Dry means there is no water."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Ana is so cold. She is wearing a ___.",
+              "options": [
+                "scarf",
+                "sunscreen",
+                "baseball cap",
+                "sunglasses"
+              ],
+              "answer": "scarf",
+              "why": "A scarf keeps your neck warm."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "Jason is hot and he wants to wear ___.",
+              "options": [
+                "sunglasses",
+                "snowsuit",
+                "scarf",
+                "sweater"
+              ],
+              "answer": "sunglasses",
+              "why": "Sunglasses protect your eyes from the sun."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It sounds like another word",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "sunny",
+                "cloudy",
+                "foggy",
+                "sunscreen"
+              ],
+              "answer": "sunscreen",
+              "why": "The others describe the weather. Sunscreen is something you put on."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "scarf",
+                "sweater",
+                "snowsuit",
+                "windy"
+              ],
+              "answer": "windy",
+              "why": "The others are clothes you wear."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "desert",
+                "mountains",
+                "ice",
+                "raincoat"
+              ],
+              "answer": "raincoat",
+              "why": "The others are places or nature."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is uncountable",
+            "It is a longer word",
+            "It is a kind of weather"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "u",
+                "n",
+                "s",
+                "c",
+                "r",
+                "e",
+                "e",
+                "n"
+              ],
+              "answer": "sunscreen",
+              "audio": "sunscreen"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "s",
+                "w",
+                "e",
+                "a",
+                "t",
+                "e",
+                "r"
+              ],
+              "answer": "sweater",
+              "audio": "sweater"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "f",
+                "o",
+                "g",
+                "g",
+                "y"
+              ],
+              "answer": "foggy",
+              "audio": "foggy"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Scarf.",
+              "options": [
+                "scarf",
+                "sweater",
+                "raincoat",
+                "sunscreen"
+              ],
+              "answer": "scarf"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "There is a lot of ___ in Antarctica.",
+              "options": [
+                "ice",
+                "sand",
+                "rain",
+                "fog"
+              ],
+              "answer": "ice",
+              "why": "Antarctica is covered in ice."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the weather word: you cannot see the road very well.",
+              "img": "foggy",
+              "answer": "foggy",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sunscreen",
+                "sunglasses",
+                "baseball cap",
+                "foggy"
+              ],
+              "answer": "foggy",
+              "why": "The others are things you put on in sunny weather."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "raincoat",
+              "options": [
+                "raincoat",
+                "snowsuit",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "raincoat"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the word",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the four sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "How's the weather? / Is it…? / Put on…",
+            "lines": [
+              "How's the weather? It's sunny.",
+              "Is it sunny? Yes, it is. / No, it isn't.",
+              "It's hot. Put on your sunglasses.",
+              "It's cold. Don't put on your sunglasses."
+            ],
+            "rule": "Weather takes It's (= it is). Questions: Is it…? Short answers: Yes, it is / No, it isn't. Instructions: Put on your… / Don't put on your…"
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which verb does weather take?",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "have"
+              ],
+              "answer": "is"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which question asks about the weather?",
+              "options": [
+                "Is it cold?",
+                "Are it cold?",
+                "Does it cold?",
+                "Is it colds?"
+              ],
+              "answer": "Is it cold?"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which sentence gives an instruction?",
+              "options": [
+                "Put on your scarf.",
+                "It's windy.",
+                "How's the weather?",
+                "Yes, it is."
+              ],
+              "answer": "Put on your scarf."
+            },
+            {
+              "id": "g1-4",
+              "q": "How do you make the instruction negative?",
+              "options": [
+                "Add Don't at the start",
+                "Add not at the end",
+                "Change Put to Puts",
+                "Add isn't"
+              ],
+              "answer": "Add Don't at the start"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "Weather takes is",
+            "The short answer repeats is or isn't",
+            "Put on goes before your + clothing",
+            "Don't makes an instruction negative"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "How's ___ weather today?",
+              "options": [
+                "the",
+                "a",
+                "an",
+                "these"
+              ],
+              "answer": "the"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "___ it sunny? No, it isn't.",
+              "options": [
+                "Is",
+                "Are",
+                "Does",
+                "Am"
+              ],
+              "answer": "Is"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "It's cold. ___ on your sweater.",
+              "options": [
+                "Put",
+                "Puts",
+                "Putting",
+                "To put"
+              ],
+              "answer": "Put"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "It's hot. ___ put on your sweater.",
+              "options": [
+                "Don't",
+                "Not",
+                "Doesn't",
+                "Isn't"
+              ],
+              "answer": "Don't"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "It's windy and it's raining. Wear your ___.",
+              "options": [
+                "raincoat",
+                "sunglasses",
+                "sunscreen",
+                "baseball cap"
+              ],
+              "answer": "raincoat"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "Is it wet? Yes, it ___.",
+              "options": [
+                "is",
+                "does",
+                "was",
+                "has"
+              ],
+              "answer": "is"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "It are very hot today.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "Weather takes is."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Put on you raincoat.",
+              "wrong": "you",
+              "correct": "your",
+              "why": "The possessive is your."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Is it hot? Yes, it does.",
+              "wrong": "does",
+              "correct": "is",
+              "why": "The answer to Is it…? repeats is."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "Don't wears your sweater today.",
+              "wrong": "wears",
+              "correct": "wear",
+              "why": "After Don't the verb has no -s."
+            }
+          ],
+          "whyChoices": [
+            "Weather takes is",
+            "The possessive is your",
+            "The short answer repeats is",
+            "After Don't the verb has no -s"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "It's cloudy and cold.",
+              "options": [
+                "How's the weather?",
+                "How are the weather?",
+                "What's the weather is?",
+                "Is how the weather?"
+              ],
+              "answer": "How's the weather?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, it is. It's very sunny.",
+              "options": [
+                "Is it sunny?",
+                "Are it sunny?",
+                "Does it sunny?",
+                "Is it sun?"
+              ],
+              "answer": "Is it sunny?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, it isn't. It's dry today.",
+              "options": [
+                "Is it wet?",
+                "Are it wet?",
+                "Does it wet?",
+                "Is it wets?"
+              ],
+              "answer": "Is it wet?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, it isn't. We can't see the road.",
+              "options": [
+                "Is it foggy?",
+                "Are it foggy?",
+                "Does it foggy?",
+                "Is it fog?"
+              ],
+              "answer": "Is it foggy?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make the instruction negative.",
+              "from": "Put on your sunglasses.",
+              "options": [
+                "Don't put on your sunglasses.",
+                "Not put on your sunglasses.",
+                "Doesn't put on your sunglasses.",
+                "Put on not your sunglasses."
+              ],
+              "answer": "Don't put on your sunglasses."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Make the instruction negative.",
+              "from": "Wear your raincoat.",
+              "options": [
+                "Don't wear your raincoat.",
+                "Not wear your raincoat.",
+                "Doesn't wear your raincoat.",
+                "Wear not your raincoat."
+              ],
+              "answer": "Don't wear your raincoat."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Turn the statement into a question.",
+              "from": "It is windy.",
+              "options": [
+                "Is it windy?",
+                "It is windy?",
+                "Does it windy?",
+                "Are it windy?"
+              ],
+              "answer": "Is it windy?"
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Match the instruction to hot weather.",
+              "from": "It's hot.",
+              "options": [
+                "Put on your sunglasses.",
+                "Put on your snowsuit.",
+                "Put on your scarf.",
+                "Don't put on your sunglasses."
+              ],
+              "answer": "Put on your sunglasses."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "It's cold and it's snowing. Wear your snowsuit.",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "snowsuit"
+            },
+            {
+              "id": "l1-2",
+              "audio": "It's windy today. It's very windy.",
+              "options": [
+                "windy",
+                "foggy",
+                "sunny",
+                "dry"
+              ],
+              "answer": "windy"
+            },
+            {
+              "id": "l1-3",
+              "audio": "It's very sunny. Put on sunscreen.",
+              "options": [
+                "sunscreen",
+                "sunglasses",
+                "sweater",
+                "raincoat"
+              ],
+              "answer": "sunscreen"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a similar word",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person talking about?",
+              "options": [
+                "The weather this week",
+                "A school trip",
+                "A new coat"
+              ],
+              "answer": "The weather this week"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What is the weather like on Wednesday?",
+              "options": [
+                "Windy",
+                "Sunny"
+              ],
+              "answer": "Windy"
+            }
+          ],
+          "audio": "On Monday it's sunny, so I'm wearing sunglasses. On Tuesday it's raining, so I'm wearing my raincoat. On Wednesday it's windy and cold. It's a bad week for the park.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "It's foggy outside. Don't put on your sunglasses. Put on your raincoat and your scarf.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "It's ___(1)___ outside.",
+              "options": [
+                "foggy",
+                "sunny",
+                "hot"
+              ],
+              "answer": "foggy"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "Don't put on your ___(2)___.",
+              "options": [
+                "sunglasses",
+                "raincoat",
+                "scarf"
+              ],
+              "answer": "sunglasses"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "Put on your raincoat and your ___(3)___.",
+              "options": [
+                "scarf",
+                "sunscreen",
+                "cap"
+              ],
+              "answer": "scarf"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "desert",
+              "options": [
+                "a place with very little rain",
+                "a place with a lot of rain",
+                "a cold mountain",
+                "a kind of ice"
+              ],
+              "answer": "a place with very little rain"
+            },
+            {
+              "id": "r1-2",
+              "word": "lies between",
+              "options": [
+                "is in the middle of two things",
+                "is next to one thing",
+                "is under something",
+                "is above something"
+              ],
+              "answer": "is in the middle of two things"
+            },
+            {
+              "id": "r1-3",
+              "word": "stays",
+              "options": [
+                "continues to be the same",
+                "goes away",
+                "gets colder",
+                "moves"
+              ],
+              "answer": "continues to be the same"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "The Atacama Desert is in Chile, in South America. It is a very strange place: it is hot and dry, and it only rains a few times a year. The desert lies between mountains, so it is sometimes rainy on the mountains, but the desert stays dry. That is why it is hard for people, animals and plants to live there.",
+          "prompt": "Read the whole text. Then tap the sentence that explains the surprise in the text.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that explains the surprise in the text.",
+              "answerType": "tapSentence",
+              "answer": "The desert lies between mountains, so it is sometimes rainy on the mountains, but the desert stays dry.",
+              "why": "Rain nearby but not in the desert is the surprising part."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the text about?",
+              "options": [
+                "A very dry place in Chile",
+                "A mountain holiday",
+                "A wet desert in Asia"
+              ],
+              "answer": "A very dry place in Chile"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "The Atacama Desert is in Chile, in South America. It is a very strange place: it is hot and dry, and it only rains a few times a year. The desert lies between mountains, so it is sometimes rainy on the mountains, but the desert stays dry. That is why it is hard for people, animals and plants to live there.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Where is the Atacama Desert?",
+              "options": [
+                "In Chile",
+                "In Antarctica",
+                "In Cuba"
+              ],
+              "answer": "In Chile"
+            },
+            {
+              "id": "r3-2",
+              "q": "How often does it rain?",
+              "options": [
+                "A few times a year",
+                "Every week",
+                "Every day"
+              ],
+              "answer": "A few times a year"
+            },
+            {
+              "id": "r3-3",
+              "q": "Why is it sometimes rainy on the mountains but dry in the desert?",
+              "options": [
+                "The rain stops at the mountains",
+                "The desert is very big",
+                "There are no clouds"
+              ],
+              "answer": "The rain stops at the mountains"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Antarctica is very cold. There is a lot of ice, but it doesn't rain a lot. So, Antarctica is a desert, too. It is hard for people, animals and plants to live in Antarctica because it is so cold there. Antarctica is also the windiest place on Earth. Few plants can grow, and the animals that live there, like penguins, spend most of their time in the sea.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that explains why Antarctica is a desert.",
+              "answer": "There is a lot of ice, but it doesn't rain a lot."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you where penguins spend most of their time.",
+              "answer": "Few plants can grow, and the animals that live there, like penguins, spend most of their time in the sea."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you Antarctica is very windy.",
+              "answer": "Antarctica is also the windiest place on Earth."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "How's",
+                "the",
+                "weather",
+                "today"
+              ],
+              "answer": "How's the weather today?"
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "It's",
+                "cold",
+                "so",
+                "put",
+                "on",
+                "your",
+                "scarf"
+              ],
+              "answer": "It's cold, so put on your scarf."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Don't",
+                "put",
+                "on",
+                "your",
+                "sunglasses"
+              ],
+              "answer": "Don't put on your sunglasses."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Is",
+                "it",
+                "foggy",
+                "outside"
+              ],
+              "answer": "Is it foggy outside?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "It are very cold.",
+              "answer": "It is very cold."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Put on you raincoat.",
+              "answer": "Put on your raincoat."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Is it hot? Yes, it does.",
+              "answer": "Is it hot? Yes, it is."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Fill in the chart for four days of weather, then write what you wear each day. Then write two sentences of your own.",
+          "chart": {
+            "rows": 4,
+            "columnA": "Day and weather",
+            "columnB": "Clothes for this weather"
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "It's written correctly",
+            "Correct put on / don't put on",
+            "At least 30 words"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "How's the weather? It's cloudy.",
+              "keywords": [
+                "how's",
+                "weather",
+                "cloudy"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "It's cold, so put on your scarf.",
+              "keywords": [
+                "cold",
+                "put",
+                "on",
+                "scarf"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Is it foggy outside?",
+              "keywords": [
+                "is",
+                "it",
+                "foggy"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Don't put on your sunglasses.",
+              "keywords": [
+                "don't",
+                "put",
+                "on",
+                "sunglasses"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "put on your sunglasses",
+              "keywords": [
+                "put",
+                "on",
+                "sunglasses"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "it's cold and windy",
+              "keywords": [
+                "cold",
+                "and",
+                "windy"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "don't forget your scarf",
+              "keywords": [
+                "don't",
+                "forget",
+                "scarf"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "How's the weather today?",
+              "keywords": [
+                "it's"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Is it windy outside?",
+              "keywords": [
+                "yes",
+                "no",
+                "it",
+                "is",
+                "isn't"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What do you put on when it's sunny?",
+              "keywords": [
+                "put",
+                "on",
+                "sunny"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What don't you put on when it's hot?",
+              "keywords": [
+                "don't",
+                "put",
+                "on"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the picture. Say what the weather is and what each person is wearing.",
+          "image": "weather-core",
+          "prompts": [
+            "What the weather is",
+            "What one person is wearing",
+            "One thing nobody is wearing",
+            "What you would put on"
+          ],
+          "keywords": [
+            "it's",
+            "wearing",
+            "put",
+            "on"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with three voices: you are Mom, then Brian, then Emma.",
+          "dialogueId": "briansRaincoat",
+          "lines": 8,
+          "keywords": [
+            "raincoat",
+            "cloudy",
+            "rain",
+            "wet"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Which weather do you like best, and why?",
+              "keywords": [
+                "weather",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What does your family wear when it rains?",
+              "keywords": [
+                "wear",
+                "rain",
+                "family"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "What do you do when you forget your raincoat?",
+              "keywords": [
+                "when",
+                "forget"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds: a weather report for today. Say the weather, what to wear, and what not to wear.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "Today it's ___ and ___.",
+            "Put on your ___.",
+            "Don't put on your ___.",
+            "It's a good day for ___."
+          ],
+          "keywords": [
+            "it's",
+            "put",
+            "on",
+            "don't"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "snowsuit",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "snowsuit"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "___ it foggy today?",
+              "options": [
+                "Is",
+                "Are",
+                "Does",
+                "Am"
+              ],
+              "answer": "Is"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Put on you sunglasses.",
+              "wrong": "you",
+              "correct": "your"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "It's very sunny. Put on sunscreen.",
+              "options": [
+                "sunscreen",
+                "sunglasses",
+                "scarf",
+                "sweater"
+              ],
+              "answer": "sunscreen"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "sunny",
+                "cloudy",
+                "foggy",
+                "sunscreen"
+              ],
+              "answer": "sunscreen"
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with Is it...? and answer it.",
+              "keywords": [
+                "is",
+                "it"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Weather Station. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "foggy",
+              "options": [
+                "foggy",
+                "cloudy",
+                "windy",
+                "wet"
+              ],
+              "answer": "foggy"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "It's cold. ___ on your scarf.",
+              "options": [
+                "Put",
+                "Puts",
+                "Putting",
+                "To put"
+              ],
+              "answer": "Put"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "It are windy, and is it sunny?",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "In the Atacama Desert it is hot and dry. It only rains a few times a year. Antarctica is very cold and has a lot of ice, but it doesn't rain much either. So both places are deserts.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker comparing?",
+                  "options": [
+                    "Two deserts",
+                    "Two countries",
+                    "Two holidays"
+                  ],
+                  "answer": "Two deserts"
+                },
+                {
+                  "pass": 2,
+                  "q": "What do both places have very little of?",
+                  "options": [
+                    "Rain",
+                    "Ice",
+                    "Sun"
+                  ],
+                  "answer": "Rain"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the Antarctica text, tap the sentence that tells you why it is hard to live there.",
+              "answer": "It is hard for people, animals and plants to live in Antarctica because it is so cold there."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Don't",
+                "put",
+                "on",
+                "your",
+                "sweater"
+              ],
+              "answer": "Don't put on your sweater."
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for frozen water in Antarctica.",
+              "answer": "ice",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: the weather today, one thing to put on, and one thing not to put on.",
+              "keywords": [
+                "it's",
+                "put",
+                "on",
+                "don't"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact word. Two of the four belong to the same group, so read carefully.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "foggy",
+              "options": [
+                "foggy",
+                "cloudy",
+                "windy",
+                "wet"
+              ],
+              "answer": "foggy",
+              "why": "Fog sits low and hides things at ground level. Cloud is high in the sky."
+            },
+            {
+              "id": "v1-2",
+              "img": "dry",
+              "options": [
+                "dry",
+                "wet",
+                "hot",
+                "windy"
+              ],
+              "answer": "dry",
+              "why": "Dry is about water, not heat. A place can be cold and dry."
+            },
+            {
+              "id": "v1-3",
+              "img": "snowsuit",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "snowsuit",
+              "why": "A snowsuit covers the legs too, in one piece. A raincoat does not."
+            },
+            {
+              "id": "v1-4",
+              "img": "baseball cap",
+              "options": [
+                "baseball cap",
+                "sunglasses",
+                "sunscreen",
+                "scarf"
+              ],
+              "answer": "baseball cap",
+              "why": "A cap has a brim and covers the top of the head."
+            }
+          ],
+          "whyChoices": [
+            "The function is different from the distractors",
+            "It is the same category as a distractor",
+            "It is a kind of weather",
+            "It is worn on the feet"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "sunscreen",
+              "options": [
+                "sunscreen",
+                "sweater",
+                "sunglasses",
+                "raincoat"
+              ],
+              "answer": "sunscreen",
+              "why": "Sunscreen is a cream you put on your skin. Sunglasses go on your eyes."
+            },
+            {
+              "id": "v2-2",
+              "word": "mountains",
+              "options": [
+                "mountains",
+                "desert",
+                "ice",
+                "rain"
+              ],
+              "answer": "mountains",
+              "why": "Mountains rise up. A desert is flat and dry."
+            },
+            {
+              "id": "v2-3",
+              "word": "wet",
+              "options": [
+                "wet",
+                "dry",
+                "foggy",
+                "cloudy"
+              ],
+              "answer": "wet",
+              "why": "Wet means water, so raindrops and a puddle."
+            },
+            {
+              "id": "v2-4",
+              "word": "pants",
+              "options": [
+                "pants",
+                "scarf",
+                "sweater",
+                "snowsuit"
+              ],
+              "answer": "pants",
+              "why": "Pants cover your legs. Only a snowsuit also covers your legs fully."
+            }
+          ],
+          "whyChoices": [
+            "The meaning matches exactly",
+            "It is worn in the same weather",
+            "It sounds similar",
+            "It is a place"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "The desert lies between mountains, but the desert stays dry.",
+              "options": [
+                "dry",
+                "wet",
+                "cold",
+                "foggy"
+              ],
+              "answer": "dry"
+            },
+            {
+              "id": "v3-2",
+              "audio": "Antarctica is also the windiest place on Earth.",
+              "options": [
+                "windiest",
+                "coldest",
+                "driest",
+                "hottest"
+              ],
+              "answer": "windiest"
+            },
+            {
+              "id": "v3-3",
+              "audio": "It only rains a few times a year.",
+              "options": [
+                "a few times",
+                "every week",
+                "every day",
+                "never"
+              ],
+              "answer": "a few times"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact phrase",
+            "I heard a word with a similar sound",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into four boxes. Two items are deliberately tricky.",
+          "bins": [
+            "Hot weather gear",
+            "Cold weather gear",
+            "Weather word",
+            "Place"
+          ],
+          "items": [
+            {
+              "word": "sunglasses",
+              "bin": "Hot weather gear"
+            },
+            {
+              "word": "scarf",
+              "bin": "Cold weather gear"
+            },
+            {
+              "word": "foggy",
+              "bin": "Weather word"
+            },
+            {
+              "word": "desert",
+              "bin": "Place"
+            },
+            {
+              "word": "sunscreen",
+              "bin": "Hot weather gear"
+            },
+            {
+              "word": "snowsuit",
+              "bin": "Cold weather gear"
+            },
+            {
+              "word": "windy",
+              "bin": "Weather word"
+            },
+            {
+              "word": "mountains",
+              "bin": "Place"
+            },
+            {
+              "word": "baseball cap",
+              "bin": "Hot weather gear"
+            },
+            {
+              "word": "raincoat",
+              "bin": "Cold weather gear"
+            }
+          ],
+          "note": "If four bins is too many for the mechanic, use three: Hot weather gear / Cold weather gear / Weather word, and drop Place."
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "You're all ___. Put on a raincoat next time.",
+              "options": [
+                "wet",
+                "wets",
+                "a wet",
+                "wetting"
+              ],
+              "answer": "wet",
+              "why": "Wet is an adjective here and never takes -s."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "It's ___ today. Put on your sunglasses.",
+              "options": [
+                "sunny",
+                "sun",
+                "sunned",
+                "sunning"
+              ],
+              "answer": "sunny",
+              "why": "After It's we need the adjective sunny."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "There is a lot of ___, but it doesn't rain a lot.",
+              "options": [
+                "ice",
+                "icy",
+                "iced",
+                "icing"
+              ],
+              "answer": "ice",
+              "why": "After a lot of we need the noun ice."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "The desert is very hot and ___, so plants find it hard.",
+              "options": [
+                "dry",
+                "dried",
+                "drying",
+                "dryness"
+              ],
+              "answer": "dry",
+              "why": "We need the adjective dry to match hot."
+            }
+          ],
+          "whyChoices": [
+            "It is the only one that fits the meaning",
+            "It is the only adjective",
+            "It is the only noun",
+            "It is the only uncountable option"
+          ]
+        },
+        "V6": {
+          "prompt": "One word does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "ice",
+                "rain",
+                "sand",
+                "sunglasses"
+              ],
+              "answer": "sunglasses",
+              "why": "Ice, rain and sand are uncountable. Sunglasses is always plural. Grammar matches, meaning does not."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "sunny",
+                "cloudy",
+                "foggy",
+                "storm"
+              ],
+              "answer": "storm",
+              "why": "The others are adjectives describing weather. Storm is a noun."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "desert",
+                "mountains",
+                "ice",
+                "scarf"
+              ],
+              "answer": "scarf",
+              "why": "The others are places or nature. A scarf is clothing."
+            }
+          ],
+          "whyChoices": [
+            "It breaks the pattern only in meaning",
+            "It breaks the pattern only in grammar",
+            "It is a longer word",
+            "It is a noun"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "u",
+                "n",
+                "s",
+                "c",
+                "r",
+                "e",
+                "e",
+                "n"
+              ],
+              "answer": "sunscreen",
+              "audio": "sunscreen"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "s",
+                "n",
+                "o",
+                "w",
+                "s",
+                "u",
+                "i",
+                "t"
+              ],
+              "answer": "snowsuit",
+              "audio": "snowsuit"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "m",
+                "o",
+                "u",
+                "n",
+                "t",
+                "a",
+                "i",
+                "n",
+                "s"
+              ],
+              "answer": "mountains",
+              "audio": "mountains"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Sunscreen.",
+              "options": [
+                "sunscreen",
+                "sweater",
+                "sunglasses",
+                "raincoat"
+              ],
+              "answer": "sunscreen"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "Antarctica has a lot of ___, but very little rain.",
+              "options": [
+                "ice",
+                "sand",
+                "fog",
+                "wind"
+              ],
+              "answer": "ice"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for a place with very little rain.",
+              "answer": "desert",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "ice",
+                "rain",
+                "sand",
+                "sunglasses"
+              ],
+              "answer": "sunglasses",
+              "why": "The others are uncountable. Sunglasses is always plural."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "snowsuit",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "pants"
+              ],
+              "answer": "snowsuit"
+            }
+          ],
+          "whyChoices": [
+            "I knew the word without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "It's, Is it…?, and the imperative",
+            "lines": [
+              "How's the weather? It's sunny.",
+              "Is it sunny? Yes, it is. / No, it isn't.",
+              "Put on your sunglasses. / Don't put on your sunglasses.",
+              "Don't forget your raincoat, and don't wear your new shoes in the rain."
+            ],
+            "rule": "Weather always takes it is. Questions: Is it…? Short answers: Yes, it is / No, it isn't. Instructions use the base verb, and Don't makes them negative. Never add -s after Don't."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is it 'Don't wear' and not 'Don't wears'?",
+              "options": [
+                "Because Don't already carries the -s idea",
+                "Because wear is a noun",
+                "Because the sentence is a question",
+                "Because it is plural"
+              ],
+              "answer": "Because Don't already carries the -s idea"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which sentence is correct?",
+              "options": [
+                "Is it foggy today?",
+                "Are it foggy today?",
+                "Does it foggy today?",
+                "Is it fogs today?"
+              ],
+              "answer": "Is it foggy today?"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which sentence is WRONG?",
+              "options": [
+                "Don't forgets your scarf.",
+                "Don't forget your scarf.",
+                "Put on your scarf.",
+                "Don't put on your scarf."
+              ],
+              "answer": "Don't forgets your scarf."
+            },
+            {
+              "id": "g1-4",
+              "q": "What do the two negative instructions have in common?",
+              "options": [
+                "Both start with Don't and a base verb",
+                "Both end with your",
+                "Both are questions",
+                "Both use isn't"
+              ],
+              "answer": "Both start with Don't and a base verb"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "Weather takes is",
+            "The short answer must repeat is or isn't",
+            "After Don't the verb has no -s",
+            "The imperative uses your, not you"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "It's cold ___ windy, so don't forget your scarf.",
+              "options": [
+                "and",
+                "but",
+                "or",
+                "so"
+              ],
+              "answer": "and",
+              "why": "The sentence adds a second weather fact."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "Is it wet outside? No, it ___.",
+              "options": [
+                "isn't",
+                "doesn't",
+                "aren't",
+                "not"
+              ],
+              "answer": "isn't"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "___ forget your raincoat.",
+              "options": [
+                "Don't",
+                "Not",
+                "Doesn't",
+                "Isn't"
+              ],
+              "answer": "Don't"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Put on ___ sunglasses.",
+              "options": [
+                "your",
+                "you",
+                "yours",
+                "your's"
+              ],
+              "answer": "your"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Neither the scarf nor the sweater ___ wet.",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "is",
+              "why": "Neither...nor takes a singular verb here."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "It's very hot. Don't ___ your sweater today.",
+              "options": [
+                "wear",
+                "wears",
+                "wearing",
+                "to wear"
+              ],
+              "answer": "wear",
+              "why": "After Don't the verb has no -s."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Don't forgets your raincoat.",
+              "wrong": "forgets",
+              "correct": "forget",
+              "why": "After Don't the verb has no -s."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Are it windy today?",
+              "wrong": "Are",
+              "correct": "Is",
+              "why": "Weather takes is in a question."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Put on you shoes before you go out.",
+              "wrong": "you",
+              "correct": "your",
+              "why": "The possessive is your."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "It are cold and it is raining.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "Weather always takes is."
+            }
+          ],
+          "whyChoices": [
+            "After Don't the verb has no -s",
+            "Weather takes is",
+            "The possessive is your",
+            "A singular subject hides in a compound phrase"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "No, it isn't. It's dry, but it's very windy.",
+              "options": [
+                "Is it wet outside?",
+                "Are it wet outside?",
+                "Does it wet outside?",
+                "Is it wet outside in?"
+              ],
+              "answer": "Is it wet outside?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, it is. Wear your sunscreen.",
+              "options": [
+                "Is it sunny?",
+                "Are it sunny?",
+                "Is it sun?",
+                "Does it sunny?"
+              ],
+              "answer": "Is it sunny?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, it isn't. We can't see the mountains.",
+              "options": [
+                "Is it foggy today?",
+                "Are it foggy today?",
+                "Is it fogs today?",
+                "Does it foggy?"
+              ],
+              "answer": "Is it foggy today?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "It's cold and it's raining hard.",
+              "options": [
+                "How's the weather today?",
+                "How are the weather today?",
+                "What's the weather are?",
+                "How the weather today?"
+              ],
+              "answer": "How's the weather today?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make the two instructions negative.",
+              "from": "Put on your sunglasses and wear your cap.",
+              "options": [
+                "Don't put on your sunglasses and don't wear your cap.",
+                "Not put on your sunglasses and not wear your cap.",
+                "Don't put on your sunglasses and don't wears your cap.",
+                "Don't puts on your sunglasses and don't wear your cap."
+              ],
+              "answer": "Don't put on your sunglasses and don't wear your cap."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Turn the statement into a yes/no question.",
+              "from": "It is very foggy this morning.",
+              "options": [
+                "Is it very foggy this morning?",
+                "It is very foggy this morning?",
+                "Does it very foggy this morning?",
+                "Are it very foggy this morning?"
+              ],
+              "answer": "Is it very foggy this morning?"
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Change it to the opposite weather and fix the instruction.",
+              "from": "It's hot. Put on your sweater.",
+              "options": [
+                "It's cold. Put on your sweater.",
+                "It's cold. Don't put on your sweater.",
+                "It's hot. Don't put on your sweater.",
+                "It's cold. Put on your sunglasses."
+              ],
+              "answer": "It's cold. Put on your sweater."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "The scarf isn't wet. The sweater isn't wet.",
+              "options": [
+                "Neither the scarf nor the sweater is wet.",
+                "Neither the scarf nor the sweater are wet.",
+                "Neither the scarf or the sweater is wet.",
+                "Neither the scarf nor the sweater isn't wet."
+              ],
+              "answer": "Neither the scarf nor the sweater is wet."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "It only rains a few times a year, so the ground is very dry.",
+              "options": [
+                "dry",
+                "wet",
+                "foggy",
+                "cold"
+              ],
+              "answer": "dry"
+            },
+            {
+              "id": "l1-2",
+              "audio": "Antarctica is also the windiest place on Earth.",
+              "options": [
+                "the windiest",
+                "the coldest",
+                "the driest",
+                "the hottest"
+              ],
+              "answer": "the windiest"
+            },
+            {
+              "id": "l1-3",
+              "audio": "There is a lot of ice, but it doesn't rain a lot.",
+              "options": [
+                "ice",
+                "sand",
+                "fog",
+                "rain"
+              ],
+              "answer": "ice"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact phrase",
+            "I heard a related phrase",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain why two dry places are both deserts",
+                "To sell winter clothes",
+                "To describe a holiday"
+              ],
+              "answer": "To explain why two dry places are both deserts"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What do the two places have in common?",
+              "options": [
+                "Very little rain",
+                "Very low temperatures",
+                "A lot of plants"
+              ],
+              "answer": "Very little rain"
+            }
+          ],
+          "audio": "Most people think a desert is hot, but that is not always true. The Atacama Desert is hot and dry, and it rains only a few times a year. Antarctica is the opposite: it is very cold and covered in ice. But it also has very little rain, so scientists call it a desert too. A desert is really about water, not temperature.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "It's foggy and it's windy, so don't put on your sunglasses. Put on your raincoat and your scarf, and don't forget your cap.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "It's foggy and it's ___(1)___, so don't put on your sunglasses.",
+              "options": [
+                "windy",
+                "sunny",
+                "hot"
+              ],
+              "answer": "windy"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "Put on your raincoat and your ___(2)___.",
+              "options": [
+                "scarf",
+                "sunscreen",
+                "sunglasses"
+              ],
+              "answer": "scarf"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "And don't ___(3)___ your cap.",
+              "options": [
+                "forget",
+                "forgets",
+                "forgetting"
+              ],
+              "answer": "forget"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "desert",
+              "options": [
+                "a place with very little rain, hot or cold",
+                "a hot sandy place only",
+                "a place with a lot of snow",
+                "a dry river"
+              ],
+              "answer": "a place with very little rain, hot or cold"
+            },
+            {
+              "id": "r1-2",
+              "word": "hard",
+              "options": [
+                "difficult",
+                "solid and firm",
+                "cold",
+                "dry"
+              ],
+              "answer": "difficult"
+            },
+            {
+              "id": "r1-3",
+              "word": "most of their time",
+              "options": [
+                "nearly all the time",
+                "a little time",
+                "only at night",
+                "never"
+              ],
+              "answer": "nearly all the time"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Most people think a desert is hot and sandy, but that is only half the story. The Atacama Desert in Chile is hot and dry, and it only rains a few times a year. It lies between mountains, so it is sometimes rainy on the mountains while the desert stays dry. Antarctica is the opposite: it is the coldest place on Earth and it is covered in ice. Yet it also has very little rain, so scientists call it a desert too. In the end, a desert is about water, not temperature.",
+          "prompt": "Read the whole text, then tap the sentence that gives the text's main point in one line.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that gives the main point in one line.",
+              "answerType": "tapSentence",
+              "answer": "In the end, a desert is about water, not temperature.",
+              "why": "That sentence states the idea both examples prove."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the writer doing in this text?",
+              "options": [
+                "Correcting a common idea about deserts",
+                "Describing a holiday in Chile",
+                "Explaining how ice is made"
+              ],
+              "answer": "Correcting a common idea about deserts"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Most people think a desert is hot and sandy, but that is only half the story. The Atacama Desert in Chile is hot and dry, and it only rains a few times a year. It lies between mountains, so it is sometimes rainy on the mountains while the desert stays dry. Antarctica is the opposite: it is the coldest place on Earth and it is covered in ice. Yet it also has very little rain, so scientists call it a desert too. In the end, a desert is about water, not temperature.",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Why does the desert stay dry when it rains on the mountains?",
+              "options": [
+                "The rain falls on the mountains, not the desert",
+                "The desert is too hot for rain",
+                "There are no clouds in Chile"
+              ],
+              "answer": "The rain falls on the mountains, not the desert"
+            },
+            {
+              "id": "r3-2",
+              "q": "Why can Antarctica be called a desert?",
+              "options": [
+                "It has very little rain",
+                "It has no plants",
+                "It has a lot of wind"
+              ],
+              "answer": "It has very little rain"
+            },
+            {
+              "id": "r3-3",
+              "q": "What does 'that is only half the story' tell us?",
+              "options": [
+                "The common idea is incomplete",
+                "The text is very short",
+                "The writer does not know"
+              ],
+              "answer": "The common idea is incomplete"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Antarctica is very cold. There is a lot of ice, but it doesn't rain a lot. So, Antarctica is a desert, too. It is hard for people, animals and plants to live in Antarctica because it is so cold there. Antarctica is also the windiest place on Earth: winds can travel at more than 300 kilometres an hour. Few plants can grow, and the animals that live there, like penguins, spend most of their time in the sea, where it is warmer and there is food.",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that gives a number as evidence.",
+              "answer": "Antarctica is also the windiest place on Earth: winds can travel at more than 300 kilometres an hour."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that explains why penguins stay in the sea.",
+              "answer": "Few plants can grow, and the animals that live there, like penguins, spend most of their time in the sea, where it is warmer and there is food."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that makes Antarctica a desert.",
+              "answer": "There is a lot of ice, but it doesn't rain a lot."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Neither",
+                "the",
+                "scarf",
+                "nor",
+                "the",
+                "sweater",
+                "is",
+                "wet"
+              ],
+              "answer": "Neither the scarf nor the sweater is wet."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Don't",
+                "put",
+                "on",
+                "your",
+                "sunglasses",
+                "today"
+              ],
+              "answer": "Don't put on your sunglasses today."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Is",
+                "it",
+                "foggy",
+                "and",
+                "cold",
+                "outside"
+              ],
+              "answer": "Is it foggy and cold outside?"
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "In",
+                "the",
+                "end",
+                "a",
+                "desert",
+                "is",
+                "about",
+                "water"
+              ],
+              "answer": "In the end, a desert is about water."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "Don't forgets your raincoat.",
+              "answer": "Don't forget your raincoat."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Are it very cold in Antarctica?",
+              "answer": "Is it very cold in Antarctica?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Neither the scarf nor the sweater are wet.",
+              "answer": "Neither the scarf nor the sweater is wet."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence weather report for your town today. Every requirement on the checklist must appear.",
+          "requirements": [
+            "the weather now, with two weather words",
+            "one instruction with Put on",
+            "one instruction with Don't",
+            "one sentence about what happens if you forget",
+            "one sentence comparing today with yesterday"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "It's written correctly throughout",
+            "One negative instruction",
+            "Correct your, not you",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Neither the scarf nor the sweater is wet.",
+              "keywords": [
+                "neither",
+                "scarf",
+                "sweater",
+                "wet"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Don't put on your sunglasses today.",
+              "keywords": [
+                "don't",
+                "put",
+                "on",
+                "sunglasses"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Is it foggy and cold outside?",
+              "keywords": [
+                "is",
+                "it",
+                "foggy",
+                "cold"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "A desert is about water, not temperature.",
+              "keywords": [
+                "desert",
+                "water",
+                "not",
+                "temperature"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "neither the scarf nor the sweater",
+              "keywords": [
+                "neither",
+                "scarf",
+                "nor",
+                "sweater"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "don't forget your raincoat",
+              "keywords": [
+                "don't",
+                "forget",
+                "raincoat"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "it's cold and windy",
+              "keywords": [
+                "cold",
+                "and",
+                "windy"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "How's the weather today, and what should I put on?",
+              "keywords": [
+                "it's",
+                "put",
+                "on"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Is it a good day for the park? Why or why not?",
+              "keywords": [
+                "is",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Why is a desert about water and not temperature?",
+              "keywords": [
+                "desert",
+                "water",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What is the weather usually like in your town in December?",
+              "keywords": [
+                "usually",
+                "december",
+                "it's"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the picture for 45 seconds. Say the weather, what to wear, and what not to wear.",
+          "image": "weather-challenging",
+          "prompts": [
+            "The weather in the picture",
+            "Two things to put on",
+            "One thing NOT to put on",
+            "Whether you would go outside"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "it's",
+            "put",
+            "on",
+            "don't"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the dialogue as all three characters, with a different voice for each.",
+          "dialogueId": "briansRaincoat",
+          "lines": 8,
+          "keywords": [
+            "raincoat",
+            "cloudy",
+            "rain",
+            "wet"
+          ],
+          "extra": "Then answer: who was right about the weather, Mom or Brian? Use two sentences."
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Is your town's weather easy or difficult to dress for? Explain.",
+              "keywords": [
+                "weather",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Should people check the weather before they leave home? Why?",
+              "keywords": [
+                "should",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which is worse: too hot or too cold? Give one reason for each.",
+              "keywords": [
+                "worse",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: Your Weather Report. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "Good morning. Today it's ___ and ___.",
+            "Put on your ___ because ___.",
+            "Don't put on your ___ today.",
+            "It's a ___ day for ___."
+          ],
+          "keywords": [
+            "it's",
+            "put",
+            "on",
+            "don't",
+            "because"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I gave one positive and one negative instruction"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "snowsuit",
+              "options": [
+                "snowsuit",
+                "raincoat",
+                "sweater",
+                "scarf"
+              ],
+              "answer": "snowsuit"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "It's cold and windy, so don't ___ your scarf.",
+              "options": [
+                "forget",
+                "forgets",
+                "forgetting",
+                "to forget"
+              ],
+              "answer": "forget"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Don't forgets your raincoat.",
+              "wrong": "forgets",
+              "correct": "forget"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Antarctica is the windiest place on Earth.",
+              "options": [
+                "windiest",
+                "coldest",
+                "driest",
+                "hottest"
+              ],
+              "answer": "windiest"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "ice",
+                "rain",
+                "sand",
+                "sunglasses"
+              ],
+              "answer": "sunglasses",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Give me two instructions for a rainy day.",
+              "keywords": [
+                "put",
+                "on",
+                "don't"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Weather Station. Eight items across all six skills, then a 45-second spoken report.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "mountains",
+              "options": [
+                "mountains",
+                "desert",
+                "ice",
+                "rain"
+              ],
+              "answer": "mountains"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "Neither the scarf nor the sweater ___ wet.",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "is"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "Are it foggy today, and don't forgets your cap?",
+              "wrong": "Are",
+              "correct": "Is"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "Most people think a desert is hot, but that is not always true. The Atacama is hot and dry, and Antarctica is cold and icy. Both have very little rain, so both are deserts. A desert is about water, not temperature.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker doing?",
+                  "options": [
+                    "Correcting an idea about deserts",
+                    "Selling a holiday",
+                    "Describing a school"
+                  ],
+                  "answer": "Correcting an idea about deserts"
+                },
+                {
+                  "pass": 2,
+                  "q": "What makes both places deserts?",
+                  "options": [
+                    "Very little rain",
+                    "Very high temperature",
+                    "A lot of ice"
+                  ],
+                  "answer": "Very little rain"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence from the text that gives a number as evidence.",
+              "answer": "Antarctica is also the windiest place on Earth: winds can travel at more than 300 kilometres an hour."
+            },
+            {
+              "id": "b-6",
+              "type": "grouping",
+              "bins": [
+                "The Atacama",
+                "Antarctica",
+                "Both"
+              ],
+              "items": [
+                {
+                  "word": "It's hot.",
+                  "bin": "The Atacama"
+                },
+                {
+                  "word": "It's a desert.",
+                  "bin": "Both"
+                },
+                {
+                  "word": "It's cold.",
+                  "bin": "Antarctica"
+                },
+                {
+                  "word": "It's hard to live there.",
+                  "bin": "Both"
+                },
+                {
+                  "word": "There is a lot of ice.",
+                  "bin": "Antarctica"
+                }
+              ]
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the noun: a place with very little rain, hot or cold.",
+              "answer": "desert",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: today's weather, two things to put on, one thing not to put on, and whether it's a good day to go out.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "it's",
+                "put",
+                "on",
+                "don't",
+                "because"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "briansRaincoat",
+    "title": "Brian's Raincoat",
+    "cast": [
+      "Mom",
+      "Brian",
+      "Emma"
+    ],
+    "lines": [
+      {
+        "speaker": "Mom",
+        "text": "Brian! Wear a raincoat."
+      },
+      {
+        "speaker": "Brian",
+        "text": "It's OK, Mom. It's just cloudy. I'm late."
+      },
+      {
+        "speaker": "Emma",
+        "text": "I'm coming."
+      },
+      {
+        "speaker": "Mom",
+        "text": "It's raining, Brian."
+      },
+      {
+        "speaker": "Brian",
+        "text": "Oh, no!"
+      },
+      {
+        "speaker": "Emma",
+        "text": "I'm wearing my boots."
+      },
+      {
+        "speaker": "Brian",
+        "text": "Is it raining?"
+      },
+      {
+        "speaker": "Emma",
+        "text": "Brian, you're all wet!"
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "What does Mom say to wear?",
+          "options": [
+            "A raincoat",
+            "A sweater"
+          ],
+          "answer": "A raincoat"
+        },
+        {
+          "q": "How's the weather outside?",
+          "options": [
+            "Wet",
+            "Sunny"
+          ],
+          "answer": "Wet"
+        }
+      ],
+      "core": [
+        {
+          "q": "What does Mom say to wear?",
+          "options": [
+            "A raincoat",
+            "A sweater",
+            "A scarf"
+          ],
+          "answer": "A raincoat"
+        },
+        {
+          "q": "How's the weather outside?",
+          "options": [
+            "Wet",
+            "Sunny",
+            "Foggy"
+          ],
+          "answer": "Wet"
+        },
+        {
+          "q": "What is Emma wearing?",
+          "options": [
+            "Boots",
+            "A raincoat",
+            "A cap"
+          ],
+          "answer": "Boots"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "Why doesn't Brian wear a raincoat?",
+          "options": [
+            "He thinks it's only cloudy",
+            "He has no raincoat",
+            "It is too hot"
+          ],
+          "answer": "He thinks it's only cloudy"
+        },
+        {
+          "q": "What does 'Brian, you're all wet!' show?",
+          "options": [
+            "Mom was right",
+            "The rain has stopped",
+            "Brian found his coat"
+          ],
+          "answer": "Mom was right"
+        },
+        {
+          "q": "Who was better prepared, and how do you know?",
+          "options": [
+            "Emma, because she is wearing boots",
+            "Brian, because he was quick",
+            "Mom, because she stayed inside"
+          ],
+          "answer": "Emma, because she is wearing boots"
+        }
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station. This is the book's own phonics focus.",
+    "contrast": [
+      "l-blends"
+    ],
+    "blends": [
+      "bl",
+      "cl",
+      "fl",
+      "gl",
+      "sl"
+    ],
+    "anchorWords": [
+      {
+        "word": "blue",
+        "blend": "bl"
+      },
+      {
+        "word": "cloudy",
+        "blend": "cl"
+      },
+      {
+        "word": "flag",
+        "blend": "fl"
+      },
+      {
+        "word": "gloves",
+        "blend": "gl"
+      },
+      {
+        "word": "slippers",
+        "blend": "sl"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "black",
+        "blend": "bl"
+      },
+      {
+        "word": "clock",
+        "blend": "cl"
+      },
+      {
+        "word": "snowflake",
+        "blend": "fl"
+      },
+      {
+        "word": "sunglasses",
+        "blend": "gl"
+      },
+      {
+        "word": "slippers",
+        "blend": "sl"
+      }
+    ],
+    "note2": "The teaching point is that the l is part of the same breath group as the first consonant, not a separate syllable: bl-ue, not bu-lue. Say the blends slowly before any recording."
+  },
+  "review2Connection": {
+    "note": "Book pages 74-77 are Review 2 (Units 4-6). They are NOT part of this pack but make an obvious Review Island, alongside Review 1 (Units 1-3).",
+    "contrastItems": [
+      {
+        "a": "Which classes do you have on Monday?",
+        "b": "Which classes do you has on Monday?",
+        "answer": "have",
+        "unit": "4"
+      },
+      {
+        "a": "He has a dictionary.",
+        "b": "He have a dictionary.",
+        "answer": "has",
+        "unit": "4"
+      },
+      {
+        "a": "Where is the comb?",
+        "b": "Where are the comb?",
+        "answer": "is",
+        "unit": "5"
+      },
+      {
+        "a": "Are the buckets on the porch?",
+        "b": "Is the buckets on the porch?",
+        "answer": "Are",
+        "unit": "5"
+      },
+      {
+        "a": "How is the weather?",
+        "b": "How are the weather?",
+        "answer": "is",
+        "unit": "6"
+      },
+      {
+        "a": "Is it sunny?",
+        "b": "It is sunny?",
+        "answer": "Is it",
+        "unit": "6"
+      }
+    ],
+    "boardGameNote": "Page 77 is a 19-space board game whose spaces cue the structures of Units 4-6: I/We have…on…, Do you have…?, Put on your…, It's…, In/On/Under, Is/Are…in/on/under…? That is a ready-made model for a cumulative Review Boss."
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1-5: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "Contractions: accept it's / it is, don't / do not, isn't / is not, how's / how is.",
+      "Accept 'sunglasses' with or without a clear final 's'; accept 'baseball cap' and 'cap'.",
+      "Instruction forms are the teaching point: if the learner says 'puts on' after Don't, show the form rather than failing outright at Easy and Core."
+    ]
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  }
+}

@@ -40,6 +40,14 @@ import {
   unit5Phonics,
   vocabulary as unit5Vocabulary,
 } from './unit5/v2';
+import {
+  buildLevel as buildUnit6V2Level,
+  unit6Registry,
+  unit6Stations,
+  unit6Dialogue,
+  unit6Phonics,
+  vocabulary as unit6Vocabulary,
+} from './unit6/v2';
 
 const unit1Stations: Station[] = contentPack.stations.map(s => ({
   id: s.id,
@@ -156,6 +164,37 @@ function buildUnit5(): Unit {
   };
 }
 
+function buildUnit6(): Unit {
+  const all: Record<Level, Activity[]> = {
+    easy: buildUnit6V2Level('easy'),
+    core: buildUnit6V2Level('core'),
+    challenging: buildUnit6V2Level('challenging'),
+  };
+
+  return {
+    id: unit6Registry.id,
+    title: unit6Registry.title,
+    islandName: unit6Registry.islandName,
+    bigQuestion: unit6Registry.bigQuestion,
+    objectives: unit6Registry.objectives,
+    skills: SKILL_WEIGHTS,
+    vocabulary: unit6Vocabulary,
+    stations: unit6Stations,
+    levels: {
+      easy: all.easy.filter(a => !isCheckpointActivity(a)),
+      core: all.core.filter(a => !isCheckpointActivity(a)),
+      challenging: all.challenging.filter(a => !isCheckpointActivity(a)),
+    },
+    bossActivities: {
+      easy: all.easy.filter(isCheckpointActivity),
+      core: all.core.filter(isCheckpointActivity),
+      challenging: all.challenging.filter(isCheckpointActivity),
+    },
+    unlocked: unit6Registry.unlocked,
+    status: unit6Registry.status,
+  };
+}
+
 function buildUnit2(): Unit {
   const all: Record<Level, Activity[]> = {
     easy: buildUnit2V2Level('easy'),
@@ -241,7 +280,7 @@ export const units: Unit[] = [
   buildUnit3(),
   buildUnit4(),
   buildUnit5(),
-  buildPlaceholderUnit(6),
+  buildUnit6(),
   buildPlaceholderUnit(7),
   buildPlaceholderUnit(8),
   buildPlaceholderUnit(9),
@@ -293,6 +332,9 @@ export function getUnitReading(unitId: number): UnitReadingContext {
   if (unitId === 5) {
     return { readingTexts: [], dialogue: unit5Dialogue };
   }
+  if (unitId === 6) {
+    return { readingTexts: [], dialogue: unit6Dialogue };
+  }
   return { readingTexts: unit1ReadingTexts, dialogue: unit1Dialogue };
 }
 
@@ -312,12 +354,13 @@ export function getUnitGrammarPatterns(unitId: number): UnitGrammarPattern[] {
   return unit1Patterns;
 }
 
-/** Optional pronunciation card data (U2 th/s; U3 ch/sh/th; U4 s/sh; U5 r/l). */
+/** Optional pronunciation card data (U2 th/s; U3 ch/sh/th; U4 s/sh; U5 r/l; U6 l-blends). */
 export function getUnitPhonics(unitId: number): UnitPhonics | undefined {
   if (unitId === 2) return unit2Phonics;
   if (unitId === 3) return unit3Phonics;
   if (unitId === 4) return unit4Phonics;
   if (unitId === 5) return unit5Phonics;
+  if (unitId === 6) return unit6Phonics;
   return undefined;
 }
 
