@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Star, RotateCcw, ArrowUp, Home, CheckCircle2, Sparkles } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
-import { getUnitRitual } from '../data/units';
-import { SKILL_COLORS, SKILL_LABELS, LEVEL_LABELS, type Skill, type Level } from '../types';
+import { getUnit } from '../data/units';
+import { SKILL_COLORS, SKILL_LABELS, LEVEL_LABELS, type Skill } from '../types';
+import { computeSkillAccuracy, accuracyBand } from '../lib/skillAccuracy';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 interface ResultsState {
@@ -23,31 +23,16 @@ interface ResultsState {
   fastCompletion?: boolean;
 }
 
+const SKILL_ORDER: Skill[] = ['vocabulary', 'grammar', 'listening', 'reading', 'writing', 'speaking'];
+const RATING_WORDS: Record<number, string> = { 1: 'Not yet', 2: 'Almost', 3: 'Yes' };
+
 export function Results() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { isCoreCompleted, progress, addReflection } = useProgress();
+  const { isCoreCompleted, progress } = useProgress();
   const reduceMotion = useReducedMotion();
 
   const state = location.state as ResultsState | null;
-
-  // Ritual: REFLECTION — two prompts from the pack, saved to the progress
-  // record. Hooks stay above the early return below.
-  const reflectionPrompts = getUnitRitual(state?.unitId || 0)?.reflection?.prompts ?? [];
-  const [reflectionAnswers, setReflectionAnswers] = useState<string[]>(() => reflectionPrompts.map(() => ''));
-  const [reflectionSaved, setReflectionSaved] = useState(false);
-
-  const saveReflection = () => {
-    if (!state) return;
-    addReflection({
-      unitId: state.unitId,
-      level: state.level as Level,
-      stationId: state.stationId,
-      date: new Date().toISOString(),
-      answers: reflectionAnswers,
-    });
-    setReflectionSaved(true);
-  };
 
   if (!state) {
     return (
@@ -62,6 +47,37 @@ export function Results() {
   const accuracy = state.totalCount > 0 ? Math.round((state.correctCount / state.totalCount) * 100) : 0;
   const stars = accuracy >= 90 ? 3 : accuracy >= 70 ? 2 : 1;
   const skillColor = SKILL_COLORS[state.skill as Skill] || '#0F766E';
+
+  // PHASE 7 — the prediction-vs-work comparison. Computed from the stored
+  // self-assessment record and the level's stored per-skill attempts. Hidden
+  // entirely when the learner skipped the self-assessment.
+  const record = progress.selfAssessments?.[`unit:${state.unitId}:level:${state.level}`];
+  const comparison = (() => {
+    if (!record || record.skipped) return null;
+    const unit = getUnit(state.unitId);
+    if (!unit) return null;
+    const accuracyBySkill = computeSkillAccuracy(unit, state.level as Parameters<typeof computeSkillAccuracy>[1], progress);
+    const rows = SKILL_ORDER.map(skill => {
+      const rating = record.ratings[skill];
+      const acc = accuracyBySkill[skill];
+      let kind: 'aligned' | 'over' | 'under' = 'aligned';
+      if (rating === 3 && acc.pct < 50) kind = 'over';
+      else if (rating === 1 && acc.pct >= 70) kind = 'under';
+      const gap = kind === 'over' ? 100 - acc.pct : kind === 'under' ? acc.pct : 0;
+      return { skill, rating, acc, kind, gap };
+    });
+    const worstOver = rows.filter(r => r.kind === 'over').sort((a, b) => b.gap - a.gap)[0]?.skill;
+    const bestUnder = rows.filter(r => r.kind === 'under').sort((a, b) => b.gap - a.gap)[0]?.skill;
+    const lines = rows.map(r => ({
+      skill: r.skill,
+      rating: r.rating ?? 0,
+      band: accuracyBand(r.acc.pct),
+      kind: r.kind === 'over' && r.skill !== worstOver ? 'aligned'
+        : r.kind === 'under' && r.skill !== bestUnder ? 'aligned'
+          : r.kind,
+    }));
+    return { rows, lines, completedAt: record.completedAt };
+  })();
 
   // Check if challenging was just unlocked
   const justUnlockedChallenging = state.level === 'core' && isCoreCompleted(state.unitId);
@@ -130,6 +146,58 @@ export function Results() {
           </p>
         )}
       </div>
+
+      {/* PHASE 7 — prediction vs work comparison, above the per-skill bars.
+          Hidden entirely when the self-assessment was skipped. */}
+      {comparison && (
+        <div className="surface-card mb-4 p-6">
+          <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Your self-check</h3>
+          <p className="mb-4 text-sm text-muted">
+            What you predicted before seeing your score — next to what your work showed.
+          </p>
+          <div className="space-y-3">
+            {comparison.lines.map(line => {
+              const row = comparison.rows.find(r => r.skill === line.skill)!;
+              const color = SKILL_COLORS[line.skill];
+              return (
+                <div key={line.skill} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <span className="h-3 w-3 rounded-full" style={{ backgroundColor: color }} aria-hidden />
+                      <span className="text-sm font-extrabold text-ink">{SKILL_LABELS[line.skill]}</span>
+                      <span className="flex items-center gap-0.5" role="img" aria-label={`Self-rated ${RATING_WORDS[line.rating] ?? 'skipped'}, ${line.rating} of 3`}>
+                        {[1, 2, 3].map(d => (
+                          <span
+                            key={d}
+                            className={`h-2.5 w-2.5 rounded-full ${d <= line.rating ? 'bg-brand' : 'bg-slate-300'}`}
+                            aria-hidden
+                          />
+                        ))}
+                      </span>
+                      <span className="text-xs font-semibold text-muted">{RATING_WORDS[line.rating] ?? ''}</span>
+                    </div>
+                    <span className="text-xs font-bold text-muted">
+                      Your work: {line.band}
+                      <span className="sr-only"> ({row.acc.pct}% correct)</span>
+                    </span>
+                  </div>
+                  <p
+                    className={`mt-1.5 text-sm font-medium ${
+                      line.kind === 'over' ? 'text-sun' : line.kind === 'under' ? 'text-mint' : 'text-muted'
+                    }`}
+                  >
+                    {line.kind === 'over'
+                      ? 'This felt easier than it was. That is normal, and now you know where to look.'
+                      : line.kind === 'under'
+                        ? 'You can do more than you thought here.'
+                        : 'Your self-check matches your work.'}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Per-skill breakdown */}
       <div className="surface-card mb-4 p-6">
@@ -201,43 +269,6 @@ export function Results() {
         <div className="surface-card mb-6 p-6 text-center">
           <CheckCircle2 size={32} className="text-mint mx-auto mb-2" />
           <p className="text-sm font-medium text-ink">No mistakes — perfect run!</p>
-        </div>
-      )}
-
-      {/* Ritual: REFLECTION — after the corrections list */}
-      {reflectionPrompts.length > 0 && (
-        <div className="surface-card mb-6 p-6">
-          <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Reflect</h3>
-          <p className="mb-4 text-sm text-muted">Two quick questions about today's session.</p>
-          <div className="space-y-4">
-            {reflectionPrompts.map((prompt, i) => (
-              <div key={i}>
-                <label htmlFor={`reflection-${i}`} className="mb-1.5 block text-sm font-semibold text-ink">
-                  {prompt}
-                </label>
-                <textarea
-                  id={`reflection-${i}`}
-                  rows={2}
-                  value={reflectionAnswers[i] ?? ''}
-                  disabled={reflectionSaved}
-                  onChange={e =>
-                    setReflectionAnswers(prev => prev.map((a, idx) => (idx === i ? e.target.value : a)))
-                  }
-                  className="w-full resize-none rounded-xl border border-slate-200 bg-white p-3 text-sm text-ink placeholder:text-slate-400 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20 disabled:opacity-60"
-                  aria-label={prompt}
-                />
-              </div>
-            ))}
-          </div>
-          {!reflectionSaved ? (
-            <button onClick={saveReflection} className="action-secondary mt-4" style={{ minHeight: 44 }}>
-              Save reflection
-            </button>
-          ) : (
-            <p className="mt-4 flex items-center gap-2 text-sm font-semibold text-mint">
-              <CheckCircle2 size={16} /> Reflection saved.
-            </p>
-          )}
         </div>
       )}
 

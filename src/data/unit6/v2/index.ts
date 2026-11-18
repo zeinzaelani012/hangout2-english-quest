@@ -34,6 +34,9 @@ function normalizeGroupingItems(acts: Activity[]): Activity[] {
   });
 }
 
+/** Phase 7 can-do statements for this unit, injected verbatim from the pack. */
+export const selfAssessment = (pack as any).selfAssessment ?? undefined;
+
 export function buildLevel(level: Level): Activity[] {
   return normalizeGroupingItems(buildLevelFromPack(pack, level));
 }

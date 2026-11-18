@@ -102,6 +102,9 @@ export function buildLevel(level: Level): Activity[] {
   return buildLevelFromPack(pack, level);
 }
 
+/** Phase 7 can-do statements for this unit, injected verbatim from the pack. */
+export const selfAssessment = (pack as any).selfAssessment ?? undefined;
+
 /**
  * D2 — produce instead of recognise. Declared per slot via depthMoves.
  * (a) A D2 slot that is production-with-scaffold (spelling letter banks,

@@ -156,24 +156,30 @@ export function ActivityPage() {
       saveStationProgress(unit.id, levelKey, station.id, stationProgress);
       setStationComplete(true);
 
-      // Navigate to results after a brief delay
+      // Phase 7: the self-assessment sits between the BOSS and the results
+      // screen — the rating must be a prediction, not a reaction. Every other
+      // station goes straight to results.
+      const resultsState = {
+        unitId: unit.id,
+        level: levelKey,
+        stationId: station.id,
+        stationName: station.name,
+        skill: station.skill,
+        xpEarned,
+        xpTotal: stationXP,
+        correctCount,
+        totalCount: activities.length,
+        errors,
+        isBoss: station.id === 'boss',
+        fastCompletion: stationFast,
+      };
+
       setTimeout(() => {
-        navigate('/results', {
-          state: {
-            unitId: unit.id,
-            level: levelKey,
-            stationId: station.id,
-            stationName: station.name,
-            skill: station.skill,
-            xpEarned,
-            xpTotal: stationXP,
-            correctCount,
-            totalCount: activities.length,
-            errors,
-            isBoss: station.id === 'boss',
-            fastCompletion: stationFast,
-          },
-        });
+        if (station.id === 'boss') {
+          navigate(`/unit/${unit.id}/${levelKey}/self-check`, { state: resultsState });
+        } else {
+          navigate('/results', { state: resultsState });
+        }
       }, 1500);
     } else {
       setCurrentIndex(prev => prev + 1);

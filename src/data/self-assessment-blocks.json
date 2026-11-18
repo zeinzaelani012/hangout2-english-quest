@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "self-assessment-blocks",
+    "version": "1.0",
+    "schema": "v2.0-pacing",
+    "purpose": "Can-do statements for the Phase 7 self-assessment screen. Import each unit's `selfAssessment` object into that unit's content pack as a top-level sibling of `levels`. Do not rewrite the wording.",
+    "usage": "Read the statement for the level the learner just played. Never show the other two levels' wording.",
+    "ratings": { "1": "Not yet", "2": "Almost", "3": "Yes" },
+    "note": "Statements are CEFR A2 'I can...' form. Easy = recognition and single words; Core = production in full sentences; Challenging = extended production, reasoning or comparison."
+  },
+
+  "units": {
+    "1": {
+      "title": "Snack Time",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some foods in English.",
+            "core": "I can name foods and say which ones are healthy.",
+            "challenging": "I can talk about food groups and explain my choices."
+          },
+          "grammar": {
+            "easy": "I can say I like something or I don't like it.",
+            "core": "I can use like, likes, don't and doesn't correctly.",
+            "challenging": "I can use So do I and Neither do I to agree with someone."
+          },
+          "listening": {
+            "easy": "I can hear a food word and find it.",
+            "core": "I can understand what someone wants to eat.",
+            "challenging": "I can follow a longer talk about food and catch the details."
+          },
+          "reading": {
+            "easy": "I can read a short text about food.",
+            "core": "I can find facts in a text about food.",
+            "challenging": "I can understand what the writer thinks, not only what happened."
+          },
+          "writing": {
+            "easy": "I can write one sentence about food.",
+            "core": "I can write several sentences about what I like.",
+            "challenging": "I can write a short diary entry with a reason."
+          },
+          "speaking": {
+            "easy": "I can say what I like to eat.",
+            "core": "I can ask and answer questions about food.",
+            "challenging": "I can talk for a minute about food and agree with someone."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    },
+
+    "2": {
+      "title": "My Clothes",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some clothes in English.",
+            "core": "I can name clothes and jewellery, and say what colour they are.",
+            "challenging": "I can compare what people wear and explain why."
+          },
+          "grammar": {
+            "easy": "I can say what someone is wearing.",
+            "core": "I can use am, is and are with wearing, and isn't and aren't.",
+            "challenging": "I can describe several people and keep singular and plural correct."
+          },
+          "listening": {
+            "easy": "I can hear a clothing word and find it.",
+            "core": "I can understand a description of what two people are wearing.",
+            "challenging": "I can follow a longer description and catch the negative detail."
+          },
+          "reading": {
+            "easy": "I can read a short message about clothes.",
+            "core": "I can find where someone is and what they are wearing.",
+            "challenging": "I can understand why someone describes their clothes."
+          },
+          "writing": {
+            "easy": "I can write one sentence about clothes.",
+            "core": "I can write five sentences about me and a friend.",
+            "challenging": "I can describe three people and explain one choice."
+          },
+          "speaking": {
+            "easy": "I can say what I am wearing.",
+            "core": "I can describe what people are wearing.",
+            "challenging": "I can describe and compare clothes, and say why."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    },
+
+    "3": {
+      "title": "My Favorite Food",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some foods and drinks in English.",
+            "core": "I can name foods and say how they taste.",
+            "challenging": "I can use taste words precisely and talk about where food comes from."
+          },
+          "grammar": {
+            "easy": "I can say what I want.",
+            "core": "I can use want and wants, and ask with does.",
+            "challenging": "I can use look, smell and taste with the right endings."
+          },
+          "listening": {
+            "easy": "I can hear a food or drink word and find it.",
+            "core": "I can understand someone ordering food.",
+            "challenging": "I can follow a longer description of a meal and catch how someone feels."
+          },
+          "reading": {
+            "easy": "I can read a short text about food.",
+            "core": "I can find facts about food in a text.",
+            "challenging": "I can understand an opinion and a surprising detail."
+          },
+          "writing": {
+            "easy": "I can write one sentence about a meal.",
+            "core": "I can write an order and describe how the food tastes.",
+            "challenging": "I can write a short review with a reason."
+          },
+          "speaking": {
+            "easy": "I can say what I want to eat.",
+            "core": "I can order politely and ask how something tastes.",
+            "challenging": "I can describe a meal using all three senses."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    },
+
+    "4": {
+      "title": "My Classes",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some classes and school things.",
+            "core": "I can name classes, school objects and days of the week.",
+            "challenging": "I can talk about what I carry to school and explain why."
+          },
+          "grammar": {
+            "easy": "I can say what I have.",
+            "core": "I can use have and has, and don't and doesn't have.",
+            "challenging": "I can use have and has correctly even in negatives and questions."
+          },
+          "listening": {
+            "easy": "I can hear a class word and find it.",
+            "core": "I can understand someone talking about their timetable.",
+            "challenging": "I can follow a longer description and catch the reason behind it."
+          },
+          "reading": {
+            "easy": "I can read a short note about school things.",
+            "core": "I can find facts in a note about school.",
+            "challenging": "I can understand why a bag is heavy and what that tells me."
+          },
+          "writing": {
+            "easy": "I can write one sentence about a class.",
+            "core": "I can fill a chart about my classes and what I need.",
+            "challenging": "I can write a paragraph about my week with reasons."
+          },
+          "speaking": {
+            "easy": "I can say one class I have.",
+            "core": "I can ask and answer questions about classes.",
+            "challenging": "I can describe my week and explain which class is hardest."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    },
+
+    "5": {
+      "title": "Finding Things",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some rooms and things in a house.",
+            "core": "I can name objects and the places in a house and garden.",
+            "challenging": "I can talk about where things belong and why."
+          },
+          "grammar": {
+            "easy": "I can say where one thing is.",
+            "core": "I can use Where is and Where are, and It's and They're.",
+            "challenging": "I can keep the question, the short answer and the full answer the same number."
+          },
+          "listening": {
+            "easy": "I can hear an object word and find it.",
+            "core": "I can understand where something is.",
+            "challenging": "I can follow a longer description and catch a negative."
+          },
+          "reading": {
+            "easy": "I can read a short note about where things are.",
+            "core": "I can find where things are in a note.",
+            "challenging": "I can understand a joke or an aside in a note."
+          },
+          "writing": {
+            "easy": "I can write one sentence with in, on or under.",
+            "core": "I can fill a chart showing where things are.",
+            "challenging": "I can describe a room and give reasons."
+          },
+          "speaking": {
+            "easy": "I can tell someone where my things are.",
+            "core": "I can ask and answer Where is and Where are.",
+            "challenging": "I can describe a room for a minute."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    },
+
+    "6": {
+      "title": "It's Hot!",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some weather words.",
+            "core": "I can name the weather and the right clothes for it.",
+            "challenging": "I can talk about climates and explain why people dress differently."
+          },
+          "grammar": {
+            "easy": "I can say It's hot or It's cold.",
+            "core": "I can ask Is it...? and use Put on and Don't put on.",
+            "challenging": "I can give instructions and refuse them with the right verb form."
+          },
+          "listening": {
+            "easy": "I can hear a weather word and find it.",
+            "core": "I can understand a weather report.",
+            "challenging": "I can follow a report that compares two places."
+          },
+          "reading": {
+            "easy": "I can read a short text about the weather.",
+            "core": "I can find facts about the weather in a place.",
+            "challenging": "I can understand why two opposite climates share one name."
+          },
+          "writing": {
+            "easy": "I can write one sentence about the weather.",
+            "core": "I can write what to wear in each kind of weather.",
+            "challenging": "I can write a weather report with an instruction."
+          },
+          "speaking": {
+            "easy": "I can say what the weather is like today.",
+            "core": "I can say what to wear and what not to wear.",
+            "challenging": "I can give a one-minute weather report."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    },
+
+    "7": {
+      "title": "The Four Seasons",
+      "selfAssessment": {
+        "intro": "There are no right answers here. Be honest — it helps you.",
+        "skills": {
+          "vocabulary": {
+            "easy": "I can name some things people do in a season.",
+            "core": "I can name activities for each season.",
+            "challenging": "I can compare seasons and explain which I prefer."
+          },
+          "grammar": {
+            "easy": "I can say what I do in a season.",
+            "core": "I can use he, she and it with -s for seasonal activities.",
+            "challenging": "I can use goes and does correctly, and keep Neither...nor singular."
+          },
+          "listening": {
+            "easy": "I can hear a season activity and find it.",
+            "core": "I can understand what people do in each season.",
+            "challenging": "I can follow a text that compares places in one country."
+          },
+          "reading": {
+            "easy": "I can read a short text about seasons.",
+            "core": "I can find what people do in each season.",
+            "challenging": "I can understand why a text is organised the way it is."
+          },
+          "writing": {
+            "easy": "I can write one sentence with in the and a season.",
+            "core": "I can fill a chart about the seasons.",
+            "challenging": "I can write a paragraph comparing seasons with a reason."
+          },
+          "speaking": {
+            "easy": "I can say one thing I do in summer.",
+            "core": "I can talk about all four seasons.",
+            "challenging": "I can give a one-minute talk about the year."
+          }
+        },
+        "hardestPrompt": "Which one was hardest today?",
+        "notePrompt": "One thing I want to get better at."
+      }
+    }
+  }
+}
+
+

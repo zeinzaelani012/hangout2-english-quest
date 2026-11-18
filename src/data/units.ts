@@ -3,7 +3,7 @@ import { SKILL_WEIGHTS } from '../types';
 import { contentPack } from './unit1/contentPack';
 import type { DialogueJSON } from './unit1/contentPack';
 import { vocabulary as unit1Vocabulary } from './unit1/vocabulary';
-import { buildLevel as buildUnit1V2Level, unit1Ritual, type PackRitual } from './unit1/v2';
+import { buildLevel as buildUnit1V2Level, unit1Ritual, selfAssessment as unit1SelfAssessment, type PackRitual } from './unit1/v2';
 import { readingTexts as unit1ReadingTexts, dialogue as unit1Dialogue } from './unit1/reading';
 import { grammarPatterns as unit1Patterns } from './unit1/grammar';
 import {
@@ -13,8 +13,10 @@ import {
   unit2Dialogue,
   unit2Phonics,
   vocabulary as unit2Vocabulary,
+  selfAssessment as unit2SelfAssessment,
   type UnitPhonics,
 } from './unit2/v2';
+import selfAssessmentBlocks from './self-assessment-blocks.json';
 import {
   buildLevel as buildUnit3V2Level,
   unit3Registry,
@@ -22,6 +24,7 @@ import {
   unit3Dialogue,
   unit3Phonics,
   vocabulary as unit3Vocabulary,
+  selfAssessment as unit3SelfAssessment,
 } from './unit3/v2';
 import {
   buildLevel as buildUnit4V2Level,
@@ -31,6 +34,7 @@ import {
   unit4Phonics,
   unit4Ritual,
   vocabulary as unit4Vocabulary,
+  selfAssessment as unit4SelfAssessment,
 } from './unit4/v2';
 import {
   buildLevel as buildUnit5V2Level,
@@ -39,6 +43,7 @@ import {
   unit5Dialogue,
   unit5Phonics,
   vocabulary as unit5Vocabulary,
+  selfAssessment as unit5SelfAssessment,
 } from './unit5/v2';
 import {
   buildLevel as buildUnit6V2Level,
@@ -47,6 +52,7 @@ import {
   unit6Dialogue,
   unit6Phonics,
   vocabulary as unit6Vocabulary,
+  selfAssessment as unit6SelfAssessment,
 } from './unit6/v2';
 
 const unit1Stations: Station[] = contentPack.stations.map(s => ({
@@ -362,6 +368,22 @@ export function getUnitPhonics(unitId: number): UnitPhonics | undefined {
   if (unitId === 5) return unit5Phonics;
   if (unitId === 6) return unit6Phonics;
   return undefined;
+}
+
+/** Phase 7 can-do statements for a unit's self-assessment screen. Units 1-6
+ * carry theirs inside the pack; Unit 7's block is pre-wired from the shared
+ * blocks file so it is ready the moment its pack lands. */
+export function getUnitSelfAssessment(unitId: number) {
+  switch (unitId) {
+    case 1: return unit1SelfAssessment;
+    case 2: return unit2SelfAssessment;
+    case 3: return unit3SelfAssessment;
+    case 4: return unit4SelfAssessment;
+    case 5: return unit5SelfAssessment;
+    case 6: return unit6SelfAssessment;
+    case 7: return selfAssessmentBlocks.units["7"]?.selfAssessment;
+    default: return undefined;
+  }
 }
 
 // ---- Vocabulary Bank --------------------------------------------------------

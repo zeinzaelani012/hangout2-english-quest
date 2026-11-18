@@ -21,7 +21,7 @@
   "pacing": {
     "levelTimeMultiplier": {
       "easy": 0.85,
-      "core": 1.0,
+      "core": 1,
       "challenging": 1.05
     },
     "calibration": {
@@ -50,7 +50,7 @@
       "weight": 25,
       "baseSeconds": 883,
       "activities": 7,
-      "share": 25.0
+      "share": 25
     },
     "vocabulary": {
       "weight": 25,
@@ -62,25 +62,25 @@
       "weight": 15,
       "baseSeconds": 530,
       "activities": 5,
-      "share": 15.0
+      "share": 15
     },
     "reading": {
       "weight": 15,
       "baseSeconds": 530,
       "activities": 4,
-      "share": 15.0
+      "share": 15
     },
     "listening": {
       "weight": 10,
       "baseSeconds": 353,
       "activities": 3,
-      "share": 10.0
+      "share": 10
     },
     "writing": {
       "weight": 10,
       "baseSeconds": 353,
       "activities": 3,
-      "share": 10.0
+      "share": 10
     }
   },
   "slots": [
@@ -5004,5 +5004,42 @@
       "core": 51,
       "challenging": 53
     }
+  },
+  "selfAssessment": {
+    "intro": "There are no right answers here. Be honest — it helps you.",
+    "skills": {
+      "vocabulary": {
+        "easy": "I can name some foods and drinks in English.",
+        "core": "I can name foods and say how they taste.",
+        "challenging": "I can use taste words precisely and talk about where food comes from."
+      },
+      "grammar": {
+        "easy": "I can say what I want.",
+        "core": "I can use want and wants, and ask with does.",
+        "challenging": "I can use look, smell and taste with the right endings."
+      },
+      "listening": {
+        "easy": "I can hear a food or drink word and find it.",
+        "core": "I can understand someone ordering food.",
+        "challenging": "I can follow a longer description of a meal and catch how someone feels."
+      },
+      "reading": {
+        "easy": "I can read a short text about food.",
+        "core": "I can find facts about food in a text.",
+        "challenging": "I can understand an opinion and a surprising detail."
+      },
+      "writing": {
+        "easy": "I can write one sentence about a meal.",
+        "core": "I can write an order and describe how the food tastes.",
+        "challenging": "I can write a short review with a reason."
+      },
+      "speaking": {
+        "easy": "I can say what I want to eat.",
+        "core": "I can order politely and ask how something tastes.",
+        "challenging": "I can describe a meal using all three senses."
+      }
+    },
+    "hardestPrompt": "Which one was hardest today?",
+    "notePrompt": "One thing I want to get better at."
   }
 }

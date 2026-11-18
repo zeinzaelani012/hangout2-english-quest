@@ -17,6 +17,9 @@ export function buildLevel(level: Level): Activity[] {
   return buildLevelFromPack(pack, level);
 }
 
+/** Phase 7 can-do statements for this unit, injected verbatim from the pack. */
+export const selfAssessment = (pack as any).selfAssessment ?? undefined;
+
 /** Identity for the unit registry, straight from the pack's registry block. */
 export const unit2Registry = {
   id: pack.meta.unit as number,

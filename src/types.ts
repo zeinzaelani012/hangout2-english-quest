@@ -262,13 +262,22 @@ export interface LevelProgress {
   checkpointCompleted?: boolean;
 }
 
-/** End-of-station reflection answers (ritual layer). */
-export interface ReflectionEntry {
-  unitId: number;
+/** Self-assessment rating: 1 = Not yet, 2 = Almost, 3 = Yes. */
+export type SelfRating = 1 | 2 | 3;
+
+/**
+ * One self-assessment per level attempt, keyed `unit:{id}:level:{level}` in
+ * the progress record — a re-attempt overwrites the previous record. A
+ * skipped attempt stores skipped: true with no ratings and awards no XP.
+ */
+export interface SelfAssessmentRecord {
+  unit: number;
   level: Level;
-  stationId: string;
-  date: string;
-  answers: string[];
+  ratings: Partial<Record<Skill, SelfRating>>;
+  hardest: Skill | null;
+  note?: string;
+  completedAt: number;
+  skipped: boolean;
 }
 
 /**
@@ -310,7 +319,12 @@ export interface ProgressData {
     teacherLockToOneLevel?: boolean;
   };
   levelHistory: { unitId: number; level: Level; stars: number; date: string; accuracy: number }[];
-  reflections?: ReflectionEntry[];
+  /** Self-assessment records, keyed `unit:{id}:level:{level}` — one per level attempt. */
+  selfAssessments?: Record<string, SelfAssessmentRecord>;
+  /** +5 XP awarded once per level for completing (not skipping) the self-assessment. */
+  selfCheckXP?: number;
+  /** Levels whose self-check bonus has already been paid (skip can't re-arm it). */
+  selfCheckXPAwarded?: Record<string, true>;
   /** Completed level attempts, grouped by unit. */
   levelTimings?: Record<number, LevelTiming[]>;
   /** In-flight level attempts, keyed by `${unitId}-${level}`. */

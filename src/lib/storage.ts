@@ -46,7 +46,9 @@ export function getDefaultProgress(): ProgressData {
       reducedMotion: false,
     },
     levelHistory: [],
-    reflections: [],
+    selfAssessments: {},
+    selfCheckXP: 0,
+    selfCheckXPAwarded: {},
     levelTimings: {},
     activeTimings: {},
   };
@@ -66,7 +68,9 @@ export function getProgress(): ProgressData {
       units: parsed.units || {},
       vocabMastery: parsed.vocabMastery || {},
       levelHistory: parsed.levelHistory || [],
-      reflections: parsed.reflections || [],
+      selfAssessments: parsed.selfAssessments || {},
+      selfCheckXP: parsed.selfCheckXP || 0,
+      selfCheckXPAwarded: parsed.selfCheckXPAwarded || {},
       levelTimings: parsed.levelTimings || {},
       activeTimings: parsed.activeTimings || {},
     };

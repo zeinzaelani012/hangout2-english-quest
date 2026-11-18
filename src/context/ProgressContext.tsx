@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from 'react';
-import type { Profile, ProgressData, Level, StationProgress, LevelProgress, ReflectionEntry, ActiveLevelTiming, LevelTiming } from '../types';
+import type { Profile, ProgressData, Level, StationProgress, LevelProgress, SelfAssessmentRecord, ActiveLevelTiming, LevelTiming } from '../types';
 import {
   getProfile, saveProfile, getProgress, saveProgress, clearAll,
   updateStreak, getDefaultProgress,
@@ -20,8 +20,8 @@ interface ProgressContextValue {
   addLevelHistory: (entry: ProgressData['levelHistory'][0]) => void;
   /** Ritual layer: persist that the level-start mission brief was shown. */
   markMissionBriefSeen: (unitId: number, level: Level) => void;
-  /** Ritual layer: save end-of-station reflection answers. */
-  addReflection: (entry: ReflectionEntry) => void;
+  /** Phase 7: persist the self-assessment for this level attempt (overwrites). */
+  saveSelfAssessment: (record: SelfAssessmentRecord) => void;
   /** Timing telemetry: begin a level attempt if one is not under way. */
   startLevelTiming: (unitId: number, level: Level) => void;
   /** Timing telemetry: record one finished station's duration and activity count. */
@@ -84,8 +84,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
 
         unitData[level] = levelData;
 
-        // Recalculate total XP
-        let totalXP = 0;
+        // Recalculate total XP (station XP + the once-per-level self-check bonus)
+        let totalXP = prev.selfCheckXP ?? 0;
         for (const unit of Object.values(prev.units)) {
           for (const lvl of Object.values(unit)) {
             for (const station of Object.values(lvl.stations)) {
@@ -234,11 +234,24 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const addReflection = useCallback((entry: ReflectionEntry) => {
+  /**
+   * Phase 7: persist the self-assessment for one level attempt, keyed
+   * `unit:{id}:level:{level}` — a re-attempt overwrites. Completing (not
+   * skipping) awards +5 XP ONCE per level — tracked in selfCheckXPAwarded so
+   * a skip (which overwrites the record) can never re-arm the bonus.
+   */
+  const saveSelfAssessment = useCallback((record: SelfAssessmentRecord) => {
     setProgress(prev => {
+      const key = `unit:${record.unit}:level:${record.level}`;
+      const awarded = prev.selfCheckXPAwarded?.[key] === true;
+      const awardXP = !record.skipped && !awarded ? 5 : 0;
+      const selfCheckXP = (prev.selfCheckXP ?? 0) + awardXP;
       const newProgress = {
         ...prev,
-        reflections: [...(prev.reflections ?? []), entry],
+        selfAssessments: { ...prev.selfAssessments, [key]: record },
+        selfCheckXPAwarded: { ...prev.selfCheckXPAwarded, [key]: true as true },
+        selfCheckXP,
+        totalXP: prev.totalXP + awardXP,
       };
       saveProgress(newProgress);
       return newProgress;
@@ -343,7 +356,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     getLevelProgressPercent,
     addLevelHistory,
     markMissionBriefSeen,
-    addReflection,
+    saveSelfAssessment,
     startLevelTiming,
     recordStationTiming,
     resetProgress,

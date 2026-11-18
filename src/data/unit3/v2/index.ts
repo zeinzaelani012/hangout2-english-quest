@@ -13,6 +13,9 @@ import type { Activity, ActivityPayload, Level, Skill, Station, VocabItem } from
 
 const pack = packJson as unknown as ExpandedPack;
 
+/** Phase 7 can-do statements for this unit, injected verbatim from the pack. */
+export const selfAssessment = (pack as any).selfAssessment ?? undefined;
+
 export function buildLevel(level: Level): Activity[] {
   const acts = buildLevelFromPack(pack, level);
   // Review 1 (Units 1–3): append the pack's distractor contrasts to the Boss

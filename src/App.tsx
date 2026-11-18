@@ -16,6 +16,7 @@ const MyProgress = lazy(() => import('./pages/MyProgress').then(m => ({ default:
 const TeacherMode = lazy(() => import('./pages/TeacherMode').then(m => ({ default: m.TeacherMode })));
 const PresentMode = lazy(() => import('./pages/PresentMode').then(m => ({ default: m.PresentMode })));
 const SettingsPage = lazy(() => import('./pages/SettingsPage').then(m => ({ default: m.SettingsPage })));
+const SelfCheckPage = lazy(() => import('./pages/SelfCheckPage').then(m => ({ default: m.SelfCheckPage })));
 
 function PageLoader() {
   return (
@@ -62,6 +63,7 @@ function AppContent() {
             <Route path="/" element={<Dashboard onEditProfile={() => setShowProfileModal(true)} />} />
             <Route path="/unit/:unitId" element={<UnitOverview />} />
             <Route path="/unit/:unitId/:level" element={<QuestMap />} />
+            <Route path="/unit/:unitId/:level/self-check" element={<SelfCheckPage />} />
             <Route path="/unit/:unitId/:level/:stationId" element={<ActivityPage />} />
             <Route path="/results" element={<Results />} />
             <Route path="/vocabulary" element={<VocabularyBank />} />

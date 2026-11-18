@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProgress } from '../context/ProgressContext';
 import { units } from '../data/units';
-import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation, Timer, BarChart3 as ChartIcon } from 'lucide-react';
-import { SKILL_LABELS, LEVEL_LABELS, type Level, type Skill, type LevelTiming } from '../types';
+import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation, Timer, ClipboardCheck, BarChart3 as ChartIcon, Download } from 'lucide-react';
+import { SKILL_LABELS, LEVEL_LABELS, SKILL_COLORS, type Level, type Skill, type LevelTiming, type SelfAssessmentRecord, type ProgressData } from '../types';
+import { computeSkillAccuracy } from '../lib/skillAccuracy';
+import { buildSelfCheckCsv, selfCheckFlag } from '../lib/selfCheckCsv';
 
 export function TeacherMode() {
   const { progress, settings, updateSettings, resetProgress } = useProgress();
@@ -16,7 +18,7 @@ export function TeacherMode() {
     unlockChallenging: settings.teacherUnlockChallenging ?? false,
     lockToOneLevel: settings.teacherLockToOneLevel ?? false,
   });
-  const [tab, setTab] = useState<'overview' | 'pacing'>('overview');
+  const [tab, setTab] = useState<'overview' | 'pacing' | 'selfcheck'>('overview');
 
   // Toggles are real settings: they persist and every page reads them.
   const SETTING_KEYS = {
@@ -145,11 +147,20 @@ export function TeacherMode() {
           >
             <Timer size={14} /> Pacing
           </button>
+          <button
+            onClick={() => setTab('selfcheck')}
+            className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-sm font-bold transition-colors ${tab === 'selfcheck' ? 'bg-white text-ink shadow-sm' : 'text-muted hover:text-ink'}`}
+            aria-pressed={tab === 'selfcheck'}
+          >
+            <ClipboardCheck size={14} /> Self-check
+          </button>
         </div>
       </div>
 
       {tab === 'pacing' ? (
         <PacingTab levelTimings={progress.levelTimings ?? {}} />
+      ) : tab === 'selfcheck' ? (
+        <SelfCheckTab progress={progress} />
       ) : (
         <>
       {/* Per-level accuracy */}
@@ -434,6 +445,156 @@ function ToggleRow({ label, description, checked, onChange, icon: Icon }: Toggle
           }`}
         />
       </button>
+    </div>
+  );
+}
+
+/**
+ * SELF-CHECK TAB — the prediction-vs-work report. One row per skill per
+ * self-assessment record: the learner's rating (dots) beside their actual
+ * accuracy, a flag column (high/low), the hardest choice and the note as
+ * written. Plain table, no charts library.
+ */
+const SELF_CHECK_SKILLS: Skill[] = ['vocabulary', 'grammar', 'listening', 'reading', 'writing', 'speaking'];
+
+function RatingDots({ rating }: { rating: number }) {
+  return (
+    <span className="inline-flex items-center gap-0.5 align-middle" role="img" aria-label={`${rating} of 3`}>
+      {[1, 2, 3].map(d => (
+        <span key={d} className={`h-2.5 w-2.5 rounded-full ${d <= rating ? 'bg-brand' : 'bg-slate-300'}`} aria-hidden />
+      ))}
+    </span>
+  );
+}
+
+function SelfCheckTab({ progress }: { progress: ProgressData }) {
+  const learnerName = 'this learner';
+  const resolveSkill = (unitId: number, stationId: string): Skill | undefined =>
+    units.find(u => u.id === unitId)?.stations.find(s => s.id === stationId)?.skill;
+
+  const records = Object.entries(progress.selfAssessments ?? {})
+    .map(([key, record]) => ({ key, record }))
+    .sort((a, b) => a.record.completedAt - b.record.completedAt);
+
+  const isOver = (r: SelfAssessmentRecord): boolean =>
+    !r.skipped && SELF_CHECK_SKILLS.some(skill => {
+      const pct = computeSkillAccuracy(units.find(u => u.id === r.unit)!, r.level, progress)[skill].pct;
+      return r.ratings[skill] === 3 && pct < 50;
+    });
+  const isUnder = (r: SelfAssessmentRecord): boolean =>
+    !r.skipped && SELF_CHECK_SKILLS.some(skill => {
+      const pct = computeSkillAccuracy(units.find(u => u.id === r.unit)!, r.level, progress)[skill].pct;
+      return r.ratings[skill] === 1 && pct >= 70;
+    });
+
+  const overCount = records.filter(({ record }) => isOver(record)).length;
+  const underCount = records.filter(({ record }) => isUnder(record)).length;
+
+  const downloadCsv = () => {
+    const csv = buildSelfCheckCsv(progress, 'learner', resolveSkill);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'self-check.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  if (records.length === 0) {
+    return (
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-2 font-heading text-lg font-extrabold text-ink">Self-check</h3>
+        <p className="text-sm text-muted">
+          No self-assessments yet. Learners rate themselves after each level's BOSS, before they see
+          their score — that is what makes the rating a prediction worth comparing.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="surface-card mb-4 p-5 sm:p-6">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <h3 className="font-heading text-lg font-extrabold text-ink">Self-check</h3>
+        <button onClick={downloadCsv} className="action-secondary text-sm" style={{ minHeight: 40 }}>
+          <Download size={15} className="inline" /> Export CSV
+        </button>
+      </div>
+
+      <div className="mb-4 grid grid-cols-2 gap-3">
+        <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-center">
+          <p className="tnum font-heading text-2xl font-extrabold text-ink">{overCount}</p>
+          <p className="text-xs font-semibold text-muted">rated themselves higher than their work, in at least one skill</p>
+        </div>
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-center">
+          <p className="tnum font-heading text-2xl font-extrabold text-ink">{underCount}</p>
+          <p className="text-xs font-semibold text-muted">rated themselves lower than their work, in at least one skill</p>
+        </div>
+      </div>
+
+      <div className="space-y-5">
+        {records.map(({ key, record }) => (
+          <div key={key} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+              <p className="font-heading font-extrabold text-ink">
+                Unit {record.unit} · {LEVEL_LABELS[record.level]}
+              </p>
+              <p className="text-xs font-semibold text-muted">
+                {record.skipped
+                  ? 'Skipped'
+                  : `Completed ${new Date(record.completedAt).toLocaleDateString()}`}
+              </p>
+            </div>
+            {record.skipped ? (
+              <p className="text-sm text-muted">This attempt skipped the self-check.</p>
+            ) : (
+              <>
+                <table className="w-full text-left text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase text-muted">
+                      <th className="pb-2 pr-2 font-bold">Skill</th>
+                      <th className="pb-2 pr-2 font-bold">Self rating</th>
+                      <th className="pb-2 pr-2 font-bold tnum">Accuracy</th>
+                      <th className="pb-2 font-bold">Flag</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {SELF_CHECK_SKILLS.map(skill => {
+                      const rating = record.ratings[skill];
+                      const unitObj = units.find(u => u.id === record.unit);
+                      const pct = unitObj
+                        ? computeSkillAccuracy(unitObj, record.level, progress)[skill].pct
+                        : 0;
+                      const flag = selfCheckFlag(rating, pct);
+                      return (
+                        <tr key={skill} className="border-t border-slate-200">
+                          <td className="py-2 pr-2 font-semibold text-ink">{SKILL_LABELS[skill]}</td>
+                          <td className="py-2 pr-2">{rating ? <RatingDots rating={rating} /> : <span className="text-muted">—</span>}</td>
+                          <td className="py-2 pr-2 tnum text-ink">{pct}%</td>
+                          <td className="py-2">
+                            {flag === 'high' && <span className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-bold text-amber-700">high</span>}
+                            {flag === 'low' && <span className="rounded-md bg-emerald-100 px-1.5 py-0.5 text-[11px] font-bold text-emerald-700">low</span>}
+                            {flag === '' && <span className="text-muted">—</span>}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                <p className="mt-3 text-sm text-muted">
+                  Hardest today: <span className="font-semibold text-ink">{record.hardest ? SKILL_LABELS[record.hardest] : '—'}</span>
+                  {record.note && (
+                    <>
+                      {' '}· Note: <span className="italic text-ink">“{record.note}”</span>
+                    </>
+                  )}
+                </p>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
