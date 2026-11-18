@@ -1,0 +1,5005 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit5",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "unit": 5,
+    "title": "Finding Things",
+    "islandName": "Lost & Found Island",
+    "bigQuestion": "Where is your favorite toy?",
+    "objectives": [
+      "Rooms, furniture and everyday things",
+      "Saying where things are"
+    ],
+    "sourcePages": "54-63 (adapted, not reproduced)",
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. Result: { id: slotId + '-' + level, skill, type, prompt, payload, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "totalUnitsPlanned": 9,
+    "answerKeyIncluded": true
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1.0,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25.0
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15.0
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15.0
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10.0
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the things"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Bathroom or garden?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "One or many"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Where things are"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the bathroom"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Three voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "My room"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The Great Toy Hunt"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/5/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Lost & Found Box",
+      "subtitle": "Name it",
+      "xp": 25
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Hiding Place",
+      "subtitle": "in / on / under",
+      "xp": 15
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Cupboard",
+      "subtitle": "Listen and choose",
+      "xp": 10
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "Clare's Note",
+      "subtitle": "Read and find",
+      "xp": 15
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Where Chart",
+      "subtitle": "Write it down",
+      "xp": 10
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Bathroom Hunt",
+      "subtitle": "Say it out loud",
+      "xp": 25
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The Great Toy Hunt",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 5,
+    "title": "Finding Things",
+    "islandName": "Lost & Found Island",
+    "bigQuestion": "Where is your favorite toy?",
+    "objectives": [
+      "Rooms, furniture and everyday things",
+      "Saying where things are"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "Written at v2.0 first time. 30 slots + 2 checkpoints."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "sink",
+      "set": "A",
+      "category": "bathroom",
+      "example": "The soap is next to the sink.",
+      "imgHint": "a white basin with a tap, seen from above"
+    },
+    {
+      "id": "v02",
+      "word": "shower",
+      "set": "A",
+      "category": "bathroom",
+      "example": "The soap is in the shower.",
+      "imgHint": "a wall shower head with falling water"
+    },
+    {
+      "id": "v03",
+      "word": "counter",
+      "set": "A",
+      "category": "bathroom",
+      "example": "The towel is on the counter.",
+      "imgHint": "a flat bathroom surface beside the basin"
+    },
+    {
+      "id": "v04",
+      "word": "toilet",
+      "set": "A",
+      "category": "bathroom",
+      "example": "The comb is under the toilet.",
+      "imgHint": "a white toilet with the lid up"
+    },
+    {
+      "id": "v05",
+      "word": "comb",
+      "set": "A",
+      "category": "object",
+      "example": "I can't find my comb.",
+      "imgHint": "a green plastic comb with teeth"
+    },
+    {
+      "id": "v06",
+      "word": "towel",
+      "set": "A",
+      "category": "object",
+      "example": "There is a towel on the counter.",
+      "imgHint": "a folded pink towel on a rail"
+    },
+    {
+      "id": "v07",
+      "word": "toothbrush",
+      "set": "A",
+      "category": "object",
+      "example": "My toothbrush is in a cup.",
+      "imgHint": "a toothbrush in a glass cup"
+    },
+    {
+      "id": "v08",
+      "word": "soap",
+      "set": "A",
+      "category": "object",
+      "example": "Wash your hands with soap.",
+      "imgHint": "a bar of pink soap with bubbles"
+    },
+    {
+      "id": "v09",
+      "word": "yard",
+      "set": "B",
+      "category": "outdoor",
+      "example": "The children play in the yard.",
+      "imgHint": "a grassy garden area behind a house"
+    },
+    {
+      "id": "v10",
+      "word": "porch",
+      "set": "B",
+      "category": "outdoor",
+      "example": "The ball is under the porch.",
+      "imgHint": "a covered wooden step area at a house door"
+    },
+    {
+      "id": "v11",
+      "word": "swing set",
+      "set": "B",
+      "category": "outdoor",
+      "example": "The rope is on the swing set.",
+      "imgHint": "a wooden frame with two hanging swings"
+    },
+    {
+      "id": "v12",
+      "word": "bush",
+      "set": "B",
+      "category": "outdoor",
+      "example": "The shovel is in the bush.",
+      "imgHint": "a round green bush with small leaves"
+    },
+    {
+      "id": "v13",
+      "word": "ball",
+      "set": "B",
+      "category": "object",
+      "example": "Where is the ball?",
+      "imgHint": "a red and white striped ball"
+    },
+    {
+      "id": "v14",
+      "word": "shovel",
+      "set": "B",
+      "category": "object",
+      "example": "I need the shovel to dig.",
+      "imgHint": "a metal spade with a wooden handle"
+    },
+    {
+      "id": "v15",
+      "word": "bucket",
+      "set": "B",
+      "category": "object",
+      "example": "The buckets are on the porch.",
+      "imgHint": "two red plastic buckets with handles"
+    },
+    {
+      "id": "v16",
+      "word": "rope",
+      "set": "B",
+      "category": "object",
+      "example": "The rope is under the swing set.",
+      "imgHint": "a coiled length of rope"
+    },
+    {
+      "id": "v17",
+      "word": "ant colony",
+      "set": "C",
+      "category": "nature",
+      "example": "An ant colony can be bigger than a person.",
+      "imgHint": "cutaway of an underground ant nest with tunnels"
+    },
+    {
+      "id": "v18",
+      "word": "ant hill",
+      "set": "C",
+      "category": "nature",
+      "example": "Ants make piles of dirt called ant hills.",
+      "imgHint": "a small mound of loose soil with ants"
+    },
+    {
+      "id": "v19",
+      "word": "ant farm",
+      "set": "C",
+      "category": "nature",
+      "example": "You can look inside an ant farm.",
+      "imgHint": "a glass case filled with sand and tunnels"
+    },
+    {
+      "id": "v20",
+      "word": "queen",
+      "set": "C",
+      "category": "nature",
+      "example": "There is a room for the queen.",
+      "imgHint": "a larger ant with a small crown above it"
+    },
+    {
+      "id": "v21",
+      "word": "dirt",
+      "set": "C",
+      "category": "nature",
+      "example": "Ants dig in the dirt.",
+      "imgHint": "a handful of dark soil"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the word.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "sink",
+              "options": [
+                "sink",
+                "shower",
+                "toilet"
+              ],
+              "answer": "sink",
+              "why": "You wash your hands in the sink."
+            },
+            {
+              "id": "v1-2",
+              "img": "towel",
+              "options": [
+                "towel",
+                "comb",
+                "soap"
+              ],
+              "answer": "towel",
+              "why": "A towel is soft. You dry your hands with it."
+            },
+            {
+              "id": "v1-3",
+              "img": "comb",
+              "options": [
+                "comb",
+                "toothbrush",
+                "shower"
+              ],
+              "answer": "comb",
+              "why": "You use a comb on your hair."
+            },
+            {
+              "id": "v1-4",
+              "img": "soap",
+              "options": [
+                "soap",
+                "towel",
+                "sink"
+              ],
+              "answer": "soap",
+              "why": "Soap makes bubbles when you wash."
+            }
+          ],
+          "whyChoices": [
+            "This word matches the picture",
+            "The word is short",
+            "I have this at home"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "toothbrush",
+              "options": [
+                "toothbrush",
+                "comb",
+                "soap"
+              ],
+              "answer": "toothbrush",
+              "why": "You brush your teeth with a toothbrush."
+            },
+            {
+              "id": "v2-2",
+              "word": "shower",
+              "options": [
+                "shower",
+                "sink",
+                "counter"
+              ],
+              "answer": "shower",
+              "why": "The shower is on the wall and water falls from it."
+            },
+            {
+              "id": "v2-3",
+              "word": "toilet",
+              "options": [
+                "toilet",
+                "sink",
+                "bucket"
+              ],
+              "answer": "toilet",
+              "why": "The toilet has a lid and a seat."
+            },
+            {
+              "id": "v2-4",
+              "word": "ball",
+              "options": [
+                "ball",
+                "bucket",
+                "rope"
+              ],
+              "answer": "ball",
+              "why": "A ball is round and you play with it."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this word",
+            "The word is long",
+            "I like this thing"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Soap.",
+              "options": [
+                "soap",
+                "rope",
+                "towel"
+              ],
+              "answer": "soap"
+            },
+            {
+              "id": "v3-2",
+              "audio": "Where is my comb?",
+              "options": [
+                "comb",
+                "ball",
+                "bucket"
+              ],
+              "answer": "comb"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Toothbrush.",
+              "options": [
+                "toothbrush",
+                "towel",
+                "shower"
+              ],
+              "answer": "toothbrush"
+            }
+          ],
+          "whyChoices": [
+            "I heard that word clearly",
+            "It sounded like another word",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each word in the right box.",
+          "bins": [
+            "Bathroom",
+            "Garden"
+          ],
+          "items": [
+            {
+              "word": "sink",
+              "bin": "Bathroom",
+              "why": "A sink is in the bathroom."
+            },
+            {
+              "word": "ball",
+              "bin": "Garden",
+              "why": "You play with a ball in the garden."
+            },
+            {
+              "word": "toilet",
+              "bin": "Bathroom",
+              "why": "The toilet is in the bathroom."
+            },
+            {
+              "word": "bush",
+              "bin": "Garden",
+              "why": "A bush grows in the garden."
+            },
+            {
+              "word": "towel",
+              "bin": "Bathroom",
+              "why": "Towels are in the bathroom."
+            },
+            {
+              "word": "swing set",
+              "bin": "Garden",
+              "why": "A swing set is outside in the garden."
+            },
+            {
+              "word": "soap",
+              "bin": "Bathroom",
+              "why": "Soap is next to the sink."
+            },
+            {
+              "word": "shovel",
+              "bin": "Garden",
+              "why": "You dig in the garden with a shovel."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "You brush your teeth with a ___.",
+              "options": [
+                "toothbrush",
+                "comb",
+                "towel"
+              ],
+              "answer": "toothbrush",
+              "why": "A toothbrush is for teeth."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "You dry your hands with a ___.",
+              "options": [
+                "towel",
+                "soap",
+                "sink"
+              ],
+              "answer": "towel",
+              "why": "A towel dries things."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "You dig in the garden with a ___.",
+              "options": [
+                "shovel",
+                "comb",
+                "ball"
+              ],
+              "answer": "shovel",
+              "why": "A shovel digs."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "Water falls on you in the ___.",
+              "options": [
+                "shower",
+                "counter",
+                "porch"
+              ],
+              "answer": "shower",
+              "why": "The shower is where water falls."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "sink",
+                "shower",
+                "toilet",
+                "ball"
+              ],
+              "answer": "ball",
+              "why": "The others are in the bathroom. A ball is a toy."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "comb",
+                "towel",
+                "soap",
+                "bush"
+              ],
+              "answer": "bush",
+              "why": "The others are bathroom things."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "bush",
+                "swing set",
+                "porch",
+                "toothbrush"
+              ],
+              "answer": "toothbrush",
+              "why": "The others are outside in the garden."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is the longest word",
+            "I do not have it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "o",
+                "a",
+                "p"
+              ],
+              "answer": "soap",
+              "audio": "soap"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "c",
+                "o",
+                "m",
+                "b"
+              ],
+              "answer": "comb",
+              "audio": "comb"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "b",
+                "a",
+                "l",
+                "l"
+              ],
+              "answer": "ball",
+              "audio": "ball"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the words. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Bucket.",
+              "options": [
+                "bucket",
+                "ball",
+                "bush"
+              ],
+              "answer": "bucket"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "I wash my hands in the ___.",
+              "options": [
+                "sink",
+                "porch",
+                "bush"
+              ],
+              "answer": "sink"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the word.",
+              "img": "towel",
+              "answer": "towel",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sink",
+                "shower",
+                "comb",
+                "toilet"
+              ],
+              "answer": "comb",
+              "why": "The others are fixed in the bathroom. A comb is small."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "rope",
+              "options": [
+                "rope",
+                "bucket",
+                "ball"
+              ],
+              "answer": "rope"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this word",
+            "This word was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these four sentences. Which words tell you WHERE?",
+          "teachCard": {
+            "title": "in, on, under",
+            "lines": [
+              "The soap is in the toilet.",
+              "The towel is on the counter.",
+              "The comb is under the sink.",
+              "The towels are on the counter."
+            ],
+            "rule": "in = inside. on = on top. under = below. One thing: It's. Many things: They're."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "The soap is in the toilet.",
+              "q": "Where is the soap?",
+              "options": [
+                "inside",
+                "on top",
+                "below"
+              ],
+              "answer": "inside"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "The towel is on the counter.",
+              "q": "Where is the towel?",
+              "options": [
+                "on top",
+                "below",
+                "inside"
+              ],
+              "answer": "on top"
+            },
+            {
+              "id": "g1-3",
+              "sentence": "The comb is under the sink.",
+              "q": "Where is the comb?",
+              "options": [
+                "below",
+                "on top",
+                "inside"
+              ],
+              "answer": "below"
+            },
+            {
+              "id": "g1-4",
+              "sentence": "The towels are on the counter.",
+              "q": "Is there one towel or many?",
+              "options": [
+                "many",
+                "one"
+              ],
+              "answer": "many"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "inside",
+            "on top of",
+            "below",
+            "many things take They're"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "The soap is ___ the sink.",
+              "options": [
+                "in",
+                "on"
+              ],
+              "answer": "in",
+              "why": "The soap is inside the basin."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "The towel is ___ the counter.",
+              "options": [
+                "on",
+                "under"
+              ],
+              "answer": "on",
+              "why": "The towel is on top of the counter."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "The comb is ___ the sink.",
+              "options": [
+                "under",
+                "on"
+              ],
+              "answer": "under",
+              "why": "The comb is below the sink."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "The ball is ___ the porch.",
+              "options": [
+                "under",
+                "in"
+              ],
+              "answer": "under",
+              "why": "The ball is below the porch."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "The buckets are ___ the porch.",
+              "options": [
+                "on",
+                "in"
+              ],
+              "answer": "on",
+              "why": "The buckets sit on top of the porch."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "The shovel is ___ the bush.",
+              "options": [
+                "in",
+                "on"
+              ],
+              "answer": "in",
+              "why": "The shovel is inside the bush."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "The soap are in the sink.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "Soap is one thing, so use is."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "The towels is on the counter.",
+              "wrong": "is",
+              "correct": "are",
+              "why": "Towels are many, so use are."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "The comb is under of the sink.",
+              "wrong": "of",
+              "correct": "",
+              "why": "We say under the sink, not under of the sink."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "The ball is in the porch.",
+              "wrong": "in",
+              "correct": "under",
+              "why": "The ball is below the porch."
+            }
+          ],
+          "whyChoices": [
+            "One thing takes is",
+            "Many things take are",
+            "We do not use of here",
+            "The preposition is wrong"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "It's in the sink.",
+              "options": [
+                "Where is the comb?",
+                "Where are the comb?"
+              ],
+              "answer": "Where is the comb?",
+              "why": "The comb is one thing, so use is."
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "They're on the counter.",
+              "options": [
+                "Where is the towels?",
+                "Where are the towels?"
+              ],
+              "answer": "Where are the towels?",
+              "why": "Towels are many, so use are."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "It's under the porch.",
+              "options": [
+                "Where is the ball?",
+                "Where are the ball?"
+              ],
+              "answer": "Where is the ball?",
+              "why": "The ball is one thing."
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "They're in the cup.",
+              "options": [
+                "Where are the toothbrushes?",
+                "Where is the toothbrushes?"
+              ],
+              "answer": "Where are the toothbrushes?",
+              "why": "Toothbrushes are many."
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. One thing becomes many things.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "The towel is on the counter.",
+              "options": [
+                "The towels are on the counter.",
+                "The towels is on the counter."
+              ],
+              "answer": "The towels are on the counter.",
+              "why": "Many towels take are."
+            },
+            {
+              "id": "g5-2",
+              "from": "The bucket is on the porch.",
+              "options": [
+                "The buckets are on the porch.",
+                "The buckets is on the porch."
+              ],
+              "answer": "The buckets are on the porch.",
+              "why": "Many buckets take are."
+            },
+            {
+              "id": "g5-3",
+              "from": "It's in the sink.",
+              "options": [
+                "They're in the sink.",
+                "It's in the sinks."
+              ],
+              "answer": "They're in the sink.",
+              "why": "Many things take They're."
+            },
+            {
+              "id": "g5-4",
+              "from": "The toothbrush is under the sink.",
+              "options": [
+                "The toothbrushes are under the sink.",
+                "The toothbrushes is under the sink."
+              ],
+              "answer": "The toothbrushes are under the sink.",
+              "why": "Many toothbrushes take are."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "The soap is in the sink.",
+              "options": [
+                "sink",
+                "shower",
+                "toilet"
+              ],
+              "answer": "sink"
+            },
+            {
+              "id": "l1-2",
+              "audio": "My towel is on the counter.",
+              "options": [
+                "towel",
+                "comb",
+                "soap"
+              ],
+              "answer": "towel"
+            },
+            {
+              "id": "l1-3",
+              "audio": "The ball is under the porch.",
+              "options": [
+                "ball",
+                "bucket",
+                "rope"
+              ],
+              "answer": "ball"
+            }
+          ],
+          "whyChoices": [
+            "I heard the thing word",
+            "I heard the place word only",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "Where her things are",
+                "Her lunch"
+              ],
+              "answer": "Where her things are"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Where is her toothbrush?",
+              "options": [
+                "In a cup",
+                "Under the sink"
+              ],
+              "answer": "In a cup"
+            }
+          ],
+          "audio": "This is my bathroom. My towel is on the counter. My toothbrush is in a cup next to the sink. The soap is in the shower.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "The soap is in the sink. The towel is on the counter. The comb is under the toilet.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "The soap is ___(1)___ the sink.",
+              "options": [
+                "in",
+                "on"
+              ],
+              "answer": "in"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "The towel is ___(2)___ the counter.",
+              "options": [
+                "on",
+                "under"
+              ],
+              "answer": "on"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "The comb is ___(3)___ the toilet.",
+              "options": [
+                "under",
+                "in"
+              ],
+              "answer": "under"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the note. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "anything",
+              "options": [
+                "every thing you want",
+                "nothing"
+              ],
+              "answer": "every thing you want"
+            },
+            {
+              "id": "r1-2",
+              "word": "extra",
+              "options": [
+                "one more",
+                "the only one"
+              ],
+              "answer": "one more"
+            },
+            {
+              "id": "r1-3",
+              "word": "next to",
+              "options": [
+                "beside",
+                "far away"
+              ],
+              "answer": "beside"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Dear Ben, Welcome to our house! The bathroom is next to the bedroom. You can use anything in it. The soap is in the shower. There is a towel on the counter. There is an extra toothbrush under the sink. Make yourself at home! From Clare",
+          "prompt": "Read the note. Then tap the sentence that tells you Ben can use the things.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that tells you Ben can use the things.",
+              "answerType": "tapSentence",
+              "answer": "You can use anything in it.",
+              "why": "That is Clare giving permission."
+            },
+            {
+              "id": "r2-2",
+              "q": "Where is the bathroom?",
+              "options": [
+                "Next to the bedroom",
+                "Next to the kitchen"
+              ],
+              "answer": "Next to the bedroom"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Dear Ben, Welcome to our house! The bathroom is next to the bedroom. You can use anything in it. The soap is in the shower. There is a towel on the counter. There is an extra toothbrush under the sink. Make yourself at home! From Clare",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Where is the soap?",
+              "options": [
+                "In the shower",
+                "On the counter"
+              ],
+              "answer": "In the shower"
+            },
+            {
+              "id": "r3-2",
+              "q": "Where is the towel?",
+              "options": [
+                "On the counter",
+                "Under the sink"
+              ],
+              "answer": "On the counter"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you where the toothbrush is.",
+              "answerType": "tapSentence",
+              "answer": "There is an extra toothbrush under the sink.",
+              "why": "The toothbrush is below the sink."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Ants are small, but they can build big homes. We call these homes ant colonies. An ant colony has different rooms. There is a room for food. There is a room for young ants. There is even a room for the queen. Sometimes an ant colony is bigger than a person. All the ants work together.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you what an ant's home is called.",
+              "answer": "We call these homes ant colonies."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that shows an ant home can be very big.",
+              "answer": "Sometimes an ant colony is bigger than a person."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that names the most important ant.",
+              "answer": "There is even a room for the queen."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "The",
+                "soap",
+                "is",
+                "in",
+                "the",
+                "sink"
+              ],
+              "answer": "The soap is in the sink."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "The",
+                "towel",
+                "is",
+                "on",
+                "the",
+                "counter"
+              ],
+              "answer": "The towel is on the counter."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "The",
+                "ball",
+                "is",
+                "under",
+                "the",
+                "porch"
+              ],
+              "answer": "The ball is under the porch."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Where",
+                "is",
+                "my",
+                "comb"
+              ],
+              "answer": "Where is my comb?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "The soap are in the sink.",
+              "answer": "The soap is in the sink."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "The towels is on the counter.",
+              "answer": "The towels are on the counter."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "The comb is under of the sink.",
+              "answer": "The comb is under the sink."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write four sentences about where things are in your bathroom. Use the sentence starters.",
+          "starters": [
+            "The ___ is in the ___.",
+            "The ___ is on the ___.",
+            "My ___ is under the ___.",
+            "My ___ are on the ___."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "in, on and under are correct"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "The soap is in the sink.",
+              "keywords": [
+                "soap",
+                "in",
+                "sink"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "The towel is on the counter.",
+              "keywords": [
+                "towel",
+                "on",
+                "counter"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "The comb is under the sink.",
+              "keywords": [
+                "comb",
+                "under",
+                "sink"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Where is my toothbrush?",
+              "keywords": [
+                "where",
+                "toothbrush"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "in the sink",
+              "keywords": [
+                "in",
+                "sink"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "on the counter",
+              "keywords": [
+                "on",
+                "counter"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "under the porch",
+              "keywords": [
+                "under",
+                "porch"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Where is the soap?",
+              "keywords": [
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Where are the towels?",
+              "keywords": [
+                "they",
+                "on",
+                "in"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Where is your toothbrush?",
+              "keywords": [
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Where is your ball?",
+              "keywords": [
+                "in",
+                "on",
+                "under"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the bathroom. Say where three things are. Use in, on and under.",
+          "image": "bathroom-easy",
+          "prompts": [
+            "One thing in the sink",
+            "One thing on the counter",
+            "One thing under the sink"
+          ],
+          "keywords": [
+            "in",
+            "on",
+            "under"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with three voices: Emma, her brother, and Mom.",
+          "dialogueId": "whereIsMyToothbrush",
+          "lines": 4,
+          "keywords": [
+            "where",
+            "toothbrush",
+            "sink"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Where is your toothbrush?",
+              "keywords": [
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Where are your shoes?",
+              "keywords": [
+                "they",
+                "on",
+                "in",
+                "under"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Where is your favorite toy?",
+              "keywords": [
+                "in",
+                "on",
+                "under",
+                "toy"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about your room. Say where four things are.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "The ___ is in ___.",
+            "The ___ is on ___.",
+            "My ___ is under ___.",
+            "My ___ are on ___."
+          ],
+          "keywords": [
+            "in",
+            "on",
+            "under"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "soap",
+              "options": [
+                "soap",
+                "towel",
+                "comb"
+              ],
+              "answer": "soap"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "The soap is ___ the sink.",
+              "options": [
+                "in",
+                "on"
+              ],
+              "answer": "in"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "The towels is on the counter.",
+              "wrong": "is",
+              "correct": "are"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Bucket.",
+              "options": [
+                "bucket",
+                "ball",
+                "bush"
+              ],
+              "answer": "bucket"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "sink",
+                "bush"
+              ],
+              "bins": [
+                "Bathroom",
+                "Garden"
+              ],
+              "answers": {
+                "sink": "Bathroom",
+                "bush": "Garden"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about where something is.",
+              "keywords": [
+                "in",
+                "on",
+                "under"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Great Toy Hunt. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "comb",
+              "options": [
+                "comb",
+                "towel",
+                "soap"
+              ],
+              "answer": "comb"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "The ball is ___ the porch.",
+              "options": [
+                "under",
+                "in"
+              ],
+              "answer": "under"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "The soap are in the sink.",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "My towel is on the counter. My comb is under the sink. My soap is in the shower.",
+              "q": "Where is the comb?",
+              "options": [
+                "Under the sink",
+                "On the counter",
+                "In the shower"
+              ],
+              "answer": "Under the sink"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the note, tap the sentence that tells you where the towel is.",
+              "answer": "There is a towel on the counter."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Where",
+                "are",
+                "my",
+                "shoes"
+              ],
+              "answer": "Where are my shoes?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for the thing you use to brush your teeth.",
+              "answer": "toothbrush",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: where one thing is, and where two things are.",
+              "keywords": [
+                "is",
+                "are",
+                "in",
+                "on",
+                "under"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the word that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "sink",
+              "options": [
+                "sink",
+                "shower",
+                "counter",
+                "toilet"
+              ],
+              "answer": "sink",
+              "why": "A sink is a basin with a tap. A shower is on the wall."
+            },
+            {
+              "id": "v1-2",
+              "img": "counter",
+              "options": [
+                "counter",
+                "sink",
+                "porch",
+                "bucket"
+              ],
+              "answer": "counter",
+              "why": "A counter is a flat surface where you put things."
+            },
+            {
+              "id": "v1-3",
+              "img": "swing set",
+              "options": [
+                "swing set",
+                "bush",
+                "porch",
+                "rope"
+              ],
+              "answer": "swing set",
+              "why": "A swing set has a frame and two seats you sit on."
+            },
+            {
+              "id": "v1-4",
+              "img": "bucket",
+              "options": [
+                "bucket",
+                "ball",
+                "bush",
+                "shovel"
+              ],
+              "answer": "bucket",
+              "why": "A bucket holds water or sand and has a handle."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact thing",
+            "It belongs to the same place",
+            "It starts with the same letter",
+            "It is a place, not an object"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Two of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "yard",
+              "options": [
+                "yard",
+                "porch",
+                "bush",
+                "counter"
+              ],
+              "answer": "yard",
+              "why": "The yard is the open grass. The porch is the covered step area."
+            },
+            {
+              "id": "v2-2",
+              "word": "shovel",
+              "options": [
+                "shovel",
+                "bucket",
+                "rope",
+                "bush"
+              ],
+              "answer": "shovel",
+              "why": "A shovel has a metal blade and a long handle."
+            },
+            {
+              "id": "v2-3",
+              "word": "dirt",
+              "options": [
+                "dirt",
+                "sand",
+                "water",
+                "grass"
+              ],
+              "answer": "dirt",
+              "why": "Dirt is dark soil. Sand is lighter and dry."
+            },
+            {
+              "id": "v2-4",
+              "word": "rope",
+              "options": [
+                "rope",
+                "swing set",
+                "towel",
+                "comb"
+              ],
+              "answer": "rope",
+              "why": "A rope is a long, thick cord."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It is in the same place",
+            "It is uncountable",
+            "It is a garden word"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "There is a towel on the counter.",
+              "options": [
+                "towel",
+                "comb",
+                "soap",
+                "bucket"
+              ],
+              "answer": "towel"
+            },
+            {
+              "id": "v3-2",
+              "audio": "The shovel is in the bush.",
+              "options": [
+                "shovel",
+                "bucket",
+                "ball",
+                "rope"
+              ],
+              "answer": "shovel"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Ants dig in the dirt.",
+              "options": [
+                "dirt",
+                "sand",
+                "grass",
+                "water"
+              ],
+              "answer": "dirt"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole word",
+            "I heard a word that sounds similar",
+            "I used the topic to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort the words into the right boxes.",
+          "bins": [
+            "Bathroom",
+            "Garden"
+          ],
+          "items": [
+            {
+              "word": "shower",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "swing set",
+              "bin": "Garden"
+            },
+            {
+              "word": "toilet",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "bush",
+              "bin": "Garden"
+            },
+            {
+              "word": "toothbrush",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "porch",
+              "bin": "Garden"
+            },
+            {
+              "word": "towel",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "shovel",
+              "bin": "Garden"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "In a bathroom you wash your hands in the ___.",
+              "options": [
+                "sink",
+                "counter",
+                "toilet",
+                "porch"
+              ],
+              "answer": "sink",
+              "why": "The sink is the basin for washing."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "We keep the buckets on the ___, outside the door.",
+              "options": [
+                "porch",
+                "counter",
+                "sink",
+                "bush"
+              ],
+              "answer": "porch",
+              "why": "The porch is the covered area outside."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Ants bring dirt up and make a pile called an ___.",
+              "options": [
+                "ant hill",
+                "ant farm",
+                "ant colony",
+                "oven"
+              ],
+              "answer": "ant hill",
+              "why": "A pile of dirt outside is an ant hill."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "People put pet ants in a glass case called an ___.",
+              "options": [
+                "ant farm",
+                "ant hill",
+                "ant colony",
+                "oven"
+              ],
+              "answer": "ant farm",
+              "why": "A case with sand that people keep at home is an ant farm."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It sounds like another word",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "sink",
+                "shower",
+                "toilet",
+                "shovel"
+              ],
+              "answer": "shovel",
+              "why": "The others are fixed in a bathroom. A shovel is a garden tool."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "towel",
+                "comb",
+                "soap",
+                "swing set"
+              ],
+              "answer": "swing set",
+              "why": "The others are small bathroom things you can hold."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "ant hill",
+                "ant farm",
+                "ant colony",
+                "bucket"
+              ],
+              "answer": "bucket",
+              "why": "The others are all about ants."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is uncountable",
+            "It is a longer word",
+            "It is outside"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "t",
+                "o",
+                "o",
+                "t",
+                "h",
+                "b",
+                "r",
+                "u",
+                "s",
+                "h"
+              ],
+              "answer": "toothbrush",
+              "audio": "toothbrush"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "b",
+                "u",
+                "c",
+                "k",
+                "e",
+                "t"
+              ],
+              "answer": "bucket",
+              "audio": "bucket"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "p",
+                "o",
+                "r",
+                "c",
+                "h"
+              ],
+              "answer": "porch",
+              "audio": "porch"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Shovel.",
+              "options": [
+                "shovel",
+                "bucket",
+                "rope",
+                "bush"
+              ],
+              "answer": "shovel"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "Ants make piles of dirt. We call them ant ___.",
+              "options": [
+                "hills",
+                "farms",
+                "rooms",
+                "queens"
+              ],
+              "answer": "hills",
+              "why": "A pile outside is an ant hill."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for the flat surface beside the basin.",
+              "img": "counter",
+              "answer": "counter",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sink",
+                "shower",
+                "toilet",
+                "shovel"
+              ],
+              "answer": "shovel",
+              "why": "The others are in a bathroom."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "swing set",
+              "options": [
+                "swing set",
+                "bush",
+                "porch",
+                "bucket"
+              ],
+              "answer": "swing set"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the word",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the four sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "Where is it? Where are they?",
+            "lines": [
+              "Where is the soap? It's in the shower.",
+              "Where are the towels? They're on the counter.",
+              "Is the shovel under the porch? No, it isn't. It's in the bush.",
+              "Are the buckets in the bush? No, they aren't. They're on the porch."
+            ],
+            "rule": "One thing: Where is...? It's. Many things: Where are...? They're. Short answers: Yes, it is / No, it isn't / Yes, they are / No, they aren't."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which question is for ONE thing?",
+              "options": [
+                "Where is the comb?",
+                "Where are the comb?",
+                "Where the comb?",
+                "Where is the combs?"
+              ],
+              "answer": "Where is the comb?"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which question is for MANY things?",
+              "options": [
+                "Where are the towels?",
+                "Where is the towels?",
+                "Where are the towel?",
+                "Where the towels?"
+              ],
+              "answer": "Where are the towels?"
+            },
+            {
+              "id": "g1-3",
+              "q": "What is the short answer to 'Is it in the sink?'",
+              "options": [
+                "Yes, it is.",
+                "Yes, it does.",
+                "Yes, they are.",
+                "Yes, it's in."
+              ],
+              "answer": "Yes, it is."
+            },
+            {
+              "id": "g1-4",
+              "q": "What is the negative short answer to 'Are they in the bush?'",
+              "options": [
+                "No, they aren't.",
+                "No, it isn't.",
+                "No, they don't.",
+                "No, aren't."
+              ],
+              "answer": "No, they aren't."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "One thing takes is and it",
+            "Many things take are and they",
+            "In a short answer, repeat the verb",
+            "The preposition shows the position"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "Where ___ the toothbrushes?",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "___ in the sink.",
+              "options": [
+                "It's",
+                "They're",
+                "Is",
+                "Are"
+              ],
+              "answer": "It's",
+              "why": "The soap is one thing."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "The towels ___ on the counter.",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Is the shovel under the porch? No, it ___.",
+              "options": [
+                "isn't",
+                "aren't",
+                "doesn't",
+                "not"
+              ],
+              "answer": "isn't"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Are the buckets in the bush? Yes, they ___.",
+              "options": [
+                "are",
+                "is",
+                "do",
+                "aren't"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "The comb is ___ the toilet.",
+              "options": [
+                "under",
+                "in",
+                "on",
+                "of"
+              ],
+              "answer": "under"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Where is the toothbrushes?",
+              "wrong": "is",
+              "correct": "are",
+              "why": "Toothbrushes are many, so use are."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "They're in the sink, but it isn't.",
+              "wrong": "They're",
+              "correct": "It's",
+              "why": "One thing takes It's."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Are the buckets in the bush? No, it isn't.",
+              "wrong": "it isn't",
+              "correct": "they aren't",
+              "why": "The answer must match the plural subject."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "The soap is on the shower.",
+              "wrong": "on",
+              "correct": "in",
+              "why": "The soap is inside the shower."
+            }
+          ],
+          "whyChoices": [
+            "The subject is plural",
+            "The subject is singular",
+            "The short answer must match the subject",
+            "The preposition is wrong"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "It's under the sink.",
+              "options": [
+                "Where is the towel?",
+                "Where are the towel?",
+                "Where is the towels?",
+                "Where the towel?"
+              ],
+              "answer": "Where is the towel?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "They're on the porch.",
+              "options": [
+                "Where are the buckets?",
+                "Where is the buckets?",
+                "Where are the bucket?",
+                "Where the buckets?"
+              ],
+              "answer": "Where are the buckets?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "No, it isn't. It's in the bush.",
+              "options": [
+                "Is the shovel under the porch?",
+                "Are the shovel under the porch?",
+                "Is the shovel in the bush?",
+                "Does the shovel under the porch?"
+              ],
+              "answer": "Is the shovel under the porch?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "Yes, they are. They're in the cup.",
+              "options": [
+                "Are the toothbrushes in the cup?",
+                "Is the toothbrushes in the cup?",
+                "Are the toothbrush in the cup?",
+                "Do the toothbrushes in the cup?"
+              ],
+              "answer": "Are the toothbrushes in the cup?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Change it to many things.",
+              "from": "The towel is on the counter.",
+              "options": [
+                "The towels are on the counter.",
+                "The towels is on the counter.",
+                "The towel are on the counter.",
+                "The towels on the counter."
+              ],
+              "answer": "The towels are on the counter."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change it to one thing.",
+              "from": "They're under the sink.",
+              "options": [
+                "It's under the sink.",
+                "It's under the sinks.",
+                "They're under the sinks.",
+                "Is under the sink."
+              ],
+              "answer": "It's under the sink."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it a question.",
+              "from": "The shovel is in the bush.",
+              "options": [
+                "Where is the shovel?",
+                "Where are the shovel?",
+                "Where the shovel is?",
+                "Is where the shovel?"
+              ],
+              "answer": "Where is the shovel?"
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Make it a negative short answer.",
+              "from": "Are the buckets on the porch?",
+              "options": [
+                "No, they aren't.",
+                "No, it isn't.",
+                "No, they don't.",
+                "No, aren't they."
+              ],
+              "answer": "No, they aren't."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "The toothbrushes are in the cup.",
+              "options": [
+                "toothbrush",
+                "comb",
+                "soap",
+                "towel"
+              ],
+              "answer": "toothbrush"
+            },
+            {
+              "id": "l1-2",
+              "audio": "The buckets are on the porch.",
+              "options": [
+                "bucket",
+                "ball",
+                "shovel",
+                "rope"
+              ],
+              "answer": "bucket"
+            },
+            {
+              "id": "l1-3",
+              "audio": "The rope is under the swing set.",
+              "options": [
+                "rope",
+                "ball",
+                "bush",
+                "porch"
+              ],
+              "answer": "rope"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a similar word",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person talking about?",
+              "options": [
+                "Where toys are in the garden",
+                "A school day",
+                "A pet"
+              ],
+              "answer": "Where toys are in the garden"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Where are the buckets?",
+              "options": [
+                "On the porch",
+                "In the bush"
+              ],
+              "answer": "On the porch"
+            }
+          ],
+          "audio": "This is our garden. The ball is under the swing set. The shovel is in the bush, near the porch. The buckets are on the porch, next to the door. The rope is on the swing set.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "Is the shovel under the porch? No, it isn't. It's in the bush. Are the buckets in the bush? No, they aren't. They're on the porch.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "Is the shovel under the porch? No, it ___(1)___.",
+              "options": [
+                "isn't",
+                "aren't",
+                "doesn't"
+              ],
+              "answer": "isn't"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "It's in the ___(2)___.",
+              "options": [
+                "bush",
+                "porch",
+                "yard"
+              ],
+              "answer": "bush"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "Are the buckets in the bush? No, they ___(3)___.",
+              "options": [
+                "aren't",
+                "isn't",
+                "don't"
+              ],
+              "answer": "aren't"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the note. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "welcome",
+              "options": [
+                "a friendly word when someone arrives",
+                "a word for goodbye",
+                "a word for sorry",
+                "a word for please"
+              ],
+              "answer": "a friendly word when someone arrives"
+            },
+            {
+              "id": "r1-2",
+              "word": "extra",
+              "options": [
+                "one more than you need",
+                "the only one",
+                "a broken one",
+                "the smallest one"
+              ],
+              "answer": "one more than you need"
+            },
+            {
+              "id": "r1-3",
+              "word": "make yourself at home",
+              "options": [
+                "use things and feel comfortable",
+                "clean the house",
+                "go home now",
+                "cook dinner"
+              ],
+              "answer": "use things and feel comfortable"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Dear Ricardo, Welcome to our house, and thank you for staying and watching our dog. The bathroom is next to the bedroom, so it is easy to find. You can use anything in there. The soap is in the shower. There is a towel on the counter, near the sink. There is an extra toothbrush under the sink, in a blue packet. There is also a comb under the toilet. Make yourself at home! Thanks, Clare",
+          "prompt": "Read the whole note, then tap the sentence that shows Clare is being a good host.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows Clare is being a good host.",
+              "answerType": "tapSentence",
+              "answer": "You can use anything in there.",
+              "why": "Offering everything in the bathroom is the friendly, helpful part."
+            },
+            {
+              "id": "r2-2",
+              "q": "Why is Ricardo staying at the house?",
+              "options": [
+                "To watch the dog",
+                "To paint the bathroom",
+                "To visit the school"
+              ],
+              "answer": "To watch the dog"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Dear Ricardo, Welcome to our house, and thank you for staying and watching our dog. The bathroom is next to the bedroom, so it is easy to find. You can use anything in there. The soap is in the shower. There is a towel on the counter, near the sink. There is an extra toothbrush under the sink, in a blue packet. There is also a comb under the toilet. Make yourself at home! Thanks, Clare",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Where is the soap?",
+              "options": [
+                "In the shower",
+                "On the counter",
+                "Under the sink"
+              ],
+              "answer": "In the shower"
+            },
+            {
+              "id": "r3-2",
+              "q": "Where is the towel?",
+              "options": [
+                "On the counter",
+                "Under the toilet",
+                "In the shower"
+              ],
+              "answer": "On the counter"
+            },
+            {
+              "id": "r3-3",
+              "q": "What colour is the toothbrush packet?",
+              "options": [
+                "Blue",
+                "Green",
+                "Pink"
+              ],
+              "answer": "Blue"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Some ant colonies are in trees, but most ant colonies are under the ground. Ants dig in the dirt. They bring the dirt up and make a pile. We call these piles ant hills. Some people have pet ants. They put them in a glass case with sand, and people call these ant farms. You can look inside and see the ants at work.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you where most ant colonies are.",
+              "answer": "Some ant colonies are in trees, but most ant colonies are under the ground."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that explains how an ant hill is made.",
+              "answer": "They bring the dirt up and make a pile."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you what an ant farm is.",
+              "answer": "They put them in a glass case with sand, and people call these ant farms."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Where",
+                "are",
+                "the",
+                "toothbrushes"
+              ],
+              "answer": "Where are the toothbrushes?"
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "The",
+                "towels",
+                "are",
+                "on",
+                "the",
+                "counter"
+              ],
+              "answer": "The towels are on the counter."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Is",
+                "the",
+                "shovel",
+                "under",
+                "the",
+                "porch"
+              ],
+              "answer": "Is the shovel under the porch?"
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "They",
+                "aren't",
+                "in",
+                "the",
+                "bush"
+              ],
+              "answer": "They aren't in the bush."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "Where is the toothbrushes?",
+              "answer": "Where are the toothbrushes?"
+            },
+            {
+              "id": "w2-2",
+              "wrong": "They're in the sink, but it isn't clean.",
+              "answer": "They're in the sink, but it isn't clean."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "The soap is on the shower.",
+              "answer": "The soap is in the shower."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Fill in the chart: four things and where they are. Then write two sentences of your own.",
+          "chart": {
+            "rows": 4,
+            "columnA": "Thing",
+            "columnB": "Where?",
+            "columnBStem": "It's / They're"
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct is / are",
+            "Correct Its / Theyre",
+            "One sentence about many things"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Where is the soap? It's in the shower.",
+              "keywords": [
+                "where",
+                "soap",
+                "in",
+                "shower"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Where are the towels? They're on the counter.",
+              "keywords": [
+                "where",
+                "towels",
+                "on",
+                "counter"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Is the shovel under the porch? No, it isn't.",
+              "keywords": [
+                "shovel",
+                "under",
+                "porch",
+                "isn't"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Are the buckets in the bush? No, they aren't.",
+              "keywords": [
+                "buckets",
+                "bush",
+                "aren't"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "under the porch",
+              "keywords": [
+                "under",
+                "porch"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "on the counter",
+              "keywords": [
+                "on",
+                "counter"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "they're in the cup",
+              "keywords": [
+                "they're",
+                "cup"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Where is the pink comb?",
+              "keywords": [
+                "it's",
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Where are the toothbrushes?",
+              "keywords": [
+                "they're",
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Is the shovel under the porch?",
+              "keywords": [
+                "yes",
+                "no",
+                "it",
+                "isn't"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Are the buckets in the bush?",
+              "keywords": [
+                "yes",
+                "no",
+                "they",
+                "aren't"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the bathroom. Say where four things are, using in, on and under.",
+          "image": "bathroom-core",
+          "prompts": [
+            "One thing on the counter",
+            "One thing in the sink",
+            "One thing under the sink",
+            "Two things that are together"
+          ],
+          "keywords": [
+            "in",
+            "on",
+            "under",
+            "they're"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with three voices: Emma, her brother, and Mom.",
+          "dialogueId": "whereIsMyToothbrush",
+          "lines": 8,
+          "keywords": [
+            "where",
+            "toothbrush",
+            "sink",
+            "toilet"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Where are three things in your bathroom?",
+              "keywords": [
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Where do you keep your toys?",
+              "keywords": [
+                "keep",
+                "in",
+                "on",
+                "under"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Where do you look first when you lose something?",
+              "keywords": [
+                "first",
+                "look",
+                "in",
+                "under"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about your room. Say where four things are and one thing you often lose.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "In my room the ___ is ___.",
+            "My ___ are ___ the ___.",
+            "I often lose my ___.",
+            "It's usually ___ the ___."
+          ],
+          "keywords": [
+            "in",
+            "on",
+            "under",
+            "often"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "shovel",
+              "options": [
+                "shovel",
+                "bucket",
+                "rope",
+                "bush"
+              ],
+              "answer": "shovel"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "Where ___ the toothbrushes?",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Where is the toothbrushes?",
+              "wrong": "is",
+              "correct": "are"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "The rope is under the swing set.",
+              "options": [
+                "rope",
+                "bucket",
+                "ball",
+                "bush"
+              ],
+              "answer": "rope"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "ant hill",
+                "ant farm",
+                "ant colony",
+                "bucket"
+              ],
+              "answer": "bucket"
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with Where are...?",
+              "keywords": [
+                "where",
+                "are"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Great Toy Hunt. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "porch",
+              "options": [
+                "porch",
+                "yard",
+                "bush",
+                "counter"
+              ],
+              "answer": "porch"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "Where ___ the buckets?",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "Are the buckets in the bush? No, it isn't.",
+              "wrong": "it isn't",
+              "correct": "they aren't"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "Our garden is small but we love it. The ball is under the swing set. The shovel is in the bush. The buckets are on the porch, next to the door.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker describing?",
+                  "options": [
+                    "A garden and its things",
+                    "A classroom",
+                    "A bathroom"
+                  ],
+                  "answer": "A garden and its things"
+                },
+                {
+                  "pass": 2,
+                  "q": "Where is the shovel?",
+                  "options": [
+                    "In the bush",
+                    "Under the swing set",
+                    "On the porch"
+                  ],
+                  "answer": "In the bush"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the ant text, tap the sentence that explains how an ant hill is made.",
+              "answer": "They bring the dirt up and make a pile."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Where",
+                "are",
+                "the",
+                "buckets"
+              ],
+              "answer": "Where are the buckets?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for the thing you use to dry your hands.",
+              "answer": "towel",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: where one thing is, where two things are, and answer a Where is...? question.",
+              "keywords": [
+                "in",
+                "on",
+                "under",
+                "they're"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact thing. Two of the four options are in the same place, so read carefully.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "counter",
+              "options": [
+                "counter",
+                "sink",
+                "porch",
+                "bucket"
+              ],
+              "answer": "counter",
+              "why": "A counter is the flat surface. The sink is the basin cut into it."
+            },
+            {
+              "id": "v1-2",
+              "img": "shovel",
+              "options": [
+                "shovel",
+                "bucket",
+                "rope",
+                "ball"
+              ],
+              "answer": "shovel",
+              "why": "A shovel has a blade for digging. A bucket only holds things."
+            },
+            {
+              "id": "v1-3",
+              "img": "ant farm",
+              "options": [
+                "ant farm",
+                "ant hill",
+                "ant colony",
+                "queen"
+              ],
+              "answer": "ant farm",
+              "why": "An ant farm is a glass case with sand that people keep."
+            },
+            {
+              "id": "v1-4",
+              "img": "swing set",
+              "options": [
+                "swing set",
+                "porch",
+                "bush",
+                "yard"
+              ],
+              "answer": "swing set",
+              "why": "A swing set is a frame with seats that hang down."
+            }
+          ],
+          "whyChoices": [
+            "The function of the object is different from the distractors",
+            "It is a place, not an object",
+            "It belongs to the same place as a distractor",
+            "It is a living thing"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "ant hill",
+              "options": [
+                "ant hill",
+                "ant farm",
+                "ant colony",
+                "bush"
+              ],
+              "answer": "ant hill",
+              "why": "An ant hill is the pile of dirt outside, not the home inside."
+            },
+            {
+              "id": "v2-2",
+              "word": "dirt",
+              "options": [
+                "dirt",
+                "sand",
+                "grass",
+                "water"
+              ],
+              "answer": "dirt",
+              "why": "Dirt is dark soil; sand is lighter and dry."
+            },
+            {
+              "id": "v2-3",
+              "word": "bucket",
+              "options": [
+                "bucket",
+                "ball",
+                "basket",
+                "bush"
+              ],
+              "answer": "bucket",
+              "why": "A bucket has a handle and an open top."
+            },
+            {
+              "id": "v2-4",
+              "word": "queen",
+              "options": [
+                "queen",
+                "ant hill",
+                "ant farm",
+                "dirt"
+              ],
+              "answer": "queen",
+              "why": "A queen is the large ant at the centre of a colony."
+            }
+          ],
+          "whyChoices": [
+            "The meaning matches exactly",
+            "It is in the same place",
+            "It sounds similar to another option",
+            "It is a place, not a thing"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Ants bring the dirt up and make a pile.",
+              "options": [
+                "dirt",
+                "sand",
+                "grass",
+                "rope"
+              ],
+              "answer": "dirt"
+            },
+            {
+              "id": "v3-2",
+              "audio": "They put the ants in a glass case with sand.",
+              "options": [
+                "sand",
+                "dirt",
+                "water",
+                "paper"
+              ],
+              "answer": "sand"
+            },
+            {
+              "id": "v3-3",
+              "audio": "There is even a room for the queen.",
+              "options": [
+                "queen",
+                "food",
+                "young",
+                "colony"
+              ],
+              "answer": "queen"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact word",
+            "I heard a word with a similar sound",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into four boxes. Two items are deliberately tricky.",
+          "bins": [
+            "Bathroom",
+            "Garden",
+            "Ant world",
+            "Toy"
+          ],
+          "items": [
+            {
+              "word": "shower",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "swing set",
+              "bin": "Garden"
+            },
+            {
+              "word": "ant hill",
+              "bin": "Ant world"
+            },
+            {
+              "word": "ball",
+              "bin": "Toy"
+            },
+            {
+              "word": "toothbrush",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "bush",
+              "bin": "Garden"
+            },
+            {
+              "word": "queen",
+              "bin": "Ant world"
+            },
+            {
+              "word": "rope",
+              "bin": "Toy"
+            },
+            {
+              "word": "soap",
+              "bin": "Bathroom"
+            },
+            {
+              "word": "dirt",
+              "bin": "Ant world"
+            }
+          ],
+          "note": "If four bins is too many for the mechanic, use three: Bathroom / Garden / Ant world, and drop Toy."
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "Some people keep pet ants in a glass case ___ sand.",
+              "options": [
+                "with",
+                "of",
+                "on",
+                "by"
+              ],
+              "answer": "with",
+              "why": "The case holds sand, so with is correct."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "An ant colony has a room for young ants ___ a room for the queen.",
+              "options": [
+                "and",
+                "but",
+                "or",
+                "so"
+              ],
+              "answer": "and",
+              "why": "The sentence lists two rooms, so and joins them."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Most ant colonies are under the ground, ___ some are in trees.",
+              "options": [
+                "but",
+                "and",
+                "so",
+                "or"
+              ],
+              "answer": "but",
+              "why": "The sentence contrasts most with some."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "Ants are small. ___, they can build big homes.",
+              "options": [
+                "However",
+                "Because",
+                "Also",
+                "So"
+              ],
+              "answer": "However",
+              "why": "However introduces a surprising contrast."
+            }
+          ],
+          "whyChoices": [
+            "It is the only one that fits the meaning",
+            "It is the only conjunction",
+            "It is the only preposition",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "One word does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "dirt",
+                "sand",
+                "grass",
+                "ball"
+              ],
+              "answer": "ball",
+              "why": "Dirt, sand and grass are uncountable. Ball is countable. Grammar matches, meaning does not."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "ant hill",
+                "ant farm",
+                "ant colony",
+                "queen"
+              ],
+              "answer": "queen",
+              "why": "The others are places. A queen is a living thing."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "under",
+                "in",
+                "on",
+                "yard"
+              ],
+              "answer": "yard",
+              "why": "The others are prepositions. Yard is a noun."
+            }
+          ],
+          "whyChoices": [
+            "It breaks the pattern only in meaning",
+            "It breaks the pattern only in grammar",
+            "It is a longer word",
+            "It is a place"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "t",
+                "o",
+                "o",
+                "t",
+                "h",
+                "b",
+                "r",
+                "u",
+                "s",
+                "h"
+              ],
+              "answer": "toothbrush",
+              "audio": "toothbrush"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "s",
+                "w",
+                "i",
+                "n",
+                "g",
+                " ",
+                "s",
+                "e",
+                "t"
+              ],
+              "answer": "swing set",
+              "audio": "swing set",
+              "note": "accept with or without the space"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "c",
+                "o",
+                "l",
+                "o",
+                "n",
+                "y"
+              ],
+              "answer": "colony",
+              "audio": "colony"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Bucket.",
+              "options": [
+                "bucket",
+                "ball",
+                "basket",
+                "bush"
+              ],
+              "answer": "bucket"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "Piles of dirt made by ants are called ant ___.",
+              "options": [
+                "hills",
+                "farms",
+                "colonies",
+                "queens"
+              ],
+              "answer": "hills"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for the dark soil that ants dig in.",
+              "answer": "dirt",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "dirt",
+                "sand",
+                "grass",
+                "ball"
+              ],
+              "answer": "ball",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "ant farm",
+              "options": [
+                "ant farm",
+                "ant hill",
+                "ant colony",
+                "queen"
+              ],
+              "answer": "ant farm"
+            }
+          ],
+          "whyChoices": [
+            "I knew the word without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "Where is / Where are, and consistency in the answer",
+            "lines": [
+              "Where is the soap? It's in the shower.",
+              "Where are the towels? They're on the counter.",
+              "Is the shovel under the porch? No, it isn't. It's in the bush.",
+              "Are the buckets in the bush? No, they aren't. They're on the porch."
+            ],
+            "rule": "The question, the short answer and the full answer must all agree. A singular question never gets a plural answer, and vice versa."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is 'Are the buckets in the bush? No, it isn't' wrong?",
+              "options": [
+                "The question is plural so the answer must be plural",
+                "Buckets is uncountable",
+                "Bush is singular",
+                "You cannot ask about buckets"
+              ],
+              "answer": "The question is plural so the answer must be plural"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which sentence is correct?",
+              "options": [
+                "Where are the toothbrushes?",
+                "Where is the toothbrushes?",
+                "Where are the toothbrush?",
+                "Where the toothbrushes are?"
+              ],
+              "answer": "Where are the toothbrushes?"
+            },
+            {
+              "id": "g1-3",
+              "q": "What does 'It's' mean in 'It's in the shower'?",
+              "options": [
+                "It is",
+                "It has",
+                "It are",
+                "It was"
+              ],
+              "answer": "It is"
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the sentence that is WRONG.",
+              "options": [
+                "The soap are in the shower.",
+                "The soap is in the shower.",
+                "The towels are on the counter.",
+                "The towel is on the counter."
+              ],
+              "answer": "The soap are in the shower."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "A plural subject takes are and they",
+            "A singular subject takes is and it",
+            "The short answer must match the question",
+            "In the negative the verb changes form"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "Where ___ the buckets? ___ on the porch.",
+              "options": [
+                "are / They're",
+                "is / It's",
+                "are / It's",
+                "is / They're"
+              ],
+              "answer": "are / They're"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "Where is the comb? ___ under the toilet.",
+              "options": [
+                "It's",
+                "They're",
+                "Is",
+                "Are"
+              ],
+              "answer": "It's"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "Are the toothbrushes in the cup? No, they ___.",
+              "options": [
+                "aren't",
+                "isn't",
+                "don't",
+                "not"
+              ],
+              "answer": "aren't"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Neither of the towels ___ on the counter.",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "is",
+              "why": "Neither of them is singular in careful English."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "There ___ a towel on the counter and two combs under the sink.",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "have"
+              ],
+              "answer": "is",
+              "why": "The first noun after There is a towel, which is singular."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "The soap isn't in the sink. - ___ is it?",
+              "options": [
+                "Where",
+                "What",
+                "Who",
+                "Which"
+              ],
+              "answer": "Where"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "Are the buckets in the bush? No, it isn't.",
+              "wrong": "it isn't",
+              "correct": "they aren't",
+              "why": "The question is plural, so the answer must be plural."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Where is the toothbrushes?",
+              "wrong": "is",
+              "correct": "are",
+              "why": "Toothbrushes is plural, so use are."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "The soap is on the shower.",
+              "wrong": "on",
+              "correct": "in",
+              "why": "The soap is inside the shower area."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "Neither of the towels are on the counter.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "Neither of them is singular in careful English."
+            }
+          ],
+          "whyChoices": [
+            "The answer must match the question",
+            "The subject is plural",
+            "The preposition is wrong",
+            "A singular subject hides in a plural-looking phrase"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "They're on the porch, next to the door.",
+              "options": [
+                "Where are the buckets?",
+                "Where is the buckets?",
+                "Where are the bucket?",
+                "Where the buckets?"
+              ],
+              "answer": "Where are the buckets?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, it isn't. It's in the bush.",
+              "options": [
+                "Is the shovel under the porch?",
+                "Are the shovel under the porch?",
+                "Does the shovel under the porch?",
+                "Is the shovel under porch?"
+              ],
+              "answer": "Is the shovel under the porch?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, they are. There are two in the cup.",
+              "options": [
+                "Are the toothbrushes in the cup?",
+                "Is the toothbrushes in the cup?",
+                "Are the toothbrush in the cup?",
+                "Do the toothbrushes in the cup?"
+              ],
+              "answer": "Are the toothbrushes in the cup?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "It's under the toilet, on the floor.",
+              "options": [
+                "Where is the comb?",
+                "Where are the comb?",
+                "Where is the combs?",
+                "Where the comb is?"
+              ],
+              "answer": "Where is the comb?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Change it to many things.",
+              "from": "The bucket is on the porch.",
+              "options": [
+                "The buckets are on the porch.",
+                "The buckets is on the porch.",
+                "The bucket are on the porch.",
+                "The buckets on the porch."
+              ],
+              "answer": "The buckets are on the porch."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change it to one thing.",
+              "from": "They're in the bush.",
+              "options": [
+                "It's in the bush.",
+                "It's in the bushes.",
+                "They're in the bushes.",
+                "Is in the bush."
+              ],
+              "answer": "It's in the bush."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Turn the statement into a question.",
+              "from": "The towels are on the counter.",
+              "options": [
+                "Where are the towels?",
+                "Where is the towels?",
+                "Where the towels are?",
+                "Are where the towels?"
+              ],
+              "answer": "Where are the towels?"
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "The soap isn't in the sink. The comb isn't in the sink.",
+              "options": [
+                "Neither the soap nor the comb is in the sink.",
+                "Neither the soap nor the comb are in the sink.",
+                "Neither the soap or the comb is in the sink.",
+                "Neither the soap nor the comb isn't in the sink."
+              ],
+              "answer": "Neither the soap nor the comb is in the sink."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "Most ant colonies are under the ground, but some are in trees.",
+              "options": [
+                "under the ground",
+                "in trees",
+                "in water",
+                "on a porch"
+              ],
+              "answer": "under the ground"
+            },
+            {
+              "id": "l1-2",
+              "audio": "They put them in a glass case with sand.",
+              "options": [
+                "a glass case",
+                "a bottle",
+                "a bucket",
+                "the dirt"
+              ],
+              "answer": "a glass case"
+            },
+            {
+              "id": "l1-3",
+              "audio": "There is even a room for the queen.",
+              "options": [
+                "the queen",
+                "young ants",
+                "food",
+                "sand"
+              ],
+              "answer": "the queen"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact phrase",
+            "I heard a related phrase",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain what an ant colony is",
+                "To sell an ant farm",
+                "To describe a holiday"
+              ],
+              "answer": "To explain what an ant colony is"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What do ants do with the dirt?",
+              "options": [
+                "They bring it up and make a pile",
+                "They eat it",
+                "They put it in a case"
+              ],
+              "answer": "They bring it up and make a pile"
+            }
+          ],
+          "audio": "An ant colony is a big home built by very small animals. Most colonies are under the ground, though some are in trees. The ants dig in the dirt and bring it up, and the pile outside becomes an ant hill. Inside, there are separate rooms: one for food, one for the young ants, and one for the queen.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "The ball is under the swing set. The shovel is in the bush. The buckets are on the porch, and the rope is on the swing set.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "The ball is under the ___(1)___.",
+              "options": [
+                "swing set",
+                "porch",
+                "bush"
+              ],
+              "answer": "swing set"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "The shovel is in the ___(2)___.",
+              "options": [
+                "bush",
+                "bucket",
+                "porch"
+              ],
+              "answer": "bush"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "The buckets are on the ___(3)___, and the rope is on the swing set.",
+              "options": [
+                "porch",
+                "bush",
+                "yard"
+              ],
+              "answer": "porch"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "colony",
+              "options": [
+                "a group that lives and works together",
+                "a single animal",
+                "a kind of soil",
+                "a small room"
+              ],
+              "answer": "a group that lives and works together"
+            },
+            {
+              "id": "r1-2",
+              "word": "pile",
+              "options": [
+                "things heaped on top of each other",
+                "a flat surface",
+                "a hole in the ground",
+                "a glass box"
+              ],
+              "answer": "things heaped on top of each other"
+            },
+            {
+              "id": "r1-3",
+              "word": "at work",
+              "options": [
+                "doing their job",
+                "at school",
+                "asleep",
+                "in a glass case"
+              ],
+              "answer": "doing their job"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Dear Ricardo, Welcome to our house, and thank you for staying and watching our dog while we are away. The bathroom is next to the bedroom, so you will find it easily. You can use anything in there. The soap is in the shower. There is a towel on the counter, near the sink, and another one under it. There is an extra toothbrush under the sink in a blue packet, and there is also a comb under the toilet, which is not the best place for a comb but it is where it always ends up. Make yourself at home! Thanks, Clare",
+          "prompt": "Read the whole note, then tap the sentence that shows Clare is joking.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows Clare is joking.",
+              "answerType": "tapSentence",
+              "answer": "There is an extra toothbrush under the sink in a blue packet, and there is also a comb under the toilet, which is not the best place for a comb but it is where it always ends up.",
+              "why": "Admitting the comb lives in a silly place is the joke."
+            },
+            {
+              "id": "r2-2",
+              "q": "What does the note tell us about Clare?",
+              "options": [
+                "She is welcoming and a little funny",
+                "She is angry about the dog",
+                "She has never met Ricardo"
+              ],
+              "answer": "She is welcoming and a little funny"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Dear Ricardo, Welcome to our house, and thank you for staying and watching our dog while we are away. The bathroom is next to the bedroom, so you will find it easily. You can use anything in there. The soap is in the shower. There is a towel on the counter, near the sink, and another one under it. There is an extra toothbrush under the sink in a blue packet, and there is also a comb under the toilet, which is not the best place for a comb but it is where it always ends up. Make yourself at home! Thanks, Clare",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "How many towels are described?",
+              "options": [
+                "Two",
+                "One",
+                "Three"
+              ],
+              "answer": "Two"
+            },
+            {
+              "id": "r3-2",
+              "q": "Where is the second towel?",
+              "options": [
+                "Under the counter",
+                "In the shower",
+                "On the toilet"
+              ],
+              "answer": "Under the counter"
+            },
+            {
+              "id": "r3-3",
+              "q": "What does 'it is where it always ends up' tell us?",
+              "options": [
+                "The comb is always left in that place",
+                "Clare has lost the comb",
+                "Ricardo put the comb there"
+              ],
+              "answer": "The comb is always left in that place"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Some ant colonies are in trees, but most ant colonies are under the ground. Ants dig in the dirt and bring it up, and the pile they make becomes an ant hill. Inside, an ant colony has different rooms: a room for food, a room for raising young ants, and a room for the queen. Sometimes an ant colony is bigger than a person. Some people keep pet ants in a glass case filled with sand, and they call it an ant farm because you can look inside and watch the ants at work. Left alone, the colony keeps building: the rooms get deeper, the pile outside gets taller, and nothing in it belongs to one ant.",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that shows nothing belongs to a single ant.",
+              "answer": "Left alone, the colony keeps building: the rooms get deeper, the pile outside gets taller, and nothing in it belongs to one ant."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that explains where an ant hill comes from.",
+              "answer": "Ants dig in the dirt and bring it up, and the pile they make becomes an ant hill."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that explains why people call it an ant farm.",
+              "answer": "Some people keep pet ants in a glass case filled with sand, and they call it an ant farm because you can look inside and watch the ants at work."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Neither",
+                "the",
+                "soap",
+                "nor",
+                "the",
+                "comb",
+                "is",
+                "in",
+                "the",
+                "sink"
+              ],
+              "answer": "Neither the soap nor the comb is in the sink."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Are",
+                "the",
+                "buckets",
+                "on",
+                "the",
+                "porch"
+              ],
+              "answer": "Are the buckets on the porch?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "There",
+                "is",
+                "a",
+                "towel",
+                "on",
+                "the",
+                "counter"
+              ],
+              "answer": "There is a towel on the counter."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "The",
+                "shovel",
+                "isn't",
+                "under",
+                "the",
+                "porch",
+                "it's",
+                "in",
+                "the",
+                "bush"
+              ],
+              "answer": "The shovel isn't under the porch, it's in the bush."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "Are the buckets in the bush? No, it isn't.",
+              "answer": "Are the buckets in the bush? No, they aren't."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Neither of the towels are on the counter.",
+              "answer": "Neither of the towels is on the counter."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "There are a towel on the counter and two combs under the sink.",
+              "answer": "There is a towel on the counter and two combs under the sink."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence description of where things are in your home. Every requirement on the checklist must appear.",
+          "requirements": [
+            "one thing in a named room",
+            "two or more things together, using They're",
+            "one sentence with under",
+            "one negative sentence with isn't or aren't",
+            "one sentence saying where you look first for a lost thing"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct is / are throughout",
+            "One negative sentence",
+            "Correct It's / They're",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "Neither the soap nor the comb is in the sink.",
+              "keywords": [
+                "neither",
+                "soap",
+                "comb",
+                "sink"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Are the buckets in the bush? No, they aren't.",
+              "keywords": [
+                "buckets",
+                "bush",
+                "they",
+                "aren't"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "The shovel isn't under the porch, it's in the bush.",
+              "keywords": [
+                "shovel",
+                "isn't",
+                "porch",
+                "bush"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "There is a towel on the counter.",
+              "keywords": [
+                "there",
+                "is",
+                "towel",
+                "counter"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "neither the soap nor the comb",
+              "keywords": [
+                "neither",
+                "soap",
+                "nor",
+                "comb"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "under the swing set",
+              "keywords": [
+                "under",
+                "swing",
+                "set"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "they aren't on the porch",
+              "keywords": [
+                "they",
+                "aren't",
+                "porch"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Where are your things in your room, and why do you keep them there?",
+              "keywords": [
+                "in",
+                "on",
+                "under",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Is there anything in your home that nobody can find? Where should it be?",
+              "keywords": [
+                "is",
+                "where",
+                "should"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Compare two rooms. What is in each one?",
+              "keywords": [
+                "there",
+                "is",
+                "are"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "How would you help someone find a thing in your house? Give three steps.",
+              "keywords": [
+                "first",
+                "then",
+                "look",
+                "in",
+                "under"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the picture for 45 seconds. Say where four things are and use one negative sentence.",
+          "image": "bathroom-challenging",
+          "prompts": [
+            "Two things that are together",
+            "One thing that is NOT where you expect",
+            "One thing under something",
+            "What you would move and why"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "in",
+            "on",
+            "under",
+            "isn't",
+            "they're"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the story as all three characters, with a different voice for each.",
+          "dialogueId": "whereIsMyToothbrush",
+          "lines": 8,
+          "keywords": [
+            "where",
+            "toothbrush",
+            "sink",
+            "toilet"
+          ],
+          "extra": "Then answer: why does Mom know where the new toothbrushes are?"
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Are you good at finding things, or do you lose them? Explain.",
+              "keywords": [
+                "find",
+                "lose",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Is it better to put everything in one place, or in many places? Explain.",
+              "keywords": [
+                "better",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Why do people keep things neat? Give one good reason and one bad one.",
+              "keywords": [
+                "because",
+                "reason"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: My Room. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "In my room, the ___ is ___ the ___.",
+            "My ___ are ___ the ___, and I keep them there because ___.",
+            "There is ___ near the ___.",
+            "I often lose my ___, so I look ___."
+          ],
+          "keywords": [
+            "in",
+            "on",
+            "under",
+            "because",
+            "there"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I used It's and They're correctly"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "ant farm",
+              "options": [
+                "ant farm",
+                "ant hill",
+                "ant colony",
+                "queen"
+              ],
+              "answer": "ant farm"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "Where ___ the buckets? ___ on the porch.",
+              "options": [
+                "are / They're",
+                "is / It's",
+                "are / It's",
+                "is / They're"
+              ],
+              "answer": "are / They're"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Are the buckets in the bush? No, it isn't.",
+              "wrong": "it isn't",
+              "correct": "they aren't"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "They put the ants in a glass case with sand.",
+              "options": [
+                "sand",
+                "dirt",
+                "water",
+                "paper"
+              ],
+              "answer": "sand"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "dirt",
+                "sand",
+                "grass",
+                "ball"
+              ],
+              "answer": "ball",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask a question with Are there...? and answer it.",
+              "keywords": [
+                "are",
+                "there"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Great Toy Hunt. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "ant hill",
+              "options": [
+                "ant hill",
+                "ant farm",
+                "ant colony",
+                "queen"
+              ],
+              "answer": "ant hill"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "Are the toothbrushes in the cup? No, they ___.",
+              "options": [
+                "aren't",
+                "isn't",
+                "don't",
+                "not"
+              ],
+              "answer": "aren't"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "Neither of the towels are on the counter, and where is the toothbrushes?",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "An ant colony is a big home built by very small animals. Most colonies are under the ground. The ants dig in the dirt and bring it up, and the pile becomes an ant hill. Inside there is a room for food, a room for the young, and a room for the queen.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker explaining?",
+                  "options": [
+                    "What an ant colony is",
+                    "How to keep a pet",
+                    "Where to dig a garden"
+                  ],
+                  "answer": "What an ant colony is"
+                },
+                {
+                  "pass": 2,
+                  "q": "How many kinds of room are named?",
+                  "options": [
+                    "Three",
+                    "Two",
+                    "One"
+                  ],
+                  "answer": "Three"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that explains why people call it an ant farm.",
+              "answer": "Some people keep pet ants in a glass case filled with sand, and they call it an ant farm because you can look inside and watch the ants at work."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Neither",
+                "the",
+                "soap",
+                "nor",
+                "the",
+                "comb",
+                "is",
+                "in",
+                "the",
+                "sink"
+              ],
+              "answer": "Neither the soap nor the comb is in the sink."
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for the dark soil that ants dig in.",
+              "answer": "dirt",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: where things are in your home, one negative sentence, and where you look first when something is lost.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "in",
+                "on",
+                "under",
+                "isn't",
+                "because"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "whereIsMyToothbrush",
+    "title": "Where Is My Toothbrush?",
+    "cast": [
+      "Emma",
+      "Ben",
+      "Mom"
+    ],
+    "lines": [
+      {
+        "speaker": "Emma",
+        "text": "Oh, no! I'm late for school!"
+      },
+      {
+        "speaker": "Emma",
+        "text": "Where's my toothbrush?"
+      },
+      {
+        "speaker": "Ben",
+        "text": "I don't know. Is it on the sink?"
+      },
+      {
+        "speaker": "Ben",
+        "text": "Maybe it's in the toilet!"
+      },
+      {
+        "speaker": "Emma",
+        "text": "Gross! No, it's not in the toilet. Mom!"
+      },
+      {
+        "speaker": "Mom",
+        "text": "What's the matter?"
+      },
+      {
+        "speaker": "Emma",
+        "text": "I'm late, and I don't have my toothbrush!"
+      },
+      {
+        "speaker": "Mom",
+        "text": "There are new toothbrushes. They're under the sink."
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "What does Emma want?",
+          "options": [
+            "A toothbrush",
+            "Soap"
+          ],
+          "answer": "A toothbrush"
+        },
+        {
+          "q": "Where are the new toothbrushes?",
+          "options": [
+            "Under the sink",
+            "In the toilet"
+          ],
+          "answer": "Under the sink"
+        }
+      ],
+      "core": [
+        {
+          "q": "What does Emma want?",
+          "options": [
+            "A toothbrush",
+            "Soap",
+            "A towel"
+          ],
+          "answer": "A toothbrush"
+        },
+        {
+          "q": "Where are the new toothbrushes?",
+          "options": [
+            "Under the sink",
+            "In the toilet",
+            "On the counter"
+          ],
+          "answer": "Under the sink"
+        },
+        {
+          "q": "Why is Emma in a hurry?",
+          "options": [
+            "She is late for school",
+            "She is going to bed",
+            "She is hungry"
+          ],
+          "answer": "She is late for school"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "Why does Ben say 'Maybe it's in the toilet!'?",
+          "options": [
+            "He is teasing her",
+            "He knows it is there",
+            "He wants to help quickly"
+          ],
+          "answer": "He is teasing her"
+        },
+        {
+          "q": "Which word shows Emma does not like Ben's idea?",
+          "options": [
+            "Gross!",
+            "Maybe",
+            "Late"
+          ],
+          "answer": "Gross!"
+        },
+        {
+          "q": "How does the problem get solved?",
+          "options": [
+            "Mom says there are new toothbrushes",
+            "Emma finds hers in the sink",
+            "Ben gives her his"
+          ],
+          "answer": "Mom says there are new toothbrushes"
+        }
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station. The book contrasts r and l here.",
+    "contrast": [
+      "r",
+      "l"
+    ],
+    "anchorWords": [
+      {
+        "word": "lake",
+        "sound": "l"
+      },
+      {
+        "word": "rake",
+        "sound": "r"
+      },
+      {
+        "word": "lights",
+        "sound": "l"
+      },
+      {
+        "word": "right",
+        "sound": "r"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "toilet",
+        "sound": "l"
+      },
+      {
+        "word": "rope",
+        "sound": "r"
+      },
+      {
+        "word": "fries",
+        "sound": "r"
+      },
+      {
+        "word": "fly",
+        "sound": "l"
+      },
+      {
+        "word": "towel",
+        "sound": "l"
+      },
+      {
+        "word": "porch",
+        "sound": "r"
+      }
+    ],
+    "note2": "The trap is that r and l are the hardest contrast for many learners, and both appear in this unit's own vocabulary: rope (r), towel (l), porch (r), ball (l). Say the pairs slowly before any recording."
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1-4: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "Contractions are central: accept it's / it is, they're / they are, isn't / is not, aren't / are not.",
+      "Accept 'toothbrush' variants and 'swing set' / 'swingset' as the same keyword.",
+      "Plural endings carry the grammar here: if the learner says 'where is' for 'where are', show the form rather than failing the item at Easy and Core."
+    ]
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  }
+}

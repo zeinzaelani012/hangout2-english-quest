@@ -93,11 +93,14 @@ function TileSequenceBody({ activity, onResult }: Props) {
     setDraggedId(null);
   };
 
-  // Spelling joins letters with no spaces; sentences join words.
+  // Spelling joins letters with no spaces; sentences join words. Spelling
+  // comparisons ignore spaces entirely, so a pack can ship a two-word answer
+  // ("swing set") with a space tile and accept it built with or without it.
   const userSentence = arranged.map(w => w.word).join(isSpelling ? '' : ' ');
+  const spellingNorm = (s: string) => s.replace(/\s+/g, '').toLowerCase();
   const isCorrect = item
     ? isSpelling
-      ? userSentence.trim().toLowerCase() === item.answer.trim().toLowerCase()
+      ? spellingNorm(userSentence) === spellingNorm(item.answer)
       : normalizeSentence(userSentence) === normalizeSentence(item.answer)
     : false;
 
@@ -202,10 +205,10 @@ function TileSequenceBody({ activity, onResult }: Props) {
                 onDragStart={e => handleDragStart(e, word.id, word.word, true)}
                 disabled={checked}
                 className="min-h-9 cursor-grab rounded-lg border border-brand/20 bg-teal-50 px-3 py-2 text-sm font-semibold text-brand transition-colors hover:bg-teal-100"
-                style={{ minHeight: 36 }}
-                aria-label={`${word.word}. Click or drag to add.`}
+                style={{ minHeight: 36, ...(word.word.trim() === '' ? { minWidth: 30 } : {}) }}
+                aria-label={word.word.trim() === '' ? 'Space. Click or drag to add.' : `${word.word}. Click or drag to add.`}
               >
-                {word.word}
+                {word.word.trim() === '' ? '␣' : word.word}
               </button>
             ) : null,
           )}
