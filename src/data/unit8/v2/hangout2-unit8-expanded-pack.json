@@ -1,0 +1,5133 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit8",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "unit": 8,
+    "title": "Our House",
+    "islandName": "House Island",
+    "bigQuestion": "What is your house like?",
+    "objectives": [
+      "Things around the house",
+      "Describing what is in the rooms of a house"
+    ],
+    "sourcePages": "88-97 (adapted, not reproduced)",
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. Result: { id: slotId + '-' + level, skill, type, prompt, payload, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "totalUnitsPlanned": 9,
+    "answerKeyIncluded": true
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the things"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which room?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "One or many"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "My room chart"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the room"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Two voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "My house"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The Open House"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/8/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Front Room",
+      "subtitle": "Name it",
+      "xp": 25
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Floor Plan",
+      "subtitle": "There is / There are",
+      "xp": 15
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Staircase",
+      "subtitle": "Listen and choose",
+      "xp": 10
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "A House That Moves",
+      "subtitle": "Read and find",
+      "xp": 15
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Room Chart",
+      "subtitle": "Write it down",
+      "xp": 10
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Open Door",
+      "subtitle": "Say it out loud",
+      "xp": 25
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The Open House",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 8,
+    "title": "Our House",
+    "islandName": "House Island",
+    "bigQuestion": "What is your house like?",
+    "objectives": [
+      "Things around the house",
+      "Describing what is in the rooms of a house"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "Written at v2.0 first time. 30 slots + 2 checkpoints."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "table",
+      "set": "A",
+      "category": "living",
+      "example": "There is a table next to the stove.",
+      "imgHint": "a wooden dining table with four legs"
+    },
+    {
+      "id": "v02",
+      "word": "sofa",
+      "set": "A",
+      "category": "living",
+      "example": "There is a big sofa in the living room.",
+      "imgHint": "a long soft sofa with two cushions"
+    },
+    {
+      "id": "v03",
+      "word": "lamp",
+      "set": "A",
+      "category": "living",
+      "example": "There is a lamp on the table.",
+      "imgHint": "a table lamp with a round shade"
+    },
+    {
+      "id": "v04",
+      "word": "plant",
+      "set": "A",
+      "category": "living",
+      "example": "There is a green plant near the window.",
+      "imgHint": "a leafy green plant in a pot"
+    },
+    {
+      "id": "v05",
+      "word": "window",
+      "set": "A",
+      "category": "living",
+      "example": "There are two windows in my bedroom.",
+      "imgHint": "a square window with curtains and daylight"
+    },
+    {
+      "id": "v06",
+      "word": "rug",
+      "set": "A",
+      "category": "living",
+      "example": "There is an orange rug on the floor.",
+      "imgHint": "a rectangular orange rug with fringed ends"
+    },
+    {
+      "id": "v07",
+      "word": "door",
+      "set": "A",
+      "category": "living",
+      "example": "The door is next to the window.",
+      "imgHint": "a closed wooden door with a handle"
+    },
+    {
+      "id": "v08",
+      "word": "picture",
+      "set": "A",
+      "category": "living",
+      "example": "There is a picture of my family on the wall.",
+      "imgHint": "a framed photograph of a family on a wall"
+    },
+    {
+      "id": "v09",
+      "word": "bookcase",
+      "set": "B",
+      "category": "furniture",
+      "example": "There is a bookcase next to the chair.",
+      "imgHint": "a tall wooden shelf full of books"
+    },
+    {
+      "id": "v10",
+      "word": "bed",
+      "set": "B",
+      "category": "furniture",
+      "example": "There are two beds next to the dressers.",
+      "imgHint": "a wooden bed with a white pillow"
+    },
+    {
+      "id": "v11",
+      "word": "dresser",
+      "set": "B",
+      "category": "furniture",
+      "example": "The stereo is on the dresser.",
+      "imgHint": "a wooden chest of drawers"
+    },
+    {
+      "id": "v12",
+      "word": "stove",
+      "set": "B",
+      "category": "furniture",
+      "example": "There is a stove in the middle of the ger.",
+      "imgHint": "a metal stove with a door and a chimney"
+    },
+    {
+      "id": "v13",
+      "word": "television",
+      "set": "B",
+      "category": "furniture",
+      "example": "There is a television in front of the sofa.",
+      "imgHint": "a flat television on a low stand"
+    },
+    {
+      "id": "v14",
+      "word": "mirror",
+      "set": "B",
+      "category": "furniture",
+      "example": "There is a mirror on the wall.",
+      "imgHint": "an oval mirror in a dark frame"
+    },
+    {
+      "id": "v15",
+      "word": "chair",
+      "set": "B",
+      "category": "furniture",
+      "example": "There are some chairs next to the table.",
+      "imgHint": "a wooden chair with a slatted back"
+    },
+    {
+      "id": "v16",
+      "word": "stereo",
+      "set": "B",
+      "category": "furniture",
+      "example": "Where is the stereo? It's on the dresser.",
+      "imgHint": "a black stereo with two speakers"
+    },
+    {
+      "id": "v17",
+      "word": "ger",
+      "set": "C",
+      "category": "place",
+      "example": "A ger is a simple house you can move.",
+      "imgHint": "a round white tent-like house on green grass"
+    },
+    {
+      "id": "v18",
+      "word": "tent",
+      "set": "C",
+      "category": "object",
+      "example": "A ger is a big tent.",
+      "imgHint": "a canvas tent seen from outside"
+    },
+    {
+      "id": "v19",
+      "word": "middle",
+      "set": "C",
+      "category": "position",
+      "example": "There is a stove in the middle of the ger.",
+      "imgHint": "a dot exactly in the centre of a circle"
+    },
+    {
+      "id": "v20",
+      "word": "apartment",
+      "set": "C",
+      "category": "place",
+      "example": "Most people live in a house or an apartment.",
+      "imgHint": "a tall building with rows of windows"
+    },
+    {
+      "id": "v21",
+      "word": "move",
+      "set": "C",
+      "category": "action",
+      "example": "Naran's family moves often.",
+      "imgHint": "a box and a rolled carpet beside an open door"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the word.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "table",
+              "options": [
+                "table",
+                "bed",
+                "sofa"
+              ],
+              "answer": "table",
+              "why": "You eat at a table."
+            },
+            {
+              "id": "v1-2",
+              "img": "lamp",
+              "options": [
+                "lamp",
+                "window",
+                "mirror"
+              ],
+              "answer": "lamp",
+              "why": "A lamp gives light."
+            },
+            {
+              "id": "v1-3",
+              "img": "rug",
+              "options": [
+                "rug",
+                "door",
+                "window"
+              ],
+              "answer": "rug",
+              "why": "A rug is flat on the floor."
+            },
+            {
+              "id": "v1-4",
+              "img": "sofa",
+              "options": [
+                "sofa",
+                "chair",
+                "bed"
+              ],
+              "answer": "sofa",
+              "why": "A sofa is long and you sit on it."
+            }
+          ],
+          "whyChoices": [
+            "This word matches the picture",
+            "The word is short",
+            "I have this at home"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "window",
+              "options": [
+                "window",
+                "door",
+                "mirror"
+              ],
+              "answer": "window",
+              "why": "Light comes in through a window."
+            },
+            {
+              "id": "v2-2",
+              "word": "plant",
+              "options": [
+                "plant",
+                "picture",
+                "lamp"
+              ],
+              "answer": "plant",
+              "why": "A plant is green and grows in a pot."
+            },
+            {
+              "id": "v2-3",
+              "word": "door",
+              "options": [
+                "door",
+                "window",
+                "rug"
+              ],
+              "answer": "door",
+              "why": "You walk through a door."
+            },
+            {
+              "id": "v2-4",
+              "word": "picture",
+              "options": [
+                "picture",
+                "mirror",
+                "television"
+              ],
+              "answer": "picture",
+              "why": "A picture is on the wall and shows a family."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this word",
+            "The word is long",
+            "I like this thing"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Sofa.",
+              "options": [
+                "sofa",
+                "table",
+                "bed"
+              ],
+              "answer": "sofa"
+            },
+            {
+              "id": "v3-2",
+              "audio": "There is a lamp on the table.",
+              "options": [
+                "lamp",
+                "plant",
+                "picture"
+              ],
+              "answer": "lamp"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Window.",
+              "options": [
+                "window",
+                "door",
+                "rug"
+              ],
+              "answer": "window"
+            }
+          ],
+          "whyChoices": [
+            "I heard that word clearly",
+            "It sounded like another word",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each thing in the right place.",
+          "bins": [
+            "Room",
+            "Not a room"
+          ],
+          "items": [
+            {
+              "word": "bedroom",
+              "bin": "Room",
+              "why": "A bedroom is a room."
+            },
+            {
+              "word": "sofa",
+              "bin": "Not a room",
+              "why": "A sofa is furniture in a room."
+            },
+            {
+              "word": "kitchen",
+              "bin": "Room",
+              "why": "A kitchen is a room."
+            },
+            {
+              "word": "table",
+              "bin": "Not a room",
+              "why": "A table is furniture."
+            },
+            {
+              "word": "living room",
+              "bin": "Room",
+              "why": "A living room is a room."
+            },
+            {
+              "word": "lamp",
+              "bin": "Not a room",
+              "why": "A lamp is a thing in a room."
+            },
+            {
+              "word": "dining room",
+              "bin": "Room",
+              "why": "A dining room is a room."
+            },
+            {
+              "word": "rug",
+              "bin": "Not a room",
+              "why": "A rug goes on the floor."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "You sit on a ___.",
+              "options": [
+                "sofa",
+                "window",
+                "door"
+              ],
+              "answer": "sofa",
+              "why": "You sit on a sofa."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "You walk through the ___.",
+              "options": [
+                "door",
+                "rug",
+                "lamp"
+              ],
+              "answer": "door",
+              "why": "You go through a door."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "A ___ is on the floor.",
+              "options": [
+                "rug",
+                "window",
+                "picture"
+              ],
+              "answer": "rug",
+              "why": "A rug is on the floor."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "I put the ___ on the table to read.",
+              "options": [
+                "lamp",
+                "door",
+                "rug"
+              ],
+              "answer": "lamp",
+              "why": "A lamp on the table gives light for reading."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "table",
+                "sofa",
+                "chair",
+                "window"
+              ],
+              "answer": "window",
+              "why": "The others are furniture you sit or eat at. A window is part of the wall."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "window",
+                "door",
+                "mirror",
+                "rug"
+              ],
+              "answer": "rug",
+              "why": "The others are fixed on a wall. A rug is on the floor."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "lamp",
+                "picture",
+                "mirror",
+                "bed"
+              ],
+              "answer": "bed",
+              "why": "The others hang on a wall or sit on a table."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is the longest word",
+            "I do not like it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "d",
+                "o",
+                "o",
+                "r"
+              ],
+              "answer": "door",
+              "audio": "door"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "b",
+                "e",
+                "d"
+              ],
+              "answer": "bed",
+              "audio": "bed"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "l",
+                "a",
+                "m",
+                "p"
+              ],
+              "answer": "lamp",
+              "audio": "lamp"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the house words. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Mirror.",
+              "options": [
+                "mirror",
+                "window",
+                "picture"
+              ],
+              "answer": "mirror"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "There is a ___ on the wall.",
+              "options": [
+                "picture",
+                "rug",
+                "bed"
+              ],
+              "answer": "picture"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the word.",
+              "img": "chair",
+              "answer": "chair",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "table",
+                "bed",
+                "chair",
+                "window"
+              ],
+              "answer": "window",
+              "why": "The others are furniture."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "rug",
+              "options": [
+                "rug",
+                "plant",
+                "door"
+              ],
+              "answer": "rug"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this word",
+            "This word was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these four sentences. What is different about the last two?",
+          "teachCard": {
+            "title": "There is and There are",
+            "lines": [
+              "There is a sofa in the living room.",
+              "There is a lamp on the table.",
+              "There are two beds in the bedroom.",
+              "There are some chairs next to the table."
+            ],
+            "rule": "One thing: There is. Many things: There are. We always say There is or There are, never just 'Is a sofa'."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "There is a sofa.",
+              "q": "How many sofas?",
+              "options": [
+                "one",
+                "many"
+              ],
+              "answer": "one"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "There are two beds.",
+              "q": "How many beds?",
+              "options": [
+                "many",
+                "one"
+              ],
+              "answer": "many"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which is correct for one lamp?",
+              "options": [
+                "There is a lamp.",
+                "There are a lamp."
+              ],
+              "answer": "There is a lamp."
+            },
+            {
+              "id": "g1-4",
+              "q": "Which is correct for many chairs?",
+              "options": [
+                "There are chairs.",
+                "There is chairs."
+              ],
+              "answer": "There are chairs."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "One thing takes There is",
+            "Many things take There are",
+            "on means the thing is on top",
+            "next to means beside"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "There ___ a table in the kitchen.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "is",
+              "why": "One table takes is."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "There ___ two windows in my room.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "are",
+              "why": "Two windows take are."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "There is a lamp ___ the table.",
+              "options": [
+                "on",
+                "under"
+              ],
+              "answer": "on",
+              "why": "The lamp is on top of the table."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "There is a rug ___ the floor.",
+              "options": [
+                "on",
+                "in"
+              ],
+              "answer": "on",
+              "why": "A rug is on the floor."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "The stereo is ___ the dresser.",
+              "options": [
+                "on",
+                "behind"
+              ],
+              "answer": "on",
+              "why": "The stereo sits on top of the dresser."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "There ___ a stove in the middle.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "is",
+              "why": "One stove takes is."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "There is two beds in my room.",
+              "wrong": "is",
+              "correct": "are",
+              "why": "Two beds take are."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "There are a sofa in the living room.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "One sofa takes is."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "There is a picture in the wall.",
+              "wrong": "in",
+              "correct": "on",
+              "why": "A picture is on the wall."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "There are some chair next to the table.",
+              "wrong": "chair",
+              "correct": "chairs",
+              "why": "After some we need the plural chairs."
+            }
+          ],
+          "whyChoices": [
+            "Many things take are",
+            "One thing takes is",
+            "A picture is on the wall, not in it",
+            "After some we need a plural noun"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "It's on the dresser.",
+              "options": [
+                "Where is the stereo?",
+                "Where are the stereo?"
+              ],
+              "answer": "Where is the stereo?",
+              "why": "The stereo is one thing, so use is."
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "They're next to the bed.",
+              "options": [
+                "Where is the chairs?",
+                "Where are the chairs?"
+              ],
+              "answer": "Where are the chairs?",
+              "why": "Chairs are many, so use are."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, there is.",
+              "options": [
+                "Is there a sofa?",
+                "Are there a sofa?"
+              ],
+              "answer": "Is there a sofa?",
+              "why": "One sofa takes Is there."
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "Yes, there are.",
+              "options": [
+                "Are there two windows?",
+                "Is there two windows?"
+              ],
+              "answer": "Are there two windows?",
+              "why": "Two windows take Are there."
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. One thing becomes many things.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "There is a chair.",
+              "options": [
+                "There are chairs.",
+                "There are a chairs."
+              ],
+              "answer": "There are chairs.",
+              "why": "Many chairs: There are chairs."
+            },
+            {
+              "id": "g5-2",
+              "from": "There is a window.",
+              "options": [
+                "There are windows.",
+                "There is windows."
+              ],
+              "answer": "There are windows.",
+              "why": "Many windows take are."
+            },
+            {
+              "id": "g5-3",
+              "from": "There is a lamp.",
+              "options": [
+                "There are lamps.",
+                "There are a lamp."
+              ],
+              "answer": "There are lamps.",
+              "why": "Many lamps: drop a and use are."
+            },
+            {
+              "id": "g5-4",
+              "from": "There is a bed.",
+              "options": [
+                "There are beds.",
+                "There is beds."
+              ],
+              "answer": "There are beds.",
+              "why": "Many beds take are."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "There is a lamp on the table.",
+              "options": [
+                "lamp",
+                "plant",
+                "picture"
+              ],
+              "answer": "lamp"
+            },
+            {
+              "id": "l1-2",
+              "audio": "There are two windows.",
+              "options": [
+                "window",
+                "door",
+                "mirror"
+              ],
+              "answer": "window"
+            },
+            {
+              "id": "l1-3",
+              "audio": "The rug is on the floor.",
+              "options": [
+                "rug",
+                "bed",
+                "sofa"
+              ],
+              "answer": "rug"
+            }
+          ],
+          "whyChoices": [
+            "I heard the thing word",
+            "I heard the place word only",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "Her living room",
+                "Her school"
+              ],
+              "answer": "Her living room"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Where is the plant?",
+              "options": [
+                "Next to the window",
+                "On the table"
+              ],
+              "answer": "Next to the window"
+            }
+          ],
+          "audio": "This is my living room. There is a big sofa, and there is a television in front of it. There is a plant next to the window.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "There is a table in the kitchen. There are two chairs next to it. There is a lamp on the table.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "There is a ___(1)___ in the kitchen.",
+              "options": [
+                "table",
+                "sofa"
+              ],
+              "answer": "table"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "There are two ___(2)___ next to it.",
+              "options": [
+                "chairs",
+                "beds"
+              ],
+              "answer": "chairs"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "There is a ___(3)___ on the table.",
+              "options": [
+                "lamp",
+                "rug"
+              ],
+              "answer": "lamp"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "ger",
+              "options": [
+                "a house you can move",
+                "a kind of car"
+              ],
+              "answer": "a house you can move"
+            },
+            {
+              "id": "r1-2",
+              "word": "tent",
+              "options": [
+                "a cloth house for camping",
+                "a kind of door"
+              ],
+              "answer": "a cloth house for camping"
+            },
+            {
+              "id": "r1-3",
+              "word": "middle",
+              "options": [
+                "the centre",
+                "the corner"
+              ],
+              "answer": "the centre"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "This is Naran. He is from Mongolia. His family lives in a special house. We call this house a ger. A ger is a simple house. You can move it to another place, just like a tent! A ger is a big tent.",
+          "prompt": "Read the text. Then tap the sentence that tells you what a ger is.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that tells you what a ger is.",
+              "answerType": "tapSentence",
+              "answer": "A ger is a simple house.",
+              "why": "That sentence says what it is."
+            },
+            {
+              "id": "r2-2",
+              "q": "Where is Naran from?",
+              "options": [
+                "Mongolia",
+                "England"
+              ],
+              "answer": "Mongolia"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "This is Naran. He is from Mongolia. His family lives in a special house. We call this house a ger. A ger is a simple house. You can move it to another place, just like a tent! A ger is a big tent.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What is a ger like?",
+              "options": [
+                "A big tent",
+                "A big car"
+              ],
+              "answer": "A big tent"
+            },
+            {
+              "id": "r3-2",
+              "q": "Can you move a ger?",
+              "options": [
+                "Yes, you can",
+                "No, you can't"
+              ],
+              "answer": "Yes, you can"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you the ger can move.",
+              "answerType": "tapSentence",
+              "answer": "You can move it to another place, just like a tent!",
+              "why": "That sentence says it can move."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Their house has everything. There is a stove in the middle. There is a table next to the stove. The family eats there. There are two beds next to the dressers. There are some chairs, too.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you where the stove is.",
+              "answer": "There is a stove in the middle."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you where the table is.",
+              "answer": "There is a table next to the stove."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you where the beds are.",
+              "answer": "There are two beds next to the dressers."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "There",
+                "is",
+                "a",
+                "sofa"
+              ],
+              "answer": "There is a sofa."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "There",
+                "are",
+                "two",
+                "beds"
+              ],
+              "answer": "There are two beds."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "The",
+                "lamp",
+                "is",
+                "on",
+                "the",
+                "table"
+              ],
+              "answer": "The lamp is on the table."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Where",
+                "is",
+                "the",
+                "stereo"
+              ],
+              "answer": "Where is the stereo?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "There is two beds.",
+              "answer": "There are two beds."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "There are a sofa.",
+              "answer": "There is a sofa."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "There is a picture in the wall.",
+              "answer": "There is a picture on the wall."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Choose a room in your house. Write four things in it and where they are.",
+          "chooseRoom": [
+            "dining room",
+            "kitchen",
+            "bedroom",
+            "living room"
+          ],
+          "chart": {
+            "rows": 4,
+            "columnA": "Thing",
+            "columnB": "Where?"
+          },
+          "starters": [
+            "In my ___ there is ___.",
+            "There are ___.",
+            "The ___ is on the ___."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "There is and There are are correct"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "There is a sofa.",
+              "keywords": [
+                "there",
+                "is",
+                "sofa"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "There are two beds.",
+              "keywords": [
+                "there",
+                "are",
+                "two",
+                "beds"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "The lamp is on the table.",
+              "keywords": [
+                "lamp",
+                "on",
+                "table"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Where is the stereo?",
+              "keywords": [
+                "where",
+                "stereo"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "there is a lamp",
+              "keywords": [
+                "there",
+                "is",
+                "lamp"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "there are two beds",
+              "keywords": [
+                "there",
+                "are",
+                "beds"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "on the table",
+              "keywords": [
+                "on",
+                "table"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What is in your bedroom?",
+              "keywords": [
+                "there",
+                "is",
+                "are"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Where is your bed?",
+              "keywords": [
+                "next",
+                "on",
+                "in",
+                "under"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Are there windows in your room?",
+              "keywords": [
+                "yes",
+                "no",
+                "there",
+                "are"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What is in your living room?",
+              "keywords": [
+                "there",
+                "is",
+                "are"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the room. Say what is in it and where the things are. Use at least three things.",
+          "image": "room-easy",
+          "prompts": [
+            "One thing on the table",
+            "One thing next to the window",
+            "One thing on the floor"
+          ],
+          "keywords": [
+            "there",
+            "is",
+            "are"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with two voices. First you are Ana, then Ben.",
+          "dialogueId": "whereIsTheStereo",
+          "lines": 4,
+          "keywords": [
+            "where",
+            "stereo",
+            "dresser"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What is in your room?",
+              "keywords": [
+                "there",
+                "is",
+                "are",
+                "room"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Where do you eat dinner?",
+              "keywords": [
+                "eat",
+                "kitchen",
+                "dining"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "How many rooms are in your house?",
+              "keywords": [
+                "rooms",
+                "there"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about your house. Say four sentences.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "In my house there is ___.",
+            "There are ___.",
+            "The ___ is in the ___.",
+            "My favourite room is ___."
+          ],
+          "keywords": [
+            "there",
+            "is",
+            "are"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "sofa",
+              "options": [
+                "sofa",
+                "chair",
+                "bed"
+              ],
+              "answer": "sofa"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "There ___ two windows.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "There is two beds.",
+              "wrong": "is",
+              "correct": "are"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Mirror.",
+              "options": [
+                "mirror",
+                "window",
+                "picture"
+              ],
+              "answer": "mirror"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "bedroom",
+                "sofa"
+              ],
+              "bins": [
+                "Room",
+                "Not a room"
+              ],
+              "answers": {
+                "bedroom": "Room",
+                "sofa": "Not a room"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about what is in your room.",
+              "keywords": [
+                "there",
+                "is",
+                "are"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Open House. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "rug",
+              "options": [
+                "rug",
+                "plant",
+                "door"
+              ],
+              "answer": "rug"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "There ___ a stove in the middle.",
+              "options": [
+                "is",
+                "are"
+              ],
+              "answer": "is"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "There are a sofa in the living room.",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "There is a big sofa, a television and two lamps in my living room.",
+              "q": "How many lamps are there?",
+              "options": [
+                "Two",
+                "One",
+                "Three"
+              ],
+              "answer": "Two"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text about the ger, tap the sentence that tells you where the stove is.",
+              "answer": "There is a stove in the middle."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Where",
+                "are",
+                "the",
+                "chairs"
+              ],
+              "answer": "Where are the chairs?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for the furniture you sleep on.",
+              "answer": "bed",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: one thing in your room and where it is.",
+              "keywords": [
+                "there",
+                "is",
+                "on"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the word that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "bookcase",
+              "options": [
+                "bookcase",
+                "dresser",
+                "table",
+                "chair"
+              ],
+              "answer": "bookcase",
+              "why": "A bookcase holds books on open shelves. A dresser has drawers."
+            },
+            {
+              "id": "v1-2",
+              "img": "dresser",
+              "options": [
+                "dresser",
+                "bookcase",
+                "stove",
+                "mirror"
+              ],
+              "answer": "dresser",
+              "why": "A dresser has drawers for clothes."
+            },
+            {
+              "id": "v1-3",
+              "img": "stereo",
+              "options": [
+                "stereo",
+                "television",
+                "mirror",
+                "lamp"
+              ],
+              "answer": "stereo",
+              "why": "A stereo has two speakers for music."
+            },
+            {
+              "id": "v1-4",
+              "img": "mirror",
+              "options": [
+                "mirror",
+                "window",
+                "picture",
+                "door"
+              ],
+              "answer": "mirror",
+              "why": "You can see yourself in a mirror."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact thing",
+            "It is furniture for the same room",
+            "It starts with the same letter",
+            "It hangs on the wall"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "stove",
+              "options": [
+                "stove",
+                "television",
+                "dresser",
+                "bed"
+              ],
+              "answer": "stove",
+              "why": "A stove is where you cook food."
+            },
+            {
+              "id": "v2-2",
+              "word": "television",
+              "options": [
+                "television",
+                "mirror",
+                "picture",
+                "stereo"
+              ],
+              "answer": "television",
+              "why": "A television has a screen. A mirror reflects you."
+            },
+            {
+              "id": "v2-3",
+              "word": "chair",
+              "options": [
+                "chair",
+                "sofa",
+                "bed",
+                "table"
+              ],
+              "answer": "chair",
+              "why": "A chair is for one person."
+            },
+            {
+              "id": "v2-4",
+              "word": "ger",
+              "options": [
+                "ger",
+                "apartment",
+                "tent",
+                "house"
+              ],
+              "answer": "ger",
+              "why": "A ger is round, with a door and a stove inside."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It is the same room as a distractor",
+            "It is a place you live",
+            "It is a thing you sit on"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "The stereo is on the dresser.",
+              "options": [
+                "stereo",
+                "television",
+                "mirror",
+                "dresser"
+              ],
+              "answer": "stereo"
+            },
+            {
+              "id": "v3-2",
+              "audio": "There is a bookcase next to the chair.",
+              "options": [
+                "bookcase",
+                "dresser",
+                "table",
+                "stove"
+              ],
+              "answer": "bookcase"
+            },
+            {
+              "id": "v3-3",
+              "audio": "There are two beds next to the dressers.",
+              "options": [
+                "bed",
+                "chair",
+                "sofa",
+                "rug"
+              ],
+              "answer": "bed"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole word",
+            "I heard a word that sounds similar",
+            "I used the topic to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort the things into the right rooms.",
+          "bins": [
+            "Bedroom",
+            "Living room"
+          ],
+          "items": [
+            {
+              "word": "bed",
+              "bin": "Bedroom"
+            },
+            {
+              "word": "sofa",
+              "bin": "Living room"
+            },
+            {
+              "word": "dresser",
+              "bin": "Bedroom"
+            },
+            {
+              "word": "television",
+              "bin": "Living room"
+            },
+            {
+              "word": "mirror",
+              "bin": "Bedroom"
+            },
+            {
+              "word": "rug",
+              "bin": "Living room"
+            },
+            {
+              "word": "bookcase",
+              "bin": "Living room"
+            },
+            {
+              "word": "lamp",
+              "bin": "Bedroom"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "There is a ___ in the middle of the ger.",
+              "options": [
+                "stove",
+                "mirror",
+                "television",
+                "sofa"
+              ],
+              "answer": "stove",
+              "why": "The text says the stove is in the middle."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "The family eats at the ___.",
+              "options": [
+                "table",
+                "bed",
+                "mirror",
+                "rug"
+              ],
+              "answer": "table",
+              "why": "Families eat at a table."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "I put my clothes in the ___.",
+              "options": [
+                "dresser",
+                "stove",
+                "television",
+                "door"
+              ],
+              "answer": "dresser",
+              "why": "A dresser has drawers for clothes."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "A ger is a big ___.",
+              "options": [
+                "tent",
+                "apartment",
+                "window",
+                "mirror"
+              ],
+              "answer": "tent",
+              "why": "The text says a ger is a big tent."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It sounds like another word",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "bed",
+                "dresser",
+                "mirror",
+                "stove"
+              ],
+              "answer": "stove",
+              "why": "The others are in a bedroom. A stove is in a kitchen or the middle of a ger."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "sofa",
+                "television",
+                "rug",
+                "dresser"
+              ],
+              "answer": "dresser",
+              "why": "The others are in a living room."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "ger",
+                "apartment",
+                "house",
+                "tent"
+              ],
+              "answer": "tent",
+              "why": "The others are places people live all year."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different room",
+            "It is uncountable",
+            "It is a longer word",
+            "It is furniture"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "b",
+                "o",
+                "o",
+                "k",
+                "c",
+                "a",
+                "s",
+                "e"
+              ],
+              "answer": "bookcase",
+              "audio": "bookcase"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "d",
+                "r",
+                "e",
+                "s",
+                "s",
+                "e",
+                "r"
+              ],
+              "answer": "dresser",
+              "audio": "dresser"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "t",
+                "e",
+                "l",
+                "e",
+                "v",
+                "i",
+                "s",
+                "i",
+                "o",
+                "n"
+              ],
+              "answer": "television",
+              "audio": "television"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Stereos.",
+              "options": [
+                "stereo",
+                "television",
+                "mirror",
+                "dresser"
+              ],
+              "answer": "stereo"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "There are two beds next to the ___.",
+              "options": [
+                "dressers",
+                "stoves",
+                "mirrors",
+                "chairs"
+              ],
+              "answer": "dressers",
+              "why": "The text says the beds are next to the dressers."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for the furniture with drawers for clothes.",
+              "img": "dresser",
+              "answer": "dresser",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "sofa",
+                "television",
+                "rug",
+                "dresser"
+              ],
+              "answer": "dresser",
+              "why": "The others are living room things."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "bookcase",
+              "options": [
+                "bookcase",
+                "dresser",
+                "table",
+                "stove"
+              ],
+              "answer": "bookcase"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the word",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "There is / There are + where",
+            "lines": [
+              "There is a stove in the middle.",
+              "There are two beds next to the dressers.",
+              "The stereo is on the dresser.",
+              "The chairs are next to the bed."
+            ],
+            "rule": "There is + one thing. There are + many things. For position we use next to, behind, in front of, on, in and under."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which sentence is for many things?",
+              "options": [
+                "There are two beds.",
+                "There is two beds.",
+                "There are a bed.",
+                "There is a beds."
+              ],
+              "answer": "There are two beds."
+            },
+            {
+              "id": "g1-2",
+              "q": "Which preposition means 'at the side of'?",
+              "options": [
+                "next to",
+                "behind",
+                "in front of",
+                "under"
+              ],
+              "answer": "next to"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which preposition means 'at the back of'?",
+              "options": [
+                "behind",
+                "next to",
+                "on",
+                "in"
+              ],
+              "answer": "behind"
+            },
+            {
+              "id": "g1-4",
+              "q": "Which sentence is correct?",
+              "options": [
+                "The stereo is on the dresser.",
+                "The stereo is in the dresser.",
+                "The stereo is next the dresser.",
+                "The stereo are on the dresser."
+              ],
+              "answer": "The stereo is on the dresser."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "One thing takes There is and it",
+            "Many things take There are and they",
+            "next to means beside",
+            "A picture goes on a wall"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "___ three chairs in the kitchen.",
+              "options": [
+                "There are",
+                "There is",
+                "It is",
+                "They is"
+              ],
+              "answer": "There are"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "___ a mirror on the wall.",
+              "options": [
+                "There is",
+                "There are",
+                "There have",
+                "It are"
+              ],
+              "answer": "There is"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "Where ___ the chairs? They're next to the bed.",
+              "options": [
+                "are",
+                "is",
+                "am",
+                "be"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "The plant is ___ the window.",
+              "options": [
+                "next to",
+                "on",
+                "under",
+                "behind of"
+              ],
+              "answer": "next to"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "There are some pictures ___ the wall.",
+              "options": [
+                "on",
+                "in",
+                "at",
+                "under"
+              ],
+              "answer": "on"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "The rug is ___ the floor, ___ the sofa.",
+              "options": [
+                "on / in front of",
+                "in / on",
+                "on / behind of",
+                "at / next"
+              ],
+              "answer": "on / in front of"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "There is two beds next to the dressers.",
+              "wrong": "is",
+              "correct": "are",
+              "why": "Two beds take are."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "There are a stove in the middle.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "One stove takes is."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "The stereo is next the dresser.",
+              "wrong": "next",
+              "correct": "next to",
+              "why": "We say next to, with the word to."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "Where is the chairs?",
+              "wrong": "is",
+              "correct": "are",
+              "why": "Chairs are plural, so use are."
+            }
+          ],
+          "whyChoices": [
+            "Many things take are",
+            "One thing takes is",
+            "next to needs the word to",
+            "A plural noun takes are"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "It's on the dresser.",
+              "options": [
+                "Where is the stereo?",
+                "Where are the stereo?",
+                "Where the stereo is?",
+                "Is where the stereo?"
+              ],
+              "answer": "Where is the stereo?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "They're next to the bed.",
+              "options": [
+                "Where are the chairs?",
+                "Where is the chairs?",
+                "Where are the chair?",
+                "Where the chairs?"
+              ],
+              "answer": "Where are the chairs?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, there is. It's in the middle.",
+              "options": [
+                "Is there a stove?",
+                "Are there a stove?",
+                "Is there stoves?",
+                "Does there a stove?"
+              ],
+              "answer": "Is there a stove?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "Yes, there are. Four of them.",
+              "options": [
+                "Are there four chairs?",
+                "Is there four chairs?",
+                "Are there a chairs?",
+                "Have there four chairs?"
+              ],
+              "answer": "Are there four chairs?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Change it to many things.",
+              "from": "There is a chair next to the table.",
+              "options": [
+                "There are chairs next to the table.",
+                "There are a chairs next to the table.",
+                "There is chairs next to the table.",
+                "There are chair next to the table."
+              ],
+              "answer": "There are chairs next to the table."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change it to one thing.",
+              "from": "There are two windows.",
+              "options": [
+                "There is a window.",
+                "There is two windows.",
+                "There are a window.",
+                "There is window."
+              ],
+              "answer": "There is a window."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it negative.",
+              "from": "There is a mirror in my room.",
+              "options": [
+                "There isn't a mirror in my room.",
+                "There aren't a mirror in my room.",
+                "There not is a mirror in my room.",
+                "There don't a mirror in my room."
+              ],
+              "answer": "There isn't a mirror in my room."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Make it negative.",
+              "from": "There are two beds.",
+              "options": [
+                "There aren't two beds.",
+                "There isn't two beds.",
+                "There not are two beds.",
+                "There don't are two beds."
+              ],
+              "answer": "There aren't two beds."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "There is a bookcase next to the chair.",
+              "options": [
+                "bookcase",
+                "dresser",
+                "table",
+                "stove"
+              ],
+              "answer": "bookcase"
+            },
+            {
+              "id": "l1-2",
+              "audio": "The stereo is on the dresser.",
+              "options": [
+                "dresser",
+                "bookcase",
+                "television",
+                "mirror"
+              ],
+              "answer": "dresser"
+            },
+            {
+              "id": "l1-3",
+              "audio": "There are two beds next to the dressers.",
+              "options": [
+                "bed",
+                "chair",
+                "sofa",
+                "rug"
+              ],
+              "answer": "bed"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a similar word",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person describing?",
+              "options": [
+                "A bedroom",
+                "A kitchen"
+              ],
+              "answer": "A bedroom"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Where is the mirror?",
+              "options": [
+                "Behind the door",
+                "On the dresser"
+              ],
+              "answer": "Behind the door"
+            }
+          ],
+          "audio": "This is my bedroom. There is a bed next to the window. There is a dresser with a lamp on it. There is a mirror behind the door, and there are two pictures on the wall.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "There is a bookcase next to the chair. There are two lamps on the dresser. The rug is in front of the sofa.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "There is a bookcase next to the ___(1)___.",
+              "options": [
+                "chair",
+                "bed",
+                "door"
+              ],
+              "answer": "chair"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "There are two lamps on the ___(2)___.",
+              "options": [
+                "dresser",
+                "table",
+                "stove"
+              ],
+              "answer": "dresser"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "The rug is in front of the ___(3)___.",
+              "options": [
+                "sofa",
+                "bed",
+                "window"
+              ],
+              "answer": "sofa"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "ger",
+              "options": [
+                "a round house you can move",
+                "a kind of apartment",
+                "a big city",
+                "a wooden box"
+              ],
+              "answer": "a round house you can move"
+            },
+            {
+              "id": "r1-2",
+              "word": "moves often",
+              "options": [
+                "goes to a new place many times",
+                "walks slowly",
+                "stays in one place",
+                "runs quickly"
+              ],
+              "answer": "goes to a new place many times"
+            },
+            {
+              "id": "r1-3",
+              "word": "get ready",
+              "options": [
+                "become prepared",
+                "become clean",
+                "become warm",
+                "become tired"
+              ],
+              "answer": "become prepared"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "This is Naran. He is from Mongolia. His family lives in a special house. We call this house a ger. A ger is a simple house. You can move it to another place, just like a tent! A ger is a big tent. Naran's family moves often. They can take their house with them. They can get their house ready in a few hours.",
+          "prompt": "Read the whole text. Then tap the sentence that shows why a ger is useful for Naran's family.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows why a ger is useful for Naran's family.",
+              "answerType": "tapSentence",
+              "answer": "They can take their house with them.",
+              "why": "Moving often means they need a house they can carry."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the text about?",
+              "options": [
+                "A house that can move",
+                "A school in Mongolia",
+                "A family's new car"
+              ],
+              "answer": "A house that can move"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "This is Naran. He is from Mongolia. His family lives in a special house. We call this house a ger. A ger is a simple house. You can move it to another place, just like a tent! A ger is a big tent. Naran's family moves often. They can take their house with them. They can get their house ready in a few hours.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "How long does it take to get the house ready?",
+              "options": [
+                "A few hours",
+                "A few days",
+                "A few weeks"
+              ],
+              "answer": "A few hours"
+            },
+            {
+              "id": "r3-2",
+              "q": "Why does Naran's family use a ger?",
+              "options": [
+                "They move often",
+                "They have no money",
+                "They like camping"
+              ],
+              "answer": "They move often"
+            },
+            {
+              "id": "r3-3",
+              "q": "Which sentence tells you a ger is like a tent?",
+              "options": [
+                "A ger is a big tent.",
+                "A ger is a simple house.",
+                "His family lives in a special house."
+              ],
+              "answer": "A ger is a big tent."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Their house has everything. There is a stove in the middle. There is a table next to the stove. The family eats there. There are two beds next to the dressers. There are some chairs, too. These days, most people in Mongolia live in a house or an apartment. But some people still live in a ger.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you where the family eats.",
+              "answer": "There is a table next to the stove."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you what the family sits on.",
+              "answer": "There are some chairs, too."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you about ger life today.",
+              "answer": "These days, most people in Mongolia live in a house or an apartment."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "There",
+                "are",
+                "two",
+                "beds",
+                "next",
+                "to",
+                "the",
+                "dressers"
+              ],
+              "answer": "There are two beds next to the dressers."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Where",
+                "are",
+                "the",
+                "chairs"
+              ],
+              "answer": "Where are the chairs?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "The",
+                "stereo",
+                "is",
+                "on",
+                "the",
+                "dresser"
+              ],
+              "answer": "The stereo is on the dresser."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "There",
+                "is",
+                "a",
+                "television",
+                "in",
+                "front",
+                "of",
+                "the",
+                "sofa"
+              ],
+              "answer": "There is a television in front of the sofa."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "There is two beds next to the dressers.",
+              "answer": "There are two beds next to the dressers."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "The stereo is next the dresser.",
+              "answer": "The stereo is next to the dresser."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Where is the chairs?",
+              "answer": "Where are the chairs?"
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Choose a room. Fill the chart with four things in it and where they are, then write two sentences of your own.",
+          "chooseRoom": [
+            "dining room",
+            "kitchen",
+            "bedroom",
+            "living room"
+          ],
+          "chart": {
+            "rows": 4,
+            "columnA": "Thing",
+            "columnB": "Where?"
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct There is / There are",
+            "One preposition of place",
+            "At least 30 words"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "There are two beds next to the dressers.",
+              "keywords": [
+                "there",
+                "are",
+                "beds",
+                "dressers"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Where is the stereo? It's on the dresser.",
+              "keywords": [
+                "where",
+                "stereo",
+                "on",
+                "dresser"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "There is a television in front of the sofa.",
+              "keywords": [
+                "there",
+                "is",
+                "television",
+                "sofa"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "The mirror is behind the door.",
+              "keywords": [
+                "mirror",
+                "behind",
+                "door"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "next to the dressers",
+              "keywords": [
+                "next",
+                "to",
+                "dressers"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "in front of the sofa",
+              "keywords": [
+                "in",
+                "front",
+                "of",
+                "sofa"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "there are two beds",
+              "keywords": [
+                "there",
+                "are",
+                "beds"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Where is the stereo?",
+              "keywords": [
+                "it's",
+                "on",
+                "next",
+                "in"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Where are the chairs?",
+              "keywords": [
+                "they're",
+                "next",
+                "behind",
+                "on"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What is in your living room?",
+              "keywords": [
+                "there",
+                "is",
+                "are"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Is there a mirror in your room?",
+              "keywords": [
+                "yes",
+                "no",
+                "there",
+                "is",
+                "isn't"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the room. Say what is in it and where four things are.",
+          "image": "room-core",
+          "prompts": [
+            "Two things next to each other",
+            "One thing on the wall",
+            "One thing on the floor",
+            "One thing behind something"
+          ],
+          "keywords": [
+            "there",
+            "is",
+            "are",
+            "next",
+            "behind"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with two voices: you are Ana, then Ben.",
+          "dialogueId": "whereIsTheStereo",
+          "lines": 8,
+          "keywords": [
+            "where",
+            "stereo",
+            "dresser",
+            "next"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What is in your bedroom, and where?",
+              "keywords": [
+                "there",
+                "is",
+                "are",
+                "next",
+                "on"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Which room do you like best, and why?",
+              "keywords": [
+                "room",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "What would you like to have in your room?",
+              "keywords": [
+                "would",
+                "like",
+                "there"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about your house. Describe two rooms and where the things are.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "In my house there is ___.",
+            "In the ___ there are ___.",
+            "The ___ is next to the ___.",
+            "My favourite room is ___ because ___."
+          ],
+          "keywords": [
+            "there",
+            "is",
+            "are",
+            "next",
+            "because"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "bookcase",
+              "options": [
+                "bookcase",
+                "dresser",
+                "table",
+                "chair"
+              ],
+              "answer": "bookcase"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "___ three chairs in the kitchen.",
+              "options": [
+                "There are",
+                "There is",
+                "It is",
+                "They is"
+              ],
+              "answer": "There are"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "The stereo is next the dresser.",
+              "wrong": "next",
+              "correct": "next to"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "There are two lamps on the dresser.",
+              "options": [
+                "dresser",
+                "table",
+                "stove",
+                "bookcase"
+              ],
+              "answer": "dresser"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "bed",
+                "dresser",
+                "mirror",
+                "stove"
+              ],
+              "answer": "stove"
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with Is there...? and answer it.",
+              "keywords": [
+                "is",
+                "there"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Open House. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "stove",
+              "options": [
+                "stove",
+                "television",
+                "dresser",
+                "bed"
+              ],
+              "answer": "stove"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "___ two windows and a door in my room.",
+              "options": [
+                "There are",
+                "There is",
+                "It is",
+                "They is"
+              ],
+              "answer": "There are"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "There is two beds, and where is the chairs?",
+              "wrong": "is",
+              "correct": "are"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "My bedroom is small but I like it. There is a bed next to the window, and there is a lamp on the dresser. There are two pictures on the wall. I don't have a television in my room.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker describing?",
+                  "options": [
+                    "A bedroom",
+                    "A kitchen",
+                    "A living room"
+                  ],
+                  "answer": "A bedroom"
+                },
+                {
+                  "pass": 2,
+                  "q": "Where is the lamp?",
+                  "options": [
+                    "On the dresser",
+                    "Next to the window",
+                    "On the wall"
+                  ],
+                  "answer": "On the dresser"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the text about the ger, tap the sentence that tells you where the family eats.",
+              "answer": "There is a table next to the stove."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "There",
+                "are",
+                "two",
+                "beds",
+                "next",
+                "to",
+                "the",
+                "dressers"
+              ],
+              "answer": "There are two beds next to the dressers."
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for the furniture with drawers for clothes.",
+              "answer": "dresser",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: what is in one room, where two things are, and one thing that is not there.",
+              "keywords": [
+                "there",
+                "is",
+                "are",
+                "isn't"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact word. Two of the four are in the same room, so read carefully.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "dresser",
+              "options": [
+                "dresser",
+                "bookcase",
+                "table",
+                "stove"
+              ],
+              "answer": "dresser",
+              "why": "A dresser has closed drawers. A bookcase has open shelves."
+            },
+            {
+              "id": "v1-2",
+              "img": "stove",
+              "options": [
+                "stove",
+                "television",
+                "mirror",
+                "lamp"
+              ],
+              "answer": "stove",
+              "why": "A stove has a door and a chimney for heat or cooking."
+            },
+            {
+              "id": "v1-3",
+              "img": "mirror",
+              "options": [
+                "mirror",
+                "picture",
+                "window",
+                "television"
+              ],
+              "answer": "mirror",
+              "why": "A mirror reflects. A picture shows a scene."
+            },
+            {
+              "id": "v1-4",
+              "img": "stereo",
+              "options": [
+                "stereo",
+                "television",
+                "lamp",
+                "dresser"
+              ],
+              "answer": "stereo",
+              "why": "A stereo has two speakers. A television has a screen."
+            }
+          ],
+          "whyChoices": [
+            "Its function is different from the distractors",
+            "It belongs to the same room as a distractor",
+            "It is a place, not an object",
+            "It hangs on the wall"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "ger",
+              "options": [
+                "ger",
+                "apartment",
+                "tent",
+                "house"
+              ],
+              "answer": "ger",
+              "why": "A ger is round with a stove inside. A tent is for camping."
+            },
+            {
+              "id": "v2-2",
+              "word": "apartment",
+              "options": [
+                "apartment",
+                "house",
+                "ger",
+                "tent"
+              ],
+              "answer": "apartment",
+              "why": "An apartment is one home inside a tall building."
+            },
+            {
+              "id": "v2-3",
+              "word": "bookcase",
+              "options": [
+                "bookcase",
+                "dresser",
+                "shelf",
+                "table"
+              ],
+              "answer": "bookcase",
+              "why": "A bookcase is tall and holds books on several shelves."
+            },
+            {
+              "id": "v2-4",
+              "word": "chair",
+              "options": [
+                "chair",
+                "sofa",
+                "bed",
+                "stool"
+              ],
+              "answer": "chair",
+              "why": "A chair has a back. A stool does not."
+            }
+          ],
+          "whyChoices": [
+            "The meaning matches exactly",
+            "It is the same category of furniture",
+            "It is a place people live",
+            "It is a thing you sleep on"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "You can move it to another place, just like a tent.",
+              "options": [
+                "move it",
+                "build it",
+                "sell it",
+                "clean it"
+              ],
+              "answer": "move it"
+            },
+            {
+              "id": "v3-2",
+              "audio": "They can get their house ready in a few hours.",
+              "options": [
+                "a few hours",
+                "a few days",
+                "a few weeks"
+              ],
+              "answer": "a few hours"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Most people in Mongolia live in a house or an apartment.",
+              "options": [
+                "a house or an apartment",
+                "a ger or a tent",
+                "a school or a shop"
+              ],
+              "answer": "a house or an apartment"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact phrase",
+            "I heard words with a similar sound",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into four boxes. Two items are deliberately tricky.",
+          "bins": [
+            "Bedroom",
+            "Living room",
+            "Kitchen",
+            "Inside a ger"
+          ],
+          "items": [
+            {
+              "word": "bed",
+              "bin": "Bedroom"
+            },
+            {
+              "word": "sofa",
+              "bin": "Living room"
+            },
+            {
+              "word": "stove",
+              "bin": "Kitchen"
+            },
+            {
+              "word": "dresser",
+              "bin": "Bedroom"
+            },
+            {
+              "word": "television",
+              "bin": "Living room"
+            },
+            {
+              "word": "mirror",
+              "bin": "Bedroom"
+            },
+            {
+              "word": "rug",
+              "bin": "Living room"
+            },
+            {
+              "word": "table",
+              "bin": "Inside a ger"
+            }
+          ],
+          "note": "If four bins is too many for the mechanic, use three: Bedroom / Living room / Kitchen, and drop Inside a ger.",
+          "guidance": "In the ger text the stove, table, two beds and chairs are all inside one room, so Inside a ger legitimately shares items with other bins. Only the table is assigned there to avoid ambiguity."
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "There ___ a stove, a table and two beds in the ger.",
+              "options": [
+                "is",
+                "are",
+                "have",
+                "be"
+              ],
+              "answer": "is",
+              "why": "The first noun after There is a stove, which is singular."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "There ___ some chairs next to the table.",
+              "options": [
+                "are",
+                "is",
+                "have",
+                "has"
+              ],
+              "answer": "are",
+              "why": "Chairs is plural, so use are."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "A ger is a house ___ you can move.",
+              "options": [
+                "that",
+                "who",
+                "where",
+                "what"
+              ],
+              "answer": "that",
+              "why": "We use that for things, not who."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "These days, most people ___ in a house or an apartment.",
+              "options": [
+                "live",
+                "lives",
+                "living",
+                "is live"
+              ],
+              "answer": "live",
+              "why": "Most people is plural, so the verb has no -s."
+            }
+          ],
+          "whyChoices": [
+            "The first noun decides the verb",
+            "The noun is plural",
+            "That is for things, who is for people",
+            "Most people is plural"
+          ]
+        },
+        "V6": {
+          "prompt": "One word does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "furniture",
+                "sofa",
+                "chair",
+                "table"
+              ],
+              "answer": "furniture",
+              "why": "Furniture is uncountable. The others are countable things. Grammar matches, meaning does not."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "bed",
+                "dresser",
+                "mirror",
+                "stove"
+              ],
+              "answer": "stove",
+              "why": "The others are bedroom furniture."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "next to",
+                "behind",
+                "in front of",
+                "mirror"
+              ],
+              "answer": "mirror",
+              "why": "The others are prepositions. Mirror is a noun."
+            }
+          ],
+          "whyChoices": [
+            "It breaks the pattern only in meaning",
+            "It breaks the pattern only in grammar",
+            "It is in a different room",
+            "It is a longer word"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "a",
+                "p",
+                "a",
+                "r",
+                "t",
+                "m",
+                "e",
+                "n",
+                "t"
+              ],
+              "answer": "apartment",
+              "audio": "apartment"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "t",
+                "e",
+                "l",
+                "e",
+                "v",
+                "i",
+                "s",
+                "i",
+                "o",
+                "n"
+              ],
+              "answer": "television",
+              "audio": "television"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "b",
+                "o",
+                "o",
+                "k",
+                "c",
+                "a",
+                "s",
+                "e"
+              ],
+              "answer": "bookcase",
+              "audio": "bookcase"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Stereos.",
+              "options": [
+                "stereo",
+                "television",
+                "mirror",
+                "dresser"
+              ],
+              "answer": "stereo"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "A ger is a simple house ___ you can move.",
+              "options": [
+                "that",
+                "who",
+                "what",
+                "whose"
+              ],
+              "answer": "that",
+              "why": "That refers back to house."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for one home inside a tall building.",
+              "answer": "apartment",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "furniture",
+                "sofa",
+                "chair",
+                "table"
+              ],
+              "answer": "furniture",
+              "why": "Furniture is uncountable."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "ger",
+              "options": [
+                "ger",
+                "apartment",
+                "tent",
+                "house"
+              ],
+              "answer": "ger"
+            }
+          ],
+          "whyChoices": [
+            "I knew the word without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "There is / There are, and what comes first",
+            "lines": [
+              "There is a stove in the middle.",
+              "There are two beds next to the dressers.",
+              "There is a stove, a table and two beds.",
+              "There aren't any chairs in the kitchen."
+            ],
+            "rule": "The FIRST noun after There decides the verb. 'There is a stove, a table and two beds' is correct because the first noun is singular. Negatives: There isn't / There aren't."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is 'There is a stove, a table and two beds' correct?",
+              "options": [
+                "The first noun is singular",
+                "There is only one thing",
+                "Beds is uncountable",
+                "The sentence is a question"
+              ],
+              "answer": "The first noun is singular"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which is correct?",
+              "options": [
+                "There aren't any chairs.",
+                "There isn't any chairs.",
+                "There not any chairs.",
+                "There don't any chairs."
+              ],
+              "answer": "There aren't any chairs."
+            },
+            {
+              "id": "g1-3",
+              "q": "What does 'next to' mean?",
+              "options": [
+                "beside",
+                "under",
+                "in front of",
+                "on top of"
+              ],
+              "answer": "beside"
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the sentence that is WRONG.",
+              "options": [
+                "The stereo is next the dresser.",
+                "The stereo is next to the dresser.",
+                "The stereo is on the dresser.",
+                "The stereo is behind the dresser."
+              ],
+              "answer": "The stereo is next the dresser."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "The first noun decides the verb",
+            "A plural noun takes are",
+            "negatives use isn't / aren't",
+            "next to needs the word to"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "There ___ some chairs and a table in the kitchen.",
+              "options": [
+                "are",
+                "is",
+                "have",
+                "has"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "There ___ a table and some chairs in the kitchen.",
+              "options": [
+                "is",
+                "are",
+                "have",
+                "has"
+              ],
+              "answer": "is"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "There ___ any pictures on the wall.",
+              "options": [
+                "aren't",
+                "isn't",
+                "not",
+                "don't"
+              ],
+              "answer": "aren't"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Neither of the beds ___ next to the door.",
+              "options": [
+                "is",
+                "are",
+                "am",
+                "be"
+              ],
+              "answer": "is",
+              "why": "Neither of them is singular in careful English."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "The chair is ___ the bookcase and the window.",
+              "options": [
+                "between",
+                "next",
+                "behind of",
+                "in front"
+              ],
+              "answer": "between",
+              "why": "Between joins two things on either side."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "Everyone in my family ___ a favourite room.",
+              "options": [
+                "has",
+                "have",
+                "having",
+                "are have"
+              ],
+              "answer": "has",
+              "why": "Everyone is singular, so it takes has."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "There are a stove and a table in the middle.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "The first noun after There is a stove, which is singular."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "The stereo is next the dresser.",
+              "wrong": "next",
+              "correct": "next to",
+              "why": "next to needs the word to."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "There isn't any chairs in the kitchen.",
+              "wrong": "isn't",
+              "correct": "aren't",
+              "why": "Chairs is plural, so use aren't."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "Neither of the windows are open.",
+              "wrong": "are",
+              "correct": "is",
+              "why": "Neither of them is singular in careful English."
+            }
+          ],
+          "whyChoices": [
+            "The first noun decides the verb",
+            "next to needs the word to",
+            "A plural noun takes aren't",
+            "A singular subject hides in a plural-looking phrase"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, there are. There are some on the wall.",
+              "options": [
+                "Are there any pictures in the room?",
+                "Is there any pictures in the room?",
+                "Are there a pictures in the room?",
+                "Have there any pictures in the room?"
+              ],
+              "answer": "Are there any pictures in the room?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, there isn't. There is only a sofa.",
+              "options": [
+                "Is there a television in the living room?",
+                "Are there a television in the living room?",
+                "Is there any televisions in the living room?",
+                "Does there a television?"
+              ],
+              "answer": "Is there a television in the living room?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "It's between the bookcase and the window.",
+              "options": [
+                "Where is the chair?",
+                "Where are the chair?",
+                "Where is the chairs?",
+                "Where the chair is?"
+              ],
+              "answer": "Where is the chair?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "They're next to the dressers.",
+              "options": [
+                "Where are the beds?",
+                "Where is the beds?",
+                "Where are the bed?",
+                "Where the beds are?"
+              ],
+              "answer": "Where are the beds?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Make it negative.",
+              "from": "There are some chairs in the kitchen.",
+              "options": [
+                "There aren't any chairs in the kitchen.",
+                "There isn't any chairs in the kitchen.",
+                "There aren't some chairs in the kitchen.",
+                "There don't any chairs in the kitchen."
+              ],
+              "answer": "There aren't any chairs in the kitchen."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Make it negative.",
+              "from": "There is a mirror in my room.",
+              "options": [
+                "There isn't a mirror in my room.",
+                "There aren't a mirror in my room.",
+                "There isn't any mirrors in my room.",
+                "There not a mirror in my room."
+              ],
+              "answer": "There isn't a mirror in my room."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "The bed isn't next to the door. The dresser isn't next to the door.",
+              "options": [
+                "Neither the bed nor the dresser is next to the door.",
+                "Neither the bed nor the dresser are next to the door.",
+                "Neither the bed or the dresser is next to the door.",
+                "Neither the bed nor the dresser isn't next to the door."
+              ],
+              "answer": "Neither the bed nor the dresser is next to the door."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Change it so the first noun is plural.",
+              "from": "There is a bed in my room.",
+              "options": [
+                "There are some beds in my room.",
+                "There are a beds in my room.",
+                "There is some beds in my room.",
+                "There have some beds in my room."
+              ],
+              "answer": "There are some beds in my room."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "They can get their house ready in a few hours.",
+              "options": [
+                "a few hours",
+                "a few days",
+                "a few weeks",
+                "a few minutes"
+              ],
+              "answer": "a few hours"
+            },
+            {
+              "id": "l1-2",
+              "audio": "You can move it to another place, just like a tent.",
+              "options": [
+                "move it",
+                "sell it",
+                "rebuild it",
+                "paint it"
+              ],
+              "answer": "move it"
+            },
+            {
+              "id": "l1-3",
+              "audio": "Most people in Mongolia live in a house or an apartment.",
+              "options": [
+                "a house or an apartment",
+                "a ger or a tent",
+                "a school or a shop"
+              ],
+              "answer": "a house or an apartment"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact phrase",
+            "I heard a related phrase",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain why one family's house can move",
+                "To sell furniture",
+                "To describe a holiday"
+              ],
+              "answer": "To explain why one family's house can move"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Why do they need a house they can move?",
+              "options": [
+                "They move often",
+                "They have no furniture",
+                "They like camping"
+              ],
+              "answer": "They move often"
+            }
+          ],
+          "audio": "Naran's family lives in a ger, which is a round house made of cloth and wood. A ger is like a big tent: you can take it down and move it to another place. His family moves often because they look after animals, so they need a house they can carry. They can put it up again in a few hours.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "Inside the ger there is a stove in the middle, a table next to the stove and two beds next to the dressers. There are some chairs too. Everyone in the family eats at the table.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "Inside the ger there is a stove in the ___(1)___.",
+              "options": [
+                "middle",
+                "corner",
+                "door"
+              ],
+              "answer": "middle"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "There is a table next to the ___(2)___.",
+              "options": [
+                "stove",
+                "bed",
+                "door"
+              ],
+              "answer": "stove"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "There are two beds next to the ___(3)___.",
+              "options": [
+                "dressers",
+                "chairs",
+                "windows"
+              ],
+              "answer": "dressers"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "simple",
+              "options": [
+                "not complicated",
+                "very large",
+                "very old",
+                "made of wood"
+              ],
+              "answer": "not complicated"
+            },
+            {
+              "id": "r1-2",
+              "word": "these days",
+              "options": [
+                "now, in modern times",
+                "in the past",
+                "in the future",
+                "on Sundays"
+              ],
+              "answer": "now, in modern times"
+            },
+            {
+              "id": "r1-3",
+              "word": "still",
+              "options": [
+                "continues to happen",
+                "has stopped",
+                "has just begun",
+                "will happen later"
+              ],
+              "answer": "continues to happen"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Naran is from Mongolia. His family lives in a ger, which is a simple house made of cloth and wood. You can move it to another place, just like a tent. A ger is a big tent. Naran's family moves often, because they look after animals, so they can take their house with them. They can get their house ready in a few hours. Inside, their house has everything: there is a stove in the middle, a table next to it, two beds next to the dressers, and some chairs.",
+          "prompt": "Read the whole text, then tap the sentence that connects the house to the family's work.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that connects the house to the family's work.",
+              "answerType": "tapSentence",
+              "answer": "Naran's family moves often, because they look after animals, so they can take their house with them.",
+              "why": "The animals are the reason they must be able to move."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the text mainly about?",
+              "options": [
+                "A house designed for a moving life",
+                "A family's holiday",
+                "How to build a stove"
+              ],
+              "answer": "A house designed for a moving life"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Naran is from Mongolia. His family lives in a ger, which is a simple house made of cloth and wood. You can move it to another place, just like a tent. A ger is a big tent. Naran's family moves often, because they look after animals, so they can take their house with them. They can get their house ready in a few hours. Inside, their house has everything: there is a stove in the middle, a table next to it, two beds next to the dressers, and some chairs.",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What is a ger made of?",
+              "options": [
+                "Cloth and wood",
+                "Stone and glass",
+                "Metal and ice"
+              ],
+              "answer": "Cloth and wood"
+            },
+            {
+              "id": "r3-2",
+              "q": "Why does the family move often?",
+              "options": [
+                "They look after animals",
+                "They have no house",
+                "They do not like the city"
+              ],
+              "answer": "They look after animals"
+            },
+            {
+              "id": "r3-3",
+              "q": "What does 'their house has everything' tell us?",
+              "options": [
+                "It has all the rooms and things a home needs",
+                "It is very large",
+                "It is very new"
+              ],
+              "answer": "It has all the rooms and things a home needs"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Their house has everything. There is a stove in the middle. There is a table next to the stove, and the family eats there. There are two beds next to the dressers. There are some chairs, too. These days, most people in Mongolia live in a house or an apartment. But some people still live in a ger, and inside it looks much the same as it did a hundred years ago: everything the family needs is arranged in a circle around the stove.",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that shows the ger has not changed over time.",
+              "answer": "But some people still live in a ger, and inside it looks much the same as it did a hundred years ago: everything the family needs is arranged in a circle around the stove."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you where the family eats.",
+              "answer": "There is a table next to the stove, and the family eats there."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you what most people do now.",
+              "answer": "These days, most people in Mongolia live in a house or an apartment."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Neither",
+                "the",
+                "bed",
+                "nor",
+                "the",
+                "dresser",
+                "is",
+                "next",
+                "to",
+                "the",
+                "door"
+              ],
+              "answer": "Neither the bed nor the dresser is next to the door."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "There",
+                "is",
+                "a",
+                "stove",
+                "a",
+                "table",
+                "and",
+                "two",
+                "beds"
+              ],
+              "answer": "There is a stove, a table and two beds."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Are",
+                "there",
+                "any",
+                "pictures",
+                "on",
+                "the",
+                "wall"
+              ],
+              "answer": "Are there any pictures on the wall?"
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "There",
+                "aren't",
+                "any",
+                "chairs",
+                "in",
+                "the",
+                "kitchen"
+              ],
+              "answer": "There aren't any chairs in the kitchen."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "There are a stove and a table in the middle.",
+              "answer": "There is a stove and a table in the middle."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "There isn't any chairs in the kitchen.",
+              "answer": "There aren't any chairs in the kitchen."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Neither of the windows are open, and the chair is next the bookcase.",
+              "answer": "Neither of the windows is open, and the chair is next to the bookcase."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence description of your favourite room. Every requirement on the checklist must appear.",
+          "requirements": [
+            "name the room and one thing in it",
+            "one sentence with There are and two or more things",
+            "one sentence with next to or behind",
+            "one sentence with a negative (isn't or aren't)",
+            "one sentence saying why you like the room"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct There is / There are",
+            "One preposition of place",
+            "One negative sentence",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "There is a stove, a table and two beds.",
+              "keywords": [
+                "there",
+                "is",
+                "stove",
+                "table",
+                "beds"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Neither the bed nor the dresser is next to the door.",
+              "keywords": [
+                "neither",
+                "bed",
+                "dresser",
+                "door"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "There aren't any chairs in the kitchen.",
+              "keywords": [
+                "aren't",
+                "chairs",
+                "kitchen"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "The chair is between the bookcase and the window.",
+              "keywords": [
+                "chair",
+                "between",
+                "bookcase",
+                "window"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "next to the dressers",
+              "keywords": [
+                "next",
+                "to",
+                "dressers"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "between the bookcase and the window",
+              "keywords": [
+                "between",
+                "bookcase",
+                "window"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "there aren't any chairs",
+              "keywords": [
+                "aren't",
+                "any",
+                "chairs"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What is in your favourite room, and where?",
+              "keywords": [
+                "there",
+                "is",
+                "are",
+                "next",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Is there anything missing from your room that you would like?",
+              "keywords": [
+                "is",
+                "there",
+                "would",
+                "like"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Compare two rooms in your home. What is different?",
+              "keywords": [
+                "but",
+                "there",
+                "is",
+                "are"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Why might a family choose a house they can move?",
+              "keywords": [
+                "because",
+                "move",
+                "house"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the room for 45 seconds. Say where four things are and use one negative sentence.",
+          "image": "room-challenging",
+          "prompts": [
+            "Two things next to each other",
+            "One thing in an unexpected place",
+            "One thing that is missing",
+            "What you would change and why"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "there",
+            "is",
+            "are",
+            "isn't",
+            "next",
+            "behind"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the dialogue as both characters, with a different voice for each.",
+          "dialogueId": "whereIsTheStereo",
+          "lines": 8,
+          "keywords": [
+            "where",
+            "stereo",
+            "dresser",
+            "next",
+            "behind"
+          ],
+          "extra": "Then answer: how do they work out where the stereo is? Use the word next to in your answer."
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Is your home more like a house, an apartment or a ger? Explain.",
+              "keywords": [
+                "house",
+                "apartment",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Would you like to live in a house you could move? Why or why not?",
+              "keywords": [
+                "would",
+                "because",
+                "move"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "What does a home need to have? Give three things and say why.",
+              "keywords": [
+                "need",
+                "because",
+                "there"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: My Home. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "I live in a ___ with ___ people.",
+            "In my room there is ___ and there are ___.",
+            "My favourite room is ___ because ___.",
+            "One thing I would change is ___."
+          ],
+          "keywords": [
+            "there",
+            "is",
+            "are",
+            "because"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I used There is and There are correctly"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "ger",
+              "options": [
+                "ger",
+                "apartment",
+                "tent",
+                "house"
+              ],
+              "answer": "ger"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "There ___ a stove and two beds in the ger.",
+              "options": [
+                "is",
+                "are",
+                "have",
+                "be"
+              ],
+              "answer": "is"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "The stereo is next the dresser.",
+              "wrong": "next",
+              "correct": "next to"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "They can get their house ready in a few hours.",
+              "options": [
+                "a few hours",
+                "a few days",
+                "a few weeks",
+                "a few minutes"
+              ],
+              "answer": "a few hours"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "furniture",
+                "sofa",
+                "chair",
+                "table"
+              ],
+              "answer": "furniture",
+              "why": "Furniture is uncountable."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask a question with Are there any...? and answer it.",
+              "keywords": [
+                "are",
+                "there",
+                "any"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Open House. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "apartment",
+              "options": [
+                "apartment",
+                "ger",
+                "tent",
+                "house"
+              ],
+              "answer": "apartment"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "There ___ some chairs and a table in the ger.",
+              "options": [
+                "are",
+                "is",
+                "have",
+                "has"
+              ],
+              "answer": "are"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "There are a stove and a table in the middle, and there isn't any chairs.",
+              "wrong": "are",
+              "correct": "is"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "Naran's family lives in a ger. It is a round house made of cloth and wood, and you can move it like a tent. They move often because they look after animals. Inside there is a stove in the middle, a table next to it, and two beds next to the dressers.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker explaining?",
+                  "options": [
+                    "A house designed to move",
+                    "How to cook outside",
+                    "A school in the countryside"
+                  ],
+                  "answer": "A house designed to move"
+                },
+                {
+                  "pass": 2,
+                  "q": "What is in the middle of the ger?",
+                  "options": [
+                    "A stove",
+                    "A table",
+                    "A bed"
+                  ],
+                  "answer": "A stove"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that shows how a ger has stayed the same over time.",
+              "answer": "But some people still live in a ger, and inside it looks much the same as it did a hundred years ago: everything the family needs is arranged in a circle around the stove."
+            },
+            {
+              "id": "b-6",
+              "type": "grouping",
+              "bins": [
+                "Ger",
+                "House or apartment",
+                "Both"
+              ],
+              "items": [
+                {
+                  "word": "You can move it.",
+                  "bin": "Ger"
+                },
+                {
+                  "word": "Most people live in one now.",
+                  "bin": "House or apartment"
+                },
+                {
+                  "word": "It has a stove, beds and chairs.",
+                  "bin": "Both"
+                },
+                {
+                  "word": "It is like a big tent.",
+                  "bin": "Ger"
+                },
+                {
+                  "word": "The family eats at a table.",
+                  "bin": "Both"
+                }
+              ]
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for one home inside a tall building.",
+              "answer": "apartment",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: your home, two rooms and what is in them, where four things are, and which room you like best and why.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "there",
+                "is",
+                "are",
+                "next",
+                "because"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "whereIsTheStereo",
+    "title": "Where Is the Stereo?",
+    "cast": [
+      "Ana",
+      "Ben"
+    ],
+    "lines": [
+      {
+        "speaker": "Ana",
+        "text": "The new house is great, but where is the stereo?"
+      },
+      {
+        "speaker": "Ben",
+        "text": "It's on the dresser."
+      },
+      {
+        "speaker": "Ana",
+        "text": "No, that's the lamp."
+      },
+      {
+        "speaker": "Ben",
+        "text": "OK. Is it behind the sofa?"
+      },
+      {
+        "speaker": "Ana",
+        "text": "No, it isn't."
+      },
+      {
+        "speaker": "Ben",
+        "text": "Look behind the door!"
+      },
+      {
+        "speaker": "Ana",
+        "text": "There it is! And there are two speakers next to it."
+      },
+      {
+        "speaker": "Ben",
+        "text": "Great. Now let's find the chairs."
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "What are they looking for?",
+          "options": [
+            "The stereo",
+            "The chairs"
+          ],
+          "answer": "The stereo"
+        },
+        {
+          "q": "Where is the stereo?",
+          "options": [
+            "Behind the door",
+            "On the dresser"
+          ],
+          "answer": "Behind the door"
+        }
+      ],
+      "core": [
+        {
+          "q": "What are they looking for?",
+          "options": [
+            "The stereo",
+            "The lamp",
+            "The chairs"
+          ],
+          "answer": "The stereo"
+        },
+        {
+          "q": "Where is the stereo?",
+          "options": [
+            "Behind the door",
+            "On the dresser",
+            "Behind the sofa"
+          ],
+          "answer": "Behind the door"
+        },
+        {
+          "q": "What is on the dresser?",
+          "options": [
+            "A lamp",
+            "The stereo",
+            "A picture"
+          ],
+          "answer": "A lamp"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "Why does Ben say 'It's on the dresser' first?",
+          "options": [
+            "He is guessing",
+            "He can see it",
+            "He wants to move it"
+          ],
+          "answer": "He is guessing"
+        },
+        {
+          "q": "Which sentence shows there is more than one thing to find?",
+          "options": [
+            "And there are two speakers next to it.",
+            "It's on the dresser.",
+            "No, it isn't."
+          ],
+          "answer": "And there are two speakers next to it."
+        },
+        {
+          "q": "How does the story change at the end?",
+          "options": [
+            "They find it and need to look for something else",
+            "They give up",
+            "They buy a new one"
+          ],
+          "answer": "They find it and need to look for something else"
+        }
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station. This is the book's own phonics focus: s versus st.",
+    "contrast": [
+      "s",
+      "st"
+    ],
+    "anchorWords": [
+      {
+        "word": "sore",
+        "sound": "s"
+      },
+      {
+        "word": "store",
+        "sound": "st"
+      },
+      {
+        "word": "say",
+        "sound": "s"
+      },
+      {
+        "word": "stay",
+        "sound": "st"
+      },
+      {
+        "word": "stereo",
+        "sound": "st"
+      },
+      {
+        "word": "soccer ball",
+        "sound": "s"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "stove",
+        "sound": "st"
+      },
+      {
+        "word": "sofa",
+        "sound": "s"
+      },
+      {
+        "word": "stereo",
+        "sound": "st"
+      },
+      {
+        "word": "sink",
+        "sound": "s"
+      },
+      {
+        "word": "stay",
+        "sound": "st"
+      },
+      {
+        "word": "sore",
+        "sound": "s"
+      },
+      {
+        "word": "stone",
+        "sound": "st"
+      },
+      {
+        "word": "say",
+        "sound": "s"
+      }
+    ],
+    "note2": "The trap is that s and st sound almost identical to many learners, and the t is very short. Minimal pairs to say slowly: sore / store, say / stay, so / stove. If the learner says 'sofa' for 'stove', that is this contrast failing, not vocabulary."
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1-7: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "Accept there's / there is and there're / there are after normalisation.",
+      "Accept 'next to' with a soft final t; require 'next to' not 'next' at Challenging only.",
+      "The s vs st contrast is easily missed by the recogniser: if the transcript reads 'sofa' where 'stove' was expected, show both words side by side rather than failing the item."
+    ]
+  },
+  "reviewConnection": {
+    "note": "Unit 8 feeds a future Review 3 alongside Units 7 and 9. Units 1-3 and 4-6 reviews are captured in the Unit 3 and Unit 6 packs.",
+    "futureReview3Items": [
+      {
+        "a": "There are two beds.",
+        "b": "There is two beds.",
+        "answer": "are",
+        "unit": "8"
+      },
+      {
+        "a": "The stereo is next to the dresser.",
+        "b": "The stereo is next the dresser.",
+        "answer": "next to",
+        "unit": "8"
+      },
+      {
+        "a": "She goes camping in the summer.",
+        "b": "She go camping in the summer.",
+        "answer": "goes",
+        "unit": "7"
+      },
+      {
+        "a": "Is it foggy today?",
+        "b": "Are it foggy today?",
+        "answer": "is",
+        "unit": "6"
+      },
+      {
+        "a": "There aren't any chairs.",
+        "b": "There isn't any chairs.",
+        "answer": "aren't",
+        "unit": "8"
+      },
+      {
+        "a": "Neither of the windows is open.",
+        "b": "Neither of the windows are open.",
+        "answer": "is",
+        "unit": "8"
+      }
+    ]
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  },
+  "selfAssessment": {
+    "intro": "There are no right answers here. Be honest — it helps you.",
+    "skills": {
+      "vocabulary": {
+        "easy": "I can name some things in a room.",
+        "core": "I can name the furniture in different rooms.",
+        "challenging": "I can say what belongs in a room and why."
+      },
+      "grammar": {
+        "easy": "I can say what is in a room.",
+        "core": "I can use There is and There are correctly.",
+        "challenging": "I can use There is with a list and keep next to complete."
+      },
+      "listening": {
+        "easy": "I can hear a furniture word and find it.",
+        "core": "I can understand where things are in a room.",
+        "challenging": "I can follow a longer description and catch what is not there."
+      },
+      "reading": {
+        "easy": "I can read a short text about a house.",
+        "core": "I can find where things are in a text.",
+        "challenging": "I can understand why a house is designed the way it is."
+      },
+      "writing": {
+        "easy": "I can write one sentence with There is.",
+        "core": "I can fill a chart about a room.",
+        "challenging": "I can describe a room with a negative sentence."
+      },
+      "speaking": {
+        "easy": "I can say one thing in my room.",
+        "core": "I can describe my room and where things are.",
+        "challenging": "I can describe two rooms for a minute."
+      }
+    },
+    "hardestPrompt": "Which one was hardest today?",
+    "notePrompt": "One thing I want to get better at."
+  }
+}

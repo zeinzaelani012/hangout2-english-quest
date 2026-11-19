@@ -146,7 +146,9 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
             <p className="eyebrow mb-1">Course library</p>
             <h2 className="font-heading text-2xl font-extrabold text-ink">Choose a unit</h2>
           </div>
-          <p className="hidden text-sm text-muted sm:block">Two units available now</p>
+          <p className="hidden text-sm text-muted sm:block">
+            {units.filter(u => u.status === 'playable').length} of {units.length} units available now
+          </p>
         </div>
 
         <div className="grid auto-rows-fr grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

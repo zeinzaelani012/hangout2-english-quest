@@ -1,0 +1,5107 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit7",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "unit": 7,
+    "title": "The Four Seasons",
+    "islandName": "Four Seasons Island",
+    "bigQuestion": "What do you like to do in the summer?",
+    "objectives": [
+      "Seasonal activities",
+      "Asking about what time of year people usually do things"
+    ],
+    "sourcePages": "78-87 (adapted, not reproduced)",
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. Result: { id: slotId + '-' + level, skill, type, prompt, payload, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "totalUnitsPlanned": 9,
+    "answerKeyIncluded": true
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the activities"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which season?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "I, we, he, she"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "My favourite season"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the season"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Two voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "My year"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The Four Seasons Fair"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/7/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Season Wheel",
+      "subtitle": "Name it",
+      "xp": 25
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Year Clock",
+      "subtitle": "in the spring",
+      "xp": 15
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Garden Window",
+      "subtitle": "Listen and choose",
+      "xp": 10
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "Postcards from Brian",
+      "subtitle": "Read and find",
+      "xp": 15
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Season Diary",
+      "subtitle": "Write it down",
+      "xp": 10
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Garden Gate",
+      "subtitle": "Say it out loud",
+      "xp": 25
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The Four Seasons Fair",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 7,
+    "title": "The Four Seasons",
+    "islandName": "Four Seasons Island",
+    "bigQuestion": "What do you like to do in the summer?",
+    "objectives": [
+      "Seasonal activities",
+      "Asking about what time of year people usually do things"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "Written at v2.0 first time. 30 slots + 2 checkpoints."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "make a snowman",
+      "set": "A",
+      "category": "winter",
+      "example": "I make a snowman in the winter.",
+      "imgHint": "two children building a snowman with a carrot nose"
+    },
+    {
+      "id": "v02",
+      "word": "go sledding",
+      "set": "A",
+      "category": "winter",
+      "example": "We go sledding in the winter.",
+      "imgHint": "a child sliding down a snowy hill on a red sled"
+    },
+    {
+      "id": "v03",
+      "word": "play baseball",
+      "set": "A",
+      "category": "spring",
+      "example": "We play baseball in the spring.",
+      "imgHint": "a child with a bat and a ball on a green field"
+    },
+    {
+      "id": "v04",
+      "word": "plant flowers",
+      "set": "A",
+      "category": "spring",
+      "example": "Mom plants flowers in the spring.",
+      "imgHint": "hands putting a small plant into soil with a watering can"
+    },
+    {
+      "id": "v05",
+      "word": "go to the beach",
+      "set": "A",
+      "category": "summer",
+      "example": "We go to the beach in the summer.",
+      "imgHint": "a beach umbrella, towel and sea"
+    },
+    {
+      "id": "v06",
+      "word": "make a sandcastle",
+      "set": "A",
+      "category": "summer",
+      "example": "She makes a sandcastle in the summer.",
+      "imgHint": "a girl building a sandcastle with a bucket and spade"
+    },
+    {
+      "id": "v07",
+      "word": "pick apples",
+      "set": "A",
+      "category": "fall",
+      "example": "We pick apples in the fall.",
+      "imgHint": "a child reaching up to red apples on a tree"
+    },
+    {
+      "id": "v08",
+      "word": "start school",
+      "set": "A",
+      "category": "fall",
+      "example": "We start school in the fall.",
+      "imgHint": "children with backpacks climbing onto a yellow school bus"
+    },
+    {
+      "id": "v09",
+      "word": "throw snowballs",
+      "set": "B",
+      "category": "winter",
+      "example": "We throw snowballs in the winter.",
+      "imgHint": "two children throwing snowballs in a snowy garden"
+    },
+    {
+      "id": "v10",
+      "word": "go skating",
+      "set": "B",
+      "category": "winter",
+      "example": "Do you go skating in the winter?",
+      "imgHint": "ice skates on a frozen pond"
+    },
+    {
+      "id": "v11",
+      "word": "clean the house",
+      "set": "B",
+      "category": "spring",
+      "example": "We clean the house in the spring.",
+      "imgHint": "a person with a broom and a bucket of soapy water"
+    },
+    {
+      "id": "v12",
+      "word": "go for a walk",
+      "set": "B",
+      "category": "spring",
+      "example": "We go for a walk in the park.",
+      "imgHint": "two people walking on a path under trees"
+    },
+    {
+      "id": "v13",
+      "word": "play tennis",
+      "set": "B",
+      "category": "summer",
+      "example": "They play tennis in the summer.",
+      "imgHint": "a tennis racket and a ball on a court"
+    },
+    {
+      "id": "v14",
+      "word": "eat ice cream",
+      "set": "B",
+      "category": "summer",
+      "example": "We eat ice cream when it is hot.",
+      "imgHint": "a cone with two scoops of ice cream"
+    },
+    {
+      "id": "v15",
+      "word": "rake leaves",
+      "set": "B",
+      "category": "fall",
+      "example": "Do you rake leaves in the fall?",
+      "imgHint": "a rake and a pile of orange leaves"
+    },
+    {
+      "id": "v16",
+      "word": "go camping",
+      "set": "B",
+      "category": "summer",
+      "example": "We go camping in the summer.",
+      "imgHint": "an orange tent in a forest clearing"
+    },
+    {
+      "id": "v17",
+      "word": "season",
+      "set": "C",
+      "category": "concept",
+      "example": "Winter is my favourite season.",
+      "imgHint": "a circle split into four coloured quarters"
+    },
+    {
+      "id": "v18",
+      "word": "hiking",
+      "set": "C",
+      "category": "activity",
+      "example": "Summer is a good time to go hiking.",
+      "imgHint": "a person with a backpack walking up a mountain path"
+    },
+    {
+      "id": "v19",
+      "word": "leaves",
+      "set": "C",
+      "category": "nature",
+      "example": "The leaves change color in the fall.",
+      "imgHint": "three leaves in green, orange and red"
+    },
+    {
+      "id": "v20",
+      "word": "cherry blossoms",
+      "set": "C",
+      "category": "nature",
+      "example": "There are cherry blossoms in Washington, DC, in the spring.",
+      "imgHint": "pink blossom flowers on a bare branch"
+    },
+    {
+      "id": "v21",
+      "word": "north",
+      "set": "C",
+      "category": "place",
+      "example": "Alaska is in the north.",
+      "imgHint": "a compass needle pointing up to an N"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the activity word.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "make a snowman",
+              "options": [
+                "make a snowman",
+                "go sledding",
+                "pick apples"
+              ],
+              "answer": "make a snowman",
+              "why": "You roll snow into balls and build a snowman."
+            },
+            {
+              "id": "v1-2",
+              "img": "go sledding",
+              "options": [
+                "go sledding",
+                "go skating",
+                "play baseball"
+              ],
+              "answer": "go sledding",
+              "why": "You sit on a sled and go down a hill."
+            },
+            {
+              "id": "v1-3",
+              "img": "make a sandcastle",
+              "options": [
+                "make a sandcastle",
+                "go to the beach",
+                "plant flowers"
+              ],
+              "answer": "make a sandcastle",
+              "why": "You build a sandcastle with a bucket."
+            },
+            {
+              "id": "v1-4",
+              "img": "pick apples",
+              "options": [
+                "pick apples",
+                "eat ice cream",
+                "start school"
+              ],
+              "answer": "pick apples",
+              "why": "You take apples from a tree with your hands."
+            }
+          ],
+          "whyChoices": [
+            "This activity matches the picture",
+            "The words are short",
+            "I like this activity"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the activity. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "play baseball",
+              "options": [
+                "play baseball",
+                "throw snowballs",
+                "play tennis"
+              ],
+              "answer": "play baseball",
+              "why": "You use a bat to play baseball."
+            },
+            {
+              "id": "v2-2",
+              "word": "plant flowers",
+              "options": [
+                "plant flowers",
+                "clean the house",
+                "rake leaves"
+              ],
+              "answer": "plant flowers",
+              "why": "You put small plants in the ground."
+            },
+            {
+              "id": "v2-3",
+              "word": "go to the beach",
+              "options": [
+                "go to the beach",
+                "go camping",
+                "go for a walk"
+              ],
+              "answer": "go to the beach",
+              "why": "A beach has sand, sea and an umbrella."
+            },
+            {
+              "id": "v2-4",
+              "word": "start school",
+              "options": [
+                "start school",
+                "go sledding",
+                "eat ice cream"
+              ],
+              "answer": "start school",
+              "why": "You carry a backpack and get on the school bus."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this activity",
+            "It is a winter activity",
+            "I do this every year"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the activity you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Make a snowman.",
+              "options": [
+                "make a snowman",
+                "throw snowballs",
+                "go skating"
+              ],
+              "answer": "make a snowman"
+            },
+            {
+              "id": "v3-2",
+              "audio": "We pick apples in the fall.",
+              "options": [
+                "pick apples",
+                "rake leaves",
+                "start school"
+              ],
+              "answer": "pick apples"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Go to the beach.",
+              "options": [
+                "go to the beach",
+                "go camping",
+                "play tennis"
+              ],
+              "answer": "go to the beach"
+            }
+          ],
+          "whyChoices": [
+            "I heard that activity clearly",
+            "It sounded like another activity",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each activity in the right season.",
+          "bins": [
+            "Winter",
+            "Summer"
+          ],
+          "items": [
+            {
+              "word": "make a snowman",
+              "bin": "Winter",
+              "why": "You need snow to make a snowman."
+            },
+            {
+              "word": "go to the beach",
+              "bin": "Summer",
+              "why": "The beach is a summer place."
+            },
+            {
+              "word": "go sledding",
+              "bin": "Winter",
+              "why": "A sled needs snow."
+            },
+            {
+              "word": "make a sandcastle",
+              "bin": "Summer",
+              "why": "You need warm sand and water."
+            },
+            {
+              "word": "throw snowballs",
+              "bin": "Winter",
+              "why": "Snowballs need snow."
+            },
+            {
+              "word": "eat ice cream",
+              "bin": "Summer",
+              "why": "Ice cream is best when it is hot."
+            },
+            {
+              "word": "go skating",
+              "bin": "Winter",
+              "why": "You need ice to skate."
+            },
+            {
+              "word": "play tennis",
+              "bin": "Summer",
+              "why": "People play tennis on warm days."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the activity that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "We pick ___ in the fall.",
+              "options": [
+                "apples",
+                "flowers",
+                "snowballs"
+              ],
+              "answer": "apples",
+              "why": "Apples are ready in the fall."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "I make a ___ in the winter.",
+              "options": [
+                "snowman",
+                "sandcastle",
+                "beach"
+              ],
+              "answer": "snowman",
+              "why": "A snowman needs snow."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "We go to the ___ in the summer.",
+              "options": [
+                "beach",
+                "school",
+                "snow"
+              ],
+              "answer": "beach",
+              "why": "You go to the beach when it is hot."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "We ___ school in the fall.",
+              "options": [
+                "start",
+                "make",
+                "pick"
+              ],
+              "answer": "start",
+              "why": "You start school after the summer."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three activities go together. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "make a snowman",
+                "go sledding",
+                "throw snowballs",
+                "go to the beach"
+              ],
+              "answer": "go to the beach",
+              "why": "The others are winter activities."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "go to the beach",
+                "make a sandcastle",
+                "eat ice cream",
+                "make a snowman"
+              ],
+              "answer": "make a snowman",
+              "why": "The others are summer activities."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "pick apples",
+                "rake leaves",
+                "start school",
+                "plant flowers"
+              ],
+              "answer": "plant flowers",
+              "why": "The others are fall activities. You plant flowers in the spring."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to another season",
+            "It is the longest activity",
+            "I do not like it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "n",
+                "o",
+                "w"
+              ],
+              "answer": "snow",
+              "audio": "snow"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "b",
+                "e",
+                "a",
+                "c",
+                "h"
+              ],
+              "answer": "beach",
+              "audio": "beach"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "a",
+                "p",
+                "p",
+                "l",
+                "e"
+              ],
+              "answer": "apple",
+              "audio": "apple"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the season activities. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Rake leaves.",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "plant flowers"
+              ],
+              "answer": "rake leaves"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "It's snowy. Let's ___ in the park.",
+              "options": [
+                "go sledding",
+                "go to the beach",
+                "eat ice cream"
+              ],
+              "answer": "go sledding"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the word: sand, sea and a sun umbrella.",
+              "img": "beach",
+              "answer": "beach",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "make a snowman",
+                "go skating",
+                "throw snowballs",
+                "plant flowers"
+              ],
+              "answer": "plant flowers",
+              "why": "The others are winter activities."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "play baseball",
+              "options": [
+                "play baseball",
+                "play tennis",
+                "go camping"
+              ],
+              "answer": "play baseball"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this activity",
+            "This activity was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these three sentences. What do they all have in common?",
+          "teachCard": {
+            "title": "verb + in the + season",
+            "lines": [
+              "I make a snowman in the winter.",
+              "We pick apples in the fall.",
+              "He / She makes a sandcastle in the summer."
+            ],
+            "rule": "We say in the winter, in the spring, in the summer, in the fall. He, she and it add -s: makes, plays, plants."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "I make a snowman in the winter.",
+              "q": "Which word tells you the season?",
+              "options": [
+                "winter",
+                "make",
+                "snowman"
+              ],
+              "answer": "winter"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "He makes a sandcastle in the summer.",
+              "q": "What is different about this sentence?",
+              "options": [
+                "It has -s on make",
+                "It has no verb",
+                "It is a question"
+              ],
+              "answer": "It has -s on make"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which sentence is correct?",
+              "options": [
+                "I play baseball in the spring.",
+                "I plays baseball in the spring.",
+                "I play baseball on the spring."
+              ],
+              "answer": "I play baseball in the spring."
+            },
+            {
+              "id": "g1-4",
+              "q": "Which word comes before a season?",
+              "options": [
+                "in",
+                "on",
+                "at"
+              ],
+              "answer": "in"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "He, she and it add -s",
+            "I and we do not add -s",
+            "We say in the + season",
+            "Do and does build questions"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "I ___ a snowman in the winter.",
+              "options": [
+                "make",
+                "makes"
+              ],
+              "answer": "make",
+              "why": "I takes make."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "She ___ a sandcastle in the summer.",
+              "options": [
+                "make",
+                "makes"
+              ],
+              "answer": "makes",
+              "why": "She takes makes."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "We ___ apples in the fall.",
+              "options": [
+                "pick",
+                "picks"
+              ],
+              "answer": "pick",
+              "why": "We takes pick."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "He ___ baseball in the spring.",
+              "options": [
+                "play",
+                "plays"
+              ],
+              "answer": "plays",
+              "why": "He takes plays."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "We go to the beach ___ the summer.",
+              "options": [
+                "in",
+                "on"
+              ],
+              "answer": "in",
+              "why": "We say in the summer."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "___ you go sledding in the winter?",
+              "options": [
+                "Do",
+                "Does"
+              ],
+              "answer": "Do",
+              "why": "You takes Do."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "She make a sandcastle in the summer.",
+              "wrong": "make",
+              "correct": "makes",
+              "why": "She takes makes."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "I makes a snowman in the winter.",
+              "wrong": "makes",
+              "correct": "make",
+              "why": "I never takes -s."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "We pick apples on the fall.",
+              "wrong": "on",
+              "correct": "in",
+              "why": "We say in the fall."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "He play tennis in the summer.",
+              "wrong": "play",
+              "correct": "plays",
+              "why": "He takes plays."
+            }
+          ],
+          "whyChoices": [
+            "The subject is he, she or it",
+            "The subject is I",
+            "We say in, not on",
+            "The subject is he"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "I go sledding in the winter.",
+              "options": [
+                "What do you do in the winter?",
+                "What does you do in the winter?"
+              ],
+              "answer": "What do you do in the winter?",
+              "why": "You takes do."
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "Yes, I do.",
+              "options": [
+                "Do you rake leaves in the fall?",
+                "Does you rake leaves in the fall?"
+              ],
+              "answer": "Do you rake leaves in the fall?",
+              "why": "You takes Do."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, she does.",
+              "options": [
+                "Do she go skating in the winter?",
+                "Does she go skating in the winter?"
+              ],
+              "answer": "Does she go skating in the winter?",
+              "why": "She takes Does."
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "He plants flowers in the spring.",
+              "options": [
+                "What does he do in the spring?",
+                "What do he do in the spring?"
+              ],
+              "answer": "What does he do in the spring?",
+              "why": "He takes does."
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. I becomes he.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "I make a snowman in the winter.",
+              "options": [
+                "He makes a snowman in the winter.",
+                "He make a snowman in the winter."
+              ],
+              "answer": "He makes a snowman in the winter.",
+              "why": "He adds -s to make."
+            },
+            {
+              "id": "g5-2",
+              "from": "I play baseball in the spring.",
+              "options": [
+                "She plays baseball in the spring.",
+                "She play baseball in the spring."
+              ],
+              "answer": "She plays baseball in the spring.",
+              "why": "She adds -s to play."
+            },
+            {
+              "id": "g5-3",
+              "from": "I pick apples in the fall.",
+              "options": [
+                "He picks apples in the fall.",
+                "He pick apples in the fall."
+              ],
+              "answer": "He picks apples in the fall.",
+              "why": "He adds -s to pick."
+            },
+            {
+              "id": "g5-4",
+              "from": "I make a sandcastle in the summer.",
+              "options": [
+                "She makes a sandcastle in the summer.",
+                "She make a sandcastle in the summer."
+              ],
+              "answer": "She makes a sandcastle in the summer.",
+              "why": "She adds -s to make."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "We make a snowman in the winter.",
+              "options": [
+                "make a snowman",
+                "go sledding",
+                "throw snowballs"
+              ],
+              "answer": "make a snowman"
+            },
+            {
+              "id": "l1-2",
+              "audio": "She plays baseball in the spring.",
+              "options": [
+                "play baseball",
+                "play tennis",
+                "go for a walk"
+              ],
+              "answer": "play baseball"
+            },
+            {
+              "id": "l1-3",
+              "audio": "They go to the beach in the summer.",
+              "options": [
+                "go to the beach",
+                "go camping",
+                "make a sandcastle"
+              ],
+              "answer": "go to the beach"
+            }
+          ],
+          "whyChoices": [
+            "I heard the activity words",
+            "I heard only the season",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "What she does in different seasons",
+                "Her school bag"
+              ],
+              "answer": "What she does in different seasons"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What does she do in the winter?",
+              "options": [
+                "Go skating",
+                "Play tennis"
+              ],
+              "answer": "Go skating"
+            }
+          ],
+          "audio": "Hi, I'm Mia. In the summer I go to the beach with my family. In the fall I pick apples. In the winter I go skating with my sister.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "In the spring we plant flowers. In the summer we go to the beach. In the fall we start school.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "In the spring we ___(1)___ flowers.",
+              "options": [
+                "plant",
+                "pick"
+              ],
+              "answer": "plant"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "In the summer we go to the ___(2)___.",
+              "options": [
+                "beach",
+                "park"
+              ],
+              "answer": "beach"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "In the fall we ___(3)___ school.",
+              "options": [
+                "start",
+                "end"
+              ],
+              "answer": "start"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the letter. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "favorite",
+              "options": [
+                "the one you like best",
+                "the one you hate"
+              ],
+              "answer": "the one you like best"
+            },
+            {
+              "id": "r1-2",
+              "word": "always",
+              "options": [
+                "every time",
+                "only once"
+              ],
+              "answer": "every time"
+            },
+            {
+              "id": "r1-3",
+              "word": "garden",
+              "options": [
+                "a place where plants grow",
+                "a place where you sleep"
+              ],
+              "answer": "a place where plants grow"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Dear David, It's spring! This is my favorite season. I play soccer with my friends every day. On Sundays we also play baseball. I like to be outside a lot. My mom always plants flowers in the spring. Our garden looks nice. Winter is fun, too. My family and I go skiing a lot. We also go sledding in the park. Of course, Emma, Alex and I also make a snowman when it snows. It's so much fun. What's your favorite season? Best wishes, Brian",
+          "prompt": "Read the letter. Then tap the sentence that asks the reader a question.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that asks the reader a question.",
+              "answerType": "tapSentence",
+              "answer": "What's your favorite season?",
+              "why": "It asks David to write back with an answer."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is Brian's favourite season?",
+              "options": [
+                "Spring",
+                "Winter"
+              ],
+              "answer": "Spring"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Dear David, It's spring! This is my favorite season. I play soccer with my friends every day. On Sundays we also play baseball. I like to be outside a lot. My mom always plants flowers in the spring. Our garden looks nice. Winter is fun, too. My family and I go skiing a lot. We also go sledding in the park. Of course, Emma, Alex and I also make a snowman when it snows. It's so much fun. What's your favorite season? Best wishes, Brian",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What do they do on Sundays in the spring?",
+              "options": [
+                "Play baseball",
+                "Play soccer",
+                "Plant flowers"
+              ],
+              "answer": "Play baseball"
+            },
+            {
+              "id": "r3-2",
+              "q": "What does Brian's mom do in the spring?",
+              "options": [
+                "Plants flowers",
+                "Picks apples",
+                "Rakes leaves"
+              ],
+              "answer": "Plants flowers"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you what they do in the park.",
+              "answerType": "tapSentence",
+              "answer": "We also go sledding in the park.",
+              "why": "That sentence names the park."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "A place for every season. The United States is a very large country. The weather depends on the season. Alaska is in the north. It's very cold in Alaska in the winter. But in the summer, it's nice and warm. It's a good time to go hiking. The Sonoran Desert is in the south. It's very hot in the winter. People can still play tennis there. It almost never snows.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you where Alaska is.",
+              "answer": "Alaska is in the north."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you what you can do in Alaska in the summer.",
+              "answer": "It's a good time to go hiking."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you about snow in the desert.",
+              "answer": "It almost never snows."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "I",
+                "make",
+                "a",
+                "snowman",
+                "in",
+                "the",
+                "winter"
+              ],
+              "answer": "I make a snowman in the winter."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "We",
+                "pick",
+                "apples",
+                "in",
+                "the",
+                "fall"
+              ],
+              "answer": "We pick apples in the fall."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "She",
+                "makes",
+                "a",
+                "sandcastle",
+                "in",
+                "the",
+                "summer"
+              ],
+              "answer": "She makes a sandcastle in the summer."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Do",
+                "you",
+                "go",
+                "sledding",
+                "in",
+                "the",
+                "winter"
+              ],
+              "answer": "Do you go sledding in the winter?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "She make a sandcastle in the summer.",
+              "answer": "She makes a sandcastle in the summer."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "I makes a snowman in the winter.",
+              "answer": "I make a snowman in the winter."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "We pick apples on the fall.",
+              "answer": "We pick apples in the fall."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "What is your favourite season? Write four activities people do in your country in that season.",
+          "chooseSeason": [
+            "winter",
+            "spring",
+            "summer",
+            "fall"
+          ],
+          "chart": {
+            "rows": 4,
+            "columnA": "Season",
+            "columnB": "Activity"
+          },
+          "starters": [
+            "My favourite season is ___.",
+            "In the ___, we ___.",
+            "People in my country ___."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "in the + season is correct"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "I make a snowman in the winter.",
+              "keywords": [
+                "make",
+                "snowman",
+                "winter"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "We pick apples in the fall.",
+              "keywords": [
+                "pick",
+                "apples",
+                "fall"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "She makes a sandcastle in the summer.",
+              "keywords": [
+                "makes",
+                "sandcastle",
+                "summer"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "What do you do in the summer?",
+              "keywords": [
+                "what",
+                "do",
+                "you",
+                "summer"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "in the winter",
+              "keywords": [
+                "in",
+                "winter"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "in the fall",
+              "keywords": [
+                "in",
+                "fall"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "make a snowman",
+              "keywords": [
+                "make",
+                "snowman"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What do you do in the summer?",
+              "keywords": [
+                "in the summer",
+                "go",
+                "play"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Do you go sledding in the winter?",
+              "keywords": [
+                "yes",
+                "no",
+                "do",
+                "don't"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What does your friend do in the spring?",
+              "keywords": [
+                "does",
+                "plays",
+                "plants"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "What is your favourite season?",
+              "keywords": [
+                "favourite",
+                "season"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the picture. Say what season it is and what the children are doing.",
+          "image": "seasons-easy",
+          "prompts": [
+            "What season it is",
+            "What one child is doing",
+            "What you do in this season"
+          ],
+          "keywords": [
+            "in the",
+            "playing",
+            "making"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with two voices. First you are Ana, then Lina.",
+          "dialogueId": "snowballTennis",
+          "lines": 4,
+          "keywords": [
+            "bored",
+            "tennis",
+            "winter",
+            "snowball"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What do you do in the summer?",
+              "keywords": [
+                "summer",
+                "go",
+                "play"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What do you do in the winter?",
+              "keywords": [
+                "winter",
+                "go",
+                "make"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "What is your favourite season, and why?",
+              "keywords": [
+                "favourite",
+                "season",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about your year. Say one thing for each season.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "In the summer I ___.",
+            "In the fall I ___.",
+            "In the winter I ___.",
+            "In the spring I ___."
+          ],
+          "keywords": [
+            "in the",
+            "summer",
+            "winter"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "go sledding",
+              "options": [
+                "go sledding",
+                "go skating",
+                "play baseball"
+              ],
+              "answer": "go sledding"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "She ___ a sandcastle in the summer.",
+              "options": [
+                "make",
+                "makes"
+              ],
+              "answer": "makes"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "I makes a snowman in the winter.",
+              "wrong": "makes",
+              "correct": "make"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Rake leaves.",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "plant flowers"
+              ],
+              "answer": "rake leaves"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "go to the beach",
+                "make a snowman"
+              ],
+              "bins": [
+                "Summer",
+                "Winter"
+              ],
+              "answers": {
+                "go to the beach": "Summer",
+                "make a snowman": "Winter"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about what you do in the summer.",
+              "keywords": [
+                "summer",
+                "in the"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Four Seasons Fair. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "pick apples",
+              "options": [
+                "pick apples",
+                "rake leaves",
+                "plant flowers"
+              ],
+              "answer": "pick apples"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "He ___ baseball in the spring.",
+              "options": [
+                "play",
+                "plays"
+              ],
+              "answer": "plays"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "We pick apples on the fall.",
+              "wrong": "on",
+              "correct": "in"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "In the summer I go to the beach. In the winter I go skating. In the fall I pick apples.",
+              "q": "What does the speaker do in the fall?",
+              "options": [
+                "Pick apples",
+                "Go to the beach",
+                "Go skating"
+              ],
+              "answer": "Pick apples"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the letter, tap the sentence that tells you what they do on Sundays.",
+              "answer": "On Sundays we also play baseball."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "What",
+                "does",
+                "she",
+                "do",
+                "in",
+                "the",
+                "spring"
+              ],
+              "answer": "What does she do in the spring?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the season that comes after summer.",
+              "answer": "fall",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: one about summer and one about winter.",
+              "keywords": [
+                "summer",
+                "winter",
+                "in the"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the activity that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "throw snowballs",
+              "options": [
+                "throw snowballs",
+                "make a snowman",
+                "go skating",
+                "play tennis"
+              ],
+              "answer": "throw snowballs",
+              "why": "You throw snowballs at each other. A snowman is built, not thrown."
+            },
+            {
+              "id": "v1-2",
+              "img": "clean the house",
+              "options": [
+                "clean the house",
+                "plant flowers",
+                "go for a walk",
+                "rake leaves"
+              ],
+              "answer": "clean the house",
+              "why": "A broom and a bucket of water mean cleaning."
+            },
+            {
+              "id": "v1-3",
+              "img": "go camping",
+              "options": [
+                "go camping",
+                "go for a walk",
+                "go to the beach",
+                "start school"
+              ],
+              "answer": "go camping",
+              "why": "A tent in a forest means camping."
+            },
+            {
+              "id": "v1-4",
+              "img": "cherry blossoms",
+              "options": [
+                "cherry blossoms",
+                "leaves",
+                "flowers",
+                "apples"
+              ],
+              "answer": "cherry blossoms",
+              "why": "Blossoms are flowers on the tree, before any fruit."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact activity",
+            "It is the same season as the picture",
+            "It starts with the same letter",
+            "It is something you eat"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the activity. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "go skating",
+              "options": [
+                "go skating",
+                "go sledding",
+                "go for a walk",
+                "go camping"
+              ],
+              "answer": "go skating",
+              "why": "Skates are boots with blades for ice."
+            },
+            {
+              "id": "v2-2",
+              "word": "rake leaves",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "plant flowers",
+                "clean the house"
+              ],
+              "answer": "rake leaves",
+              "why": "A rake pulls leaves into a pile."
+            },
+            {
+              "id": "v2-3",
+              "word": "play tennis",
+              "options": [
+                "play tennis",
+                "play baseball",
+                "throw snowballs",
+                "go camping"
+              ],
+              "answer": "play tennis",
+              "why": "Tennis uses a racket and a small ball."
+            },
+            {
+              "id": "v2-4",
+              "word": "start school",
+              "options": [
+                "start school",
+                "go for a walk",
+                "eat ice cream",
+                "make a snowman"
+              ],
+              "answer": "start school",
+              "why": "Backpacks and a school bus mean starting school."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It is a winter activity",
+            "It is a summer activity",
+            "It is a fall activity"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the activity you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Do you rake leaves in the fall?",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "plant flowers",
+                "clean the house"
+              ],
+              "answer": "rake leaves"
+            },
+            {
+              "id": "v3-2",
+              "audio": "They go camping in the summer.",
+              "options": [
+                "go camping",
+                "go to the beach",
+                "go for a walk",
+                "play tennis"
+              ],
+              "answer": "go camping"
+            },
+            {
+              "id": "v3-3",
+              "audio": "We eat ice cream when it is hot.",
+              "options": [
+                "eat ice cream",
+                "play baseball",
+                "make a sandcastle",
+                "go skating"
+              ],
+              "answer": "eat ice cream"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole activity",
+            "I heard a similar activity",
+            "I used the season to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort the activities into the right seasons.",
+          "bins": [
+            "Winter",
+            "Summer"
+          ],
+          "items": [
+            {
+              "word": "throw snowballs",
+              "bin": "Winter"
+            },
+            {
+              "word": "go to the beach",
+              "bin": "Summer"
+            },
+            {
+              "word": "go skating",
+              "bin": "Winter"
+            },
+            {
+              "word": "make a sandcastle",
+              "bin": "Summer"
+            },
+            {
+              "word": "make a snowman",
+              "bin": "Winter"
+            },
+            {
+              "word": "eat ice cream",
+              "bin": "Summer"
+            },
+            {
+              "word": "go sledding",
+              "bin": "Winter"
+            },
+            {
+              "word": "play tennis",
+              "bin": "Summer"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the activity that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "In the spring, my mom always ___ flowers.",
+              "options": [
+                "plants",
+                "rakes",
+                "throws",
+                "eats"
+              ],
+              "answer": "plants",
+              "why": "The letter says his mom always plants flowers in the spring."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "When it snows, the children ___ a snowman.",
+              "options": [
+                "make",
+                "rake",
+                "clean",
+                "start"
+              ],
+              "answer": "make",
+              "why": "You make a snowman from snow."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "In the fall, the leaves change ___.",
+              "options": [
+                "color",
+                "house",
+                "school",
+                "tennis"
+              ],
+              "answer": "color",
+              "why": "The text says the leaves change color in the fall."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "Summer is a good time to go ___.",
+              "options": [
+                "hiking",
+                "sledding",
+                "skating",
+                "school"
+              ],
+              "answer": "hiking",
+              "why": "The text says summer is a good time to go hiking in Alaska."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It sounds like another word",
+            "It is the longest option"
+          ]
+        },
+        "V6": {
+          "prompt": "Three activities belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "make a snowman",
+                "go sledding",
+                "go skating",
+                "play tennis"
+              ],
+              "answer": "play tennis",
+              "why": "The others need snow or ice. You can play tennis on a warm day."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "go to the beach",
+                "make a sandcastle",
+                "eat ice cream",
+                "rake leaves"
+              ],
+              "answer": "rake leaves",
+              "why": "The others are summer activities. Leaves fall in the fall."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "pick apples",
+                "rake leaves",
+                "start school",
+                "plant flowers"
+              ],
+              "answer": "plant flowers",
+              "why": "The others are fall activities. Flowers are planted in spring."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to another season",
+            "It is uncountable",
+            "It is a longer phrase",
+            "It is an activity indoors"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "s",
+                "l",
+                "e",
+                "d",
+                "d",
+                "i",
+                "n",
+                "g"
+              ],
+              "answer": "sledding",
+              "audio": "sledding"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "s",
+                "e",
+                "a",
+                "s",
+                "o",
+                "n"
+              ],
+              "answer": "season",
+              "audio": "season"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "c",
+                "a",
+                "m",
+                "p",
+                "i",
+                "n",
+                "g"
+              ],
+              "answer": "camping",
+              "audio": "camping"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Go skating.",
+              "options": [
+                "go skating",
+                "go sledding",
+                "go camping",
+                "play tennis"
+              ],
+              "answer": "go skating"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "The Sonoran Desert is very hot in the ___.",
+              "options": [
+                "winter",
+                "summer",
+                "spring",
+                "fall"
+              ],
+              "answer": "winter",
+              "why": "The text says it is very hot there in the winter."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for the white things that fall from the sky.",
+              "img": "snow",
+              "answer": "snow",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "go to the beach",
+                "make a sandcastle",
+                "eat ice cream",
+                "rake leaves"
+              ],
+              "answer": "rake leaves",
+              "why": "The others are summer activities."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "go camping",
+              "options": [
+                "go camping",
+                "go for a walk",
+                "go to the beach",
+                "start school"
+              ],
+              "answer": "go camping"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the activity",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "he / she / it add -s",
+            "lines": [
+              "I make a snowman in the winter.",
+              "We pick apples in the fall.",
+              "He makes a sandcastle in the summer.",
+              "She plays baseball in the spring."
+            ],
+            "rule": "I, you, we and they use the base verb: make, pick, play. He, she and it add -s: makes, picks, plays. The season always takes in the."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which subjects add -s to the verb?",
+              "options": [
+                "he, she, it",
+                "I, you, we",
+                "they, we, I",
+                "all subjects"
+              ],
+              "answer": "he, she, it"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which is correct?",
+              "options": [
+                "She plants flowers in the spring.",
+                "She plant flowers in the spring.",
+                "She plants flowers on the spring.",
+                "She planting flowers in spring."
+              ],
+              "answer": "She plants flowers in the spring."
+            },
+            {
+              "id": "g1-3",
+              "q": "Which is WRONG?",
+              "options": [
+                "He make a snowman.",
+                "He makes a snowman.",
+                "They make a snowman.",
+                "I make a snowman."
+              ],
+              "answer": "He make a snowman."
+            },
+            {
+              "id": "g1-4",
+              "q": "Which phrase is correct?",
+              "options": [
+                "in the fall",
+                "on the fall",
+                "at the fall",
+                "in fall the"
+              ],
+              "answer": "in the fall"
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "He, she and it add -s",
+            "I, we and they use the base verb",
+            "We say in the + season",
+            "Do and does build questions"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "He ___ snowballs in the winter.",
+              "options": [
+                "throw",
+                "throws",
+                "throwing",
+                "is throw"
+              ],
+              "answer": "throws"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "We ___ apples in the fall.",
+              "options": [
+                "picks",
+                "pick",
+                "picking",
+                "is pick"
+              ],
+              "answer": "pick"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "She ___ flowers in the spring.",
+              "options": [
+                "plant",
+                "plants",
+                "planting",
+                "is plant"
+              ],
+              "answer": "plants"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "___ she go skating in the winter?",
+              "options": [
+                "Do",
+                "Does",
+                "Is",
+                "Are"
+              ],
+              "answer": "Does"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Do you rake leaves in the fall? Yes, I ___.",
+              "options": [
+                "do",
+                "does",
+                "am",
+                "rakes"
+              ],
+              "answer": "do"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "They go camping ___ the summer.",
+              "options": [
+                "in",
+                "on",
+                "at",
+                "of"
+              ],
+              "answer": "in"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "My brother make a snowman in the winter.",
+              "wrong": "make",
+              "correct": "makes",
+              "why": "My brother is he, so the verb takes -s."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Does he plays tennis in the summer?",
+              "wrong": "plays",
+              "correct": "play",
+              "why": "After Does the verb has no -s."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "We go camping on the summer.",
+              "wrong": "on",
+              "correct": "in",
+              "why": "We say in the summer."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "They doesn't pick apples in the fall.",
+              "wrong": "doesn't",
+              "correct": "don't",
+              "why": "They takes don't."
+            }
+          ],
+          "whyChoices": [
+            "The subject is he, she or it",
+            "The verb follows Does",
+            "We say in, not on",
+            "The subject is plural"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "She plants flowers in the spring.",
+              "options": [
+                "What does she do in the spring?",
+                "What do she do in the spring?",
+                "What does she does in the spring?",
+                "What she does in the spring?"
+              ],
+              "answer": "What does she do in the spring?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, they don't. They rake leaves in the fall.",
+              "options": [
+                "Do they rake leaves in the spring?",
+                "Does they rake leaves in the spring?",
+                "Do they rakes leaves in the spring?",
+                "Are they rake leaves in the spring?"
+              ],
+              "answer": "Do they rake leaves in the spring?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, I do. Every winter.",
+              "options": [
+                "Do you go sledding in the winter?",
+                "Does you go sledding in the winter?",
+                "Do you goes sledding in the winter?",
+                "Are you go sledding in the winter?"
+              ],
+              "answer": "Do you go sledding in the winter?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "He makes a sandcastle in the summer.",
+              "options": [
+                "What does he do in the summer?",
+                "What do he do in the summer?",
+                "What does he does in the summer?",
+                "What he do in the summer?"
+              ],
+              "answer": "What does he do in the summer?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Change I to my sister.",
+              "from": "I make a sandcastle in the summer.",
+              "options": [
+                "My sister makes a sandcastle in the summer.",
+                "My sister make a sandcastle in the summer.",
+                "My sister makes a sandcastle on the summer.",
+                "My sister is make a sandcastle in the summer."
+              ],
+              "answer": "My sister makes a sandcastle in the summer."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change I to we.",
+              "from": "I pick apples in the fall.",
+              "options": [
+                "We pick apples in the fall.",
+                "We picks apples in the fall.",
+                "We pick apples on the fall.",
+                "We picking apples in the fall."
+              ],
+              "answer": "We pick apples in the fall."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it negative.",
+              "from": "He goes skating in the summer.",
+              "options": [
+                "He doesn't go skating in the summer.",
+                "He don't go skating in the summer.",
+                "He doesn't goes skating in the summer.",
+                "He not goes skating in the summer."
+              ],
+              "answer": "He doesn't go skating in the summer."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Make it a question.",
+              "from": "She plants flowers in the spring.",
+              "options": [
+                "Does she plant flowers in the spring?",
+                "Do she plant flowers in the spring?",
+                "Does she plants flowers in the spring?",
+                "Is she plant flowers in the spring?"
+              ],
+              "answer": "Does she plant flowers in the spring?"
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the activity. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "She plants flowers in the spring.",
+              "options": [
+                "plant flowers",
+                "rake leaves",
+                "pick apples",
+                "clean the house"
+              ],
+              "answer": "plant flowers"
+            },
+            {
+              "id": "l1-2",
+              "audio": "They go skiing in the winter.",
+              "options": [
+                "go sledding",
+                "go skating",
+                "throw snowballs",
+                "make a snowman"
+              ],
+              "answer": "go sledding"
+            },
+            {
+              "id": "l1-3",
+              "audio": "We go camping in the summer.",
+              "options": [
+                "go camping",
+                "go to the beach",
+                "eat ice cream",
+                "play tennis"
+              ],
+              "answer": "go camping"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact activity",
+            "I heard a similar activity",
+            "I used the season to guess"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person talking about?",
+              "options": [
+                "What her family does in each season",
+                "A holiday at the beach",
+                "Her school schedule"
+              ],
+              "answer": "What her family does in each season"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What does the family do in the fall?",
+              "options": [
+                "Pick apples",
+                "Go camping"
+              ],
+              "answer": "Pick apples"
+            }
+          ],
+          "audio": "My family loves every season. In the spring my dad plants flowers in the garden. In the summer we go camping near a lake. In the fall we pick apples at my grandmother's farm. And in the winter we all go sledding on the hill behind our house.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "In the fall the leaves change color, so we rake leaves. In the winter he throws snowballs. In the summer she goes to the beach.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "In the fall the leaves change color, so we ___(1)___ leaves.",
+              "options": [
+                "rake",
+                "pick",
+                "plant"
+              ],
+              "answer": "rake"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "In the winter he ___(2)___ snowballs.",
+              "options": [
+                "throws",
+                "throw",
+                "throwing"
+              ],
+              "answer": "throws"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "In the summer she goes to the ___(3)___.",
+              "options": [
+                "beach",
+                "park",
+                "farm"
+              ],
+              "answer": "beach"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "depends on",
+              "options": [
+                "changes because of",
+                "is the same as",
+                "is bigger than",
+                "is far from"
+              ],
+              "answer": "changes because of"
+            },
+            {
+              "id": "r1-2",
+              "word": "hiking",
+              "options": [
+                "walking a long way in the countryside",
+                "running fast",
+                "swimming",
+                "climbing a wall"
+              ],
+              "answer": "walking a long way in the countryside"
+            },
+            {
+              "id": "r1-3",
+              "word": "blossoms",
+              "options": [
+                "flowers on a tree",
+                "apples on a tree",
+                "leaves on a tree",
+                "roots under the ground"
+              ],
+              "answer": "flowers on a tree"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "A place for every season. The United States is a very large country, so the weather depends on where you are. Alaska is in the north. It's very cold in Alaska in the winter, but in the summer it's nice and warm, and it's a good time to go hiking. The Sonoran Desert is in the south. It's very hot in the winter there, so people can still play tennis and do other sports. It almost never snows.",
+          "prompt": "Read the whole text, then tap the sentence that explains why the weather is different in different places.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that explains why the weather varies.",
+              "answerType": "tapSentence",
+              "answer": "The United States is a very large country, so the weather depends on where you are.",
+              "why": "Size is the reason one country has such different weather."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the text about?",
+              "options": [
+                "How the weather differs across one country",
+                "A holiday in Alaska",
+                "Deserts around the world"
+              ],
+              "answer": "How the weather differs across one country"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "A place for every season. The United States is a very large country, so the weather depends on where you are. Alaska is in the north. It's very cold in Alaska in the winter, but in the summer it's nice and warm, and it's a good time to go hiking. The Sonoran Desert is in the south. It's very hot in the winter there, so people can still play tennis and do other sports. It almost never snows.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "What is the weather like in Alaska in the summer?",
+              "options": [
+                "Nice and warm",
+                "Very cold",
+                "Very hot"
+              ],
+              "answer": "Nice and warm"
+            },
+            {
+              "id": "r3-2",
+              "q": "Why can people play tennis in the Sonoran Desert in the winter?",
+              "options": [
+                "It is very hot there",
+                "There is a lot of snow",
+                "It rains a lot"
+              ],
+              "answer": "It is very hot there"
+            },
+            {
+              "id": "r3-3",
+              "q": "Does it snow a lot in the Sonoran Desert?",
+              "options": [
+                "No, almost never",
+                "Yes, every winter",
+                "Yes, in the summer"
+              ],
+              "answer": "No, almost never"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Fall is very popular in New England. The leaves change color and it's very beautiful. Everyone likes to pick apples. Washington, DC, is very popular with people in the spring. There are cherry blossoms. The flowers are lovely. Different places are famous for different seasons.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you what people like to do in New England in the fall.",
+              "answer": "Everyone likes to pick apples."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you why New England is popular in the fall.",
+              "answer": "The leaves change color and it's very beautiful."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you what there is in Washington, DC, in the spring.",
+              "answer": "There are cherry blossoms."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "She",
+                "plants",
+                "flowers",
+                "in",
+                "the",
+                "spring"
+              ],
+              "answer": "She plants flowers in the spring."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Do",
+                "they",
+                "go",
+                "camping",
+                "in",
+                "the",
+                "summer"
+              ],
+              "answer": "Do they go camping in the summer?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "He",
+                "doesn't",
+                "go",
+                "skating",
+                "in",
+                "the",
+                "summer"
+              ],
+              "answer": "He doesn't go skating in the summer."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "What",
+                "does",
+                "she",
+                "do",
+                "in",
+                "the",
+                "fall"
+              ],
+              "answer": "What does she do in the fall?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "My brother make a snowman in the winter.",
+              "answer": "My brother makes a snowman in the winter."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Does he plays tennis in the summer?",
+              "answer": "Does he play tennis in the summer?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "We go camping on the summer.",
+              "answer": "We go camping in the summer."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Fill the chart: one season and four activities people do in your country then. Then write two sentences of your own.",
+          "chooseSeason": [
+            "winter",
+            "spring",
+            "summer",
+            "fall"
+          ],
+          "chart": {
+            "rows": 4,
+            "columnA": "Season",
+            "columnB": "Activity"
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct verb + -s for he / she",
+            "in the + season",
+            "At least 30 words"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "She plants flowers in the spring.",
+              "keywords": [
+                "plants",
+                "flowers",
+                "spring"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "He makes a sandcastle in the summer.",
+              "keywords": [
+                "makes",
+                "sandcastle",
+                "summer"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Do they go camping in the summer?",
+              "keywords": [
+                "do",
+                "camping",
+                "summer"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "What does she do in the fall?",
+              "keywords": [
+                "what",
+                "does",
+                "she",
+                "fall"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "plants flowers in the spring",
+              "keywords": [
+                "plants",
+                "flowers",
+                "spring"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "goes camping in the summer",
+              "keywords": [
+                "goes",
+                "camping",
+                "summer"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "rakes leaves in the fall",
+              "keywords": [
+                "rakes",
+                "leaves",
+                "fall"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What do you do in the spring?",
+              "keywords": [
+                "in the spring",
+                "do"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Does your friend go camping in the summer?",
+              "keywords": [
+                "does",
+                "doesn't",
+                "camping"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "What does your mother do in the fall?",
+              "keywords": [
+                "does",
+                "she",
+                "fall"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Which season do people in your country like best?",
+              "keywords": [
+                "season",
+                "like",
+                "best"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the picture. Say what season it is and what three people are doing.",
+          "image": "seasons-core",
+          "prompts": [
+            "What season it is",
+            "What two people are doing",
+            "What one person is not doing",
+            "What you would do there"
+          ],
+          "keywords": [
+            "in the",
+            "playing",
+            "making",
+            "isn't"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with two voices: you are Ana, then Lina.",
+          "dialogueId": "snowballTennis",
+          "lines": 8,
+          "keywords": [
+            "bored",
+            "tennis",
+            "winter",
+            "snowball",
+            "idea"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "What does your family do in the summer?",
+              "keywords": [
+                "family",
+                "summer",
+                "in the"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "What do you never do in the winter, and why?",
+              "keywords": [
+                "never",
+                "winter",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which season is best for sport in your country? Why?",
+              "keywords": [
+                "season",
+                "sport",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about the year in your country. Say one activity for each season and which one you like best.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "In the spring people in my country ___.",
+            "In the summer we ___.",
+            "In the fall my family ___.",
+            "In the winter I ___, but my friend ___."
+          ],
+          "keywords": [
+            "in the",
+            "spring",
+            "summer",
+            "winter",
+            "because"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "go camping",
+              "options": [
+                "go camping",
+                "go for a walk",
+                "go to the beach",
+                "start school"
+              ],
+              "answer": "go camping"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "She ___ flowers in the spring.",
+              "options": [
+                "plant",
+                "plants",
+                "planting",
+                "is plant"
+              ],
+              "answer": "plants"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Does he plays tennis in the summer?",
+              "wrong": "plays",
+              "correct": "play"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "We eat ice cream when it is hot.",
+              "options": [
+                "eat ice cream",
+                "play baseball",
+                "make a sandcastle",
+                "go skating"
+              ],
+              "answer": "eat ice cream"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "make a snowman",
+                "go sledding",
+                "go skating",
+                "play tennis"
+              ],
+              "answer": "play tennis"
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with What does...? about a season.",
+              "keywords": [
+                "what",
+                "does"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Four Seasons Fair. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "rake leaves",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "plant flowers",
+                "clean the house"
+              ],
+              "answer": "rake leaves"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "He ___ snowballs in the winter.",
+              "options": [
+                "throw",
+                "throws",
+                "throwing",
+                "is throw"
+              ],
+              "answer": "throws"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "My brother make a snowman, and does he go skating in the summer?",
+              "wrong": "make",
+              "correct": "makes"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "In Alaska it is very cold in the winter, but the summer is warm and good for hiking. In the Sonoran Desert it is very hot in the winter, so people can play tennis. It almost never snows there.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker comparing?",
+                  "options": [
+                    "Two places in one country",
+                    "Two countries",
+                    "Two seasons in one place"
+                  ],
+                  "answer": "Two places in one country"
+                },
+                {
+                  "pass": 2,
+                  "q": "Where can people play tennis in the winter?",
+                  "options": [
+                    "The Sonoran Desert",
+                    "Alaska",
+                    "New England"
+                  ],
+                  "answer": "The Sonoran Desert"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the New England text, tap the sentence that tells you what people like to do there in the fall.",
+              "answer": "Everyone likes to pick apples."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "What",
+                "does",
+                "he",
+                "do",
+                "in",
+                "the",
+                "winter"
+              ],
+              "answer": "What does he do in the winter?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the activity: you pull dead leaves into a pile with a long tool.",
+              "answer": "rake leaves",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: what you do in two seasons, and what a family member does in one of them.",
+              "keywords": [
+                "in the",
+                "does",
+                "makes",
+                "plays"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact activity. Two of the four belong to the same season, so read carefully.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "go skating",
+              "options": [
+                "go skating",
+                "go sledding",
+                "throw snowballs",
+                "play tennis"
+              ],
+              "answer": "go skating",
+              "why": "Skating needs ice. Sledding needs a hill and snow"
+            },
+            {
+              "id": "v1-2",
+              "img": "rake leaves",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "start school",
+                "clean the house"
+              ],
+              "answer": "rake leaves",
+              "why": "A rake pulls leaves together. Cleaning the house uses a broom indoors."
+            },
+            {
+              "id": "v1-3",
+              "img": "cherry blossoms",
+              "options": [
+                "cherry blossoms",
+                "leaves",
+                "apples",
+                "flowers in a garden"
+              ],
+              "answer": "cherry blossoms",
+              "why": "Blossoms grow on the tree itself, before any fruit appears."
+            },
+            {
+              "id": "v1-4",
+              "img": "hiking",
+              "options": [
+                "hiking",
+                "camping",
+                "going for a walk",
+                "climbing"
+              ],
+              "answer": "hiking",
+              "why": "Hiking is a long walk in the countryside, often up a mountain path."
+            }
+          ],
+          "whyChoices": [
+            "The activity needs something the distractors do not",
+            "It belongs to the same season as a distractor",
+            "It happens outdoors",
+            "It is a two-word phrase"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the activity. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "throw snowballs",
+              "options": [
+                "throw snowballs",
+                "make a snowman",
+                "go sledding",
+                "go skating"
+              ],
+              "answer": "throw snowballs",
+              "why": "Throwing is a hand action. Building a snowman rolls snow into balls on the ground."
+            },
+            {
+              "id": "v2-2",
+              "word": "clean the house",
+              "options": [
+                "clean the house",
+                "plant flowers",
+                "rake leaves",
+                "go for a walk"
+              ],
+              "answer": "clean the house",
+              "why": "Cleaning is indoors with a broom and water."
+            },
+            {
+              "id": "v2-3",
+              "word": "go for a walk",
+              "options": [
+                "go for a walk",
+                "go hiking",
+                "go camping",
+                "go to the beach"
+              ],
+              "answer": "go for a walk",
+              "why": "A walk is short and near home. Hiking is long and in the countryside."
+            },
+            {
+              "id": "v2-4",
+              "word": "eat ice cream",
+              "options": [
+                "eat ice cream",
+                "make a sandcastle",
+                "play tennis",
+                "go to the beach"
+              ],
+              "answer": "eat ice cream",
+              "why": "Ice cream is food, not an activity at a place."
+            }
+          ],
+          "whyChoices": [
+            "The action is different from the distractors",
+            "It is the same season as a distractor",
+            "It is done indoors",
+            "It needs equipment"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word or phrase you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "The leaves change color and it's very beautiful.",
+              "options": [
+                "change color",
+                "fall down",
+                "turn brown",
+                "stay green"
+              ],
+              "answer": "change color"
+            },
+            {
+              "id": "v3-2",
+              "audio": "It almost never snows in the Sonoran Desert.",
+              "options": [
+                "almost never",
+                "always",
+                "sometimes",
+                "every winter"
+              ],
+              "answer": "almost never"
+            },
+            {
+              "id": "v3-3",
+              "audio": "The weather depends on where you are.",
+              "options": [
+                "depends on",
+                "is the same as",
+                "changes with the season",
+                "is always cold"
+              ],
+              "answer": "depends on"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact phrase",
+            "I heard words with a similar sound",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into four boxes. Some items are deliberately tricky.",
+          "bins": [
+            "Winter activity",
+            "Summer activity",
+            "Fall activity",
+            "Spring activity"
+          ],
+          "items": [
+            {
+              "word": "go sledding",
+              "bin": "Winter activity"
+            },
+            {
+              "word": "go to the beach",
+              "bin": "Summer activity"
+            },
+            {
+              "word": "pick apples",
+              "bin": "Fall activity"
+            },
+            {
+              "word": "plant flowers",
+              "bin": "Spring activity"
+            },
+            {
+              "word": "go skating",
+              "bin": "Winter activity"
+            },
+            {
+              "word": "go camping",
+              "bin": "Summer activity"
+            },
+            {
+              "word": "rake leaves",
+              "bin": "Fall activity"
+            },
+            {
+              "word": "play baseball",
+              "bin": "Spring activity"
+            },
+            {
+              "word": "make a snowman",
+              "bin": "Winter activity"
+            },
+            {
+              "word": "start school",
+              "bin": "Fall activity"
+            }
+          ],
+          "note": "If four bins is too many for the mechanic, use three: Winter / Summer / Fall, and drop Spring."
+        },
+        "V5": {
+          "prompt": "Choose the phrase that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "Fall is very popular in New England, ___ the leaves change color.",
+              "options": [
+                "because",
+                "but",
+                "so",
+                "or"
+              ],
+              "answer": "because",
+              "why": "The leaves give the reason the season is popular."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "It is very cold in the winter, ___ summer is nice and warm.",
+              "options": [
+                "but",
+                "because",
+                "and",
+                "so"
+              ],
+              "answer": "but",
+              "why": "The two facts contrast, so but joins them."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "The weather depends ___ where you are in the country.",
+              "options": [
+                "on",
+                "in",
+                "at",
+                "of"
+              ],
+              "answer": "on",
+              "why": "The verb depend always takes on."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "It almost never ___, so the ground is dry.",
+              "options": [
+                "snows",
+                "snow",
+                "snowing",
+                "is snow"
+              ],
+              "answer": "snows",
+              "why": "Weather takes the -s form: it snows."
+            }
+          ],
+          "whyChoices": [
+            "It is the only one that fits the meaning",
+            "It is the only conjunction",
+            "It is the only preposition",
+            "It is the only one that is singular"
+          ]
+        },
+        "V6": {
+          "prompt": "One phrase does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "snow",
+                "rain",
+                "ice",
+                "leaves"
+              ],
+              "answer": "leaves",
+              "why": "Snow, rain and ice are uncountable. Leaves is countable. Grammar matches, meaning does not."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "go sledding",
+                "go skating",
+                "go camping",
+                "play tennis"
+              ],
+              "answer": "play tennis",
+              "why": "The others are go + -ing. Play takes a noun."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "Alaska",
+                "New England",
+                "Washington, DC",
+                "the Sonoran Desert"
+              ],
+              "answer": "Washington, DC",
+              "why": "The others are regions or natural places. Washington, DC, is a city."
+            }
+          ],
+          "whyChoices": [
+            "It breaks the pattern only in meaning",
+            "It breaks the pattern only in grammar",
+            "It is a longer phrase",
+            "It is a place"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "b",
+                "l",
+                "o",
+                "s",
+                "s",
+                "o",
+                "m",
+                "s"
+              ],
+              "answer": "blossoms",
+              "audio": "blossoms"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "s",
+                "e",
+                "a",
+                "s",
+                "o",
+                "n"
+              ],
+              "answer": "season",
+              "audio": "season"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "h",
+                "i",
+                "k",
+                "i",
+                "n",
+                "g"
+              ],
+              "answer": "hiking",
+              "audio": "hiking"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Go skating.",
+              "options": [
+                "go skating",
+                "go sledding",
+                "go camping",
+                "play tennis"
+              ],
+              "answer": "go skating"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "The weather ___ on the season and on where you are.",
+              "options": [
+                "depends",
+                "depend",
+                "depending",
+                "is depend"
+              ],
+              "answer": "depends"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the word for flowers that grow on a tree in the spring.",
+              "answer": "blossoms",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "snow",
+                "rain",
+                "ice",
+                "leaves"
+              ],
+              "answer": "leaves",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "go camping",
+              "options": [
+                "go camping",
+                "go hiking",
+                "go for a walk",
+                "go to the beach"
+              ],
+              "answer": "go camping"
+            }
+          ],
+          "whyChoices": [
+            "I knew the phrase without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "he/she/it + -s, and go + -ing",
+            "lines": [
+              "I plant flowers. / She plants flowers in the spring.",
+              "He makes a snowman. / They make a snowman.",
+              "We go sledding in the winter. / She goes skating in the summer.",
+              "Does he go camping in the summer? No, he doesn't."
+            ],
+            "rule": "He, she and it add -s to the verb: makes, plants, goes. The go + -ing activities take goes for he/she/it, not gos. In questions and negatives the -s moves to does: Does he go...? He doesn't go..."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is it 'She goes skating' and not 'She gos skating'?",
+              "options": [
+                "Go is irregular: go becomes goes",
+                "Go never takes -s",
+                "Skating is plural",
+                "Because it is a question"
+              ],
+              "answer": "Go is irregular: go becomes goes"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which sentence is correct?",
+              "options": [
+                "Does he go camping in the summer?",
+                "Does he goes camping in the summer?",
+                "Do he go camping in the summer?",
+                "Does he going camping in the summer?"
+              ],
+              "answer": "Does he go camping in the summer?"
+            },
+            {
+              "id": "g1-3",
+              "q": "What happens to the -s in 'He doesn't go skating'?",
+              "options": [
+                "It moves to doesn't",
+                "It disappears completely",
+                "It stays on go",
+                "It moves to skating"
+              ],
+              "answer": "It moves to doesn't"
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the sentence that is WRONG.",
+              "options": [
+                "She go to the beach in the summer.",
+                "She goes to the beach in the summer.",
+                "They go to the beach in the summer.",
+                "I go to the beach in the summer."
+              ],
+              "answer": "She go to the beach in the summer."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "Go becomes goes for he, she and it",
+            "After does the verb has no -s",
+            "The season takes in the",
+            "doesn't carries the -s so the verb loses it"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "My sister ___ skating in the winter, and my brothers ___ camping in the summer.",
+              "options": [
+                "goes / go",
+                "go / goes",
+                "goes / goes",
+                "go / go"
+              ],
+              "answer": "goes / go"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "___ your father go hiking in the summer?",
+              "options": [
+                "Does",
+                "Do",
+                "Is",
+                "Are"
+              ],
+              "answer": "Does"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "He doesn't ___ snowballs in the summer.",
+              "options": [
+                "throw",
+                "throws",
+                "throwing",
+                "to throw"
+              ],
+              "answer": "throw"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Neither of my sisters ___ apples in the fall.",
+              "options": [
+                "picks",
+                "pick",
+                "picking",
+                "is pick"
+              ],
+              "answer": "picks",
+              "why": "Neither of them is singular in careful English."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "Everyone in my family ___ flowers in the spring.",
+              "options": [
+                "plants",
+                "plant",
+                "planting",
+                "is plant"
+              ],
+              "answer": "plants",
+              "why": "Everyone is singular, so the verb takes -s."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "They go camping ___ the summer, ___ they don't go in the winter.",
+              "options": [
+                "in / but",
+                "on / but",
+                "in / and",
+                "on / so"
+              ],
+              "answer": "in / but"
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "She go to the beach in the summer.",
+              "wrong": "go",
+              "correct": "goes",
+              "why": "Go becomes goes for she."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Does he goes camping in the spring?",
+              "wrong": "goes",
+              "correct": "go",
+              "why": "After Does the verb has no -s."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Neither of them go sledding in the winter.",
+              "wrong": "go",
+              "correct": "goes",
+              "why": "Neither of them is singular in careful English."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "We pick apples on the fall.",
+              "wrong": "on",
+              "correct": "in",
+              "why": "We say in the fall."
+            }
+          ],
+          "whyChoices": [
+            "Go is irregular and becomes goes",
+            "The verb follows Does",
+            "A singular subject hides in a plural-looking phrase",
+            "We say in, not on"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "He goes hiking in the summer.",
+              "options": [
+                "What does he do in the summer?",
+                "What do he do in the summer?",
+                "What does he does in the summer?",
+                "What is he do in the summer?"
+              ],
+              "answer": "What does he do in the summer?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, she doesn't. She rakes leaves in the fall.",
+              "options": [
+                "Does she rake leaves in the spring?",
+                "Do she rake leaves in the spring?",
+                "Does she rakes leaves in the spring?",
+                "Is she rake leaves in the spring?"
+              ],
+              "answer": "Does she rake leaves in the spring?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, they do. Every winter.",
+              "options": [
+                "Do they go skating in the winter?",
+                "Does they go skating in the winter?",
+                "Do they goes skating in the winter?",
+                "Are they go skating in the winter?"
+              ],
+              "answer": "Do they go skating in the winter?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "She plants flowers in the garden.",
+              "options": [
+                "What does your mother do in the spring?",
+                "What do your mother do in the spring?",
+                "What does your mother does in the spring?",
+                "What your mother does in the spring?"
+              ],
+              "answer": "What does your mother do in the spring?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Change they to my brother.",
+              "from": "They go camping in the summer.",
+              "options": [
+                "My brother goes camping in the summer.",
+                "My brother go camping in the summer.",
+                "My brother gos camping in the summer.",
+                "My brother is go camping in the summer."
+              ],
+              "answer": "My brother goes camping in the summer."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Make it negative.",
+              "from": "She goes skating in the summer.",
+              "options": [
+                "She doesn't go skating in the summer.",
+                "She don't go skating in the summer.",
+                "She doesn't goes skating in the summer.",
+                "She not goes skating in the summer."
+              ],
+              "answer": "She doesn't go skating in the summer."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it a question.",
+              "from": "He plants flowers in the spring.",
+              "options": [
+                "Does he plant flowers in the spring?",
+                "Do he plant flowers in the spring?",
+                "Does he plants flowers in the spring?",
+                "Is he plant flowers in the spring?"
+              ],
+              "answer": "Does he plant flowers in the spring?"
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "My sister doesn't go sledding. My brother doesn't go sledding.",
+              "options": [
+                "Neither my sister nor my brother goes sledding.",
+                "Neither my sister nor my brother go sledding.",
+                "Neither my sister or my brother goes sledding.",
+                "Neither my sister nor my brother doesn't go sledding."
+              ],
+              "answer": "Neither my sister nor my brother goes sledding."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "The leaves change color and it's very beautiful.",
+              "options": [
+                "change color",
+                "fall down",
+                "turn brown",
+                "stay green"
+              ],
+              "answer": "change color"
+            },
+            {
+              "id": "l1-2",
+              "audio": "It almost never snows, so people can still play tennis.",
+              "options": [
+                "almost never snows",
+                "always snows",
+                "sometimes snows",
+                "never rains"
+              ],
+              "answer": "almost never snows"
+            },
+            {
+              "id": "l1-3",
+              "audio": "Summer is nice and warm in Alaska, and it is a good time to go hiking.",
+              "options": [
+                "go hiking",
+                "go camping",
+                "go fishing",
+                "go swimming"
+              ],
+              "answer": "go hiking"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact phrase",
+            "I heard a related phrase",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain why one country has many climates",
+                "To sell a holiday",
+                "To describe a school year"
+              ],
+              "answer": "To explain why one country has many climates"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Why is the desert hot in winter while Alaska is cold?",
+              "options": [
+                "They are in different parts of the country",
+                "They are on different days",
+                "The desert is smaller"
+              ],
+              "answer": "They are in different parts of the country"
+            }
+          ],
+          "audio": "The United States is huge, so the weather depends on where you are. In the north, Alaska is freezing in the winter, but its summer is warm and good for hiking. Far to the south, the Sonoran Desert is actually hot in the winter, so people play tennis there all year. And in the northeast, New England has a famous fall: the leaves change color and everyone picks apples.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "Everyone in my family has a favourite season. My sister goes skating in the winter. My brother goes camping in the summer. And my mother plants flowers in the spring.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "My sister ___(1)___ skating in the winter.",
+              "options": [
+                "goes",
+                "go",
+                "going"
+              ],
+              "answer": "goes"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "My brother goes ___(2)___ in the summer.",
+              "options": [
+                "camping",
+                "hiking",
+                "sledding"
+              ],
+              "answer": "camping"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "My mother ___(3)___ flowers in the spring.",
+              "options": [
+                "plants",
+                "plant",
+                "planting"
+              ],
+              "answer": "plants"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "depends on",
+              "options": [
+                "changes according to",
+                "is the same as",
+                "is bigger than",
+                "is far from"
+              ],
+              "answer": "changes according to"
+            },
+            {
+              "id": "r1-2",
+              "word": "popular",
+              "options": [
+                "liked by many people",
+                "expensive",
+                "cold",
+                "rare"
+              ],
+              "answer": "liked by many people"
+            },
+            {
+              "id": "r1-3",
+              "word": "almost never",
+              "options": [
+                "very rarely, but not zero",
+                "never at all",
+                "very often",
+                "every year"
+              ],
+              "answer": "very rarely, but not zero"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "A place for every season. The United States is a very large country, so the weather depends on where you are. In the north, Alaska is freezing in the winter, but its summer is warm enough to go hiking. Far to the south, the Sonoran Desert is actually hot in the winter, so people play tennis there all year and it almost never snows. In the northeast, New England has a famous fall: the leaves change color and everyone likes to pick apples. Washington, DC, is popular in the spring for a different reason: the cherry blossoms.",
+          "prompt": "Read the whole text, then tap the sentence that gives the reason for everything else in the text.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that gives the reason for everything else.",
+              "answerType": "tapSentence",
+              "answer": "The United States is a very large country, so the weather depends on where you are.",
+              "why": "Every example in the text follows from the country being huge."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the writer's main point?",
+              "options": [
+                "One country can have very different seasons at the same time",
+                "Alaska is the best place to visit",
+                "Deserts are always hot"
+              ],
+              "answer": "One country can have very different seasons at the same time"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "A place for every season. The United States is a very large country, so the weather depends on where you are. In the north, Alaska is freezing in the winter, but its summer is warm enough to go hiking. Far to the south, the Sonoran Desert is actually hot in the winter, so people play tennis there all year and it almost never snows. In the northeast, New England has a famous fall: the leaves change color and everyone likes to pick apples. Washington, DC, is popular in the spring for a different reason: the cherry blossoms.",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Why is Washington, DC, popular in the spring?",
+              "options": [
+                "Because of the cherry blossoms",
+                "Because of the apples",
+                "Because of the tennis"
+              ],
+              "answer": "Because of the cherry blossoms"
+            },
+            {
+              "id": "r3-2",
+              "q": "What does 'actually hot in the winter' suggest?",
+              "options": [
+                "It is surprising for a winter",
+                "It is a mistake in the text",
+                "Winter there is cold"
+              ],
+              "answer": "It is surprising for a winter"
+            },
+            {
+              "id": "r3-3",
+              "q": "Which place has a famous fall?",
+              "options": [
+                "New England",
+                "Alaska",
+                "The Sonoran Desert"
+              ],
+              "answer": "New England"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Dear David, It's spring! This is my favorite season. I play soccer with my friends every day. On Sundays we also play baseball. I like to be outside a lot. My mom always plants flowers in the spring and our garden looks nice. Winter is fun, too. My family and I go skiing a lot, and we also go sledding in the park. Of course, Emma, Alex and I also make a snowman when it snows. It's so much fun. What's your favorite season? Best wishes, Brian",
+          "prompt": "Tap the exact sentence from the letter. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that shows Brian likes being outdoors.",
+              "answer": "I like to be outside a lot."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you the snowman depends on the weather.",
+              "answer": "Of course, Emma, Alex and I also make a snowman when it snows."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that gives the reason the garden looks nice.",
+              "answer": "My mom always plants flowers in the spring and our garden looks nice."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "Neither",
+                "my",
+                "sister",
+                "nor",
+                "my",
+                "brother",
+                "goes",
+                "sledding"
+              ],
+              "answer": "Neither my sister nor my brother goes sledding."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "The",
+                "weather",
+                "depends",
+                "on",
+                "where",
+                "you",
+                "are"
+              ],
+              "answer": "The weather depends on where you are."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Does",
+                "your",
+                "father",
+                "go",
+                "hiking",
+                "in",
+                "the",
+                "summer"
+              ],
+              "answer": "Does your father go hiking in the summer?"
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Fall",
+                "is",
+                "popular",
+                "because",
+                "the",
+                "leaves",
+                "change",
+                "color"
+              ],
+              "answer": "Fall is popular because the leaves change color."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "She go to the beach in the summer.",
+              "answer": "She goes to the beach in the summer."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Does he goes camping in the spring?",
+              "answer": "Does he go camping in the spring?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Neither of them go sledding, and they doesn't go skating either.",
+              "answer": "Neither of them goes sledding, and they don't go skating either."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence description of the seasons in your country. Every requirement on the checklist must appear.",
+          "requirements": [
+            "your favourite season and why",
+            "two activities people do in your country in that season",
+            "one sentence with he or she + a seasonal activity",
+            "one sentence comparing two seasons",
+            "one sentence with in the + season"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct verb + -s for he / she",
+            "Correct in the + season",
+            "One comparison with but",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "She goes skating in the winter.",
+              "keywords": [
+                "goes",
+                "skating",
+                "winter"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Neither my sister nor my brother goes sledding.",
+              "keywords": [
+                "neither",
+                "sister",
+                "brother",
+                "goes"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Does your father go hiking in the summer?",
+              "keywords": [
+                "does",
+                "father",
+                "hiking",
+                "summer"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "The weather depends on where you are.",
+              "keywords": [
+                "weather",
+                "depends",
+                "where"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "goes skating in the winter",
+              "keywords": [
+                "goes",
+                "skating",
+                "winter"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "neither of them goes",
+              "keywords": [
+                "neither",
+                "them",
+                "goes"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "the leaves change color",
+              "keywords": [
+                "leaves",
+                "change",
+                "color"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "What does your family do in each season?",
+              "keywords": [
+                "in the",
+                "family"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Which season is most popular in your country, and why?",
+              "keywords": [
+                "popular",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Does anyone you know go hiking? Where do they go?",
+              "keywords": [
+                "does",
+                "hiking",
+                "where"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Why do people in different places do different things in the same season?",
+              "keywords": [
+                "because",
+                "weather",
+                "different"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the picture for 45 seconds. Compare two seasons and use one negative sentence.",
+          "image": "seasons-challenging",
+          "prompts": [
+            "What season each half shows",
+            "One thing people do in each",
+            "One thing nobody is doing",
+            "Which season you prefer and why"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "in the",
+            "goes",
+            "because",
+            "isn't"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the story as both characters, with a different voice for each.",
+          "dialogueId": "snowballTennis",
+          "lines": 8,
+          "keywords": [
+            "bored",
+            "tennis",
+            "winter",
+            "snowball",
+            "idea"
+          ],
+          "extra": "Then answer: why is 'snowball tennis' funny? Use the word season in your answer."
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Does your country have four clear seasons, or not? Explain.",
+              "keywords": [
+                "season",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Should schools have a long holiday in one season? Which one, and why?",
+              "keywords": [
+                "should",
+                "because",
+                "season"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Why do tourists visit different places in different seasons?",
+              "keywords": [
+                "because",
+                "season",
+                "visit"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: The Year in My Country. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "In my country we have ___ seasons.",
+            "In the ___, people ___, and my ___ ___ too.",
+            "In the ___, it is ___, so we ___.",
+            "My favourite is ___ because ___."
+          ],
+          "keywords": [
+            "in the",
+            "because",
+            "goes",
+            "season"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I used one he or she sentence"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "rake leaves",
+              "options": [
+                "rake leaves",
+                "pick apples",
+                "plant flowers",
+                "clean the house"
+              ],
+              "answer": "rake leaves"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "My sister ___ skating in the winter, and my brothers ___ camping in the summer.",
+              "options": [
+                "goes / go",
+                "go / goes",
+                "goes / goes",
+                "go / go"
+              ],
+              "answer": "goes / go"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Does he goes camping in the spring?",
+              "wrong": "goes",
+              "correct": "go"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "The weather depends on where you are.",
+              "options": [
+                "depends on",
+                "is the same as",
+                "changes with season",
+                "is always cold"
+              ],
+              "answer": "depends on"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "snow",
+                "rain",
+                "ice",
+                "leaves"
+              ],
+              "answer": "leaves",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask a question with Does your...? about a seasonal activity and answer it.",
+              "keywords": [
+                "does",
+                "your",
+                "go",
+                "in the"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Four Seasons Fair. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "cherry blossoms",
+              "options": [
+                "cherry blossoms",
+                "leaves",
+                "apples",
+                "flowers in a garden"
+              ],
+              "answer": "cherry blossoms"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "Neither of my sisters ___ apples in the fall.",
+              "options": [
+                "picks",
+                "pick",
+                "picking",
+                "is pick"
+              ],
+              "answer": "picks"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "She go to the beach in the summer, and does he goes camping?",
+              "wrong": "go",
+              "correct": "goes"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "The United States is huge, so the weather depends on where you are. Alaska is freezing in winter but warm in summer. The Sonoran Desert is hot in winter and almost never gets snow. New England is famous for its fall leaves and apples.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker explaining?",
+                  "options": [
+                    "Why one country has many climates",
+                    "How to travel in winter",
+                    "Why deserts are dry"
+                  ],
+                  "answer": "Why one country has many climates"
+                },
+                {
+                  "pass": 2,
+                  "q": "Which place is famous for its fall?",
+                  "options": [
+                    "New England",
+                    "Alaska",
+                    "The Sonoran Desert"
+                  ],
+                  "answer": "New England"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that explains why New England is popular in the fall.",
+              "answer": "The leaves change color and it's very beautiful."
+            },
+            {
+              "id": "b-6",
+              "type": "grouping",
+              "bins": [
+                "Alaska",
+                "The Sonoran Desert",
+                "New England"
+              ],
+              "items": [
+                {
+                  "word": "Freezing in winter",
+                  "bin": "Alaska"
+                },
+                {
+                  "word": "Hot in winter",
+                  "bin": "The Sonoran Desert"
+                },
+                {
+                  "word": "Famous fall leaves",
+                  "bin": "New England"
+                },
+                {
+                  "word": "Good for hiking in summer",
+                  "bin": "Alaska"
+                },
+                {
+                  "word": "Almost never snows",
+                  "bin": "The Sonoran Desert"
+                },
+                {
+                  "word": "Everyone picks apples",
+                  "bin": "New England"
+                }
+              ]
+            },
+            {
+              "id": "b-7",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Neither",
+                "my",
+                "sister",
+                "nor",
+                "my",
+                "brother",
+                "goes",
+                "sledding"
+              ],
+              "answer": "Neither my sister nor my brother goes sledding."
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: the seasons in your country, one activity for each, and which season you prefer and why.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "in the",
+                "because",
+                "goes",
+                "season"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "snowballTennis",
+    "title": "Snowball Tennis",
+    "cast": [
+      "Ana",
+      "Lina"
+    ],
+    "lines": [
+      {
+        "speaker": "Ana",
+        "text": "I'm bored!"
+      },
+      {
+        "speaker": "Lina",
+        "text": "Me, too."
+      },
+      {
+        "speaker": "Ana",
+        "text": "Let's play tennis."
+      },
+      {
+        "speaker": "Lina",
+        "text": "Tennis?"
+      },
+      {
+        "speaker": "Ana",
+        "text": "It's winter. Do you play tennis in the winter?"
+      },
+      {
+        "speaker": "Lina",
+        "text": "I have an idea."
+      },
+      {
+        "speaker": "Lina",
+        "text": "Snowball tennis!"
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "What season is it?",
+          "options": [
+            "Winter",
+            "Spring"
+          ],
+          "answer": "Winter"
+        },
+        {
+          "q": "What do the girls play?",
+          "options": [
+            "Tennis",
+            "Football"
+          ],
+          "answer": "Tennis"
+        }
+      ],
+      "core": [
+        {
+          "q": "What season is it?",
+          "options": [
+            "Winter",
+            "Spring",
+            "Summer"
+          ],
+          "answer": "Winter"
+        },
+        {
+          "q": "What do the girls play?",
+          "options": [
+            "Tennis (with snowballs)",
+            "Baseball",
+            "Football"
+          ],
+          "answer": "Tennis (with snowballs)"
+        },
+        {
+          "q": "Why does Lina say 'Tennis?'",
+          "options": [
+            "She is surprised",
+            "She loves tennis",
+            "She cannot hear"
+          ],
+          "answer": "She is surprised"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "Why does Lina say 'Tennis?' with a question?",
+          "options": [
+            "Tennis is a summer game, and it is winter",
+            "She does not know the word",
+            "She wants to play baseball"
+          ],
+          "answer": "Tennis is a summer game, and it is winter"
+        },
+        {
+          "q": "What does 'I have an idea' tell us about Lina?",
+          "options": [
+            "She has found a way to play",
+            "She wants to go home",
+            "She is bored too"
+          ],
+          "answer": "She has found a way to play"
+        },
+        {
+          "q": "Why is 'snowball tennis' funny?",
+          "options": [
+            "It is a winter version of a summer game",
+            "It is a real sport",
+            "The girls are cold"
+          ],
+          "answer": "It is a winter version of a summer game"
+        }
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station. This is the book's own phonics focus.",
+    "contrast": [
+      "-ing ending"
+    ],
+    "anchorWords": [
+      {
+        "word": "spring",
+        "note": "-ing at the end"
+      },
+      {
+        "word": "skating",
+        "note": "-ing at the end"
+      },
+      {
+        "word": "camping",
+        "note": "-ing at the end"
+      },
+      {
+        "word": "ring",
+        "note": "-ing at the end"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "running",
+        "note": "-ing"
+      },
+      {
+        "word": "sing",
+        "note": "-ing"
+      },
+      {
+        "word": "shopping",
+        "note": "-ing"
+      },
+      {
+        "word": "swing",
+        "note": "-ing"
+      }
+    ],
+    "note2": "This is not a two-sound contrast but a single ending. The teaching point is that -ing is one syllable added to the verb: run-ning, shop-ping (with a doubled consonant), and that spring and ring already contain it. Use a list with audio rather than bins."
+  },
+  "reviewConnection": {
+    "note": "Reviews 1 (Units 1-3) and 2 (Units 4-6) are already captured in the Unit 3 and Unit 6 packs. Unit 7 will feed a future Review 3.",
+    "futureReview3Items": [
+      {
+        "a": "How's the weather today?",
+        "b": "How are the weather today?",
+        "answer": "is",
+        "unit": "6"
+      },
+      {
+        "a": "Don't put on your sunglasses.",
+        "b": "Don't puts on your sunglasses.",
+        "answer": "put",
+        "unit": "6"
+      },
+      {
+        "a": "Where are the buckets?",
+        "b": "Where is the buckets?",
+        "answer": "are",
+        "unit": "5"
+      },
+      {
+        "a": "She goes skating in the winter.",
+        "b": "She go skating in the winter.",
+        "answer": "goes",
+        "unit": "7"
+      },
+      {
+        "a": "Does he go camping?",
+        "b": "Does he goes camping?",
+        "answer": "go",
+        "unit": "7"
+      },
+      {
+        "a": "in the summer",
+        "b": "on the summer",
+        "answer": "in",
+        "unit": "7"
+      }
+    ]
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1-6: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "The -s ending is the teaching point: accepts 'makes' at Easy, requires it at Challenging. Never fail a learner at Core for a dropped final consonant.",
+      "Accept 'goes' and 'go', 'gos' never. Accept 'sledding' with one or two d's after normalisation.",
+      "Accept 'fall' and 'autumn' as the same season."
+    ]
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  },
+  "selfAssessment": {
+    "intro": "There are no right answers here. Be honest — it helps you.",
+    "skills": {
+      "vocabulary": {
+        "easy": "I can name some things people do in a season.",
+        "core": "I can name activities for each season.",
+        "challenging": "I can compare seasons and explain which I prefer."
+      },
+      "grammar": {
+        "easy": "I can say what I do in a season.",
+        "core": "I can use he, she and it with -s for seasonal activities.",
+        "challenging": "I can use goes and does correctly, and keep Neither...nor singular."
+      },
+      "listening": {
+        "easy": "I can hear a season activity and find it.",
+        "core": "I can understand what people do in each season.",
+        "challenging": "I can follow a text that compares places in one country."
+      },
+      "reading": {
+        "easy": "I can read a short text about seasons.",
+        "core": "I can find what people do in each season.",
+        "challenging": "I can understand why a text is organised the way it is."
+      },
+      "writing": {
+        "easy": "I can write one sentence with in the and a season.",
+        "core": "I can fill a chart about the seasons.",
+        "challenging": "I can write a paragraph comparing seasons with a reason."
+      },
+      "speaking": {
+        "easy": "I can say one thing I do in summer.",
+        "core": "I can talk about all four seasons.",
+        "challenging": "I can give a one-minute talk about the year."
+      }
+    },
+    "hardestPrompt": "Which one was hardest today?",
+    "notePrompt": "One thing I want to get better at."
+  }
+}

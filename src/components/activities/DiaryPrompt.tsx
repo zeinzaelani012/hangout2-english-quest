@@ -18,15 +18,29 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
   const checklist: string[] = payload.checklist ?? [];
   const minimumWords: number = payload.minimumWords ?? 20;
   const ownSentencesRequired: number | undefined = payload.ownSentencesRequired;
-  // Two-column order chart (Unit 3's W3, Unit 4's W3): rows × headers, with
-  // an optional stem for the second column ("I have").
-  const chart: { rows: number; columnA: string; columnB: string; columnBStem?: string } | undefined = payload.chart;
+  // Two-column order chart (Units 3/4/8): rows × column headers, optional
+  // stem for the second column. Unit 9's core W3 uses a ROW-LABELLED variant:
+  // columnA is an array of per-row labels with per-row stems.
+  const chart: { rows: number; columnA: string | string[]; columnB?: string; columnBStem?: string | string[] } | undefined = payload.chart;
+  const chartRowLabels: string[] | null =
+    chart && Array.isArray(chart.columnA) ? chart.columnA : null;
+  const chartRowStems: string[] =
+    chart && Array.isArray(chart.columnBStem) ? chart.columnBStem : [];
+  const chooseSeason: string[] | undefined = payload.chooseSeason;
+  const chooseRoom: string[] | undefined = payload.chooseRoom;
+  const choosePlace: string[] | undefined = payload.choosePlace;
+  const pickerOptions = chooseSeason ?? chooseRoom ?? choosePlace;
+  const pickerLabel = chooseSeason ? 'Choose your season' : chooseRoom ? 'Choose your room' : 'Choose the place';
   const menu: string[] = payload.menu ?? [];
 
   const [text, setText] = useState('');
   const [chartCells, setChartCells] = useState<string[][]>(() =>
-    chart ? Array.from({ length: chart.rows ?? 0 }, () => ['', '']) : [],
+    chart && !chartRowLabels ? Array.from({ length: chart.rows ?? 0 }, () => ['', '']) : [],
   );
+  const [rowEntries, setRowEntries] = useState<string[]>(() =>
+    chartRowLabels ? chartRowLabels.map(() => '') : [],
+  );
+  const [chosenSeason, setChosenSeason] = useState<string | null>(null);
   const [completed, setCompleted] = useState(false);
 
   const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
@@ -64,13 +78,78 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
         </div>
       )}
 
-      {/* Two-column order chart: plan each row before writing */}
-      {chart && (
+      {/* Four-option single-select picker (chooseSeason / chooseRoom) above the chart */}
+      {pickerOptions && pickerOptions.length > 0 && (
+        <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <p className="eyebrow mb-2">{pickerLabel}</p>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={pickerLabel}>
+            {pickerOptions.map(option => {
+              const selected = chosenSeason === option;
+              return (
+                <button
+                  key={option}
+                  onClick={() => !completed && setChosenSeason(option)}
+                  disabled={completed}
+                  aria-pressed={selected}
+                  className={`min-h-[44px] rounded-pill border px-4 py-2 text-sm font-bold transition-all ${
+                    selected
+                      ? 'border-brand bg-teal-50 text-brand ring-2 ring-brand/20'
+                      : 'border-slate-200 bg-white text-muted hover:border-brand/40 hover:text-ink'
+                  }`}
+                >
+                  {option}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Order chart: two-column form (Units 3/4/8) or row-labelled form (Unit 9) */}
+      {chart && chartRowLabels && (
+        <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <p className="eyebrow mb-3">Order chart</p>
+          <div className="space-y-3">
+            {chartRowLabels.map((label, r) => (
+              <div key={r}>
+                <p className="mb-1 text-xs font-extrabold text-ink">{label}</p>
+                <input
+                  value={rowEntries[r] ?? ''}
+                  disabled={completed}
+                  onChange={e => setRowEntries(prev => prev.map((v, idx) => (idx === r ? e.target.value : v)))}
+                  className="min-h-9 w-full rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-ink focus:border-brand focus:outline-none"
+                  aria-label={`Row ${r + 1}: ${label}`}
+                  placeholder={chartRowStems[r] ?? ''}
+                />
+              </div>
+            ))}
+          </div>
+          {menu.length > 0 && (
+            <>
+              <p className="eyebrow mb-2 mt-3">Menu — tap to add to your writing</p>
+              <div className="flex flex-wrap gap-1.5">
+                {menu.map(word => (
+                  <button
+                    key={word}
+                    onClick={() => !completed && setText(prev => prev + (prev && !prev.endsWith(' ') ? ' ' : '') + word)}
+                    className="rounded-lg border border-violet/20 bg-violet/5 px-2.5 py-1.5 text-xs font-semibold text-writing transition-colors hover:bg-violet/10"
+                    style={{ minHeight: 32 }}
+                    aria-label={`Add "${word}" to your writing`}
+                  >
+                    {word}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+      {chart && !chartRowLabels && (
         <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
           <p className="eyebrow mb-3">Order chart</p>
           <div className="space-y-2">
             <div className="grid grid-cols-2 gap-2">
-              <p className="text-xs font-extrabold text-ink">{chart.columnA}</p>
+              <p className="text-xs font-extrabold text-ink">{chart.columnA as string}</p>
               <p className="text-xs font-extrabold text-ink">{chart.columnB}</p>
             </div>
             {chartCells.map((row, r) => (
@@ -80,7 +159,7 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
                   disabled={completed}
                   onChange={e => setChartCells(prev => prev.map((rw, idx) => (idx === r ? [e.target.value, rw[1]] : rw)))}
                   className="min-h-9 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-ink focus:border-brand focus:outline-none"
-                  aria-label={`Row ${r + 1}, ${chart.columnA}`}
+                  aria-label={`Row ${r + 1}, ${chart.columnA as string}`}
                   placeholder="e.g. Mia wants pizza"
                 />
                 <input
@@ -88,8 +167,8 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
                   disabled={completed}
                   onChange={e => setChartCells(prev => prev.map((rw, idx) => (idx === r ? [rw[0], e.target.value] : rw)))}
                   className="min-h-9 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm text-ink focus:border-brand focus:outline-none"
-                  aria-label={`Row ${r + 1}, ${chart.columnB}`}
-                  placeholder={chart.columnBStem ?? 'e.g. It looks good'}
+                  aria-label={`Row ${r + 1}, ${chart.columnB as string}`}
+                  placeholder={typeof chart.columnBStem === 'string' ? chart.columnBStem : 'e.g. It looks good'}
                 />
               </div>
             ))}
@@ -305,9 +384,9 @@ function LegacyDiaryPrompt({ activity, onResult }: Props) {
 
 export function DiaryPrompt(props: Props) {
   const raw = props.activity.payload as Record<string, any>;
-  // v2 guidedParagraph payloads carry starters, a template, requirements or
-  // the two-column order chart (Unit 3's W3).
-  if (raw?.starters || raw?.template || raw?.requirements || raw?.chart || raw?.menu) {
+  // v2 guidedParagraph payloads carry starters, a template, requirements, the
+  // two-column order chart, the menu, or the choose-a-X picker.
+  if (raw?.starters || raw?.template || raw?.requirements || raw?.chart || raw?.menu || raw?.chooseSeason || raw?.chooseRoom) {
     return <GuidedParagraphBody {...props} />;
   }
   return <LegacyDiaryPrompt {...props} />;

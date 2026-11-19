@@ -81,7 +81,10 @@ export function SelfCheckPage() {
   const intro = selfAssessment?.intro ?? 'There are no right answers here. Be honest — it helps you.';
   const hardestPrompt = selfAssessment?.hardestPrompt ?? 'Which one was hardest today?';
   const notePrompt = selfAssessment?.notePrompt ?? 'One thing I want to get better at.';
-  const statement = (skill: Skill) => selfAssessment?.skills?.[skill]?.[levelKey] ?? '';
+  // Units without a selfAssessment block fall back to a neutral generic
+  // statement per skill — the screen and comparison still work.
+  const statement = (skill: Skill) =>
+    selfAssessment?.skills?.[skill]?.[levelKey] ?? `I can handle the ${SKILL_LABELS[skill].toLowerCase()} tasks from this unit.`;
 
   return (
     <div className="mx-auto max-w-[900px] px-4 py-6 sm:px-6 sm:py-8">

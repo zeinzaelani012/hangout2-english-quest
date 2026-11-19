@@ -5,6 +5,9 @@ import { findUnit3PassageContaining } from '../../unit3/v2/passages';
 import { findUnit4PassageContaining } from '../../unit4/v2/passages';
 import { findUnit5PassageContaining } from '../../unit5/v2/passages';
 import { findUnit6PassageContaining } from '../../unit6/v2/passages';
+import { findUnit7PassageContaining } from '../../unit7/v2/passages';
+import { findUnit9PassageContaining } from '../../unit9/v2/passages';
+import { findUnit8PassageContaining } from '../../unit8/v2/passages';
 import type { Activity, ActivityPayload, ActivityType, DepthMove, Level, Skill } from '../../../types';
 
 /**
@@ -248,5 +251,5 @@ export function findPassageContaining(level: Level, answer: string): string | un
       if (flat.includes(needle)) return text;
     }
   }
-  return findUnit2PassageContaining(level, answer) ?? findUnit3PassageContaining(level, answer) ?? findUnit4PassageContaining(level, answer) ?? findUnit5PassageContaining(level, answer) ?? findUnit6PassageContaining(level, answer);
+  return findUnit2PassageContaining(level, answer) ?? findUnit3PassageContaining(level, answer) ?? findUnit4PassageContaining(level, answer) ?? findUnit5PassageContaining(level, answer) ?? findUnit6PassageContaining(level, answer) ?? findUnit7PassageContaining(level, answer) ?? findUnit8PassageContaining(level, answer) ?? findUnit9PassageContaining(level, answer);
 }

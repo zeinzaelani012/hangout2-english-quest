@@ -54,6 +54,33 @@ import {
   vocabulary as unit6Vocabulary,
   selfAssessment as unit6SelfAssessment,
 } from './unit6/v2';
+import {
+  buildLevel as buildUnit7V2Level,
+  unit7Registry,
+  unit7Stations,
+  unit7Dialogue,
+  unit7Phonics,
+  vocabulary as unit7Vocabulary,
+  selfAssessment as unit7SelfAssessment,
+} from './unit7/v2';
+import {
+  buildLevel as buildUnit8V2Level,
+  unit8Registry,
+  unit8Stations,
+  unit8Dialogue,
+  unit8Phonics,
+  vocabulary as unit8Vocabulary,
+  selfAssessment as unit8SelfAssessment,
+} from './unit8/v2';
+import {
+  buildLevel as buildUnit9V2Level,
+  unit9Registry,
+  unit9Stations,
+  unit9Dialogue,
+  unit9Phonics,
+  vocabulary as unit9Vocabulary,
+  selfAssessment as unit9SelfAssessment,
+} from './unit9/v2';
 
 const unit1Stations: Station[] = contentPack.stations.map(s => ({
   id: s.id,
@@ -201,6 +228,99 @@ function buildUnit6(): Unit {
   };
 }
 
+function buildUnit7(): Unit {
+  const all: Record<Level, Activity[]> = {
+    easy: buildUnit7V2Level('easy'),
+    core: buildUnit7V2Level('core'),
+    challenging: buildUnit7V2Level('challenging'),
+  };
+
+  return {
+    id: unit7Registry.id,
+    title: unit7Registry.title,
+    islandName: unit7Registry.islandName,
+    bigQuestion: unit7Registry.bigQuestion,
+    objectives: unit7Registry.objectives,
+    skills: SKILL_WEIGHTS,
+    vocabulary: unit7Vocabulary,
+    stations: unit7Stations,
+    levels: {
+      easy: all.easy.filter(a => !isCheckpointActivity(a)),
+      core: all.core.filter(a => !isCheckpointActivity(a)),
+      challenging: all.challenging.filter(a => !isCheckpointActivity(a)),
+    },
+    bossActivities: {
+      easy: all.easy.filter(isCheckpointActivity),
+      core: all.core.filter(isCheckpointActivity),
+      challenging: all.challenging.filter(isCheckpointActivity),
+    },
+    unlocked: unit7Registry.unlocked,
+    status: unit7Registry.status,
+  };
+}
+
+function buildUnit8(): Unit {
+  const all: Record<Level, Activity[]> = {
+    easy: buildUnit8V2Level('easy'),
+    core: buildUnit8V2Level('core'),
+    challenging: buildUnit8V2Level('challenging'),
+  };
+
+  return {
+    id: unit8Registry.id,
+    title: unit8Registry.title,
+    islandName: unit8Registry.islandName,
+    bigQuestion: unit8Registry.bigQuestion,
+    objectives: unit8Registry.objectives,
+    skills: SKILL_WEIGHTS,
+    vocabulary: unit8Vocabulary,
+    stations: unit8Stations,
+    levels: {
+      easy: all.easy.filter(a => !isCheckpointActivity(a)),
+      core: all.core.filter(a => !isCheckpointActivity(a)),
+      challenging: all.challenging.filter(a => !isCheckpointActivity(a)),
+    },
+    bossActivities: {
+      easy: all.easy.filter(isCheckpointActivity),
+      core: all.core.filter(isCheckpointActivity),
+      challenging: all.challenging.filter(isCheckpointActivity),
+    },
+    unlocked: unit8Registry.unlocked,
+    status: unit8Registry.status,
+  };
+}
+
+function buildUnit9(): Unit {
+  const all: Record<Level, Activity[]> = {
+    easy: buildUnit9V2Level('easy'),
+    core: buildUnit9V2Level('core'),
+    challenging: buildUnit9V2Level('challenging'),
+  };
+
+  return {
+    id: unit9Registry.id,
+    title: unit9Registry.title,
+    islandName: unit9Registry.islandName,
+    bigQuestion: unit9Registry.bigQuestion,
+    objectives: unit9Registry.objectives,
+    skills: SKILL_WEIGHTS,
+    vocabulary: unit9Vocabulary,
+    stations: unit9Stations,
+    levels: {
+      easy: all.easy.filter(a => !isCheckpointActivity(a)),
+      core: all.core.filter(a => !isCheckpointActivity(a)),
+      challenging: all.challenging.filter(a => !isCheckpointActivity(a)),
+    },
+    bossActivities: {
+      easy: all.easy.filter(isCheckpointActivity),
+      core: all.core.filter(isCheckpointActivity),
+      challenging: all.challenging.filter(isCheckpointActivity),
+    },
+    unlocked: unit9Registry.unlocked,
+    status: unit9Registry.status,
+  };
+}
+
 function buildUnit2(): Unit {
   const all: Record<Level, Activity[]> = {
     easy: buildUnit2V2Level('easy'),
@@ -287,9 +407,9 @@ export const units: Unit[] = [
   buildUnit4(),
   buildUnit5(),
   buildUnit6(),
-  buildPlaceholderUnit(7),
-  buildPlaceholderUnit(8),
-  buildPlaceholderUnit(9),
+  buildUnit7(),
+  buildUnit8(),
+  buildUnit9(),
 ];
 
 export function getUnit(id: number): Unit | undefined {
@@ -341,6 +461,15 @@ export function getUnitReading(unitId: number): UnitReadingContext {
   if (unitId === 6) {
     return { readingTexts: [], dialogue: unit6Dialogue };
   }
+  if (unitId === 7) {
+    return { readingTexts: [], dialogue: unit7Dialogue };
+  }
+  if (unitId === 8) {
+    return { readingTexts: [], dialogue: unit8Dialogue };
+  }
+  if (unitId === 9) {
+    return { readingTexts: [], dialogue: unit9Dialogue };
+  }
   return { readingTexts: unit1ReadingTexts, dialogue: unit1Dialogue };
 }
 
@@ -367,12 +496,15 @@ export function getUnitPhonics(unitId: number): UnitPhonics | undefined {
   if (unitId === 4) return unit4Phonics;
   if (unitId === 5) return unit5Phonics;
   if (unitId === 6) return unit6Phonics;
+  if (unitId === 7) return unit7Phonics;
+  if (unitId === 8) return unit8Phonics;
+  if (unitId === 9) return unit9Phonics;
   return undefined;
 }
 
-/** Phase 7 can-do statements for a unit's self-assessment screen. Units 1-6
- * carry theirs inside the pack; Unit 7's block is pre-wired from the shared
- * blocks file so it is ready the moment its pack lands. */
+/** Phase 7 can-do statements for a unit's self-assessment screen. Every
+ * wired unit carries its own block inside the pack; the blocks file backs
+ * any unit whose pack predates the field. */
 export function getUnitSelfAssessment(unitId: number) {
   switch (unitId) {
     case 1: return unit1SelfAssessment;
@@ -381,7 +513,9 @@ export function getUnitSelfAssessment(unitId: number) {
     case 4: return unit4SelfAssessment;
     case 5: return unit5SelfAssessment;
     case 6: return unit6SelfAssessment;
-    case 7: return selfAssessmentBlocks.units["7"]?.selfAssessment;
+    case 7: return unit7SelfAssessment ?? selfAssessmentBlocks.units["7"]?.selfAssessment;
+    case 8: return unit8SelfAssessment;
+    case 9: return unit9SelfAssessment;
     default: return undefined;
   }
 }

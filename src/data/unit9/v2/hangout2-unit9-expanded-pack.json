@@ -1,0 +1,5117 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "unit9",
+    "version": "2.0",
+    "schema": "v2.0-pacing",
+    "unit": 9,
+    "title": "Our Field Trip",
+    "islandName": "Field Trip Island",
+    "bigQuestion": "Where were you last weekend?",
+    "objectives": [
+      "Nature words",
+      "Talking about where people were"
+    ],
+    "sourcePages": "100-107 (adapted, not reproduced)",
+    "sourceNote": "Book pages 108-111 are Review 3 (Units 7-9) plus the final board game, and are NOT part of this pack. See review3Connection.",
+    "contentPolicy": "Original adapted material, topic-aligned. No coursebook wording, audio or artwork reproduced.",
+    "mergeContract": "Join `slots` to each level's `content` by slot id. Result: { id: slotId + '-' + level, skill, type, prompt, payload, xp, estSeconds, depthMoves }. Slots missing from a level inherit the Core entry.",
+    "unitNote": "FINAL UNIT. This completes the nine-unit course. The past tense of There is / There are (was / were) is introduced here, so this is the last new grammar system in the course.",
+    "totalUnitsPlanned": 9,
+    "answerKeyIncluded": true
+  },
+  "pacing": {
+    "levelTimeMultiplier": {
+      "easy": 0.85,
+      "core": 1,
+      "challenging": 1.05
+    },
+    "calibration": {
+      "value": 0.72,
+      "fittedValue": 0.711,
+      "basis": "Unit 1 pilot: projected 62.0/70.8/73.8, measured 45/49/53",
+      "teacherFrameMinutes": 15
+    },
+    "projection": {
+      "easy": {
+        "appMinutes": 45,
+        "lessonMinutes": 60
+      },
+      "core": {
+        "appMinutes": 51,
+        "lessonMinutes": 66
+      },
+      "challenging": {
+        "appMinutes": 53,
+        "lessonMinutes": 68
+      }
+    }
+  },
+  "skillTimeWeights": {
+    "speaking": {
+      "weight": 25,
+      "baseSeconds": 883,
+      "activities": 7,
+      "share": 25
+    },
+    "vocabulary": {
+      "weight": 25,
+      "baseSeconds": 880,
+      "activities": 8,
+      "share": 24.9
+    },
+    "grammar": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 5,
+      "share": 15
+    },
+    "reading": {
+      "weight": 15,
+      "baseSeconds": 530,
+      "activities": 4,
+      "share": 15
+    },
+    "listening": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10
+    },
+    "writing": {
+      "weight": 10,
+      "baseSeconds": 353,
+      "activities": 3,
+      "share": 10
+    }
+  },
+  "slots": [
+    {
+      "slot": "V1",
+      "skill": "vocabulary",
+      "type": "pictureToWord",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Name the places"
+    },
+    {
+      "slot": "V2",
+      "skill": "vocabulary",
+      "type": "wordToPicture",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Which picture?"
+    },
+    {
+      "slot": "V3",
+      "skill": "vocabulary",
+      "type": "audioToWord",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Listen and find"
+    },
+    {
+      "slot": "V4",
+      "skill": "vocabulary",
+      "type": "dragSort",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Land or water?"
+    },
+    {
+      "slot": "V5",
+      "skill": "vocabulary",
+      "type": "gapFill",
+      "estSeconds": 125,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "In a sentence"
+    },
+    {
+      "slot": "V6",
+      "skill": "vocabulary",
+      "type": "oddOneOut",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "vocabulary",
+      "label": "Odd one out"
+    },
+    {
+      "slot": "V7",
+      "skill": "vocabulary",
+      "type": "spelling",
+      "estSeconds": 115,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "vocabulary",
+      "label": "Build the word"
+    },
+    {
+      "slot": "V8",
+      "skill": "vocabulary",
+      "type": "mixedRecall",
+      "estSeconds": 120,
+      "xp": 4,
+      "depthMoves": [
+        "D2",
+        "D5"
+      ],
+      "station": "vocabulary",
+      "label": "Remember them all"
+    },
+    {
+      "slot": "G1",
+      "skill": "grammar",
+      "type": "notice",
+      "estSeconds": 90,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Spot the pattern"
+    },
+    {
+      "slot": "G2",
+      "skill": "grammar",
+      "type": "gapFill",
+      "estSeconds": 130,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Complete it"
+    },
+    {
+      "slot": "G3",
+      "skill": "grammar",
+      "type": "errorCorrection",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Fix the mistake"
+    },
+    {
+      "slot": "G4",
+      "skill": "grammar",
+      "type": "questionForms",
+      "estSeconds": 105,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Ask the question"
+    },
+    {
+      "slot": "G5",
+      "skill": "grammar",
+      "type": "transform",
+      "estSeconds": 100,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "grammar",
+      "label": "Now or then"
+    },
+    {
+      "slot": "L1",
+      "skill": "listening",
+      "type": "audioToPicture",
+      "estSeconds": 95,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "listening",
+      "label": "First listen"
+    },
+    {
+      "slot": "L2",
+      "skill": "listening",
+      "type": "twoPass",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Listen twice"
+    },
+    {
+      "slot": "L3",
+      "skill": "listening",
+      "type": "audioGapFill",
+      "estSeconds": 118,
+      "xp": 3,
+      "depthMoves": [
+        "D5"
+      ],
+      "station": "listening",
+      "label": "Fill the gaps"
+    },
+    {
+      "slot": "R1",
+      "skill": "reading",
+      "type": "preReadVocab",
+      "estSeconds": 80,
+      "xp": 3,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "reading",
+      "label": "Words before the text"
+    },
+    {
+      "slot": "R2",
+      "skill": "reading",
+      "type": "gist",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "What is it about?"
+    },
+    {
+      "slot": "R3",
+      "skill": "reading",
+      "type": "detail",
+      "estSeconds": 150,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Find the facts"
+    },
+    {
+      "slot": "R4",
+      "skill": "reading",
+      "type": "findSentence",
+      "estSeconds": 170,
+      "xp": 4,
+      "depthMoves": [
+        "D4"
+      ],
+      "station": "reading",
+      "label": "Tap the sentence"
+    },
+    {
+      "slot": "W1",
+      "skill": "writing",
+      "type": "sentenceBuilder",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Build a sentence"
+    },
+    {
+      "slot": "W2",
+      "skill": "writing",
+      "type": "sentenceRepair",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "Fix the sentence"
+    },
+    {
+      "slot": "W3",
+      "skill": "writing",
+      "type": "guidedParagraph",
+      "estSeconds": 183,
+      "xp": 4,
+      "depthMoves": [
+        "D2"
+      ],
+      "station": "writing",
+      "label": "My trip chart"
+    },
+    {
+      "slot": "S1",
+      "skill": "speaking",
+      "type": "warmUpRepeat",
+      "estSeconds": 85,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it with me"
+    },
+    {
+      "slot": "S2",
+      "skill": "speaking",
+      "type": "chunkDrill",
+      "estSeconds": 75,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Say it fast"
+    },
+    {
+      "slot": "S3",
+      "skill": "speaking",
+      "type": "askAnswer",
+      "estSeconds": 130,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Ask and answer"
+    },
+    {
+      "slot": "S4",
+      "skill": "speaking",
+      "type": "pictureDescription",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Describe the island"
+    },
+    {
+      "slot": "S5",
+      "skill": "speaking",
+      "type": "rolePlay",
+      "estSeconds": 140,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "Two voices"
+    },
+    {
+      "slot": "S6",
+      "skill": "speaking",
+      "type": "personalResponse",
+      "estSeconds": 128,
+      "xp": 3,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "About you"
+    },
+    {
+      "slot": "S7",
+      "skill": "speaking",
+      "type": "monologue",
+      "estSeconds": 185,
+      "xp": 4,
+      "depthMoves": [
+        "D3"
+      ],
+      "station": "speaking",
+      "label": "My field trip"
+    },
+    {
+      "slot": "CP1",
+      "skill": "mixed",
+      "type": "checkpoint",
+      "estSeconds": 300,
+      "xp": 15,
+      "depthMoves": [
+        "D1"
+      ],
+      "station": "checkpoint",
+      "label": "Halfway checkpoint"
+    },
+    {
+      "slot": "BOSS",
+      "skill": "mixed",
+      "type": "boss",
+      "estSeconds": 420,
+      "xp": 25,
+      "depthMoves": [
+        "D1",
+        "D4"
+      ],
+      "station": "boss",
+      "label": "The Nature Trail"
+    }
+  ],
+  "gating": {
+    "easy": "open",
+    "core": "open",
+    "challenging": "locked until core boss is completed",
+    "lockedMessage": "Finish Core to unlock Challenging",
+    "lockedCta": {
+      "label": "Go to Core",
+      "route": "/unit/9/core"
+    }
+  },
+  "stations": [
+    {
+      "id": "vocabulary",
+      "order": 1,
+      "skill": "vocabulary",
+      "name": "The Map Key",
+      "subtitle": "Name it",
+      "xp": 25
+    },
+    {
+      "id": "grammar",
+      "order": 2,
+      "skill": "grammar",
+      "name": "The Photograph",
+      "subtitle": "There was / There were",
+      "xp": 15
+    },
+    {
+      "id": "listening",
+      "order": 3,
+      "skill": "listening",
+      "name": "The Ranger Station",
+      "subtitle": "Listen and choose",
+      "xp": 10
+    },
+    {
+      "id": "reading",
+      "order": 4,
+      "skill": "reading",
+      "name": "Sequoia National Park",
+      "subtitle": "Read and find",
+      "xp": 15
+    },
+    {
+      "id": "writing",
+      "order": 5,
+      "skill": "writing",
+      "name": "The Trip Chart",
+      "subtitle": "Write it down",
+      "xp": 10
+    },
+    {
+      "id": "speaking",
+      "order": 6,
+      "skill": "speaking",
+      "name": "The Lookout",
+      "subtitle": "Say it out loud",
+      "xp": 25
+    },
+    {
+      "id": "boss",
+      "order": 7,
+      "skill": "mixed",
+      "name": "The Nature Trail",
+      "subtitle": "All six skills",
+      "xp": 0,
+      "unlockAfter": [
+        "vocabulary",
+        "grammar",
+        "listening",
+        "reading",
+        "writing",
+        "speaking"
+      ]
+    }
+  ],
+  "unitRegistryEntry": {
+    "id": 9,
+    "title": "Our Field Trip",
+    "islandName": "Field Trip Island",
+    "bigQuestion": "Where were you last weekend?",
+    "objectives": [
+      "Nature words",
+      "Talking about where people were"
+    ],
+    "unlocked": true,
+    "status": "playable",
+    "note": "FINAL UNIT. Written at v2.0 first time. 30 slots + 2 checkpoints. Completing this closes the nine-unit course."
+  },
+  "vocabulary": [
+    {
+      "id": "v01",
+      "word": "hill",
+      "set": "A",
+      "category": "land",
+      "example": "There were two hills behind the lake.",
+      "imgHint": "a rounded green hill under a blue sky"
+    },
+    {
+      "id": "v02",
+      "word": "tree",
+      "set": "A",
+      "category": "land",
+      "example": "There were two short trees on the hill.",
+      "imgHint": "a single leafy tree on grass"
+    },
+    {
+      "id": "v03",
+      "word": "lake",
+      "set": "A",
+      "category": "water",
+      "example": "There was a long lake in the park.",
+      "imgHint": "a blue lake with trees on the far bank"
+    },
+    {
+      "id": "v04",
+      "word": "forest",
+      "set": "A",
+      "category": "land",
+      "example": "There was a big forest near the lake.",
+      "imgHint": "many tall trees standing close together"
+    },
+    {
+      "id": "v05",
+      "word": "island",
+      "set": "A",
+      "category": "water",
+      "example": "There was an island in the lake.",
+      "imgHint": "a small green island surrounded by water"
+    },
+    {
+      "id": "v06",
+      "word": "mountain",
+      "set": "A",
+      "category": "land",
+      "example": "There was a very high mountain in the park.",
+      "imgHint": "a tall pointed mountain with a snow cap"
+    },
+    {
+      "id": "v07",
+      "word": "grass",
+      "set": "A",
+      "category": "land",
+      "example": "The noise was in the tall grass.",
+      "imgHint": "long green grass blades close up"
+    },
+    {
+      "id": "v08",
+      "word": "beach",
+      "set": "A",
+      "category": "water",
+      "example": "There was a long sandy beach by the lake.",
+      "imgHint": "sand beside water with a gentle wave"
+    },
+    {
+      "id": "v09",
+      "word": "low",
+      "set": "B",
+      "category": "adjective",
+      "example": "The hills were low, not high.",
+      "imgHint": "a small flat hill next to a tall one, with an arrow"
+    },
+    {
+      "id": "v10",
+      "word": "high",
+      "set": "B",
+      "category": "adjective",
+      "example": "There was a very high mountain.",
+      "imgHint": "a tall peak with clouds near the top"
+    },
+    {
+      "id": "v11",
+      "word": "tall",
+      "set": "B",
+      "category": "adjective",
+      "example": "The General Sherman is very tall.",
+      "imgHint": "a very tall tree seen from the bottom, looking up"
+    },
+    {
+      "id": "v12",
+      "word": "deep",
+      "set": "B",
+      "category": "adjective",
+      "example": "Was the lake deep? Yes, it was.",
+      "imgHint": "a cutaway of a lake showing dark water far down"
+    },
+    {
+      "id": "v13",
+      "word": "small",
+      "set": "B",
+      "category": "adjective",
+      "example": "There was a small island in the lake.",
+      "imgHint": "a tiny island beside a large island for scale"
+    },
+    {
+      "id": "v14",
+      "word": "big",
+      "set": "B",
+      "category": "adjective",
+      "example": "The park is very big.",
+      "imgHint": "a wide landscape with forests and mountains"
+    },
+    {
+      "id": "v15",
+      "word": "old",
+      "set": "B",
+      "category": "adjective",
+      "example": "Were the trees old? Yes, they were.",
+      "imgHint": "a tree trunk with many rings beside it"
+    },
+    {
+      "id": "v16",
+      "word": "sandy",
+      "set": "B",
+      "category": "adjective",
+      "example": "There was a sandy beach by the lake.",
+      "imgHint": "close-up of pale sand with a spade in it"
+    },
+    {
+      "id": "v17",
+      "word": "national park",
+      "set": "C",
+      "category": "place",
+      "example": "Sequoia National Park is in California.",
+      "imgHint": "a park entrance sign with trees behind it"
+    },
+    {
+      "id": "v18",
+      "word": "California",
+      "set": "C",
+      "category": "place",
+      "example": "Sequoia National Park is in California.",
+      "imgHint": "a map outline of California on the west coast"
+    },
+    {
+      "id": "v19",
+      "word": "snake",
+      "set": "C",
+      "category": "animal",
+      "example": "There was a long snake in the grass!",
+      "imgHint": "a long green snake in tall grass"
+    },
+    {
+      "id": "v20",
+      "word": "bird",
+      "set": "C",
+      "category": "animal",
+      "example": "There were some birds in the forest.",
+      "imgHint": "a small bird on a branch"
+    },
+    {
+      "id": "v21",
+      "word": "ancient",
+      "set": "C",
+      "category": "adjective",
+      "example": "The tree is ancient. It is over 2,000 years old.",
+      "imgHint": "an enormous old tree trunk with rough bark"
+    }
+  ],
+  "levels": {
+    "easy": {
+      "content": {
+        "V1": {
+          "prompt": "Look at the picture. Tap the place word.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "lake",
+              "options": [
+                "lake",
+                "hill",
+                "tree"
+              ],
+              "answer": "lake",
+              "why": "A lake is water with land around it."
+            },
+            {
+              "id": "v1-2",
+              "img": "tree",
+              "options": [
+                "tree",
+                "grass",
+                "forest"
+              ],
+              "answer": "tree",
+              "why": "One tall plant with leaves is a tree."
+            },
+            {
+              "id": "v1-3",
+              "img": "beach",
+              "options": [
+                "beach",
+                "island",
+                "lake"
+              ],
+              "answer": "beach",
+              "why": "A beach is sand next to water."
+            },
+            {
+              "id": "v1-4",
+              "img": "mountain",
+              "options": [
+                "mountain",
+                "hill",
+                "forest"
+              ],
+              "answer": "mountain",
+              "why": "A mountain is very high, much higher than a hill."
+            }
+          ],
+          "whyChoices": [
+            "This word matches the picture",
+            "The word is short",
+            "I like this place"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "forest",
+              "options": [
+                "forest",
+                "tree",
+                "grass"
+              ],
+              "answer": "forest",
+              "why": "A forest is many trees together."
+            },
+            {
+              "id": "v2-2",
+              "word": "island",
+              "options": [
+                "island",
+                "beach",
+                "lake"
+              ],
+              "answer": "island",
+              "why": "An island has water all around it."
+            },
+            {
+              "id": "v2-3",
+              "word": "hill",
+              "options": [
+                "hill",
+                "mountain",
+                "beach"
+              ],
+              "answer": "hill",
+              "why": "A hill is small and round. A mountain is tall and pointed."
+            },
+            {
+              "id": "v2-4",
+              "word": "grass",
+              "options": [
+                "grass",
+                "forest",
+                "tree"
+              ],
+              "answer": "grass",
+              "why": "Grass is short and green and covers the ground."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this word",
+            "The word is long",
+            "I have seen this place"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. You can listen as many times as you want.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "Lake.",
+              "options": [
+                "lake",
+                "hill",
+                "beach"
+              ],
+              "answer": "lake"
+            },
+            {
+              "id": "v3-2",
+              "audio": "There was an island.",
+              "options": [
+                "island",
+                "forest",
+                "mountain"
+              ],
+              "answer": "island"
+            },
+            {
+              "id": "v3-3",
+              "audio": "Grass.",
+              "options": [
+                "grass",
+                "tree",
+                "lake"
+              ],
+              "answer": "grass"
+            }
+          ],
+          "whyChoices": [
+            "I heard that word clearly",
+            "It sounded like another word",
+            "I guessed"
+          ]
+        },
+        "V4": {
+          "prompt": "Put each place in the right box.",
+          "bins": [
+            "Water",
+            "Land"
+          ],
+          "items": [
+            {
+              "word": "lake",
+              "bin": "Water",
+              "why": "A lake is water."
+            },
+            {
+              "word": "hill",
+              "bin": "Land",
+              "why": "A hill is land."
+            },
+            {
+              "word": "island",
+              "bin": "Water",
+              "why": "An island has water all around it."
+            },
+            {
+              "word": "forest",
+              "bin": "Land",
+              "why": "A forest grows on land."
+            },
+            {
+              "word": "beach",
+              "bin": "Water",
+              "why": "A beach is where land meets water."
+            },
+            {
+              "word": "mountain",
+              "bin": "Land",
+              "why": "A mountain is land."
+            },
+            {
+              "word": "tree",
+              "bin": "Land",
+              "why": "A tree grows on land."
+            },
+            {
+              "word": "grass",
+              "bin": "Land",
+              "why": "Grass grows on land."
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "There is a ___ in the lake. It has trees on it.",
+              "options": [
+                "island",
+                "beach",
+                "hill"
+              ],
+              "answer": "island",
+              "why": "An island sits in water."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "There are many trees together. It is a ___.",
+              "options": [
+                "forest",
+                "lake",
+                "beach"
+              ],
+              "answer": "forest",
+              "why": "Many trees together make a forest."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "We sit on the sand by the ___.",
+              "options": [
+                "beach",
+                "mountain",
+                "forest"
+              ],
+              "answer": "beach",
+              "why": "A beach is sand next to water."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "The ___ is very high. It has snow on top.",
+              "options": [
+                "mountain",
+                "hill",
+                "lake"
+              ],
+              "answer": "mountain",
+              "why": "Mountains are high enough for snow."
+            }
+          ],
+          "whyChoices": [
+            "The meaning fits the sentence",
+            "The word is longer",
+            "It starts with the same letter"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words match. One is different. Tap the different one.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "lake",
+                "beach",
+                "island",
+                "tree"
+              ],
+              "answer": "tree",
+              "why": "The others are about water. A tree is a plant."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "hill",
+                "mountain",
+                "forest",
+                "lake"
+              ],
+              "answer": "lake",
+              "why": "The others are land. A lake is water."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "grass",
+                "tree",
+                "forest",
+                "beach"
+              ],
+              "answer": "beach",
+              "why": "The others are green and growing. A beach is sand."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is the longest word",
+            "I do not like it"
+          ]
+        },
+        "V7": {
+          "prompt": "Put the letters in order. Tap them one by one.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "l",
+                "a",
+                "k",
+                "e"
+              ],
+              "answer": "lake",
+              "audio": "lake"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "h",
+                "i",
+                "l",
+                "l"
+              ],
+              "answer": "hill",
+              "audio": "hill"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "t",
+                "r",
+                "e",
+                "e"
+              ],
+              "answer": "tree",
+              "audio": "tree"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Remember the nature words. Five quick questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Forest.",
+              "options": [
+                "forest",
+                "tree",
+                "grass"
+              ],
+              "answer": "forest"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "There was a long ___ by the lake.",
+              "options": [
+                "beach",
+                "mountain",
+                "island"
+              ],
+              "answer": "beach"
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Look at the picture. Type the word: water with land around it.",
+              "img": "lake",
+              "answer": "lake",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "hill",
+                "mountain",
+                "forest",
+                "lake"
+              ],
+              "answer": "lake",
+              "why": "The others are land."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "island",
+              "options": [
+                "island",
+                "beach",
+                "lake"
+              ],
+              "answer": "island"
+            }
+          ],
+          "whyChoices": [
+            "I remembered this word",
+            "This word was new",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Look at these four sentences. What is the same in all of them?",
+          "teachCard": {
+            "title": "There was and There were",
+            "lines": [
+              "There was a lake.",
+              "There was an island.",
+              "There were two hills.",
+              "There were some trees."
+            ],
+            "rule": "One thing in the past: There was. Many things in the past: There were. This is the past of There is and There are."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "sentence": "There was a lake.",
+              "q": "How many lakes?",
+              "options": [
+                "one",
+                "many"
+              ],
+              "answer": "one"
+            },
+            {
+              "id": "g1-2",
+              "sentence": "There were two hills.",
+              "q": "How many hills?",
+              "options": [
+                "many",
+                "one"
+              ],
+              "answer": "many"
+            },
+            {
+              "id": "g1-3",
+              "q": "Which is correct for one island?",
+              "options": [
+                "There was an island.",
+                "There were an island."
+              ],
+              "answer": "There was an island."
+            },
+            {
+              "id": "g1-4",
+              "q": "Which is correct for many trees?",
+              "options": [
+                "There were some trees.",
+                "There was some trees."
+              ],
+              "answer": "There were some trees."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence.",
+          "whyChoices": [
+            "One thing takes was",
+            "Many things take were",
+            "The sentence is about the past",
+            "Was and were ask about the past"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "There ___ a lake in the park.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "was",
+              "why": "One lake takes was."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "There ___ two hills behind the lake.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "were",
+              "why": "Two hills take were."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "There ___ an island in the lake.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "was",
+              "why": "One island takes was."
+            },
+            {
+              "id": "g2-4",
+              "sentence": "There ___ some birds in the forest.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "were",
+              "why": "Some birds are many, so were."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "There ___ a big forest near the lake.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "was",
+              "why": "One forest takes was."
+            },
+            {
+              "id": "g2-6",
+              "sentence": "There ___ a snake in the grass!",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "was",
+              "why": "One snake takes was."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "There was two hills.",
+              "wrong": "was",
+              "correct": "were",
+              "why": "Two hills take were."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "There were a lake.",
+              "wrong": "were",
+              "correct": "was",
+              "why": "One lake takes was."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "There were a snake in the grass.",
+              "wrong": "were",
+              "correct": "was",
+              "why": "One snake takes was."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "There was some birds in the forest.",
+              "wrong": "was",
+              "correct": "were",
+              "why": "Some birds are many, so were."
+            }
+          ],
+          "whyChoices": [
+            "Many things take were",
+            "One thing takes was",
+            "A snake is one thing",
+            "Some means many"
+          ]
+        },
+        "G4": {
+          "prompt": "Ask the question for this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, it was.",
+              "options": [
+                "Was the lake deep?",
+                "Were the lake deep?"
+              ],
+              "answer": "Was the lake deep?",
+              "why": "The lake is one thing, so use Was."
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, they weren't.",
+              "options": [
+                "Was the trees old?",
+                "Were the trees old?"
+              ],
+              "answer": "Were the trees old?",
+              "why": "The trees are many, so use Were."
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, it was. Very high.",
+              "options": [
+                "Was the mountain high?",
+                "Were the mountain high?"
+              ],
+              "answer": "Was the mountain high?",
+              "why": "One mountain takes Was."
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, it wasn't. It was small.",
+              "options": [
+                "Was the island big?",
+                "Were the island big?"
+              ],
+              "answer": "Was the island big?",
+              "why": "One island takes Was."
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change the sentence. Now becomes then.",
+          "items": [
+            {
+              "id": "g5-1",
+              "from": "There is a lake.",
+              "options": [
+                "There was a lake.",
+                "There were a lake."
+              ],
+              "answer": "There was a lake.",
+              "why": "Is becomes was for one thing."
+            },
+            {
+              "id": "g5-2",
+              "from": "There are two hills.",
+              "options": [
+                "There were two hills.",
+                "There was two hills."
+              ],
+              "answer": "There were two hills.",
+              "why": "Are becomes were for many things."
+            },
+            {
+              "id": "g5-3",
+              "from": "There is an island.",
+              "options": [
+                "There was an island.",
+                "There were an island."
+              ],
+              "answer": "There was an island.",
+              "why": "Is becomes was for one thing."
+            },
+            {
+              "id": "g5-4",
+              "from": "There are some trees.",
+              "options": [
+                "There were some trees.",
+                "There was some trees."
+              ],
+              "answer": "There were some trees.",
+              "why": "Are becomes were for many things."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Unlimited replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "There was a lake in the park.",
+              "options": [
+                "lake",
+                "hill",
+                "beach"
+              ],
+              "answer": "lake"
+            },
+            {
+              "id": "l1-2",
+              "audio": "There was a forest near the lake.",
+              "options": [
+                "forest",
+                "tree",
+                "grass"
+              ],
+              "answer": "forest"
+            },
+            {
+              "id": "l1-3",
+              "audio": "There was a long sandy beach.",
+              "options": [
+                "beach",
+                "island",
+                "lake"
+              ],
+              "answer": "beach"
+            }
+          ],
+          "whyChoices": [
+            "I heard the place word",
+            "I heard only the first sound",
+            "I guessed"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the big picture. Then listen again for the details.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is Mia talking about?",
+              "options": [
+                "A trip to a park",
+                "Her school bag"
+              ],
+              "answer": "A trip to a park"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What was in the lake?",
+              "options": [
+                "An island",
+                "A beach"
+              ],
+              "answer": "An island"
+            }
+          ],
+          "audio": "Last weekend I was in a national park. There was a big lake, and there was an island in the lake. There were two hills behind the lake.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and complete the sentence. Three gaps.",
+          "audio": "There was a small island. There were two hills. There was a long beach.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "There was a small ___(1)___.",
+              "options": [
+                "island",
+                "beach"
+              ],
+              "answer": "island"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "There were two ___(2)___.",
+              "options": [
+                "hills",
+                "trees"
+              ],
+              "answer": "hills"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "There was a long ___(3)___.",
+              "options": [
+                "beach",
+                "lake"
+              ],
+              "answer": "beach"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "field trip",
+              "options": [
+                "a school day outside the classroom",
+                "a day at home"
+              ],
+              "answer": "a school day outside the classroom"
+            },
+            {
+              "id": "r1-2",
+              "word": "yesterday",
+              "options": [
+                "the day before today",
+                "the day after today"
+              ],
+              "answer": "the day before today"
+            },
+            {
+              "id": "r1-3",
+              "word": "deep",
+              "options": [
+                "far from the top to the bottom",
+                "very small"
+              ],
+              "answer": "far from the top to the bottom"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Yesterday was my school's field trip. We were in a national park. There was a lake, and there were two hills behind the lake. There was an island in the lake. There was a beach by the lake. It was very long. There was a hill on the island. On the hill, there were two short trees. There was also a forest near the lake. In the forest, there were some animals. There were some birds, and there was even a snake. It was a fun field trip.",
+          "prompt": "Read the text. Then tap the sentence that tells you when the trip was.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that tells you when the trip was.",
+              "answerType": "tapSentence",
+              "answer": "Yesterday was my school's field trip.",
+              "why": "Yesterday tells us the time."
+            },
+            {
+              "id": "r2-2",
+              "q": "Was the trip fun?",
+              "options": [
+                "Yes, it was",
+                "No, it wasn't"
+              ],
+              "answer": "Yes, it was"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Yesterday was my school's field trip. We were in a national park. There was a lake, and there were two hills behind the lake. There was an island in the lake. There was a beach by the lake. It was very long. There was a hill on the island. On the hill, there were two short trees. There was also a forest near the lake. In the forest, there were some animals. There were some birds, and there was even a snake. It was a fun field trip.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "How many hills were behind the lake?",
+              "options": [
+                "Two",
+                "One",
+                "Three"
+              ],
+              "answer": "Two"
+            },
+            {
+              "id": "r3-2",
+              "q": "Where was the island?",
+              "options": [
+                "In the lake",
+                "On the hill"
+              ],
+              "answer": "In the lake"
+            },
+            {
+              "id": "r3-3",
+              "q": "Tap the sentence that tells you about the animals.",
+              "answerType": "tapSentence",
+              "answer": "There were some birds, and there was even a snake.",
+              "why": "That sentence names the animals."
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Sequoia National Park is in California, in the United States. It is very big. It has forests, mountains, and lakes. The first people to live there were Native Americans.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you where the park is.",
+              "answer": "Sequoia National Park is in California, in the United States."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you what the park has.",
+              "answer": "It has forests, mountains, and lakes."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you who lived there first.",
+              "answer": "The first people to live there were Native Americans."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order to make a sentence.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "There",
+                "was",
+                "a",
+                "lake"
+              ],
+              "answer": "There was a lake."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "There",
+                "were",
+                "two",
+                "hills"
+              ],
+              "answer": "There were two hills."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "There",
+                "was",
+                "an",
+                "island"
+              ],
+              "answer": "There was an island."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Was",
+                "the",
+                "lake",
+                "deep"
+              ],
+              "answer": "Was the lake deep?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "There was two hills.",
+              "answer": "There were two hills."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "There were a lake.",
+              "answer": "There was a lake."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Was the trees tall?",
+              "answer": "Were the trees tall?"
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Think of a trip. Where were you? Write four sentences about it.",
+          "choosePlace": [
+            "mountain",
+            "beach",
+            "lake",
+            "forest"
+          ],
+          "starters": [
+            "I was in a ___.",
+            "I was with ___.",
+            "There was ___.",
+            "There were ___."
+          ],
+          "checklist": [
+            "Capital letter at the start",
+            "Full stop at the end",
+            "was and were are correct"
+          ],
+          "minimumWords": 20
+        },
+        "S1": {
+          "prompt": "Listen, then say it. The model appears AFTER you try, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "There was a lake.",
+              "keywords": [
+                "there",
+                "was",
+                "lake"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "There were two hills.",
+              "keywords": [
+                "there",
+                "were",
+                "two",
+                "hills"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "There was an island.",
+              "keywords": [
+                "there",
+                "was",
+                "island"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "Were the trees tall?",
+              "keywords": [
+                "were",
+                "trees",
+                "tall"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Fast, then faster.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "there was a lake",
+              "keywords": [
+                "there",
+                "was",
+                "lake"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "there were two hills",
+              "keywords": [
+                "there",
+                "were",
+                "hills"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "in the grass",
+              "keywords": [
+                "in",
+                "grass"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Answer each question with a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Where were you last weekend?",
+              "keywords": [
+                "was",
+                "at",
+                "in"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "What was in the park?",
+              "keywords": [
+                "there",
+                "was",
+                "were"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Were there any trees?",
+              "keywords": [
+                "yes",
+                "no",
+                "there",
+                "were"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Was the lake deep?",
+              "keywords": [
+                "yes",
+                "no",
+                "it",
+                "was"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Look at the island map. Say what you can see on it. Use at least three nature words.",
+          "image": "island-map-easy",
+          "prompts": [
+            "One thing in the water",
+            "One thing on the land",
+            "One thing you would like to visit"
+          ],
+          "keywords": [
+            "there",
+            "was",
+            "were"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the story with two voices. First you are Mia, then Brian.",
+          "dialogueId": "theNoiseInTheGrass",
+          "lines": 4,
+          "keywords": [
+            "where",
+            "were",
+            "forest",
+            "grass"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself. Full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Where were you last weekend?",
+              "keywords": [
+                "was",
+                "weekend"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Were there any trees where you were?",
+              "keywords": [
+                "there",
+                "were",
+                "trees"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Do you like the beach or the mountains?",
+              "keywords": [
+                "like",
+                "beach",
+                "mountains"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 20 seconds about a trip you remember. Say four sentences.",
+          "minimumSeconds": 20,
+          "scaffold": [
+            "Last ___ I was in ___.",
+            "I was with ___.",
+            "There was ___.",
+            "There were ___."
+          ],
+          "keywords": [
+            "was",
+            "were",
+            "there"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six quick questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "lake",
+              "options": [
+                "lake",
+                "hill",
+                "beach"
+              ],
+              "answer": "lake"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "There ___ two hills.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "were"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "There was two hills.",
+              "wrong": "was",
+              "correct": "were"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "Forest.",
+              "options": [
+                "forest",
+                "tree",
+                "grass"
+              ],
+              "answer": "forest"
+            },
+            {
+              "id": "cp1-5",
+              "type": "grouping",
+              "words": [
+                "lake",
+                "hill"
+              ],
+              "bins": [
+                "Water",
+                "Land"
+              ],
+              "answers": {
+                "lake": "Water",
+                "hill": "Land"
+              }
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Say one sentence about a place you visited.",
+              "keywords": [
+                "there",
+                "was",
+                "were"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Nature Trail. Eight questions and one speaking task. You can do it!",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "island",
+              "options": [
+                "island",
+                "beach",
+                "lake"
+              ],
+              "answer": "island"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "There ___ an island in the lake.",
+              "options": [
+                "was",
+                "were"
+              ],
+              "answer": "was"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "There were a snake in the grass.",
+              "wrong": "were",
+              "correct": "was"
+            },
+            {
+              "id": "b-4",
+              "type": "audioQuestion",
+              "audio": "We were in a national park. There was a lake and there were two hills. There was an island in the lake.",
+              "q": "How many hills were there?",
+              "options": [
+                "Two",
+                "One",
+                "Three"
+              ],
+              "answer": "Two"
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "In the field trip text, tap the sentence that tells you about the animals in the forest.",
+              "answer": "There were some birds, and there was even a snake."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Were",
+                "the",
+                "trees",
+                "tall"
+              ],
+              "answer": "Were the trees tall?"
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the word for water with land all around it.",
+              "answer": "lake",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say two sentences: where you were and one thing that was there.",
+              "keywords": [
+                "was",
+                "were",
+                "there"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "core": {
+      "content": {
+        "V1": {
+          "prompt": "Tap the word that matches the picture. Then choose the reason your answer is right.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "hill",
+              "options": [
+                "hill",
+                "mountain",
+                "beach",
+                "forest"
+              ],
+              "answer": "hill",
+              "why": "A hill is round and low. A mountain is pointed and high."
+            },
+            {
+              "id": "v1-2",
+              "img": "island",
+              "options": [
+                "island",
+                "beach",
+                "lake",
+                "grass"
+              ],
+              "answer": "island",
+              "why": "An island is land with water all around it."
+            },
+            {
+              "id": "v1-3",
+              "img": "forest",
+              "options": [
+                "forest",
+                "tree",
+                "grass",
+                "hill"
+              ],
+              "answer": "forest",
+              "why": "A forest is many trees, not one."
+            },
+            {
+              "id": "v1-4",
+              "img": "beach",
+              "options": [
+                "beach",
+                "lake",
+                "island",
+                "mountain"
+              ],
+              "answer": "beach",
+              "why": "A beach is the sandy edge next to water."
+            }
+          ],
+          "whyChoices": [
+            "The picture shows this exact place",
+            "It belongs to the same landscape group",
+            "It starts with the same letter",
+            "It is water, not land"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "deep",
+              "options": [
+                "deep",
+                "low",
+                "small",
+                "old"
+              ],
+              "answer": "deep",
+              "why": "Deep describes how far down the water goes."
+            },
+            {
+              "id": "v2-2",
+              "word": "tall",
+              "options": [
+                "tall",
+                "high",
+                "big",
+                "sandy"
+              ],
+              "answer": "tall",
+              "why": "We use tall for trees and people, high for mountains."
+            },
+            {
+              "id": "v2-3",
+              "word": "sandy",
+              "options": [
+                "sandy",
+                "old",
+                "deep",
+                "low"
+              ],
+              "answer": "sandy",
+              "why": "Sandy means covered in sand."
+            },
+            {
+              "id": "v2-4",
+              "word": "ancient",
+              "options": [
+                "ancient",
+                "small",
+                "low",
+                "big"
+              ],
+              "answer": "ancient",
+              "why": "Ancient means very, very old."
+            }
+          ],
+          "whyChoices": [
+            "The picture matches the meaning",
+            "It describes size",
+            "It describes height",
+            "It describes age"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen. Tap the word you hear. Two replays.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "The lake was very deep.",
+              "options": [
+                "deep",
+                "low",
+                "tall",
+                "old"
+              ],
+              "answer": "deep"
+            },
+            {
+              "id": "v3-2",
+              "audio": "There was a long sandy beach.",
+              "options": [
+                "sandy",
+                "ancient",
+                "deep",
+                "low"
+              ],
+              "answer": "sandy"
+            },
+            {
+              "id": "v3-3",
+              "audio": "The mountain was very high.",
+              "options": [
+                "high",
+                "tall",
+                "big",
+                "small"
+              ],
+              "answer": "high"
+            }
+          ],
+          "whyChoices": [
+            "I heard the whole word",
+            "I heard a word that sounds similar",
+            "I used the topic to guess"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort the words into the right boxes.",
+          "bins": [
+            "Land",
+            "Water"
+          ],
+          "items": [
+            {
+              "word": "hill",
+              "bin": "Land"
+            },
+            {
+              "word": "lake",
+              "bin": "Water"
+            },
+            {
+              "word": "mountain",
+              "bin": "Land"
+            },
+            {
+              "word": "island",
+              "bin": "Water"
+            },
+            {
+              "word": "forest",
+              "bin": "Land"
+            },
+            {
+              "word": "beach",
+              "bin": "Water"
+            },
+            {
+              "word": "grass",
+              "bin": "Land"
+            },
+            {
+              "word": "tree",
+              "bin": "Land"
+            }
+          ]
+        },
+        "V5": {
+          "prompt": "Choose the word that finishes the sentence.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "Was the lake ___? Yes, it was. It went very far down.",
+              "options": [
+                "deep",
+                "low",
+                "sandy",
+                "small"
+              ],
+              "answer": "deep",
+              "why": "Deep describes distance from top to bottom."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "The General Sherman is very ___ and over 2,000 years old.",
+              "options": [
+                "tall",
+                "low",
+                "sandy",
+                "deep"
+              ],
+              "answer": "tall",
+              "why": "The text says the tree is very tall."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "Mount Whitney is a very ___ mountain.",
+              "options": [
+                "high",
+                "tall",
+                "sandy",
+                "deep"
+              ],
+              "answer": "high",
+              "why": "We say high for mountains."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "We walked on the ___ beach. Our feet were covered in sand.",
+              "options": [
+                "sandy",
+                "old",
+                "deep",
+                "high"
+              ],
+              "answer": "sandy",
+              "why": "Sandy means covered in sand."
+            }
+          ],
+          "whyChoices": [
+            "It matches the meaning in context",
+            "It is the same word class",
+            "It describes height",
+            "It describes age"
+          ]
+        },
+        "V6": {
+          "prompt": "Three words belong together. Tap the one that does not.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "hill",
+                "mountain",
+                "tree",
+                "lake"
+              ],
+              "answer": "lake",
+              "why": "The others are land you can stand on. A lake is water."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "deep",
+                "high",
+                "tall",
+                "sand"
+              ],
+              "answer": "sand",
+              "why": "The others are adjectives. Sand is a noun."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "old",
+                "ancient",
+                "big",
+                "small"
+              ],
+              "answer": "small",
+              "why": "The others are about age or size upward. Small is the opposite direction."
+            }
+          ],
+          "whyChoices": [
+            "It belongs to a different group",
+            "It is a noun, not an adjective",
+            "It is a longer word",
+            "It is water"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word from its letters.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "f",
+                "o",
+                "r",
+                "e",
+                "s",
+                "t"
+              ],
+              "answer": "forest",
+              "audio": "forest"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "m",
+                "o",
+                "u",
+                "n",
+                "t",
+                "a",
+                "i",
+                "n"
+              ],
+              "answer": "mountain",
+              "audio": "mountain"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "i",
+                "s",
+                "l",
+                "a",
+                "n",
+                "d"
+              ],
+              "answer": "island",
+              "audio": "island"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. Five questions.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Island.",
+              "options": [
+                "island",
+                "beach",
+                "lake",
+                "forest"
+              ],
+              "answer": "island"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "The park has forests, mountains and ___.",
+              "options": [
+                "lakes",
+                "treasures",
+                "traffic",
+                "trees"
+              ],
+              "answer": "lakes",
+              "why": "The reading lists forests, mountains and lakes."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the adjective: the opposite of low.",
+              "img": "high",
+              "answer": "high",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "hill",
+                "mountain",
+                "tree",
+                "lake"
+              ],
+              "answer": "lake",
+              "why": "The others are land."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "forest",
+              "options": [
+                "forest",
+                "tree",
+                "grass",
+                "hill"
+              ],
+              "answer": "forest"
+            }
+          ],
+          "whyChoices": [
+            "I remembered the word",
+            "I worked it out from the picture",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences. Then decide what rule they share.",
+          "teachCard": {
+            "title": "There was / There were + Was it…? / Were they…?",
+            "lines": [
+              "There was a lake. / There were two hills.",
+              "Was the lake deep? Yes, it was. / No, it wasn't.",
+              "Were the trees old? Yes, they were. / No, they weren't.",
+              "There wasn't an island. / There weren't any birds."
+            ],
+            "rule": "One thing: was / it was / it wasn't. Many things: were / they were / they weren't. Ask with Was the...? or Were the...?"
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Which question is for ONE thing?",
+              "options": [
+                "Was the lake deep?",
+                "Were the lake deep?",
+                "Was the lakes deep?",
+                "Did the lake deep?"
+              ],
+              "answer": "Was the lake deep?"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which question is for MANY things?",
+              "options": [
+                "Were the trees old?",
+                "Was the trees old?",
+                "Were the tree old?",
+                "Did the trees old?"
+              ],
+              "answer": "Were the trees old?"
+            },
+            {
+              "id": "g1-3",
+              "q": "What is the short answer to 'Was the island big?'",
+              "options": [
+                "Yes, it was.",
+                "Yes, they were.",
+                "Yes, it is.",
+                "Yes, it did."
+              ],
+              "answer": "Yes, it was."
+            },
+            {
+              "id": "g1-4",
+              "q": "What is the negative short answer to 'Were the hills high?'",
+              "options": [
+                "No, they weren't.",
+                "No, it wasn't.",
+                "No, they don't.",
+                "No, they aren't."
+              ],
+              "answer": "No, they weren't."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each sentence, then choose the rule that explains it.",
+          "whyChoices": [
+            "One thing takes was and it",
+            "Many things take were and they",
+            "The short answer repeats was or were",
+            "In the negative the form changes"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "___ the lake deep? Yes, it was.",
+              "options": [
+                "Was",
+                "Were",
+                "Did",
+                "Is"
+              ],
+              "answer": "Was"
+            },
+            {
+              "id": "g2-2",
+              "sentence": "___ the trees old? No, they weren't.",
+              "options": [
+                "Were",
+                "Was",
+                "Did",
+                "Are"
+              ],
+              "answer": "Were"
+            },
+            {
+              "id": "g2-3",
+              "sentence": "There ___ a very high mountain in the park.",
+              "options": [
+                "was",
+                "were",
+                "is",
+                "are"
+              ],
+              "answer": "was"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "There ___ some animals in the forest.",
+              "options": [
+                "were",
+                "was",
+                "is",
+                "are"
+              ],
+              "answer": "were"
+            },
+            {
+              "id": "g2-5",
+              "sentence": "There ___ an island in the lake, but there were two hills.",
+              "options": [
+                "was",
+                "were",
+                "isn't",
+                "weren't"
+              ],
+              "answer": "was"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "There weren't ___ birds in the forest.",
+              "options": [
+                "any",
+                "some",
+                "a",
+                "much"
+              ],
+              "answer": "any",
+              "why": "In a negative sentence we use any."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Each sentence has one mistake. Tap the wrong word, then choose the rule.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "There were a high mountain in the park.",
+              "wrong": "were",
+              "correct": "was",
+              "why": "One mountain takes was."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Was the trees tall? Yes, they were.",
+              "wrong": "Was",
+              "correct": "Were",
+              "why": "Trees are many, so use Were."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "Were the island big? No, it wasn't.",
+              "wrong": "Were",
+              "correct": "Was",
+              "why": "One island takes Was."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "There weren't some birds in the forest.",
+              "wrong": "some",
+              "correct": "any",
+              "why": "In a negative sentence we use any."
+            }
+          ],
+          "whyChoices": [
+            "One thing takes was",
+            "Many things take were",
+            "The question must match the noun",
+            "Negatives take any"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that matches this answer.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, it was. It was very high.",
+              "options": [
+                "Was the mountain high?",
+                "Were the mountain high?",
+                "Did the mountain high?",
+                "Is the mountain high?"
+              ],
+              "answer": "Was the mountain high?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, they weren't. They were quite new.",
+              "options": [
+                "Were the trees old?",
+                "Was the trees old?",
+                "Were the tree old?",
+                "Did the trees old?"
+              ],
+              "answer": "Were the trees old?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, it was. Very deep, in fact.",
+              "options": [
+                "Was the lake deep?",
+                "Were the lake deep?",
+                "Was the lakes deep?",
+                "Did the lake deep?"
+              ],
+              "answer": "Was the lake deep?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, it wasn't. It was small.",
+              "options": [
+                "Was the island big?",
+                "Were the island big?",
+                "Was the islands big?",
+                "Did the island big?"
+              ],
+              "answer": "Was the island big?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Change each sentence. Follow the instruction.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Change it to the past.",
+              "from": "There is a lake in the park.",
+              "options": [
+                "There was a lake in the park.",
+                "There were a lake in the park.",
+                "There is a lake in the park.",
+                "There did a lake in the park."
+              ],
+              "answer": "There was a lake in the park."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change it to the past.",
+              "from": "There are two hills behind the lake.",
+              "options": [
+                "There were two hills behind the lake.",
+                "There was two hills behind the lake.",
+                "There are two hills behind the lake.",
+                "There did two hills behind the lake."
+              ],
+              "answer": "There were two hills behind the lake."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it negative.",
+              "from": "There was an island in the lake.",
+              "options": [
+                "There wasn't an island in the lake.",
+                "There weren't an island in the lake.",
+                "There not was an island in the lake.",
+                "There didn't an island in the lake."
+              ],
+              "answer": "There wasn't an island in the lake."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Make it negative.",
+              "from": "There were some birds in the forest.",
+              "options": [
+                "There weren't any birds in the forest.",
+                "There wasn't any birds in the forest.",
+                "There weren't some birds in the forest.",
+                "There didn't any birds in the forest."
+              ],
+              "answer": "There weren't any birds in the forest."
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen and tap the picture. Two replays.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "There was a very high mountain in the park.",
+              "options": [
+                "mountain",
+                "hill",
+                "forest",
+                "beach"
+              ],
+              "answer": "mountain"
+            },
+            {
+              "id": "l1-2",
+              "audio": "The beach was long and sandy.",
+              "options": [
+                "beach",
+                "lake",
+                "island",
+                "grass"
+              ],
+              "answer": "beach"
+            },
+            {
+              "id": "l1-3",
+              "audio": "There were two short trees on the hill.",
+              "options": [
+                "tree",
+                "grass",
+                "forest",
+                "island"
+              ],
+              "answer": "tree"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact word",
+            "I heard a similar word",
+            "I guessed from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Listen once for the main idea, then again for details. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is this person describing?",
+              "options": [
+                "A national park",
+                "A swimming pool"
+              ],
+              "answer": "A national park"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "What was in the grass?",
+              "options": [
+                "A snake",
+                "A bird"
+              ],
+              "answer": "A snake"
+            }
+          ],
+          "audio": "We were in a national park yesterday. There was a big lake and a long beach. In the afternoon we walked into the forest. There were a lot of birds. Then we heard a noise in the tall grass. There was a long snake!",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Listen and fill the three gaps.",
+          "audio": "There was a lake, and there were two hills behind it. There was also a forest near the lake. In the forest there were some birds.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "There was a lake, and there were two ___(1)___ behind it.",
+              "options": [
+                "hills",
+                "lakes",
+                "beaches"
+              ],
+              "answer": "hills"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "There was also a ___(2)___ near the lake.",
+              "options": [
+                "forest",
+                "mountain",
+                "island"
+              ],
+              "answer": "forest"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "In the forest there were some ___(3)___.",
+              "options": [
+                "birds",
+                "snakes",
+                "trees"
+              ],
+              "answer": "birds"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Three words from the text. Choose the meaning before you read.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "national park",
+              "options": [
+                "a big area of land protected by the government",
+                "a park in a city",
+                "a school playground",
+                "a kind of mountain"
+              ],
+              "answer": "a big area of land protected by the government"
+            },
+            {
+              "id": "r1-2",
+              "word": "famous",
+              "options": [
+                "known by many people",
+                "very expensive",
+                "very new",
+                "hard to find"
+              ],
+              "answer": "known by many people"
+            },
+            {
+              "id": "r1-3",
+              "word": "over",
+              "options": [
+                "more than",
+                "less than",
+                "exactly",
+                "nearly"
+              ],
+              "answer": "more than"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Sequoia National Park is in California, in the United States. It is very big. It has forests, mountains and lakes. The first people to live there were Native Americans. There is a very high mountain in the park. The name of the mountain is Mount Whitney. Many people go there to hike. There is also a famous tree in the park. The name of the tree is the General Sherman. It is very tall, and it is over 2,000 years old. Many people go to the park to see the tree.",
+          "prompt": "Read the whole text. Then tap the sentence that shows people visit the park for one specific reason.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that shows people visit for one specific reason.",
+              "answerType": "tapSentence",
+              "answer": "Many people go to the park to see the tree.",
+              "why": "People travel there just to look at one tree."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the text about?",
+              "options": [
+                "A famous park and two famous things in it",
+                "A family holiday",
+                "How to plant trees"
+              ],
+              "answer": "A famous park and two famous things in it"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Sequoia National Park is in California, in the United States. It is very big. It has forests, mountains and lakes. The first people to live there were Native Americans. There is a very high mountain in the park. The name of the mountain is Mount Whitney. Many people go there to hike. There is also a famous tree in the park. The name of the tree is the General Sherman. It is very tall, and it is over 2,000 years old. Many people go to the park to see the tree.",
+          "prompt": "Read again. Answer the detail questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Where is Sequoia National Park?",
+              "options": [
+                "In California",
+                "In New York",
+                "In Washington"
+              ],
+              "answer": "In California"
+            },
+            {
+              "id": "r3-2",
+              "q": "What is the General Sherman?",
+              "options": [
+                "A very tall tree",
+                "A very high mountain",
+                "A very deep lake"
+              ],
+              "answer": "A very tall tree"
+            },
+            {
+              "id": "r3-3",
+              "q": "How old is the General Sherman?",
+              "options": [
+                "Over 2,000 years old",
+                "Over 200 years old",
+                "Over 20 years old"
+              ],
+              "answer": "Over 2,000 years old"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Yesterday my class went to Sequoia National Park. There was a lot to see. There was a very high mountain called Mount Whitney, and many people were there to hike. There was also a famous tree called the General Sherman. It was very tall, and it was over 2,000 years old. There were forests all around us, and there was a lake near the road. It was a long day, but nobody wanted to go home.",
+          "prompt": "Tap the sentence in the text that answers each question. The text is the answer space.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that tells you what people were doing at Mount Whitney.",
+              "answer": "There was a very high mountain called Mount Whitney, and many people were there to hike."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that tells you how old the tree was.",
+              "answer": "It was very tall, and it was over 2,000 years old."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you how the class felt at the end.",
+              "answer": "It was a long day, but nobody wanted to go home."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Put the words in order. Watch the punctuation.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "There",
+                "were",
+                "two",
+                "short",
+                "trees",
+                "on",
+                "the",
+                "hill"
+              ],
+              "answer": "There were two short trees on the hill."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Was",
+                "the",
+                "lake",
+                "deep"
+              ],
+              "answer": "Was the lake deep?"
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "There",
+                "wasn't",
+                "an",
+                "island",
+                "in",
+                "the",
+                "lake"
+              ],
+              "answer": "There wasn't an island in the lake."
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "Were",
+                "the",
+                "trees",
+                "old"
+              ],
+              "answer": "Were the trees old?"
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "Each sentence has one mistake. Type the correct sentence.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "There were a high mountain in the park.",
+              "answer": "There was a high mountain in the park."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Was the trees tall?",
+              "answer": "Were the trees tall?"
+            },
+            {
+              "id": "w2-3",
+              "wrong": "There weren't some birds in the forest.",
+              "answer": "There weren't any birds in the forest."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Fill the chart about a trip you remember, then write two sentences of your own.",
+          "choosePlace": [
+            "mountain",
+            "beach",
+            "lake",
+            "forest"
+          ],
+          "chart": {
+            "rows": 3,
+            "columnA": [
+              "Where were you?",
+              "Who were you with?",
+              "What was there?"
+            ],
+            "columnBStem": [
+              "I was",
+              "I was with",
+              "There was / There were"
+            ]
+          },
+          "ownSentencesRequired": 2,
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct was / were",
+            "One adjective from this unit",
+            "At least 30 words"
+          ],
+          "minimumWords": 30
+        },
+        "S1": {
+          "prompt": "Listen and repeat. The model appears after your attempt, so say it first.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "There were two short trees on the hill.",
+              "keywords": [
+                "there",
+                "were",
+                "trees",
+                "hill"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Was the lake deep? Yes, it was.",
+              "keywords": [
+                "was",
+                "lake",
+                "deep",
+                "it"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Were the trees old? No, they weren't.",
+              "keywords": [
+                "were",
+                "trees",
+                "old",
+                "weren't"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "There wasn't an island in the lake.",
+              "keywords": [
+                "wasn't",
+                "island",
+                "lake"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Say each chunk three times. Keep the ends of the words clear.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "there were two hills",
+              "keywords": [
+                "there",
+                "were",
+                "hills"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "in the tall grass",
+              "keywords": [
+                "in",
+                "tall",
+                "grass"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "was the lake deep",
+              "keywords": [
+                "was",
+                "lake",
+                "deep"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Record your answer as a full sentence.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Where were you last weekend?",
+              "keywords": [
+                "was",
+                "in",
+                "at"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "What was there?",
+              "keywords": [
+                "there",
+                "was",
+                "were"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Was the place beautiful? Why?",
+              "keywords": [
+                "was",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Were there any animals?",
+              "keywords": [
+                "there",
+                "were",
+                "weren't"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the island map. Say what was on the island and where. Use at least four nature words.",
+          "image": "island-map-core",
+          "prompts": [
+            "One thing in the water",
+            "Two things on the land",
+            "One thing that was high",
+            "One thing that was small"
+          ],
+          "keywords": [
+            "there",
+            "was",
+            "were"
+          ]
+        },
+        "S5": {
+          "prompt": "Read the dialogue with two voices: you are Mia, then Brian.",
+          "dialogueId": "theNoiseInTheGrass",
+          "lines": 8,
+          "keywords": [
+            "where",
+            "were",
+            "forest",
+            "grass",
+            "snake"
+          ]
+        },
+        "S6": {
+          "prompt": "Answer about yourself in full sentences.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Tell me about a trip you remember. Where were you?",
+              "keywords": [
+                "was",
+                "trip"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Was there anything surprising there?",
+              "keywords": [
+                "there",
+                "was",
+                "were"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which do you prefer, a beach or a forest? Why?",
+              "keywords": [
+                "prefer",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Talk for 40 seconds about a field trip. Say where you were, who was with you, and three things that were there.",
+          "minimumSeconds": 35,
+          "scaffold": [
+            "Last ___ I was in ___.",
+            "I was with ___.",
+            "There was ___ and there were ___.",
+            "The best thing was ___ because ___."
+          ],
+          "keywords": [
+            "was",
+            "were",
+            "there",
+            "because"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six questions from everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "mountain",
+              "options": [
+                "mountain",
+                "hill",
+                "forest",
+                "beach"
+              ],
+              "answer": "mountain"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "___ the lake deep? Yes, it was.",
+              "options": [
+                "Was",
+                "Were",
+                "Did",
+                "Is"
+              ],
+              "answer": "Was"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "Was the trees tall?",
+              "wrong": "Was",
+              "correct": "Were"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "The beach was long and sandy.",
+              "options": [
+                "sandy",
+                "ancient",
+                "deep",
+                "low"
+              ],
+              "answer": "sandy"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "deep",
+                "high",
+                "tall",
+                "sand"
+              ],
+              "answer": "sand",
+              "why": "The others are adjectives."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask me a question with Was the...? and answer it.",
+              "keywords": [
+                "was",
+                "the"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Nature Trail. Eight questions across all six skills, then one speaking task.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "beach",
+              "options": [
+                "beach",
+                "island",
+                "lake",
+                "grass"
+              ],
+              "answer": "beach"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "___ the trees old? No, they weren't.",
+              "options": [
+                "Were",
+                "Was",
+                "Did",
+                "Are"
+              ],
+              "answer": "Were"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "There were a high mountain, and was the trees tall?",
+              "wrong": "were",
+              "correct": "was"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "We were in Sequoia National Park. There was a very high mountain called Mount Whitney, and there was a famous tree called the General Sherman. It was over 2,000 years old. There were forests all around us.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker describing?",
+                  "options": [
+                    "A visit to a national park",
+                    "A walk in a city",
+                    "A school lesson"
+                  ],
+                  "answer": "A visit to a national park"
+                },
+                {
+                  "pass": 2,
+                  "q": "How old was the tree?",
+                  "options": [
+                    "Over 2,000 years",
+                    "Over 200 years",
+                    "Over 20 years"
+                  ],
+                  "answer": "Over 2,000 years"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that tells you how long the tree has been there.",
+              "answer": "It was very tall, and it was over 2,000 years old."
+            },
+            {
+              "id": "b-6",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "There",
+                "were",
+                "two",
+                "short",
+                "trees",
+                "on",
+                "the",
+                "hill"
+              ],
+              "answer": "There were two short trees on the hill."
+            },
+            {
+              "id": "b-7",
+              "type": "typeIt",
+              "prompt": "Type the adjective: the opposite of low.",
+              "answer": "high",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Say three sentences: where you were, one thing that was there, and one thing that was not.",
+              "keywords": [
+                "was",
+                "were",
+                "wasn't"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "challenging": {
+      "content": {
+        "V1": {
+          "prompt": "Choose the exact word. Two of the four describe the same kind of thing, so read carefully.",
+          "items": [
+            {
+              "id": "v1-1",
+              "img": "island",
+              "options": [
+                "island",
+                "beach",
+                "lake",
+                "hill"
+              ],
+              "answer": "island",
+              "why": "An island is land surrounded by water. A beach is only the edge of it."
+            },
+            {
+              "id": "v1-2",
+              "img": "mountain",
+              "options": [
+                "mountain",
+                "hill",
+                "forest",
+                "grass"
+              ],
+              "answer": "mountain",
+              "why": "A mountain is high and pointed. A hill is low and round."
+            },
+            {
+              "id": "v1-3",
+              "img": "sandy",
+              "options": [
+                "sandy",
+                "deep",
+                "low",
+                "old"
+              ],
+              "answer": "sandy",
+              "why": "Sandy describes what covers the ground, not its height or age."
+            },
+            {
+              "id": "v1-4",
+              "img": "ancient",
+              "options": [
+                "ancient",
+                "tall",
+                "small",
+                "sandy"
+              ],
+              "answer": "ancient",
+              "why": "Ancient describes age, not size or shape."
+            }
+          ],
+          "whyChoices": [
+            "It describes a different quality from the distractors",
+            "It is a noun, not an adjective",
+            "It is the same landscape as a distractor",
+            "It describes height"
+          ]
+        },
+        "V2": {
+          "prompt": "Read the word. Tap the matching picture. Three of the four are near-misses.",
+          "items": [
+            {
+              "id": "v2-1",
+              "word": "ancient",
+              "options": [
+                "ancient",
+                "old",
+                "tall",
+                "big"
+              ],
+              "answer": "ancient",
+              "why": "Ancient means extremely old, usually hundreds or thousands of years."
+            },
+            {
+              "id": "v2-2",
+              "word": "deep",
+              "options": [
+                "deep",
+                "high",
+                "low",
+                "wide"
+              ],
+              "answer": "deep",
+              "why": "Deep describes distance downward, into water or the ground."
+            },
+            {
+              "id": "v2-3",
+              "word": "hill",
+              "options": [
+                "hill",
+                "mountain",
+                "beach",
+                "island"
+              ],
+              "answer": "hill",
+              "why": "A hill is rounded and you can usually walk up it easily."
+            },
+            {
+              "id": "v2-4",
+              "word": "grass",
+              "options": [
+                "grass",
+                "forest",
+                "tree",
+                "hill"
+              ],
+              "answer": "grass",
+              "why": "Grass is short and grows in a flat layer, not tall like trees."
+            }
+          ],
+          "whyChoices": [
+            "The meaning matches exactly",
+            "It is the same landscape",
+            "It describes size",
+            "It describes age"
+          ]
+        },
+        "V3": {
+          "prompt": "Listen once only. Tap the word or phrase you hear.",
+          "items": [
+            {
+              "id": "v3-1",
+              "audio": "The General Sherman is over 2,000 years old.",
+              "options": [
+                "2,000 years",
+                "200 years",
+                "20 years",
+                "2,000 months"
+              ],
+              "answer": "2,000 years"
+            },
+            {
+              "id": "v3-2",
+              "audio": "The first people to live there were Native Americans.",
+              "options": [
+                "Native Americans",
+                "European visitors",
+                "park rangers",
+                "local farmers"
+              ],
+              "answer": "Native Americans"
+            },
+            {
+              "id": "v3-3",
+              "audio": "The mountain is high, so many people go there to hike.",
+              "options": [
+                "hike",
+                "swim",
+                "ski",
+                "fish"
+              ],
+              "answer": "hike"
+            }
+          ],
+          "whyChoices": [
+            "I caught the exact phrase",
+            "I heard a similar number",
+            "I inferred it from the topic"
+          ]
+        },
+        "V4": {
+          "prompt": "Sort into four boxes. Two items are deliberately tricky.",
+          "bins": [
+            "Water feature",
+            "Land feature",
+            "Describing size",
+            "Describing age"
+          ],
+          "items": [
+            {
+              "word": "lake",
+              "bin": "Water feature"
+            },
+            {
+              "word": "hill",
+              "bin": "Land feature"
+            },
+            {
+              "word": "big",
+              "bin": "Describing size"
+            },
+            {
+              "word": "old",
+              "bin": "Describing age"
+            },
+            {
+              "word": "beach",
+              "bin": "Water feature"
+            },
+            {
+              "word": "forest",
+              "bin": "Land feature"
+            },
+            {
+              "word": "small",
+              "bin": "Describing size"
+            },
+            {
+              "word": "ancient",
+              "bin": "Describing age"
+            },
+            {
+              "word": "island",
+              "bin": "Water feature"
+            },
+            {
+              "word": "mountain",
+              "bin": "Land feature"
+            }
+          ],
+          "note": "If four bins is too many for the mechanic, use three: Water feature / Land feature / Describing size, and drop Describing age."
+        },
+        "V5": {
+          "prompt": "Choose the word that fits. Only one option respects the grammar as well as the meaning.",
+          "items": [
+            {
+              "id": "v5-1",
+              "sentence": "There was a very ___ mountain in the park, and many people went to hike.",
+              "options": [
+                "high",
+                "tall",
+                "big",
+                "long"
+              ],
+              "answer": "high",
+              "why": "We use high for mountains, tall for trees and people."
+            },
+            {
+              "id": "v5-2",
+              "sentence": "The tree was very ___ and over 2,000 years old.",
+              "options": [
+                "tall",
+                "high",
+                "deep",
+                "low"
+              ],
+              "answer": "tall",
+              "why": "We use tall for trees."
+            },
+            {
+              "id": "v5-3",
+              "sentence": "There were a lot of ___ in the forest.",
+              "options": [
+                "birds",
+                "bird",
+                "a bird",
+                "some birds"
+              ],
+              "answer": "birds",
+              "why": "After a lot of we use the plural noun."
+            },
+            {
+              "id": "v5-4",
+              "sentence": "There wasn't ___ island in the lake.",
+              "options": [
+                "an",
+                "a",
+                "any",
+                "some"
+              ],
+              "answer": "an",
+              "why": "Island begins with a vowel sound, so we use an."
+            }
+          ],
+          "whyChoices": [
+            "It is the only one that fits the meaning",
+            "It is the only one used for trees",
+            "It is the only plural option",
+            "It is the only article for a vowel sound"
+          ]
+        },
+        "V6": {
+          "prompt": "One word does not belong. In two of these the reason is grammatical, not thematic.",
+          "items": [
+            {
+              "id": "v6-1",
+              "words": [
+                "forest",
+                "grass",
+                "sand",
+                "tree"
+              ],
+              "answer": "tree",
+              "why": "Forest, grass and sand are uncountable. Tree is countable. Grammar matches, meaning does not."
+            },
+            {
+              "id": "v6-2",
+              "words": [
+                "deep",
+                "high",
+                "tall",
+                "hill"
+              ],
+              "answer": "hill",
+              "why": "The others are adjectives. Hill is a noun."
+            },
+            {
+              "id": "v6-3",
+              "words": [
+                "lake",
+                "beach",
+                "island",
+                "grass"
+              ],
+              "answer": "grass",
+              "why": "The others are mostly water features or edges. Grass grows on land."
+            }
+          ],
+          "whyChoices": [
+            "It breaks the pattern only in meaning",
+            "It breaks the pattern only in grammar",
+            "It is a longer word",
+            "It is water"
+          ]
+        },
+        "V7": {
+          "prompt": "Build each word. The audio is your only clue for spelling.",
+          "items": [
+            {
+              "id": "v7-1",
+              "letters": [
+                "a",
+                "n",
+                "c",
+                "i",
+                "e",
+                "n",
+                "t"
+              ],
+              "answer": "ancient",
+              "audio": "ancient"
+            },
+            {
+              "id": "v7-2",
+              "letters": [
+                "m",
+                "o",
+                "u",
+                "n",
+                "t",
+                "a",
+                "i",
+                "n"
+              ],
+              "answer": "mountain",
+              "audio": "mountain"
+            },
+            {
+              "id": "v7-3",
+              "letters": [
+                "i",
+                "s",
+                "l",
+                "a",
+                "n",
+                "d"
+              ],
+              "answer": "island",
+              "audio": "island",
+              "note": "the s is silent"
+            }
+          ]
+        },
+        "V8": {
+          "prompt": "Mixed recall. No pictures, no word bank.",
+          "items": [
+            {
+              "id": "v8-1",
+              "type": "audioToPicture",
+              "audio": "Island.",
+              "options": [
+                "island",
+                "beach",
+                "lake",
+                "forest"
+              ],
+              "answer": "island"
+            },
+            {
+              "id": "v8-2",
+              "type": "gapFill",
+              "sentence": "The General Sherman is a famous and ___ tree.",
+              "options": [
+                "ancient",
+                "sandy",
+                "deep",
+                "low"
+              ],
+              "answer": "ancient",
+              "why": "Ancient means very old, which fits 2,000 years."
+            },
+            {
+              "id": "v8-3",
+              "type": "typeIt",
+              "prompt": "Type the adjective: a lake can be this if it goes very far down.",
+              "answer": "deep",
+              "allowOneLetterTypo": true
+            },
+            {
+              "id": "v8-4",
+              "type": "oddOneOut",
+              "words": [
+                "forest",
+                "grass",
+                "sand",
+                "tree"
+              ],
+              "answer": "tree",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "v8-5",
+              "type": "pictureToWord",
+              "img": "ancient",
+              "options": [
+                "ancient",
+                "tall",
+                "small",
+                "sandy"
+              ],
+              "answer": "ancient"
+            }
+          ],
+          "whyChoices": [
+            "I knew the word without help",
+            "I worked it out from context",
+            "I guessed"
+          ]
+        },
+        "G1": {
+          "prompt": "Read the sentences and work out the full rule before it is given to you.",
+          "teachCard": {
+            "title": "was / were, and matching the answer to the question",
+            "lines": [
+              "There was a lake. / There were two hills.",
+              "Was the lake deep? Yes, it was. / No, it wasn't.",
+              "Were the trees old? Yes, they were. / No, they weren't.",
+              "There wasn't an island. / There weren't any birds."
+            ],
+            "rule": "The question, the short answer and the full answer must all agree in number, exactly as with is and are. The only change is the tense: was and were."
+          },
+          "items": [
+            {
+              "id": "g1-1",
+              "q": "Why is 'Were the island big? No, it wasn't' wrong?",
+              "options": [
+                "The question is singular so the answer must be singular",
+                "Island is uncountable",
+                "Were is never used in questions",
+                "Big cannot follow the"
+              ],
+              "answer": "The question is singular so the answer must be singular"
+            },
+            {
+              "id": "g1-2",
+              "q": "Which sentence is correct?",
+              "options": [
+                "There weren't any birds in the forest.",
+                "There wasn't any birds in the forest.",
+                "There weren't some birds in the forest.",
+                "There not were any birds in the forest."
+              ],
+              "answer": "There weren't any birds in the forest."
+            },
+            {
+              "id": "g1-3",
+              "q": "What is the past of 'There is a lake'?",
+              "options": [
+                "There was a lake.",
+                "There were a lake.",
+                "There is was a lake.",
+                "There been a lake."
+              ],
+              "answer": "There was a lake."
+            },
+            {
+              "id": "g1-4",
+              "q": "Tap the sentence that is WRONG.",
+              "options": [
+                "There was two hills.",
+                "There were two hills.",
+                "There was a hill.",
+                "There were some hills."
+              ],
+              "answer": "There was two hills."
+            }
+          ]
+        },
+        "G2": {
+          "prompt": "Complete each item. Every one contains a near-miss trap.",
+          "whyChoices": [
+            "A singular subject takes was and it",
+            "A plural subject takes were and they",
+            "Negatives take wasn't or weren't plus any",
+            "The question must match the noun"
+          ],
+          "items": [
+            {
+              "id": "g2-1",
+              "sentence": "There ___ a lake and two hills in the park.",
+              "options": [
+                "was",
+                "were",
+                "is",
+                "are"
+              ],
+              "answer": "was",
+              "why": "The first noun after There is a lake, which is singular."
+            },
+            {
+              "id": "g2-2",
+              "sentence": "There ___ two hills and a lake in the park.",
+              "options": [
+                "were",
+                "was",
+                "is",
+                "are"
+              ],
+              "answer": "were",
+              "why": "The first noun is two hills, which is plural."
+            },
+            {
+              "id": "g2-3",
+              "sentence": "___ the island big? No, it wasn't.",
+              "options": [
+                "Was",
+                "Were",
+                "Did",
+                "Is"
+              ],
+              "answer": "Was"
+            },
+            {
+              "id": "g2-4",
+              "sentence": "Neither of the hills ___ very high.",
+              "options": [
+                "was",
+                "were",
+                "been",
+                "are"
+              ],
+              "answer": "was",
+              "why": "Neither of them is singular in careful English."
+            },
+            {
+              "id": "g2-5",
+              "sentence": "There weren't ___ animals in the forest that day.",
+              "options": [
+                "any",
+                "some",
+                "a",
+                "much"
+              ],
+              "answer": "any"
+            },
+            {
+              "id": "g2-6",
+              "sentence": "Everyone in my class ___ very tired after the trip.",
+              "options": [
+                "was",
+                "were",
+                "been",
+                "are"
+              ],
+              "answer": "was",
+              "why": "Everyone is singular."
+            }
+          ]
+        },
+        "G3": {
+          "prompt": "Find the single error and correct it. Then name the rule that was broken.",
+          "items": [
+            {
+              "id": "g3-1",
+              "sentence": "There were a high mountain and a lake.",
+              "wrong": "were",
+              "correct": "was",
+              "why": "The first noun is a mountain, which is singular."
+            },
+            {
+              "id": "g3-2",
+              "sentence": "Were the island big? No, it wasn't.",
+              "wrong": "Were",
+              "correct": "Was",
+              "why": "Island is singular."
+            },
+            {
+              "id": "g3-3",
+              "sentence": "There wasn't any birds in the forest.",
+              "wrong": "wasn't",
+              "correct": "weren't",
+              "why": "Birds is plural, so use weren't."
+            },
+            {
+              "id": "g3-4",
+              "sentence": "Neither of the trees were very tall.",
+              "wrong": "were",
+              "correct": "was",
+              "why": "Neither of them is singular in careful English."
+            }
+          ],
+          "whyChoices": [
+            "The first noun decides the verb",
+            "A singular subject takes Was",
+            "A plural subject takes weren't",
+            "A singular subject hides in a plural-looking phrase"
+          ]
+        },
+        "G4": {
+          "prompt": "Write the question that produces this answer. Only one option is fully correct.",
+          "items": [
+            {
+              "id": "g4-1",
+              "answerLine": "Yes, it was. It was over 2,000 years old.",
+              "options": [
+                "Was the tree ancient?",
+                "Were the tree ancient?",
+                "Was the trees ancient?",
+                "Did the tree ancient?"
+              ],
+              "answer": "Was the tree ancient?"
+            },
+            {
+              "id": "g4-2",
+              "answerLine": "No, they weren't. There was only one.",
+              "options": [
+                "Were there two lakes?",
+                "Was there two lakes?",
+                "Were there a lake?",
+                "Did there two lakes?"
+              ],
+              "answer": "Were there two lakes?"
+            },
+            {
+              "id": "g4-3",
+              "answerLine": "Yes, there was. It was very deep.",
+              "options": [
+                "Was there a lake in the park?",
+                "Were there a lake in the park?",
+                "Was there any lakes in the park?",
+                "Did there a lake in the park?"
+              ],
+              "answer": "Was there a lake in the park?"
+            },
+            {
+              "id": "g4-4",
+              "answerLine": "No, there weren't. We only saw birds.",
+              "options": [
+                "Were there any snakes in the forest?",
+                "Was there any snakes in the forest?",
+                "Were there a snakes in the forest?",
+                "Did there any snakes in the forest?"
+              ],
+              "answer": "Were there any snakes in the forest?"
+            }
+          ]
+        },
+        "G5": {
+          "prompt": "Transform each sentence as instructed. One option in each set is a trap.",
+          "items": [
+            {
+              "id": "g5-1",
+              "instruction": "Join the two facts with Neither...nor.",
+              "from": "The beach wasn't long. The lake wasn't deep.",
+              "options": [
+                "Neither the beach nor the lake was long and deep.",
+                "Neither the beach nor the lake were long and deep.",
+                "Neither the beach or the lake was long and deep.",
+                "Neither the beach nor the lake wasn't long and deep."
+              ],
+              "answer": "Neither the beach nor the lake was long and deep."
+            },
+            {
+              "id": "g5-2",
+              "instruction": "Change it to the past.",
+              "from": "There are some birds in the forest.",
+              "options": [
+                "There were some birds in the forest.",
+                "There was some birds in the forest.",
+                "There are some birds in the forest.",
+                "There been some birds in the forest."
+              ],
+              "answer": "There were some birds in the forest."
+            },
+            {
+              "id": "g5-3",
+              "instruction": "Make it negative.",
+              "from": "There was a snake in the grass.",
+              "options": [
+                "There wasn't a snake in the grass.",
+                "There weren't a snake in the grass.",
+                "There wasn't any snakes in the grass.",
+                "There not was a snake in the grass."
+              ],
+              "answer": "There wasn't a snake in the grass."
+            },
+            {
+              "id": "g5-4",
+              "instruction": "Turn the statement into a question.",
+              "from": "The trees were very old.",
+              "options": [
+                "Were the trees very old?",
+                "Was the trees very old?",
+                "Did the trees very old?",
+                "Were the tree very old?"
+              ],
+              "answer": "Were the trees very old?"
+            }
+          ]
+        },
+        "L1": {
+          "prompt": "Listen once only. One replay is available before you answer.",
+          "items": [
+            {
+              "id": "l1-1",
+              "audio": "The tree was over 2,000 years old.",
+              "options": [
+                "2,000 years",
+                "200 years",
+                "20 years",
+                "2,000 months"
+              ],
+              "answer": "2,000 years"
+            },
+            {
+              "id": "l1-2",
+              "audio": "There weren't any snakes in the forest that day.",
+              "options": [
+                "snakes",
+                "birds",
+                "trees",
+                "lakes"
+              ],
+              "answer": "snakes"
+            },
+            {
+              "id": "l1-3",
+              "audio": "Mount Whitney is very high, so many people go there to hike.",
+              "options": [
+                "hike",
+                "swim",
+                "climb trees",
+                "fish"
+              ],
+              "answer": "hike"
+            }
+          ],
+          "whyChoices": [
+            "I heard the exact phrase",
+            "I heard a similar number",
+            "I inferred it from the topic"
+          ]
+        },
+        "L2": {
+          "prompt": "Two passes, two different jobs. The transcript stays hidden until both answers are in.",
+          "passes": [
+            {
+              "pass": 1,
+              "job": "gist",
+              "q": "What is the speaker's purpose?",
+              "options": [
+                "To explain why the park is special",
+                "To sell a holiday",
+                "To describe a school day"
+              ],
+              "answer": "To explain why the park is special"
+            },
+            {
+              "pass": 2,
+              "job": "detail",
+              "q": "Why do people go to the park?",
+              "options": [
+                "To see a tree and hike a mountain",
+                "To swim in the lake",
+                "To camp in the grass"
+              ],
+              "answer": "To see a tree and hike a mountain"
+            }
+          ],
+          "audio": "Sequoia National Park is in California. It is a very big park with forests, mountains and lakes. There is a very high mountain called Mount Whitney, and many people go there to hike. There is also a famous tree, the General Sherman, which is over 2,000 years old. People travel from other countries just to see it.",
+          "transcriptReveal": "after both passes"
+        },
+        "L3": {
+          "prompt": "Three gaps. Listen twice, then commit to your answers.",
+          "audio": "There was a lake, and there weren't any boats on it. There were two hills behind the lake and there was an island in the middle. In the forest there were a lot of birds, but there wasn't a snake.",
+          "items": [
+            {
+              "id": "l3-1",
+              "sentence": "There was a lake, and there weren't any ___(1)___ on it.",
+              "options": [
+                "boats",
+                "birds",
+                "trees"
+              ],
+              "answer": "boats"
+            },
+            {
+              "id": "l3-2",
+              "sentence": "There were two hills behind the lake and there was an island in the ___(2)___.",
+              "options": [
+                "middle",
+                "forest",
+                "beach"
+              ],
+              "answer": "middle"
+            },
+            {
+              "id": "l3-3",
+              "sentence": "There were a lot of birds, but there wasn't a ___(3)___.",
+              "options": [
+                "snake",
+                "lake",
+                "hill"
+              ],
+              "answer": "snake"
+            }
+          ]
+        },
+        "R1": {
+          "prompt": "Before reading, decide what these words mean. Two options in each set are close.",
+          "items": [
+            {
+              "id": "r1-1",
+              "word": "protected",
+              "options": [
+                "kept safe by rules",
+                "fenced with a wall",
+                "owned by one person",
+                "open to everyone"
+              ],
+              "answer": "kept safe by rules"
+            },
+            {
+              "id": "r1-2",
+              "word": "famous",
+              "options": [
+                "known by very many people",
+                "the oldest in the world",
+                "the biggest in the world",
+                "very expensive"
+              ],
+              "answer": "known by very many people"
+            },
+            {
+              "id": "r1-3",
+              "word": "over 2,000 years old",
+              "options": [
+                "more than 2,000 years old",
+                "almost 2,000 years old",
+                "exactly 2,000 years old",
+                "about 200 years old"
+              ],
+              "answer": "more than 2,000 years old"
+            }
+          ]
+        },
+        "R2": {
+          "passage": "Sequoia National Park is in California, in the United States. It is very big, and it has forests, mountains and lakes. The first people to live there were Native Americans. Two things in the park are famous. The first is Mount Whitney, a very high mountain that many people visit to hike. The second is the General Sherman, a tree that is very tall and over 2,000 years old. People travel from other countries just to stand next to it. The park is protected, which means nobody can build there or cut the trees down.",
+          "prompt": "Read the whole text, then tap the sentence that explains why the park's famous things are still there.",
+          "items": [
+            {
+              "id": "r2-1",
+              "q": "Tap the sentence that explains why the famous things are still there.",
+              "answerType": "tapSentence",
+              "answer": "The park is protected, which means nobody can build there or cut the trees down.",
+              "why": "Protection is the reason the tree and the mountain are unchanged."
+            },
+            {
+              "id": "r2-2",
+              "q": "What is the writer's main point?",
+              "options": [
+                "One park holds two things people travel the world to see",
+                "California is the biggest state",
+                "Trees grow very slowly"
+              ],
+              "answer": "One park holds two things people travel the world to see"
+            }
+          ]
+        },
+        "R3": {
+          "passage": "Sequoia National Park is in California, in the United States. It is very big, and it has forests, mountains and lakes. The first people to live there were Native Americans. Two things in the park are famous. The first is Mount Whitney, a very high mountain that many people visit to hike. The second is the General Sherman, a tree that is very tall and over 2,000 years old. People travel from other countries just to stand next to it. The park is protected, which means nobody can build there or cut the trees down.",
+          "prompt": "Answer the detail and inference questions.",
+          "items": [
+            {
+              "id": "r3-1",
+              "q": "Who lived in the park first?",
+              "options": [
+                "Native Americans",
+                "Park rangers",
+                "Visitors from other countries"
+              ],
+              "answer": "Native Americans"
+            },
+            {
+              "id": "r3-2",
+              "q": "What does 'protected' tell us about the tree?",
+              "options": [
+                "Nobody is allowed to cut it down",
+                "It is behind a fence",
+                "It is very old"
+              ],
+              "answer": "Nobody is allowed to cut it down"
+            },
+            {
+              "id": "r3-3",
+              "q": "Why do people travel from other countries?",
+              "options": [
+                "To stand next to the tree",
+                "To climb the mountain",
+                "To swim in the lake"
+              ],
+              "answer": "To stand next to the tree"
+            }
+          ]
+        },
+        "R4": {
+          "passage": "Our field trip was to Sequoia National Park. There was a very high mountain, Mount Whitney, and there were people on it hiking. There was also the General Sherman, a tree that was over 2,000 years old. It was so wide that ten of us could not reach around it. There were forests all around and there was a lake near the road. There weren't any snakes that day, but there were a lot of birds. Our teacher said the park is protected, so the trees will still be there in a hundred years. Nobody wanted to go home.",
+          "prompt": "Tap the exact sentence from the text. The answer is in the wording, not just the idea.",
+          "items": [
+            {
+              "id": "r4-1",
+              "q": "Tap the sentence that gives a measurement as evidence of size.",
+              "answer": "It was so wide that ten of us could not reach around it."
+            },
+            {
+              "id": "r4-2",
+              "q": "Tap the sentence that looks forward in time.",
+              "answer": "Our teacher said the park is protected, so the trees will still be there in a hundred years."
+            },
+            {
+              "id": "r4-3",
+              "q": "Tap the sentence that tells you what was NOT there.",
+              "answer": "There weren't any snakes that day, but there were a lot of birds."
+            }
+          ]
+        },
+        "W1": {
+          "prompt": "Build each sentence. Word order and punctuation both count.",
+          "items": [
+            {
+              "id": "w1-1",
+              "tiles": [
+                "There",
+                "was",
+                "a",
+                "lake",
+                "and",
+                "there",
+                "were",
+                "two",
+                "hills"
+              ],
+              "answer": "There was a lake and there were two hills."
+            },
+            {
+              "id": "w1-2",
+              "tiles": [
+                "Neither",
+                "of",
+                "the",
+                "hills",
+                "was",
+                "very",
+                "high"
+              ],
+              "answer": "Neither of the hills was very high."
+            },
+            {
+              "id": "w1-3",
+              "tiles": [
+                "Were",
+                "there",
+                "any",
+                "snakes",
+                "in",
+                "the",
+                "forest"
+              ],
+              "answer": "Were there any snakes in the forest?"
+            },
+            {
+              "id": "w1-4",
+              "tiles": [
+                "There",
+                "weren't",
+                "any",
+                "birds",
+                "that",
+                "day"
+              ],
+              "answer": "There weren't any birds that day."
+            }
+          ]
+        },
+        "W2": {
+          "prompt": "One error per sentence. Type the corrected sentence in full.",
+          "items": [
+            {
+              "id": "w2-1",
+              "wrong": "There were a high mountain and a lake.",
+              "answer": "There was a high mountain and a lake."
+            },
+            {
+              "id": "w2-2",
+              "wrong": "Were the island big? No, it wasn't.",
+              "answer": "Was the island big? No, it wasn't."
+            },
+            {
+              "id": "w2-3",
+              "wrong": "Neither of the trees were very tall, and there wasn't any birds.",
+              "answer": "Neither of the trees was very tall, and there weren't any birds."
+            }
+          ]
+        },
+        "W3": {
+          "prompt": "Write a 5-sentence account of a real or imagined field trip. Every requirement on the checklist must appear.",
+          "requirements": [
+            "where you were and when",
+            "one sentence with There was and one with There were",
+            "two adjectives of size or age from this unit",
+            "one negative sentence with wasn't or weren't",
+            "one sentence saying how you felt at the end"
+          ],
+          "checklist": [
+            "Capital letters and full stops",
+            "Correct was / were throughout",
+            "One negative sentence with any",
+            "One adjective from this unit",
+            "At least 40 words"
+          ],
+          "minimumWords": 40
+        },
+        "S1": {
+          "prompt": "Say each line before the model appears. Listen for the endings.",
+          "items": [
+            {
+              "id": "s1-1",
+              "model": "There was a lake and there were two hills.",
+              "keywords": [
+                "there",
+                "was",
+                "lake",
+                "were",
+                "hills"
+              ]
+            },
+            {
+              "id": "s1-2",
+              "model": "Neither of the hills was very high.",
+              "keywords": [
+                "neither",
+                "hills",
+                "was",
+                "high"
+              ]
+            },
+            {
+              "id": "s1-3",
+              "model": "Were there any snakes in the forest?",
+              "keywords": [
+                "were",
+                "there",
+                "any",
+                "snakes"
+              ]
+            },
+            {
+              "id": "s1-4",
+              "model": "The tree was over two thousand years old.",
+              "keywords": [
+                "tree",
+                "thousand",
+                "years",
+                "old"
+              ]
+            }
+          ]
+        },
+        "S2": {
+          "prompt": "Chunk drill. Three times each, then once at full speed.",
+          "items": [
+            {
+              "id": "s2-1",
+              "chunk": "neither of the hills was",
+              "keywords": [
+                "neither",
+                "hills",
+                "was"
+              ]
+            },
+            {
+              "id": "s2-2",
+              "chunk": "were there any snakes",
+              "keywords": [
+                "were",
+                "there",
+                "any",
+                "snakes"
+              ]
+            },
+            {
+              "id": "s2-3",
+              "chunk": "over two thousand years old",
+              "keywords": [
+                "thousand",
+                "years",
+                "old"
+              ]
+            }
+          ]
+        },
+        "S3": {
+          "prompt": "Ask and answer. Full sentences, and use because at least once.",
+          "items": [
+            {
+              "id": "s3-1",
+              "q": "Describe a place you visited. What was there and what wasn't?",
+              "keywords": [
+                "was",
+                "were",
+                "wasn't",
+                "there"
+              ]
+            },
+            {
+              "id": "s3-2",
+              "q": "Was there anything you wanted to see but didn't? Why not?",
+              "keywords": [
+                "was",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-3",
+              "q": "Should some places be protected? Give one reason.",
+              "keywords": [
+                "should",
+                "because"
+              ]
+            },
+            {
+              "id": "s3-4",
+              "q": "Compare two places you know. What was different about them?",
+              "keywords": [
+                "but",
+                "was",
+                "were"
+              ]
+            }
+          ]
+        },
+        "S4": {
+          "prompt": "Describe the island map for 45 seconds. Say what was there, what wasn't, and what you would visit first.",
+          "image": "island-map-challenging",
+          "prompts": [
+            "Two things that were in the water",
+            "One thing that was high",
+            "One thing that wasn't there",
+            "What you would visit first and why"
+          ],
+          "minimumSeconds": 40,
+          "keywords": [
+            "there",
+            "was",
+            "were",
+            "wasn't",
+            "because"
+          ]
+        },
+        "S5": {
+          "prompt": "Perform the story as both characters, with a different voice for each.",
+          "dialogueId": "theNoiseInTheGrass",
+          "lines": 8,
+          "keywords": [
+            "where",
+            "were",
+            "forest",
+            "grass",
+            "snake"
+          ],
+          "extra": "Then answer: why is the ending funny? Use the word surprised in your answer."
+        },
+        "S6": {
+          "prompt": "Personal response. Three questions, full sentences, at least one reason each.",
+          "items": [
+            {
+              "id": "s6-1",
+              "q": "Is it important to protect wild places? Explain.",
+              "keywords": [
+                "important",
+                "because",
+                "protect"
+              ]
+            },
+            {
+              "id": "s6-2",
+              "q": "Would you like to see something 2,000 years old? Why or why not?",
+              "keywords": [
+                "would",
+                "because"
+              ]
+            },
+            {
+              "id": "s6-3",
+              "q": "Which is better for a school trip: a museum or a national park? Explain.",
+              "keywords": [
+                "better",
+                "because"
+              ]
+            }
+          ]
+        },
+        "S7": {
+          "prompt": "Speak for 60 seconds: My Field Trip. Cover all four points; the checklist stays on screen.",
+          "minimumSeconds": 45,
+          "scaffold": [
+            "Last ___ I was in ___ with ___.",
+            "There was ___ and there were ___.",
+            "There wasn't/weren't ___, which was good because ___.",
+            "I would go again because ___."
+          ],
+          "keywords": [
+            "was",
+            "were",
+            "there",
+            "because"
+          ],
+          "selfCheck": [
+            "I covered all four points",
+            "I used because once",
+            "I used was and were correctly"
+          ]
+        },
+        "CP1": {
+          "prompt": "Halfway checkpoint. Six items drawing on everything so far.",
+          "items": [
+            {
+              "id": "cp1-1",
+              "type": "pictureToWord",
+              "img": "ancient",
+              "options": [
+                "ancient",
+                "tall",
+                "small",
+                "sandy"
+              ],
+              "answer": "ancient"
+            },
+            {
+              "id": "cp1-2",
+              "type": "gapFill",
+              "sentence": "There ___ a lake and two hills in the park.",
+              "options": [
+                "was",
+                "were",
+                "is",
+                "are"
+              ],
+              "answer": "was"
+            },
+            {
+              "id": "cp1-3",
+              "type": "errorCorrection",
+              "sentence": "There wasn't any birds in the forest.",
+              "wrong": "wasn't",
+              "correct": "weren't"
+            },
+            {
+              "id": "cp1-4",
+              "type": "audioToWord",
+              "audio": "The tree was over 2,000 years old.",
+              "options": [
+                "2,000 years",
+                "200 years",
+                "20 years",
+                "2,000 months"
+              ],
+              "answer": "2,000 years"
+            },
+            {
+              "id": "cp1-5",
+              "type": "oddOneOut",
+              "words": [
+                "forest",
+                "grass",
+                "sand",
+                "tree"
+              ],
+              "answer": "tree",
+              "why": "The others are uncountable."
+            },
+            {
+              "id": "cp1-6",
+              "type": "speaking",
+              "q": "Ask a question with Were there any...? and answer it.",
+              "keywords": [
+                "were",
+                "there",
+                "any"
+              ]
+            }
+          ]
+        },
+        "BOSS": {
+          "prompt": "The Nature Trail. Eight items across all six skills, then a 45-second spoken response.",
+          "items": [
+            {
+              "id": "b-1",
+              "type": "pictureToWord",
+              "img": "mountain",
+              "options": [
+                "mountain",
+                "hill",
+                "forest",
+                "grass"
+              ],
+              "answer": "mountain"
+            },
+            {
+              "id": "b-2",
+              "type": "gapFill",
+              "sentence": "There ___ two hills and a lake in the park.",
+              "options": [
+                "were",
+                "was",
+                "is",
+                "are"
+              ],
+              "answer": "were"
+            },
+            {
+              "id": "b-3",
+              "type": "errorCorrection",
+              "sentence": "Were the island big? No, it wasn't, and there wasn't any birds.",
+              "wrong": "Were",
+              "correct": "Was"
+            },
+            {
+              "id": "b-4",
+              "type": "twoPass",
+              "audio": "We were in Sequoia National Park. There was a very high mountain called Mount Whitney and a famous tree called the General Sherman, which was over 2,000 years old. There weren't any snakes that day, but there were a lot of birds.",
+              "passes": [
+                {
+                  "pass": 1,
+                  "q": "What is the speaker describing?",
+                  "options": [
+                    "A visit to a national park",
+                    "A shopping trip",
+                    "A birthday"
+                  ],
+                  "answer": "A visit to a national park"
+                },
+                {
+                  "pass": 2,
+                  "q": "What was NOT there?",
+                  "options": [
+                    "Snakes",
+                    "Birds",
+                    "Trees"
+                  ],
+                  "answer": "Snakes"
+                }
+              ]
+            },
+            {
+              "id": "b-5",
+              "type": "tapSentence",
+              "q": "Tap the sentence that explains why the tree will still exist in a hundred years.",
+              "answer": "Our teacher said the park is protected, so the trees will still be there in a hundred years."
+            },
+            {
+              "id": "b-6",
+              "type": "grouping",
+              "bins": [
+                "Was",
+                "Were",
+                "Both"
+              ],
+              "items": [
+                {
+                  "word": "There ___ a lake.",
+                  "bin": "Was"
+                },
+                {
+                  "word": "There ___ two hills.",
+                  "bin": "Were"
+                },
+                {
+                  "word": "There ___ a big park.",
+                  "bin": "Was"
+                },
+                {
+                  "word": "There ___ some birds.",
+                  "bin": "Were"
+                },
+                {
+                  "word": "There ___ a famous tree.",
+                  "bin": "Was"
+                }
+              ]
+            },
+            {
+              "id": "b-7",
+              "type": "sentenceBuilder",
+              "tiles": [
+                "Neither",
+                "of",
+                "the",
+                "hills",
+                "was",
+                "very",
+                "high"
+              ],
+              "answer": "Neither of the hills was very high."
+            },
+            {
+              "id": "b-8",
+              "type": "speaking",
+              "q": "Speak for 45 seconds: a place you visited, what was there, what wasn't, and whether you would go back.",
+              "minimumSeconds": 40,
+              "keywords": [
+                "was",
+                "were",
+                "there",
+                "because"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "id": "theNoiseInTheGrass",
+    "title": "The Noise in the Grass",
+    "cast": [
+      "Mia",
+      "Brian"
+    ],
+    "lines": [
+      {
+        "speaker": "Mia",
+        "text": "How was your field trip?"
+      },
+      {
+        "speaker": "Brian",
+        "text": "It was great, but then it was scary."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Where were you?"
+      },
+      {
+        "speaker": "Brian",
+        "text": "We were in a big forest."
+      },
+      {
+        "speaker": "Mia",
+        "text": "What happened?"
+      },
+      {
+        "speaker": "Brian",
+        "text": "There was a noise."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Where was the noise?"
+      },
+      {
+        "speaker": "Brian",
+        "text": "The noise was in the tall grass."
+      },
+      {
+        "speaker": "Mia",
+        "text": "What was it?"
+      },
+      {
+        "speaker": "Brian",
+        "text": "There was a long snake in the grass!"
+      }
+    ],
+    "comprehension": {
+      "easy": [
+        {
+          "q": "Where was Brian?",
+          "options": [
+            "In a forest",
+            "On a hill"
+          ],
+          "answer": "In a forest"
+        },
+        {
+          "q": "What was in the grass?",
+          "options": [
+            "A snake",
+            "A bird"
+          ],
+          "answer": "A snake"
+        }
+      ],
+      "core": [
+        {
+          "q": "Where was Brian?",
+          "options": [
+            "In a forest",
+            "On a hill",
+            "At a lake"
+          ],
+          "answer": "In a forest"
+        },
+        {
+          "q": "What was in the grass?",
+          "options": [
+            "A snake",
+            "A bird",
+            "A tree"
+          ],
+          "answer": "A snake"
+        },
+        {
+          "q": "How did Brian feel about the trip?",
+          "options": [
+            "It was great and then scary",
+            "It was boring",
+            "It was sad"
+          ],
+          "answer": "It was great and then scary"
+        }
+      ],
+      "challenging": [
+        {
+          "q": "Why does Brian say 'but then it was scary'?",
+          "options": [
+            "Something happened suddenly in the grass",
+            "He did not like the forest at all",
+            "He was lost"
+          ],
+          "answer": "Something happened suddenly in the grass"
+        },
+        {
+          "q": "How does Mia find out what happened?",
+          "options": [
+            "She asks questions one at a time",
+            "Brian tells the whole story at once",
+            "A teacher explains"
+          ],
+          "answer": "She asks questions one at a time"
+        },
+        {
+          "q": "Why is the ending funny rather than frightening?",
+          "options": [
+            "The danger turns out to be a snake in the grass",
+            "Brian is laughing",
+            "The trip was cancelled"
+          ],
+          "answer": "The danger turns out to be a snake in the grass"
+        }
+      ]
+    }
+  },
+  "phonics": {
+    "note": "Optional pronunciation card inside the Speaking station. This is the book's own phonics focus: the ch sound at the beginning and at the end of a word.",
+    "contrast": [
+      "ch- beginning",
+      "-ch ending"
+    ],
+    "anchorWords": [
+      {
+        "word": "lunch",
+        "position": "end"
+      },
+      {
+        "word": "cheese",
+        "position": "beginning"
+      },
+      {
+        "word": "beach",
+        "position": "end"
+      },
+      {
+        "word": "chair",
+        "position": "beginning"
+      }
+    ],
+    "sortItems": [
+      {
+        "word": "teach",
+        "position": "end"
+      },
+      {
+        "word": "chocolate",
+        "position": "beginning"
+      },
+      {
+        "word": "chips",
+        "position": "beginning"
+      },
+      {
+        "word": "sandwich",
+        "position": "end"
+      },
+      {
+        "word": "cheese",
+        "position": "beginning"
+      },
+      {
+        "word": "lunch",
+        "position": "end"
+      }
+    ],
+    "note2": "The teaching point is not two different sounds but one sound in two positions: ch at the start (cheese, chair, chips) and ch at the end (lunch, beach, teach, sandwich). Both are the same /tʃ/. Ask the learner to cover their eyes and just listen for where the sound is."
+  },
+  "review3Connection": {
+    "note": "Book pages 108-111 are Review 3 (Units 7-9), plus the final 19-space board game on page 111. They are NOT part of this pack, but together with Review 1 (Units 1-3) and Review 2 (Units 4-6) they make three ready-made review islands.",
+    "contrastItems": [
+      {
+        "a": "She goes camping in the summer.",
+        "b": "She go camping in the summer.",
+        "answer": "goes",
+        "unit": "7"
+      },
+      {
+        "a": "Does he go skating in the winter?",
+        "b": "Does he goes skating in the winter?",
+        "answer": "go",
+        "unit": "7"
+      },
+      {
+        "a": "There are three lamps in the living room.",
+        "b": "There is three lamps in the living room.",
+        "answer": "are",
+        "unit": "8"
+      },
+      {
+        "a": "Is there a stove in the kitchen?",
+        "b": "Is there a stoves in the kitchen?",
+        "answer": "a stove",
+        "unit": "8"
+      },
+      {
+        "a": "There was a high mountain.",
+        "b": "There were a high mountain.",
+        "answer": "was",
+        "unit": "9"
+      },
+      {
+        "a": "Were the trees tall?",
+        "b": "Was the trees tall?",
+        "answer": "Were",
+        "unit": "9"
+      }
+    ],
+    "boardGameNote": "Page 111 is a 19-space game whose squares cue the structures of Units 7-9 in a clean cycle: He/She ... in the ... / There is a ... There are ... / Do you ... in the ...? / Is there a ...? Are there ...? / Was the ...? Were the ...? / There was a ... There were ... That sequence is the spine of a Review 3 Boss and worth copying directly.",
+    "coursesCompleteNote": "With Unit 9 delivered, all nine units exist at v2.0. The three review islands plus a final A2 exit assessment are the remaining content work."
+  },
+  "speechScoring": {
+    "reuse": "Same engine as Units 1-8: browser Web Speech API, keyword coverage, bands only, never a numeric grade.",
+    "additions": [
+      "Past forms: accept wasn't / was not, weren't / were not after normalisation.",
+      "Numbers matter here: 'two thousand' must not be accepted for 'two hundred'. If the transcript has a different number, show both forms rather than failing silently.",
+      "Accept 'there was a' and 'there's a' at Easy; require 'there were' for plurals at Core and above.",
+      "The ch contrast is easily misheard: accept 'lunch' with a soft final ch, and never fail an item for the recogniser dropping it."
+    ]
+  },
+  "audit": {
+    "expectedContentActivities": 30,
+    "expectedCheckpoints": 2,
+    "expectedXpContent": 100,
+    "expectedXpTotal": 140,
+    "projectedMinutes": {
+      "easy": 45,
+      "core": 51,
+      "challenging": 53
+    }
+  },
+  "selfAssessment": {
+    "intro": "There are no right answers here. Be honest — it helps you.",
+    "skills": {
+      "vocabulary": {
+        "easy": "I can name some nature words.",
+        "core": "I can name places in nature and describe them.",
+        "challenging": "I can describe a landscape with adjectives of size and age."
+      },
+      "grammar": {
+        "easy": "I can say what was somewhere.",
+        "core": "I can use There was and There were correctly.",
+        "challenging": "I can use was and were in questions, short answers and negatives."
+      },
+      "listening": {
+        "easy": "I can hear a nature word and find it.",
+        "core": "I can understand what was somewhere on a trip.",
+        "challenging": "I can follow a longer account and catch what was not there."
+      },
+      "reading": {
+        "easy": "I can read a short text about a park.",
+        "core": "I can find facts about a place in a text.",
+        "challenging": "I can understand why a place is protected and what that means."
+      },
+      "writing": {
+        "easy": "I can write one sentence with There was.",
+        "core": "I can fill a chart about a trip.",
+        "challenging": "I can write about a trip with a negative sentence."
+      },
+      "speaking": {
+        "easy": "I can say one thing that was somewhere.",
+        "core": "I can talk about a place I visited.",
+        "challenging": "I can give a one-minute talk about a trip."
+      }
+    },
+    "hardestPrompt": "Which one was hardest today?",
+    "notePrompt": "One thing I want to get better at."
+  }
+}
