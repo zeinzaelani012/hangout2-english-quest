@@ -67,10 +67,26 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
   const pictureOptions = activity.type === 'wordToPicture' || activity.type === 'audioToPicture';
   // audioGapFill carries one clip for the whole slot (L3); show it once.
   const slotAudio: string | undefined = activity.type === 'audioGapFill' ? payload.audio : undefined;
+  // Part G replay limits — listening items only: Easy unlimited, Core 2,
+  // Challenging 1. Counted per item (AudioButton resets when the item changes).
+  const isListeningItem =
+    activity.type === 'audioToWord' ||
+    activity.type === 'audioQuestion' ||
+    activity.type === 'audioToPicture' ||
+    activity.type === 'audioGapFill';
+  const maxPlays: number | undefined = !isListeningItem
+    ? undefined
+    : activity.difficulty === 'challenging'
+      ? 1
+      : activity.difficulty === 'core'
+        ? 2
+        : undefined;
 
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [results, setResults] = useState<boolean[]>([]);
+  // Part J — the words behind "Show the words" once the item is answered.
+  const [showWords, setShowWords] = useState(false);
   // D1 reason chip: the learner must pick a reason before the explanation
   // appears. The pack's whyChoices are ordered best-first, so the first chip
   // is the correct reason.
@@ -124,6 +140,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
     setIndex(i => i + 1);
     setSelected(null);
     setReason(null);
+    setShowWords(false);
   };
 
   if (!item) return null;
@@ -151,10 +168,12 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
         {slotAudio && (
           <div className="mb-3">
             <AudioButton
-              audioKey={`choice-slot-${activity.id}`}
+              audioKey={`choice-slot-${activity.id}-${index}`}
               fallbackText={slotAudio}
               rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
               label="Listen to the clip"
+              maxPlays={maxPlays}
+              level={activity.difficulty}
             />
           </div>
         )}
@@ -170,6 +189,8 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
               fallbackText={item.audio}
               rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
               label="Listen"
+              maxPlays={maxPlays}
+              level={activity.difficulty}
             />
           </div>
         )}
@@ -263,6 +284,27 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
           );
         })}
       </div>
+      )}
+
+      {/* Part J — text alternative for listening items, behind "Show the
+          words" once this item is answered. Makes the item usable by a deaf
+          learner without turning the station into a reading station. */}
+      {answered && (item.audio || slotAudio) && (
+        <div className="mt-4">
+          <button
+            onClick={() => setShowWords(v => !v)}
+            className="action-secondary text-sm"
+            style={{ minHeight: 44 }}
+            aria-expanded={showWords}
+          >
+            {showWords ? 'Hide the words' : 'Show the words'}
+          </button>
+          {showWords && (
+            <p className="mt-2 rounded-xl border border-violet/20 bg-violet/5 p-4 text-sm italic leading-6 text-ink">
+              {item.audio ?? slotAudio}
+            </p>
+          )}
+        </div>
       )}
 
       {/* D1 reason chip — after the choice, before the explanation */}

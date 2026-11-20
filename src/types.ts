@@ -317,6 +317,8 @@ export interface ProgressData {
     teacherUnlockChallenging?: boolean;
     /** Teacher Mode: learners cannot switch between Easy and Core. */
     teacherLockToOneLevel?: boolean;
+    /** Phase 9 — printed on the certificate. Defaults to the app name. */
+    schoolName?: string;
   };
   levelHistory: { unitId: number; level: Level; stars: number; date: string; accuracy: number }[];
   /** Self-assessment records, keyed `unit:{id}:level:{level}` — one per level attempt. */
@@ -329,4 +331,42 @@ export interface ProgressData {
   levelTimings?: Record<number, LevelTiming[]>;
   /** In-flight level attempts, keyed by `${unitId}-${level}`. */
   activeTimings?: Record<string, ActiveLevelTiming>;
+}
+
+// ── Phase 9 — The Final Challenge (capstone) ─────────────────────────────────
+
+export type CapstoneOutcome = 'issued' | 'pending' | 'not_issued';
+
+/**
+ * One capstone attempt. Partial sessions persist: station records are written
+ * the moment each station completes, and the Final Gate keeps answered items
+ * (`answered: false` marks an item the learner still owes). An attempt that
+ * earned a certificate is immutable — a retake always starts a new attempt.
+ */
+export interface CapstoneAttempt {
+  id: string;
+  learner: string;
+  startedAt: number;
+  /** Set when the Final Gate completes; 0 while the attempt is under way. */
+  finishedAt: number;
+  /** Per station: correct count, item total, and the indices actually answered. */
+  stations: Record<string, { correct: number; total: number; answered: number[] }>;
+  /** Per seal: best score so far. Passing needs the pack's passMark (4 of 6). */
+  seals: Record<string, { correct: number; total: number }>;
+  finalGate: { items: Array<{ id: string; skill: Skill; correct: boolean; answered: boolean }> };
+  /** Pooled across the Final Gate only — the certificate reads nothing else. */
+  skillScores: Record<Skill, number> | null;
+  overall: number | null;
+  outcome: CapstoneOutcome | null;
+  certificateId?: string;
+  issuedAt?: number;
+  releasedBy?: string;
+  /** Teacher's note when the attempt was returned for retake; shown to the learner. */
+  retakeNote?: string;
+}
+
+export interface CapstoneStore {
+  /** One current attempt + short history per learner, so Teacher Mode sees
+   * every learner that used this device. */
+  learners: Record<string, { current: CapstoneAttempt | null; history: CapstoneAttempt[] }>;
 }

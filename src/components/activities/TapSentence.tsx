@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Activity } from '../../types';
 import { CheckCircle2, XCircle } from 'lucide-react';
+import { AudioButton } from '../AudioButton';
 import { majorityCorrect, normalizeSentence, sentenceMatches, splitSentences, v2Items, type ItemResult } from './v2-types';
 
 interface Props {
@@ -78,7 +79,12 @@ export function TapSentence({ activity, onResult, passage, passageTitle }: Props
   return (
     <div>
       <div className="mb-5 rounded-xl border border-slate-200 bg-slate-50 p-5">
-        {passageTitle && <p className="eyebrow mb-3">{passageTitle}</p>}
+        <div className="mb-3 flex items-center justify-between gap-3">
+          {passageTitle && <p className="eyebrow mb-0">{passageTitle}</p>}
+          {/* Phase 8 — read the passage aloud; struggling readers can follow
+              the text while it plays. Passage clips live in the manifest. */}
+          <AudioButton audioKey={`passage-${activity.id}`} fallbackText={passage} level={activity.difficulty} />
+        </div>
         <div className="space-y-1">
           {sentences.map((sentence, i) => {
             const isPicked = selected === sentence;

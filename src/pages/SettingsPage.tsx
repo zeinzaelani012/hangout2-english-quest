@@ -1,11 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useProgress } from '../context/ProgressContext';
 import { Mic, MicOff, KeyRound, RotateCcw, UserCog } from 'lucide-react';
+import { VoicePicker } from '../components/VoicePicker';
+import { loadAudioSettings, saveAudioSettings, onAudioSettingsChange } from '../lib/audio';
 
 export function SettingsPage() {
   const { settings, updateSettings, switchStudent, resetProgress, profile } = useProgress();
   const [pinInput, setPinInput] = useState(settings.teacherPin);
   const [noMic, setNoMic] = useState(settings.noMicMode);
+  const [audio, setAudio] = useState(() => loadAudioSettings());
+
+  // Teacher Mode can lock the voice while this page is open.
+  useEffect(() => onAudioSettingsChange(() => setAudio({ ...loadAudioSettings() })), []);
+
+  const handleVolume = (value: number) => {
+    const volume = Math.max(0, Math.min(1, value / 100));
+    setAudio(prev => ({ ...prev, volume }));
+    saveAudioSettings({ volume });
+  };
 
   const handleSavePin = () => {
     updateSettings({ teacherPin: pinInput || 'teacher' });
@@ -44,6 +56,37 @@ export function SettingsPage() {
           </div>
         </div>
       )}
+
+      {/* Voice — the picker (Part F) + global volume (Part J) */}
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Voice</h3>
+        <p className="mb-4 text-xs leading-5 text-muted">
+          The app reads lessons with the voice your browser provides. Pick the one that sounds
+          best — it is free, already on this device.
+        </p>
+        <VoicePicker readOnly={audio.voiceLocked} />
+
+        <div className="mt-5 border-t border-slate-100 pt-4">
+          <label htmlFor="global-volume" className="mb-1 flex items-center justify-between text-sm font-bold text-ink">
+            Volume
+            <span className="tnum text-xs font-semibold text-muted">{Math.round(audio.volume * 100)}%</span>
+          </label>
+          <input
+            id="global-volume"
+            type="range"
+            min={0}
+            max={100}
+            step={5}
+            value={Math.round(audio.volume * 100)}
+            onChange={e => handleVolume(Number(e.target.value))}
+            className="w-full accent-teal-700"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(audio.volume * 100)}
+          />
+          <p className="mt-1 text-xs text-muted">Applies to every lesson sound, on this device.</p>
+        </div>
+      </div>
 
       {/* No-microphone mode */}
       <div className="surface-card mb-4 p-5 sm:p-6">

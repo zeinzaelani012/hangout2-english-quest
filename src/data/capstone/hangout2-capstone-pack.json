@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "capstone",
+    "version": "1.0",
+    "schema": "capstone-v1",
+    "title": "The Final Challenge",
+    "structure": "3 islands x 6 skills = 18 stations, plus 3 seals and 1 Final Gate",
+    "coversUnits": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "gating": {
+      "lockedUntil": "all nine core bosses completed",
+      "previewAllowed": true,
+      "previewScope": "one sample station per island, 3 items, never scored, never stored",
+      "finalGateHiddenUntil": "all three seals passed"
+    },
+    "scoring": {
+      "stationScore": "percentage of items correct, for feedback and review only",
+      "skillScore": "pooled across the Final Gate only",
+      "overallWeights": { "speaking": 25, "vocabulary": 25, "grammar": 15, "reading": 15, "listening": 10, "writing": 10 },
+      "note": "The certificate reads the Final Gate only. Station and seal results never enter the overall."
+    },
+    "certificate": {
+      "issued": { "overallMinimum": 70, "skillFloor": 50, "label": "issued" },
+      "pending": { "overallRange": [50, 69], "orAnySkillBelow": 50, "label": "pending" },
+      "notIssued": { "overallBelow": 50, "label": "not_issued" },
+      "bands": [
+        { "min": 85, "name": "Strong" },
+        { "min": 70, "name": "Secure" },
+        { "min": 50, "name": "Developing" },
+        { "min": 0, "name": "Emerging" }
+      ],
+      "claim": "Aligned to A2 descriptors. Does not certify a CEFR level.",
+      "rules": [
+        "A skill below 50 forces pending, whatever the overall is",
+        "Never print a percentage on the certificate",
+        "A retake never downgrades an issued certificate",
+        "Only a teacher may move pending to issued"
+      ]
+    },
+    "xp": { "perStation": 10, "perSeal": 20, "finalGate": 50, "retryAwardsNothing": true },
+    "sessions": [
+      { "session": 1, "contents": "Island 1: 6 stations + seal", "minutes": 50 },
+      { "session": 2, "contents": "Island 2: 6 stations + seal", "minutes": 50 },
+      { "session": 3, "contents": "Island 3: 6 stations + seal", "minutes": 50 },
+      { "session": 4, "contents": "Final Gate + certificate", "minutes": 25 }
+    ],
+    "contentPolicy": "Original review material written for this course. Draws on the vocabulary, grammar and texts of the nine unit packs; no coursebook wording or audio is reproduced."
+  },
+
+  "skillOrder": ["vocabulary", "grammar", "listening", "reading", "writing", "speaking"],
+  "skillLabels": {
+    "vocabulary": "Vocabulary",
+    "grammar": "Grammar",
+    "listening": "Listening",
+    "reading": "Reading",
+    "writing": "Writing",
+    "speaking": "Speaking"
+  },
+
+  "islands": [
+    {
+      "id": "review1",
+      "number": 1,
+      "title": "The Market Island",
+      "subtitle": "Everything you learned about food, clothes and taste",
+      "units": [1, 2, 3],
+      "unitTitles": ["Snack Time", "My Clothes", "My Favorite Food"],
+      "stations": [
+
+        {
+          "id": "r1-vocabulary",
+          "skill": "vocabulary",
+          "title": "The Market Stall",
+          "prompt": "Choose the word that matches. Every question mixes all three units.",
+          "estSeconds": 300,
+          "xp": 10,
+          "items": [
+            { "id": "r1v-1", "type": "pictureToWord", "img": "carrot", "options": ["carrot", "cookie", "cheese", "banana"], "answer": "carrot", "unit": 1 },
+            { "id": "r1v-2", "type": "pictureToWord", "img": "sneakers", "options": ["sneakers", "sandals", "boots", "slippers"], "answer": "sneakers", "unit": 2 },
+            { "id": "r1v-3", "type": "wordToPicture", "word": "lemonade", "options": ["lemonade", "milk", "water", "juice"], "answer": "lemonade", "unit": 3 },
+            { "id": "r1v-4", "type": "gapFill", "sentence": "This lemon is very ___. My face hurts!", "options": ["sour", "sweet", "salty", "spicy"], "answer": "sour", "unit": 3 },
+            { "id": "r1v-5", "type": "wordToPicture", "word": "earrings", "options": ["earrings", "a ring", "a necklace", "a watch"], "answer": "earrings", "unit": 2 },
+            { "id": "r1v-6", "type": "oddOneOut", "words": ["apple", "carrot", "banana", "popcorn"], "answer": "popcorn", "why": "The others are things that grow. Popcorn is made from corn.", "unit": 1 },
+            { "id": "r1v-7", "type": "gapFill", "sentence": "My sweatshirt is too ___ for summer. It is very hot.", "options": ["warm", "cold", "sour", "sweet"], "answer": "warm", "unit": 2 },
+            { "id": "r1v-8", "type": "oddOneOut", "words": ["sweet", "sour", "salty", "pizza"], "answer": "pizza", "why": "The others are taste words. Pizza is a food.", "unit": 3 }
+          ]
+        },
+
+        {
+          "id": "r1-grammar",
+          "skill": "grammar",
+          "title": "The Changing Room",
+          "prompt": "One mistake in each sentence. Tap the wrong word.",
+          "estSeconds": 300,
+          "xp": 10,
+          "items": [
+            { "id": "r1g-1", "type": "errorCorrection", "sentence": "She like pizza very much.", "wrong": "like", "correct": "likes", "why": "She takes likes.", "unit": 1 },
+            { "id": "r1g-2", "type": "errorCorrection", "sentence": "They doesn't eat carrots.", "wrong": "doesn't", "correct": "don't", "why": "They takes don't.", "unit": 1 },
+            { "id": "r1g-3", "type": "gapFill", "sentence": "He ___ a blue sweatshirt today.", "options": ["is wearing", "are wearing", "am wearing", "wear"], "answer": "is wearing", "why": "He takes is wearing.", "unit": 2 },
+            { "id": "r1g-4", "type": "errorCorrection", "sentence": "My friends is wearing jeans.", "wrong": "is", "correct": "are", "why": "My friends is plural, so use are.", "unit": 2 },
+            { "id": "r1g-5", "type": "gapFill", "sentence": "___ she want a glass of lemonade?", "options": ["Does", "Do", "Is", "Are"], "answer": "Does", "why": "She takes Does.", "unit": 3 },
+            { "id": "r1g-6", "type": "transform", "instruction": "Agree with the sentence.", "from": "I like sweet food.", "options": ["So do I.", "Neither do I.", "So does I.", "Neither am I."], "answer": "So do I.", "why": "So + do agrees with a positive I sentence.", "unit": 1 }
+          ]
+        },
+
+        {
+          "id": "r1-listening",
+          "skill": "listening",
+          "title": "The Kitchen Radio",
+          "prompt": "Listen and answer. Two replays per item.",
+          "estSeconds": 300,
+          "xp": 10,
+          "replayLimit": 2,
+          "items": [
+            { "id": "r1l-1", "type": "audioToWord", "audio": "For lunch I had a cheese sandwich and some lemonade.", "q": "What did the speaker drink?", "options": ["lemonade", "milk", "water", "juice"], "answer": "lemonade", "unit": 3 },
+            { "id": "r1l-2", "type": "audioQuestion", "audio": "My brother doesn't like carrots, but he loves popcorn.", "q": "What does the brother love?", "options": ["Popcorn", "Carrots", "Cheese", "Apples"], "answer": "Popcorn", "unit": 1 },
+            { "id": "r1l-3", "type": "audioQuestion", "audio": "Today I am wearing a red sweatshirt, blue jeans and white sneakers.", "q": "What colour are the sneakers?", "options": ["White", "Red", "Blue", "Black"], "answer": "White", "unit": 2 },
+            { "id": "r1l-4", "type": "audioQuestion", "audio": "This soup is very salty. Can I have some water, please?", "q": "How does the soup taste?", "options": ["Salty", "Sweet", "Sour", "Spicy"], "answer": "Salty", "unit": 3 }
+          ]
+        },
+
+        {
+          "id": "r1-reading",
+          "skill": "reading",
+          "title": "The Party Note",
+          "prompt": "Read the note. Then answer the questions.",
+          "estSeconds": 360,
+          "xp": 10,
+          "passage": "Hi Sara, It's my birthday on Saturday! Please come at four o'clock. We are having pizza and lemonade in the garden. My mum is making a big chocolate cake, so don't eat too much before you come! It's hot this week, so wear something light. Don't wear your new jeans — we are playing games on the grass. I am wearing my yellow dress and my new white sneakers. Can you bring your sister? Say yes! See you Saturday, Nia",
+          "items": [
+            { "id": "r1r-1", "type": "gist", "q": "What is the note about?", "options": ["An invitation to a birthday party", "A shopping list", "A school trip"], "answer": "An invitation to a birthday party" },
+            { "id": "r1r-2", "type": "detail", "q": "What time is the party?", "options": ["Four o'clock", "Five o'clock", "Three o'clock"], "answer": "Four o'clock" },
+            { "id": "r1r-3", "type": "detail", "q": "Why should Sara NOT wear her new jeans?", "options": ["They are playing games on the grass", "Jeans are too warm", "Nia does not like them"], "answer": "They are playing games on the grass" },
+            { "id": "r1r-4", "type": "detail", "q": "What is Nia wearing?", "options": ["A yellow dress and white sneakers", "Blue jeans and a sweatshirt", "A red dress and sandals"], "answer": "A yellow dress and white sneakers" },
+            { "id": "r1r-5", "type": "tapSentence", "q": "Tap the sentence that gives a reason about the weather.", "answerType": "tapSentence", "answer": "It's hot this week, so wear something light.", "why": "That sentence connects the weather to what to wear." }
+          ]
+        },
+
+        {
+          "id": "r1-writing",
+          "skill": "writing",
+          "title": "The Order Pad",
+          "prompt": "Build each sentence, then write your own.",
+          "estSeconds": 340,
+          "xp": 10,
+          "items": [
+            { "id": "r1w-1", "type": "sentenceBuilder", "tiles": ["She", "likes", "sweet", "food", "but", "she", "doesn't", "like", "carrots"], "answer": "She likes sweet food but she doesn't like carrots." },
+            { "id": "r1w-2", "type": "sentenceBuilder", "tiles": ["What", "are", "you", "wearing", "today"], "answer": "What are you wearing today?" },
+            { "id": "r1w-3", "type": "sentenceRepair", "wrong": "He want a glass of lemonade, and they doesn't want pizza.", "answer": "He wants a glass of lemonade, and they don't want pizza." },
+            { "id": "r1w-4", "type": "shortResponse", "prompt": "Write three sentences: what you like to eat, what you don't like, and what you are wearing today.", "minimumWords": 25, "checklist": ["Correct like / likes", "Correct don't / doesn't", "Correct am / is / are wearing"] }
+          ]
+        },
+
+        {
+          "id": "r1-speaking",
+          "skill": "speaking",
+          "title": "The Café Counter",
+          "prompt": "Answer each question in a full sentence. Record each one separately.",
+          "estSeconds": 330,
+          "xp": 10,
+          "items": [
+            { "id": "r1s-1", "type": "personalResponse", "q": "What is your favourite food, and why?", "keywords": ["favourite", "because", "like"], "unit": 3 },
+            { "id": "r1s-2", "type": "personalResponse", "q": "What are you wearing today?", "keywords": ["wearing", "am", "is"], "unit": 2 },
+            { "id": "r1s-3", "type": "personalResponse", "q": "Does your friend like sweet food? Ask and answer.", "keywords": ["does", "like", "sweet"], "unit": 1 },
+            { "id": "r1s-4", "type": "monologue", "q": "Talk for 30 seconds about a meal you like. Say what it is, how it tastes, and who you eat it with.", "minimumSeconds": 25, "keywords": ["taste", "with", "because"], "unit": 3 }
+          ]
+        }
+      ],
+
+      "seal": {
+        "id": "seal1",
+        "title": "The Market Seal",
+        "prompt": "Six questions. One for each skill. Pass with four correct to open the next island.",
+        "passMark": 4,
+        "of": 6,
+        "items": [
+          { "id": "s1-1", "skill": "vocabulary", "type": "pictureToWord", "img": "jacket", "options": ["jacket", "sweatshirt", "dress", "jeans"], "answer": "jacket" },
+          { "id": "s1-2", "skill": "grammar", "type": "gapFill", "sentence": "He ___ popcorn, but he doesn't like cheese.", "options": ["loves", "love", "loving", "is love"], "answer": "loves" },
+          { "id": "s1-3", "skill": "listening", "type": "audioQuestion", "audio": "I want a pizza and a glass of lemonade, please.", "q": "What does the speaker want to drink?", "options": ["Lemonade", "Water", "Milk"], "answer": "Lemonade", "replayLimit": 2 },
+          { "id": "s1-4", "skill": "reading", "type": "detail", "q": "In the party note, what is Nia's mum making?", "options": ["A chocolate cake", "A pizza", "Lemonade"], "answer": "A chocolate cake" },
+          { "id": "s1-5", "skill": "writing", "type": "sentenceBuilder", "tiles": ["They", "are", "wearing", "blue", "jeans"], "answer": "They are wearing blue jeans." },
+          { "id": "s1-6", "skill": "speaking", "type": "personalResponse", "q": "Say one sentence about what you like to eat.", "keywords": ["like", "eat"] }
+        ]
+      }
+    },
+
+    {
+      "id": "review2",
+      "number": 2,
+      "title": "The Neighbourhood Island",
+      "subtitle": "Everything you learned about school, rooms and weather",
+      "units": [4, 5, 6],
+      "unitTitles": ["My Classes", "Finding Things", "It's Hot!"],
+      "stations": [
+
+        {
+          "id": "r2-vocabulary",
+          "skill": "vocabulary",
+          "title": "The Street Map",
+          "prompt": "Choose the word that matches. Every question mixes all three units.",
+          "estSeconds": 300,
+          "xp": 10,
+          "items": [
+            { "id": "r2v-1", "type": "pictureToWord", "img": "calculator", "options": ["calculator", "ruler", "eraser", "pencil case"], "answer": "calculator", "unit": 4 },
+            { "id": "r2v-2", "type": "pictureToWord", "img": "cushion", "options": ["cushion", "bucket", "blanket", "towel"], "answer": "cushion", "unit": 5 },
+            { "id": "r2v-3", "type": "wordToPicture", "word": "foggy", "options": ["foggy", "sunny", "rainy", "snowy"], "answer": "foggy", "unit": 6 },
+            { "id": "r2v-4", "type": "gapFill", "sentence": "I put my books in my ___ and go to class.", "options": ["backpack", "fridge", "cushion", "bucket"], "answer": "backpack", "unit": 4 },
+            { "id": "r2v-5", "type": "wordToPicture", "word": "yesterday", "options": ["yesterday", "tomorrow", "today", "next week"], "answer": "yesterday", "unit": 4 },
+            { "id": "r2v-6", "type": "oddOneOut", "words": ["kitchen", "bedroom", "garden", "bathroom"], "answer": "garden", "why": "The others are rooms inside a house. A garden is outside.", "unit": 5 },
+            { "id": "r2v-7", "type": "gapFill", "sentence": "It's very cold. Don't forget your ___.", "options": ["coat", "sunglasses", "shorts", "sandal"], "answer": "coat", "unit": 6 },
+            { "id": "r2v-8", "type": "oddOneOut", "words": ["sunny", "rainy", "windy", "classroom"], "answer": "classroom", "why": "The others are weather words. A classroom is a place.", "unit": 6 }
+          ]
+        },
+
+        {
+          "id": "r2-grammar",
+          "skill": "grammar",
+          "title": "The Lost Property Box",
+          "prompt": "One mistake in each sentence. Tap the wrong word.",
+          "estSeconds": 300,
+          "xp": 10,
+          "items": [
+            { "id": "r2g-1", "type": "errorCorrection", "sentence": "She have art on Monday.", "wrong": "have", "correct": "has", "why": "She takes has.", "unit": 4 },
+            { "id": "r2g-2", "type": "errorCorrection", "sentence": "Does he has a calculator?", "wrong": "has", "correct": "have", "why": "After Does the verb loses its -s.", "unit": 4 },
+            { "id": "r2g-3", "type": "gapFill", "sentence": "Where ___ the buckets? They're in the garden.", "options": ["are", "is", "am", "be"], "answer": "are", "why": "Buckets is plural, so use are.", "unit": 5 },
+            { "id": "r2g-4", "type": "errorCorrection", "sentence": "The toothbrush are in the bathroom.", "wrong": "are", "correct": "is", "why": "One toothbrush takes is.", "unit": 5 },
+            { "id": "r2g-5", "type": "gapFill", "sentence": "___ it hot today? Yes, it is.", "options": ["Is", "Are", "Does", "Do"], "answer": "Is", "why": "Weather takes It is, so the question is Is it.", "unit": 6 },
+            { "id": "r2g-6", "type": "transform", "instruction": "Give the instruction for cold weather.", "from": "It's cold and windy.", "options": ["Put on your coat.", "Don't put on your coat.", "Puts on your coat.", "Putting on your coat."], "answer": "Put on your coat.", "why": "An imperative uses the base verb with no -s.", "unit": 6 }
+          ]
+        },
+
+        {
+          "id": "r2-listening",
+          "skill": "listening",
+          "title": "The Weather Report",
+          "prompt": "Listen and answer. Two replays per item.",
+          "estSeconds": 300,
+          "xp": 10,
+          "replayLimit": 2,
+          "items": [
+            { "id": "r2l-1", "type": "audioQuestion", "audio": "On Monday I have maths first, then English, then art in the afternoon.", "q": "What does the speaker have in the afternoon?", "options": ["Art", "Maths", "English", "Music"], "answer": "Art", "unit": 4 },
+            { "id": "r2l-2", "type": "audioQuestion", "audio": "The buckets are in the garden, and the cushions are on the sofa.", "q": "Where are the cushions?", "options": ["On the sofa", "In the garden", "In the kitchen", "Under the table"], "answer": "On the sofa", "unit": 5 },
+            { "id": "r2l-3", "type": "audioQuestion", "audio": "It's rainy and cold today, so put on your coat and take your umbrella.", "q": "What should you take?", "options": ["An umbrella", "Sunglasses", "A hat", "A towel"], "answer": "An umbrella", "unit": 6 },
+            { "id": "r2l-4", "type": "audioQuestion", "audio": "My sister doesn't have a ruler, but she has two erasers.", "q": "How many erasers does she have?", "options": ["Two", "One", "None", "Three"], "answer": "Two", "unit": 4 }
+          ]
+        },
+
+        {
+          "id": "r2-reading",
+          "skill": "reading",
+          "title": "The Saturday List",
+          "prompt": "Read the list and the message. Then answer the questions.",
+          "estSeconds": 360,
+          "xp": 10,
+          "passage": "SATURDAY — THINGS TO DO 1. Find the buckets. They are not in the garden. 2. Put the cushions on the sofa. 3. My school bag is under the table. Take out my calculator and my ruler. 4. It's foggy this morning, so we can't go to the park. Mum says it will be sunny in the afternoon. 5. Don't put on your new shoes — the grass is wet. 6. Ask Dad where the umbrella is. He always knows. From, Dita",
+          "items": [
+            { "id": "r2r-1", "type": "gist", "q": "What is this text?", "options": ["A list of jobs for Saturday", "A birthday invitation", "A school timetable"], "answer": "A list of jobs for Saturday" },
+            { "id": "r2r-2", "type": "detail", "q": "Where are the buckets NOT?", "options": ["In the garden", "In the kitchen", "Under the table"], "answer": "In the garden" },
+            { "id": "r2r-3", "type": "detail", "q": "Why can't they go to the park in the morning?", "options": ["It's foggy", "It's raining", "They are busy"], "answer": "It's foggy" },
+            { "id": "r2r-4", "type": "detail", "q": "Why should they not wear new shoes?", "options": ["The grass is wet", "The shoes are too small", "It is too hot"], "answer": "The grass is wet" },
+            { "id": "r2r-5", "type": "tapSentence", "q": "Tap the sentence that tells you where the school bag is.", "answerType": "tapSentence", "answer": "My school bag is under the table.", "why": "That sentence names the object and its place." }
+          ]
+        },
+
+        {
+          "id": "r2-writing",
+          "skill": "writing",
+          "title": "The Noticeboard",
+          "prompt": "Build each sentence, then write your own.",
+          "estSeconds": 340,
+          "xp": 10,
+          "items": [
+            { "id": "r2w-1", "type": "sentenceBuilder", "tiles": ["My", "brother", "has", "science", "on", "Tuesday"], "answer": "My brother has science on Tuesday." },
+            { "id": "r2w-2", "type": "sentenceBuilder", "tiles": ["Where", "are", "the", "cushions"], "answer": "Where are the cushions?" },
+            { "id": "r2w-3", "type": "sentenceRepair", "wrong": "Does she has a calculator, and the toothbrush are in the bathroom.", "answer": "Does she have a calculator, and the toothbrush is in the bathroom." },
+            { "id": "r2w-4", "type": "shortResponse", "prompt": "Write three sentences: what classes you have, where one school thing is, and what to wear in today's weather.", "minimumWords": 25, "checklist": ["Correct have / has", "Correct Where is / Where are", "Correct Put on / Don't put on"] }
+          ]
+        },
+
+        {
+          "id": "r2-speaking",
+          "skill": "speaking",
+          "title": "The Corner Shop",
+          "prompt": "Answer each question in a full sentence. Record each one separately.",
+          "estSeconds": 330,
+          "xp": 10,
+          "items": [
+            { "id": "r2s-1", "type": "personalResponse", "q": "What classes do you have this week?", "keywords": ["have", "has", "on"], "unit": 4 },
+            { "id": "r2s-2", "type": "personalResponse", "q": "Where are three things in your bedroom?", "keywords": ["where", "are", "is", "in"], "unit": 5 },
+            { "id": "r2s-3", "type": "personalResponse", "q": "What is the weather like today, and what should you wear?", "keywords": ["weather", "wear", "put on"], "unit": 6 },
+            { "id": "r2s-4", "type": "monologue", "q": "Talk for 30 seconds about your school day. Say what classes you have, what you carry, and what the weather was like.", "minimumSeconds": 25, "keywords": ["have", "carry", "weather"], "unit": 4 }
+          ]
+        }
+      ],
+
+      "seal": {
+        "id": "seal2",
+        "title": "The Neighbourhood Seal",
+        "prompt": "Six questions. One for each skill. Pass with four correct to open the last island.",
+        "passMark": 4,
+        "of": 6,
+        "items": [
+          { "id": "s2-1", "skill": "vocabulary", "type": "pictureToWord", "img": "bucket", "options": ["bucket", "cushion", "towel", "blanket"], "answer": "bucket" },
+          { "id": "s2-2", "skill": "grammar", "type": "gapFill", "sentence": "Where ___ my eraser? It's on the desk.", "options": ["is", "are", "am", "be"], "answer": "is" },
+          { "id": "s2-3", "skill": "listening", "type": "audioQuestion", "audio": "It's sunny and hot, so don't put on your coat.", "q": "What does the speaker say NOT to do?", "options": ["Put on a coat", "Go outside", "Take water"], "answer": "Put on a coat", "replayLimit": 2 },
+          { "id": "s2-4", "skill": "reading", "type": "detail", "q": "In the Saturday list, who always knows where the umbrella is?", "options": ["Dad", "Mum", "Dita"], "answer": "Dad" },
+          { "id": "s2-5", "skill": "writing", "type": "sentenceBuilder", "tiles": ["She", "has", "art", "on", "Friday"], "answer": "She has art on Friday." },
+          { "id": "s2-6", "skill": "speaking", "type": "personalResponse", "q": "Say one sentence about the weather today.", "keywords": ["weather", "it's", "is"] }
+        ]
+      }
+    },
+
+    {
+      "id": "review3",
+      "number": 3,
+      "title": "The Summit Island",
+      "subtitle": "Everything you learned about seasons, houses and places",
+      "units": [7, 8, 9],
+      "unitTitles": ["The Four Seasons", "Our House", "Our Field Trip"],
+      "stations": [
+
+        {
+          "id": "r3-vocabulary",
+          "skill": "vocabulary",
+          "title": "The Trailhead",
+          "prompt": "Choose the word that matches. Every question mixes all three units.",
+          "estSeconds": 300,
+          "xp": 10,
+          "items": [
+            { "id": "r3v-1", "type": "pictureToWord", "img": "go sledding", "options": ["go sledding", "go skating", "throw snowballs", "play tennis"], "answer": "go sledding", "unit": 7 },
+            { "id": "r3v-2", "type": "pictureToWord", "img": "bookcase", "options": ["bookcase", "dresser", "table", "chair"], "answer": "bookcase", "unit": 8 },
+            { "id": "r3v-3", "type": "wordToPicture", "word": "island", "options": ["island", "beach", "lake", "forest"], "answer": "island", "unit": 9 },
+            { "id": "r3v-4", "type": "gapFill", "sentence": "In the fall we ___ leaves into a big pile.", "options": ["rake", "pick", "plant", "throw"], "answer": "rake", "unit": 7 },
+            { "id": "r3v-5", "type": "wordToPicture", "word": "dresser", "options": ["dresser", "bookcase", "stove", "mirror"], "answer": "dresser", "unit": 8 },
+            { "id": "r3v-6", "type": "gapFill", "sentence": "Was the lake ___? It went very far down.", "options": ["deep", "low", "sandy", "tall"], "answer": "deep", "unit": 9 },
+            { "id": "r3v-7", "type": "oddOneOut", "words": ["forest", "grass", "sand", "tree"], "answer": "tree", "why": "The others are uncountable. Tree is countable.", "unit": 9 },
+            { "id": "r3v-8", "type": "oddOneOut", "words": ["stove", "table", "bed", "beach"], "answer": "beach", "why": "The others are things inside a house or a ger.", "unit": 8 }
+          ]
+        },
+
+        {
+          "id": "r3-grammar",
+          "skill": "grammar",
+          "title": "The Old Map",
+          "prompt": "One mistake in each sentence. Tap the wrong word.",
+          "estSeconds": 300,
+          "xp": 10,
+          "items": [
+            { "id": "r3g-1", "type": "errorCorrection", "sentence": "She go skating in the winter.", "wrong": "go", "correct": "goes", "why": "Go becomes goes for she.", "unit": 7 },
+            { "id": "r3g-2", "type": "errorCorrection", "sentence": "Does he goes camping in the summer?", "wrong": "goes", "correct": "go", "why": "After Does the verb loses its -s.", "unit": 7 },
+            { "id": "r3g-3", "type": "gapFill", "sentence": "There ___ three chairs in the kitchen.", "options": ["are", "is", "was", "have"], "answer": "are", "why": "Three chairs is plural, so use are.", "unit": 8 },
+            { "id": "r3g-4", "type": "errorCorrection", "sentence": "The stereo is next the dresser.", "wrong": "next", "correct": "next to", "why": "We say next to, with the word to.", "unit": 8 },
+            { "id": "r3g-5", "type": "gapFill", "sentence": "There ___ two hills behind the lake.", "options": ["were", "was", "is", "are"], "answer": "were", "why": "Two hills is plural and the sentence is in the past.", "unit": 9 },
+            { "id": "r3g-6", "type": "errorCorrection", "sentence": "Was the trees very old?", "wrong": "Was", "correct": "Were", "why": "Trees is plural, so the question takes Were.", "unit": 9 }
+          ]
+        },
+
+        {
+          "id": "r3-listening",
+          "skill": "listening",
+          "title": "The Ranger's Radio",
+          "prompt": "Listen and answer. Two replays per item.",
+          "estSeconds": 300,
+          "xp": 10,
+          "replayLimit": 2,
+          "items": [
+            { "id": "r3l-1", "type": "audioQuestion", "audio": "In the winter my brother goes skating, but I go sledding.", "q": "What does the speaker do in the winter?", "options": ["Goes sledding", "Goes skating", "Plays tennis", "Goes camping"], "answer": "Goes sledding", "unit": 7 },
+            { "id": "r3l-2", "type": "audioQuestion", "audio": "There are two beds next to the dressers, and there is a mirror behind the door.", "q": "Where is the mirror?", "options": ["Behind the door", "Next to the beds", "On the dresser", "Under the window"], "answer": "Behind the door", "unit": 8 },
+            { "id": "r3l-3", "type": "audioQuestion", "audio": "There was a lake and there were two hills, but there wasn't an island.", "q": "What was NOT there?", "options": ["An island", "A lake", "Two hills", "A beach"], "answer": "An island", "unit": 9 },
+            { "id": "r3l-4", "type": "audioQuestion", "audio": "The tree was over two thousand years old and very tall.", "q": "How old was the tree?", "options": ["Over two thousand years", "Over two hundred years", "Over twenty years", "Over two months"], "answer": "Over two thousand years", "unit": 9 }
+          ]
+        },
+
+        {
+          "id": "r3-reading",
+          "skill": "reading",
+          "title": "The Ranger's Letter",
+          "prompt": "Read the letter. Then answer the questions.",
+          "estSeconds": 360,
+          "xp": 10,
+          "passage": "Dear Class, Thank you for your visit to our park last week. I hope you enjoyed the trail. Many of you asked about the old tree near the lake. It is over two thousand years old, and it was already here when the first people lived in this valley. In the winter there is snow on the hills, so the trail is closed. In the summer it is warm and the lake is deep enough to swim in. There is a small island in the middle of the lake, and there are two short trees on it. There is also a wooden house next to the ranger station. Inside there is a stove, a table and some chairs. Please come back in the spring, when the flowers come out. Yours, Ranger Dita",
+          "items": [
+            { "id": "r3r-1", "type": "gist", "q": "What is the letter about?", "options": ["A thank-you note after a school visit", "A warning about a closed road", "A shopping list for the park"], "answer": "A thank-you note after a school visit" },
+            { "id": "r3r-2", "type": "detail", "q": "Why is the trail closed in the winter?", "options": ["There is snow on the hills", "The lake is too deep", "The ranger is away"], "answer": "There is snow on the hills" },
+            { "id": "r3r-3", "type": "detail", "q": "What is on the small island?", "options": ["Two short trees", "A wooden house", "A stove"], "answer": "Two short trees" },
+            { "id": "r3r-4", "type": "detail", "q": "What is inside the wooden house?", "options": ["A stove, a table and chairs", "A lake and an island", "Two beds and a mirror"], "answer": "A stove, a table and chairs" },
+            { "id": "r3r-5", "type": "tapSentence", "q": "Tap the sentence that tells you when to come back.", "answerType": "tapSentence", "answer": "Please come back in the spring, when the flowers come out.", "why": "That sentence gives the time and the reason." }
+          ]
+        },
+
+        {
+          "id": "r3-writing",
+          "skill": "writing",
+          "title": "The Visitor's Book",
+          "prompt": "Build each sentence, then write your own.",
+          "estSeconds": 340,
+          "xp": 10,
+          "items": [
+            { "id": "r3w-1", "type": "sentenceBuilder", "tiles": ["Neither", "of", "the", "hills", "was", "very", "high"], "answer": "Neither of the hills was very high." },
+            { "id": "r3w-2", "type": "sentenceBuilder", "tiles": ["Where", "are", "the", "chairs"], "answer": "Where are the chairs?" },
+            { "id": "r3w-3", "type": "sentenceRepair", "wrong": "There were a lake, and she go skating in the winter.", "answer": "There was a lake, and she goes skating in the winter." },
+            { "id": "r3w-4", "type": "shortResponse", "prompt": "Write three sentences: one season activity, one thing in a room and where it is, and one thing that was somewhere you visited.", "minimumWords": 25, "checklist": ["Correct he / she + -s", "Correct There is / There are", "Correct was / were"] }
+          ]
+        },
+
+        {
+          "id": "r3-speaking",
+          "skill": "speaking",
+          "title": "The Lookout",
+          "prompt": "Answer each question in a full sentence. Record each one separately.",
+          "estSeconds": 330,
+          "xp": 10,
+          "items": [
+            { "id": "r3s-1", "type": "personalResponse", "q": "What does your family do in each season?", "keywords": ["in the", "family", "goes"], "unit": 7 },
+            { "id": "r3s-2", "type": "personalResponse", "q": "What is in your favourite room, and where?", "keywords": ["there", "is", "are", "next"], "unit": 8 },
+            { "id": "r3s-3", "type": "personalResponse", "q": "Where were you last weekend, and what was there?", "keywords": ["was", "were", "there"], "unit": 9 },
+            { "id": "r3s-4", "type": "monologue", "q": "Talk for 30 seconds about a place you would like to visit. Say where it is, what is there, and what you would do there.", "minimumSeconds": 25, "keywords": ["would", "there", "because"], "unit": 9 }
+          ]
+        }
+      ],
+
+      "seal": {
+        "id": "seal3",
+        "title": "The Summit Seal",
+        "prompt": "Six questions. One for each skill. Pass with four correct to open the Final Gate.",
+        "passMark": 4,
+        "of": 6,
+        "items": [
+          { "id": "s3-1", "skill": "vocabulary", "type": "pictureToWord", "img": "stove", "options": ["stove", "television", "dresser", "bed"], "answer": "stove" },
+          { "id": "s3-2", "skill": "grammar", "type": "gapFill", "sentence": "Neither of the windows ___ open.", "options": ["is", "are", "am", "be"], "answer": "is" },
+          { "id": "s3-3", "skill": "listening", "type": "audioQuestion", "audio": "There was a beach, but there weren't any birds.", "q": "What was NOT there?", "options": ["Birds", "A beach", "A lake"], "answer": "Birds", "replayLimit": 2 },
+          { "id": "s3-4", "skill": "reading", "type": "detail", "q": "In the ranger's letter, how old is the old tree?", "options": ["Over two thousand years", "Over two hundred years", "Over twenty years"], "answer": "Over two thousand years" },
+          { "id": "s3-5", "skill": "writing", "type": "sentenceBuilder", "tiles": ["There", "were", "two", "hills", "behind", "the", "lake"], "answer": "There were two hills behind the lake." },
+          { "id": "s3-6", "skill": "speaking", "type": "personalResponse", "q": "Say one sentence about a season you like.", "keywords": ["season", "in the", "because"] }
+        ]
+      }
+    }
+  ],
+
+  "finalGate": {
+    "id": "final-gate",
+    "title": "The Final Gate",
+    "prompt": "Twenty questions across all nine units. No hints. Take your time.",
+    "estSeconds": 900,
+    "xp": 50,
+    "itemCount": 20,
+    "composition": { "vocabulary": 5, "grammar": 3, "reading": 3, "listening": 2, "writing": 2, "speaking": 5 },
+    "noTimer": true,
+    "items": [
+      { "id": "fg-1", "skill": "vocabulary", "type": "pictureToWord", "img": "sneakers", "options": ["sneakers", "sandals", "boots", "slippers"], "answer": "sneakers", "unit": 2 },
+      { "id": "fg-2", "skill": "grammar", "type": "gapFill", "sentence": "She ___ a glass of lemonade.", "options": ["wants", "want", "wanting", "is want"], "answer": "wants", "unit": 3 },
+      { "id": "fg-3", "skill": "reading", "type": "detail", "q": "In the party note, why should Sara not wear her new jeans?", "options": ["They are playing games on the grass", "Jeans are too warm", "Nia does not like them"], "answer": "They are playing games on the grass", "unit": 1 },
+      { "id": "fg-4", "skill": "vocabulary", "type": "pictureToWord", "img": "calculator", "options": ["calculator", "ruler", "eraser", "pencil case"], "answer": "calculator", "unit": 4 },
+      { "id": "fg-5", "skill": "listening", "type": "audioQuestion", "audio": "The buckets are in the garden, and the cushions are on the sofa.", "q": "Where are the buckets?", "options": ["In the garden", "On the sofa", "In the kitchen", "Under the table"], "answer": "In the garden", "replayLimit": 2, "unit": 5 },
+      { "id": "fg-6", "skill": "writing", "type": "sentenceBuilder", "tiles": ["Does", "he", "have", "science", "on", "Monday"], "answer": "Does he have science on Monday?", "unit": 4 },
+      { "id": "fg-7", "skill": "grammar", "type": "errorCorrection", "sentence": "The toothbrush are in the bathroom.", "wrong": "are", "correct": "is", "unit": 5 },
+      { "id": "fg-8", "skill": "vocabulary", "type": "gapFill", "sentence": "It's cold and windy, so put on your ___ before we go out.", "options": ["coat", "sunglasses", "shorts", "towel"], "answer": "coat", "unit": 6 },
+      { "id": "fg-9", "skill": "reading", "type": "detail", "q": "In the Saturday list, why can't they go to the park in the morning?", "options": ["It's foggy", "It's raining", "They are busy"], "answer": "It's foggy", "unit": 5 },
+      { "id": "fg-10", "skill": "vocabulary", "type": "pictureToWord", "img": "go sledding", "options": ["go sledding", "go skating", "throw snowballs", "play tennis"], "answer": "go sledding", "unit": 7 },
+      { "id": "fg-11", "skill": "listening", "type": "audioQuestion", "audio": "There was a lake and there were two hills, but there wasn't an island.", "q": "What was NOT there?", "options": ["An island", "A lake", "Two hills", "A beach"], "answer": "An island", "replayLimit": 2, "unit": 9 },
+      { "id": "fg-12", "skill": "writing", "type": "sentenceRepair", "wrong": "There were a lake, and she go skating in the winter.", "answer": "There was a lake, and she goes skating in the winter.", "unit": 7 },
+      { "id": "fg-13", "skill": "grammar", "type": "gapFill", "sentence": "Neither of the windows ___ open.", "options": ["is", "are", "am", "be"], "answer": "is", "unit": 8 },
+      { "id": "fg-14", "skill": "reading", "type": "tapSentence", "q": "In the ranger's letter, tap the sentence that tells you what is inside the wooden house.", "answerType": "tapSentence", "answer": "Inside there is a stove, a table and some chairs.", "unit": 9 },
+      { "id": "fg-15", "skill": "vocabulary", "type": "oddOneOut", "words": ["forest", "grass", "sand", "tree"], "answer": "tree", "why": "The others are uncountable.", "unit": 9 },
+      { "id": "fg-16", "skill": "speaking", "type": "personalResponse", "q": "What is your favourite food, and why?", "keywords": ["favourite", "because"], "unit": 3 },
+      { "id": "fg-17", "skill": "speaking", "type": "personalResponse", "q": "Describe your room. What is in it and where?", "keywords": ["there", "is", "are", "next"], "unit": 8 },
+      { "id": "fg-18", "skill": "speaking", "type": "personalResponse", "q": "What do you do in the summer, and what does someone in your family do?", "keywords": ["summer", "goes", "in the"], "unit": 7 },
+      { "id": "fg-19", "skill": "speaking", "type": "personalResponse", "q": "Tell me about a place you visited. What was there?", "keywords": ["was", "were", "there"], "unit": 9 },
+      { "id": "fg-20", "skill": "speaking", "type": "monologue", "q": "Talk for 45 seconds about your week: what you are wearing today, what classes you have, and what the weather is like.", "minimumSeconds": 40, "keywords": ["wearing", "have", "weather"], "unit": 4 }
+    ]
+  },
+
+  "certificate": {
+    "title": "Certificate of Completion",
+    "courseName": "Hangout 2 — English Quest",
+    "statement": "has completed all nine units and the Final Challenge of a nine-unit English course.",
+    "subtitle": "Aligned to A2 descriptors of the Common European Framework",
+    "schoolNameSource": "settings.schoolName, defaulting to the app name",
+    "verificationCode": {
+      "algorithm": "sha256(learnerName + issueDate + overall), first 8 chars, uppercased, grouped in fours",
+      "note": "Deterministic, so re-issuing the same learner produces the same code."
+    },
+    "selfCheckLine": {
+      "showWhen": "any Phase 7 self-assessment exists for this learner",
+      "template": "On their final self-check they rated {skill} '{rating}'; their work showed '{band}'.",
+      "ratings": { "1": "Not yet", "2": "Almost", "3": "Yes" },
+      "omitEntirelyWhenMissing": true
+    },
+    "canDoStatements": [
+      "I can talk about food I like and do not like.",
+      "I can describe what people are wearing.",
+      "I can order food and say how it tastes.",
+      "I can talk about my classes and what I carry to school.",
+      "I can say where things are in a house.",
+      "I can describe the weather and say what to wear.",
+      "I can talk about the four seasons and what people do in them.",
+      "I can describe the rooms in a home.",
+      "I can talk about a place I visited and what was there.",
+      "I can ask and answer questions about the past.",
+      "I can read a short text and find the information I need.",
+      "I can speak for half a minute about my own life."
+    ],
+    "mustNotClaim": [
+      "A CEFR level or certification",
+      "The words passed or graduated",
+      "A percentage anywhere a parent would read it as a grade"
+    ],
+    "nextStepLine": "What comes next: Hangout 3",
+    "printStyles": {
+      "page": "A4 portrait, 10mm margins",
+      "note": "Render with @media print only. No PDF library. One page."
+    }
+  },
+
+  "teacherMode": {
+    "tab": "Capstone",
+    "pendingQueueFirst": true,
+    "actions": [
+      { "id": "release", "label": "Release certificate", "effect": "outcome becomes issued, releasedBy recorded, certificateId generated" },
+      { "id": "return", "label": "Return for retake", "effect": "outcome becomes not_issued, note visible to learner next visit" },
+      { "id": "leave", "label": "Leave pending", "effect": "no change" }
+    ],
+    "bulkAction": { "label": "Release all above 65%", "guard": "still applies the 50% skill floor per learner" },
+    "export": "CSV: learner, date, overall, six skills, outcome, certificate id",
+    "noSelfServiceBypass": true
+  },
+
+  "unlockRules": {
+    "stationLockedReason": "Complete Unit {n} to unlock this station",
+    "sealLockedReason": "Complete all six stations on this island to reach the seal",
+    "finalGateLockedReason": "Pass all three seals to open the Final Gate",
+    "previewSample": {
+      "perIsland": 1,
+      "station": "vocabulary",
+      "items": 3,
+      "scored": false,
+      "stored": false,
+      "afterSampleLine": "That was one small part. Finish Unit {n} to unlock the rest."
+    }
+  }
+}
+

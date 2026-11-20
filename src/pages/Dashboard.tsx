@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, BookOpen, Flame, Lock, Play, Star } from 'lucide-react';
+import { ArrowRight, BookOpen, Flame, Flag, Lock, Play, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import { units } from '../data/units';
 import { LEVEL_LABELS, SKILL_LABELS, SKILL_WEIGHTS, type Skill } from '../types';
@@ -227,6 +227,27 @@ export function Dashboard({ onEditProfile }: DashboardProps) {
             );
           })}
         </div>
+      </section>
+
+      {/* Phase 9 — the capstone, after the course library */}
+      <section className="mt-8">
+        <button
+          onClick={() => navigate('/capstone')}
+          className="group flex w-full items-center justify-between gap-4 rounded-card border-2 border-brand/30 bg-teal-50/60 p-5 text-left transition-all hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-cardhover"
+          style={{ minHeight: 88 }}
+          aria-label="The Final Challenge: three review islands, one Final Gate"
+        >
+          <div className="min-w-0">
+            <p className="eyebrow mb-1">After Unit 9</p>
+            <p className="font-heading text-lg font-extrabold text-ink">The Final Challenge</p>
+            <p className="mt-0.5 text-sm leading-6 text-muted">
+              Three review islands, three Seals, one Final Gate — and your certificate.
+            </p>
+          </div>
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-colors group-hover:bg-emerald-700">
+            <Flag size={19} />
+          </span>
+        </button>
       </section>
     </div>
   );

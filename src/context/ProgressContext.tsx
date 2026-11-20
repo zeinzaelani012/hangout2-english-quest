@@ -27,6 +27,8 @@ interface ProgressContextValue {
   /** Timing telemetry: record one finished station's duration and activity count. */
   recordStationTiming: (unitId: number, level: Level, stationId: string, seconds: number, activities: number) => void;
   resetProgress: () => void;
+  /** Phase 9 — capstone XP (station/seal/gate). Never affects the certificate. */
+  awardCapstoneXP: (amount: number) => void;
   switchStudent: () => void;
   settings: ProgressData['settings'];
   updateSettings: (s: Partial<ProgressData['settings']>) => void;
@@ -303,6 +305,16 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setProgress(getDefaultProgress());
   }, []);
 
+  /** Phase 9 — capstone XP. XP never affects the certificate; this is the
+   * only place capstone rewards touch the course total. */
+  const awardCapstoneXP = useCallback((amount: number) => {
+    setProgress(prev => {
+      const newProgress = { ...prev, totalXP: prev.totalXP + amount };
+      saveProgress(newProgress);
+      return newProgress;
+    });
+  }, []);
+
   const switchStudent = useCallback(() => {
     clearAll();
     setProfileState(null);
@@ -360,6 +372,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     startLevelTiming,
     recordStationTiming,
     resetProgress,
+    awardCapstoneXP,
     switchStudent,
     settings: progress.settings,
     updateSettings,

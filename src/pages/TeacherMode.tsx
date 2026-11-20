@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProgress } from '../context/ProgressContext';
 import { units } from '../data/units';
-import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation, Timer, ClipboardCheck, BarChart3 as ChartIcon, Download } from 'lucide-react';
+import { Lock, Unlock, AlertTriangle, KeyRound, BarChart3, Presentation, Timer, ClipboardCheck, BarChart3 as ChartIcon, Download, Volume2, Award } from 'lucide-react';
 import { SKILL_LABELS, LEVEL_LABELS, SKILL_COLORS, type Level, type Skill, type LevelTiming, type SelfAssessmentRecord, type ProgressData } from '../types';
 import { computeSkillAccuracy } from '../lib/skillAccuracy';
 import { buildSelfCheckCsv, selfCheckFlag } from '../lib/selfCheckCsv';
+import { VoicePicker } from '../components/VoicePicker';
+import { loadAudioSettings, saveAudioSettings, onAudioSettingsChange } from '../lib/audio';
+import { CapstoneTab } from '../components/capstone/CapstoneTeacherTab';
 
 export function TeacherMode() {
   const { progress, settings, updateSettings, resetProgress } = useProgress();
@@ -18,7 +21,7 @@ export function TeacherMode() {
     unlockChallenging: settings.teacherUnlockChallenging ?? false,
     lockToOneLevel: settings.teacherLockToOneLevel ?? false,
   });
-  const [tab, setTab] = useState<'overview' | 'pacing' | 'selfcheck'>('overview');
+  const [tab, setTab] = useState<'overview' | 'pacing' | 'selfcheck' | 'audio' | 'capstone'>('overview');
 
   // Toggles are real settings: they persist and every page reads them.
   const SETTING_KEYS = {
@@ -154,6 +157,20 @@ export function TeacherMode() {
           >
             <ClipboardCheck size={14} /> Self-check
           </button>
+          <button
+            onClick={() => setTab('audio')}
+            className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-sm font-bold transition-colors ${tab === 'audio' ? 'bg-white text-ink shadow-sm' : 'text-muted hover:text-ink'}`}
+            aria-pressed={tab === 'audio'}
+          >
+            <Volume2 size={14} /> Audio
+          </button>
+          <button
+            onClick={() => setTab('capstone')}
+            className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-sm font-bold transition-colors ${tab === 'capstone' ? 'bg-white text-ink shadow-sm' : 'text-muted hover:text-ink'}`}
+            aria-pressed={tab === 'capstone'}
+          >
+            <Award size={14} /> Capstone
+          </button>
         </div>
       </div>
 
@@ -161,6 +178,13 @@ export function TeacherMode() {
         <PacingTab levelTimings={progress.levelTimings ?? {}} />
       ) : tab === 'selfcheck' ? (
         <SelfCheckTab progress={progress} />
+      ) : tab === 'audio' ? (
+        <AudioTab />
+      ) : tab === 'capstone' ? (
+        <CapstoneTab
+          schoolName={settings.schoolName ?? ''}
+          onSchoolName={v => updateSettings({ schoolName: v })}
+        />
       ) : (
         <>
       {/* Per-level accuracy */}
@@ -594,6 +618,63 @@ function SelfCheckTab({ progress }: { progress: ProgressData }) {
             )}
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * F8 — the teacher picks the class voice here and can lock it. When locked,
+ * the learner-facing pickers (Settings, station launcher) go read-only, so a
+ * room of devices can't each drift to a different voice mid-lesson.
+ */
+function AudioTab() {
+  const [audio, setAudio] = useState(() => loadAudioSettings());
+
+  // The picker in this tab saves through the same settings object.
+  useEffect(() => onAudioSettingsChange(() => setAudio({ ...loadAudioSettings() })), []);
+
+  return (
+    <div className="mx-auto max-w-[720px]">
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Class voice</h3>
+        <p className="mb-4 text-xs leading-5 text-muted">
+          Lessons read aloud with a voice the browser already has — nothing to install. Choose the
+          one your class hears best.
+        </p>
+        <VoicePicker />
+      </div>
+
+      <div className="surface-card p-5 sm:p-6">
+        <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="flex items-center gap-3">
+            <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${audio.voiceLocked ? 'bg-orange-50' : 'bg-emerald-50'}`}>
+              <Volume2 size={18} className={audio.voiceLocked ? 'text-coral' : 'text-mint'} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-ink">Lock voice for this class</p>
+              <p className="text-xs text-muted">
+                {audio.voiceLocked
+                  ? 'Learners see the voice picker read-only.'
+                  : 'Learners can change the voice in Settings.'}
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => saveAudioSettings({ voiceLocked: !audio.voiceLocked })}
+            className={`relative h-6 w-12 shrink-0 rounded-full transition-colors ${audio.voiceLocked ? 'bg-coral' : 'bg-slate-300'}`}
+            role="switch"
+            aria-checked={audio.voiceLocked}
+            aria-label="Lock voice for this class"
+            style={{ minWidth: 44 }}
+          >
+            <span
+              className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
+                audio.voiceLocked ? 'translate-x-6' : 'translate-x-0.5'
+              }`}
+            />
+          </button>
+        </div>
       </div>
     </div>
   );

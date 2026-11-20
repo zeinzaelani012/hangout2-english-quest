@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Activity } from '../../types';
-import { Check, Lock } from 'lucide-react';
+import { Check, Lock, Volume2 } from "lucide-react";
 import { AudioButton } from '../AudioButton';
 import { majorityCorrect, type ItemResult } from './v2-types';
 
@@ -73,6 +73,7 @@ export function TwoPassAudio({ activity, onResult }: Props) {
     onSelect: (option: string) => void,
     locked: boolean,
     passLabel: string,
+    hidden: boolean,
   ) => (
     <div className={`rounded-xl border p-4 ${locked ? 'border-slate-200 bg-slate-50 opacity-70' : 'border-slate-200 bg-white'}`}>
       <div className="mb-3 flex items-center justify-between gap-3">
@@ -81,32 +82,40 @@ export function TwoPassAudio({ activity, onResult }: Props) {
         </p>
         {locked && <Lock size={14} className="text-muted" />}
       </div>
-      <p className="mb-4 text-sm font-bold leading-6 text-ink">{question.q}</p>
-      <div className="flex flex-wrap gap-2.5">
-        {question.options.map((option, i) => {
-          const isSelected = selected === option;
-          const isOptionCorrect = option === question.answer;
-          const showResult = answered && (isSelected || isOptionCorrect);
-          return (
-            <button
-              key={i}
-              onClick={() => onSelect(option)}
-              disabled={answered || locked}
-              className={`min-h-11 rounded-xl border px-5 py-2.5 text-sm font-bold transition-all ${
-                showResult && isOptionCorrect
-                  ? 'border-emerald-300 bg-emerald-50 text-mint ring-2 ring-emerald-200'
-                  : showResult && isSelected && !isOptionCorrect
-                    ? 'border-red-300 bg-red-50 text-coral ring-2 ring-red-200'
-                    : 'border-slate-200 bg-white text-ink hover:border-brand/40 hover:bg-teal-50/50'
-              }`}
-              style={{ minHeight: 44 }}
-              aria-label={`Pass ${question.pass} option: ${option}`}
-            >
-              {option}
-            </button>
-          );
-        })}
-      </div>
+      {hidden ? (
+        <p className="mb-4 flex items-center gap-2 text-sm font-semibold text-muted">
+          <Volume2 size={15} className="shrink-0 text-brand" aria-hidden /> Listen first — the question appears after the audio plays.
+        </p>
+      ) : (
+        <>
+          <p className="mb-4 text-sm font-bold leading-6 text-ink">{question.q}</p>
+          <div className="flex flex-wrap gap-2.5">
+            {question.options.map((option, i) => {
+              const isSelected = selected === option;
+              const isOptionCorrect = option === question.answer;
+              const showResult = answered && (isSelected || isOptionCorrect);
+              return (
+                <button
+                  key={i}
+                  onClick={() => onSelect(option)}
+                  disabled={answered || locked}
+                  className={`min-h-11 rounded-xl border px-5 py-2.5 text-sm font-bold transition-all ${
+                    showResult && isOptionCorrect
+                      ? 'border-emerald-300 bg-emerald-50 text-mint ring-2 ring-emerald-200'
+                      : showResult && isSelected && !isOptionCorrect
+                        ? 'border-red-300 bg-red-50 text-coral ring-2 ring-red-200'
+                        : 'border-slate-200 bg-white text-ink hover:border-brand/40 hover:bg-teal-50/50'
+                  }`}
+                  style={{ minHeight: 44 }}
+                  aria-label={`Pass ${question.pass} option: ${option}`}
+                >
+                  {option}
+                </button>
+              );
+            })}
+          </div>
+        </>
+      )}
       {answered && (
         <p className={`mt-3 flex items-center gap-1.5 text-sm font-semibold ${correct ? 'text-mint' : 'text-coral'}`}>
           {correct ? <Check size={16} /> : null}
@@ -122,7 +131,6 @@ export function TwoPassAudio({ activity, onResult }: Props) {
         <AudioButton
           audioKey={`twopass-${activity.id}`}
           fallbackText={audio}
-          rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
           label={plays === 0 ? 'Play the audio' : 'Play again'}
           onPlay={() => setPlays(p => p + 1)}
           disabled={outOfReplays}
@@ -142,8 +150,8 @@ export function TwoPassAudio({ activity, onResult }: Props) {
       </div>
 
       <div className="space-y-4">
-        {renderQuestion(q1, q1Selected, q1Answered, q1Correct, handleQ1, !canAnswerQ1, 'Pass 1')}
-        {renderQuestion(q2, q2Selected, q2Answered, q2Correct, handleQ2, !canAnswerQ2, 'Pass 2')}
+        {renderQuestion(q1, q1Selected, q1Answered, q1Correct, handleQ1, !canAnswerQ1, 'Pass 1', plays < 1)}
+        {renderQuestion(q2, q2Selected, q2Answered, q2Correct, handleQ2, !canAnswerQ2, 'Pass 2', plays < 2)}
       </div>
 
       <div className="mt-4">
@@ -154,7 +162,7 @@ export function TwoPassAudio({ activity, onResult }: Props) {
           style={{ minHeight: 44 }}
           aria-expanded={showTranscript}
         >
-          {!bothAnswered ? 'Available after both questions' : showTranscript ? 'Hide transcript' : 'Show transcript'}
+          {!bothAnswered ? 'Available after both questions' : showTranscript ? 'Hide the words' : 'Show the words'}
         </button>
       </div>
 

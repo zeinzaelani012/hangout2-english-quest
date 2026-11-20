@@ -141,3 +141,36 @@ h1, h2, h3, h4, h5, h6 {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Phase 9 — certificate print: one A4 portrait page, no library. */
+@page {
+  size: A4 portrait;
+  margin: 10mm;
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+  /* Hide everything except the certificate document. */
+  body *:not(.certificate-doc):not(.certificate-doc *) {
+    visibility: hidden !important;
+  }
+  .certificate-doc {
+    position: absolute !important;
+    inset: 0 auto auto 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    visibility: visible !important;
+  }
+  .certificate-doc .certificate-print-hint {
+    display: none !important;
+  }
+  /* Keep the certificate to a single page. */
+  .certificate-name { font-size: 30pt !important; }
+  .certificate-cando { margin-top: 5mm !important; }
+  .certificate-skills { margin-top: 5mm !important; }
+}

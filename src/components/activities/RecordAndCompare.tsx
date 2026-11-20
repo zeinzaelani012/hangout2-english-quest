@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { Activity, RecordAndComparePayload } from '../../types';
 import { AudioButton } from '../AudioButton';
+import type { AudioRole } from '../../lib/audio';
 import { Mic, MicOff, Check, Star, AlertCircle } from 'lucide-react';
 import { isSupported, listen, score } from '../../lib/speech';
 import { useProgress } from '../../context/ProgressContext';
@@ -569,7 +570,7 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
       : mode === 'chunkDrill'
         ? ['I said the chunk three times, clear and fast']
         : mode === 'warmUpRepeat'
-          ? ['I repeated the line out loud after listening']
+          ? ['I said the line out loud before hearing the model']
           : mode === 'rolePlay'
             ? ['I said my line in character, loud and clear']
             : ['I said my answer out loud, clearly and in full'];
@@ -584,20 +585,9 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
 
       {/* Mode-specific target surfaces */}
       {mode === 'warmUpRepeat' && (
-        <>
-          {/* Auditory stimulus only — the model text stays hidden until after recording */}
-          <div className="mb-3">
-            <AudioButton
-              audioKey={`speak-${activity.id}-${index}`}
-              fallbackText={target.model ?? target.label ?? ''}
-              rate={0.85}
-              label="Listen to the line"
-            />
-          </div>
-          <p className="mb-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink">
-            Repeat what you hear — the words appear after you record.
-          </p>
-        </>
+        <p className="mb-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink">
+          Say the line first — the model plays after you record.
+        </p>
       )}
 
       {mode === 'chunkDrill' && target.label && (
@@ -651,7 +641,7 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
             return (
               <div
                 key={i}
-                className={`rounded-lg border px-3 py-2 text-sm leading-6 ${
+                className={`flex items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm leading-6 ${
                   isCurrent
                     ? 'border-brand/40 bg-teal-50 font-semibold text-ink'
                     : i < index
@@ -659,12 +649,23 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
                       : 'border-slate-200 bg-white text-ink'
                 }`}
               >
-                {t.speaker && <span className="font-bold text-violet">{t.speaker}: </span>}
-                {revealed
-                  ? t.label
-                  : isCurrent
-                    ? <span className="font-normal italic text-muted">Listen to your line, then record — it appears here afterwards.</span>
-                    : <span className="text-muted">…</span>}
+                <span className="min-w-0">
+                  {t.speaker && <span className="font-bold text-violet">{t.speaker}: </span>}
+                  {revealed
+                    ? t.label
+                    : isCurrent
+                      ? <span className="font-normal italic text-muted">Listen to your line, then record — it appears here afterwards.</span>
+                      : <span className="text-muted">…</span>}
+                </span>
+                {/* Phase 8: revealed lines replay in the character's voice */}
+                {revealed && t.label && (
+                  <AudioButton
+                    audioKey={`rp-${activity.id}-${i}`}
+                    fallbackText={t.label}
+                    role={roleForSpeaker(t.speaker)}
+                    level={activity.difficulty}
+                  />
+                )}
               </div>
             );
           })}
@@ -711,7 +712,15 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
               {attemptDone && target.model && (
                 <div className="rounded-xl border border-teal-200 bg-teal-50 p-4">
                   <p className="eyebrow mb-1">Model</p>
-                  <p className="text-sm font-semibold leading-6 text-ink">{target.model}</p>
+                  {/* Part G model gating: the model — text AND its play control —
+                      exists only once a recording does. */}
+                  <p className="mb-2 text-sm font-semibold leading-6 text-ink">{target.model}</p>
+                  <AudioButton
+                    audioKey={`model-${activity.id}-${index}`}
+                    fallbackText={target.model}
+                    level={activity.difficulty}
+                    label="Play the model"
+                  />
                 </div>
               )}
             </div>
@@ -863,5 +872,14 @@ export function RecordAndCompare(props: Props) {
     return <SpeakingV2 {...props} mode={props.mode} />;
   }
   return <LegacyRecordAndCompare {...props} />;
+}
+
+// Same rule the manifest script uses: a speaker name that is one of the six
+// roles speaks as that character; anything else is the narrator.
+const KNOWN_ROLES = new Set(['ana', 'ben', 'brian', 'mia', 'lina']);
+
+function roleForSpeaker(speaker: string | undefined): AudioRole {
+  const n = String(speaker ?? '').trim().toLowerCase();
+  return (KNOWN_ROLES.has(n) ? n : 'narrator') as AudioRole;
 }
 

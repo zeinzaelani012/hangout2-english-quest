@@ -10,6 +10,8 @@ import { resolvePassage, resolveReadingTitle, findPassageContaining } from '../d
 import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Level, type Activity, type Station, type StationProgress } from '../types';
 import { CookieMascot, StationBadge } from '../components/Illustrations';
 import { AudioButton } from '../components/AudioButton';
+import { VoiceLauncherButton } from '../components/VoicePicker';
+import { levelRateMultiplier, preload } from '../lib/audio';
 import { TeachCard, type TeachCardData } from '../components/ritual/TeachCard';
 import { PictureMatch } from '../components/activities/PictureMatch';
 import { DragSort } from '../components/activities/DragSort';
@@ -75,6 +77,16 @@ export function ActivityPage() {
     if (unit && station) startLevelTiming(unit.id, levelKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [station?.id, levelKey, unit?.id]);
+
+  // Part H — preload the current and next item's rendered clips (fire and
+  // forget; a no-op on Tier 0, where there is nothing to preload). Also covers
+  // "on answering item N, preload item N+1" because the index advances then.
+  useEffect(() => {
+    for (const a of [activities[currentIndex], activities[currentIndex + 1]]) {
+      for (const text of primaryAudioTexts(a)) preload(text, { level: levelKey });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [station?.id, currentIndex, unit?.id, levelKey]);
 
   if (!unit || !station || activities.length === 0) {
     return (
@@ -324,6 +336,14 @@ export function ActivityPage() {
             </div>
           </div>
           <div className="flex items-center gap-2 shrink-0">
+            {/* Part F — compact voice launcher on listening/speaking stations */}
+            {(station.skill === 'listening' || station.skill === 'speaking') && (
+              <VoiceLauncherButton
+                rateMultiplier={levelRateMultiplier(levelKey)}
+                unitId={unit.id}
+                title="Voice settings"
+              />
+            )}
             <span
               className="tnum rounded-lg px-2.5 py-1.5 text-xs font-bold"
               style={{ backgroundColor: `${skillColor}15`, color: skillColor }}
@@ -655,4 +675,27 @@ function ListeningAudioDisplay({ activity, level, dialogue }: { activity: Activi
       )}
     </div>
   );
+}
+
+/**
+ * Part H — the scripts an activity will most plausibly speak, in order.
+ * Best effort for preloading Tier 1 files only; Tier 0 has nothing to load.
+ */
+function primaryAudioTexts(activity: Activity | undefined): string[] {
+  if (!activity) return [];
+  const payload = (activity.payload ?? {}) as Record<string, any>;
+  const found: string[] = [];
+  const push = (t: unknown) => {
+    if (typeof t === 'string' && t.trim()) found.push(t.trim());
+  };
+  push(payload.audio);
+  push(payload.modelLine);
+  for (const item of Array.isArray(payload.items) ? payload.items : []) {
+    push(item?.audio);
+    push(item?.model);
+    push(item?.sentence);
+    push(item?.chunk);
+  }
+  for (const s of Array.isArray(payload.sentences) ? payload.sentences : []) push(s);
+  return found;
 }

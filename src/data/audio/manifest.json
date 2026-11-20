@@ -1,0 +1,6152 @@
+{
+  "version": 2,
+  "generated": "2026-11-20T00:09:05.396Z",
+  "voices": {
+    "narrator": {
+      "role": "narrator",
+      "pitch": 1
+    },
+    "ana": {
+      "role": "ana",
+      "pitch": 1.12
+    },
+    "ben": {
+      "role": "ben",
+      "pitch": 0.94
+    },
+    "brian": {
+      "role": "brian",
+      "pitch": 0.96
+    },
+    "mia": {
+      "role": "mia",
+      "pitch": 1.1
+    },
+    "lina": {
+      "role": "lina",
+      "pitch": 1.06
+    }
+  },
+  "clips": {
+    "2585211006": {
+      "hash": "2585211006",
+      "text": "There is a television in front of the sofa.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "54910f758c": {
+      "hash": "54910f758c",
+      "text": "Cookies.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "54abe686c3": {
+      "hash": "54abe686c3",
+      "text": "I like fruit.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "35b39a45b8": {
+      "hash": "35b39a45b8",
+      "text": "Vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "094f53cf0d": {
+      "hash": "094f53cf0d",
+      "text": "cookies.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "af8158cb8b": {
+      "hash": "af8158cb8b",
+      "text": "popcorn.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cffb7f559e": {
+      "hash": "cffb7f559e",
+      "text": "fruit.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ee470c5d67": {
+      "hash": "ee470c5d67",
+      "text": "Candy.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ee16554479": {
+      "hash": "ee16554479",
+      "text": "I like popcorn.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "fe859f4a51": {
+      "hash": "fe859f4a51",
+      "text": "She likes fruit.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7b49a59718": {
+      "hash": "7b49a59718",
+      "text": "I like cookies.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "3b5ff13de3": {
+      "hash": "3b5ff13de3",
+      "text": "I don't like soda.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "26cafa450c": {
+      "hash": "26cafa450c",
+      "text": "They don't like candy.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "30664b176b": {
+      "hash": "30664b176b",
+      "text": "cookies and candy.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "3f4e6ad1c3": {
+      "hash": "3f4e6ad1c3",
+      "text": "fruit and vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "1801fca3a0": {
+      "hash": "1801fca3a0",
+      "text": "I like fries.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "c09a19e549": {
+      "hash": "c09a19e549",
+      "text": "Soda.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b5f4aa7a85": {
+      "hash": "b5f4aa7a85",
+      "text": "I'm Ben. I like cookies and chocolate. I don't like fruit.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "819bc2159e": {
+      "hash": "819bc2159e",
+      "text": "She doesn't like vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "1595f68bff": {
+      "hash": "1595f68bff",
+      "text": "I eat cereal for breakfast.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8fd9ca018a": {
+      "hash": "8fd9ca018a",
+      "text": "Tomatoes grow on vines.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5f8d52e10f": {
+      "hash": "5f8d52e10f",
+      "text": "vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bafaee0558": {
+      "hash": "bafaee0558",
+      "text": "breakfast.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0fd399911e": {
+      "hash": "0fd399911e",
+      "text": "yogurt.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "1674e68c0a": {
+      "hash": "1674e68c0a",
+      "text": "Yogurt.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "44312d7e96": {
+      "hash": "44312d7e96",
+      "text": "Ben likes cookies and chocolate.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ccd8e02d80": {
+      "hash": "ccd8e02d80",
+      "text": "We eat cereal with milk.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a296645b1a": {
+      "hash": "a296645b1a",
+      "text": "Emma doesn't like chocolate.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "55ed1d3b5b": {
+      "hash": "55ed1d3b5b",
+      "text": "They like rice and vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "4d90118c4c": {
+      "hash": "4d90118c4c",
+      "text": "Do you like popcorn?",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "fe2fcdb939": {
+      "hash": "fe2fcdb939",
+      "text": "doesn't like chocolate.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "e50d5bdaef": {
+      "hash": "e50d5bdaef",
+      "text": "rice and vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "e561d2d8a8": {
+      "hash": "e561d2d8a8",
+      "text": "fruit and popcorn.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "4872fe6ec7": {
+      "hash": "4872fe6ec7",
+      "text": "My sister is nine. She likes fruit and rice, but she doesn't like soup. My brother likes soup and vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "1aebe8243d": {
+      "hash": "1aebe8243d",
+      "text": "Watermelons stay on the ground because they are very heavy.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "768b117193": {
+      "hash": "768b117193",
+      "text": "Most banana trees like hot weather.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "32f161efb4": {
+      "hash": "32f161efb4",
+      "text": "Ben says fruit is boring and it takes too long to eat.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2c2cc7eaae": {
+      "hash": "2c2cc7eaae",
+      "text": "chocolate.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2b1ee06411": {
+      "hash": "2b1ee06411",
+      "text": "Yogurt with bananas.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "301dd5f7cb": {
+      "hash": "301dd5f7cb",
+      "text": "My brother doesn't like vegetables, so he only eats plain rice.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b298878d8a": {
+      "hash": "b298878d8a",
+      "text": "She says fruit is the best snack, especially apples.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a97ff39c04": {
+      "hash": "a97ff39c04",
+      "text": "I like vegetables but I hate soup.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8a00e3fbc7": {
+      "hash": "8a00e3fbc7",
+      "text": "She doesn't like chocolate, but she likes popcorn.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "afc1800370": {
+      "hash": "afc1800370",
+      "text": "Watermelons are too heavy to climb.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5298782482": {
+      "hash": "5298782482",
+      "text": "Neither Ben nor Emma likes fruit.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "01ac69c1bb": {
+      "hash": "01ac69c1bb",
+      "text": "Some vines cover whole fields.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5cb6135333": {
+      "hash": "5cb6135333",
+      "text": "neither of them likes.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "589d181291": {
+      "hash": "589d181291",
+      "text": "too heavy to climb.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "393434089c": {
+      "hash": "393434089c",
+      "text": "doesn't like vegetables.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "chunk",
+      "seconds": null
+    },
+    "7269a5a8bf": {
+      "hash": "7269a5a8bf",
+      "text": "Some vines cover whole fields on big farms.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "608b307e89": {
+      "hash": "608b307e89",
+      "text": "In my family we eat rice every day. My brother doesn't like vegetables, so he eats plain rice. My sister likes everything. I like vegetables but I hate soup.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a2a62a2b5f": {
+      "hash": "a2a62a2b5f",
+      "text": "Jacket.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f3379199f4": {
+      "hash": "f3379199f4",
+      "text": "She's wearing a green skirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "34bc2f89b9": {
+      "hash": "34bc2f89b9",
+      "text": "Boots.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "474d6456df": {
+      "hash": "474d6456df",
+      "text": "jacket.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4b9517078f": {
+      "hash": "4b9517078f",
+      "text": "skirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9997fc534e": {
+      "hash": "9997fc534e",
+      "text": "hat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cb10354f19": {
+      "hash": "cb10354f19",
+      "text": "Glasses.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "151be9f774": {
+      "hash": "151be9f774",
+      "text": "He's wearing a blue watch.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ee5f2728a9": {
+      "hash": "ee5f2728a9",
+      "text": "I'm wearing brown shoes.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "46df9d39f8": {
+      "hash": "46df9d39f8",
+      "text": "Clare is at the restaurant. She is waiting for her friend. Clare can't see her friend. Her friend sends a message. She is wearing a red shirt and a white skirt. She is wearing big brown boots too. Clare reads the message. Now she can see her friend.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "passage",
+      "seconds": null
+    },
+    "3bfd115adb": {
+      "hash": "3bfd115adb",
+      "text": "People wear hats to look good. They wear hats for other reasons too. In Siberia it is very cold. People wear fur hats. Fur hats are very warm. In Cuba it is hot and sunny. People wear Panama hats. A Panama hat is light. It keeps people cool.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "passage",
+      "seconds": null
+    },
+    "286cedd09e": {
+      "hash": "286cedd09e",
+      "text": "I'm wearing black shoes.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "7f5896e738": {
+      "hash": "7f5896e738",
+      "text": "He's wearing brown pants.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "bdb73a2a4d": {
+      "hash": "bdb73a2a4d",
+      "text": "Are you wearing a coat?",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "deba2230e1": {
+      "hash": "deba2230e1",
+      "text": "a red shirt and a white skirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "03e14c6b7e": {
+      "hash": "03e14c6b7e",
+      "text": "big brown boots.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "5c4cf3cc1f": {
+      "hash": "5c4cf3cc1f",
+      "text": "I'm wearing jeans.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "4f9655904e": {
+      "hash": "4f9655904e",
+      "text": "I'm Ben. I'm wearing a red T-shirt and black pants. I'm not wearing a hat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "de66e44d55": {
+      "hash": "de66e44d55",
+      "text": "He's wearing a long gray coat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9f5092b0f5": {
+      "hash": "9f5092b0f5",
+      "text": "She's wearing a blue watch.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "66915f0765": {
+      "hash": "66915f0765",
+      "text": "I'm wearing my new sweatshirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "30fb8258cc": {
+      "hash": "30fb8258cc",
+      "text": "sweatshirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ac26c17cd4": {
+      "hash": "ac26c17cd4",
+      "text": "pajamas.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "459038d78c": {
+      "hash": "459038d78c",
+      "text": "jeans.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "38d91db449": {
+      "hash": "38d91db449",
+      "text": "Pajamas.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "453dc342a9": {
+      "hash": "453dc342a9",
+      "text": "She's wearing a long gray coat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "676dce3519": {
+      "hash": "676dce3519",
+      "text": "He isn't wearing his glasses today.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "879fb8a87a": {
+      "hash": "879fb8a87a",
+      "text": "I'm wearing blue jeans and white shoes.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "c252a285cd": {
+      "hash": "c252a285cd",
+      "text": "Clare is at the restaurant and she is waiting for her friend Sun Mi. The restaurant is very busy today. Clare can't see her friend. Sun Mi sends a message. She says she is sitting in the corner at the back of the restaurant. She is wearing a red shirt and a white skirt, and she is wearing big brown boots. She is also wearing a blue watch. Clare reads the message and looks again. Now she can see her friend.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "passage",
+      "seconds": null
+    },
+    "aeb910adfa": {
+      "hash": "aeb910adfa",
+      "text": "People wear hats to look good, and they wear hats for other reasons too. Siberia is in Russia. It is very cold there, so people wear fur hats. Fur hats are very warm. Cuba is hot and sunny. People there wear special hats called Panama hats. The Panama hat is light. It protects the head from the sun, and it keeps people cool. In Vietnam many people wear a non la hat. It is wide and it keeps people dry in the rain.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "passage",
+      "seconds": null
+    },
+    "69371f8750": {
+      "hash": "69371f8750",
+      "text": "She's wearing a red shirt and a white skirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "38571f9d2c": {
+      "hash": "38571f9d2c",
+      "text": "He isn't wearing his glasses.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "461dac566f": {
+      "hash": "461dac566f",
+      "text": "Are you wearing a jacket today?",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "60ca491708": {
+      "hash": "60ca491708",
+      "text": "They're wearing big brown boots.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "408cf49e4f": {
+      "hash": "408cf49e4f",
+      "text": "a long gray coat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "4790af8e9c": {
+      "hash": "4790af8e9c",
+      "text": "black boots and blue jeans.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "1c0cbdc9a9": {
+      "hash": "1c0cbdc9a9",
+      "text": "she's wearing glasses.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "079a7e1709": {
+      "hash": "079a7e1709",
+      "text": "Sun Mi is sitting in the corner at the back. She is wearing a red shirt and a white skirt, and a blue watch. Her friend Lina is with her, and Lina is wearing a long gray coat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "073aaf11dc": {
+      "hash": "073aaf11dc",
+      "text": "The Panama hat is light, so it keeps people cool in Cuba.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ab7752a8a8": {
+      "hash": "ab7752a8a8",
+      "text": "The non la hat is wide and keeps people dry in the rain.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8a2a990900": {
+      "hash": "8a2a990900",
+      "text": "Lina is wearing a long gray coat because it is cold.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9687c60d5c": {
+      "hash": "9687c60d5c",
+      "text": "glasses.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5b24ad8621": {
+      "hash": "5b24ad8621",
+      "text": "Sweatshirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "08f16a570a": {
+      "hash": "08f16a570a",
+      "text": "The non la hat is wide, so it keeps people dry in the rain.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4801a54dc2": {
+      "hash": "4801a54dc2",
+      "text": "Lina is wearing a long gray coat and black boots.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8b736cf756": {
+      "hash": "8b736cf756",
+      "text": "Neither of them is wearing a hat today.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "995ae0589b": {
+      "hash": "995ae0589b",
+      "text": "Clare is at the restaurant and she is waiting for her friend Sun Mi. The restaurant is very busy today, and there are people everywhere. Clare can't see her friend, so Sun Mi sends a message. She says she is sitting in the corner at the back, near the window. She is wearing a red shirt and a white skirt, and she is wearing big brown boots because it is cold outside. She is also wearing a blue watch. Her friend Lina is with her, and Lina is wearing a long gray coat. Clare reads the message and looks again. Now she can see them.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "passage",
+      "seconds": null
+    },
+    "6707d0f6c2": {
+      "hash": "6707d0f6c2",
+      "text": "People wear hats to look good, and they wear hats for other reasons too. Siberia is in the north of Russia, where winter is long and very cold. People there wear fur hats, because fur is very warm and it stops the cold wind. Cuba is hot and sunny all year, so people wear Panama hats. The Panama hat is light and it has a wide brim. It protects the head from the sun and it keeps people cool, which is important when the temperature is high. In Vietnam many people wear a non la hat. It is wide and light, and it keeps people dry in the heavy rain. So the same idea, a hat, does three different jobs: it keeps you warm, it keeps you cool, and it keeps you dry.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "passage",
+      "seconds": null
+    },
+    "37a11d2d1b": {
+      "hash": "37a11d2d1b",
+      "text": "Neither of them is wearing a hat.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "9b686cb28d": {
+      "hash": "9b686cb28d",
+      "text": "The pants are brown, but the shirt is white.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "9fca79a642": {
+      "hash": "9fca79a642",
+      "text": "Is your friend wearing a long gray coat?",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "37a9a04964": {
+      "hash": "37a9a04964",
+      "text": "Sun Mi is wearing big brown boots because it is cold.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "048b58508f": {
+      "hash": "048b58508f",
+      "text": "neither of them is wearing.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "chunk",
+      "seconds": null
+    },
+    "a7e099ed9d": {
+      "hash": "a7e099ed9d",
+      "text": "The Panama hat is light, so it keeps people cool.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "68056452b7": {
+      "hash": "68056452b7",
+      "text": "It is cold today, and my sister and brother dress differently. My sister is wearing a long gray coat and black boots. My brother is wearing only a T-shirt and jeans. He says he is never cold.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9ed0cadf72": {
+      "hash": "9ed0cadf72",
+      "text": "I'm ready for soccer.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "97f81ed54b": {
+      "hash": "97f81ed54b",
+      "text": "Are you wearing your new T-shirt?",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "7199e04e77": {
+      "hash": "7199e04e77",
+      "text": "Yes, I am. I love it.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "e1d11419e5": {
+      "hash": "e1d11419e5",
+      "text": "It's cold today. Wear something else.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "0e558e783a": {
+      "hash": "0e558e783a",
+      "text": "OK. I'm wearing this.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "b8e0125946": {
+      "hash": "b8e0125946",
+      "text": "Hey, is that my new sweatshirt?",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f02ece8f61": {
+      "hash": "f02ece8f61",
+      "text": "No, it isn't. It's mine!",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "512b170f52": {
+      "hash": "512b170f52",
+      "text": "It looks good on you. But it's still mine.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "36b4c79b72": {
+      "hash": "36b4c79b72",
+      "text": "thin.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "d7d1a66dca": {
+      "hash": "d7d1a66dca",
+      "text": "sin.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "6524dd2dde": {
+      "hash": "6524dd2dde",
+      "text": "three.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "a954a53377": {
+      "hash": "a954a53377",
+      "text": "see.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "f442c9d0e7": {
+      "hash": "f442c9d0e7",
+      "text": "thick.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "cda2be67be": {
+      "hash": "cda2be67be",
+      "text": "sock.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "cb29912ca7": {
+      "hash": "cb29912ca7",
+      "text": "shirt.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "bb0b054cc9": {
+      "hash": "bb0b054cc9",
+      "text": "think.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "fc92aac5af": {
+      "hash": "fc92aac5af",
+      "text": "Chips.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f3beb82bbe": {
+      "hash": "f3beb82bbe",
+      "text": "I want juice, please.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7558d807e4": {
+      "hash": "7558d807e4",
+      "text": "Salad.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ed3721d4d3": {
+      "hash": "ed3721d4d3",
+      "text": "pizza.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "eb988ba1f2": {
+      "hash": "eb988ba1f2",
+      "text": "cake.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "20142ba72e": {
+      "hash": "20142ba72e",
+      "text": "fish.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "77a4496b16": {
+      "hash": "77a4496b16",
+      "text": "Lemonade.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2c71432847": {
+      "hash": "2c71432847",
+      "text": "I want ice cream, please.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2d3dd89549": {
+      "hash": "2d3dd89549",
+      "text": "The lemonade tastes sour.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "93791e7dcc": {
+      "hash": "93791e7dcc",
+      "text": "She wants pizza.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "09d5f45280": {
+      "hash": "09d5f45280",
+      "text": "I like eating lunch at school. The food always looks good. Today Emma wants chips and juice. Brian wants meat. I want salad and bread. We are happy. The food tastes good!",
+      "role": "narrator",
+      "unit": 3,
+      "category": "passage",
+      "seconds": null
+    },
+    "c087305f22": {
+      "hash": "c087305f22",
+      "text": "Lots of people like pizza. Where does pizza come from? People make pizza with flat bread. Then they put other food on it. The word pizza comes from Italy. One of the first pizzas is Pizza Margherita. It has white cheese, red tomatoes and green basil. These are the colors of the Italian flag. It looks good and it tastes good, too!",
+      "role": "narrator",
+      "unit": 3,
+      "category": "passage",
+      "seconds": null
+    },
+    "2bdbdc49d2": {
+      "hash": "2bdbdc49d2",
+      "text": "I want fish, please.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "04d1e1c9ca": {
+      "hash": "04d1e1c9ca",
+      "text": "She wants salad.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6ec3e0edd7": {
+      "hash": "6ec3e0edd7",
+      "text": "It looks good.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "799900fc62": {
+      "hash": "799900fc62",
+      "text": "It tastes bad.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6a69439b8c": {
+      "hash": "6a69439b8c",
+      "text": "pizza and salad.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "4e342da67e": {
+      "hash": "4e342da67e",
+      "text": "bread and cheese.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "9514917e45": {
+      "hash": "9514917e45",
+      "text": "I want juice.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "185d193cb5": {
+      "hash": "185d193cb5",
+      "text": "I'm Ben. I want pizza and juice. I don't want salad.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4d26a606c1": {
+      "hash": "4d26a606c1",
+      "text": "I want a salad, please.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5ace5ef4e8": {
+      "hash": "5ace5ef4e8",
+      "text": "The cake tastes sweet.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "81e6d739bb": {
+      "hash": "81e6d739bb",
+      "text": "Does the pasta look good?",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4805207feb": {
+      "hash": "4805207feb",
+      "text": "bread.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b876a5aa69": {
+      "hash": "b876a5aa69",
+      "text": "lemonade.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8137860e7a": {
+      "hash": "8137860e7a",
+      "text": "pasta.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ad64832483": {
+      "hash": "ad64832483",
+      "text": "Pasta.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "719afe4761": {
+      "hash": "719afe4761",
+      "text": "I want pasta, please. It looks delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "6f6a557c2c": {
+      "hash": "6f6a557c2c",
+      "text": "The cake tastes very sweet.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "3d57a45e9e": {
+      "hash": "3d57a45e9e",
+      "text": "Do you want some meat?",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bffe59b148": {
+      "hash": "bffe59b148",
+      "text": "I like eating lunch at school. The food always looks good. Today there is a lot of food on the table. What do we want for lunch today? Emma wants chips and juice. Brian wants meat, not fish, because he doesn't like fish. I want salad and bread. My friend Mia wants pasta and lemonade. Everything smells good. We are very happy. The food tastes good, too!",
+      "role": "narrator",
+      "unit": 3,
+      "category": "passage",
+      "seconds": null
+    },
+    "c2e5476703": {
+      "hash": "c2e5476703",
+      "text": "Lots of people like pizza. Where does pizza come from? Pizza is popular in many places. People make pizza with a flat bread. Then they put other kinds of food on it. The word pizza comes from Italy. The name of one of the first pizzas in the world is Pizza Margherita. It comes from Italy. It has white cheese, red tomatoes and green basil. White, red and green are the colors of the Italian flag. Pizza Margherita looks good and it tastes good, too! Now people all over the world eat pizza. Many people cook pizza in a special pizza oven. It tastes delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "passage",
+      "seconds": null
+    },
+    "c4d3201a6f": {
+      "hash": "c4d3201a6f",
+      "text": "Brian wants meat, not fish.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "be303584d9": {
+      "hash": "be303584d9",
+      "text": "The lemonade tastes very sour.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "770957be34": {
+      "hash": "770957be34",
+      "text": "Everything smells good.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "17e3d8e0d4": {
+      "hash": "17e3d8e0d4",
+      "text": "meat, not fish.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "f3e75ec086": {
+      "hash": "f3e75ec086",
+      "text": "pasta and lemonade.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "0c32ffd837": {
+      "hash": "0c32ffd837",
+      "text": "it tastes delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "7e383b61ce": {
+      "hash": "7e383b61ce",
+      "text": "At the cafe, Emma wants chips and juice. Brian wants meat but not fish. I want a salad and lemonade. The salad smells good, but the lemonade tastes sour.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f7010dee83": {
+      "hash": "f7010dee83",
+      "text": "Pizza Margherita looks good and it tastes good, too.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0b1cce9e89": {
+      "hash": "0b1cce9e89",
+      "text": "Many people cook pizza in a special pizza oven.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4b22c56347": {
+      "hash": "4b22c56347",
+      "text": "The pizza is not only food; it is also a picture of a country.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2f1ee3e89d": {
+      "hash": "2f1ee3e89d",
+      "text": "delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "572657d445": {
+      "hash": "572657d445",
+      "text": "popular.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7b84304903": {
+      "hash": "7b84304903",
+      "text": "Pizza is popular in many places, and people all over the world eat it.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "d08eaba21d": {
+      "hash": "d08eaba21d",
+      "text": "The non la hat keeps people dry in the rain.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "42164ffc2d": {
+      "hash": "42164ffc2d",
+      "text": "The lemonade tastes sour, so I don't want it.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5480bd8f41": {
+      "hash": "5480bd8f41",
+      "text": "I like eating lunch at school, and the food always looks good. Today the long table is full, so we have a problem: what do we want? Emma wants chips and juice, and she always wants the same thing. Brian wants meat, not fish, because he says fish smells bad. I want salad and bread, but the salad is finished, so I take bread and cheese. My friend Mia wants pasta and lemonade. She says the pasta looks delicious. Everything smells good, and for ten minutes nobody talks. Then the food is gone. The food tastes good, too. Lunch at school is the best part of the day.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "passage",
+      "seconds": null
+    },
+    "d97e36c9c3": {
+      "hash": "d97e36c9c3",
+      "text": "Lots of people like pizza, but where does it come from? Pizza is popular in many places now, and people make it with a flat bread, then put other kinds of food on top. The word pizza comes from Italy. The name of one of the first pizzas in the world is Pizza Margherita, and it was made for a queen. It has white cheese, red tomatoes and green basil, which are the colors of the Italian flag. So the pizza is not only food; it is also a picture of a country. Pizza Margherita looks good and it tastes good, too. Now people all over the world eat pizza, and many people cook it in a special pizza oven because a very hot oven makes the bread crisp. It tastes delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "passage",
+      "seconds": null
+    },
+    "4660acdeba": {
+      "hash": "4660acdeba",
+      "text": "Neither of them likes fish.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "8b030330b5": {
+      "hash": "8b030330b5",
+      "text": "The chips look good, but the fish smells bad.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "f0059f6319": {
+      "hash": "f0059f6319",
+      "text": "Does the lemonade taste sour?",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "3fcda11f95": {
+      "hash": "3fcda11f95",
+      "text": "She wants some ice cream after lunch.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6e0ef6f778": {
+      "hash": "6e0ef6f778",
+      "text": "it smells delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "570865c21d": {
+      "hash": "570865c21d",
+      "text": "some bread and cheese.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "chunk",
+      "seconds": null
+    },
+    "86031e9164": {
+      "hash": "86031e9164",
+      "text": "It tastes delicious.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e3ae1824f6": {
+      "hash": "e3ae1824f6",
+      "text": "Everyone is happy except me. Emma has chips and they look good. Brian has meat and it smells delicious. I wanted the fish, but it smelled bad and it tasted bad too. So I am eating bread.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f77aee4c20": {
+      "hash": "f77aee4c20",
+      "text": "I'm tired! I need a break.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "0933e77c45": {
+      "hash": "0933e77c45",
+      "text": "I can help!",
+      "role": "narrator",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "709fb38b61": {
+      "hash": "709fb38b61",
+      "text": "Brian, what do you want?",
+      "role": "narrator",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "262ccb0a96": {
+      "hash": "262ccb0a96",
+      "text": "I want fish, please. It looks good.",
+      "role": "brian",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "b75adc3292": {
+      "hash": "b75adc3292",
+      "text": "OK, it's ready.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "42d3c03d56": {
+      "hash": "42d3c03d56",
+      "text": "It looks bad. It smells bad.",
+      "role": "brian",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "2524cc9c27": {
+      "hash": "2524cc9c27",
+      "text": "It tastes bad, too!",
+      "role": "narrator",
+      "unit": 3,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "cd40cf4cc7": {
+      "hash": "cd40cf4cc7",
+      "text": "cheese.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "8c7dbfcbcd": {
+      "hash": "8c7dbfcbcd",
+      "text": "sheep.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "ccd3a37f8a": {
+      "hash": "ccd3a37f8a",
+      "text": "chips.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "36b78ee875": {
+      "hash": "36b78ee875",
+      "text": "thumb.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "42aceacd6e": {
+      "hash": "42aceacd6e",
+      "text": "dishes.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "bda9fa71b6": {
+      "hash": "bda9fa71b6",
+      "text": "lunch box.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "d8b541f88e": {
+      "hash": "d8b541f88e",
+      "text": "Gym.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2c65605801": {
+      "hash": "2c65605801",
+      "text": "I have science today.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8451e89857": {
+      "hash": "8451e89857",
+      "text": "Geography.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f8920e2ea4": {
+      "hash": "f8920e2ea4",
+      "text": "school.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "476c403c25": {
+      "hash": "476c403c25",
+      "text": "map.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "c8c66ef5ac": {
+      "hash": "c8c66ef5ac",
+      "text": "gym.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "1a6bcafa2c": {
+      "hash": "1a6bcafa2c",
+      "text": "Scissors.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "741f8dadfd": {
+      "hash": "741f8dadfd",
+      "text": "I have music today.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "05d6dc2cfd": {
+      "hash": "05d6dc2cfd",
+      "text": "She has art on Thursday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bb6cb71c33": {
+      "hash": "bb6cb71c33",
+      "text": "We have spring break next week. This is the last week of school. This week we only have classes in the morning. We have one class every day. On Monday we have computers. On Tuesday we have science. On Wednesday we have geography. On Thursday we have art. And on Friday we have no classes. Please write down the schedule.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "passage",
+      "seconds": null
+    },
+    "bf77b3c986": {
+      "hash": "bf77b3c986",
+      "text": "I'm Marie. I'm a student. Every morning I take my backpack to school. I have my scissors, my calculator and some paper in my backpack. Today I have English. English is hard sometimes, so I have a dictionary in my backpack, too. After English I have music, so I have my recorder. My lucky shorts are in there as well.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "passage",
+      "seconds": null
+    },
+    "46b747e2d8": {
+      "hash": "46b747e2d8",
+      "text": "I have science on Wednesday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "ed3a744a74": {
+      "hash": "ed3a744a74",
+      "text": "She has music on Monday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "09993ef4ab": {
+      "hash": "09993ef4ab",
+      "text": "I have my gym shorts.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6748222fac": {
+      "hash": "6748222fac",
+      "text": "Do you have a calculator?",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5d1a398545": {
+      "hash": "5d1a398545",
+      "text": "math, gym and computers.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "d358a9f565": {
+      "hash": "d358a9f565",
+      "text": "a map and a dictionary.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "87aedde1e9": {
+      "hash": "87aedde1e9",
+      "text": "I have scissors.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "944022e329": {
+      "hash": "944022e329",
+      "text": "I'm Ben. On Monday I have math and gym. I don't have English on Monday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e2791fbd37": {
+      "hash": "e2791fbd37",
+      "text": "She has geography on Wednesday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5decb6d426": {
+      "hash": "5decb6d426",
+      "text": "I need my calculator for math.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "abab89f17f": {
+      "hash": "abab89f17f",
+      "text": "Do you have your gym shorts?",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f20e3f02bc": {
+      "hash": "f20e3f02bc",
+      "text": "scissors.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "34cedc17b6": {
+      "hash": "34cedc17b6",
+      "text": "calculator.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "d9a63797e4": {
+      "hash": "d9a63797e4",
+      "text": "backpack.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5f2a15f073": {
+      "hash": "5f2a15f073",
+      "text": "Recorder.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "16bf6c3932": {
+      "hash": "16bf6c3932",
+      "text": "On Monday we have computers and math.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "dfb5efde4e": {
+      "hash": "dfb5efde4e",
+      "text": "My favourite class is art.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "02b8270ab0": {
+      "hash": "02b8270ab0",
+      "text": "This is Brian's schedule. We have spring break next week, so this is the last week of school. This week the students only have classes in the morning. There is one class every day. On Monday Brian has computers. On Tuesday he has science. On Wednesday he has geography. On Thursday he has art. On Friday he has no classes at all. Brian is happy about Friday, but he is not happy about Thursday, because he does not like art.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "passage",
+      "seconds": null
+    },
+    "a1b1ce6c05": {
+      "hash": "a1b1ce6c05",
+      "text": "Hello, I'm Marie and I am a student. When I go to school, I take a backpack. I have my scissors, my calculator and some paper in it. Today I have English, and English is hard sometimes, so there is a dictionary in my backpack too. After English class I have music, so I have my recorder. My favourite class is geography, on Thursday, and I have a map in my backpack for that. I have a computer as well, but it is not in my backpack. It stays on my desk.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "passage",
+      "seconds": null
+    },
+    "de85ce0027": {
+      "hash": "de85ce0027",
+      "text": "Emma has geography on Wednesday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "9832141422": {
+      "hash": "9832141422",
+      "text": "I don't have my calculator.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "807692db67": {
+      "hash": "807692db67",
+      "text": "My computer stays on my desk.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "aac339e9ea": {
+      "hash": "aac339e9ea",
+      "text": "has geography on Wednesday.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "a1b0a261ba": {
+      "hash": "a1b0a261ba",
+      "text": "scissors and a calculator.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "d064165f5f": {
+      "hash": "d064165f5f",
+      "text": "I have my recorder.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "609d73c068": {
+      "hash": "609d73c068",
+      "text": "Please write down the schedule.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "3bd10ea822": {
+      "hash": "3bd10ea822",
+      "text": "On Tuesday I have English and music. English is hard, so I take a dictionary. Music is easy because I play the recorder.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e2610b2150": {
+      "hash": "e2610b2150",
+      "text": "Normally the students have five classes a day.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9c08748951": {
+      "hash": "9c08748951",
+      "text": "It stays on my desk because it is heavy.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7ac7f33701": {
+      "hash": "7ac7f33701",
+      "text": "I use the dictionary when I do not understand a word.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b3d10be43f": {
+      "hash": "b3d10be43f",
+      "text": "geography.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "149e212803": {
+      "hash": "149e212803",
+      "text": "dictionary.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4e0c24a180": {
+      "hash": "4e0c24a180",
+      "text": "Normally we have five classes, but this week we have only one.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a2802ad3e8": {
+      "hash": "a2802ad3e8",
+      "text": "I take a dictionary because I do not understand every word.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "968f534bf2": {
+      "hash": "968f534bf2",
+      "text": "My computer is heavy, so it stays on my desk.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "1a90f3e34a": {
+      "hash": "1a90f3e34a",
+      "text": "This is Brian's schedule for the last week before spring break. Normally the students have five classes a day, but this week they only have classes in the morning. There is one class every day: computers on Monday, science on Tuesday, geography on Wednesday and art on Thursday. On Friday there are no classes at all. Brian is happy about Friday, but he is not happy about Thursday, because he does not like art and the teacher gives them a lot of work. He says, one class a day is easy, but one class of art is not.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "passage",
+      "seconds": null
+    },
+    "98706c2c34": {
+      "hash": "98706c2c34",
+      "text": "Hello, I'm Marie and I am a student. Every morning I put my things in my backpack and walk to school. I have my scissors, my calculator and some paper in it, and today I also have my favourite shorts, because I have gym. Today I have English first. English is hard sometimes, so there is a dictionary in my backpack as well; I use it when I do not understand a word. After English I have music, and I take my recorder. My favourite class is geography, on Thursday, because I like using the map, and I have a map in my backpack for that too. I have a computer as well, but it is not in my backpack. It stays on my desk, because it is heavy and I only need it in the computer room.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "passage",
+      "seconds": null
+    },
+    "87c54420ab": {
+      "hash": "87c54420ab",
+      "text": "Everyone in my class has a folder.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "eee352a86c": {
+      "hash": "eee352a86c",
+      "text": "Neither Ben nor Emma has a map.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "ced8f64e72": {
+      "hash": "ced8f64e72",
+      "text": "Does she have geography on Thursday?",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "7fbac24efd": {
+      "hash": "7fbac24efd",
+      "text": "My computer stays on my desk because it is heavy.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "625e663b87": {
+      "hash": "625e663b87",
+      "text": "neither of them has.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "7c0cb7a773": {
+      "hash": "7c0cb7a773",
+      "text": "doesn't have a calculator.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "240af87c39": {
+      "hash": "240af87c39",
+      "text": "five classes a day.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "chunk",
+      "seconds": null
+    },
+    "a731d0ffb9": {
+      "hash": "a731d0ffb9",
+      "text": "Normally we have five classes a day, but this week we have one each morning. On Thursday I have art, and art needs a lot of work. So one class of art is not easy.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "765fa06259": {
+      "hash": "765fa06259",
+      "text": "I have my recorder, my scissors and my dictionary.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "0ed3b824ee": {
+      "hash": "0ed3b824ee",
+      "text": "What do you have today?",
+      "role": "mia",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "5ab8e7ea1d": {
+      "hash": "5ab8e7ea1d",
+      "text": "I have gym, science and math.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "ab1a46300e": {
+      "hash": "ab1a46300e",
+      "text": "Do you have everything?",
+      "role": "mia",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "881eacfba7": {
+      "hash": "881eacfba7",
+      "text": "I have my gym shorts and my science folder.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "18301ab307": {
+      "hash": "18301ab307",
+      "text": "Do you have your calculator?",
+      "role": "mia",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "177b18e03d": {
+      "hash": "177b18e03d",
+      "text": "Uh ... no, I don't. Where is it?",
+      "role": "narrator",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "731cd21820": {
+      "hash": "731cd21820",
+      "text": "Looking for this? Here you go.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "51d2e4d4ab": {
+      "hash": "51d2e4d4ab",
+      "text": "Emma! Give it back!",
+      "role": "narrator",
+      "unit": 4,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "6cad49df92": {
+      "hash": "6cad49df92",
+      "text": "soccer.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "ee8e86eb0e": {
+      "hash": "ee8e86eb0e",
+      "text": "English.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "6e16b479e9": {
+      "hash": "6e16b479e9",
+      "text": "shorts.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "c2149e369b": {
+      "hash": "c2149e369b",
+      "text": "sisters.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "66e5ada824": {
+      "hash": "66e5ada824",
+      "text": "shoes.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "fd671e806a": {
+      "hash": "fd671e806a",
+      "text": "science.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "9c0b0206d4": {
+      "hash": "9c0b0206d4",
+      "text": "schedule.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "e9c690fecd": {
+      "hash": "e9c690fecd",
+      "text": "Soap.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "3131bdf2e6": {
+      "hash": "3131bdf2e6",
+      "text": "Where is my comb?",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7451f53bbd": {
+      "hash": "7451f53bbd",
+      "text": "Toothbrush.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "adf270f16c": {
+      "hash": "adf270f16c",
+      "text": "soap.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "051f88cbd3": {
+      "hash": "051f88cbd3",
+      "text": "comb.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "34a47f045c": {
+      "hash": "34a47f045c",
+      "text": "ball.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0340012b26": {
+      "hash": "0340012b26",
+      "text": "Bucket.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "67ff1e23cd": {
+      "hash": "67ff1e23cd",
+      "text": "The soap is in the sink.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2a9d050d01": {
+      "hash": "2a9d050d01",
+      "text": "My towel is on the counter.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "c3e62980e4": {
+      "hash": "c3e62980e4",
+      "text": "The ball is under the porch.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "556f4973d2": {
+      "hash": "556f4973d2",
+      "text": "Dear Ben, Welcome to our house! The bathroom is next to the bedroom. You can use anything in it. The soap is in the shower. There is a towel on the counter. There is an extra toothbrush under the sink. Make yourself at home! From Clare.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "passage",
+      "seconds": null
+    },
+    "a58f172292": {
+      "hash": "a58f172292",
+      "text": "Ants are small, but they can build big homes. We call these homes ant colonies. An ant colony has different rooms. There is a room for food. There is a room for young ants. There is even a room for the queen. Sometimes an ant colony is bigger than a person. All the ants work together.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "passage",
+      "seconds": null
+    },
+    "ef6af8b5e5": {
+      "hash": "ef6af8b5e5",
+      "text": "The towel is on the counter.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "76ee8e894a": {
+      "hash": "76ee8e894a",
+      "text": "The comb is under the sink.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "a9ce94b625": {
+      "hash": "a9ce94b625",
+      "text": "Where is my toothbrush?",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "7cd57b0c9e": {
+      "hash": "7cd57b0c9e",
+      "text": "in the sink.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "75386719cd": {
+      "hash": "75386719cd",
+      "text": "on the counter.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "6e559b2abc": {
+      "hash": "6e559b2abc",
+      "text": "under the porch.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "d7e8bdcdcd": {
+      "hash": "d7e8bdcdcd",
+      "text": "My towel is on the counter. My comb is under the sink. My soap is in the shower.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "55d2e30b61": {
+      "hash": "55d2e30b61",
+      "text": "There is a towel on the counter.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "6cb2465cf7": {
+      "hash": "6cb2465cf7",
+      "text": "The shovel is in the bush.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7d48b21967": {
+      "hash": "7d48b21967",
+      "text": "Ants dig in the dirt.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "71b64cb1e7": {
+      "hash": "71b64cb1e7",
+      "text": "toothbrush.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "873bf5b7e0": {
+      "hash": "873bf5b7e0",
+      "text": "bucket.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b9b55fdb26": {
+      "hash": "b9b55fdb26",
+      "text": "porch.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bf5211ea39": {
+      "hash": "bf5211ea39",
+      "text": "Shovel.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a650ea0577": {
+      "hash": "a650ea0577",
+      "text": "The toothbrushes are in the cup.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8e3e253698": {
+      "hash": "8e3e253698",
+      "text": "The buckets are on the porch.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "c91fb670ad": {
+      "hash": "c91fb670ad",
+      "text": "The rope is under the swing set.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e592b7bbee": {
+      "hash": "e592b7bbee",
+      "text": "Dear Ricardo, Welcome to our house, and thank you for staying and watching our dog. The bathroom is next to the bedroom, so it is easy to find. You can use anything in there. The soap is in the shower. There is a towel on the counter, near the sink. There is an extra toothbrush under the sink, in a blue packet. There is also a comb under the toilet. Make yourself at home! Thanks, Clare.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "passage",
+      "seconds": null
+    },
+    "21164c05e5": {
+      "hash": "21164c05e5",
+      "text": "Some ant colonies are in trees, but most ant colonies are under the ground. Ants dig in the dirt. They bring the dirt up and make a pile. We call these piles ant hills. Some people have pet ants. They put them in a glass case with sand, and people call these ant farms. You can look inside and see the ants at work.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "passage",
+      "seconds": null
+    },
+    "9959305e68": {
+      "hash": "9959305e68",
+      "text": "Where is the soap? It's in the shower.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "2e56e44fcb": {
+      "hash": "2e56e44fcb",
+      "text": "Where are the towels? They're on the counter.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "b80f33a0b0": {
+      "hash": "b80f33a0b0",
+      "text": "Is the shovel under the porch? No, it isn't.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "23bf3b8817": {
+      "hash": "23bf3b8817",
+      "text": "Are the buckets in the bush? No, they aren't.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "2fc54a2b89": {
+      "hash": "2fc54a2b89",
+      "text": "they're in the cup.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "a194bfcbac": {
+      "hash": "a194bfcbac",
+      "text": "Our garden is small but we love it. The ball is under the swing set. The shovel is in the bush. The buckets are on the porch, next to the door.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9c2e552dcb": {
+      "hash": "9c2e552dcb",
+      "text": "Ants bring the dirt up and make a pile.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0accbe8a8a": {
+      "hash": "0accbe8a8a",
+      "text": "They put the ants in a glass case with sand.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ab9786ab9d": {
+      "hash": "ab9786ab9d",
+      "text": "There is even a room for the queen.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0c3f698286": {
+      "hash": "0c3f698286",
+      "text": "swing set.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "d2f365aa00": {
+      "hash": "d2f365aa00",
+      "text": "colony.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "1d84df535b": {
+      "hash": "1d84df535b",
+      "text": "Most ant colonies are under the ground, but some are in trees.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8a1f2e9fe5": {
+      "hash": "8a1f2e9fe5",
+      "text": "They put them in a glass case with sand.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8ded1ca960": {
+      "hash": "8ded1ca960",
+      "text": "Dear Ricardo, Welcome to our house, and thank you for staying and watching our dog while we are away. The bathroom is next to the bedroom, so you will find it easily. You can use anything in there. The soap is in the shower. There is a towel on the counter, near the sink, and another one under it. There is an extra toothbrush under the sink in a blue packet, and there is also a comb under the toilet, which is not the best place for a comb but it is where it always ends up. Make yourself at home! Thanks, Clare.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "passage",
+      "seconds": null
+    },
+    "557767d679": {
+      "hash": "557767d679",
+      "text": "Some ant colonies are in trees, but most ant colonies are under the ground. Ants dig in the dirt and bring it up, and the pile they make becomes an ant hill. Inside, an ant colony has different rooms: a room for food, a room for raising young ants, and a room for the queen. Sometimes an ant colony is bigger than a person. Some people keep pet ants in a glass case filled with sand, and they call it an ant farm because you can look inside and watch the ants at work. Left alone, the colony keeps building: the rooms get deeper, the pile outside gets taller, and nothing in it belongs to one ant.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "passage",
+      "seconds": null
+    },
+    "91d480c0b4": {
+      "hash": "91d480c0b4",
+      "text": "Neither the soap nor the comb is in the sink.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "0d13f824b8": {
+      "hash": "0d13f824b8",
+      "text": "The shovel isn't under the porch, it's in the bush.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5902ae70b6": {
+      "hash": "5902ae70b6",
+      "text": "neither the soap nor the comb.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "5e9fbe6f2b": {
+      "hash": "5e9fbe6f2b",
+      "text": "under the swing set.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "21be48c773": {
+      "hash": "21be48c773",
+      "text": "they aren't on the porch.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "chunk",
+      "seconds": null
+    },
+    "aa1ef7cac6": {
+      "hash": "aa1ef7cac6",
+      "text": "An ant colony is a big home built by very small animals. Most colonies are under the ground. The ants dig in the dirt and bring it up, and the pile becomes an ant hill. Inside there is a room for food, a room for the young, and a room for the queen.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f4f33f372c": {
+      "hash": "f4f33f372c",
+      "text": "Oh, no! I'm late for school!",
+      "role": "narrator",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "14f043b1c6": {
+      "hash": "14f043b1c6",
+      "text": "Where's my toothbrush?",
+      "role": "narrator",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "01fa3ccfc2": {
+      "hash": "01fa3ccfc2",
+      "text": "I don't know. Is it on the sink?",
+      "role": "ben",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "151c4471be": {
+      "hash": "151c4471be",
+      "text": "Maybe it's in the toilet!",
+      "role": "ben",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f919e4d898": {
+      "hash": "f919e4d898",
+      "text": "Gross! No, it's not in the toilet. Mom!",
+      "role": "narrator",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "66343d5953": {
+      "hash": "66343d5953",
+      "text": "What's the matter?",
+      "role": "narrator",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "4fe16cfe2c": {
+      "hash": "4fe16cfe2c",
+      "text": "I'm late, and I don't have my toothbrush!",
+      "role": "narrator",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f898d7f4a6": {
+      "hash": "f898d7f4a6",
+      "text": "There are new toothbrushes. They're under the sink.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "d054758ccd": {
+      "hash": "d054758ccd",
+      "text": "lake.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "015dff9f5f": {
+      "hash": "015dff9f5f",
+      "text": "rake.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "81d65eaeb6": {
+      "hash": "81d65eaeb6",
+      "text": "lights.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "0ae762a1dc": {
+      "hash": "0ae762a1dc",
+      "text": "right.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "6154d8e97e": {
+      "hash": "6154d8e97e",
+      "text": "toilet.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "21fd8e811d": {
+      "hash": "21fd8e811d",
+      "text": "rope.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "057690a453": {
+      "hash": "057690a453",
+      "text": "fries.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "8f44cc0e15": {
+      "hash": "8f44cc0e15",
+      "text": "fly.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "c056e6c566": {
+      "hash": "c056e6c566",
+      "text": "towel.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "e73e97ecc2": {
+      "hash": "e73e97ecc2",
+      "text": "Sunny.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "598f54bf09": {
+      "hash": "598f54bf09",
+      "text": "It's cold today.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "db58b83d6f": {
+      "hash": "db58b83d6f",
+      "text": "Raincoat.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a7c6e83aad": {
+      "hash": "a7c6e83aad",
+      "text": "sunny.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b239b9461f": {
+      "hash": "b239b9461f",
+      "text": "hot.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "3467a5c13a": {
+      "hash": "3467a5c13a",
+      "text": "rain.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "af48261205": {
+      "hash": "af48261205",
+      "text": "Foggy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a530d5d5b3": {
+      "hash": "a530d5d5b3",
+      "text": "It's sunny.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5af7d2d685": {
+      "hash": "5af7d2d685",
+      "text": "It's cold and windy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "6d5f271655": {
+      "hash": "6d5f271655",
+      "text": "It's rainy. Wear your raincoat.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0e18e568c7": {
+      "hash": "0e18e568c7",
+      "text": "The Atacama Desert is in Chile. Chile is in South America. The desert is very hot and dry. It only rains a few times a year. The desert lies between mountains. It is sometimes rainy on the mountains, but the desert stays dry. It is hard for people, animals and plants to live there.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "passage",
+      "seconds": null
+    },
+    "1cdc221fce": {
+      "hash": "1cdc221fce",
+      "text": "Antarctica is very cold. There is a lot of ice, but it doesn't rain a lot. So, Antarctica is a desert, too. It is hard for people, animals and plants to live in Antarctica too, because it is so cold there.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "passage",
+      "seconds": null
+    },
+    "1d6c860948": {
+      "hash": "1d6c860948",
+      "text": "Put on your sunglasses.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6c14798e06": {
+      "hash": "6c14798e06",
+      "text": "Don't put on your scarf.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "a7c45aaecb": {
+      "hash": "a7c45aaecb",
+      "text": "it's hot today.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "f6f034cd26": {
+      "hash": "f6f034cd26",
+      "text": "put on your cap.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "924174bd8c": {
+      "hash": "924174bd8c",
+      "text": "it's cold and windy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "86c4e5c2eb": {
+      "hash": "86c4e5c2eb",
+      "text": "Today it's cold and windy. I'm wearing a sweater and a scarf. I'm not wearing sunglasses.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7c5c323c4b": {
+      "hash": "7c5c323c4b",
+      "text": "It's foggy this morning.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2770aa95b6": {
+      "hash": "2770aa95b6",
+      "text": "Put on sunscreen. It's very sunny.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e695500bfb": {
+      "hash": "e695500bfb",
+      "text": "Wear a snowsuit in the snow.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2d07ef6e9e": {
+      "hash": "2d07ef6e9e",
+      "text": "sunscreen.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "635241d71e": {
+      "hash": "635241d71e",
+      "text": "sweater.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ef71c92add": {
+      "hash": "ef71c92add",
+      "text": "foggy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2b4985d287": {
+      "hash": "2b4985d287",
+      "text": "Scarf.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "459ddd2d4f": {
+      "hash": "459ddd2d4f",
+      "text": "It's cold and it's snowing. Wear your snowsuit.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0a62ce1323": {
+      "hash": "0a62ce1323",
+      "text": "It's windy today. It's very windy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cfdd98335f": {
+      "hash": "cfdd98335f",
+      "text": "It's very sunny. Put on sunscreen.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "feee311ef5": {
+      "hash": "feee311ef5",
+      "text": "The Atacama Desert is in Chile, in South America. It is a very strange place: it is hot and dry, and it only rains a few times a year. The desert lies between mountains, so it is sometimes rainy on the mountains, but the desert stays dry. That is why it is hard for people, animals and plants to live there.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "passage",
+      "seconds": null
+    },
+    "f92671ecdd": {
+      "hash": "f92671ecdd",
+      "text": "Antarctica is very cold. There is a lot of ice, but it doesn't rain a lot. So, Antarctica is a desert, too. It is hard for people, animals and plants to live in Antarctica because it is so cold there. Antarctica is also the windiest place on Earth. Few plants can grow, and the animals that live there, like penguins, spend most of their time in the sea.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "passage",
+      "seconds": null
+    },
+    "cd965b9d4f": {
+      "hash": "cd965b9d4f",
+      "text": "How's the weather? It's cloudy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "2ca173d935": {
+      "hash": "2ca173d935",
+      "text": "It's cold, so put on your scarf.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "67cc8e734a": {
+      "hash": "67cc8e734a",
+      "text": "Is it foggy outside?",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5360759c94": {
+      "hash": "5360759c94",
+      "text": "Don't put on your sunglasses.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "7d0ec9f80a": {
+      "hash": "7d0ec9f80a",
+      "text": "put on your sunglasses.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "cd350c8af4": {
+      "hash": "cd350c8af4",
+      "text": "don't forget your scarf.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "9ad0dec721": {
+      "hash": "9ad0dec721",
+      "text": "In the Atacama Desert it is hot and dry. It only rains a few times a year. Antarctica is very cold and has a lot of ice, but it doesn't rain much either. So both places are deserts.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "6c5f29cd14": {
+      "hash": "6c5f29cd14",
+      "text": "The desert lies between mountains, but the desert stays dry.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5b8407009b": {
+      "hash": "5b8407009b",
+      "text": "Antarctica is also the windiest place on Earth.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "45ca500979": {
+      "hash": "45ca500979",
+      "text": "It only rains a few times a year.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a55ea8832d": {
+      "hash": "a55ea8832d",
+      "text": "snowsuit.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ddea8a9e00": {
+      "hash": "ddea8a9e00",
+      "text": "mountains.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5d5f621095": {
+      "hash": "5d5f621095",
+      "text": "Sunscreen.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "84bc96335d": {
+      "hash": "84bc96335d",
+      "text": "It only rains a few times a year, so the ground is very dry.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "473f7333fa": {
+      "hash": "473f7333fa",
+      "text": "There is a lot of ice, but it doesn't rain a lot.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f5833da00d": {
+      "hash": "f5833da00d",
+      "text": "Most people think a desert is hot and sandy, but that is only half the story. The Atacama Desert in Chile is hot and dry, and it only rains a few times a year. It lies between mountains, so it is sometimes rainy on the mountains while the desert stays dry. Antarctica is the opposite: it is the coldest place on Earth and it is covered in ice. Yet it also has very little rain, so scientists call it a desert too. In the end, a desert is about water, not temperature.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "passage",
+      "seconds": null
+    },
+    "bca692b00b": {
+      "hash": "bca692b00b",
+      "text": "Antarctica is very cold. There is a lot of ice, but it doesn't rain a lot. So, Antarctica is a desert, too. It is hard for people, animals and plants to live in Antarctica because it is so cold there. Antarctica is also the windiest place on Earth: winds can travel at more than 300 kilometres an hour. Few plants can grow, and the animals that live there, like penguins, spend most of their time in the sea, where it is warmer and there is food.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "passage",
+      "seconds": null
+    },
+    "4b1a4f048d": {
+      "hash": "4b1a4f048d",
+      "text": "Neither the scarf nor the sweater is wet.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "b9949857e0": {
+      "hash": "b9949857e0",
+      "text": "Don't put on your sunglasses today.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "13720afff1": {
+      "hash": "13720afff1",
+      "text": "Is it foggy and cold outside?",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "2922b6da53": {
+      "hash": "2922b6da53",
+      "text": "A desert is about water, not temperature.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5538f166fe": {
+      "hash": "5538f166fe",
+      "text": "neither the scarf nor the sweater.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "626634241b": {
+      "hash": "626634241b",
+      "text": "don't forget your raincoat.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "chunk",
+      "seconds": null
+    },
+    "c1c4c4bf86": {
+      "hash": "c1c4c4bf86",
+      "text": "Antarctica is the windiest place on Earth.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "b63b00fde4": {
+      "hash": "b63b00fde4",
+      "text": "Most people think a desert is hot, but that is not always true. The Atacama is hot and dry, and Antarctica is cold and icy. Both have very little rain, so both are deserts. A desert is about water, not temperature.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bf9a21f40b": {
+      "hash": "bf9a21f40b",
+      "text": "Brian! Wear a raincoat.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "64ed717b1c": {
+      "hash": "64ed717b1c",
+      "text": "It's OK, Mom. It's just cloudy. I'm late.",
+      "role": "brian",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "6b4ff661f7": {
+      "hash": "6b4ff661f7",
+      "text": "I'm coming.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "0ac46802cc": {
+      "hash": "0ac46802cc",
+      "text": "It's raining, Brian.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "7f1327d929": {
+      "hash": "7f1327d929",
+      "text": "Oh, no!",
+      "role": "brian",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "b601412964": {
+      "hash": "b601412964",
+      "text": "I'm wearing my boots.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "157c032a72": {
+      "hash": "157c032a72",
+      "text": "Is it raining?",
+      "role": "brian",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "7d10c2c133": {
+      "hash": "7d10c2c133",
+      "text": "Brian, you're all wet!",
+      "role": "narrator",
+      "unit": 6,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "70c77f26c5": {
+      "hash": "70c77f26c5",
+      "text": "blue.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "3b2174728c": {
+      "hash": "3b2174728c",
+      "text": "cloudy.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "14df8440d8": {
+      "hash": "14df8440d8",
+      "text": "flag.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "d3782390d6": {
+      "hash": "d3782390d6",
+      "text": "gloves.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "333a84c171": {
+      "hash": "333a84c171",
+      "text": "slippers.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "edd22a1e4c": {
+      "hash": "edd22a1e4c",
+      "text": "black.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "9d0e939c77": {
+      "hash": "9d0e939c77",
+      "text": "clock.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "33f0f6e9af": {
+      "hash": "33f0f6e9af",
+      "text": "snowflake.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "d82659cdce": {
+      "hash": "d82659cdce",
+      "text": "sunglasses.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "c3a6f79f2c": {
+      "hash": "c3a6f79f2c",
+      "text": "Make a snowman.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "aa578cb8e3": {
+      "hash": "aa578cb8e3",
+      "text": "We pick apples in the fall.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "c001a21613": {
+      "hash": "c001a21613",
+      "text": "Go to the beach.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "29fe902fda": {
+      "hash": "29fe902fda",
+      "text": "snow.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "dc8403ef76": {
+      "hash": "dc8403ef76",
+      "text": "beach.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "fd0bf40e90": {
+      "hash": "fd0bf40e90",
+      "text": "apple.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ca6068c4f0": {
+      "hash": "ca6068c4f0",
+      "text": "Rake leaves.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f606430089": {
+      "hash": "f606430089",
+      "text": "We make a snowman in the winter.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0d17f06513": {
+      "hash": "0d17f06513",
+      "text": "She plays baseball in the spring.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "8d558d93e3": {
+      "hash": "8d558d93e3",
+      "text": "They go to the beach in the summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f4f3367568": {
+      "hash": "f4f3367568",
+      "text": "Dear David, It's spring! This is my favorite season. I play soccer with my friends every day. On Sundays we also play baseball. I like to be outside a lot. My mom always plants flowers in the spring. Our garden looks nice. Winter is fun, too. My family and I go skiing a lot. We also go sledding in the park. Of course, Emma, Alex and I also make a snowman when it snows. It's so much fun. What's your favorite season? Best wishes, Brian.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "passage",
+      "seconds": null
+    },
+    "175a927421": {
+      "hash": "175a927421",
+      "text": "A place for every season. The United States is a very large country. The weather depends on the season. Alaska is in the north. It's very cold in Alaska in the winter. But in the summer, it's nice and warm. It's a good time to go hiking. The Sonoran Desert is in the south. It's very hot in the winter. People can still play tennis there. It almost never snows.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "passage",
+      "seconds": null
+    },
+    "7f05738d13": {
+      "hash": "7f05738d13",
+      "text": "I make a snowman in the winter.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "8ae37b847a": {
+      "hash": "8ae37b847a",
+      "text": "She makes a sandcastle in the summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "27dff8ebca": {
+      "hash": "27dff8ebca",
+      "text": "What do you do in the summer?",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "4c715c2669": {
+      "hash": "4c715c2669",
+      "text": "in the winter.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "59fa0b296b": {
+      "hash": "59fa0b296b",
+      "text": "in the fall.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "3ea90a1d03": {
+      "hash": "3ea90a1d03",
+      "text": "make a snowman.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "c86798238a": {
+      "hash": "c86798238a",
+      "text": "In the summer I go to the beach. In the winter I go skating. In the fall I pick apples.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "eefce4bcb9": {
+      "hash": "eefce4bcb9",
+      "text": "Do you rake leaves in the fall?",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f438adfd7a": {
+      "hash": "f438adfd7a",
+      "text": "They go camping in the summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7c52cb9f65": {
+      "hash": "7c52cb9f65",
+      "text": "We eat ice cream when it is hot.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "accfd5b904": {
+      "hash": "accfd5b904",
+      "text": "sledding.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cf04830235": {
+      "hash": "cf04830235",
+      "text": "season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "dff9aeb858": {
+      "hash": "dff9aeb858",
+      "text": "camping.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e1be31867e": {
+      "hash": "e1be31867e",
+      "text": "Go skating.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ba626653b2": {
+      "hash": "ba626653b2",
+      "text": "She plants flowers in the spring.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7f0ab50be4": {
+      "hash": "7f0ab50be4",
+      "text": "They go skiing in the winter.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "463d64691b": {
+      "hash": "463d64691b",
+      "text": "We go camping in the summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4322fb1391": {
+      "hash": "4322fb1391",
+      "text": "A place for every season. The United States is a very large country, so the weather depends on where you are. Alaska is in the north. It's very cold in Alaska in the winter, but in the summer it's nice and warm, and it's a good time to go hiking. The Sonoran Desert is in the south. It's very hot in the winter there, so people can still play tennis and do other sports. It almost never snows.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "passage",
+      "seconds": null
+    },
+    "306bcbd6ea": {
+      "hash": "306bcbd6ea",
+      "text": "Fall is very popular in New England. The leaves change color and it's very beautiful. Everyone likes to pick apples. Washington, DC, is very popular with people in the spring. There are cherry blossoms. The flowers are lovely. Different places are famous for different seasons.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "passage",
+      "seconds": null
+    },
+    "c9190030da": {
+      "hash": "c9190030da",
+      "text": "He makes a sandcastle in the summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "42432db3c1": {
+      "hash": "42432db3c1",
+      "text": "Do they go camping in the summer?",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "b7cca33cf2": {
+      "hash": "b7cca33cf2",
+      "text": "What does she do in the fall?",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "4c0bd4f0aa": {
+      "hash": "4c0bd4f0aa",
+      "text": "plants flowers in the spring.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "ae59fb6410": {
+      "hash": "ae59fb6410",
+      "text": "goes camping in the summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "38ef349991": {
+      "hash": "38ef349991",
+      "text": "rakes leaves in the fall.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "c82f993afa": {
+      "hash": "c82f993afa",
+      "text": "In Alaska it is very cold in the winter, but the summer is warm and good for hiking. In the Sonoran Desert it is very hot in the winter, so people can play tennis. It almost never snows there.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2088f9d3bc": {
+      "hash": "2088f9d3bc",
+      "text": "The leaves change color and it's very beautiful.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "696b0a9cd7": {
+      "hash": "696b0a9cd7",
+      "text": "It almost never snows in the Sonoran Desert.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "95cac65137": {
+      "hash": "95cac65137",
+      "text": "The weather depends on where you are.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ca7f73dcdb": {
+      "hash": "ca7f73dcdb",
+      "text": "blossoms.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "44766c849b": {
+      "hash": "44766c849b",
+      "text": "hiking.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "82334e576f": {
+      "hash": "82334e576f",
+      "text": "It almost never snows, so people can still play tennis.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9cfc8f3565": {
+      "hash": "9cfc8f3565",
+      "text": "Summer is nice and warm in Alaska, and it is a good time to go hiking.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "ef43d1c89d": {
+      "hash": "ef43d1c89d",
+      "text": "A place for every season. The United States is a very large country, so the weather depends on where you are. In the north, Alaska is freezing in the winter, but its summer is warm enough to go hiking. Far to the south, the Sonoran Desert is actually hot in the winter, so people play tennis there all year and it almost never snows. In the northeast, New England has a famous fall: the leaves change color and everyone likes to pick apples. Washington, DC, is popular in the spring for a different reason: the cherry blossoms.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "passage",
+      "seconds": null
+    },
+    "494d99e77e": {
+      "hash": "494d99e77e",
+      "text": "Dear David, It's spring! This is my favorite season. I play soccer with my friends every day. On Sundays we also play baseball. I like to be outside a lot. My mom always plants flowers in the spring and our garden looks nice. Winter is fun, too. My family and I go skiing a lot, and we also go sledding in the park. Of course, Emma, Alex and I also make a snowman when it snows. It's so much fun. What's your favorite season? Best wishes, Brian.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "passage",
+      "seconds": null
+    },
+    "e7ed91592b": {
+      "hash": "e7ed91592b",
+      "text": "She goes skating in the winter.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "49c1a1dd91": {
+      "hash": "49c1a1dd91",
+      "text": "Neither my sister nor my brother goes sledding.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "4f3c7819ec": {
+      "hash": "4f3c7819ec",
+      "text": "Does your father go hiking in the summer?",
+      "role": "narrator",
+      "unit": 7,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "d5d1df0260": {
+      "hash": "d5d1df0260",
+      "text": "goes skating in the winter.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "b73abe22c2": {
+      "hash": "b73abe22c2",
+      "text": "neither of them goes.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "33b8eaaf12": {
+      "hash": "33b8eaaf12",
+      "text": "the leaves change color.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "chunk",
+      "seconds": null
+    },
+    "7c17c6de36": {
+      "hash": "7c17c6de36",
+      "text": "The United States is huge, so the weather depends on where you are. Alaska is freezing in winter but warm in summer. The Sonoran Desert is hot in winter and almost never gets snow. New England is famous for its fall leaves and apples.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "320844fea9": {
+      "hash": "320844fea9",
+      "text": "I'm bored!",
+      "role": "ana",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "80b1c0d427": {
+      "hash": "80b1c0d427",
+      "text": "Me, too.",
+      "role": "lina",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "738c42a38a": {
+      "hash": "738c42a38a",
+      "text": "Let's play tennis.",
+      "role": "ana",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f15a98249a": {
+      "hash": "f15a98249a",
+      "text": "Tennis?",
+      "role": "lina",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f3f71dca09": {
+      "hash": "f3f71dca09",
+      "text": "It's winter. Do you play tennis in the winter?",
+      "role": "ana",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "7374e782ee": {
+      "hash": "7374e782ee",
+      "text": "I have an idea.",
+      "role": "lina",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "b1f8b569cd": {
+      "hash": "b1f8b569cd",
+      "text": "Snowball tennis!",
+      "role": "lina",
+      "unit": 7,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "63c980a7d7": {
+      "hash": "63c980a7d7",
+      "text": "spring.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "dc06140cfb": {
+      "hash": "dc06140cfb",
+      "text": "skating.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "ce8de67be9": {
+      "hash": "ce8de67be9",
+      "text": "ring.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "a5d6127aa2": {
+      "hash": "a5d6127aa2",
+      "text": "running.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "10099dcabc": {
+      "hash": "10099dcabc",
+      "text": "sing.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "062d7fe0a9": {
+      "hash": "062d7fe0a9",
+      "text": "shopping.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "e4684bd985": {
+      "hash": "e4684bd985",
+      "text": "swing.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "7bbbcb4d38": {
+      "hash": "7bbbcb4d38",
+      "text": "Sofa.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cf97be46aa": {
+      "hash": "cf97be46aa",
+      "text": "There is a lamp on the table.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7ae908b8ab": {
+      "hash": "7ae908b8ab",
+      "text": "Window.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "411cdcb638": {
+      "hash": "411cdcb638",
+      "text": "door.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9fa25fd6cd": {
+      "hash": "9fa25fd6cd",
+      "text": "bed.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "5509fd3a47": {
+      "hash": "5509fd3a47",
+      "text": "lamp.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "128940e66a": {
+      "hash": "128940e66a",
+      "text": "Mirror.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cbb55f3f25": {
+      "hash": "cbb55f3f25",
+      "text": "There are two windows.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "fc491d4bbc": {
+      "hash": "fc491d4bbc",
+      "text": "The rug is on the floor.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "17e1edf5ac": {
+      "hash": "17e1edf5ac",
+      "text": "This is Naran. He is from Mongolia. His family lives in a special house. We call this house a ger. A ger is a simple house. You can move it to another place, just like a tent! A ger is a big tent.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "passage",
+      "seconds": null
+    },
+    "2362e7ba73": {
+      "hash": "2362e7ba73",
+      "text": "Their house has everything. There is a stove in the middle. There is a table next to the stove. The family eats there. There are two beds next to the dressers. There are some chairs, too.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "passage",
+      "seconds": null
+    },
+    "5e6117a261": {
+      "hash": "5e6117a261",
+      "text": "There is a sofa.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "9d66647720": {
+      "hash": "9d66647720",
+      "text": "There are two beds.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "cb01ba4c6b": {
+      "hash": "cb01ba4c6b",
+      "text": "The lamp is on the table.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "c865efec42": {
+      "hash": "c865efec42",
+      "text": "Where is the stereo?",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "4322a8539e": {
+      "hash": "4322a8539e",
+      "text": "there is a lamp.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "589fb718ed": {
+      "hash": "589fb718ed",
+      "text": "there are two beds.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "cfed0b6fea": {
+      "hash": "cfed0b6fea",
+      "text": "on the table.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "0c6ae42816": {
+      "hash": "0c6ae42816",
+      "text": "There is a big sofa, a television and two lamps in my living room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "d6eeb7e348": {
+      "hash": "d6eeb7e348",
+      "text": "The stereo is on the dresser.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4b3aa0a04d": {
+      "hash": "4b3aa0a04d",
+      "text": "There is a bookcase next to the chair.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "96f0b354a4": {
+      "hash": "96f0b354a4",
+      "text": "There are two beds next to the dressers.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f5f3973431": {
+      "hash": "f5f3973431",
+      "text": "bookcase.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a28336bdc6": {
+      "hash": "a28336bdc6",
+      "text": "dresser.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "67bcb8814d": {
+      "hash": "67bcb8814d",
+      "text": "television.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7da021e10e": {
+      "hash": "7da021e10e",
+      "text": "Stereos.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bd926ec02a": {
+      "hash": "bd926ec02a",
+      "text": "This is Naran. He is from Mongolia. His family lives in a special house. We call this house a ger. A ger is a simple house. You can move it to another place, just like a tent! A ger is a big tent. Naran's family moves often. They can take their house with them. They can get their house ready in a few hours.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "passage",
+      "seconds": null
+    },
+    "f6ffb461db": {
+      "hash": "f6ffb461db",
+      "text": "Their house has everything. There is a stove in the middle. There is a table next to the stove. The family eats there. There are two beds next to the dressers. There are some chairs, too. These days, most people in Mongolia live in a house or an apartment. But some people still live in a ger.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "passage",
+      "seconds": null
+    },
+    "c952c47be1": {
+      "hash": "c952c47be1",
+      "text": "Where is the stereo? It's on the dresser.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "1005a7dcdb": {
+      "hash": "1005a7dcdb",
+      "text": "The mirror is behind the door.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "5b82da07f7": {
+      "hash": "5b82da07f7",
+      "text": "next to the dressers.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "953990bf6d": {
+      "hash": "953990bf6d",
+      "text": "in front of the sofa.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "1ea7374471": {
+      "hash": "1ea7374471",
+      "text": "There are two lamps on the dresser.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "42ffd6a19b": {
+      "hash": "42ffd6a19b",
+      "text": "My bedroom is small but I like it. There is a bed next to the window, and there is a lamp on the dresser. There are two pictures on the wall. I don't have a television in my room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0e92b5f8a6": {
+      "hash": "0e92b5f8a6",
+      "text": "You can move it to another place, just like a tent.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "2a68e9719a": {
+      "hash": "2a68e9719a",
+      "text": "They can get their house ready in a few hours.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9c99514633": {
+      "hash": "9c99514633",
+      "text": "Most people in Mongolia live in a house or an apartment.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "7cdbdca270": {
+      "hash": "7cdbdca270",
+      "text": "apartment.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4387e62749": {
+      "hash": "4387e62749",
+      "text": "Naran is from Mongolia. His family lives in a ger, which is a simple house made of cloth and wood. You can move it to another place, just like a tent. A ger is a big tent. Naran's family moves often, because they look after animals, so they can take their house with them. They can get their house ready in a few hours. Inside, their house has everything: there is a stove in the middle, a table next to it, two beds next to the dressers, and some chairs.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "passage",
+      "seconds": null
+    },
+    "abd5b357ea": {
+      "hash": "abd5b357ea",
+      "text": "Their house has everything. There is a stove in the middle. There is a table next to the stove, and the family eats there. There are two beds next to the dressers. There are some chairs, too. These days, most people in Mongolia live in a house or an apartment. But some people still live in a ger, and inside it looks much the same as it did a hundred years ago: everything the family needs is arranged in a circle around the stove.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "passage",
+      "seconds": null
+    },
+    "ee79945d5c": {
+      "hash": "ee79945d5c",
+      "text": "There is a stove, a table and two beds.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6ed247c00e": {
+      "hash": "6ed247c00e",
+      "text": "Neither the bed nor the dresser is next to the door.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "259811dbc0": {
+      "hash": "259811dbc0",
+      "text": "There aren't any chairs in the kitchen.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "903f7487bf": {
+      "hash": "903f7487bf",
+      "text": "The chair is between the bookcase and the window.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "76011c54dd": {
+      "hash": "76011c54dd",
+      "text": "between the bookcase and the window.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "3f4fc08887": {
+      "hash": "3f4fc08887",
+      "text": "there aren't any chairs.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "chunk",
+      "seconds": null
+    },
+    "c873ed0aac": {
+      "hash": "c873ed0aac",
+      "text": "Naran's family lives in a ger. It is a round house made of cloth and wood, and you can move it like a tent. They move often because they look after animals. Inside there is a stove in the middle, a table next to it, and two beds next to the dressers.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "3e6bf09a2a": {
+      "hash": "3e6bf09a2a",
+      "text": "The new house is great, but where is the stereo?",
+      "role": "ana",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "29c29f243f": {
+      "hash": "29c29f243f",
+      "text": "It's on the dresser.",
+      "role": "ben",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "6a6cf4657f": {
+      "hash": "6a6cf4657f",
+      "text": "No, that's the lamp.",
+      "role": "ana",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "d1388af795": {
+      "hash": "d1388af795",
+      "text": "OK. Is it behind the sofa?",
+      "role": "ben",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "ac39c7816c": {
+      "hash": "ac39c7816c",
+      "text": "No, it isn't.",
+      "role": "ana",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f268834d8e": {
+      "hash": "f268834d8e",
+      "text": "Look behind the door!",
+      "role": "ben",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "f6e7bfab52": {
+      "hash": "f6e7bfab52",
+      "text": "There it is! And there are two speakers next to it.",
+      "role": "ana",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "9a9d0b5e07": {
+      "hash": "9a9d0b5e07",
+      "text": "Great. Now let's find the chairs.",
+      "role": "ben",
+      "unit": 8,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "a698c2de52": {
+      "hash": "a698c2de52",
+      "text": "sore.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "0027f21863": {
+      "hash": "0027f21863",
+      "text": "store.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "8180eb4577": {
+      "hash": "8180eb4577",
+      "text": "say.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "8231103d51": {
+      "hash": "8231103d51",
+      "text": "stay.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "1a7ab9eca6": {
+      "hash": "1a7ab9eca6",
+      "text": "stereo.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "0074cee4f6": {
+      "hash": "0074cee4f6",
+      "text": "soccer ball.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "6d70ee6712": {
+      "hash": "6d70ee6712",
+      "text": "stove.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "aacb34414d": {
+      "hash": "aacb34414d",
+      "text": "sofa.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "46bd0591ee": {
+      "hash": "46bd0591ee",
+      "text": "sink.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "a9fa3791fe": {
+      "hash": "a9fa3791fe",
+      "text": "stone.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "a57e2ff5ea": {
+      "hash": "a57e2ff5ea",
+      "text": "Lake.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0accb973d4": {
+      "hash": "0accb973d4",
+      "text": "There was an island.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "a5fee0573e": {
+      "hash": "a5fee0573e",
+      "text": "Grass.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "07780ecdc5": {
+      "hash": "07780ecdc5",
+      "text": "hill.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "be26013d23": {
+      "hash": "be26013d23",
+      "text": "tree.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "18a226fbf5": {
+      "hash": "18a226fbf5",
+      "text": "Forest.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "c855fbd334": {
+      "hash": "c855fbd334",
+      "text": "There was a lake in the park.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0b2bfd8b01": {
+      "hash": "0b2bfd8b01",
+      "text": "There was a forest near the lake.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "61e2508463": {
+      "hash": "61e2508463",
+      "text": "There was a long sandy beach.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "42bf81a904": {
+      "hash": "42bf81a904",
+      "text": "Yesterday was my school's field trip. We were in a national park. There was a lake, and there were two hills behind the lake. There was an island in the lake. There was a beach by the lake. It was very long. There was a hill on the island. On the hill, there were two short trees. There was also a forest near the lake. In the forest, there were some animals. There were some birds, and there was even a snake. It was a fun field trip.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "passage",
+      "seconds": null
+    },
+    "7579bcd461": {
+      "hash": "7579bcd461",
+      "text": "Sequoia National Park is in California, in the United States. It is very big. It has forests, mountains, and lakes. The first people to live there were Native Americans.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "passage",
+      "seconds": null
+    },
+    "f7a30aaf8a": {
+      "hash": "f7a30aaf8a",
+      "text": "There was a lake.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "48326dd2fd": {
+      "hash": "48326dd2fd",
+      "text": "There were two hills.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "4870e24a8f": {
+      "hash": "4870e24a8f",
+      "text": "Were the trees tall?",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "1c9aa3027d": {
+      "hash": "1c9aa3027d",
+      "text": "there was a lake.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "dbda76984d": {
+      "hash": "dbda76984d",
+      "text": "there were two hills.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "fd282b22a5": {
+      "hash": "fd282b22a5",
+      "text": "in the grass.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "e84f0aad17": {
+      "hash": "e84f0aad17",
+      "text": "We were in a national park. There was a lake and there were two hills. There was an island in the lake.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "88194e0164": {
+      "hash": "88194e0164",
+      "text": "The lake was very deep.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "cf6ce0b0f8": {
+      "hash": "cf6ce0b0f8",
+      "text": "The mountain was very high.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "92d4c91ee6": {
+      "hash": "92d4c91ee6",
+      "text": "forest.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "332a19ccc7": {
+      "hash": "332a19ccc7",
+      "text": "mountain.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "063dafbdde": {
+      "hash": "063dafbdde",
+      "text": "island.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "3e416afea2": {
+      "hash": "3e416afea2",
+      "text": "Island.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e5ae4f5ad0": {
+      "hash": "e5ae4f5ad0",
+      "text": "There was a very high mountain in the park.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "6f07457a92": {
+      "hash": "6f07457a92",
+      "text": "The beach was long and sandy.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f9f0a28378": {
+      "hash": "f9f0a28378",
+      "text": "There were two short trees on the hill.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "f0e6fe70cf": {
+      "hash": "f0e6fe70cf",
+      "text": "Sequoia National Park is in California, in the United States. It is very big. It has forests, mountains and lakes. The first people to live there were Native Americans. There is a very high mountain in the park. The name of the mountain is Mount Whitney. Many people go there to hike. There is also a famous tree in the park. The name of the tree is the General Sherman. It is very tall, and it is over 2,000 years old. Many people go to the park to see the tree.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "passage",
+      "seconds": null
+    },
+    "f3859d38b6": {
+      "hash": "f3859d38b6",
+      "text": "Yesterday my class went to Sequoia National Park. There was a lot to see. There was a very high mountain called Mount Whitney, and many people were there to hike. There was also a famous tree called the General Sherman. It was very tall, and it was over 2,000 years old. There were forests all around us, and there was a lake near the road. It was a long day, but nobody wanted to go home.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "passage",
+      "seconds": null
+    },
+    "e2101ef096": {
+      "hash": "e2101ef096",
+      "text": "Was the lake deep? Yes, it was.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "d3da8f8a05": {
+      "hash": "d3da8f8a05",
+      "text": "Were the trees old? No, they weren't.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "86b90c3717": {
+      "hash": "86b90c3717",
+      "text": "There wasn't an island in the lake.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "fea8434e1d": {
+      "hash": "fea8434e1d",
+      "text": "in the tall grass.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "1bf1639f76": {
+      "hash": "1bf1639f76",
+      "text": "was the lake deep.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "39b011b416": {
+      "hash": "39b011b416",
+      "text": "We were in Sequoia National Park. There was a very high mountain called Mount Whitney, and there was a famous tree called the General Sherman. It was over 2,000 years old. There were forests all around us.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "988df3a441": {
+      "hash": "988df3a441",
+      "text": "The General Sherman is over 2,000 years old.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bd713aa377": {
+      "hash": "bd713aa377",
+      "text": "The first people to live there were Native Americans.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "eb67253da9": {
+      "hash": "eb67253da9",
+      "text": "The mountain is high, so many people go there to hike.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "4626864d7c": {
+      "hash": "4626864d7c",
+      "text": "ancient.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "bfffac1e82": {
+      "hash": "bfffac1e82",
+      "text": "The tree was over 2,000 years old.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "9fafd341f0": {
+      "hash": "9fafd341f0",
+      "text": "There weren't any snakes in the forest that day.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "e0a751ec12": {
+      "hash": "e0a751ec12",
+      "text": "Mount Whitney is very high, so many people go there to hike.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0c3963abe8": {
+      "hash": "0c3963abe8",
+      "text": "Sequoia National Park is in California, in the United States. It is very big, and it has forests, mountains and lakes. The first people to live there were Native Americans. Two things in the park are famous. The first is Mount Whitney, a very high mountain that many people visit to hike. The second is the General Sherman, a tree that is very tall and over 2,000 years old. People travel from other countries just to stand next to it. The park is protected, which means nobody can build there or cut the trees down.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "passage",
+      "seconds": null
+    },
+    "8552ab7335": {
+      "hash": "8552ab7335",
+      "text": "Our field trip was to Sequoia National Park. There was a very high mountain, Mount Whitney, and there were people on it hiking. There was also the General Sherman, a tree that was over 2,000 years old. It was so wide that ten of us could not reach around it. There were forests all around and there was a lake near the road. There weren't any snakes that day, but there were a lot of birds. Our teacher said the park is protected, so the trees will still be there in a hundred years. Nobody wanted to go home.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "passage",
+      "seconds": null
+    },
+    "98c1da086f": {
+      "hash": "98c1da086f",
+      "text": "There was a lake and there were two hills.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "6ce452a445": {
+      "hash": "6ce452a445",
+      "text": "Neither of the hills was very high.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "04ac46cc11": {
+      "hash": "04ac46cc11",
+      "text": "Were there any snakes in the forest?",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "52b070b9cb": {
+      "hash": "52b070b9cb",
+      "text": "The tree was over two thousand years old.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "speaking_model",
+      "seconds": null
+    },
+    "08e346be49": {
+      "hash": "08e346be49",
+      "text": "neither of the hills was.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "d21efb4af3": {
+      "hash": "d21efb4af3",
+      "text": "were there any snakes.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "867a78ce6d": {
+      "hash": "867a78ce6d",
+      "text": "over two thousand years old.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "chunk",
+      "seconds": null
+    },
+    "3877ab390a": {
+      "hash": "3877ab390a",
+      "text": "We were in Sequoia National Park. There was a very high mountain called Mount Whitney and a famous tree called the General Sherman, which was over 2,000 years old. There weren't any snakes that day, but there were a lot of birds.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "item_audio",
+      "seconds": null
+    },
+    "0e97ea29b7": {
+      "hash": "0e97ea29b7",
+      "text": "How was your field trip?",
+      "role": "mia",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "84cc1dbe3c": {
+      "hash": "84cc1dbe3c",
+      "text": "It was great, but then it was scary.",
+      "role": "brian",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "15a1bbe5b7": {
+      "hash": "15a1bbe5b7",
+      "text": "Where were you?",
+      "role": "mia",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "b5e9c60504": {
+      "hash": "b5e9c60504",
+      "text": "We were in a big forest.",
+      "role": "brian",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "b0d9a4a75b": {
+      "hash": "b0d9a4a75b",
+      "text": "What happened?",
+      "role": "mia",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "72422cc82f": {
+      "hash": "72422cc82f",
+      "text": "There was a noise.",
+      "role": "brian",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "695e9e6000": {
+      "hash": "695e9e6000",
+      "text": "Where was the noise?",
+      "role": "mia",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "75c023ff64": {
+      "hash": "75c023ff64",
+      "text": "The noise was in the tall grass.",
+      "role": "brian",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "576d1c1c1d": {
+      "hash": "576d1c1c1d",
+      "text": "What was it?",
+      "role": "mia",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "bfc6905dbd": {
+      "hash": "bfc6905dbd",
+      "text": "There was a long snake in the grass!",
+      "role": "brian",
+      "unit": 9,
+      "category": "dialogue_line",
+      "seconds": null
+    },
+    "82f7547914": {
+      "hash": "82f7547914",
+      "text": "lunch.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "f42e20c952": {
+      "hash": "f42e20c952",
+      "text": "chair.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "e32e2171dd": {
+      "hash": "e32e2171dd",
+      "text": "teach.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "b392bbe65a": {
+      "hash": "b392bbe65a",
+      "text": "sandwich.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "phonics_word",
+      "seconds": null
+    },
+    "ea62c8221e": {
+      "hash": "ea62c8221e",
+      "text": "I can name some foods in English.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "7bc7243cc1": {
+      "hash": "7bc7243cc1",
+      "text": "I can name foods and say which ones are healthy.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d29f1e84fd": {
+      "hash": "d29f1e84fd",
+      "text": "I can talk about food groups and explain my choices.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "4d7a3cfab0": {
+      "hash": "4d7a3cfab0",
+      "text": "I can say I like something or I don't like it.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "189eff2624": {
+      "hash": "189eff2624",
+      "text": "I can use like, likes, don't and doesn't correctly.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ad45cb5a09": {
+      "hash": "ad45cb5a09",
+      "text": "I can use So do I and Neither do I to agree with someone.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "7eb65b9677": {
+      "hash": "7eb65b9677",
+      "text": "I can hear a food word and find it.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3b4dd55385": {
+      "hash": "3b4dd55385",
+      "text": "I can understand what someone wants to eat.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "94719ea06d": {
+      "hash": "94719ea06d",
+      "text": "I can follow a longer talk about food and catch the details.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "83e068ca6b": {
+      "hash": "83e068ca6b",
+      "text": "I can read a short text about food.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c0831d28f6": {
+      "hash": "c0831d28f6",
+      "text": "I can find facts in a text about food.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ec2a395991": {
+      "hash": "ec2a395991",
+      "text": "I can understand what the writer thinks, not only what happened.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "02791a2b13": {
+      "hash": "02791a2b13",
+      "text": "I can write one sentence about food.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "1709f4a711": {
+      "hash": "1709f4a711",
+      "text": "I can write several sentences about what I like.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0446db161e": {
+      "hash": "0446db161e",
+      "text": "I can write a short diary entry with a reason.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ec6bc61119": {
+      "hash": "ec6bc61119",
+      "text": "I can say what I like to eat.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "49cf2a9529": {
+      "hash": "49cf2a9529",
+      "text": "I can ask and answer questions about food.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d47be1de5f": {
+      "hash": "d47be1de5f",
+      "text": "I can talk for a minute about food and agree with someone.",
+      "role": "narrator",
+      "unit": 1,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e24aeffb44": {
+      "hash": "e24aeffb44",
+      "text": "I can name some clothes in English.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5aed05d467": {
+      "hash": "5aed05d467",
+      "text": "I can name clothes and jewellery, and say what colour they are.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "7b03b429c2": {
+      "hash": "7b03b429c2",
+      "text": "I can compare what people wear and explain why.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0bac9d4d4e": {
+      "hash": "0bac9d4d4e",
+      "text": "I can say what someone is wearing.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "76aba915c0": {
+      "hash": "76aba915c0",
+      "text": "I can use am, is and are with wearing, and isn't and aren't.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "63801026df": {
+      "hash": "63801026df",
+      "text": "I can describe several people and keep singular and plural correct.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "f9dee671ff": {
+      "hash": "f9dee671ff",
+      "text": "I can hear a clothing word and find it.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ad8a473f75": {
+      "hash": "ad8a473f75",
+      "text": "I can understand a description of what two people are wearing.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "2a74e776cd": {
+      "hash": "2a74e776cd",
+      "text": "I can follow a longer description and catch the negative detail.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d58e3021b3": {
+      "hash": "d58e3021b3",
+      "text": "I can read a short message about clothes.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "df9a68ee22": {
+      "hash": "df9a68ee22",
+      "text": "I can find where someone is and what they are wearing.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "26f9ab3bd0": {
+      "hash": "26f9ab3bd0",
+      "text": "I can understand why someone describes their clothes.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c705249b29": {
+      "hash": "c705249b29",
+      "text": "I can write one sentence about clothes.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "29b0b98a7a": {
+      "hash": "29b0b98a7a",
+      "text": "I can write five sentences about me and a friend.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "6b2d8146b5": {
+      "hash": "6b2d8146b5",
+      "text": "I can describe three people and explain one choice.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0ec016c381": {
+      "hash": "0ec016c381",
+      "text": "I can say what I am wearing.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d6df863ad3": {
+      "hash": "d6df863ad3",
+      "text": "I can describe what people are wearing.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5a7d146491": {
+      "hash": "5a7d146491",
+      "text": "I can describe and compare clothes, and say why.",
+      "role": "narrator",
+      "unit": 2,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c21334321c": {
+      "hash": "c21334321c",
+      "text": "I can name some foods and drinks in English.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ca9dad4a0e": {
+      "hash": "ca9dad4a0e",
+      "text": "I can name foods and say how they taste.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "7e0904072c": {
+      "hash": "7e0904072c",
+      "text": "I can use taste words precisely and talk about where food comes from.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "308661eb5a": {
+      "hash": "308661eb5a",
+      "text": "I can say what I want.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "61c558789a": {
+      "hash": "61c558789a",
+      "text": "I can use want and wants, and ask with does.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0f218a3c51": {
+      "hash": "0f218a3c51",
+      "text": "I can use look, smell and taste with the right endings.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0e0e0cefdb": {
+      "hash": "0e0e0cefdb",
+      "text": "I can hear a food or drink word and find it.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d9a04c6c63": {
+      "hash": "d9a04c6c63",
+      "text": "I can understand someone ordering food.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "bd54a9b6a5": {
+      "hash": "bd54a9b6a5",
+      "text": "I can follow a longer description of a meal and catch how someone feels.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5771ab8c89": {
+      "hash": "5771ab8c89",
+      "text": "I can find facts about food in a text.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5679dce66c": {
+      "hash": "5679dce66c",
+      "text": "I can understand an opinion and a surprising detail.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "73e10e7e95": {
+      "hash": "73e10e7e95",
+      "text": "I can write one sentence about a meal.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ba4cb0f873": {
+      "hash": "ba4cb0f873",
+      "text": "I can write an order and describe how the food tastes.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "87d95f411e": {
+      "hash": "87d95f411e",
+      "text": "I can write a short review with a reason.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "b1f1a8dd0c": {
+      "hash": "b1f1a8dd0c",
+      "text": "I can say what I want to eat.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "67f4dbdf20": {
+      "hash": "67f4dbdf20",
+      "text": "I can order politely and ask how something tastes.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "81fe0fc598": {
+      "hash": "81fe0fc598",
+      "text": "I can describe a meal using all three senses.",
+      "role": "narrator",
+      "unit": 3,
+      "category": "self_check",
+      "seconds": null
+    },
+    "128eadee95": {
+      "hash": "128eadee95",
+      "text": "I can name some classes and school things.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "513b6bcd32": {
+      "hash": "513b6bcd32",
+      "text": "I can name classes, school objects and days of the week.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "6cc30e2291": {
+      "hash": "6cc30e2291",
+      "text": "I can talk about what I carry to school and explain why.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c38c07b6fb": {
+      "hash": "c38c07b6fb",
+      "text": "I can say what I have.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "4a7a68a8f8": {
+      "hash": "4a7a68a8f8",
+      "text": "I can use have and has, and don't and doesn't have.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "83b473e7a0": {
+      "hash": "83b473e7a0",
+      "text": "I can use have and has correctly even in negatives and questions.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "6e6bce3657": {
+      "hash": "6e6bce3657",
+      "text": "I can hear a class word and find it.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e9e6204021": {
+      "hash": "e9e6204021",
+      "text": "I can understand someone talking about their timetable.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ec7b52da3e": {
+      "hash": "ec7b52da3e",
+      "text": "I can follow a longer description and catch the reason behind it.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c3e83f3b2c": {
+      "hash": "c3e83f3b2c",
+      "text": "I can read a short note about school things.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "a686cf4a53": {
+      "hash": "a686cf4a53",
+      "text": "I can find facts in a note about school.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "1716c7fa00": {
+      "hash": "1716c7fa00",
+      "text": "I can understand why a bag is heavy and what that tells me.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3839ee28fe": {
+      "hash": "3839ee28fe",
+      "text": "I can write one sentence about a class.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "8b1c9f1d8e": {
+      "hash": "8b1c9f1d8e",
+      "text": "I can fill a chart about my classes and what I need.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "df5b1f2d79": {
+      "hash": "df5b1f2d79",
+      "text": "I can write a paragraph about my week with reasons.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "52c61f6822": {
+      "hash": "52c61f6822",
+      "text": "I can say one class I have.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "a81389c362": {
+      "hash": "a81389c362",
+      "text": "I can ask and answer questions about classes.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "aa49e3f706": {
+      "hash": "aa49e3f706",
+      "text": "I can describe my week and explain which class is hardest.",
+      "role": "narrator",
+      "unit": 4,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e6b894007f": {
+      "hash": "e6b894007f",
+      "text": "I can name some rooms and things in a house.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3ac68be73b": {
+      "hash": "3ac68be73b",
+      "text": "I can name objects and the places in a house and garden.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "320a06ff7d": {
+      "hash": "320a06ff7d",
+      "text": "I can talk about where things belong and why.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "94f725bd4a": {
+      "hash": "94f725bd4a",
+      "text": "I can say where one thing is.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "af6368960e": {
+      "hash": "af6368960e",
+      "text": "I can use Where is and Where are, and It's and They're.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0e35ffca2d": {
+      "hash": "0e35ffca2d",
+      "text": "I can keep the question, the short answer and the full answer the same number.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "794da60983": {
+      "hash": "794da60983",
+      "text": "I can hear an object word and find it.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "54ab835f24": {
+      "hash": "54ab835f24",
+      "text": "I can understand where something is.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "043835d41f": {
+      "hash": "043835d41f",
+      "text": "I can follow a longer description and catch a negative.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "f8e73314d9": {
+      "hash": "f8e73314d9",
+      "text": "I can read a short note about where things are.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "1c1ab53279": {
+      "hash": "1c1ab53279",
+      "text": "I can find where things are in a note.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "92a0ba4157": {
+      "hash": "92a0ba4157",
+      "text": "I can understand a joke or an aside in a note.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5596bf8dab": {
+      "hash": "5596bf8dab",
+      "text": "I can write one sentence with in, on or under.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "80c17e1ac0": {
+      "hash": "80c17e1ac0",
+      "text": "I can fill a chart showing where things are.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "02aca99643": {
+      "hash": "02aca99643",
+      "text": "I can describe a room and give reasons.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d577f4cc49": {
+      "hash": "d577f4cc49",
+      "text": "I can tell someone where my things are.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c5baaaf405": {
+      "hash": "c5baaaf405",
+      "text": "I can ask and answer Where is and Where are.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ab473f80ea": {
+      "hash": "ab473f80ea",
+      "text": "I can describe a room for a minute.",
+      "role": "narrator",
+      "unit": 5,
+      "category": "self_check",
+      "seconds": null
+    },
+    "6dd83f15d7": {
+      "hash": "6dd83f15d7",
+      "text": "I can name some weather words.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "a72438d611": {
+      "hash": "a72438d611",
+      "text": "I can name the weather and the right clothes for it.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "af4b999719": {
+      "hash": "af4b999719",
+      "text": "I can talk about climates and explain why people dress differently.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "7e80201063": {
+      "hash": "7e80201063",
+      "text": "I can say It's hot or It's cold.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ba9b7c17f5": {
+      "hash": "ba9b7c17f5",
+      "text": "I can ask Is it...? and use Put on and Don't put on.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "99c14b8ce4": {
+      "hash": "99c14b8ce4",
+      "text": "I can give instructions and refuse them with the right verb form.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "583e3767fb": {
+      "hash": "583e3767fb",
+      "text": "I can hear a weather word and find it.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "46963d0dfa": {
+      "hash": "46963d0dfa",
+      "text": "I can understand a weather report.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d405cfac0f": {
+      "hash": "d405cfac0f",
+      "text": "I can follow a report that compares two places.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ab7497d717": {
+      "hash": "ab7497d717",
+      "text": "I can read a short text about the weather.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "49c8dbb509": {
+      "hash": "49c8dbb509",
+      "text": "I can find facts about the weather in a place.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c7f723921a": {
+      "hash": "c7f723921a",
+      "text": "I can understand why two opposite climates share one name.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "82d07da31b": {
+      "hash": "82d07da31b",
+      "text": "I can write one sentence about the weather.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "57f7514aec": {
+      "hash": "57f7514aec",
+      "text": "I can write what to wear in each kind of weather.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "da79b12fb1": {
+      "hash": "da79b12fb1",
+      "text": "I can write a weather report with an instruction.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e3d05c0f3d": {
+      "hash": "e3d05c0f3d",
+      "text": "I can say what the weather is like today.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "b59b05e4fc": {
+      "hash": "b59b05e4fc",
+      "text": "I can say what to wear and what not to wear.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "9e82270887": {
+      "hash": "9e82270887",
+      "text": "I can give a one-minute weather report.",
+      "role": "narrator",
+      "unit": 6,
+      "category": "self_check",
+      "seconds": null
+    },
+    "eef23cbd06": {
+      "hash": "eef23cbd06",
+      "text": "I can name some things people do in a season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "20404e9036": {
+      "hash": "20404e9036",
+      "text": "I can name activities for each season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "daec1a48a3": {
+      "hash": "daec1a48a3",
+      "text": "I can compare seasons and explain which I prefer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "7e420ad39e": {
+      "hash": "7e420ad39e",
+      "text": "I can say what I do in a season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e1342a4062": {
+      "hash": "e1342a4062",
+      "text": "I can use he, she and it with -s for seasonal activities.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d434e749b5": {
+      "hash": "d434e749b5",
+      "text": "I can use goes and does correctly, and keep Neither...nor singular.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "a3f4c13cc1": {
+      "hash": "a3f4c13cc1",
+      "text": "I can hear a season activity and find it.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "36f819a5a3": {
+      "hash": "36f819a5a3",
+      "text": "I can understand what people do in each season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "4ec85aa0d4": {
+      "hash": "4ec85aa0d4",
+      "text": "I can follow a text that compares places in one country.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d6a5c9dcae": {
+      "hash": "d6a5c9dcae",
+      "text": "I can read a short text about seasons.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "1b33efc466": {
+      "hash": "1b33efc466",
+      "text": "I can find what people do in each season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3b258e12a1": {
+      "hash": "3b258e12a1",
+      "text": "I can understand why a text is organised the way it is.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "9ee8ebc2ed": {
+      "hash": "9ee8ebc2ed",
+      "text": "I can write one sentence with in the and a season.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "55fd659e5a": {
+      "hash": "55fd659e5a",
+      "text": "I can fill a chart about the seasons.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "fabe90edd0": {
+      "hash": "fabe90edd0",
+      "text": "I can write a paragraph comparing seasons with a reason.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "9ce3b840da": {
+      "hash": "9ce3b840da",
+      "text": "I can say one thing I do in summer.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "ab8ee3c4b7": {
+      "hash": "ab8ee3c4b7",
+      "text": "I can talk about all four seasons.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3aab8a1589": {
+      "hash": "3aab8a1589",
+      "text": "I can give a one-minute talk about the year.",
+      "role": "narrator",
+      "unit": 7,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d0434c3eb7": {
+      "hash": "d0434c3eb7",
+      "text": "I can name some things in a room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "606c3eeaaf": {
+      "hash": "606c3eeaaf",
+      "text": "I can name the furniture in different rooms.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "9d9b70821c": {
+      "hash": "9d9b70821c",
+      "text": "I can say what belongs in a room and why.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "f241d1c090": {
+      "hash": "f241d1c090",
+      "text": "I can say what is in a room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "2872f6f32e": {
+      "hash": "2872f6f32e",
+      "text": "I can use There is and There are correctly.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "77c68f128e": {
+      "hash": "77c68f128e",
+      "text": "I can use There is with a list and keep next to complete.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3a35e04c6b": {
+      "hash": "3a35e04c6b",
+      "text": "I can hear a furniture word and find it.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "bbdd0a9f6b": {
+      "hash": "bbdd0a9f6b",
+      "text": "I can understand where things are in a room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "02b6628910": {
+      "hash": "02b6628910",
+      "text": "I can follow a longer description and catch what is not there.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5b7db24985": {
+      "hash": "5b7db24985",
+      "text": "I can read a short text about a house.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5f1d7e1acf": {
+      "hash": "5f1d7e1acf",
+      "text": "I can find where things are in a text.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "02dcb87bef": {
+      "hash": "02dcb87bef",
+      "text": "I can understand why a house is designed the way it is.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "35fc3f20be": {
+      "hash": "35fc3f20be",
+      "text": "I can write one sentence with There is.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "655464550a": {
+      "hash": "655464550a",
+      "text": "I can fill a chart about a room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "5d20c893d0": {
+      "hash": "5d20c893d0",
+      "text": "I can describe a room with a negative sentence.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "0eb479ca99": {
+      "hash": "0eb479ca99",
+      "text": "I can say one thing in my room.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "96c603e041": {
+      "hash": "96c603e041",
+      "text": "I can describe my room and where things are.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "778d6d0321": {
+      "hash": "778d6d0321",
+      "text": "I can describe two rooms for a minute.",
+      "role": "narrator",
+      "unit": 8,
+      "category": "self_check",
+      "seconds": null
+    },
+    "259f8719ab": {
+      "hash": "259f8719ab",
+      "text": "I can name some nature words.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "cdcb85901a": {
+      "hash": "cdcb85901a",
+      "text": "I can name places in nature and describe them.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "9f760248b9": {
+      "hash": "9f760248b9",
+      "text": "I can describe a landscape with adjectives of size and age.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "15a7f46a99": {
+      "hash": "15a7f46a99",
+      "text": "I can say what was somewhere.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "3c4e5c950b": {
+      "hash": "3c4e5c950b",
+      "text": "I can use There was and There were correctly.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d05e2ec1bb": {
+      "hash": "d05e2ec1bb",
+      "text": "I can use was and were in questions, short answers and negatives.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e5743f7d8f": {
+      "hash": "e5743f7d8f",
+      "text": "I can hear a nature word and find it.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "6aecf82866": {
+      "hash": "6aecf82866",
+      "text": "I can understand what was somewhere on a trip.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "b066c221b9": {
+      "hash": "b066c221b9",
+      "text": "I can follow a longer account and catch what was not there.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "105b2de37e": {
+      "hash": "105b2de37e",
+      "text": "I can read a short text about a park.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "c8b507ee1e": {
+      "hash": "c8b507ee1e",
+      "text": "I can find facts about a place in a text.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "e7626facd7": {
+      "hash": "e7626facd7",
+      "text": "I can understand why a place is protected and what that means.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "d259b9f79e": {
+      "hash": "d259b9f79e",
+      "text": "I can write one sentence with There was.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "93d1d36838": {
+      "hash": "93d1d36838",
+      "text": "I can fill a chart about a trip.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "298db5241c": {
+      "hash": "298db5241c",
+      "text": "I can write about a trip with a negative sentence.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "92f8adce9f": {
+      "hash": "92f8adce9f",
+      "text": "I can say one thing that was somewhere.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "a94b0499c5": {
+      "hash": "a94b0499c5",
+      "text": "I can talk about a place I visited.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    },
+    "832680b0f1": {
+      "hash": "832680b0f1",
+      "text": "I can give a one-minute talk about a trip.",
+      "role": "narrator",
+      "unit": 9,
+      "category": "self_check",
+      "seconds": null
+    }
+  }
+}
