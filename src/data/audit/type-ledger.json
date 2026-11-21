@@ -1,0 +1,812 @@
+{
+  "generated": "2026-11-21T00:42:36.927Z",
+  "packs": [
+    "src/data/unit1/v2/hangout2-unit1-expanded-pack.json",
+    "src/data/unit2/v2/hangout2-unit2-expanded-pack.json",
+    "src/data/unit3/v2/hangout2-unit3-expanded-pack.json",
+    "src/data/unit4/v2/hangout2-unit4-expanded-pack.json",
+    "src/data/unit5/v2/hangout2-unit5-expanded-pack.json",
+    "src/data/unit6/v2/hangout2-unit6-expanded-pack.json",
+    "src/data/unit7/v2/hangout2-unit7-expanded-pack.json",
+    "src/data/unit8/v2/hangout2-unit8-expanded-pack.json",
+    "src/data/unit9/v2/hangout2-unit9-expanded-pack.json",
+    "src/data/capstone/hangout2-capstone-pack.json"
+  ],
+  "typeCount": 37,
+  "contractTypes": 37,
+  "types": {
+    "askAnswer": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "audioGapFill": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "audioQuestion": {
+      "surface": "item",
+      "count": 25,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "capstone r1-listening r1l-2"
+    },
+    "audioToPicture": {
+      "surface": "item+slot",
+      "count": 36,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-1"
+    },
+    "audioToWord": {
+      "surface": "item+slot",
+      "count": 37,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 CP1 cp1-4"
+    },
+    "boss": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "RUNNER",
+      "renderer": "CheckpointRunner",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "checkpoint": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "RUNNER",
+      "renderer": "CheckpointRunner",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "chunkDrill": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "detail": {
+      "surface": "item+slot",
+      "count": 23,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "capstone r1-reading r1r-2"
+    },
+    "dragSort": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SORT_BINS",
+      "renderer": "DragSort",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "errorCorrection": {
+      "surface": "item+slot",
+      "count": 74,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "TapToken",
+      "status": "implemented",
+      "sampleRef": "U1 CP1 cp1-3"
+    },
+    "findSentence": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TAP_SENTENCE",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "gapFill": {
+      "surface": "item+slot",
+      "count": 117,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-2"
+    },
+    "gist": {
+      "surface": "item+slot",
+      "count": 12,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "capstone r1-reading r1r-1"
+    },
+    "grouping": {
+      "surface": "item",
+      "count": 13,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SORT_BINS",
+      "renderer": "DragSort",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "guidedParagraph": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHART",
+      "renderer": "DiaryPrompt",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "mixedRecall": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "RUNNER",
+      "renderer": "CheckpointRunner",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "monologue": {
+      "surface": "item+slot",
+      "count": 13,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "capstone r1-speaking r1s-4"
+    },
+    "notice": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "NOTICE",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "oddOneOut": {
+      "surface": "item+slot",
+      "count": 61,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-4"
+    },
+    "personalResponse": {
+      "surface": "item+slot",
+      "count": 25,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "capstone r1-speaking r1s-1"
+    },
+    "pictureDescription": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "pictureToWord": {
+      "surface": "item+slot",
+      "count": 102,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-5"
+    },
+    "preReadVocab": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "questionForms": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "rolePlay": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "sentenceBuilder": {
+      "surface": "item+slot",
+      "count": 44,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "TILE_SEQUENCE",
+      "renderer": "SentenceBuilder",
+      "status": "implemented",
+      "sampleRef": "U1 BOSS b-6"
+    },
+    "sentenceRepair": {
+      "surface": "item+slot",
+      "count": 13,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "TYPED_ANSWER",
+      "renderer": "TypedAnswer",
+      "status": "implemented",
+      "sampleRef": "capstone r1-writing r1w-3"
+    },
+    "shortResponse": {
+      "surface": "item",
+      "count": 3,
+      "units": [
+        10
+      ],
+      "mechanic": "CHART",
+      "renderer": "ShortResponse",
+      "status": "implemented",
+      "sampleRef": "capstone r1-writing r1w-4"
+    },
+    "speaking": {
+      "surface": "item",
+      "count": 54,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "U1 CP1 cp1-6"
+    },
+    "spelling": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TAP_TOKEN",
+      "renderer": "SentenceBuilder",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "tapSentence": {
+      "surface": "answerType+item",
+      "count": 70,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "TAP_SENTENCE",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "U1 BOSS b-5"
+    },
+    "transform": {
+      "surface": "item+slot",
+      "count": 11,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "capstone r1-grammar r1g-6"
+    },
+    "twoPass": {
+      "surface": "item+slot",
+      "count": 27,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TWO_PASS_AUDIO",
+      "renderer": "TwoPassAudio",
+      "status": "implemented",
+      "sampleRef": "U1 BOSS b-4"
+    },
+    "typeIt": {
+      "surface": "item",
+      "count": 52,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TYPED_ANSWER",
+      "renderer": "TypedAnswer",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-3"
+    },
+    "warmUpRepeat": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": ""
+    },
+    "wordToPicture": {
+      "surface": "item+slot",
+      "count": 15,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "capstone r1-vocabulary r1v-3"
+    }
+  },
+  "unrendered": [],
+  "fallbacks": [],
+  "runnerGaps": [],
+  "checks": {
+    "spellingMultiset": {
+      "scanned": 81,
+      "mismatches": []
+    },
+    "tileMultiset": {
+      "scanned": 133,
+      "mismatches": []
+    },
+    "whyChoicesWithoutWhy": {
+      "slots": 243,
+      "missing": 62,
+      "detail": [
+        "U1 easy V3 (3 items, 0 why)",
+        "U1 easy L1 (3 items, 0 why)",
+        "U1 core V3 (3 items, 0 why)",
+        "U1 core G2 (6 items, 0 why)",
+        "U1 core L1 (3 items, 0 why)",
+        "U1 challenging V3 (3 items, 0 why)",
+        "U1 challenging G2 (6 items, 0 why)",
+        "U1 challenging L1 (3 items, 0 why)",
+        "U2 easy V3 (3 items, 0 why)",
+        "U2 easy L1 (3 items, 0 why)",
+        "U2 core V3 (3 items, 0 why)",
+        "U2 core L1 (3 items, 0 why)"
+      ]
+    },
+    "runnerRegistry": {
+      "unitRunner": [
+        "twoPass",
+        "grouping",
+        "tapSentence",
+        "speaking",
+        "errorCorrection",
+        "sentenceBuilder",
+        "spelling",
+        "typeIt",
+        "sentenceRepair",
+        "(none)",
+        "pictureToWord",
+        "wordToPicture",
+        "audioToWord",
+        "audioToPicture",
+        "audioQuestion",
+        "gapFill",
+        "oddOneOut",
+        "questionForms",
+        "transform",
+        "preReadVocab",
+        "notice",
+        "audioGapFill"
+      ],
+      "capstoneRunner": [
+        "pictureToWord",
+        "wordToPicture",
+        "gapFill",
+        "oddOneOut",
+        "audioToWord",
+        "audioQuestion",
+        "errorCorrection",
+        "sentenceBuilder",
+        "sentenceRepair",
+        "typeIt",
+        "gist",
+        "detail",
+        "tapSentence",
+        "findSentence",
+        "personalResponse",
+        "monologue",
+        "shortResponse",
+        "transform",
+        "questionForms",
+        "notice",
+        "audioToPicture",
+        "audioGapFill",
+        "preReadVocab"
+      ],
+      "gaps": []
+    }
+  }
+}

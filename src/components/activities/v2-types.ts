@@ -2,7 +2,13 @@
  * Shared helpers for the v2 (expanded pack) activity mechanics.
  * Every v2 mechanic component receives the full slot entry as its payload
  * and pulls `items` (or its mechanic-specific keys) from it.
+ *
+ * PHASE 10 — normalisation and sentence splitting live in ONE shared module
+ * (src/lib/normalise.ts) used by TAP_SENTENCE, TYPED_ANSWER, TILE_SEQUENCE
+ * and SORT_BINS. This file re-exports them so existing imports keep working.
  */
+
+import { normaliseForMatch } from '../../lib/normalise';
 
 export type ItemResult = (correct: boolean, error?: { correctAnswer: string; rule: string }) => void;
 
@@ -24,11 +30,15 @@ export function majorityCorrect(results: boolean[]): boolean {
   return results.every(Boolean) || wrong < results.length / 2;
 }
 
-/** Normalise for sentence comparison: case, punctuation, whitespace. */
+/**
+ * Legacy punctuation-insensitive normalise: everything normaliseForMatch
+ * does, then strips remaining punctuation. Used where callers compare
+ * content words regardless of punctuation (TapToken's wrong-word match,
+ * TypedAnswer's word diff).
+ */
 export function normalizeSentence(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[.,!?;:'"()]/g, '')
+  return normaliseForMatch(s)
+    .replace(/[^\p{L}\p{N}\s]/gu, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -37,11 +47,13 @@ export function normalizeSentence(s: string): string {
  * Tap-sentence matching. The pack's answers are sometimes a clause inside a
  * longer text sentence, or a quote that sentence-splitting breaks in two, so
  * exact equality is not enough: accept a tapped sentence that contains the
- * answer, or carries most of it — but never a tiny fragment.
+ * answer, or carries most of it — but never a tiny fragment. Last resort:
+ * punctuation-insensitive equality, so a comma drift between a pack answer
+ * and the passage text never mis-marks a correct tap.
  */
 export function sentenceMatches(tapped: string, answer: string): boolean {
-  const a = normalizeSentence(tapped);
-  const b = normalizeSentence(answer);
+  const a = normaliseForMatch(tapped);
+  const b = normaliseForMatch(answer);
   if (!a || !b) return false;
   if (a === b) return true;
   // The tapped (whole) sentence contains the answer clause — always correct.
@@ -49,16 +61,13 @@ export function sentenceMatches(tapped: string, answer: string): boolean {
   // The answer spans two split units ("…? he asks."); only accept a tapped
   // piece that carries most of it — never a tiny fragment like "he asks".
   if (b.includes(a)) return a.length >= b.length * 0.5;
-  return false;
+  const strip = (s: string) => s.replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
+  return strip(a) === strip(b);
 }
 
-/** Split a passage into tappable sentence units. */
-export function splitSentences(passage: string): string[] {
-  return passage
-    .split(/(?<=[.!?])\s+/)
-    .map(s => s.trim())
-    .filter(Boolean);
-}
+/** Split a passage into tappable sentence units — the shared module's
+ * colon/semicolon/figure-safe implementation. */
+export { splitSentences } from '../../lib/normalise';
 
 /** Render a stem that contains ___ or ___(n)___ gaps, replacing them with blanks. */
 export function renderStemParts(stem: string): (string | 'blank')[] {

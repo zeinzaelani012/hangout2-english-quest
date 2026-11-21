@@ -174,3 +174,35 @@ h1, h2, h3, h4, h5, h6 {
   .certificate-cando { margin-top: 5mm !important; }
   .certificate-skills { margin-top: 5mm !important; }
 }
+
+/* Phase 10 — tile-by-tile success animation (TAP_TOKEN / TILE_SEQUENCE). */
+@keyframes tilepop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.14); background-color: #ccfbf1; }
+  100% { transform: scale(1); }
+}
+
+/* Phase 12 — Teacher Mode printing (Part I): no PDF library.
+   Named pages: tables print A4 LANDSCAPE; the learner card stays PORTRAIT.
+   The certificate's portrait @page rule from Phase 9 remains the default. */
+@page teacher-landscape {
+  size: A4 landscape;
+  margin: 10mm;
+}
+
+@media print {
+  /* Repeat table headers on every printed page. */
+  .print-table-head {
+    display: table-header-group;
+  }
+  /* Never truncate a note. */
+  .teacher-print-view td,
+  .teacher-print-view p {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+  .teacher-print-view {
+    page: teacher-landscape;
+  }
+}

@@ -22,6 +22,11 @@ const CapstonePage = lazy(() => import('./pages/CapstonePage').then(m => ({ defa
 const CapstoneStationPage = lazy(() => import('./pages/CapstoneStationPage').then(m => ({ default: m.CapstoneStationPage })));
 const FinalGatePage = lazy(() => import('./pages/FinalGatePage').then(m => ({ default: m.FinalGatePage })));
 const FinalGateResultsPage = lazy(() => import('./pages/FinalGatePage').then(m => ({ default: m.FinalGateResultsPage })));
+// PHASE 10 — the dev type matrix is dev-only: the dynamic import is guarded
+// so a production build never ships the route or its chunk.
+const DevTypeMatrixPage = import.meta.env.DEV
+  ? lazy(() => import('./pages/DevTypeMatrixPage').then(m => ({ default: m.DevTypeMatrixPage })))
+  : null;
 
 function PageLoader() {
   return (
@@ -105,6 +110,9 @@ function AppContent() {
             <Route path="/capstone/final-gate" element={<FinalGatePage />} />
             <Route path="/capstone/final-gate/results" element={<FinalGateResultsPage />} />
             <Route path="/capstone/certificate" element={<FinalGateResultsPage />} />
+            {DevTypeMatrixPage && (
+              <Route path="/dev/type-matrix" element={<DevTypeMatrixPage />} />
+            )}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>

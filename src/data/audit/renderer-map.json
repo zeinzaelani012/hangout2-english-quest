@@ -1,0 +1,805 @@
+{
+  "meta": {
+    "app": "Hangout 2 - English Quest",
+    "pack": "renderer-map",
+    "version": "1.0",
+    "schema": "renderer-map-v1",
+    "purpose": "The contract between content and components. Every type string in the ten packs maps to exactly one interaction mechanic and one renderer component. This file is HAND-MAINTAINED; type-ledger.json is generated from it.",
+    "generated_by": "scripts/audit-types.mjs (reads this file, diffs against the packs, exits 1 on any gap)",
+    "verified_against": "unit1..9 v2.0 + capstone v1.0",
+    "counts": {
+      "slotLevelTypes": 31,
+      "embeddedItemTypes": 21,
+      "answerTypeValues": 1,
+      "uniqueTypes": 37,
+      "mechanics": 11
+    },
+    "note": "The renderer names below are SUGGESTED component names. Rename them to match your codebase, but keep the mechanic assignment. The mechanic is what the fix in Phase 10 actually changes.",
+    "renamed": "Renderer names resolve to the components in this codebase; mechanic assignments unchanged from the phase spec."
+  },
+  "mechanics": {
+    "CHOICE_ITEM": {
+      "rule": "One question, N options, one answer. The default mechanic."
+    },
+    "TAP_TOKEN": {
+      "rule": "A token pool tapped in index order to build a string. Selection by index, never value."
+    },
+    "TAP_SENTENCE": {
+      "rule": "A passage rendered as individually tappable sentences. Matched by sentence index."
+    },
+    "TILE_SEQUENCE": {
+      "rule": "A word pool tapped in index order to build a sentence, with punctuation from the answer."
+    },
+    "TYPED_ANSWER": {
+      "rule": "Free text with normalisation; optional Damerau-Levenshtein distance 1."
+    },
+    "SORT_BINS": {
+      "rule": "Items placed into 2-4 named bins, by tap or by drag."
+    },
+    "TWO_PASS_AUDIO": {
+      "rule": "One audio with two passes and two different jobs, gated in order."
+    },
+    "SPEAKING": {
+      "rule": "A recorded response, scored on keyword coverage in bands."
+    },
+    "NOTICE": {
+      "rule": "A teach card: statements plus a rule, then items that read the pattern."
+    },
+    "RUNNER": {
+      "rule": "A heterogeneous container that dispatches per item.type."
+    },
+    "CHART": {
+      "rule": "A writing station: optional picker, one of three chart shapes, free text, checklist."
+    }
+  },
+  "types": {
+    "askAnswer": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "audioGapFill": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "audioQuestion": {
+      "surface": "item",
+      "count": 25,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "capstone r1-listening r1l-2",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "audioToPicture": {
+      "surface": "slot+item",
+      "count": 36,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-1",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "audioToWord": {
+      "surface": "slot+item",
+      "count": 37,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 CP1 cp1-4",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "boss": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "RUNNER",
+      "renderer": "CheckpointRunner",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/CheckpointRunner.tsx"
+    },
+    "checkpoint": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "RUNNER",
+      "renderer": "CheckpointRunner",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/CheckpointRunner.tsx"
+    },
+    "chunkDrill": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "detail": {
+      "surface": "slot+item",
+      "count": 23,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "capstone r1-reading r1r-2",
+      "file": "src/components/activities/TapSentence.tsx"
+    },
+    "dragSort": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SORT_BINS",
+      "renderer": "DragSort",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/DragSort.tsx"
+    },
+    "errorCorrection": {
+      "surface": "slot+item",
+      "count": 74,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "TapToken",
+      "status": "implemented",
+      "sampleRef": "U1 CP1 cp1-3",
+      "file": "src/components/activities/TapToken.tsx"
+    },
+    "findSentence": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TAP_SENTENCE",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/TapSentence.tsx"
+    },
+    "gapFill": {
+      "surface": "slot+item",
+      "count": 117,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-2",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "gist": {
+      "surface": "slot+item",
+      "count": 12,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "capstone r1-reading r1r-1",
+      "file": "src/components/activities/TapSentence.tsx"
+    },
+    "grouping": {
+      "surface": "item",
+      "count": 13,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SORT_BINS",
+      "renderer": "DragSort",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/DragSort.tsx"
+    },
+    "guidedParagraph": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHART",
+      "renderer": "DiaryPrompt",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/DiaryPrompt.tsx"
+    },
+    "mixedRecall": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "RUNNER",
+      "renderer": "CheckpointRunner",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/CheckpointRunner.tsx"
+    },
+    "monologue": {
+      "surface": "slot+item",
+      "count": 13,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "capstone r1-speaking r1s-4",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "notice": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "NOTICE",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "oddOneOut": {
+      "surface": "slot+item",
+      "count": 61,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-4",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "personalResponse": {
+      "surface": "slot+item",
+      "count": 25,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "capstone r1-speaking r1s-1",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "pictureDescription": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "pictureToWord": {
+      "surface": "slot+item",
+      "count": 102,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-5",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "preReadVocab": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "questionForms": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "rolePlay": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "sentenceBuilder": {
+      "surface": "slot+item",
+      "count": 44,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "TILE_SEQUENCE",
+      "renderer": "SentenceBuilder",
+      "status": "implemented",
+      "sampleRef": "U1 BOSS b-6",
+      "file": "src/components/activities/SentenceBuilder.tsx"
+    },
+    "sentenceRepair": {
+      "surface": "slot+item",
+      "count": 13,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "TYPED_ANSWER",
+      "renderer": "TypedAnswer",
+      "status": "implemented",
+      "sampleRef": "capstone r1-writing r1w-3",
+      "file": "src/components/activities/TypedAnswer.tsx"
+    },
+    "shortResponse": {
+      "surface": "item",
+      "count": 3,
+      "units": [
+        10
+      ],
+      "mechanic": "CHART",
+      "renderer": "ShortResponse",
+      "status": "implemented",
+      "sampleRef": "capstone r1-writing r1w-4",
+      "file": "src/components/capstone/CapstoneItem.tsx"
+    },
+    "speaking": {
+      "surface": "item",
+      "count": 54,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "U1 CP1 cp1-6",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "spelling": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TAP_TOKEN",
+      "renderer": "SentenceBuilder",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/SentenceBuilder.tsx"
+    },
+    "tapSentence": {
+      "surface": "item+answerType",
+      "count": 70,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "TAP_SENTENCE",
+      "renderer": "TapSentence",
+      "status": "implemented",
+      "sampleRef": "U1 BOSS b-5",
+      "file": "src/components/activities/TapSentence.tsx"
+    },
+    "transform": {
+      "surface": "slot+item",
+      "count": 11,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "capstone r1-grammar r1g-6",
+      "file": "src/components/activities/GapFill.tsx"
+    },
+    "twoPass": {
+      "surface": "slot+item",
+      "count": 27,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TWO_PASS_AUDIO",
+      "renderer": "TwoPassAudio",
+      "status": "implemented",
+      "sampleRef": "U1 BOSS b-4",
+      "file": "src/components/activities/TwoPassAudio.tsx"
+    },
+    "typeIt": {
+      "surface": "item",
+      "count": 52,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "TYPED_ANSWER",
+      "renderer": "TypedAnswer",
+      "status": "implemented",
+      "sampleRef": "U1 V8 v8-3",
+      "file": "src/components/activities/TypedAnswer.tsx"
+    },
+    "warmUpRepeat": {
+      "surface": "slot",
+      "count": 9,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mechanic": "SPEAKING",
+      "renderer": "RecordAndCompare",
+      "status": "implemented",
+      "sampleRef": "",
+      "file": "src/components/activities/RecordAndCompare.tsx"
+    },
+    "wordToPicture": {
+      "surface": "slot+item",
+      "count": 15,
+      "units": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "mechanic": "CHOICE_ITEM",
+      "renderer": "GapFill",
+      "status": "implemented",
+      "sampleRef": "capstone r1-vocabulary r1v-3",
+      "file": "src/components/activities/GapFill.tsx"
+    }
+  },
+  "unmapped": []
+}

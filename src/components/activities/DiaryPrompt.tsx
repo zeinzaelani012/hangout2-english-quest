@@ -22,6 +22,20 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
   // stem for the second column. Unit 9's core W3 uses a ROW-LABELLED variant:
   // columnA is an array of per-row labels with per-row stems.
   const chart: { rows: number; columnA: string | string[]; columnB?: string; columnBStem?: string | string[] } | undefined = payload.chart;
+  // Part F — fail loudly in dev when the two shapes disagree: a columnA
+  // ARRAY whose length contradicts `rows` is a pack bug, not a UI one.
+  if (
+    import.meta.env.DEV &&
+    chart &&
+    Array.isArray(chart.columnA) &&
+    typeof chart.rows === 'number' &&
+    chart.rows !== chart.columnA.length
+  ) {
+    console.error(
+      `[WritingChart] columnA has ${chart.columnA.length} labels but rows=${chart.rows} ` +
+      `(unit ${activity.unitId ?? '?'}, ${activity.difficulty}) — the pack's chart shape is inconsistent.`,
+    );
+  }
   const chartRowLabels: string[] | null =
     chart && Array.isArray(chart.columnA) ? chart.columnA : null;
   const chartRowStems: string[] =
@@ -30,7 +44,9 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
   const chooseRoom: string[] | undefined = payload.chooseRoom;
   const choosePlace: string[] | undefined = payload.choosePlace;
   const pickerOptions = chooseSeason ?? chooseRoom ?? choosePlace;
-  const pickerLabel = chooseSeason ? 'Choose your season' : chooseRoom ? 'Choose your room' : 'Choose the place';
+  // Part F — ONE picker component with three data keys; the key name is the
+  // accessible label. Never hardcode one key's name onto another.
+  const pickerLabel = chooseSeason ? 'Choose a season' : chooseRoom ? 'Choose a room' : 'Choose a place';
   const menu: string[] = payload.menu ?? [];
 
   const [text, setText] = useState('');
@@ -43,9 +59,20 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
   const [chosenSeason, setChosenSeason] = useState<string | null>(null);
   const [completed, setCompleted] = useState(false);
 
-  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  // Part F — minimumWords counts the CHART CELLS and the free text TOGETHER,
+  // never each separately, and the count is stated live so the target is not
+  // a surprise at submit.
+  const countWords = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+  const chartWords =
+    chartCells.reduce((n, row) => n + row.reduce((m, cell) => m + countWords(cell), 0), 0) +
+    rowEntries.reduce((n, entry) => n + countWords(entry), 0);
+  const textWords = countWords(text);
+  const wordCount = textWords + chartWords;
   const sentenceCount = text.trim().split(/[.!?]+/).filter(s => s.trim().length > 0).length;
-  const wordsNeeded = Math.max(0, minimumWords - wordCount);
+  // The PICKER is required; the chart and free text are not. A learner who
+  // picks a season and writes nothing still completes the station — so the
+  // only submit gate is a missing picker choice.
+  const pickerMissing = pickerOptions !== undefined && pickerOptions.length > 0 && chosenSeason === null;
 
   const handleComplete = () => {
     setCompleted(true);
@@ -225,9 +252,9 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
       />
 
       <div className="mt-2 mb-4 flex flex-wrap items-center gap-4 text-xs font-semibold text-muted">
-        <span className="tnum">{wordCount} words</span>
+        <span className="tnum" aria-live="polite">{wordCount} of {minimumWords} words</span>
         <span className="tnum">{sentenceCount} sentences</span>
-        <span>Goal: {minimumWords} words{requirements.length > 0 ? ` · ${requirements.length} requirements` : ''}</span>
+        {pickerMissing && <span className="font-bold text-sun">Pick one {pickerLabel.toLowerCase().replace('choose ', '').replace('your ', '')} above to finish</span>}
       </div>
 
       <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
@@ -253,7 +280,7 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
       {!completed && (
         <button
           onClick={handleComplete}
-          disabled={wordCount < minimumWords}
+          disabled={pickerMissing}
           className="action-primary w-full"
           style={{ minHeight: 44 }}
         >

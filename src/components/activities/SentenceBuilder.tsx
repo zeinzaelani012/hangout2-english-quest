@@ -3,6 +3,7 @@ import type { Activity, SentenceBuilderPayload } from '../../types';
 import { Check, X } from 'lucide-react';
 import { AudioButton } from '../AudioButton';
 import { majorityCorrect, normalizeSentence, v2Items, type ItemResult } from './v2-types';
+import { normaliseForMatch } from '../../lib/normalise';
 
 interface Props {
   activity: Activity;
@@ -10,7 +11,12 @@ interface Props {
 }
 
 // ---- v2 TILE_SEQUENCE ---------------------------------------------------------
-// types: sentenceBuilder, spelling.
+// types: sentenceBuilder (TILE_SEQUENCE), spelling (TAP_TOKEN).
+//
+// PHASE 10 — token identity is by INDEX, never by value: every tile carries a
+// stable id derived from its pool position, so two "e" tiles (or two "she"
+// tiles) are independent pieces. Removing a tile removes that index only.
+// Value comparison happens in exactly one place: the built-sequence check.
 
 interface TileItem {
   id?: string;
@@ -18,6 +24,18 @@ interface TileItem {
   letters?: string[];
   answer: string;
   audio?: string;
+}
+
+/** Shuffle a copy of the pool — once per item, on mount. Never reshuffled on
+ * a wrong answer: reshuffling destroys the learner's spatial memory of where
+ * they found the piece they wanted. */
+function shuffledPool(tiles: { id: string; word: string }[]): { id: string; word: string }[] {
+  const arr = [...tiles];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 function TileSequenceBody({ activity, onResult }: Props) {
@@ -33,37 +51,52 @@ function TileSequenceBody({ activity, onResult }: Props) {
   const [bank, setBank] = useState<{ id: string; word: string; used: boolean }[]>([]);
   const [arranged, setArranged] = useState<{ id: string; word: string }[]>([]);
   const [checked, setChecked] = useState(false);
+  const [editingAfterWrong, setEditingAfterWrong] = useState(false);
   const [results, setResults] = useState<boolean[]>([]);
+  const [justPlaced, setJustPlaced] = useState<string | null>(null);
   const [draggedId, setDraggedId] = useState<string | null>(null);
 
   const item = items[index];
   const isLast = index >= items.length - 1;
 
-  // Reset the tile state whenever the item changes (effect, not render)
+  // Reset the tile state whenever the item changes (effect, not render).
+  // The pool is shuffled here, ONCE — the ids stay tied to pool positions.
   useEffect(() => {
     const tiles = items[index]?.tiles ?? [];
-    setBank(tiles.map((word, i) => ({ id: `t${index}-${i}`, word, used: false })));
+    const pool = tiles.map((word, i) => ({ id: `t${index}-${i}`, word }));
+    setBank(shuffledPool(pool).map(t => ({ ...t, used: false })));
     setArranged([]);
     setChecked(false);
+    setEditingAfterWrong(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   const handleAddWord = (id: string, word: string) => {
-    if (checked) return;
+    if (checked && !editingAfterWrong) return;
     setBank(prev => prev.map(w => (w.id === id ? { ...w, used: true } : w)));
     setArranged(prev => [...prev, { id, word }]);
+    setJustPlaced(id);
+    window.setTimeout(() => setJustPlaced(cur => (cur === id ? null : cur)), 600);
   };
 
   const handleRemoveWord = (id: string) => {
-    if (checked) return;
+    if (checked && !editingAfterWrong) return;
     setBank(prev => prev.map(w => (w.id === id ? { ...w, used: false } : w)));
     setArranged(prev => prev.filter(w => w.id !== id));
   };
 
   const clearAll = () => {
-    if (checked) return;
+    if (checked && !editingAfterWrong) return;
     setBank(prev => prev.map(w => ({ ...w, used: false })));
     setArranged([]);
+  };
+
+  // Part D: a wrong answer keeps the learner's sequence and lets them edit
+  // it — clearing the board punishes a near-miss, which is the most
+  // informative attempt.
+  const handleEditAfterWrong = () => {
+    setChecked(false);
+    setEditingAfterWrong(true);
   };
 
   // Drag and drop: tiles into the build area, back out to the bank
@@ -93,20 +126,25 @@ function TileSequenceBody({ activity, onResult }: Props) {
     setDraggedId(null);
   };
 
-  // Spelling joins letters with no spaces; sentences join words. Spelling
-  // comparisons ignore spaces entirely, so a pack can ship a two-word answer
-  // ("swing set") with a space tile and accept it built with or without it.
+  // Spelling joins letters with no separator; sentences join words. The space
+  // tile (" ") is a first-class token in spelling mode: its value flows into
+  // the joined sequence, so "swing set" built without its space tile does not
+  // match — the tile is required, exactly as the pack shipped it.
+  // Comparison happens ONLY here: spelling compares through normaliseForMatch
+  // (case, quotes, trailing stop, digits preserved); sentences compare
+  // punctuation-insensitively because word tiles cannot spell punctuation —
+  // the pack ships answers with commas the pool deliberately omits.
   const userSentence = arranged.map(w => w.word).join(isSpelling ? '' : ' ');
-  const spellingNorm = (s: string) => s.replace(/\s+/g, '').toLowerCase();
   const isCorrect = item
     ? isSpelling
-      ? spellingNorm(userSentence) === spellingNorm(item.answer)
+      ? normaliseForMatch(userSentence) === normaliseForMatch(item.answer)
       : normalizeSentence(userSentence) === normalizeSentence(item.answer)
     : false;
 
   const handleCheck = () => {
-    setChecked(true);
     const nextResults = [...results, isCorrect];
+    setChecked(true);
+    setEditingAfterWrong(false);
     setResults(nextResults);
     if (isLast) {
       onResult(majorityCorrect(nextResults), {
@@ -121,6 +159,7 @@ function TileSequenceBody({ activity, onResult }: Props) {
     setBank([]);
     setArranged([]);
     setChecked(false);
+    setEditingAfterWrong(false);
   };
 
   if (!item) return null;
@@ -145,7 +184,7 @@ function TileSequenceBody({ activity, onResult }: Props) {
         </div>
       )}
 
-      {/* Build area */}
+      {/* Build area — on success each tile pops into place in index order */}
       <div
         onDragOver={e => e.preventDefault()}
         onDrop={handleDropOnArranged}
@@ -155,24 +194,29 @@ function TileSequenceBody({ activity, onResult }: Props) {
         {arranged.length === 0 && (
           <p className="text-sm text-muted">Click or drag the tiles below to build {isSpelling ? 'the word' : 'your sentence'}...</p>
         )}
-        {arranged.map(word => (
+        {arranged.map((word, position) => (
           <button
             key={word.id}
             onClick={() => handleRemoveWord(word.id)}
             draggable
             onDragStart={e => handleDragStart(e, word.id, word.word, false)}
             onDragOver={e => e.preventDefault()}
-            disabled={checked}
+            disabled={checked && !editingAfterWrong}
             className={`rounded-lg border px-3 py-2 text-sm font-semibold transition-all ${
               checked
                 ? 'border-brand/20 bg-teal-50 text-brand'
                 : 'border-slate-200 bg-white text-ink hover:border-red-200 hover:bg-red-50 hover:text-coral'
-            }`}
-            style={{ minHeight: 36 }}
-            aria-label={`${word.word}. Click to remove.`}
+            } ${justPlaced === word.id ? 'animate-[tilepop_0.45s_ease-out]' : ''}`}
+            style={{
+              minHeight: 36,
+              // Success animation: each token pops in index order, so the
+              // learner sees the sequence they built, not a sudden word.
+              ...(checked && isCorrect ? { animation: `tilepop 0.4s ease-out ${position * 0.08}s both` } : {}),
+            }}
+            aria-label={`${word.word === ' ' || word.word.trim() === '' ? 'space' : word.word}. Click to remove.`}
           >
-            {word.word}
-            {!checked && <X size={12} className="ml-1 inline opacity-50" />}
+            {word.word.trim() === '' ? <span className="italic text-muted">space</span> : word.word}
+            {!(checked && !editingAfterWrong) && <X size={12} className="ml-1 inline opacity-50" />}
           </button>
         ))}
       </div>
@@ -185,7 +229,7 @@ function TileSequenceBody({ activity, onResult }: Props) {
       >
         <div className="mb-2 flex items-center justify-between">
           <p className="eyebrow">{isSpelling ? 'Letters' : 'Word bank'}</p>
-          {!checked && arranged.length > 0 && (
+          {!(checked && !editingAfterWrong) && arranged.length > 0 && (
             <button
               onClick={clearAll}
               className="text-xs font-bold text-muted hover:text-coral"
@@ -203,16 +247,16 @@ function TileSequenceBody({ activity, onResult }: Props) {
                 onClick={() => handleAddWord(word.id, word.word)}
                 draggable
                 onDragStart={e => handleDragStart(e, word.id, word.word, true)}
-                disabled={checked}
+                disabled={checked && !editingAfterWrong}
                 className="min-h-9 cursor-grab rounded-lg border border-brand/20 bg-teal-50 px-3 py-2 text-sm font-semibold text-brand transition-colors hover:bg-teal-100"
-                style={{ minHeight: 36, ...(word.word.trim() === '' ? { minWidth: 30 } : {}) }}
-                aria-label={word.word.trim() === '' ? 'Space. Click or drag to add.' : `${word.word}. Click or drag to add.`}
+                style={{ minHeight: 36, ...(word.word.trim() === '' ? { minWidth: 64 } : {}) }}
+                aria-label={word.word.trim() === '' ? 'space. Click or drag to add.' : `${word.word}. Click or drag to add.`}
               >
-                {word.word.trim() === '' ? '␣' : word.word}
+                {word.word.trim() === '' ? <span className="italic">space</span> : word.word}
               </button>
             ) : null,
           )}
-          {bank.every(w => w.used) && !checked && (
+          {bank.every(w => w.used) && !(checked && !editingAfterWrong) && (
             <p className="text-sm text-muted">
               All tiles used{arranged.length > 0 ? ' — check when ready.' : '.'}
             </p>
@@ -221,7 +265,7 @@ function TileSequenceBody({ activity, onResult }: Props) {
       </div>
 
       {/* Check / next */}
-      {arranged.length > 0 && !checked && (
+      {arranged.length > 0 && !(checked && !editingAfterWrong) && (
         <button onClick={handleCheck} className="action-primary mt-4 w-full">
           Check {isSpelling ? 'spelling' : 'sentence'}
         </button>
@@ -244,6 +288,14 @@ function TileSequenceBody({ activity, onResult }: Props) {
             <p className="mt-1 text-sm text-muted">You built: “{userSentence}”</p>
           )}
         </div>
+      )}
+
+      {/* Part D: a wrong answer keeps the board — the learner edits their
+          near-miss instead of rebuilding from nothing. */}
+      {checked && !isCorrect && (
+        <button onClick={handleEditAfterWrong} className="action-secondary mt-4 w-full">
+          Edit your answer
+        </button>
       )}
 
       {checked && !isLast && (

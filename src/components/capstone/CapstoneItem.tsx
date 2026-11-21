@@ -12,6 +12,22 @@ import { AudioButton } from '../AudioButton';
 import type { ItemResult } from '../activities/v2-types';
 
 /**
+ * PHASE 10 — the capstone runner's dispatch registry. Every item.type the
+ * capstone's stations, seals and Final Gate can embed, exported for
+ * scripts/audit-types.mjs: a capstone type missing here FAILS the audit
+ * instead of rendering a generic fallback. (shortResponse is runner-owned —
+ * see ShortResponse below.)
+ */
+export const CAPSTONE_HANDLED_ITEM_TYPES: readonly string[] = [
+  'pictureToWord', 'wordToPicture', 'gapFill', 'oddOneOut',
+  'audioToWord', 'audioQuestion', 'errorCorrection',
+  'sentenceBuilder', 'sentenceRepair', 'typeIt',
+  'gist', 'detail', 'tapSentence', 'findSentence',
+  'personalResponse', 'monologue', 'shortResponse',
+  'transform', 'questionForms', 'notice', 'audioToPicture', 'audioGapFill', 'preReadVocab',
+];
+
+/**
  * Renders ONE capstone item through the course's existing mechanics.
  *
  * Assessment contract (Part C): no teach card, no hint, and — critically —

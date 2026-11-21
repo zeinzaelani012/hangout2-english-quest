@@ -1,0 +1,1486 @@
+{
+  "meta": {
+    "pack": "sample-teacher-mode",
+    "version": "1.0",
+    "purpose": "Fixture for building and testing all three Teacher Mode tabs before real class data exists.",
+    "provenance": "SYNTHETIC. Not real learners. Constructed so every display branch is exercised.",
+    "coverage": {
+      "learners": 12,
+      "selfAssessmentRecords": 36,
+      "capstoneAttempts": 4,
+      "outcomes": {
+        "issued": 1,
+        "pending": 2,
+        "not_issued": 1
+      }
+    },
+    "expected": {
+      "capstone": {
+        "Khansa Lubna": {
+          "overall": 95.0,
+          "outcome": "issued",
+          "skillScores": {
+            "speaking": 80.0,
+            "vocabulary": 100.0,
+            "grammar": 100.0,
+            "reading": 100.0,
+            "listening": 100.0,
+            "writing": 100.0
+          }
+        },
+        "Shifa Amalia": {
+          "overall": 75.0,
+          "outcome": "pending",
+          "skillScores": {
+            "speaking": 40.0,
+            "vocabulary": 100.0,
+            "grammar": 66.7,
+            "reading": 100.0,
+            "listening": 100.0,
+            "writing": 50.0
+          }
+        },
+        "Rania Adiba": {
+          "overall": 50.0,
+          "outcome": "pending",
+          "skillScores": {
+            "speaking": 20.0,
+            "vocabulary": 60.0,
+            "grammar": 66.7,
+            "reading": 66.7,
+            "listening": 50.0,
+            "writing": 50.0
+          }
+        },
+        "Dinda Ayu Lestari": {
+          "overall": 35.0,
+          "outcome": "not_issued",
+          "skillScores": {
+            "speaking": 20.0,
+            "vocabulary": 40.0,
+            "grammar": 33.3,
+            "reading": 33.3,
+            "listening": 50.0,
+            "writing": 50.0
+          }
+        }
+      },
+      "note": "Shifa Amalia is the critical case: overall 75.0 is above 70 but Speaking is 40, so the outcome must be PENDING, not ISSUED.",
+      "selfCheck": {
+        "overconfidentLearners": [
+          "Rania Adiba"
+        ],
+        "underconfidentLearners": [
+          "Dinda Ayu Lestari",
+          "Nabila Putri"
+        ],
+        "perLearnerFlags": {
+          "Aisyah Nur Fadhilah": {
+            "high": 0,
+            "low": 0
+          },
+          "Fatimah Az-Zahra": {
+            "high": 0,
+            "low": 0
+          },
+          "Zahra Aulia": {
+            "high": 0,
+            "low": 0
+          },
+          "Nabila Putri": {
+            "high": 0,
+            "low": 2
+          },
+          "Salma Kamila": {
+            "high": 0,
+            "low": 0
+          },
+          "Hana Salsabila": {
+            "high": 0,
+            "low": 0
+          },
+          "Rania Adiba": {
+            "high": 4,
+            "low": 0
+          },
+          "Dinda Ayu Lestari": {
+            "high": 0,
+            "low": 8
+          },
+          "Khansa Lubna": {
+            "high": 0,
+            "low": 0
+          },
+          "Shifa Amalia": {
+            "high": 0,
+            "low": 0
+          },
+          "Alifa Rahma": {
+            "high": 0,
+            "low": 0
+          },
+          "Naila Husna": {
+            "high": 0,
+            "low": 0
+          }
+        },
+        "note": "Rania Adiba and Dinda Ayu Lestari rate themselves 3 while scoring low = 'high' flags. Dinda rates 1 while scoring well above 70 in some skills = 'low' flags too, on the same tab."
+      }
+    }
+  },
+  "roster": [
+    {
+      "name": "Aisyah Nur Fadhilah",
+      "class": "8A"
+    },
+    {
+      "name": "Fatimah Az-Zahra",
+      "class": "8A"
+    },
+    {
+      "name": "Zahra Aulia",
+      "class": "8A"
+    },
+    {
+      "name": "Nabila Putri",
+      "class": "8A"
+    },
+    {
+      "name": "Salma Kamila",
+      "class": "8A"
+    },
+    {
+      "name": "Hana Salsabila",
+      "class": "8A"
+    },
+    {
+      "name": "Rania Adiba",
+      "class": "8A"
+    },
+    {
+      "name": "Dinda Ayu Lestari",
+      "class": "8A"
+    },
+    {
+      "name": "Khansa Lubna",
+      "class": "9A"
+    },
+    {
+      "name": "Shifa Amalia",
+      "class": "9A"
+    },
+    {
+      "name": "Alifa Rahma",
+      "class": "9A"
+    },
+    {
+      "name": "Naila Husna",
+      "class": "9A"
+    }
+  ],
+  "selfAssessment": {
+    "Aisyah Nur Fadhilah": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 85,
+          "grammar": 78,
+          "listening": 60,
+          "reading": 72,
+          "writing": 55,
+          "speaking": 68
+        },
+        "hardest": "writing",
+        "note": "I want to speak more slowly.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 1,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 80,
+          "grammar": 65,
+          "listening": 58,
+          "reading": 70,
+          "writing": 50,
+          "speaking": 62
+        },
+        "hardest": "writing",
+        "note": "The listening was fast.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 88,
+          "grammar": 82,
+          "listening": 66,
+          "reading": 75,
+          "writing": 60,
+          "speaking": 72
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Fatimah Az-Zahra": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 62,
+          "grammar": 58,
+          "listening": 52,
+          "reading": 60,
+          "writing": 48,
+          "speaking": 55
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 1,
+          "reading": 2,
+          "writing": 1,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 58,
+          "grammar": 54,
+          "listening": 44,
+          "reading": 56,
+          "writing": 45,
+          "speaking": 52
+        },
+        "hardest": "listening",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 1,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 65,
+          "grammar": 60,
+          "listening": 50,
+          "reading": 62,
+          "writing": 52,
+          "speaking": 58
+        },
+        "hardest": "listening",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Zahra Aulia": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 2,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 88,
+          "grammar": 85,
+          "listening": 80,
+          "reading": 86,
+          "writing": 70,
+          "speaking": 84
+        },
+        "hardest": "writing",
+        "note": "Nothing, it was easy.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 2,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 90,
+          "grammar": 88,
+          "listening": 82,
+          "reading": 88,
+          "writing": 74,
+          "speaking": 86
+        },
+        "hardest": "writing",
+        "note": "Grammar: -es words.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 92,
+          "grammar": 90,
+          "listening": 86,
+          "reading": 90,
+          "writing": 78,
+          "speaking": 88
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Nabila Putri": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 1,
+          "grammar": 1,
+          "listening": 2,
+          "reading": 1,
+          "writing": 1,
+          "speaking": 1
+        },
+        "accuracy": {
+          "vocabulary": 72,
+          "grammar": 68,
+          "listening": 66,
+          "reading": 70,
+          "writing": 62,
+          "speaking": 64
+        },
+        "hardest": "writing",
+        "note": "Everything was hard.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 1,
+          "grammar": 1,
+          "listening": 1,
+          "reading": 1,
+          "writing": 1,
+          "speaking": 1
+        },
+        "accuracy": {
+          "vocabulary": 70,
+          "grammar": 66,
+          "listening": 60,
+          "reading": 68,
+          "writing": 58,
+          "speaking": 62
+        },
+        "hardest": "writing",
+        "note": "I need the words again.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 1,
+          "listening": 2,
+          "reading": 1,
+          "writing": 1,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 75,
+          "grammar": 70,
+          "listening": 68,
+          "reading": 72,
+          "writing": 64,
+          "speaking": 66
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Salma Kamila": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 82,
+          "grammar": 70,
+          "listening": 64,
+          "reading": 74,
+          "writing": 60,
+          "speaking": 68
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 84,
+          "grammar": 72,
+          "listening": 66,
+          "reading": 76,
+          "writing": 62,
+          "speaking": 70
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 86,
+          "grammar": 78,
+          "listening": 68,
+          "reading": 78,
+          "writing": 66,
+          "speaking": 72
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Hana Salsabila": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 3,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 66,
+          "grammar": 72,
+          "listening": 78,
+          "reading": 68,
+          "writing": 64,
+          "speaking": 70
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 64,
+          "grammar": 70,
+          "listening": 74,
+          "reading": 66,
+          "writing": 62,
+          "speaking": 68
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 3,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 68,
+          "grammar": 74,
+          "listening": 80,
+          "reading": 70,
+          "writing": 66,
+          "speaking": 72
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Rania Adiba": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 58,
+          "grammar": 52,
+          "listening": 48,
+          "reading": 50,
+          "writing": 52,
+          "speaking": 40
+        },
+        "hardest": "speaking",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 60,
+          "grammar": 54,
+          "listening": 50,
+          "reading": 52,
+          "writing": 54,
+          "speaking": 42
+        },
+        "hardest": "speaking",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 62,
+          "grammar": 56,
+          "listening": 52,
+          "reading": 54,
+          "writing": 56,
+          "speaking": 44
+        },
+        "hardest": "speaking",
+        "note": "I want to try the speaking again.",
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Dinda Ayu Lestari": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 1,
+          "grammar": 1,
+          "listening": 1,
+          "reading": 1,
+          "writing": 1,
+          "speaking": 1
+        },
+        "accuracy": {
+          "vocabulary": 74,
+          "grammar": 70,
+          "listening": 68,
+          "reading": 72,
+          "writing": 66,
+          "speaking": 64
+        },
+        "hardest": "speaking",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 1,
+          "grammar": 1,
+          "listening": 1,
+          "reading": 1,
+          "writing": 1,
+          "speaking": 1
+        },
+        "accuracy": {
+          "vocabulary": 76,
+          "grammar": 72,
+          "listening": 70,
+          "reading": 74,
+          "writing": 68,
+          "speaking": 66
+        },
+        "hardest": "speaking",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 1,
+          "grammar": 1,
+          "listening": 2,
+          "reading": 1,
+          "writing": 1,
+          "speaking": 1
+        },
+        "accuracy": {
+          "vocabulary": 78,
+          "grammar": 74,
+          "listening": 72,
+          "reading": 76,
+          "writing": 70,
+          "speaking": 68
+        },
+        "hardest": "speaking",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Khansa Lubna": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 90,
+          "grammar": 92,
+          "listening": 88,
+          "reading": 90,
+          "writing": 84,
+          "speaking": 88
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 92,
+          "grammar": 94,
+          "listening": 90,
+          "reading": 92,
+          "writing": 86,
+          "speaking": 90
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 3,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 94,
+          "grammar": 95,
+          "listening": 92,
+          "reading": 94,
+          "writing": 88,
+          "speaking": 92
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Shifa Amalia": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 78,
+          "grammar": 64,
+          "listening": 72,
+          "reading": 80,
+          "writing": 58,
+          "speaking": 76
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 80,
+          "grammar": 66,
+          "listening": 74,
+          "reading": 82,
+          "writing": 60,
+          "speaking": 78
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 84,
+          "grammar": 70,
+          "listening": 78,
+          "reading": 84,
+          "writing": 64,
+          "speaking": 82
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Alifa Rahma": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 68,
+          "grammar": 64,
+          "listening": 60,
+          "reading": 66,
+          "writing": 58,
+          "speaking": 62
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 70,
+          "grammar": 66,
+          "listening": 62,
+          "reading": 68,
+          "writing": 60,
+          "speaking": 64
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 2,
+          "grammar": 2,
+          "listening": 2,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 72,
+          "grammar": 68,
+          "listening": 64,
+          "reading": 70,
+          "writing": 62,
+          "speaking": 66
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ],
+    "Naila Husna": [
+      {
+        "unit": 1,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 2,
+          "listening": 3,
+          "reading": 3,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 80,
+          "grammar": 76,
+          "listening": 82,
+          "reading": 78,
+          "writing": 66,
+          "speaking": 74
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 3,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 2,
+          "listening": 3,
+          "reading": 2,
+          "writing": 2,
+          "speaking": 2
+        },
+        "accuracy": {
+          "vocabulary": 82,
+          "grammar": 78,
+          "listening": 84,
+          "reading": 80,
+          "writing": 68,
+          "speaking": 76
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      },
+      {
+        "unit": 5,
+        "level": "core",
+        "ratings": {
+          "vocabulary": 3,
+          "grammar": 3,
+          "listening": 3,
+          "reading": 3,
+          "writing": 2,
+          "speaking": 3
+        },
+        "accuracy": {
+          "vocabulary": 84,
+          "grammar": 80,
+          "listening": 86,
+          "reading": 82,
+          "writing": 70,
+          "speaking": 78
+        },
+        "hardest": "writing",
+        "note": null,
+        "completedAt": 1795510800000,
+        "skipped": false
+      }
+    ]
+  },
+  "capstoneAttempts": [
+    {
+      "id": "cap-khansa-2026-12-01",
+      "learner": "Khansa Lubna",
+      "startedAt": "2026-12-01T09:00:00+00:00",
+      "finishedAt": "2026-12-01T09:00:00+00:00",
+      "stations": {},
+      "seals": {},
+      "finalGate": {
+        "items": [
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "listening",
+            "correct": true
+          },
+          {
+            "skill": "listening",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "writing",
+            "correct": true
+          },
+          {
+            "skill": "writing",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          }
+        ]
+      },
+      "skillScores": {
+        "speaking": 80.0,
+        "vocabulary": 100.0,
+        "grammar": 100.0,
+        "reading": 100.0,
+        "listening": 100.0,
+        "writing": 100.0
+      },
+      "overall": 95.0,
+      "outcome": "issued",
+      "certificateId": "A7F2-91C4",
+      "issuedAt": "2026-12-01T09:00:00+00:00",
+      "releasedBy": null
+    },
+    {
+      "id": "cap-shifa-2026-12-01",
+      "learner": "Shifa Amalia",
+      "startedAt": "2026-12-01T09:20:00+00:00",
+      "finishedAt": "2026-12-01T09:20:00+00:00",
+      "stations": {},
+      "seals": {},
+      "finalGate": {
+        "items": [
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": false
+          },
+          {
+            "skill": "listening",
+            "correct": true
+          },
+          {
+            "skill": "listening",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "writing",
+            "correct": true
+          },
+          {
+            "skill": "writing",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          }
+        ]
+      },
+      "skillScores": {
+        "speaking": 40.0,
+        "vocabulary": 100.0,
+        "grammar": 66.7,
+        "reading": 100.0,
+        "listening": 100.0,
+        "writing": 50.0
+      },
+      "overall": 75.0,
+      "outcome": "pending",
+      "certificateId": null
+    },
+    {
+      "id": "cap-rania-2026-12-01",
+      "learner": "Rania Adiba",
+      "startedAt": "2026-12-01T10:00:00+00:00",
+      "finishedAt": "2026-12-01T10:00:00+00:00",
+      "stations": {},
+      "seals": {},
+      "finalGate": {
+        "items": [
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": false
+          },
+          {
+            "skill": "vocabulary",
+            "correct": false
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": false
+          },
+          {
+            "skill": "listening",
+            "correct": true
+          },
+          {
+            "skill": "listening",
+            "correct": false
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": false
+          },
+          {
+            "skill": "writing",
+            "correct": true
+          },
+          {
+            "skill": "writing",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          }
+        ]
+      },
+      "skillScores": {
+        "speaking": 20.0,
+        "vocabulary": 60.0,
+        "grammar": 66.7,
+        "reading": 66.7,
+        "listening": 50.0,
+        "writing": 50.0
+      },
+      "overall": 50.0,
+      "outcome": "pending",
+      "certificateId": null
+    },
+    {
+      "id": "cap-dinda-2026-12-01",
+      "learner": "Dinda Ayu Lestari",
+      "startedAt": "2026-12-01T10:30:00+00:00",
+      "finishedAt": "2026-12-01T10:30:00+00:00",
+      "stations": {},
+      "seals": {},
+      "finalGate": {
+        "items": [
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": true
+          },
+          {
+            "skill": "vocabulary",
+            "correct": false
+          },
+          {
+            "skill": "vocabulary",
+            "correct": false
+          },
+          {
+            "skill": "vocabulary",
+            "correct": false
+          },
+          {
+            "skill": "grammar",
+            "correct": true
+          },
+          {
+            "skill": "grammar",
+            "correct": false
+          },
+          {
+            "skill": "grammar",
+            "correct": false
+          },
+          {
+            "skill": "listening",
+            "correct": true
+          },
+          {
+            "skill": "listening",
+            "correct": false
+          },
+          {
+            "skill": "reading",
+            "correct": true
+          },
+          {
+            "skill": "reading",
+            "correct": false
+          },
+          {
+            "skill": "reading",
+            "correct": false
+          },
+          {
+            "skill": "writing",
+            "correct": true
+          },
+          {
+            "skill": "writing",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": true
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          },
+          {
+            "skill": "speaking",
+            "correct": false
+          }
+        ]
+      },
+      "skillScores": {
+        "speaking": 20.0,
+        "vocabulary": 40.0,
+        "grammar": 33.3,
+        "reading": 33.3,
+        "listening": 50.0,
+        "writing": 50.0
+      },
+      "overall": 35.0,
+      "outcome": "not_issued"
+    }
+  ]
+}

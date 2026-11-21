@@ -26,9 +26,32 @@ const CHOICE_TYPES = new Set([
 ]);
 
 /**
+ * PHASE 10 — the runner's dispatch registry. Every embedded item.type the
+ * heterogeneous runner handles, exported for scripts/audit-types.mjs: a type
+ * that appears in a CP1/BOSS/mixedRecall payload but is missing here FAILS
+ * the audit instead of falling through to a choice grid. Kept as a FLAT
+ * literal list so the audit can verify it from source. Item order is exactly
+ * the pack order; the dispatch below never shuffles.
+ */
+export const RUNNER_HANDLED_ITEM_TYPES: readonly string[] = [
+  // structured mechanics
+  'twoPass', 'grouping', 'tapSentence', 'speaking',
+  'errorCorrection', 'sentenceBuilder', 'spelling', 'typeIt', 'sentenceRepair',
+  // D2-converted items carry no type — rendered as typed answers
+  '(none)',
+  // choice mechanics (CHOICE_TYPES below)
+  'pictureToWord', 'wordToPicture', 'audioToWord', 'audioToPicture',
+  'audioQuestion', 'gapFill', 'oddOneOut', 'questionForms', 'transform',
+  'preReadVocab', 'notice', 'audioGapFill',
+];
+
+/**
  * CHECKPOINT_RUNNER — checkpoint (CP1), boss and mixedRecall. Not a new
  * mechanic: the payload's items render through the mechanics above, one at a
  * time, behind a single progress bar. XP is awarded once at the end.
+ * Speaking items render inline in the mixed sequence and record the mark
+ * only once a recording (or the no-mic self-check) exists — a skipped
+ * speaking item counts as unanswered via majorityCorrect.
  */
 export function CheckpointRunner({ activity, onResult, onBonus }: Props) {
   const items = v2Items(activity.payload);
@@ -133,7 +156,12 @@ export function CheckpointRunner({ activity, onResult, onBonus }: Props) {
       />
     );
   } else {
-    body = <p className="text-sm text-muted">This activity type is not yet supported.</p>;
+    // PHASE 10 — a missing handler is a build problem, not a learner one:
+    // shout in dev (the audit catches it too) and say so plainly.
+    if (import.meta.env.DEV) {
+      console.error(`[CheckpointRunner] no handler for item type "${item.type}" (unit ${activity.unitId ?? '?'}, item ${item.id ?? index})`);
+    }
+    body = <p className="text-sm text-muted">This question type is not available in this build.</p>;
   }
 
   return (

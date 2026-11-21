@@ -133,7 +133,10 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
   const handleReason = (chip: string) => {
     if (reason) return;
     setReason(chip);
-    if (chip === whyChoices[0]) onBonus?.();
+    // The +1 XP depth bonus exists only where the pack actually explains the
+    // rule (item.why present). For self-report items without a why there is
+    // no right answer to reward.
+    if (chip === whyChoices[0] && item.why) onBonus?.();
   };
 
   const handleNext = () => {
@@ -307,7 +310,12 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
         </div>
       )}
 
-      {/* D1 reason chip — after the choice, before the explanation */}
+      {/* D1 reason chip — PHASE 10: this is a SELF-REPORT, not a check. The
+          chip always appears when the slot declares whyChoices, even when the
+          item has no `why` of its own (347 items across L1/V3/G2/V8). When a
+          why exists it is shown after the chip as the pack's explanation —
+          the learner's chosen chip is never marked wrong, and no empty
+          explanation box is ever rendered when it is absent. */}
       {answered && whyChoices.length > 0 && !reason && (
         <div className="mt-4 rounded-xl border border-brand/30 bg-teal-50/50 p-4">
           <p className="mb-3 text-sm font-bold text-ink">Why is that the right answer?</p>
@@ -345,7 +353,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
             <div>
               <p className="font-heading text-sm font-extrabold text-ink">
                 {isCorrect ? 'Correct' : 'Review this answer'}
-                {reason && reasonCorrect && (
+                {reason && reasonCorrect && item.why && (
                   <span className="ml-2 inline-flex items-center rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-extrabold text-mint">
                     +1 XP
                   </span>
@@ -356,19 +364,11 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
                   <span className="font-bold">Answer: </span>{item.answer}
                 </p>
               )}
-              {(item.why ?? (reasonCorrect ? whyChoices[0] : undefined)) && (
-                <p className="mt-1 text-sm leading-6 text-muted">{item.why ?? whyChoices[0]}</p>
-              )}
+              {/* Only a REAL why renders. Absence is a normal state — never an
+                  empty explanation box, and never a fabricated rule. */}
+              {item.why && <p className="mt-1 text-sm leading-6 text-muted">{item.why}</p>}
             </div>
           </div>
-        </div>
-      )}
-
-      {/* D1 wrong reason: the rule card appears */}
-      {answered && reason && !reasonCorrect && (
-        <div className="mt-3 rounded-xl border border-brand/30 bg-teal-50 p-4">
-          <p className="eyebrow mb-1">Rule</p>
-          <p className="text-sm leading-6 text-ink">{item.why ?? whyChoices[0]}</p>
         </div>
       )}
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Activity } from '../../types';
 import { CheckCircle2, XCircle } from 'lucide-react';
-import { levenshtein } from '../../lib/speech';
+import { damerauLevenshtein, normaliseForMatch, spelledOut } from '../../lib/normalise';
 import { VocabIllustration } from '../Illustrations';
 import { AudioButton } from '../AudioButton';
 import { majorityCorrect, normalizeSentence, v2Items, type ItemResult } from './v2-types';
@@ -51,23 +51,31 @@ export function TypedAnswer({ activity, onResult }: Props) {
   const item = items[index];
   const isLast = index >= items.length - 1;
 
-  const evaluate = (value: string): boolean => {
-    if (!item) return false;
-    const answer = item.answer.trim();
-    const user = value.trim();
+  // Whether the accepted answer came through the typo tolerance — the UI must
+  // say so plainly ("Close enough — the word is spelled s-c-h-o-o-l."), never
+  // accept silently. The spelling is the point.
+  const [acceptedAsTypo, setAcceptedAsTypo] = useState(false);
+
+  const evaluate = (value: string): { ok: boolean; typo: boolean } => {
+    if (!item) return { ok: false, typo: false };
+    const answer = normaliseForMatch(item.answer);
+    const user = normaliseForMatch(value);
     if (isRepair) {
-      return normalizeSentence(user) === normalizeSentence(answer);
+      return { ok: user === answer, typo: false };
     }
-    // typeIt: exact match, or a one-letter typo on longer answers when the
-    // item doesn't switch the tolerance off.
-    if (user.toLowerCase() === answer.toLowerCase()) return true;
+    // typeIt: exact match, or a Damerau-Levenshtein distance ≤ 1 (insertion,
+    // deletion, substitution OR transposition) — never for answers shorter
+    // than four characters, and only when the item allows it.
+    if (user === answer) return { ok: true, typo: false };
     const allowTypo = (item as any).allowOneLetterTypo !== false;
-    return allowTypo && answer.length >= 5 && levenshtein(user.toLowerCase(), answer.toLowerCase()) <= 1;
+    const ok = allowTypo && answer.length >= 4 && damerauLevenshtein(user, answer) <= 1;
+    return { ok, typo: ok };
   };
 
   const handleCheck = () => {
     if (!item) return;
-    const ok = evaluate(text);
+    const { ok, typo } = evaluate(text);
+    setAcceptedAsTypo(typo);
     setChecked(true);
     // Store the result per item so a retry replaces the previous attempt
     // instead of counting the item twice.
@@ -86,16 +94,18 @@ export function TypedAnswer({ activity, onResult }: Props) {
     setIndex(i => i + 1);
     setText('');
     setChecked(false);
+    setAcceptedAsTypo(false);
   };
 
   const handleRetry = () => {
     setChecked(false);
     setText('');
+    setAcceptedAsTypo(false);
   };
 
   if (!item) return null;
 
-  const isCorrect = checked && evaluate(text);
+  const isCorrect = checked && evaluate(text).ok;
 
   return (
     <div>
@@ -166,6 +176,11 @@ export function TypedAnswer({ activity, onResult }: Props) {
             {isCorrect ? <CheckCircle2 size={18} className="text-mint" /> : <XCircle size={18} className="text-coral" />}
             {isCorrect ? 'Correct' : 'Check the difference'}
           </p>
+          {isCorrect && acceptedAsTypo && !isRepair && (
+            <p className="mt-1 text-sm font-semibold text-sun">
+              Close enough — the word is spelled {spelledOut(item.answer.replace(/[.!?]+$/, ''))}.
+            </p>
+          )}
           {!isCorrect && isRepair && text.trim() && (
             <p className="mt-2 text-sm leading-7">
               {diffWords(text, item.answer).map((w, i) => (
