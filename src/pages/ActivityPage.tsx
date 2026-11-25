@@ -314,16 +314,16 @@ export function ActivityPage() {
   const skillColor = station.id === 'boss' || station.id === 'checkpoint' ? '#0F766E' : SKILL_COLORS[station.skill];
 
   return (
-    <div className="mx-auto max-w-[900px] px-4 py-4 sm:px-6 sm:py-6">
-      {/* Sticky header */}
-      <div className="sticky top-16 z-20 -mx-4 mb-5 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-lg sm:mx-0 sm:rounded-card sm:border sm:px-4 sm:shadow-card">
+    <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-[900px] flex-col px-4 py-4 sm:px-6 sm:py-6">
+      {/* Compact progress header */}
+      <div className="sticky top-16 z-20 -mx-4 mb-5 border-b border-slate-200 bg-white/95 px-4 py-2.5 backdrop-blur-lg sm:mx-0 sm:rounded-card sm:border sm:shadow-card">
         <div className="flex items-center justify-between gap-3">
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="flex min-w-0 items-center gap-2">
             <button
               onClick={() => navigate(`/unit/${unit.id}/${levelKey}`)}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-ink transition-colors hover:bg-slate-100"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-ink transition-colors hover:bg-slate-100"
               aria-label="Back to quest map"
-              style={{ minWidth: 44, minHeight: 44 }}
+              style={{ minWidth: 40, minHeight: 40 }}
             >
               <ArrowLeft size={18} />
             </button>
@@ -335,7 +335,7 @@ export function ActivityPage() {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex shrink-0 items-center gap-2">
             {/* Part F — compact voice launcher on listening/speaking stations */}
             {(station.skill === 'listening' || station.skill === 'speaking') && (
               <VoiceLauncherButton
@@ -427,8 +427,8 @@ export function ActivityPage() {
 
       {/* Activity body — keyed by activity id so consecutive same-type
           activities (e.g. gapFill → gapFill) start with fresh state */}
-      <div key={currentActivity.id} className="surface-card mb-4 p-5 sm:p-8">
-        <div className="mb-6 border-b border-slate-100 pb-5">
+      <div key={currentActivity.id} className="surface-card mb-4 p-4 sm:p-7">
+        <div className="mb-5 border-b border-slate-100 pb-4">
           <p className="eyebrow mb-2">Activity {currentIndex + 1}</p>
           <p className="text-base font-bold leading-7 text-ink sm:text-lg">{currentActivity.prompt}</p>
         </div>
@@ -471,7 +471,7 @@ export function ActivityPage() {
       )}
 
       {/* Footer: hint + action */}
-      <div className="sticky bottom-16 z-20 -mx-4 flex items-center justify-between gap-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-lg sm:bottom-4 sm:mx-0 sm:rounded-card sm:border sm:shadow-card">
+      <div className="sticky bottom-16 z-20 -mx-4 mt-auto flex items-center justify-between gap-4 border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-lg sm:bottom-4 sm:mx-0 sm:rounded-card sm:border sm:shadow-card">
         {/* Hint button */}
         <button
           onClick={() => setShowHint(!showHint)}

@@ -20,7 +20,7 @@ export default {
         body: ['"Inter Variable"', 'Inter', 'sans-serif'],
       },
       borderRadius: {
-        card: '16px',
+        card: '10px',
         pill: '999px',
       },
       boxShadow: {

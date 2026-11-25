@@ -52,6 +52,7 @@ export function AudioButton({
     mountedRef.current = true;
     return () => {
       mountedRef.current = false;
+      playIdRef.current++;
       stop();
     };
   }, []);

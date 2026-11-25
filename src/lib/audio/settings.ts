@@ -17,6 +17,10 @@ export interface AudioSettings {
   characterVoiceURI: string | null;
   /** Teacher lock (F8): learners see the picker read-only. */
   voiceLocked: boolean;
+  /** Background music on/off — device-scoped, like the rest of this key. */
+  musicEnabled: boolean;
+  /** Background music volume, 0–1, default 35%. */
+  musicVolume: number;
 }
 
 const KEY = 'h2eq.audio.v1';
@@ -29,6 +33,8 @@ const DEFAULTS: AudioSettings = {
   characterVoices: false,
   characterVoiceURI: null,
   voiceLocked: false,
+  musicEnabled: true,
+  musicVolume: 0.35,
 };
 
 let cached: AudioSettings | null = null;

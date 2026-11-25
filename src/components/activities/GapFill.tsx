@@ -171,7 +171,8 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
         {slotAudio && (
           <div className="mb-3">
             <AudioButton
-              audioKey={`choice-slot-${activity.id}-${index}`}
+              key={`choice-slot-audio-${activity.id}-${item.id ?? index}`}
+              audioKey={`choice-slot-${activity.id}-${item.id ?? index}`}
               fallbackText={slotAudio}
               rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}
               label="Listen to the clip"
@@ -188,6 +189,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
         {item.audio && (
           <div className="mb-3">
             <AudioButton
+              key={`choice-item-audio-${activity.id}-${item.id ?? index}`}
               audioKey={`choice-${activity.id}-${item.id ?? index}`}
               fallbackText={item.audio}
               rate={activity.difficulty === 'challenging' ? 1.0 : 0.9}

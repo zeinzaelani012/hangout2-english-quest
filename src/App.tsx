@@ -4,7 +4,7 @@ import { ProgressProvider, useProgress } from './context/ProgressContext';
 import { MenuDrawer } from './components/MenuDrawer';
 import { ProfileModal } from './components/ProfileModal';
 import { DebugPanel } from './components/DebugPanel';
-import { stopOnRouteChange } from './lib/audio';
+import { stopOnRouteChange, syncMusicForRoute } from './lib/audio';
 
 // Route-level code splitting — every page is a separate chunk
 const Dashboard = lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })));
@@ -55,8 +55,11 @@ function AppContent() {
 
   // Part D rule 4 / Part K rule 7 — audio never bleeds across screens: stop
   // everything on every route change, and after 30 s of tab backgrounding.
+  // Background music is the one exception: it cross-fades to the next
+  // surface's mood instead of stopping.
   useEffect(() => {
     stopOnRouteChange();
+    syncMusicForRoute(location.pathname);
   }, [location.pathname, location.search]);
 
   useEffect(() => {

@@ -8,6 +8,7 @@ import { resolveFor, probeFile, manifestClip, manifestClips } from './resolve';
 import { speak, cancelSpeech, isSpeechSpeaking } from './speak';
 import { playFile, stopFiles, preloadFile } from './player';
 import { loadAudioSettings, saveAudioSettings, onAudioSettingsChange } from './settings';
+import { syncMusicForRoute, stopMusic, trackForRoute, duckMusic } from './music';
 import {
   getVoicesList, onVoicesChanged, groupVoices, vendorOf, isNeural, isEnglish,
   languageName, pickDefaultVoice, resolveVoice,
@@ -83,6 +84,7 @@ export function play(text: string, opts: PlayOptions = {}): Promise<void> {
   const norm = text.trim().replace(/\s+/g, ' ');
   const thisPlay = ++currentPlayId;
   const volume = effectiveVolume();
+  duckMusic(true);
 
   return resolveFor(role, norm).then(resolution => {
     if (thisPlay !== currentPlayId) return; // superseded by a newer play or stop
@@ -99,6 +101,8 @@ export function play(text: string, opts: PlayOptions = {}): Promise<void> {
       volume,
       pitch: opts.pitch ?? pitch ?? 1.0,
     });
+  }).finally(() => {
+    if (thisPlay === currentPlayId) duckMusic(false);
   });
 }
 
@@ -123,6 +127,7 @@ export function stop(): void {
   currentPlayId++;
   cancelSpeech();
   stopFiles();
+  duckMusic(false);
 }
 
 export function isSpeaking(): boolean {
@@ -155,5 +160,9 @@ export {
   loadAudioSettings,
   saveAudioSettings,
   onAudioSettingsChange,
+  syncMusicForRoute,
+  stopMusic,
+  trackForRoute,
 };
 export type { VoiceGroup } from './voices';
+export type { MusicTrackId } from './music';

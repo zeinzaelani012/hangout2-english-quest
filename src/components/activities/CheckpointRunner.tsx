@@ -90,7 +90,7 @@ export function CheckpointRunner({ activity, onResult, onBonus }: Props) {
   // Build the sub-activity for this item and dispatch to its mechanic.
   const sub: Activity = {
     ...activity,
-    id: `${activity.id}-${item.id ?? index}`,
+    id: `${activity.id}-item-${index}-${item.id ?? 'unnamed'}`,
     prompt: (item.q ?? item.prompt ?? activity.prompt) as string,
   };
 
@@ -181,7 +181,7 @@ export function CheckpointRunner({ activity, onResult, onBonus }: Props) {
       </div>
 
       {/* Keyed by sub-id so consecutive same-mechanic items start fresh */}
-      <div key={sub.id}>{body}</div>
+      <div key={`${activity.id}-item-${index}-${item.id ?? 'unnamed'}`}>{body}</div>
 
       {itemDone && (
         <div className="mt-4 flex items-center gap-3">
