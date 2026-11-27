@@ -29,12 +29,20 @@ export function SettingsPage() {
   };
 
   const handleToggleMusic = (v: boolean) => {
-    saveAudioSettings({ musicEnabled: v });
+    // Turning music on at 0% would look enabled but stay silent.
+    saveAudioSettings({
+      musicEnabled: v,
+      musicVolume: v && audio.musicVolume <= 0 ? 0.35 : audio.musicVolume,
+    });
   };
 
   const handleMusicVolume = (value: number) => {
     const musicVolume = Math.max(0, Math.min(1, value / 100));
-    saveAudioSettings({ musicVolume });
+    saveAudioSettings({
+      musicVolume,
+      // 0% is mute; any higher value is a request to hear the music.
+      musicEnabled: musicVolume > 0,
+    });
   };
 
   const handleUiSoundsVolume = (value: number) => {
@@ -138,10 +146,35 @@ export function SettingsPage() {
         </div>
 
         <div className="mt-5 border-t border-slate-100 pt-4">
-          <label htmlFor="music-volume" className="mb-1 flex items-center justify-between text-sm font-bold text-ink">
+          <label htmlFor="music-volume" className="mb-2 flex items-center justify-between text-sm font-bold text-ink">
             Music volume
             <span className="tnum text-xs font-semibold text-muted">{Math.round(audio.musicVolume * 100)}%</span>
           </label>
+          <div className="mb-3 flex flex-wrap gap-2">
+            {[
+              { label: 'Quiet', percent: 20 },
+              { label: 'Medium', percent: 35 },
+              { label: 'Loud', percent: 60 },
+            ].map(preset => {
+              const active = Math.round(audio.musicVolume * 100) === preset.percent && audio.musicEnabled;
+              return (
+                <button
+                  key={preset.label}
+                  type="button"
+                  onClick={() => handleMusicVolume(preset.percent)}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-bold transition-colors ${
+                    active
+                      ? 'border-brand bg-teal-50 text-brand'
+                      : 'border-slate-200 bg-white text-ink hover:border-slate-300'
+                  }`}
+                  aria-pressed={active}
+                  style={{ minHeight: 36 }}
+                >
+                  {preset.label}
+                </button>
+              );
+            })}
+          </div>
           <input
             id="music-volume"
             type="range"
@@ -154,8 +187,11 @@ export function SettingsPage() {
             aria-valuemin={0}
             aria-valuemax={100}
             aria-valuenow={Math.round(audio.musicVolume * 100)}
+            aria-label="Background music volume"
           />
-          <p className="mt-1 text-xs text-muted">Applies on this device, separate from the lesson voices.</p>
+          <p className="mt-1 text-xs text-muted">
+            Change it here and the music follows right away, on this device only. Lesson voices have their own volume above.
+          </p>
         </div>
       </div>
 
