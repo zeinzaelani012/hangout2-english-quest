@@ -11,6 +11,7 @@ import {
 } from '../lib/capstone';
 import { CapstoneItemBody, ShortResponse, RecordedPanel } from '../components/capstone/CapstoneItem';
 import { Certificate } from '../components/capstone/Certificate';
+import { playUiSound } from '../lib/audio';
 import type { SelfAssessmentRecord, Skill } from '../types';
 
 /**
@@ -69,6 +70,7 @@ export function FinalGatePage() {
   const gatePassage = item.skill === 'reading' ? passageForUnit(item.unit ?? 0) : undefined;
 
   const handleResult = (correct: boolean | null) => {
+    playUiSound(correct === null ? 'next' : correct ? 'correct' : 'retry');
     recordGateAnswer(profile.name, item.id, item.skill as Skill, correct === true);
     setRecorded({
       skipped: correct === null,
@@ -79,10 +81,12 @@ export function FinalGatePage() {
   const handleNext = () => {
     setRecorded(null);
     if (isLast) {
+      playUiSound('complete');
       finalizeAttempt(profile.name);
       awardCapstoneXP(CAPSTONE_XP.gate);
       navigate('/capstone/final-gate/results');
     } else {
+      playUiSound('next');
       setIndex(i => i + 1);
     }
   };

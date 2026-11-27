@@ -11,6 +11,7 @@ import { TwoPassAudio } from './TwoPassAudio';
 import { RecordAndCompare } from './RecordAndCompare';
 import { majorityCorrect, v2Items, type ItemResult } from './v2-types';
 import { findPassageContaining } from '../../data/unit1/v2';
+import { playUiSound } from '../../lib/audio';
 
 interface Props {
   activity: Activity;
@@ -69,6 +70,7 @@ export function CheckpointRunner({ activity, onResult, onBonus }: Props) {
   };
 
   const handleNext = () => {
+    playUiSound(isLast ? 'complete' : 'next');
     if (isLast) {
       onResult(majorityCorrect(results), {
         correctAnswer: 'Checkpoint complete',

@@ -4,6 +4,7 @@ import { CheckCircle2, XCircle } from 'lucide-react';
 import { damerauLevenshtein, normaliseForMatch, spelledOut } from '../../lib/normalise';
 import { VocabIllustration } from '../Illustrations';
 import { AudioButton } from '../AudioButton';
+import { playUiSound } from '../../lib/audio';
 import { majorityCorrect, normalizeSentence, v2Items, type ItemResult } from './v2-types';
 
 interface Props {
@@ -75,6 +76,7 @@ export function TypedAnswer({ activity, onResult }: Props) {
   const handleCheck = () => {
     if (!item) return;
     const { ok, typo } = evaluate(text);
+    playUiSound(ok ? 'correct' : 'retry');
     setAcceptedAsTypo(typo);
     setChecked(true);
     // Store the result per item so a retry replaces the previous attempt

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import type { Activity, RecordAndComparePayload } from '../../types';
 import { AudioButton } from '../AudioButton';
-import type { AudioRole } from '../../lib/audio';
+import { playUiSound, type AudioRole } from '../../lib/audio';
 import { Mic, MicOff, Check, Star, AlertCircle } from 'lucide-react';
 import { isSupported, listen, score } from '../../lib/speech';
 import { useProgress } from '../../context/ProgressContext';
@@ -85,6 +85,7 @@ function LegacyRecordAndCompare({ activity, onResult }: Props) {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
         const correct = r.stars >= 2;
+        playUiSound(correct ? 'correct' : 'retry');
         onResult(correct, {
           correctAnswer: payload.modelLine,
           rule: r.band,
@@ -128,6 +129,7 @@ function LegacyRecordAndCompare({ activity, onResult }: Props) {
   };
 
   const handleSelfCheckComplete = () => {
+    playUiSound('next');
     setCompleted(true);
     onResult(true, {
       correctAnswer: payload.modelLine,
@@ -136,6 +138,7 @@ function LegacyRecordAndCompare({ activity, onResult }: Props) {
   };
 
   const handleTeacherFallback = () => {
+    playUiSound('next');
     setCompleted(true);
     onResult(true, {
       correctAnswer: payload.modelLine,
@@ -438,6 +441,7 @@ function SpeakingV2({ activity, onResult, mode }: Props & { mode: SpeakingMode }
   };
 
   const completeItem = () => {
+    playUiSound('next');
     setItemDone(true);
     if (isLast) finishActivity();
   };

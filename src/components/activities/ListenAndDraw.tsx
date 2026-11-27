@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { Activity, ListenAndDrawPayload } from '../../types';
 import { AudioButton } from '../AudioButton';
 import { Eraser, Eye, Check } from 'lucide-react';
+import { playUiSound } from '../../lib/audio';
 
 interface Props {
   activity: Activity;
@@ -97,6 +98,7 @@ export function ListenAndDraw({ activity, onResult }: Props) {
   };
 
   const handleComplete = () => {
+    playUiSound('next');
     setCompleted(true);
     onResult(true, {
       correctAnswer: payload.modelSentence,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useProgress } from '../context/ProgressContext';
-import { Mic, MicOff, KeyRound, RotateCcw, UserCog, Music } from 'lucide-react';
+import { Mic, MicOff, KeyRound, RotateCcw, UserCog, Music, Volume2 } from 'lucide-react';
 import { VoicePicker } from '../components/VoicePicker';
 import { loadAudioSettings, saveAudioSettings, onAudioSettingsChange } from '../lib/audio';
 
@@ -35,6 +35,11 @@ export function SettingsPage() {
   const handleMusicVolume = (value: number) => {
     const musicVolume = Math.max(0, Math.min(1, value / 100));
     saveAudioSettings({ musicVolume });
+  };
+
+  const handleUiSoundsVolume = (value: number) => {
+    const uiSoundsVolume = Math.max(0, Math.min(0.35, value / 100));
+    saveAudioSettings({ uiSoundsVolume });
   };
 
   return (
@@ -151,6 +156,55 @@ export function SettingsPage() {
             aria-valuenow={Math.round(audio.musicVolume * 100)}
           />
           <p className="mt-1 text-xs text-muted">Applies on this device, separate from the lesson voices.</p>
+        </div>
+      </div>
+
+      {/* Interface sounds — separate from lesson voice and background music */}
+      <div className="surface-card mb-4 p-5 sm:p-6">
+        <h3 className="mb-1 font-heading text-lg font-extrabold text-ink">Interface sounds</h3>
+        <p className="mb-4 text-xs leading-5 text-muted">
+          Quiet cues for choosing, correct answers, retrying, moving on, and finishing. They never replace lesson audio.
+        </p>
+        <div className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <div className="flex items-center gap-3">
+            <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${audio.uiSoundsEnabled ? 'bg-emerald-50' : 'bg-slate-100'}`}>
+              <Volume2 size={18} className={audio.uiSoundsEnabled ? 'text-mint' : 'text-muted'} />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-ink">Button and answer cues</p>
+              <p className="text-xs text-muted">Short, gentle sounds</p>
+            </div>
+          </div>
+          <button
+            onClick={() => saveAudioSettings({ uiSoundsEnabled: !audio.uiSoundsEnabled })}
+            className={`relative h-6 w-12 shrink-0 rounded-full transition-colors ${audio.uiSoundsEnabled ? 'bg-brand' : 'bg-slate-300'}`}
+            role="switch"
+            aria-checked={audio.uiSoundsEnabled}
+            aria-label="Interface sounds"
+            style={{ minWidth: 44 }}
+          >
+            <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${audio.uiSoundsEnabled ? 'translate-x-6' : 'translate-x-0.5'}`} />
+          </button>
+        </div>
+        <div className="mt-5 border-t border-slate-100 pt-4">
+          <label htmlFor="ui-sounds-volume" className="mb-1 flex items-center justify-between text-sm font-bold text-ink">
+            Cue volume
+            <span className="tnum text-xs font-semibold text-muted">{Math.round(audio.uiSoundsVolume * 100)}%</span>
+          </label>
+          <input
+            id="ui-sounds-volume"
+            type="range"
+            min={0}
+            max={35}
+            step={5}
+            value={Math.round(audio.uiSoundsVolume * 100)}
+            onChange={e => handleUiSoundsVolume(Number(e.target.value))}
+            className="w-full accent-teal-700"
+            aria-valuemin={0}
+            aria-valuemax={35}
+            aria-valuenow={Math.round(audio.uiSoundsVolume * 100)}
+          />
+          <p className="mt-1 text-xs text-muted">Stored on this device, independently of music and voice.</p>
         </div>
       </div>
 

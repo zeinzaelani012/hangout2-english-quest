@@ -9,6 +9,7 @@ import { speak, cancelSpeech, isSpeechSpeaking } from './speak';
 import { playFile, stopFiles, preloadFile } from './player';
 import { loadAudioSettings, saveAudioSettings, onAudioSettingsChange } from './settings';
 import { syncMusicForRoute, stopMusic, trackForRoute, duckMusic } from './music';
+import { installUiSoundUnlock, playUiSound, type UiSoundCue } from './uiSounds';
 import {
   getVoicesList, onVoicesChanged, groupVoices, vendorOf, isNeural, isEnglish,
   languageName, pickDefaultVoice, resolveVoice,
@@ -163,6 +164,9 @@ export {
   syncMusicForRoute,
   stopMusic,
   trackForRoute,
+  installUiSoundUnlock,
+  playUiSound,
 };
 export type { VoiceGroup } from './voices';
 export type { MusicTrackId } from './music';
+export type { UiSoundCue } from './uiSounds';

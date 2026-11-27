@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import { AvatarSVG } from './Illustrations';
+import { playUiSound } from '../lib/audio';
 
 const menuItems = [
   { to: '/', label: 'Dashboard', icon: Home },
@@ -187,7 +188,10 @@ export function MenuDrawer() {
                       <li key={item.to}>
                         <NavLink
                           to={item.to}
-                          onClick={closeDrawer}
+                          onClick={() => {
+                            playUiSound('next');
+                            closeDrawer();
+                          }}
                           className={({ isActive }) =>
                             `flex min-h-11 items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
                               isActive ? 'bg-teal-50 text-brand' : 'text-ink hover:bg-slate-100'
@@ -235,10 +239,11 @@ function BottomNav({ onMore }: { onMore: () => void }) {
           const Icon = item.icon;
           const active = item.match(location.pathname);
           return (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={`relative flex min-h-16 flex-col items-center justify-center gap-1 py-2 text-[11px] font-semibold transition-colors ${active ? 'text-brand' : 'text-muted hover:text-ink'}`}
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={() => playUiSound('next')}
+                className={`relative flex min-h-16 flex-col items-center justify-center gap-1 py-2 text-[11px] font-semibold transition-colors ${active ? 'text-brand' : 'text-muted hover:text-ink'}`}
               aria-current={active ? 'page' : undefined}
             >
               {active && <span className="absolute top-0 h-0.5 w-8 rounded-full bg-brand" />}

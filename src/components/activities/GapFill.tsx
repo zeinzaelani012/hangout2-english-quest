@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Activity, GapFillPayload } from '../../types';
 import { Check, X } from 'lucide-react';
 import { AudioButton } from '../AudioButton';
+import { playUiSound } from '../../lib/audio';
 import { VocabIllustration } from '../Illustrations';
 import { majorityCorrect, renderStemParts, v2Items, type ItemResult } from './v2-types';
 
@@ -109,6 +110,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
 
   const handleSelect = (option: string) => {
     if (answered || !item) return;
+    playUiSound(option === item.answer ? 'correct' : 'retry');
     setSelected(option);
     const nextResults = [...results, option === item.answer];
     setResults(nextResults);
@@ -140,6 +142,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
   };
 
   const handleNext = () => {
+    playUiSound('next');
     setIndex(i => i + 1);
     setSelected(null);
     setReason(null);
@@ -401,6 +404,7 @@ function LegacyGapFill({ activity, onResult }: Props) {
 
   const handleSelect = (option: string) => {
     if (answered) return;
+    playUiSound(option === payload.answer ? 'correct' : 'retry');
     setSelected(option);
     setAnswered(true);
     const isCorrect = option === payload.answer;

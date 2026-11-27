@@ -6,6 +6,7 @@ import {
   capstoneIsland, capstoneStation, adaptCapstoneItem, type CapstoneItem,
 } from '../data/capstone';
 import { recordStationResult, getCurrentAttempt, CAPSTONE_XP } from '../lib/capstone';
+import { playUiSound } from '../lib/audio';
 import { CapstoneItemBody, ShortResponse, RecordedPanel } from '../components/capstone/CapstoneItem';
 
 interface AnsweredRecord {
@@ -60,6 +61,7 @@ export function CapstoneStationPage() {
   };
 
   const handleItemResult = (correct: boolean | null) => {
+    playUiSound(correct === null ? 'next' : correct ? 'correct' : 'retry');
     const next = [...results, { correct }];
     setResults(next);
     if (item.type === 'audioToWord' || item.type === 'audioQuestion') {
@@ -72,8 +74,10 @@ export function CapstoneStationPage() {
   const handleNext = () => {
     setRecorded(null);
     if (isLast) {
+      playUiSound('complete');
       finishStation(results);
     } else {
+      playUiSound('next');
       setIndex(i => i + 1);
     }
   };

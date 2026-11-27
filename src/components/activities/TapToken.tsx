@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Activity } from '../../types';
 import { CheckCircle2, XCircle } from 'lucide-react';
+import { playUiSound } from '../../lib/audio';
 import { majorityCorrect, normalizeSentence, v2Items, type ItemResult } from './v2-types';
 
 interface Props {
@@ -66,9 +67,11 @@ export function TapToken({ activity, onResult }: Props) {
   const handleTap = (token: string) => {
     if (itemDone) return;
     if (normalizeSentence(token) === normalizedWrong) {
+      playUiSound('correct');
       setWrongToken(null);
       completeItem();
     } else {
+      playUiSound('retry');
       setWrongToken(token);
     }
   };

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import type { Activity } from '../../types';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import { AudioButton } from '../AudioButton';
+import { playUiSound } from '../../lib/audio';
 import { majorityCorrect, sentenceMatches, v2Items, type ItemResult } from './v2-types';
 import { normaliseForMatch, splitSentences } from '../../lib/normalise';
 
@@ -95,6 +96,7 @@ export function TapSentence({ activity, onResult, passage, passageTitle }: Props
     if (answered || !item || !isTap) return;
     setPickedSentence(sentenceIdx);
     const ok = markTap(sentenceIdx);
+    playUiSound(ok ? 'correct' : 'retry');
     const nextResults = [...results, ok];
     setResults(nextResults);
     if (isLast) finish(nextResults);
@@ -104,6 +106,7 @@ export function TapSentence({ activity, onResult, passage, passageTitle }: Props
     if (answered || !item) return;
     setPickedOption(value);
     const ok = sentenceMatches(value, item.answer ?? '');
+    playUiSound(ok ? 'correct' : 'retry');
     const nextResults = [...results, ok];
     setResults(nextResults);
     if (isLast) finish(nextResults);

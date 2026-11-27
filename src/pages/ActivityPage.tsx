@@ -11,7 +11,7 @@ import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Level, type Activity, ty
 import { CookieMascot, StationBadge } from '../components/Illustrations';
 import { AudioButton } from '../components/AudioButton';
 import { VoiceLauncherButton } from '../components/VoicePicker';
-import { levelRateMultiplier, preload } from '../lib/audio';
+import { levelRateMultiplier, preload, playUiSound } from '../lib/audio';
 import { TeachCard, type TeachCardData } from '../components/ritual/TeachCard';
 import { PictureMatch } from '../components/activities/PictureMatch';
 import { DragSort } from '../components/activities/DragSort';
@@ -138,6 +138,7 @@ export function ActivityPage() {
 
   const handleNext = () => {
     if (isLastActivity) {
+      playUiSound('complete');
       // Complete station
       const correctCount = Object.values(results).filter(r => r.correct).length;
       const xpEarned = stationIsV2
@@ -194,6 +195,7 @@ export function ActivityPage() {
         }
       }, 1500);
     } else {
+      playUiSound('next');
       setCurrentIndex(prev => prev + 1);
       setShowHint(false);
     }

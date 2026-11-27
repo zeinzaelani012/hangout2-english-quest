@@ -3,6 +3,7 @@ import type { Activity, StickerPlatePayload } from '../../types';
 import { VocabIllustration } from '../Illustrations';
 import { AudioButton } from '../AudioButton';
 import { Check, X } from 'lucide-react';
+import { playUiSound } from '../../lib/audio';
 
 interface Props {
   activity: Activity;
@@ -27,6 +28,7 @@ export function StickerPlate({ activity, onResult }: Props) {
   };
 
   const handleComplete = () => {
+    playUiSound('next');
     setCompleted(true);
     onResult(true, {
       correctAnswer: payload.speakingPrompt,

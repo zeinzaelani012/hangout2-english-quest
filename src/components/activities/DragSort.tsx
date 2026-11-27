@@ -3,6 +3,7 @@ import type { Activity, DragSortPayload } from '../../types';
 import { VocabIllustration } from '../Illustrations';
 import { Check, X, ArrowRight } from 'lucide-react';
 import type { ItemResult } from './v2-types';
+import { playUiSound } from '../../lib/audio';
 import { normaliseForMatch } from '../../lib/normalise';
 
 interface Props {
@@ -135,6 +136,7 @@ function SortBinsBody({ activity, onResult }: Props) {
     setChecked(true);
     const allCorrect = items.every(i => placementAccepted(i, i.placedBin));
     const incorrectCount = items.filter(i => !placementAccepted(i, i.placedBin)).length;
+    playUiSound(allCorrect || incorrectCount < items.length / 2 ? 'correct' : 'retry');
     onResult(allCorrect || incorrectCount < items.length / 2, {
       correctAnswer: items.map(i => `${i.label} → ${payload.bins.find(b => normaliseForMatch(b.id) === normaliseForMatch(i.binId))?.label ?? i.binId}`).join('; '),
       rule: payload.guidance || payload.why || 'Sort each item into the box where it belongs.',

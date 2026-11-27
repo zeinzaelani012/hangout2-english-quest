@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Activity } from '../../types';
 import { Check, Lock, Volume2 } from "lucide-react";
 import { AudioButton } from '../AudioButton';
+import { playUiSound } from '../../lib/audio';
 import { majorityCorrect, type ItemResult } from './v2-types';
 
 interface Props {
@@ -48,11 +49,13 @@ export function TwoPassAudio({ activity, onResult }: Props) {
 
   const handleQ1 = (option: string) => {
     if (q1Answered || !canAnswerQ1) return;
+    playUiSound(option === q1.answer ? 'correct' : 'retry');
     setQ1Selected(option);
   };
 
   const handleQ2 = (option: string) => {
     if (q2Answered || !canAnswerQ2) return;
+    playUiSound(option === q2.answer ? 'correct' : 'retry');
     setQ2Selected(option);
     // Both passes answered — award once at the end.
     if (q1) {

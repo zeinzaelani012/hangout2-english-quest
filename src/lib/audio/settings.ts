@@ -21,6 +21,10 @@ export interface AudioSettings {
   musicEnabled: boolean;
   /** Background music volume, 0–1, default 35%. */
   musicVolume: number;
+  /** Short interface feedback cues on/off; independent of music and voice. */
+  uiSoundsEnabled: boolean;
+  /** Interface sound volume, 0–1, intentionally quiet by default. */
+  uiSoundsVolume: number;
 }
 
 const KEY = 'h2eq.audio.v1';
@@ -35,6 +39,8 @@ const DEFAULTS: AudioSettings = {
   voiceLocked: false,
   musicEnabled: true,
   musicVolume: 0.35,
+  uiSoundsEnabled: true,
+  uiSoundsVolume: 0.22,
 };
 
 let cached: AudioSettings | null = null;

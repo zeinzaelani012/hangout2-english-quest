@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Activity, DiaryPromptPayload } from '../../types';
 import { Check, ListChecks } from 'lucide-react';
+import { playUiSound } from '../../lib/audio';
 import { type ItemResult } from './v2-types';
 
 interface Props {
@@ -75,6 +76,7 @@ function GuidedParagraphBody({ activity, onResult }: Props) {
   const pickerMissing = pickerOptions !== undefined && pickerOptions.length > 0 && chosenSeason === null;
 
   const handleComplete = () => {
+    playUiSound('next');
     setCompleted(true);
     onResult(true, {
       correctAnswer: 'Your own writing',
@@ -312,6 +314,7 @@ function LegacyDiaryPrompt({ activity, onResult }: Props) {
   const sentenceCount = text.trim().split(/[.!?]+/).filter(s => s.trim().length > 0).length;
 
   const handleComplete = () => {
+    playUiSound('next');
     setCompleted(true);
     const passed = checks.every(c => c) && sentenceCount >= payload.minLength;
     onResult(true, {

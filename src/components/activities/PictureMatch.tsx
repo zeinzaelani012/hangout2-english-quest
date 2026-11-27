@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import type { Activity, PictureMatchPayload } from '../../types';
 import { VocabIllustration } from '../Illustrations';
 import { Check, X } from 'lucide-react';
+import { playUiSound } from '../../lib/audio';
 
 interface Props {
   activity: Activity;
@@ -23,6 +24,7 @@ export function PictureMatch({ activity, onResult }: Props) {
 
   const handleSelect = (optionId: string) => {
     if (answered) return;
+    playUiSound(optionId === payload.answerId ? 'correct' : 'retry');
     setSelected(optionId);
     setAnswered(true);
 

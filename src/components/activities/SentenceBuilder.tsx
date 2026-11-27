@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Activity, SentenceBuilderPayload } from '../../types';
 import { Check, X } from 'lucide-react';
 import { AudioButton } from '../AudioButton';
+import { playUiSound } from '../../lib/audio';
 import { majorityCorrect, normalizeSentence, v2Items, type ItemResult } from './v2-types';
 import { normaliseForMatch } from '../../lib/normalise';
 
@@ -143,6 +144,7 @@ function TileSequenceBody({ activity, onResult }: Props) {
 
   const handleCheck = () => {
     const nextResults = [...results, isCorrect];
+    playUiSound(isCorrect ? 'correct' : 'retry');
     setChecked(true);
     setEditingAfterWrong(false);
     setResults(nextResults);
