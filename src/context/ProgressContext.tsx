@@ -34,6 +34,9 @@ interface ProgressContextValue {
   updateSettings: (s: Partial<ProgressData['settings']>) => void;
   recordVocabCorrect: (vocabId: string) => void;
   getVocabMastery: (vocabId: string) => number;
+  /** Word Introduction: mark a word as seen (first flip of its card). */
+  markVocabIntroduced: (vocabId: string) => void;
+  isVocabIntroduced: (vocabId: string) => boolean;
 }
 
 const ProgressContext = createContext<ProgressContextValue | null>(null);
@@ -354,6 +357,22 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     [progress],
   );
 
+  const markVocabIntroduced = useCallback((vocabId: string) => {
+    setProgress(prev => {
+      if (prev.vocabIntro?.[vocabId]) return prev;
+      const newProgress = { ...prev, vocabIntro: { ...prev.vocabIntro, [vocabId]: true as const } };
+      saveProgress(newProgress);
+      return newProgress;
+    });
+  }, []);
+
+  const isVocabIntroduced = useCallback(
+    (vocabId: string): boolean => {
+      return !!progress.vocabIntro?.[vocabId];
+    },
+    [progress],
+  );
+
   const value: ProgressContextValue = {
     profile,
     setProfile,
@@ -378,6 +397,8 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     updateSettings,
     recordVocabCorrect,
     getVocabMastery,
+    markVocabIntroduced,
+    isVocabIntroduced,
   };
 
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;

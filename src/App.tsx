@@ -8,6 +8,7 @@ import { stopOnRouteChange, syncMusicForRoute, installUiSoundUnlock } from './li
 
 // Route-level code splitting — every page is a separate chunk
 const Dashboard = lazy(() => import('./pages/Dashboard').then(m => ({ default: m.Dashboard })));
+const WordIntro = lazy(() => import('./pages/WordIntro').then(m => ({ default: m.WordIntro })));
 const UnitOverview = lazy(() => import('./pages/UnitOverview').then(m => ({ default: m.UnitOverview })));
 const QuestMap = lazy(() => import('./pages/QuestMap').then(m => ({ default: m.QuestMap })));
 const ActivityPage = lazy(() => import('./pages/ActivityPage').then(m => ({ default: m.ActivityPage })));
@@ -102,6 +103,7 @@ function AppContent() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Dashboard onEditProfile={() => setShowProfileModal(true)} />} />
+            <Route path="/unit/:unitId/words" element={<WordIntro />} />
             <Route path="/unit/:unitId" element={<UnitOverview />} />
             <Route path="/unit/:unitId/:level" element={<QuestMap />} />
             <Route path="/unit/:unitId/:level/self-check" element={<SelfCheckPage />} />

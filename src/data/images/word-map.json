@@ -1,5 +1,14 @@
 {
   "hintToSlug": {
+    "bowl of flakes with milk and a spoon": "cereal",
+    "round biscuits with chocolate chips": "cookies",
+    "white fluffy pieces in a red-striped box": "popcorn",
+    "small pot of yogurt with a red berry": "yogurt",
+    "round red tomatoes on a green stem": "tomatoes",
+    "mixed fruit in a bowl": "fruit",
+    "carrot, broccoli and peas together": "vegetables",
+    "fizzy drink in a glass with a straw": "soda",
+
     "cereal": "cereal",
     "cookies": "cookies",
     "fruit": "fruit",

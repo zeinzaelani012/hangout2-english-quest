@@ -307,6 +307,8 @@ export interface ProgressData {
   lastVisit: string;
   units: Record<number, Record<Level, LevelProgress>>;
   vocabMastery: Record<string, number>; // vocabId -> correct count
+  /** Word Introduction: vocabIds the learner has flipped through in the unit's word intro. */
+  vocabIntro?: Record<string, true>;
   settings: {
     noMicMode: boolean;
     teacherPin: string;

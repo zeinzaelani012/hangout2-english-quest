@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, ChevronRight, Lock, Play, RotateCcw, Star } from 'lucide-react';
+import { ArrowLeft, BookOpen, CheckCircle2, ChevronRight, Lock, Play, RotateCcw, Star } from 'lucide-react';
 import { useProgress } from '../context/ProgressContext';
 import { getUnit } from '../data/units';
 import { SkillDonut } from '../components/SkillDonut';
@@ -9,8 +9,10 @@ import { LEVEL_DESCRIPTIONS, LEVEL_LABELS, type Level } from '../types';
 export function UnitOverview() {
   const { unitId } = useParams();
   const navigate = useNavigate();
-  const { getLevelProgressPercent, isLevelCompleted, isCoreCompleted, progress, settings } = useProgress();
+  const { getLevelProgressPercent, isLevelCompleted, isCoreCompleted, progress, settings, isVocabIntroduced } = useProgress();
   const unit = getUnit(parseInt(unitId || '0'));
+  const isUnitStarted =
+    !!unit && (['easy', 'core', 'challenging'] as const).some(l => getLevelProgressPercent(unit.id, l) > 0);
 
   if (!unit) {
     return (
@@ -132,6 +134,36 @@ export function UnitOverview() {
           <h2 className="font-heading text-2xl font-extrabold text-ink">Choose your level</h2>
           <p className="mt-1 text-sm text-muted">Each level includes {coreMeta.count} activities and {coreMeta.xp} XP.</p>
         </div>
+
+        <Link
+          to={`/unit/${unit.id}/words`}
+          className="surface-card group mb-4 flex items-center justify-between gap-4 p-5 transition-shadow hover:shadow-lg"
+        >
+          <div className="flex items-center gap-4">
+            <span className="flex h-11 w-11 items-center justify-center rounded-card bg-brand/10 text-brand">
+              <BookOpen size={22} />
+            </span>
+            <div>
+              <p className="font-heading font-extrabold text-ink">
+                Word introduction
+                {!isUnitStarted && (
+                  <span className="ml-2 rounded-pill bg-coral px-2 py-0.5 align-middle text-xs font-bold text-white">
+                    Start here
+                  </span>
+                )}
+              </p>
+              <p className="mt-0.5 text-sm text-muted">
+                Learn all {unit.vocabulary.length} words first — flip the cards, hear each word and its example.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <p className="text-sm font-bold text-muted">
+              {unit.vocabulary.filter(v => isVocabIntroduced(v.id)).length}/{unit.vocabulary.length}
+            </p>
+            <ChevronRight size={20} className="text-muted transition-transform group-hover:translate-x-0.5" />
+          </div>
+        </Link>
 
         <div className="grid gap-4 lg:grid-cols-3">
           {levels.map((level, index) => {

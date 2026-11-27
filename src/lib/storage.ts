@@ -40,6 +40,7 @@ export function getDefaultProgress(): ProgressData {
     lastVisit: '',
     units: {},
     vocabMastery: {},
+    vocabIntro: {},
     settings: {
       noMicMode: false,
       teacherPin: 'teacher',
@@ -67,6 +68,7 @@ export function getProgress(): ProgressData {
       settings: { ...defaults.settings, ...(parsed.settings || {}) },
       units: parsed.units || {},
       vocabMastery: parsed.vocabMastery || {},
+      vocabIntro: parsed.vocabIntro || {},
       levelHistory: parsed.levelHistory || [],
       selfAssessments: parsed.selfAssessments || {},
       selfCheckXP: parsed.selfCheckXP || 0,
