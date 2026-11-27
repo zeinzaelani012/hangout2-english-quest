@@ -5,6 +5,7 @@ import { AudioButton } from '../AudioButton';
 import { playUiSound } from '../../lib/audio';
 import { majorityCorrect, sentenceMatches, v2Items, type ItemResult } from './v2-types';
 import { normaliseForMatch, splitSentences } from '../../lib/normalise';
+import { seededShuffle } from '../../lib/shuffle';
 
 interface Props {
   activity: Activity;
@@ -75,6 +76,14 @@ export function TapSentence({ activity, onResult, passage, passageTitle }: Props
     return -1;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item?.id, index, sentences, isTap]);
+
+  // Option items: the packs list the correct answer first — reorder, seeded so
+  // the order is stable while this item is on screen.
+  const choiceOptions = useMemo(
+    () => (item?.options ? seededShuffle(item.options, `${activity.unitId ?? 0}:${activity.id}:${item.id ?? ''}:${index}`) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [activity.id, item?.id, index],
+  );
 
   const markTap = (sentenceIdx: number): boolean => {
     if (!item) return false;
@@ -180,7 +189,7 @@ export function TapSentence({ activity, onResult, passage, passageTitle }: Props
 
       {!isTap && item.options && (
         <div className="flex flex-wrap gap-2.5">
-          {item.options.map((option, i) => {
+          {choiceOptions.map((option, i) => {
             const isSelected = pickedOption === option;
             const isOptionCorrect = normaliseForMatch(option) === normaliseForMatch(item.answer ?? '');
             const showResult = answered && (isSelected || isOptionCorrect);

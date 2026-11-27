@@ -3,6 +3,7 @@ import type { Activity } from '../../types';
 import { Check, Lock, Volume2 } from "lucide-react";
 import { AudioButton } from '../AudioButton';
 import { playUiSound } from '../../lib/audio';
+import { seededShuffle } from '../../lib/shuffle';
 import { majorityCorrect, type ItemResult } from './v2-types';
 
 interface Props {
@@ -77,7 +78,11 @@ export function TwoPassAudio({ activity, onResult }: Props) {
     locked: boolean,
     passLabel: string,
     hidden: boolean,
-  ) => (
+  ) => {
+    // The packs list the correct option first — reorder per pass, seeded so the
+    // order stays stable across re-renders.
+    const options = seededShuffle(question.options, `${activity.unitId ?? 0}:${activity.id}:pass${question.pass}`);
+    return (
     <div className={`rounded-xl border p-4 ${locked ? 'border-slate-200 bg-slate-50 opacity-70' : 'border-slate-200 bg-white'}`}>
       <div className="mb-3 flex items-center justify-between gap-3">
         <p className="eyebrow">
@@ -93,7 +98,7 @@ export function TwoPassAudio({ activity, onResult }: Props) {
         <>
           <p className="mb-4 text-sm font-bold leading-6 text-ink">{question.q}</p>
           <div className="flex flex-wrap gap-2.5">
-            {question.options.map((option, i) => {
+            {options.map((option, i) => {
               const isSelected = selected === option;
               const isOptionCorrect = option === question.answer;
               const showResult = answered && (isSelected || isOptionCorrect);
@@ -127,6 +132,7 @@ export function TwoPassAudio({ activity, onResult }: Props) {
       )}
     </div>
   );
+  };
 
   return (
     <div>
