@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run audit:types && tsc -b && vite build",
+    "build": "npm run audit:types && npm run images:manifest && tsc -b && vite build",
     "preview": "vite preview",
     "predeploy": "npm run audit:types",
     "audit:types": "node scripts/audit-types.mjs",
     "audio:manifest": "node scripts/build-audio-manifest.mjs",
+    "images:manifest": "node scripts/build-image-manifest.mjs",
     "audio:render": "node scripts/render-audio.mjs",
     "audio:verify": "node scripts/verify-audio.mjs"
   },

@@ -2,6 +2,13 @@
 
 import { extraIllustrations } from '../data/illustrations';
 import { renderAvatar } from '../data/avatars';
+import wordMapJson from '../data/images/word-map.json';
+import imageManifestJson from '../data/images/manifest.json';
+
+// JSON imports arrive as literal object types; the manifest regenerates as
+// files land, so treat both as plain lookups.
+const wordMap = wordMapJson as unknown as { hintToSlug: Record<string, string> };
+const imageManifest = imageManifestJson as unknown as { images: Record<string, string> };
 
 interface SVGProps {
   className?: string;
@@ -188,6 +195,26 @@ export function StationBadge({ skill, size = 56, className = '' }: { skill: stri
 export function VocabIllustration({ imgHint, className = '', size = 80 }: { imgHint: string; className?: string; size?: number }) {
   const hint = imgHint.toLowerCase();
   const s = size;
+
+  // User-supplied image pack first (public/img/words, registered by
+  // scripts/build-image-manifest.mjs). A word without a file falls through
+  // to the SVG chain below, so the pack can land gradually.
+  const slug = wordMap.hintToSlug[hint];
+  const file = slug !== undefined ? imageManifest.images[slug] : undefined;
+  if (file) {
+    return (
+      <img
+        src={file}
+        alt={imgHint}
+        width={s}
+        height={s}
+        loading="lazy"
+        draggable={false}
+        className={className}
+        style={{ objectFit: 'contain' }}
+      />
+    );
+  }
 
   // Unit packs can register their own artwork in src/data/illustrations.tsx;
   // that registry is checked first so units stay pure data.
