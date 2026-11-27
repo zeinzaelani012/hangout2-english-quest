@@ -1,8 +1,9 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import type { Activity, PictureMatchPayload } from '../../types';
 import { VocabIllustration } from '../Illustrations';
 import { Check, X } from 'lucide-react';
 import { playUiSound } from '../../lib/audio';
+import { seededShuffle } from '../../lib/shuffle';
 
 interface Props {
   activity: Activity;
@@ -15,6 +16,14 @@ export function PictureMatch({ activity, onResult }: Props) {
   const [answered, setAnswered] = useState(false);
   const [focusedIdx, setFocusedIdx] = useState(0);
   const optionRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  // The packs list the correct option first in most items — reorder per item,
+  // seeded so the order stays stable while the learner works on it.
+  const options = useMemo(
+    () => seededShuffle(payload.options, `${activity.unitId ?? 0}:${activity.id}`),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [activity.id, payload.options],
+  );
 
   const showPictures = activity.difficulty !== 'challenging';
 
@@ -40,24 +49,24 @@ export function PictureMatch({ activity, onResult }: Props) {
     if (answered) return;
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault();
-      const next = (idx + 1) % payload.options.length;
+      const next = (idx + 1) % options.length;
       setFocusedIdx(next);
       optionRefs.current[next]?.focus();
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       e.preventDefault();
-      const prev = (idx - 1 + payload.options.length) % payload.options.length;
+      const prev = (idx - 1 + options.length) % options.length;
       setFocusedIdx(prev);
       optionRefs.current[prev]?.focus();
     } else if (e.key === ' ' || e.key === 'Enter') {
       e.preventDefault();
-      handleSelect(payload.options[idx].id);
+      handleSelect(options[idx].id);
     }
   };
 
   return (
     <div>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-        {payload.options.map((option, idx) => {
+        {options.map((option, idx) => {
           const isSelected = selected === option.id;
           const isCorrect = option.id === payload.answerId;
           const showResult = answered && (isSelected || isCorrect);

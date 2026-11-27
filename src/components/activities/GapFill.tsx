@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Activity, GapFillPayload } from '../../types';
 import { Check, X } from 'lucide-react';
 import { AudioButton } from '../AudioButton';
 import { playUiSound } from '../../lib/audio';
+import { seededShuffle } from '../../lib/shuffle';
 import { VocabIllustration } from '../Illustrations';
 import { majorityCorrect, renderStemParts, v2Items, type ItemResult } from './v2-types';
 
@@ -99,6 +100,25 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
   const isCorrect = answered && selected === item?.answer;
   const isLast = index >= items.length - 1;
 
+  // The packs list the correct option first in most items — reorder per item,
+  // seeded so the order stays stable while the learner works on it.
+  const optionOrder = useMemo(
+    () => items.map((it, i) =>
+      seededShuffle(it.options, `${activity.unitId ?? 0}:${activity.id}:${it.id ?? ''}:${i}`)),
+    // items derive from the same payload every render; the activity id pins them.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [activity.id],
+  );
+  const itemOptions = optionOrder[index] ?? item?.options ?? [];
+
+  // whyChoices are authored best-first (the first chip is the correct reason) —
+  // shuffle the display for the same reason as the answers.
+  const reasonChips = useMemo(
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    () => seededShuffle(whyChoices, `${activity.unitId ?? 0}:${activity.id}:${index}:why`),
+    [activity.id, index],
+  );
+
   const finish = (finalResults: boolean[]) => {
     const correct = majorityCorrect(finalResults);
     const firstWrong = finalResults.findIndex(r => !r);
@@ -124,8 +144,8 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
       const target = e.target as HTMLElement | null;
       if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) return;
       const n = parseInt(e.key, 10);
-      if (n >= 1 && n <= Math.min(9, item.options.length)) {
-        handleSelect(item.options[n - 1]);
+      if (n >= 1 && n <= Math.min(9, itemOptions.length)) {
+        handleSelect(itemOptions[n - 1]);
       }
     };
     window.addEventListener('keydown', handler);
@@ -234,7 +254,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
       {pictureOptions ? (
         /* Picture choice: options render as illustrations, no words */
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {item.options.map((option, i) => {
+          {itemOptions.map((option, i) => {
             const isSelected = selected === option;
             const isOptionCorrect = option === item.answer;
             const showResult = answered && (isSelected || isOptionCorrect);
@@ -263,7 +283,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
         </div>
       ) : (
       <div className="flex flex-wrap gap-2.5">
-        {item.options.map((option, i) => {
+        {itemOptions.map((option, i) => {
           const isSelected = selected === option;
           const isOptionCorrect = option === item.answer;
           const showResult = answered && (isSelected || isOptionCorrect);
@@ -325,7 +345,7 @@ function ChoiceItemBody({ activity, onResult, onBonus }: Props) {
         <div className="mt-4 rounded-xl border border-brand/30 bg-teal-50/50 p-4">
           <p className="mb-3 text-sm font-bold text-ink">Why is that the right answer?</p>
           <div className="flex flex-wrap gap-2">
-            {whyChoices.map(chip => (
+            {reasonChips.map(chip => (
               <button
                 key={chip}
                 onClick={() => handleReason(chip)}
@@ -399,6 +419,12 @@ function LegacyGapFill({ activity, onResult }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [answered, setAnswered] = useState(false);
 
+  const shuffledOptions = useMemo(
+    () => seededShuffle(payload.options, `${activity.unitId ?? 0}:${activity.id}`),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [activity.id, payload.options],
+  );
+
   // Split sentence at ___ to show the blank
   const parts = payload.sentence.split('___');
 
@@ -436,7 +462,7 @@ function LegacyGapFill({ activity, onResult }: Props) {
 
       <p className="eyebrow mb-3">Choose the word</p>
       <div className="flex flex-wrap gap-2.5">
-        {payload.options.map((option, idx) => {
+        {shuffledOptions.map((option, idx) => {
           const isSelected = selected === option;
           const isCorrect = option === payload.answer;
           const showResult = answered && (isSelected || isCorrect);

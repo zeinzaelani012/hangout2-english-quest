@@ -5,6 +5,7 @@ import { units, getUnitReading } from '../data/units';
 import { LEVEL_LABELS, SKILL_LABELS, SKILL_COLORS, type Activity, type Level } from '../types';
 import { VocabIllustration } from '../components/Illustrations';
 import { AudioButton } from '../components/AudioButton';
+import { seededShuffle } from '../lib/shuffle';
 import type { Level as LevelKey } from '../types';
 
 const PRESENT_LEVELS: Level[] = ['easy', 'core', 'challenging'];
@@ -33,12 +34,17 @@ export function PresentMode() {
   const reset = () => { setIndex(0); setRevealed([]); };
 
   const payload = current?.payload as Record<string, any> | undefined;
-  const options: { id: string; label: string; imgHint?: string }[] | null =
-    current?.type === 'pictureMatch'
-      ? payload?.options ?? null
-      : current?.type === 'gapFill'
-        ? (payload?.options ?? []).map((o: string, i: number) => ({ id: String(i), label: o }))
-        : null;
+  // Same seeded order the learner sees, so the projected options are not
+  // always answer-first.
+  const options: { id: string; label: string; imgHint?: string }[] | null = current
+    ? current.type === 'pictureMatch'
+      ? payload?.options
+        ? seededShuffle(payload.options, `${current.unitId ?? 0}:${current.id}`)
+        : null
+      : current.type === 'gapFill'
+        ? seededShuffle<string>(payload?.options ?? [], `${current.unitId ?? 0}:${current.id}`).map((o: string, i: number) => ({ id: String(i), label: o }))
+        : null
+    : null;
   const answerLabel =
     current?.type === 'pictureMatch'
       ? payload?.options?.find((o: any) => o.id === payload?.answerId)?.label
