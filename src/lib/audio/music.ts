@@ -64,6 +64,27 @@ let fadeTimer: ReturnType<typeof setTimeout> | null = null;
 let token = 0;
 let ducked = false;
 
+function desiredVolume(): number {
+  const { musicEnabled, musicVolume } = loadAudioSettings();
+  if (!musicEnabled) return 0;
+  const volume = Math.max(0, Math.min(1, musicVolume));
+  return ducked ? volume * 0.35 : volume;
+}
+
+function cancelFade(): void {
+  if (fadeTimer !== null) {
+    clearTimeout(fadeTimer);
+    fadeTimer = null;
+  }
+}
+
+/** Snap to the current setting. Used while the user is dragging the slider. */
+function applyLiveVolume(): void {
+  if (!el) return;
+  cancelFade();
+  el.volume = desiredVolume();
+}
+
 function element(): HTMLAudioElement {
   if (el) return el;
   const audio = new Audio();
@@ -84,7 +105,7 @@ function fade(to: number, ms: number, done?: () => void): void {
     done?.();
     return;
   }
-  if (fadeTimer !== null) clearTimeout(fadeTimer);
+  cancelFade();
   const from = audio.volume;
   const t0 = performance.now();
   const step = () => {
@@ -108,7 +129,6 @@ function start(track: MusicTrackId): void {
   const audio = element();
   const myToken = ++token;
   waiting = null;
-  const target = loadAudioSettings().musicVolume;
   const swap = () => {
     if (myToken !== token) return;
     audio.src = TRACKS[track];
@@ -116,7 +136,7 @@ function start(track: MusicTrackId): void {
     audio.volume = 0;
     audio.play().then(() => {
       if (myToken !== token) return;
-      fade(target, 800);
+      fade(desiredVolume(), 800);
     }).catch(() => {
       // Autoplay is blocked until a gesture — retry on the next interaction.
       if (myToken !== token) return;
@@ -166,8 +186,7 @@ export function duckMusic(on: boolean): void {
   if (on === ducked) return;
   ducked = on;
   if (!el || current === null || el.paused) return;
-  const { musicVolume } = loadAudioSettings();
-  fade(on ? musicVolume * 0.35 : musicVolume, 200);
+  fade(desiredVolume(), 200);
 }
 
 if (typeof window !== 'undefined') {
@@ -179,7 +198,7 @@ if (typeof window !== 'undefined') {
       return;
     }
     if (el && current && !el.paused) {
-      el.volume = ducked ? settings.musicVolume * 0.35 : settings.musicVolume;
+      applyLiveVolume();
     } else {
       syncMusicForRoute(lastPathname);
     }
@@ -192,6 +211,7 @@ if (typeof window !== 'undefined') {
     if (document.hidden) {
       audio.pause();
     } else if (loadAudioSettings().musicEnabled) {
+      applyLiveVolume();
       void audio.play().catch(() => {});
     }
   });
