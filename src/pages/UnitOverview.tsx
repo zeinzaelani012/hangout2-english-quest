@@ -77,7 +77,9 @@ export function UnitOverview() {
     const percent = getLevelProgressPercent(unit.id, level);
     const complete = isLevelCompleted(unit.id, level);
     const gated = level === 'challenging' && !challengingUnlocked;
-    const teacherLocked = lockToOne && (level === 'easy' || level === 'core') && level !== assignedLevel;
+    // Teacher Mode "Unlock all units" overrides the lock-to-one-level gate.
+    const teacherLocked =
+      lockToOne && !settings.teacherUnlockAllUnits && (level === 'easy' || level === 'core') && level !== assignedLevel;
 
     if (teacherLocked) {
       return (
