@@ -146,6 +146,10 @@ function applyD2(sourcePack: ExpandedPack, acts: Activity[]): Activity[] {
             id: it.id,
             prompt: 'Type the sentence. Punctuation counts.',
             answer: it.answer,
+            // D2 removes the tiles but the task is still "put the words in
+            // order" — TypedAnswer shows these scrambled, and the learner
+            // types the ordered sentence.
+            words: it.tiles,
           })),
         } as unknown as ActivityPayload,
       };
