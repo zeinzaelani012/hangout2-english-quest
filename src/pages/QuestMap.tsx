@@ -15,7 +15,7 @@ type MapNode =
 export function QuestMap() {
   const { unitId, level } = useParams();
   const navigate = useNavigate();
-  const { isStationCompleted, markMissionBriefSeen, getLevelProgress } = useProgress();
+  const { isStationCompleted, markMissionBriefSeen, getLevelProgress, settings } = useProgress();
   const [briefDismissed, setBriefDismissed] = useState(false);
   const unit = getUnit(parseInt(unitId || '0'));
   const levelKey = (level || 'easy') as Level;
@@ -54,7 +54,9 @@ export function QuestMap() {
     const previousNode = i > 0 ? nodes[i - 1] : null;
     const previousCompleted = !previousNode || nodeDone(previousNode);
     const current = !completed && previousCompleted && i === firstIncomplete;
-    const locked = !completed && !previousCompleted && !current;
+    // Teacher Mode "Unlock all units" opens every station, not just units.
+    const locked =
+      !completed && !previousCompleted && !current && !settings.teacherUnlockAllUnits;
     return { node, completed, current, locked, i };
   });
   const completedCount = nodeStates.filter(n => n.completed).length;
