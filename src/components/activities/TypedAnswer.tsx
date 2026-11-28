@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { Activity } from '../../types';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import { damerauLevenshtein, normaliseForMatch, spelledOut } from '../../lib/normalise';
 import { VocabIllustration } from '../Illustrations';
 import { AudioButton } from '../AudioButton';
 import { playUiSound } from '../../lib/audio';
+import { seededShuffle } from '../../lib/shuffle';
 import { majorityCorrect, normalizeSentence, v2Items, type ItemResult } from './v2-types';
 
 interface Props {
@@ -18,6 +19,8 @@ interface TypedItem {
   img?: string;
   audio?: string;
   wrong?: string;
+  /** D2-converted sentence-builder items: the words to unscramble by typing. */
+  words?: string[];
   answer: string;
 }
 
@@ -51,6 +54,16 @@ export function TypedAnswer({ activity, onResult }: Props) {
 
   const item = items[index];
   const isLast = index >= items.length - 1;
+
+  // D2 sentence-builder items carry the words to unscramble — show them
+  // scrambled (seeded, stable while the item is on screen, never answer order).
+  const wordChips = useMemo(
+    () =>
+      item?.words?.length
+        ? seededShuffle(item.words, `${activity.id}:${item.id ?? index}`)
+        : [],
+    [activity.id, item?.id, item?.words, index],
+  );
 
   // Whether the accepted answer came through the typo tolerance — the UI must
   // say so plainly ("Close enough — the word is spelled s-c-h-o-o-l."), never
@@ -143,6 +156,22 @@ export function TypedAnswer({ activity, onResult }: Props) {
         <label htmlFor={`typed-${activity.id}-${index}`} className="mb-2 block text-sm font-bold text-ink">
           {item.prompt ?? 'Type the corrected sentence:'}
         </label>
+      )}
+
+      {wordChips.length > 0 && (
+        <div className="mb-3 rounded-xl border border-brand/30 bg-teal-50/50 p-3">
+          <p className="mb-2 text-xs font-bold text-muted">These words are mixed up — use every word:</p>
+          <div className="flex flex-wrap gap-2">
+            {wordChips.map((w, i) => (
+              <span
+                key={`${w}-${i}`}
+                className="rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm font-bold text-ink"
+              >
+                {w}
+              </span>
+            ))}
+          </div>
+        </div>
       )}
 
       <textarea
